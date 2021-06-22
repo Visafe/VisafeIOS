@@ -1,0 +1,83 @@
+PODS:
+  - Alamofire (5.4.2)
+  - AppAuth (1.4.0):
+    - AppAuth/Core (= 1.4.0)
+    - AppAuth/ExternalUserAgent (= 1.4.0)
+  - AppAuth/Core (1.4.0)
+  - AppAuth/ExternalUserAgent (1.4.0)
+  - DACircularProgress (2.3.1)
+  - GoogleSignIn (5.0.2):
+    - AppAuth (~> 1.2)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GTMAppAuth (1.2.1):
+    - AppAuth/Core (~> 1.4)
+    - GTMSessionFetcher/Core (~> 1.5)
+  - GTMSessionFetcher/Core (1.5.0)
+  - IQKeyboardManagerSwift (6.5.6)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.5.0)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - ObjectMapper (4.2.0)
+  - SDWebImage (5.11.0):
+    - SDWebImage/Core (= 5.11.0)
+  - SDWebImage/Core (5.11.0)
+  - SideMenuSwift (2.0.7)
+  - SwiftyJSON (5.0.1)
+  - SwiftyUserDefaults (5.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - DACircularProgress
+  - GoogleSignIn
+  - IQKeyboardManagerSwift
+  - MBProgressHUD
+  - MJRefresh
+  - Moya
+  - ObjectMapper
+  - SDWebImage
+  - SideMenuSwift
+  - SwiftyJSON
+  - SwiftyUserDefaults
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AppAuth
+    - DACircularProgress
+    - GoogleSignIn
+    - GTMAppAuth
+    - GTMSessionFetcher
+    - IQKeyboardManagerSwift
+    - MBProgressHUD
+    - MJRefresh
+    - Moya
+    - ObjectMapper
+    - SDWebImage
+    - SideMenuSwift
+    - SwiftyJSON
+    - SwiftyUserDefaults
+
+SPEC CHECKSUMS:
+  Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
+  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
+  GTMAppAuth: 5b53231ef6920f149ab84b2969cb0ab572da3077
+  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
+  SideMenuSwift: ffbbc88d23741932177ad1320df837cedfb3bc5e
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
+
+PODFILE CHECKSUM: fe6cd44858165aeb5d7c30036f0345ab8d5452a9
+
+COCOAPODS: 1.10.1

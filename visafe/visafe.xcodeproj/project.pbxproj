@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA42681F29E00572C4E /* AppDelegate.swift */; };
-		0EDEEFA72681F29E00572C4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA62681F29E00572C4E /* SceneDelegate.swift */; };
 		0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA82681F29E00572C4E /* ViewController.swift */; };
 		0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAA2681F29E00572C4E /* Main.storyboard */; };
 		0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAD2681F2A000572C4E /* Assets.xcassets */; };
@@ -20,17 +19,70 @@
 		0EDEEFC92681F36E00572C4E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFC82681F36E00572C4E /* RxCocoa */; };
 		0EDEEFCD2681F43D00572C4E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFCC2681F43D00572C4E /* Realm */; };
 		0EDEEFCF2681F43D00572C4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFCE2681F43D00572C4E /* RealmSwift */; };
+		35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */; };
+		C919B94726821DA9009982C3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B93B26821DA8009982C3 /* APIManager.swift */; };
+		C919B94826821DA9009982C3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B93C26821DA8009982C3 /* APIRouter.swift */; };
+		C919B94926821DA9009982C3 /* VisafeRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B93D26821DA8009982C3 /* VisafeRequestAdapter.swift */; };
+		C919B96926822144009982C3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96826822144009982C3 /* BaseViewController.swift */; };
+		C919B96D26822157009982C3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96C26822157009982C3 /* BaseView.swift */; };
+		C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96F2682216B009982C3 /* BaseTableCell.swift */; };
+		C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B97A268222F6009982C3 /* JSONModelable.swift */; };
+		C93ED1592682328600B03E8A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED1572682328600B03E8A /* HomeVC.swift */; };
+		C93ED15A2682328600B03E8A /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED1582682328600B03E8A /* HomeVC.xib */; };
+		C93ED15E268232A100B03E8A /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED15C268232A100B03E8A /* SettingVC.swift */; };
+		C93ED15F268232A100B03E8A /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED15D268232A100B03E8A /* SettingVC.xib */; };
+		C93ED163268232BE00B03E8A /* AdministrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED161268232BE00B03E8A /* AdministrationVC.swift */; };
+		C93ED164268232BE00B03E8A /* AdministrationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED162268232BE00B03E8A /* AdministrationVC.xib */; };
+		C93ED167268232ED00B03E8A /* BaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED166268232ED00B03E8A /* BaseTabbarController.swift */; };
+		C93ED16A2682332A00B03E8A /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED1692682332A00B03E8A /* TabbarVC.swift */; };
+		C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED16C2682343C00B03E8A /* BaseNavigationController.swift */; };
+		C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED181268240C300B03E8A /* LeftMenuVC.swift */; };
+		C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED182268240C300B03E8A /* LeftMenuVC.xib */; };
+		C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED1862682445E00B03E8A /* DashboardVC.swift */; };
+		C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED1872682445E00B03E8A /* DashboardVC.xib */; };
+		C93ED18D2682447800B03E8A /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED18B2682447800B03E8A /* GroupVC.swift */; };
+		C93ED18E2682447800B03E8A /* GroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED18C2682447800B03E8A /* GroupVC.xib */; };
+		C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED190268244A900B03E8A /* ConfigVC.swift */; };
+		C93ED193268244A900B03E8A /* ConfigVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED191268244A900B03E8A /* ConfigVC.xib */; };
+		C93ED1962682456500B03E8A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED1952682456500B03E8A /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0495B1120504033333DDDB59 /* Pods-visafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visafe.release.xcconfig"; path = "Target Support Files/Pods-visafe/Pods-visafe.release.xcconfig"; sourceTree = "<group>"; };
 		0EDEEFA12681F29E00572C4E /* visafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = visafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDEEFA42681F29E00572C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0EDEEFA62681F29E00572C4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0EDEEFA82681F29E00572C4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0EDEEFAB2681F29E00572C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EDEEFAD2681F2A000572C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EDEEFB02681F2A000572C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EDEEFB22681F2A000572C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		907E3660E73749DFAE56C748 /* Pods-visafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visafe.debug.xcconfig"; path = "Target Support Files/Pods-visafe/Pods-visafe.debug.xcconfig"; sourceTree = "<group>"; };
+		B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C919B93B26821DA8009982C3 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		C919B93C26821DA8009982C3 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		C919B93D26821DA8009982C3 /* VisafeRequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisafeRequestAdapter.swift; sourceTree = "<group>"; };
+		C919B96826822144009982C3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C919B96C26822157009982C3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		C919B96F2682216B009982C3 /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
+		C919B97A268222F6009982C3 /* JSONModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONModelable.swift; sourceTree = "<group>"; };
+		C93ED1572682328600B03E8A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		C93ED1582682328600B03E8A /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		C93ED15C268232A100B03E8A /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		C93ED15D268232A100B03E8A /* SettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		C93ED161268232BE00B03E8A /* AdministrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationVC.swift; sourceTree = "<group>"; };
+		C93ED162268232BE00B03E8A /* AdministrationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdministrationVC.xib; sourceTree = "<group>"; };
+		C93ED166268232ED00B03E8A /* BaseTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarController.swift; sourceTree = "<group>"; };
+		C93ED1692682332A00B03E8A /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
+		C93ED16C2682343C00B03E8A /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		C93ED181268240C300B03E8A /* LeftMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuVC.swift; sourceTree = "<group>"; };
+		C93ED182268240C300B03E8A /* LeftMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftMenuVC.xib; sourceTree = "<group>"; };
+		C93ED1862682445E00B03E8A /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		C93ED1872682445E00B03E8A /* DashboardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardVC.xib; sourceTree = "<group>"; };
+		C93ED18B2682447800B03E8A /* GroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
+		C93ED18C2682447800B03E8A /* GroupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupVC.xib; sourceTree = "<group>"; };
+		C93ED190268244A900B03E8A /* ConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigVC.swift; sourceTree = "<group>"; };
+		C93ED191268244A900B03E8A /* ConfigVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigVC.xib; sourceTree = "<group>"; };
+		C93ED1952682456500B03E8A /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +97,7 @@
 				0EDEEFC92681F36E00572C4E /* RxCocoa in Frameworks */,
 				0EDEEFC72681F36E00572C4E /* RxSwift in Frameworks */,
 				0EDEEFBF2681F30C00572C4E /* SnapKit in Frameworks */,
+				35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +109,8 @@
 			children = (
 				0EDEEFA32681F29E00572C4E /* visafe */,
 				0EDEEFA22681F29E00572C4E /* Products */,
+				CB200029E33700DD2D0EDA4D /* Pods */,
+				74CD99A04854465BFB8CCB31 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,15 +125,168 @@
 		0EDEEFA32681F29E00572C4E /* visafe */ = {
 			isa = PBXGroup;
 			children = (
-				0EDEEFA42681F29E00572C4E /* AppDelegate.swift */,
-				0EDEEFA62681F29E00572C4E /* SceneDelegate.swift */,
-				0EDEEFA82681F29E00572C4E /* ViewController.swift */,
-				0EDEEFAA2681F29E00572C4E /* Main.storyboard */,
-				0EDEEFAD2681F2A000572C4E /* Assets.xcassets */,
-				0EDEEFAF2681F2A000572C4E /* LaunchScreen.storyboard */,
-				0EDEEFB22681F2A000572C4E /* Info.plist */,
+				C919B9722682217D009982C3 /* 1. Delegate */,
+				C919B965268220B3009982C3 /* 2. Base */,
+				C919B966268220D4009982C3 /* 3. Models */,
+				C919B97626822222009982C3 /* 4. Screens */,
+				C919B93926821DA8009982C3 /* 5. Services */,
+				C919B973268221A4009982C3 /* 6 .Resource */,
+				C919B967268220DE009982C3 /* 7. Shared */,
+				C919B978268222CF009982C3 /* 8. Common */,
 			);
 			path = visafe;
+			sourceTree = "<group>";
+		};
+		74CD99A04854465BFB8CCB31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C919B93926821DA8009982C3 /* 5. Services */ = {
+			isa = PBXGroup;
+			children = (
+				C919B93A26821DA8009982C3 /* Network */,
+			);
+			path = "5. Services";
+			sourceTree = "<group>";
+		};
+		C919B93A26821DA8009982C3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C919B93B26821DA8009982C3 /* APIManager.swift */,
+				C919B93C26821DA8009982C3 /* APIRouter.swift */,
+				C919B93D26821DA8009982C3 /* VisafeRequestAdapter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C919B965268220B3009982C3 /* 2. Base */ = {
+			isa = PBXGroup;
+			children = (
+				C919B96826822144009982C3 /* BaseViewController.swift */,
+				C919B96C26822157009982C3 /* BaseView.swift */,
+				C919B96F2682216B009982C3 /* BaseTableCell.swift */,
+				C93ED166268232ED00B03E8A /* BaseTabbarController.swift */,
+				C93ED16C2682343C00B03E8A /* BaseNavigationController.swift */,
+			);
+			path = "2. Base";
+			sourceTree = "<group>";
+		};
+		C919B966268220D4009982C3 /* 3. Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "3. Models";
+			sourceTree = "<group>";
+		};
+		C919B967268220DE009982C3 /* 7. Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "7. Shared";
+			sourceTree = "<group>";
+		};
+		C919B9722682217D009982C3 /* 1. Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				0EDEEFAF2681F2A000572C4E /* LaunchScreen.storyboard */,
+				0EDEEFA42681F29E00572C4E /* AppDelegate.swift */,
+				0EDEEFA82681F29E00572C4E /* ViewController.swift */,
+				0EDEEFAA2681F29E00572C4E /* Main.storyboard */,
+			);
+			path = "1. Delegate";
+			sourceTree = "<group>";
+		};
+		C919B973268221A4009982C3 /* 6 .Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0EDEEFAD2681F2A000572C4E /* Assets.xcassets */,
+				0EDEEFB22681F2A000572C4E /* Info.plist */,
+			);
+			path = "6 .Resource";
+			sourceTree = "<group>";
+		};
+		C919B97626822222009982C3 /* 4. Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C93ED1502682324400B03E8A /* Setting */,
+				C93ED14F2682323500B03E8A /* Home */,
+				C93ED14E2682320C00B03E8A /* Administration */,
+				C93ED14D2682320000B03E8A /* Tabbar */,
+			);
+			path = "4. Screens";
+			sourceTree = "<group>";
+		};
+		C919B978268222CF009982C3 /* 8. Common */ = {
+			isa = PBXGroup;
+			children = (
+				C93ED1952682456500B03E8A /* Constant.swift */,
+				C919B979268222F6009982C3 /* Protocols */,
+			);
+			path = "8. Common";
+			sourceTree = "<group>";
+		};
+		C919B979268222F6009982C3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C919B97A268222F6009982C3 /* JSONModelable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C93ED14D2682320000B03E8A /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				C93ED1692682332A00B03E8A /* TabbarVC.swift */,
+				C93ED181268240C300B03E8A /* LeftMenuVC.swift */,
+				C93ED182268240C300B03E8A /* LeftMenuVC.xib */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		C93ED14E2682320C00B03E8A /* Administration */ = {
+			isa = PBXGroup;
+			children = (
+				C93ED161268232BE00B03E8A /* AdministrationVC.swift */,
+				C93ED162268232BE00B03E8A /* AdministrationVC.xib */,
+				C93ED1862682445E00B03E8A /* DashboardVC.swift */,
+				C93ED1872682445E00B03E8A /* DashboardVC.xib */,
+				C93ED18B2682447800B03E8A /* GroupVC.swift */,
+				C93ED18C2682447800B03E8A /* GroupVC.xib */,
+				C93ED190268244A900B03E8A /* ConfigVC.swift */,
+				C93ED191268244A900B03E8A /* ConfigVC.xib */,
+			);
+			path = Administration;
+			sourceTree = "<group>";
+		};
+		C93ED14F2682323500B03E8A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C93ED1572682328600B03E8A /* HomeVC.swift */,
+				C93ED1582682328600B03E8A /* HomeVC.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C93ED1502682324400B03E8A /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				C93ED15C268232A100B03E8A /* SettingVC.swift */,
+				C93ED15D268232A100B03E8A /* SettingVC.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		CB200029E33700DD2D0EDA4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				907E3660E73749DFAE56C748 /* Pods-visafe.debug.xcconfig */,
+				0495B1120504033333DDDB59 /* Pods-visafe.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,9 +296,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EDEEFB52681F2A000572C4E /* Build configuration list for PBXNativeTarget "visafe" */;
 			buildPhases = (
+				4D504D7FDE45B14B002C2E2F /* [CP] Check Pods Manifest.lock */,
 				0EDEEF9D2681F29E00572C4E /* Sources */,
 				0EDEEF9E2681F29E00572C4E /* Frameworks */,
 				0EDEEF9F2681F29E00572C4E /* Resources */,
+				EFE82053407D103D67E1C35D /* [CP] Embed Pods Frameworks */,
+				1FC4039839961F79796F508B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,22 +365,105 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C93ED193268244A900B03E8A /* ConfigVC.xib in Resources */,
+				C93ED18E2682447800B03E8A /* GroupVC.xib in Resources */,
 				0EDEEFB12681F2A000572C4E /* LaunchScreen.storyboard in Resources */,
+				C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */,
+				C93ED15A2682328600B03E8A /* HomeVC.xib in Resources */,
+				C93ED164268232BE00B03E8A /* AdministrationVC.xib in Resources */,
+				C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */,
 				0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */,
+				C93ED15F268232A100B03E8A /* SettingVC.xib in Resources */,
 				0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1FC4039839961F79796F508B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-visafe/Pods-visafe-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-visafe/Pods-visafe-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-visafe/Pods-visafe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D504D7FDE45B14B002C2E2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-visafe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFE82053407D103D67E1C35D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-visafe/Pods-visafe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-visafe/Pods-visafe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-visafe/Pods-visafe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0EDEEF9D2681F29E00572C4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C919B94726821DA9009982C3 /* APIManager.swift in Sources */,
+				C93ED15E268232A100B03E8A /* SettingVC.swift in Sources */,
+				C93ED167268232ED00B03E8A /* BaseTabbarController.swift in Sources */,
+				C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */,
+				C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */,
+				C919B94826821DA9009982C3 /* APIRouter.swift in Sources */,
+				C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */,
+				C93ED1962682456500B03E8A /* Constant.swift in Sources */,
+				C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */,
 				0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */,
 				0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */,
-				0EDEEFA72681F29E00572C4E /* SceneDelegate.swift in Sources */,
+				C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */,
+				C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */,
+				C919B94926821DA9009982C3 /* VisafeRequestAdapter.swift in Sources */,
+				C93ED18D2682447800B03E8A /* GroupVC.swift in Sources */,
+				C919B96926822144009982C3 /* BaseViewController.swift in Sources */,
+				C93ED163268232BE00B03E8A /* AdministrationVC.swift in Sources */,
+				C93ED1592682328600B03E8A /* HomeVC.swift in Sources */,
+				C919B96D26822157009982C3 /* BaseView.swift in Sources */,
+				C93ED16A2682332A00B03E8A /* TabbarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,17 +607,18 @@
 		};
 		0EDEEFB62681F2A000572C4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 907E3660E73749DFAE56C748 /* Pods-visafe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6P799F3DP3;
-				INFOPLIST_FILE = visafe/Info.plist;
+				DEVELOPMENT_TEAM = 3Z59HFVS9G;
+				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shjn.visafe;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.com.ct1355;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -332,17 +627,18 @@
 		};
 		0EDEEFB72681F2A000572C4E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0495B1120504033333DDDB59 /* Pods-visafe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6P799F3DP3;
-				INFOPLIST_FILE = visafe/Info.plist;
+				DEVELOPMENT_TEAM = 3Z59HFVS9G;
+				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shjn.visafe;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.com.ct1355;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
