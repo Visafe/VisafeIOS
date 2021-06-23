@@ -55,7 +55,7 @@ class AdministrationVC: BaseViewController {
         let leftBarButton = UIBarButtonItem(image: UIImage(named: "threedot-icon"), style: .done, target: self, action: #selector(onClickLeftButton))
         navigationItem.leftBarButtonItem = leftBarButton
         // right
-        let notifiBarButton = UIBarButtonItem(image: UIImage(named: "search-icon"), style: .done, target: self, action: #selector(onClickNotifiButton))
+        let notifiBarButton = UIBarButtonItem(image: UIImage(named: "notifi_icon"), style: .done, target: self, action: #selector(onClickNotifiButton))
         navigationItem.rightBarButtonItem = notifiBarButton
     }
     

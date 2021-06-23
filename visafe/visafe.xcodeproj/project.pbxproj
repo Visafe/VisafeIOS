@@ -42,11 +42,27 @@
 		C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED182268240C300B03E8A /* LeftMenuVC.xib */; };
 		C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED1862682445E00B03E8A /* DashboardVC.swift */; };
 		C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED1872682445E00B03E8A /* DashboardVC.xib */; };
-		C93ED18D2682447800B03E8A /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED18B2682447800B03E8A /* GroupVC.swift */; };
-		C93ED18E2682447800B03E8A /* GroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED18C2682447800B03E8A /* GroupVC.xib */; };
 		C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED190268244A900B03E8A /* ConfigVC.swift */; };
 		C93ED193268244A900B03E8A /* ConfigVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED191268244A900B03E8A /* ConfigVC.xib */; };
 		C93ED1962682456500B03E8A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED1952682456500B03E8A /* Constant.swift */; };
+		C940AE8E268375A30069B830 /* WorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C940AE8C268375A30069B830 /* WorkspaceCell.swift */; };
+		C940AE8F268375A30069B830 /* WorkspaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C940AE8D268375A30069B830 /* WorkspaceCell.xib */; };
+		C940AE92268375C10069B830 /* WorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C940AE91268375C10069B830 /* WorkspaceModel.swift */; };
+		C940AE96268376A70069B830 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C940AE95268376A70069B830 /* TableViewExtension.swift */; };
+		C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C940AE98268377540069B830 /* NSObjectExtension.swift */; };
+		C940AE9C268377F00069B830 /* WorkspaceFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C940AE9B268377F00069B830 /* WorkspaceFooterView.swift */; };
+		C940AE9F268377FF0069B830 /* WorkspaceFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C940AE9E268377FF0069B830 /* WorkspaceFooterView.xib */; };
+		C940AEA2268378F20069B830 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C940AEA1268378F20069B830 /* UIViewExtension.swift */; };
+		C940AEA626837C8E0069B830 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C940AEA526837C8E0069B830 /* SwifterSwift */; };
+		C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F333626838E4300859DF6 /* UIButtonExtension.swift */; };
+		C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB54D26839E74009CBD93 /* GroupVC.xib */; };
+		C9EDB55726839E74009CBD93 /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EDB54E26839E74009CBD93 /* GroupVC.swift */; };
+		C9EDB55826839E74009CBD93 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB55026839E74009CBD93 /* GroupCell.xib */; };
+		C9EDB55926839E74009CBD93 /* GroupFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EDB55126839E74009CBD93 /* GroupFooterView.swift */; };
+		C9EDB55A26839E74009CBD93 /* GroupFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB55226839E74009CBD93 /* GroupFooterView.xib */; };
+		C9EDB55B26839E74009CBD93 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EDB55326839E74009CBD93 /* GroupCell.swift */; };
+		C9EDB55C26839E74009CBD93 /* AddGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EDB55426839E74009CBD93 /* AddGroupVC.swift */; };
+		C9EDB55D26839E74009CBD93 /* AddGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB55526839E74009CBD93 /* AddGroupVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,11 +96,26 @@
 		C93ED182268240C300B03E8A /* LeftMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftMenuVC.xib; sourceTree = "<group>"; };
 		C93ED1862682445E00B03E8A /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		C93ED1872682445E00B03E8A /* DashboardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardVC.xib; sourceTree = "<group>"; };
-		C93ED18B2682447800B03E8A /* GroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
-		C93ED18C2682447800B03E8A /* GroupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupVC.xib; sourceTree = "<group>"; };
 		C93ED190268244A900B03E8A /* ConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigVC.swift; sourceTree = "<group>"; };
 		C93ED191268244A900B03E8A /* ConfigVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigVC.xib; sourceTree = "<group>"; };
 		C93ED1952682456500B03E8A /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		C940AE8C268375A30069B830 /* WorkspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceCell.swift; sourceTree = "<group>"; };
+		C940AE8D268375A30069B830 /* WorkspaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkspaceCell.xib; sourceTree = "<group>"; };
+		C940AE91268375C10069B830 /* WorkspaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceModel.swift; sourceTree = "<group>"; };
+		C940AE95268376A70069B830 /* TableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		C940AE98268377540069B830 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		C940AE9B268377F00069B830 /* WorkspaceFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceFooterView.swift; sourceTree = "<group>"; };
+		C940AE9E268377FF0069B830 /* WorkspaceFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkspaceFooterView.xib; sourceTree = "<group>"; };
+		C940AEA1268378F20069B830 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		C99F333626838E4300859DF6 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		C9EDB54D26839E74009CBD93 /* GroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupVC.xib; sourceTree = "<group>"; };
+		C9EDB54E26839E74009CBD93 /* GroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
+		C9EDB55026839E74009CBD93 /* GroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
+		C9EDB55126839E74009CBD93 /* GroupFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupFooterView.swift; sourceTree = "<group>"; };
+		C9EDB55226839E74009CBD93 /* GroupFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupFooterView.xib; sourceTree = "<group>"; };
+		C9EDB55326839E74009CBD93 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		C9EDB55426839E74009CBD93 /* AddGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupVC.swift; sourceTree = "<group>"; };
+		C9EDB55526839E74009CBD93 /* AddGroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddGroupVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +125,7 @@
 			files = (
 				0EDEEFCD2681F43D00572C4E /* Realm in Frameworks */,
 				0EDEEFC32681F33600572C4E /* SwiftyJSON in Frameworks */,
+				C940AEA626837C8E0069B830 /* SwifterSwift in Frameworks */,
 				0EDEEFCF2681F43D00572C4E /* RealmSwift in Frameworks */,
 				0E229D652682CC0300559B67 /* Kingfisher in Frameworks */,
 				0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */,
@@ -137,6 +169,7 @@
 				C919B973268221A4009982C3 /* 6 .Resource */,
 				C919B967268220DE009982C3 /* 7. Shared */,
 				C919B978268222CF009982C3 /* 8. Common */,
+				C940AE942683766F0069B830 /* 9. Extension */,
 			);
 			path = visafe;
 			sourceTree = "<group>";
@@ -182,6 +215,7 @@
 		C919B966268220D4009982C3 /* 3. Models */ = {
 			isa = PBXGroup;
 			children = (
+				C940AE91268375C10069B830 /* WorkspaceModel.swift */,
 			);
 			path = "3. Models";
 			sourceTree = "<group>";
@@ -244,6 +278,7 @@
 		C93ED14D2682320000B03E8A /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				C940AE8B268375710069B830 /* Cell */,
 				C93ED1692682332A00B03E8A /* TabbarVC.swift */,
 				C93ED181268240C300B03E8A /* LeftMenuVC.swift */,
 				C93ED182268240C300B03E8A /* LeftMenuVC.xib */,
@@ -254,12 +289,11 @@
 		C93ED14E2682320C00B03E8A /* Administration */ = {
 			isa = PBXGroup;
 			children = (
+				C9EDB54C26839E74009CBD93 /* Group */,
 				C93ED161268232BE00B03E8A /* AdministrationVC.swift */,
 				C93ED162268232BE00B03E8A /* AdministrationVC.xib */,
 				C93ED1862682445E00B03E8A /* DashboardVC.swift */,
 				C93ED1872682445E00B03E8A /* DashboardVC.xib */,
-				C93ED18B2682447800B03E8A /* GroupVC.swift */,
-				C93ED18C2682447800B03E8A /* GroupVC.xib */,
 				C93ED190268244A900B03E8A /* ConfigVC.swift */,
 				C93ED191268244A900B03E8A /* ConfigVC.xib */,
 			);
@@ -282,6 +316,51 @@
 				C93ED15D268232A100B03E8A /* SettingVC.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		C940AE8B268375710069B830 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C940AE8C268375A30069B830 /* WorkspaceCell.swift */,
+				C940AE8D268375A30069B830 /* WorkspaceCell.xib */,
+				C940AE9B268377F00069B830 /* WorkspaceFooterView.swift */,
+				C940AE9E268377FF0069B830 /* WorkspaceFooterView.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C940AE942683766F0069B830 /* 9. Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C940AE95268376A70069B830 /* TableViewExtension.swift */,
+				C940AE98268377540069B830 /* NSObjectExtension.swift */,
+				C940AEA1268378F20069B830 /* UIViewExtension.swift */,
+				C99F333626838E4300859DF6 /* UIButtonExtension.swift */,
+			);
+			path = "9. Extension";
+			sourceTree = "<group>";
+		};
+		C9EDB54C26839E74009CBD93 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				C9EDB54D26839E74009CBD93 /* GroupVC.xib */,
+				C9EDB54E26839E74009CBD93 /* GroupVC.swift */,
+				C9EDB54F26839E74009CBD93 /* Cell */,
+				C9EDB55426839E74009CBD93 /* AddGroupVC.swift */,
+				C9EDB55526839E74009CBD93 /* AddGroupVC.xib */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		C9EDB54F26839E74009CBD93 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C9EDB55026839E74009CBD93 /* GroupCell.xib */,
+				C9EDB55126839E74009CBD93 /* GroupFooterView.swift */,
+				C9EDB55226839E74009CBD93 /* GroupFooterView.xib */,
+				C9EDB55326839E74009CBD93 /* GroupCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CB200029E33700DD2D0EDA4D /* Pods */ = {
@@ -322,6 +401,7 @@
 				0E229D642682CC0300559B67 /* Kingfisher */,
 				0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */,
 				0E229D862682D3AF00559B67 /* Moya */,
+				C940AEA526837C8E0069B830 /* SwifterSwift */,
 			);
 			productName = visafe;
 			productReference = 0EDEEFA12681F29E00572C4E /* visafe.app */;
@@ -358,6 +438,7 @@
 				0E229D632682CC0300559B67 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				0E229D672682CC3A00559B67 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				0E229D852682D3AF00559B67 /* XCRemoteSwiftPackageReference "Moya" */,
+				C940AEA426837C8E0069B830 /* XCRemoteSwiftPackageReference "SwifterSwift" */,
 			);
 			productRefGroup = 0EDEEFA22681F29E00572C4E /* Products */;
 			projectDirPath = "";
@@ -374,15 +455,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C93ED193268244A900B03E8A /* ConfigVC.xib in Resources */,
-				C93ED18E2682447800B03E8A /* GroupVC.xib in Resources */,
 				0EDEEFB12681F2A000572C4E /* LaunchScreen.storyboard in Resources */,
 				C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */,
+				C9EDB55D26839E74009CBD93 /* AddGroupVC.xib in Resources */,
 				C93ED15A2682328600B03E8A /* HomeVC.xib in Resources */,
+				C9EDB55826839E74009CBD93 /* GroupCell.xib in Resources */,
+				C9EDB55A26839E74009CBD93 /* GroupFooterView.xib in Resources */,
+				C940AE9F268377FF0069B830 /* WorkspaceFooterView.xib in Resources */,
 				C93ED164268232BE00B03E8A /* AdministrationVC.xib in Resources */,
+				C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */,
 				C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */,
 				0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */,
 				C93ED15F268232A100B03E8A /* SettingVC.xib in Resources */,
 				0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */,
+				C940AE8F268375A30069B830 /* WorkspaceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,17 +544,27 @@
 				C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */,
 				C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */,
 				C919B94826821DA9009982C3 /* APIRouter.swift in Sources */,
+				C940AE8E268375A30069B830 /* WorkspaceCell.swift in Sources */,
+				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
 				C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */,
 				C93ED1962682456500B03E8A /* Constant.swift in Sources */,
+				C940AE96268376A70069B830 /* TableViewExtension.swift in Sources */,
 				C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */,
+				C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */,
 				0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */,
+				C9EDB55B26839E74009CBD93 /* GroupCell.swift in Sources */,
 				0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */,
 				C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */,
+				C940AE92268375C10069B830 /* WorkspaceModel.swift in Sources */,
+				C940AE9C268377F00069B830 /* WorkspaceFooterView.swift in Sources */,
 				C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */,
+				C9EDB55C26839E74009CBD93 /* AddGroupVC.swift in Sources */,
+				C9EDB55926839E74009CBD93 /* GroupFooterView.swift in Sources */,
 				C919B94926821DA9009982C3 /* VisafeRequestAdapter.swift in Sources */,
-				C93ED18D2682447800B03E8A /* GroupVC.swift in Sources */,
 				C919B96926822144009982C3 /* BaseViewController.swift in Sources */,
+				C9EDB55726839E74009CBD93 /* GroupVC.swift in Sources */,
 				C93ED163268232BE00B03E8A /* AdministrationVC.swift in Sources */,
+				C940AEA2268378F20069B830 /* UIViewExtension.swift in Sources */,
 				C93ED1592682328600B03E8A /* HomeVC.swift in Sources */,
 				C919B96D26822157009982C3 /* BaseView.swift in Sources */,
 				C93ED16A2682332A00B03E8A /* TabbarVC.swift in Sources */,
@@ -733,6 +829,14 @@
 				minimumVersion = 10.8.0;
 			};
 		};
+		C940AEA426837C8E0069B830 /* XCRemoteSwiftPackageReference "SwifterSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwifterSwift/SwifterSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -780,6 +884,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0EDEEFCB2681F43D00572C4E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		C940AEA526837C8E0069B830 /* SwifterSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C940AEA426837C8E0069B830 /* XCRemoteSwiftPackageReference "SwifterSwift" */;
+			productName = SwifterSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

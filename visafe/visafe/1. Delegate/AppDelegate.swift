@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SideMenuSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         setRootVCToTabVC()
         configView()
+        configureSideMenu()
         return true
     }
     
@@ -27,6 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setRootVCToTabVC() {
         let vc = TabbarVC()
         self.window?.rootViewController = vc
+    }
+    
+    private func configureSideMenu() {
+        SideMenuController.preferences.basic.menuWidth = kScreenWidth - 100
+        SideMenuController.preferences.basic.defaultCacheKey = "0"
     }
 }
 

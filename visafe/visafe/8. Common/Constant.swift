@@ -26,7 +26,7 @@ let kTabbarHeight: CGFloat = (keyWindow?.safeAreaInsets.bottom ?? 0) + 50
 let hexRandomColor: [String] = ["54C0EB", "C18EFC", "63C663", "F89B4B", "F5766B", "3FBE8D", "FF7E8C", "F89B4B", "45C66C"]
 
 // Color
-let kColorMainOrange = "FF8124"
+let kColorMainOrange = "FFB31F"
 let kColorMainBlue = "449363"
 
 // TableName
