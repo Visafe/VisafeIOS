@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E229D652682CC0300559B67 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D642682CC0300559B67 /* Kingfisher */; };
+		0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */; };
+		0E229D872682D3AF00559B67 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D862682D3AF00559B67 /* Moya */; };
 		0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA42681F29E00572C4E /* AppDelegate.swift */; };
 		0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA82681F29E00572C4E /* ViewController.swift */; };
 		0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAA2681F29E00572C4E /* Main.storyboard */; };
 		0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAD2681F2A000572C4E /* Assets.xcassets */; };
 		0EDEEFB12681F2A000572C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAF2681F2A000572C4E /* LaunchScreen.storyboard */; };
-		0EDEEFBB2681F2E100572C4E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFBA2681F2E100572C4E /* Alamofire */; };
 		0EDEEFBF2681F30C00572C4E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFBE2681F30C00572C4E /* SnapKit */; };
 		0EDEEFC32681F33600572C4E /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFC22681F33600572C4E /* SwiftyJSON */; };
 		0EDEEFC72681F36E00572C4E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFC62681F36E00572C4E /* RxSwift */; };
@@ -93,10 +95,12 @@
 				0EDEEFCD2681F43D00572C4E /* Realm in Frameworks */,
 				0EDEEFC32681F33600572C4E /* SwiftyJSON in Frameworks */,
 				0EDEEFCF2681F43D00572C4E /* RealmSwift in Frameworks */,
-				0EDEEFBB2681F2E100572C4E /* Alamofire in Frameworks */,
+				0E229D652682CC0300559B67 /* Kingfisher in Frameworks */,
+				0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */,
 				0EDEEFC92681F36E00572C4E /* RxCocoa in Frameworks */,
 				0EDEEFC72681F36E00572C4E /* RxSwift in Frameworks */,
 				0EDEEFBF2681F30C00572C4E /* SnapKit in Frameworks */,
+				0E229D872682D3AF00559B67 /* Moya in Frameworks */,
 				35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,13 +313,15 @@
 			);
 			name = visafe;
 			packageProductDependencies = (
-				0EDEEFBA2681F2E100572C4E /* Alamofire */,
 				0EDEEFBE2681F30C00572C4E /* SnapKit */,
 				0EDEEFC22681F33600572C4E /* SwiftyJSON */,
 				0EDEEFC62681F36E00572C4E /* RxSwift */,
 				0EDEEFC82681F36E00572C4E /* RxCocoa */,
 				0EDEEFCC2681F43D00572C4E /* Realm */,
 				0EDEEFCE2681F43D00572C4E /* RealmSwift */,
+				0E229D642682CC0300559B67 /* Kingfisher */,
+				0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */,
+				0E229D862682D3AF00559B67 /* Moya */,
 			);
 			productName = visafe;
 			productReference = 0EDEEFA12681F29E00572C4E /* visafe.app */;
@@ -345,11 +351,13 @@
 			);
 			mainGroup = 0EDEEF982681F29E00572C4E;
 			packageReferences = (
-				0EDEEFB92681F2E100572C4E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				0EDEEFBD2681F30C00572C4E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				0EDEEFC12681F33600572C4E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				0EDEEFC52681F36E00572C4E /* XCRemoteSwiftPackageReference "RxSwift" */,
 				0EDEEFCB2681F43D00572C4E /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				0E229D632682CC0300559B67 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				0E229D672682CC3A00559B67 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				0E229D852682D3AF00559B67 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 0EDEEFA22681F29E00572C4E /* Products */;
 			projectDirPath = "";
@@ -669,12 +677,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0EDEEFB92681F2E100572C4E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		0E229D632682CC0300559B67 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.3;
+				minimumVersion = 6.3.0;
+			};
+		};
+		0E229D672682CC3A00559B67 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
+		0E229D852682D3AF00559B67 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
 			};
 		};
 		0EDEEFBD2681F30C00572C4E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
@@ -698,7 +722,7 @@
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.2.0;
+				minimumVersion = 5.0.0;
 			};
 		};
 		0EDEEFCB2681F43D00572C4E /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
@@ -712,10 +736,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0EDEEFBA2681F2E100572C4E /* Alamofire */ = {
+		0E229D642682CC0300559B67 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0EDEEFB92681F2E100572C4E /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = 0E229D632682CC0300559B67 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E229D672682CC3A00559B67 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		0E229D862682D3AF00559B67 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E229D852682D3AF00559B67 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 		0EDEEFBE2681F30C00572C4E /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

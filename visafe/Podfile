@@ -5,16 +5,11 @@ target 'visafe' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'SDWebImage'
+#  pod 'SDWebImage'
   pod 'DACircularProgress'
   pod 'MBProgressHUD'
-  pod 'Alamofire'
   pod 'MJRefresh'
-  pod 'IQKeyboardManagerSwift'
-  pod 'Moya'
-  pod 'SwiftyJSON'
   pod 'GoogleSignIn'
-  pod 'ObjectMapper'
   pod 'SwiftyUserDefaults'
   pod 'SideMenuSwift'
 
