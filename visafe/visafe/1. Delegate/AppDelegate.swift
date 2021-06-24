@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setRootVCToTabVC() {
-        let vc = TabbarVC()
+        let vc = LoginVC()
         self.window?.rootViewController = vc
     }
     

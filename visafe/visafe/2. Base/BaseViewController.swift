@@ -6,24 +6,47 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class BaseViewController: UIViewController {
 
+    var indicatorView: NVActivityIndicatorView!
+    var viewLoading: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configLoading()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configLoading() {
+        indicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60), type: .ballClipRotatePulse, color: UIColor.mainColorOrange())
+        viewLoading = UIView(frame: view.bounds)
+        viewLoading.backgroundColor = UIColor.clear
+        viewLoading.addSubview(indicatorView)
     }
-    */
-
+    
+    func showLoading() {
+        viewLoading.frame = view.bounds
+        indicatorView.center = viewLoading.center
+        indicatorView.stopAnimating()
+        view.addSubview(viewLoading)
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.viewLoading.backgroundColor = UIColor(hexString: "000000", transparency: 0.2)
+        } completion: { [weak self] (success) in
+            guard let weakSelf = self else { return }
+            weakSelf.indicatorView.startAnimating()
+        }
+    }
+    
+    func hideLoading() {
+        indicatorView.stopAnimating()
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.viewLoading.backgroundColor = UIColor.clear
+        } completion: { [weak self] (success) in
+            guard let weakSelf = self else { return }
+            weakSelf.indicatorView.removeFromSuperview()
+        }
+    }
 }

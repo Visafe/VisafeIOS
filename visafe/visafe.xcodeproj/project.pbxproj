@@ -22,6 +22,9 @@
 		0EDEEFCD2681F43D00572C4E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFCC2681F43D00572C4E /* Realm */; };
 		0EDEEFCF2681F43D00572C4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFCE2681F43D00572C4E /* RealmSwift */; };
 		35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */; };
+		C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90EA73D2684C298002502F5 /* LoginVC.swift */; };
+		C90EA7402684C298002502F5 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90EA73E2684C298002502F5 /* LoginVC.xib */; };
+		C90EA7442684C76A002502F5 /* CocoaTextField in Frameworks */ = {isa = PBXBuildFile; productRef = C90EA7432684C76A002502F5 /* CocoaTextField */; };
 		C919B94726821DA9009982C3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B93B26821DA8009982C3 /* APIManager.swift */; };
 		C919B94826821DA9009982C3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B93C26821DA8009982C3 /* APIRouter.swift */; };
 		C919B94926821DA9009982C3 /* VisafeRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B93D26821DA8009982C3 /* VisafeRequestAdapter.swift */; };
@@ -55,6 +58,11 @@
 		C940AEA2268378F20069B830 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C940AEA1268378F20069B830 /* UIViewExtension.swift */; };
 		C940AEA626837C8E0069B830 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C940AEA526837C8E0069B830 /* SwifterSwift */; };
 		C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F333626838E4300859DF6 /* UIButtonExtension.swift */; };
+		C9B794512684D72400258A72 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B794502684D72400258A72 /* ColorExtension.swift */; };
+		C9B794552684E16400258A72 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B794532684E16400258A72 /* RegisterVC.swift */; };
+		C9B794562684E16400258A72 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B794542684E16400258A72 /* RegisterVC.xib */; };
+		C9B7945A2684EC9D00258A72 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = C9B794592684EC9D00258A72 /* NVActivityIndicatorView */; };
+		C9B7945C2684EC9D00258A72 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = C9B7945B2684EC9D00258A72 /* NVActivityIndicatorViewExtended */; };
 		C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB54D26839E74009CBD93 /* GroupVC.xib */; };
 		C9EDB55726839E74009CBD93 /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EDB54E26839E74009CBD93 /* GroupVC.swift */; };
 		C9EDB55826839E74009CBD93 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB55026839E74009CBD93 /* GroupCell.xib */; };
@@ -76,6 +84,8 @@
 		0EDEEFB22681F2A000572C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		907E3660E73749DFAE56C748 /* Pods-visafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visafe.debug.xcconfig"; path = "Target Support Files/Pods-visafe/Pods-visafe.debug.xcconfig"; sourceTree = "<group>"; };
 		B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90EA73D2684C298002502F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		C90EA73E2684C298002502F5 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		C919B93B26821DA8009982C3 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		C919B93C26821DA8009982C3 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		C919B93D26821DA8009982C3 /* VisafeRequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisafeRequestAdapter.swift; sourceTree = "<group>"; };
@@ -108,6 +118,9 @@
 		C940AE9E268377FF0069B830 /* WorkspaceFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkspaceFooterView.xib; sourceTree = "<group>"; };
 		C940AEA1268378F20069B830 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		C99F333626838E4300859DF6 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		C9B794502684D72400258A72 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		C9B794532684E16400258A72 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterVC.swift; path = ../../../../../RegisterVC.swift; sourceTree = "<group>"; };
+		C9B794542684E16400258A72 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RegisterVC.xib; path = ../../../../../RegisterVC.xib; sourceTree = "<group>"; };
 		C9EDB54D26839E74009CBD93 /* GroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupVC.xib; sourceTree = "<group>"; };
 		C9EDB54E26839E74009CBD93 /* GroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		C9EDB55026839E74009CBD93 /* GroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
@@ -127,11 +140,14 @@
 				0EDEEFC32681F33600572C4E /* SwiftyJSON in Frameworks */,
 				C940AEA626837C8E0069B830 /* SwifterSwift in Frameworks */,
 				0EDEEFCF2681F43D00572C4E /* RealmSwift in Frameworks */,
+				C90EA7442684C76A002502F5 /* CocoaTextField in Frameworks */,
 				0E229D652682CC0300559B67 /* Kingfisher in Frameworks */,
 				0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */,
+				C9B7945C2684EC9D00258A72 /* NVActivityIndicatorViewExtended in Frameworks */,
 				0EDEEFC92681F36E00572C4E /* RxCocoa in Frameworks */,
 				0EDEEFC72681F36E00572C4E /* RxSwift in Frameworks */,
 				0EDEEFBF2681F30C00572C4E /* SnapKit in Frameworks */,
+				C9B7945A2684EC9D00258A72 /* NVActivityIndicatorView in Frameworks */,
 				0E229D872682D3AF00559B67 /* Moya in Frameworks */,
 				35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */,
 			);
@@ -180,6 +196,17 @@
 				B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C90EA73C2684C278002502F5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C90EA73D2684C298002502F5 /* LoginVC.swift */,
+				C90EA73E2684C298002502F5 /* LoginVC.xib */,
+				C9B794532684E16400258A72 /* RegisterVC.swift */,
+				C9B794542684E16400258A72 /* RegisterVC.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		C919B93926821DA8009982C3 /* 5. Services */ = {
@@ -250,6 +277,7 @@
 		C919B97626822222009982C3 /* 4. Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C90EA73C2684C278002502F5 /* Login */,
 				C93ED1502682324400B03E8A /* Setting */,
 				C93ED14F2682323500B03E8A /* Home */,
 				C93ED14E2682320C00B03E8A /* Administration */,
@@ -332,6 +360,7 @@
 		C940AE942683766F0069B830 /* 9. Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C9B794502684D72400258A72 /* ColorExtension.swift */,
 				C940AE95268376A70069B830 /* TableViewExtension.swift */,
 				C940AE98268377540069B830 /* NSObjectExtension.swift */,
 				C940AEA1268378F20069B830 /* UIViewExtension.swift */,
@@ -402,6 +431,9 @@
 				0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */,
 				0E229D862682D3AF00559B67 /* Moya */,
 				C940AEA526837C8E0069B830 /* SwifterSwift */,
+				C90EA7432684C76A002502F5 /* CocoaTextField */,
+				C9B794592684EC9D00258A72 /* NVActivityIndicatorView */,
+				C9B7945B2684EC9D00258A72 /* NVActivityIndicatorViewExtended */,
 			);
 			productName = visafe;
 			productReference = 0EDEEFA12681F29E00572C4E /* visafe.app */;
@@ -439,6 +471,8 @@
 				0E229D672682CC3A00559B67 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				0E229D852682D3AF00559B67 /* XCRemoteSwiftPackageReference "Moya" */,
 				C940AEA426837C8E0069B830 /* XCRemoteSwiftPackageReference "SwifterSwift" */,
+				C90EA7422684C76A002502F5 /* XCRemoteSwiftPackageReference "CocoaTextField" */,
+				C9B794582684EC9D00258A72 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 0EDEEFA22681F29E00572C4E /* Products */;
 			projectDirPath = "";
@@ -459,6 +493,7 @@
 				C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */,
 				C9EDB55D26839E74009CBD93 /* AddGroupVC.xib in Resources */,
 				C93ED15A2682328600B03E8A /* HomeVC.xib in Resources */,
+				C9B794562684E16400258A72 /* RegisterVC.xib in Resources */,
 				C9EDB55826839E74009CBD93 /* GroupCell.xib in Resources */,
 				C9EDB55A26839E74009CBD93 /* GroupFooterView.xib in Resources */,
 				C940AE9F268377FF0069B830 /* WorkspaceFooterView.xib in Resources */,
@@ -468,6 +503,7 @@
 				0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */,
 				C93ED15F268232A100B03E8A /* SettingVC.xib in Resources */,
 				0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */,
+				C90EA7402684C298002502F5 /* LoginVC.xib in Resources */,
 				C940AE8F268375A30069B830 /* WorkspaceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +574,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */,
 				C919B94726821DA9009982C3 /* APIManager.swift in Sources */,
 				C93ED15E268232A100B03E8A /* SettingVC.swift in Sources */,
 				C93ED167268232ED00B03E8A /* BaseTabbarController.swift in Sources */,
@@ -548,9 +585,11 @@
 				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
 				C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */,
 				C93ED1962682456500B03E8A /* Constant.swift in Sources */,
+				C9B794512684D72400258A72 /* ColorExtension.swift in Sources */,
 				C940AE96268376A70069B830 /* TableViewExtension.swift in Sources */,
 				C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */,
 				C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */,
+				C9B794552684E16400258A72 /* RegisterVC.swift in Sources */,
 				0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */,
 				C9EDB55B26839E74009CBD93 /* GroupCell.swift in Sources */,
 				0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */,
@@ -829,12 +868,28 @@
 				minimumVersion = 10.8.0;
 			};
 		};
+		C90EA7422684C76A002502F5 /* XCRemoteSwiftPackageReference "CocoaTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/edgar-zigis/CocoaTextField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
 		C940AEA426837C8E0069B830 /* XCRemoteSwiftPackageReference "SwifterSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwifterSwift/SwifterSwift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.2.0;
+			};
+		};
+		C9B794582684EC9D00258A72 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -885,10 +940,25 @@
 			package = 0EDEEFCB2681F43D00572C4E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
 		};
+		C90EA7432684C76A002502F5 /* CocoaTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C90EA7422684C76A002502F5 /* XCRemoteSwiftPackageReference "CocoaTextField" */;
+			productName = CocoaTextField;
+		};
 		C940AEA526837C8E0069B830 /* SwifterSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C940AEA426837C8E0069B830 /* XCRemoteSwiftPackageReference "SwifterSwift" */;
 			productName = SwifterSwift;
+		};
+		C9B794592684EC9D00258A72 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9B794582684EC9D00258A72 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		C9B7945B2684EC9D00258A72 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9B794582684EC9D00258A72 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

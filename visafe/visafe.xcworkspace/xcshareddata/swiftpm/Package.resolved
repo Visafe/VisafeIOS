@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "CocoaTextField",
+        "repositoryURL": "https://github.com/edgar-zigis/CocoaTextField.git",
+        "state": {
+          "branch": null,
+          "revision": "0fe193792ad59f6e980bdd4787629d9f224e9f0a",
+          "version": "1.1.1"
+        }
+      },
+      {
         "package": "IQKeyboardManagerSwift",
         "repositoryURL": "https://github.com/hackiftekhar/IQKeyboardManager.git",
         "state": {
@@ -53,6 +62,15 @@
           "branch": null,
           "revision": "7a46a5fc86cb917f69e3daf79fcb045283d8f008",
           "version": "8.1.2"
+        }
+      },
+      {
+        "package": "NVActivityIndicatorView",
+        "repositoryURL": "https://github.com/ninjaprox/NVActivityIndicatorView.git",
+        "state": {
+          "branch": null,
+          "revision": "bcb52371f2259254bac6690f92bb474a61768c47",
+          "version": "5.1.1"
         }
       },
       {
