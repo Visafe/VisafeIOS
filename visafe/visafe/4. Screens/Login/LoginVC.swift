@@ -6,37 +6,16 @@
 //
 
 import UIKit
-import CocoaTextField
+import TweeTextField
 import SwifterSwift
 
 class LoginVC: BaseViewController {
 
-    @IBOutlet weak var emailTextfield: CocoaTextField!
-    @IBOutlet weak var passwordTextfield: CocoaTextField!
+    @IBOutlet weak var emailTextfield: TweeAttributedTextField!
+    @IBOutlet weak var passwordTextfield: TweeAttributedTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configInputView()
-    }
-    
-    func configInputView() {
-        emailTextfield.placeholder = "Email"
-        emailTextfield.font = UIFont.systemFont(ofSize: 17)
-        emailTextfield.inactiveHintColor = UIColor.lightGray
-        emailTextfield.activeHintColor = UIColor.mainColorOrange()
-        emailTextfield.focusedBackgroundColor = UIColor.white
-        emailTextfield.defaultBackgroundColor = UIColor.white
-        emailTextfield.borderColor = UIColor.white
-        emailTextfield.errorColor = UIColor.red
-        
-        passwordTextfield.placeholder = "Mật khẩu"
-        passwordTextfield.font = UIFont.systemFont(ofSize: 17)
-        passwordTextfield.inactiveHintColor = UIColor.lightGray
-        passwordTextfield.activeHintColor = UIColor.mainColorOrange()
-        passwordTextfield.focusedBackgroundColor = UIColor.white
-        passwordTextfield.defaultBackgroundColor = UIColor.white
-        passwordTextfield.borderColor = UIColor.white
-        passwordTextfield.errorColor = UIColor.red
     }
     
     @IBAction func regiterAction(_ sender: Any) {
@@ -45,6 +24,48 @@ class LoginVC: BaseViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        
+        if validate() {
+            showLoading()
+            let loginParam = LoginParam()
+            loginParam.email = emailTextfield.text
+            loginParam.password = passwordTextfield.text
+            AuthenWorker.login(param: loginParam) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                weakSelf.hideLoading()
+                
+            }
+        }
+    }
+    
+    @IBAction func endEditing(_ sender: TweeAttributedTextField) {
+        _ = validate()
+    }
+    
+    @IBAction func forgotPasswordAction(_ sender: Any) {
+        let vc = ForgotPasswordVC()
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
+    }
+    
+    func validate() -> Bool {
+        var success = true
+        let email = emailTextfield.text ?? ""
+        if email.isEmpty {
+            emailTextfield.showInfo("Email không được để trống")
+            success = false
+        } else if !email.isValidEmail {
+            emailTextfield.showInfo("Email không đúng định dạng")
+            success = false
+        } else {
+            emailTextfield.hideInfo()
+        }
+        let password = passwordTextfield.text ?? ""
+        if password.isEmpty {
+            passwordTextfield.showInfo("Mật khẩu không được để trống")
+            success = false
+        } else {
+            passwordTextfield.hideInfo()
+        }
+        return success
     }
 }

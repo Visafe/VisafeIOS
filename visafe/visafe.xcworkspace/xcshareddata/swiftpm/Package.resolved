@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "CocoaTextField",
-        "repositoryURL": "https://github.com/edgar-zigis/CocoaTextField.git",
-        "state": {
-          "branch": null,
-          "revision": "0fe193792ad59f6e980bdd4787629d9f224e9f0a",
-          "version": "1.1.1"
-        }
-      },
-      {
         "package": "IQKeyboardManagerSwift",
         "repositoryURL": "https://github.com/hackiftekhar/IQKeyboardManager.git",
         "state": {
@@ -71,6 +62,15 @@
           "branch": null,
           "revision": "bcb52371f2259254bac6690f92bb474a61768c47",
           "version": "5.1.1"
+        }
+      },
+      {
+        "package": "ObjectMapper",
+        "repositoryURL": "https://github.com/tristanhimmelman/ObjectMapper.git",
+        "state": {
+          "branch": null,
+          "revision": "0b96a734de3ea1c87374ae677064f86adb0716ec",
+          "version": "4.2.0"
         }
       },
       {
@@ -179,6 +179,15 @@
           "branch": null,
           "revision": "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
           "version": "5.0.1"
+        }
+      },
+      {
+        "package": "TweeTextField",
+        "repositoryURL": "https://github.com/oleghnidets/TweeTextField.git",
+        "state": {
+          "branch": null,
+          "revision": "b712e44c1fe4020ee20f9d494572a9762ea5a59c",
+          "version": "1.6.3"
         }
       },
       {

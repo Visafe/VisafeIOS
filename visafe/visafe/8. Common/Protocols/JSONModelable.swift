@@ -8,19 +8,3 @@
 
 import Foundation
 import SwiftyJSON
-
-protocol JSONModelable {
-    
-    init?(json: JSON)
-    
-}
-
-extension JSON {
-    
-    func imageURLFromJson() -> String {
-        let path = self["path"].stringValue
-        let name = self["name"].stringValue
-        return APIConstant.imageURL(path: path, name: name)
-    }
-    
-}

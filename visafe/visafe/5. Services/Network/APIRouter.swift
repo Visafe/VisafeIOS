@@ -8,10 +8,17 @@
 
 import Foundation
 import Moya
-
+import SwiftyJSON
+import ObjectMapper
 
 enum APIRouter {
-    case login(Void)
+    case login(param: LoginParam)
+    case register(param: RegisterParam)
+    case forgotPassword(email: String?)
+    case resetPassword(param: ResetPassParam)
+    case changePassword(param: ChangePassParam)
+    case changeProfile(param: UserModel)
+    case reactivation
 }
 
 enum APIError: Error {
@@ -31,30 +38,36 @@ extension APIError: LocalizedError {
 }
 
 enum APIConstant {
-    static let baseURL = "http://triptracker.nanoweb.vn"
-    static let baseAPIURL = APIConstant.baseURL + "/api/v1"
-    static let baseMediaURL = APIConstant.baseURL + "/static"
-    
-    static func imageURL(path: String, name: String) -> String {
-        return baseMediaURL + path + name
-    }
+    static let baseURL = "http://staging.visafe.vn"
 }
 
 extension APIRouter: TargetType {
     var baseURL: URL {
-        return URL(string: APIConstant.baseAPIURL)!
+        return URL(string: APIConstant.baseURL)!
     }
     
     var path: String {
         switch self {
         case .login:
-            return "/user/login"
+            return "/control/login"
+        case .register:
+            return "/control/register"
+        case .forgotPassword:
+            return "/control/forgot-password"
+        case .resetPassword:
+            return "/control/reset-password"
+        case .changePassword:
+            return "/control/change_password"
+        case .changeProfile:
+            return "/control/change_profile"
+        case .reactivation:
+            return "/re-activation"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .login:
+        case .forgotPassword:
             return .get
         default:
             break
@@ -65,16 +78,29 @@ extension APIRouter: TargetType {
     var parameters: [String: Any] {
         var pars = [String: Any]()
         switch self {
-        case .login:
+        case .login(param: let param):
+            pars = param.toJSON()
+        case .register(param: let param):
+            pars = param.toJSON()
+        case .forgotPassword(email: let email):
+            pars["email"] = email
+        case .resetPassword(param: let param):
+            pars = param.toJSON()
+        case .changePassword(param: let param):
+            pars = param.toJSON()
+        case .changeProfile(param: let param):
+            pars = param.toJSON()
+        case .reactivation:
             break
+            
         }
         return pars
     }
     
     var task: Task {
         switch self {
-        case .login:
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation:
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             break
         }
@@ -86,7 +112,7 @@ extension APIRouter: TargetType {
     }
     
     var headers: [String : String]? {
-        let hea: [String: String] = ["token": "all08102018_triptracker2018"]
+        let hea: [String: String] = [:]
         return hea
     }
     
