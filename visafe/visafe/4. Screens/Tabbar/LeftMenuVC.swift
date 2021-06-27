@@ -16,6 +16,7 @@ class LeftMenuVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+        prepareData()
     }
     
     func configView() {
@@ -24,25 +25,36 @@ class LeftMenuVC: BaseViewController {
         
         
     }
+    
+    func prepareData() {
+        workspaces = CacheManager.shared.getWorkspacesResult() ?? []
+        tableView.reloadData()
+    }
 }
 
 extension LeftMenuVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return workspaces.count
-        return 5
+        return workspaces.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WorkspaceCell.className) as? WorkspaceCell else {
             return UITableViewCell()
         }
-//        cell.binding(workspace: workspaces[indexPath.row])
+        cell.binding(workspace: workspaces[indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = WorkspaceFooterView.loadFromNib()
+        footerView?.actionAddWorkspace = { [weak self] in
+            guard let weakSelf = self else { return }
+            let vc = PostWorkspaceVC()
+            let nav = BaseNavigationController(rootViewController: vc)
+            weakSelf.sideMenuController?.hideMenu()
+            weakSelf.present(nav, animated: true, completion: nil)
+        }
         return footerView
     }
     

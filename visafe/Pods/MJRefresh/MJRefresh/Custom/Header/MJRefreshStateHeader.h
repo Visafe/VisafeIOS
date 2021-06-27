@@ -23,13 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 显示刷新状态的label */
 @property (weak, nonatomic, readonly) UILabel *stateLabel;
 /** 设置state状态下的文字 */
-- (instancetype)setTitle:(NSString *)title forState:(MJRefreshState)state;
-@end
-
-@interface MJRefreshStateHeader (ChainingGrammar)
-
-- (instancetype)modifyLastUpdatedTimeText:(NSString * (^)(NSDate * _Nullable lastUpdatedTime))handler;
-
+- (void)setTitle:(NSString *)title forState:(MJRefreshState)state;
 @end
 
 NS_ASSUME_NONNULL_END

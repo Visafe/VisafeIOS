@@ -10,15 +10,13 @@ import ObjectMapper
 
 class BaseResult: Mappable {
     
-    var isSuccess: Bool?
-    var errorMessage: String?
+    var msg: String?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
-        isSuccess <- map["IsSuccess"]
-        errorMessage <- map["ErrorMessage"]
+        msg <- map["msg"]
     }
 }

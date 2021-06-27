@@ -12,6 +12,7 @@ import SwiftyJSON
 import ObjectMapper
 
 enum APIRouter {
+    //authen
     case login(param: LoginParam)
     case register(param: RegisterParam)
     case forgotPassword(email: String?)
@@ -19,6 +20,12 @@ enum APIRouter {
     case changePassword(param: ChangePassParam)
     case changeProfile(param: UserModel)
     case reactivation
+    
+    //workspace
+    case getListWorkspace
+    case addWorkspace(param: WorkspaceModel)
+    case updateWorkspace(param: WorkspaceModel)
+    case deleteWorkspace(wspId: String?)
 }
 
 enum APIError: Error {
@@ -38,7 +45,7 @@ extension APIError: LocalizedError {
 }
 
 enum APIConstant {
-    static let baseURL = "http://staging.visafe.vn"
+    static let baseURL = "https://staging.visafe.vn"
 }
 
 extension APIRouter: TargetType {
@@ -62,12 +69,20 @@ extension APIRouter: TargetType {
             return "/control/change_profile"
         case .reactivation:
             return "/re-activation"
+        case .getListWorkspace:
+            return "/control/get-workspace"
+        case .addWorkspace:
+            return "/control/create-workspace"
+        case .updateWorkspace:
+            return "/control/update-workspace"
+        case .deleteWorkspace:
+            return "/control/delete-workspace"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .forgotPassword:
+        case .forgotPassword, .getListWorkspace:
             return .get
         default:
             break
@@ -90,16 +105,21 @@ extension APIRouter: TargetType {
             pars = param.toJSON()
         case .changeProfile(param: let param):
             pars = param.toJSON()
-        case .reactivation:
+        case .addWorkspace(param: let param):
+            pars = param.toJSON()
+        case .updateWorkspace(param: let param):
+            pars = param.toJSON()
+        case .deleteWorkspace(wspId: let id):
+            pars["workspaceId"] = id
+        case .reactivation, .getListWorkspace:
             break
-            
         }
         return pars
     }
     
     var task: Task {
         switch self {
-        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation:
+        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace:
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             break
@@ -112,23 +132,13 @@ extension APIRouter: TargetType {
     }
     
     var headers: [String : String]? {
-        let hea: [String: String] = [:]
-        return hea
-    }
-    
-    private func multipartsFromParameters() -> [MultipartFormData] {
-        var forms: [MultipartFormData] = []
-        for (key, value) in parameters {
-            if value is [Dictionary<String, Any>] {
-                let encodedData = NSKeyedArchiver.archivedData(withRootObject: value)
-                forms.append(MultipartFormData(provider: .data(encodedData), name: key))
-            } else {
-                let str = "\(value)"
-                if let data = str.data(using: .utf8) {
-                    forms.append(MultipartFormData(provider: .data(data), name: key))
-                }
-            }
+        var hea: [String: String] = [:]
+        switch self {
+        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace:
+            hea["Authorization"] = (CacheManager.shared.getLoginResult()?.token ?? "")
+        default:
+            break
         }
-        return forms
+        return hea
     }
 }

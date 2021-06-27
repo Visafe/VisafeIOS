@@ -8,6 +8,7 @@
 import UIKit
 import TweeTextField
 import SwifterSwift
+import SwiftMessages
 
 class LoginVC: BaseViewController {
 
@@ -19,8 +20,8 @@ class LoginVC: BaseViewController {
     }
     
     @IBAction func regiterAction(_ sender: Any) {
-        let registerVC = RegisterVC()
-        present(registerVC, animated: true, completion: nil)
+        let vc = RegisterVC()
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func loginAction(_ sender: Any) {
@@ -32,13 +33,39 @@ class LoginVC: BaseViewController {
             AuthenWorker.login(param: loginParam) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
-                
+                weakSelf.handleLogin(result: result, error: error)
             }
         }
     }
     
+    func handleLogin(result: LoginResult?, error: Error?) {
+        if let res = result {
+            if res.token != nil { // login thanh cong
+                CacheManager.shared.setLoginResult(value: res)
+                actionAfterLogin()
+            } else {
+                let type = res.status_code ?? .error
+                showError(title: "Đăng nhập không thành công", content: type.getDescription())
+            }
+        } else {
+            let type = LoginStatusEnum.error
+            showError(title: "Đăng nhập không thành công", content: type.getDescription())
+        }
+    }
+    
     @IBAction func endEditing(_ sender: TweeAttributedTextField) {
-        _ = validate()
+//        _ = validate()
+    }
+    
+    func actionAfterLogin() {
+        showLoading()
+        WorkspaceWorker.getList { [weak self] (list, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            CacheManager.shared.setIsLogined(value: true)
+            CacheManager.shared.setWorkspacesResult(value: list)
+            AppDelegate.appDelegate()?.setRootVCToTabVC()
+        }
     }
     
     @IBAction func forgotPasswordAction(_ sender: Any) {

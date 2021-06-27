@@ -14,8 +14,9 @@ PODS:
     - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.5.0)
   - MBProgressHUD (1.2.0)
-  - MJRefresh (3.6.1)
+  - MJRefresh (3.5.0)
   - SideMenuSwift (2.0.7)
+  - SVPinView (1.0.11)
   - SwiftyUserDefaults (5.3.0)
 
 DEPENDENCIES:
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJRefresh
   - SideMenuSwift
+  - SVPinView
   - SwiftyUserDefaults
 
 SPEC REPOS:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - MBProgressHUD
     - MJRefresh
     - SideMenuSwift
+    - SVPinView
     - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
@@ -45,10 +48,11 @@ SPEC CHECKSUMS:
   GTMAppAuth: 5b53231ef6920f149ab84b2969cb0ab572da3077
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJRefresh: d2c1970d1cf6e77fcfcdfe76c943dfab8dbfa5c1
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SideMenuSwift: ffbbc88d23741932177ad1320df837cedfb3bc5e
+  SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
 
-PODFILE CHECKSUM: ef252ac9d7840b7940b5d31a89d5fcbe99f4c83b
+PODFILE CHECKSUM: 5985498cf981feda3faa55a79d1b4c26b7849f8c
 
 COCOAPODS: 1.10.1

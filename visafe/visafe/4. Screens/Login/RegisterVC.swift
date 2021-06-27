@@ -7,6 +7,7 @@
 
 import UIKit
 import TweeTextField
+import SwiftMessages
 
 class RegisterVC: BaseViewController {
 
@@ -19,7 +20,7 @@ class RegisterVC: BaseViewController {
     }
     
     @IBAction func editingEnd(_ sender: Any) {
-        _ = validateInfo()
+//        _ = validateInfo()
     }
     
     
@@ -72,10 +73,33 @@ class RegisterVC: BaseViewController {
         AuthenWorker.register(param: param) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
+            weakSelf.handleRegisterResult(result: result, error: error)
+        }
+    }
+    
+    func handleRegisterResult(result: ResgisterResult?, error: Error?) {
+        if error == nil && result == nil {
+            showMemssage(title: "Đăng ký thành công", content: "Vui lòng vào email của bạn và kích hoạt tài khoản") { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.dismiss(animated: true, completion: nil)
+            }
+        } else {
+            let errorCode = result?.status_code ?? .error
+            showError(title: "Đăng ký không thành công", content: errorCode.getDescription())
         }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func dismissAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func forgotPasswordAction(_ sender: Any) {
+        let vc = ForgotPasswordVC()
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
     }
 }

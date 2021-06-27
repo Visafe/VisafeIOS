@@ -56,7 +56,22 @@
 		C940AE9F268377FF0069B830 /* WorkspaceFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C940AE9E268377FF0069B830 /* WorkspaceFooterView.xib */; };
 		C940AEA2268378F20069B830 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C940AEA1268378F20069B830 /* UIViewExtension.swift */; };
 		C940AEA626837C8E0069B830 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C940AEA526837C8E0069B830 /* SwifterSwift */; };
+		C95A58462688233F0077112F /* ResetPasswordResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A58452688233F0077112F /* ResetPasswordResult.swift */; };
+		C95A5849268829B60077112F /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5848268829B60077112F /* CacheManager.swift */; };
+		C95A584C2688339D0077112F /* WorkspaceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A584B2688339D0077112F /* WorkspaceWorker.swift */; };
+		C95A584F26885EBD0077112F /* WorkspageParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A584E26885EBD0077112F /* WorkspageParam.swift */; };
+		C95A5854268861940077112F /* PostWorkspaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5852268861940077112F /* PostWorkspaceVC.swift */; };
+		C95A5855268861940077112F /* PostWorkspaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95A5853268861940077112F /* PostWorkspaceVC.xib */; };
+		C95A5859268862F00077112F /* ChooseTypeWorkspaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5857268862F00077112F /* ChooseTypeWorkspaceVC.swift */; };
+		C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95A5858268862F00077112F /* ChooseTypeWorkspaceVC.xib */; };
+		C95A585E268863790077112F /* SetupSecurityWorkspaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A585C268863790077112F /* SetupSecurityWorkspaceVC.swift */; };
+		C95A585F268863790077112F /* SetupSecurityWorkspaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95A585D268863790077112F /* SetupSecurityWorkspaceVC.xib */; };
+		C95A5862268867310077112F /* PageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5861268867310077112F /* PageViewControllerExtension.swift */; };
+		C95A5868268870620077112F /* ChooseTypeWorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5866268870620077112F /* ChooseTypeWorkspaceCell.swift */; };
+		C95A5869268870620077112F /* ChooseTypeWorkspaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95A5867268870620077112F /* ChooseTypeWorkspaceCell.xib */; };
 		C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F333626838E4300859DF6 /* UIButtonExtension.swift */; };
+		C9A6FEAC268883390002085E /* SecurityWorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6FEAA268883390002085E /* SecurityWorkspaceCell.swift */; };
+		C9A6FEAD268883390002085E /* SecurityWorkspaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A6FEAB268883390002085E /* SecurityWorkspaceCell.xib */; };
 		C9B794512684D72400258A72 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B794502684D72400258A72 /* ColorExtension.swift */; };
 		C9B7945A2684EC9D00258A72 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = C9B794592684EC9D00258A72 /* NVActivityIndicatorView */; };
 		C9B7945C2684EC9D00258A72 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = C9B7945B2684EC9D00258A72 /* NVActivityIndicatorViewExtended */; };
@@ -77,6 +92,10 @@
 		C9B7949A26862C5F00258A72 /* SetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7949826862C5F00258A72 /* SetPasswordVC.swift */; };
 		C9B7949B26862C5F00258A72 /* SetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7949926862C5F00258A72 /* SetPasswordVC.xib */; };
 		C9B7949F26862DF000258A72 /* TweeTextField in Frameworks */ = {isa = PBXBuildFile; productRef = C9B7949E26862DF000258A72 /* TweeTextField */; };
+		C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E5C77D26872ADC00D159EF /* LoginResult.swift */; };
+		C9E5C78526872E8100D159EF /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = C9E5C78426872E8100D159EF /* SwiftMessages */; };
+		C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E5C78826873BC600D159EF /* BaseMessageView.swift */; };
+		C9E5C78D26873BCF00D159EF /* BaseMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E5C78C26873BCF00D159EF /* BaseMessageView.xib */; };
 		C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB54D26839E74009CBD93 /* GroupVC.xib */; };
 		C9EDB55726839E74009CBD93 /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EDB54E26839E74009CBD93 /* GroupVC.swift */; };
 		C9EDB55826839E74009CBD93 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB55026839E74009CBD93 /* GroupCell.xib */; };
@@ -85,6 +104,8 @@
 		C9EDB55B26839E74009CBD93 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EDB55326839E74009CBD93 /* GroupCell.swift */; };
 		C9EDB55C26839E74009CBD93 /* AddGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EDB55426839E74009CBD93 /* AddGroupVC.swift */; };
 		C9EDB55D26839E74009CBD93 /* AddGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB55526839E74009CBD93 /* AddGroupVC.xib */; };
+		C9F938502688146200D30F28 /* ForgotPasswordResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9384F2688146200D30F28 /* ForgotPasswordResult.swift */; };
+		C9F9385326881A4A00D30F28 /* PasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9385226881A4A00D30F28 /* PasswordModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,7 +152,22 @@
 		C940AE9B268377F00069B830 /* WorkspaceFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceFooterView.swift; sourceTree = "<group>"; };
 		C940AE9E268377FF0069B830 /* WorkspaceFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkspaceFooterView.xib; sourceTree = "<group>"; };
 		C940AEA1268378F20069B830 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		C95A58452688233F0077112F /* ResetPasswordResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordResult.swift; sourceTree = "<group>"; };
+		C95A5848268829B60077112F /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		C95A584B2688339D0077112F /* WorkspaceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceWorker.swift; sourceTree = "<group>"; };
+		C95A584E26885EBD0077112F /* WorkspageParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspageParam.swift; sourceTree = "<group>"; };
+		C95A5852268861940077112F /* PostWorkspaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorkspaceVC.swift; sourceTree = "<group>"; };
+		C95A5853268861940077112F /* PostWorkspaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostWorkspaceVC.xib; sourceTree = "<group>"; };
+		C95A5857268862F00077112F /* ChooseTypeWorkspaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeWorkspaceVC.swift; sourceTree = "<group>"; };
+		C95A5858268862F00077112F /* ChooseTypeWorkspaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeWorkspaceVC.xib; sourceTree = "<group>"; };
+		C95A585C268863790077112F /* SetupSecurityWorkspaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSecurityWorkspaceVC.swift; sourceTree = "<group>"; };
+		C95A585D268863790077112F /* SetupSecurityWorkspaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetupSecurityWorkspaceVC.xib; sourceTree = "<group>"; };
+		C95A5861268867310077112F /* PageViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewControllerExtension.swift; sourceTree = "<group>"; };
+		C95A5866268870620077112F /* ChooseTypeWorkspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeWorkspaceCell.swift; sourceTree = "<group>"; };
+		C95A5867268870620077112F /* ChooseTypeWorkspaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeWorkspaceCell.xib; sourceTree = "<group>"; };
 		C99F333626838E4300859DF6 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		C9A6FEAA268883390002085E /* SecurityWorkspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityWorkspaceCell.swift; sourceTree = "<group>"; };
+		C9A6FEAB268883390002085E /* SecurityWorkspaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityWorkspaceCell.xib; sourceTree = "<group>"; };
 		C9B794502684D72400258A72 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		C9B79463268613A600258A72 /* RegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
 		C9B79464268613A600258A72 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -148,6 +184,9 @@
 		C9B7949426862C4800258A72 /* EnterOTPVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterOTPVC.xib; sourceTree = "<group>"; };
 		C9B7949826862C5F00258A72 /* SetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordVC.swift; sourceTree = "<group>"; };
 		C9B7949926862C5F00258A72 /* SetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetPasswordVC.xib; sourceTree = "<group>"; };
+		C9E5C77D26872ADC00D159EF /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
+		C9E5C78826873BC600D159EF /* BaseMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMessageView.swift; sourceTree = "<group>"; };
+		C9E5C78C26873BCF00D159EF /* BaseMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseMessageView.xib; sourceTree = "<group>"; };
 		C9EDB54D26839E74009CBD93 /* GroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupVC.xib; sourceTree = "<group>"; };
 		C9EDB54E26839E74009CBD93 /* GroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		C9EDB55026839E74009CBD93 /* GroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
@@ -156,6 +195,8 @@
 		C9EDB55326839E74009CBD93 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		C9EDB55426839E74009CBD93 /* AddGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupVC.swift; sourceTree = "<group>"; };
 		C9EDB55526839E74009CBD93 /* AddGroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddGroupVC.xib; sourceTree = "<group>"; };
+		C9F9384F2688146200D30F28 /* ForgotPasswordResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResult.swift; sourceTree = "<group>"; };
+		C9F9385226881A4A00D30F28 /* PasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +206,7 @@
 			files = (
 				0EDEEFCD2681F43D00572C4E /* Realm in Frameworks */,
 				0EDEEFC32681F33600572C4E /* SwiftyJSON in Frameworks */,
+				C9E5C78526872E8100D159EF /* SwiftMessages in Frameworks */,
 				C940AEA626837C8E0069B830 /* SwifterSwift in Frameworks */,
 				0EDEEFCF2681F43D00572C4E /* RealmSwift in Frameworks */,
 				0E229D652682CC0300559B67 /* Kingfisher in Frameworks */,
@@ -265,6 +307,7 @@
 		C919B965268220B3009982C3 /* 2. Base */ = {
 			isa = PBXGroup;
 			children = (
+				C9E5C78726873BA800D159EF /* MessageView */,
 				C919B96826822144009982C3 /* BaseViewController.swift */,
 				C919B96C26822157009982C3 /* BaseView.swift */,
 				C919B96F2682216B009982C3 /* BaseTableCell.swift */,
@@ -281,6 +324,7 @@
 				C9B79468268614EE00258A72 /* Param */,
 				C940AE91268375C10069B830 /* WorkspaceModel.swift */,
 				C9B7948B268626AA00258A72 /* UserModel.swift */,
+				C9F9385226881A4A00D30F28 /* PasswordModel.swift */,
 			);
 			path = "3. Models";
 			sourceTree = "<group>";
@@ -315,6 +359,7 @@
 		C919B97626822222009982C3 /* 4. Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C95A5851268861670077112F /* Workspace */,
 				C90EA73C2684C278002502F5 /* Login */,
 				C93ED1502682324400B03E8A /* Setting */,
 				C93ED14F2682323500B03E8A /* Home */,
@@ -327,6 +372,7 @@
 		C919B978268222CF009982C3 /* 8. Common */ = {
 			isa = PBXGroup;
 			children = (
+				C95A5848268829B60077112F /* CacheManager.swift */,
 				C93ED1952682456500B03E8A /* Constant.swift */,
 				C919B979268222F6009982C3 /* Protocols */,
 			);
@@ -403,8 +449,34 @@
 				C940AE98268377540069B830 /* NSObjectExtension.swift */,
 				C940AEA1268378F20069B830 /* UIViewExtension.swift */,
 				C99F333626838E4300859DF6 /* UIButtonExtension.swift */,
+				C95A5861268867310077112F /* PageViewControllerExtension.swift */,
 			);
 			path = "9. Extension";
+			sourceTree = "<group>";
+		};
+		C95A5851268861670077112F /* Workspace */ = {
+			isa = PBXGroup;
+			children = (
+				C95A5864268870240077112F /* Cell */,
+				C95A5852268861940077112F /* PostWorkspaceVC.swift */,
+				C95A5853268861940077112F /* PostWorkspaceVC.xib */,
+				C95A5857268862F00077112F /* ChooseTypeWorkspaceVC.swift */,
+				C95A5858268862F00077112F /* ChooseTypeWorkspaceVC.xib */,
+				C95A585C268863790077112F /* SetupSecurityWorkspaceVC.swift */,
+				C95A585D268863790077112F /* SetupSecurityWorkspaceVC.xib */,
+			);
+			path = Workspace;
+			sourceTree = "<group>";
+		};
+		C95A5864268870240077112F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C95A5866268870620077112F /* ChooseTypeWorkspaceCell.swift */,
+				C95A5867268870620077112F /* ChooseTypeWorkspaceCell.xib */,
+				C9A6FEAA268883390002085E /* SecurityWorkspaceCell.swift */,
+				C9A6FEAB268883390002085E /* SecurityWorkspaceCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C9B79468268614EE00258A72 /* Param */ = {
@@ -414,6 +486,7 @@
 				C9B79482268622BE00258A72 /* LoginParam.swift */,
 				C9B794852686250B00258A72 /* ResetPassParam.swift */,
 				C9B794882686262300258A72 /* ChangePassParam.swift */,
+				C95A584E26885EBD0077112F /* WorkspageParam.swift */,
 			);
 			path = Param;
 			sourceTree = "<group>";
@@ -422,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B794792686199200258A72 /* AuthenWorker.swift */,
+				C95A584B2688339D0077112F /* WorkspaceWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -430,8 +504,20 @@
 			isa = PBXGroup;
 			children = (
 				C9B7947E26861B4900258A72 /* BaseResult.swift */,
+				C9E5C77D26872ADC00D159EF /* LoginResult.swift */,
+				C9F9384F2688146200D30F28 /* ForgotPasswordResult.swift */,
+				C95A58452688233F0077112F /* ResetPasswordResult.swift */,
 			);
 			path = Result;
+			sourceTree = "<group>";
+		};
+		C9E5C78726873BA800D159EF /* MessageView */ = {
+			isa = PBXGroup;
+			children = (
+				C9E5C78826873BC600D159EF /* BaseMessageView.swift */,
+				C9E5C78C26873BCF00D159EF /* BaseMessageView.xib */,
+			);
+			path = MessageView;
 			sourceTree = "<group>";
 		};
 		C9EDB54C26839E74009CBD93 /* Group */ = {
@@ -500,6 +586,7 @@
 				C9B7945B2684EC9D00258A72 /* NVActivityIndicatorViewExtended */,
 				C9B7946D268615B700258A72 /* ObjectMapper */,
 				C9B7949E26862DF000258A72 /* TweeTextField */,
+				C9E5C78426872E8100D159EF /* SwiftMessages */,
 			);
 			productName = visafe;
 			productReference = 0EDEEFA12681F29E00572C4E /* visafe.app */;
@@ -540,6 +627,7 @@
 				C9B794582684EC9D00258A72 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				C9B7946C268615B700258A72 /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 				C9B7949D26862DF000258A72 /* XCRemoteSwiftPackageReference "TweeTextField" */,
+				C9E5C78326872E8100D159EF /* XCRemoteSwiftPackageReference "SwiftMessages" */,
 			);
 			productRefGroup = 0EDEEFA22681F29E00572C4E /* Products */;
 			projectDirPath = "";
@@ -557,23 +645,29 @@
 			files = (
 				C93ED193268244A900B03E8A /* ConfigVC.xib in Resources */,
 				0EDEEFB12681F2A000572C4E /* LaunchScreen.storyboard in Resources */,
+				C95A5855268861940077112F /* PostWorkspaceVC.xib in Resources */,
 				C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */,
 				C9EDB55D26839E74009CBD93 /* AddGroupVC.xib in Resources */,
+				C9A6FEAD268883390002085E /* SecurityWorkspaceCell.xib in Resources */,
 				C93ED15A2682328600B03E8A /* HomeVC.xib in Resources */,
 				C9B79465268613A700258A72 /* RegisterVC.xib in Resources */,
 				C9B7949B26862C5F00258A72 /* SetPasswordVC.xib in Resources */,
 				C9EDB55826839E74009CBD93 /* GroupCell.xib in Resources */,
 				C9EDB55A26839E74009CBD93 /* GroupFooterView.xib in Resources */,
 				C940AE9F268377FF0069B830 /* WorkspaceFooterView.xib in Resources */,
+				C95A5869268870620077112F /* ChooseTypeWorkspaceCell.xib in Resources */,
 				C93ED164268232BE00B03E8A /* AdministrationVC.xib in Resources */,
 				C9B7949126862C2E00258A72 /* ForgotPasswordVC.xib in Resources */,
+				C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */,
 				C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */,
 				C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */,
 				0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */,
+				C9E5C78D26873BCF00D159EF /* BaseMessageView.xib in Resources */,
 				C93ED15F268232A100B03E8A /* SettingVC.xib in Resources */,
 				C9B7949626862C4800258A72 /* EnterOTPVC.xib in Resources */,
 				0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */,
 				C90EA7402684C298002502F5 /* LoginVC.xib in Resources */,
+				C95A585F268863790077112F /* SetupSecurityWorkspaceVC.xib in Resources */,
 				C940AE8F268375A30069B830 /* WorkspaceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,7 +741,9 @@
 				C9B7947A2686199200258A72 /* AuthenWorker.swift in Sources */,
 				C9B7949A26862C5F00258A72 /* SetPasswordVC.swift in Sources */,
 				C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */,
+				C95A5859268862F00077112F /* ChooseTypeWorkspaceVC.swift in Sources */,
 				C919B94726821DA9009982C3 /* APIManager.swift in Sources */,
+				C9F938502688146200D30F28 /* ForgotPasswordResult.swift in Sources */,
 				C93ED15E268232A100B03E8A /* SettingVC.swift in Sources */,
 				C93ED167268232ED00B03E8A /* BaseTabbarController.swift in Sources */,
 				C9B7947F26861B4900258A72 /* BaseResult.swift in Sources */,
@@ -658,35 +754,47 @@
 				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
 				C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */,
 				C9B7949026862C2E00258A72 /* ForgotPasswordVC.swift in Sources */,
+				C95A584C2688339D0077112F /* WorkspaceWorker.swift in Sources */,
 				C93ED1962682456500B03E8A /* Constant.swift in Sources */,
+				C95A585E268863790077112F /* SetupSecurityWorkspaceVC.swift in Sources */,
 				C9B794512684D72400258A72 /* ColorExtension.swift in Sources */,
+				C9F9385326881A4A00D30F28 /* PasswordModel.swift in Sources */,
 				C940AE96268376A70069B830 /* TableViewExtension.swift in Sources */,
 				C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */,
 				C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */,
 				C9B79466268613A700258A72 /* RegisterVC.swift in Sources */,
 				C9B7948C268626AA00258A72 /* UserModel.swift in Sources */,
 				0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */,
+				C9A6FEAC268883390002085E /* SecurityWorkspaceCell.swift in Sources */,
 				C9EDB55B26839E74009CBD93 /* GroupCell.swift in Sources */,
 				C9B794862686250B00258A72 /* ResetPassParam.swift in Sources */,
+				C95A5862268867310077112F /* PageViewControllerExtension.swift in Sources */,
 				0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */,
 				C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */,
 				C940AE92268375C10069B830 /* WorkspaceModel.swift in Sources */,
 				C940AE9C268377F00069B830 /* WorkspaceFooterView.swift in Sources */,
+				C95A5868268870620077112F /* ChooseTypeWorkspaceCell.swift in Sources */,
+				C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */,
+				C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */,
 				C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */,
 				C9EDB55C26839E74009CBD93 /* AddGroupVC.swift in Sources */,
 				C9B7949526862C4800258A72 /* EnterOTPVC.swift in Sources */,
 				C9EDB55926839E74009CBD93 /* GroupFooterView.swift in Sources */,
 				C919B94926821DA9009982C3 /* VisafeRequestAdapter.swift in Sources */,
+				C95A5854268861940077112F /* PostWorkspaceVC.swift in Sources */,
 				C919B96926822144009982C3 /* BaseViewController.swift in Sources */,
 				C9B794892686262300258A72 /* ChangePassParam.swift in Sources */,
 				C9EDB55726839E74009CBD93 /* GroupVC.swift in Sources */,
 				C9B79483268622BE00258A72 /* LoginParam.swift in Sources */,
+				C95A58462688233F0077112F /* ResetPasswordResult.swift in Sources */,
+				C95A584F26885EBD0077112F /* WorkspageParam.swift in Sources */,
 				C93ED163268232BE00B03E8A /* AdministrationVC.swift in Sources */,
 				C940AEA2268378F20069B830 /* UIViewExtension.swift in Sources */,
 				C9B7946A2686150100258A72 /* RegisterParam.swift in Sources */,
 				C93ED1592682328600B03E8A /* HomeVC.swift in Sources */,
 				C919B96D26822157009982C3 /* BaseView.swift in Sources */,
 				C93ED16A2682332A00B03E8A /* TabbarVC.swift in Sources */,
+				C95A5849268829B60077112F /* CacheManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -980,6 +1088,14 @@
 				minimumVersion = 1.6.3;
 			};
 		};
+		C9E5C78326872E8100D159EF /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1052,6 +1168,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9B7949D26862DF000258A72 /* XCRemoteSwiftPackageReference "TweeTextField" */;
 			productName = TweeTextField;
+		};
+		C9E5C78426872E8100D159EF /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9E5C78326872E8100D159EF /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -46,9 +46,9 @@
 }
 
 #pragma mark - 公共方法
-- (instancetype)setImages:(NSArray *)images duration:(NSTimeInterval)duration forState:(MJRefreshState)state
+- (void)setImages:(NSArray *)images duration:(NSTimeInterval)duration forState:(MJRefreshState)state
 {
-    if (images == nil) return self;
+    if (images == nil) return;
     
     self.stateImages[@(state)] = images;
     self.stateDurations[@(state)] = @(duration);
@@ -58,12 +58,11 @@
     if (image.size.height > self.mj_h) {
         self.mj_h = image.size.height;
     }
-    return self;
 }
 
-- (instancetype)setImages:(NSArray *)images forState:(MJRefreshState)state
+- (void)setImages:(NSArray *)images forState:(MJRefreshState)state
 {
-    return [self setImages:images duration:images.count * 0.1 forState:state];
+    [self setImages:images duration:images.count * 0.1 forState:state];
 }
 
 #pragma mark - 实现父类的方法

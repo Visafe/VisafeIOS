@@ -157,7 +157,7 @@
             if (self.scrollView.pagingEnabled) {
                 CGPoint offset = self.scrollView.contentOffset;
                 offset.y -= self.scrollView.mj_insetB;
-                [UIView animateWithDuration:self.slowAnimationDuration animations:^{
+                [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
                     self.scrollView.contentOffset = offset;
                     
                     if (self.endRefreshingAnimationBeginAction) {

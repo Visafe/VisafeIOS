@@ -12,5 +12,6 @@ target 'visafe' do
   pod 'GoogleSignIn'
   pod 'SwiftyUserDefaults'
   pod 'SideMenuSwift'
+  pod 'SVPinView'
 
 end

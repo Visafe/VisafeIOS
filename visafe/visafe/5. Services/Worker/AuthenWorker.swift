@@ -12,56 +12,56 @@ import SwiftyJSON
 
 class AuthenWorker {
     
-    static func register(param: RegisterParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+    static func register(param: RegisterParam, completion: @escaping (_ result: ResgisterResult?, _ error: Error?) -> Void) {
         let router = APIRouter.register(param: param)
         APIManager.shared.request(target: router) { (data, error) in
-            var loginResult: BaseResult?
+            var loginResult: ResgisterResult?
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                    loginResult = Mapper<ResgisterResult>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)
         }
     }
     
-    static func login(param: LoginParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+    static func login(param: LoginParam, completion: @escaping (_ result: LoginResult?, _ error: Error?) -> Void) {
         let router = APIRouter.login(param: param)
         APIManager.shared.request(target: router) { (data, error) in
-            var loginResult: BaseResult?
+            var loginResult: LoginResult?
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                    loginResult = Mapper<LoginResult>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)
         }
     }
     
-    static func forgotPassword(email: String?, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+    static func forgotPassword(email: String?, completion: @escaping (_ result: ForgotPasswordResult?, _ error: Error?) -> Void) {
         let router = APIRouter.forgotPassword(email: email)
         APIManager.shared.request(target: router) { (data, error) in
-            var loginResult: BaseResult?
+            var loginResult: ForgotPasswordResult?
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                    loginResult = Mapper<ForgotPasswordResult>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)
         }
     }
     
-    static func resetPassword(param: ResetPassParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+    static func resetPassword(param: ResetPassParam, completion: @escaping (_ result: ResetPasswordResult?, _ error: Error?) -> Void) {
         let router = APIRouter.resetPassword(param: param)
         APIManager.shared.request(target: router) { (data, error) in
-            var loginResult: BaseResult?
+            var loginResult: ResetPasswordResult?
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                    loginResult = Mapper<ResetPasswordResult>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)

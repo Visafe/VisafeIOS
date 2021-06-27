@@ -57,18 +57,18 @@
     // 根据状态做事情
     if (state == MJRefreshStateIdle) {
         if (oldState == MJRefreshStateRefreshing) {
-            [UIView animateWithDuration:self.fastAnimationDuration animations:^{
+            [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
                 self.arrowView.transform = CGAffineTransformMakeRotation(M_PI);
             } completion:^(BOOL finished) {
                 self.arrowView.transform = CGAffineTransformIdentity;
             }];
         } else {
-            [UIView animateWithDuration:self.fastAnimationDuration animations:^{
+            [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
                 self.arrowView.transform = CGAffineTransformIdentity;
             }];
         }
     } else if (state == MJRefreshStatePulling) {
-        [UIView animateWithDuration:self.fastAnimationDuration animations:^{
+        [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
             self.arrowView.transform = CGAffineTransformMakeRotation(M_PI);
         }];
     }

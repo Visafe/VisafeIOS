@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetupSecurityWorkspaceVC" customModule="visafe" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="tsB-Cy-c48" id="a3P-c5-mbx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thiết lập an toàn, an ninh mạng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rb-rv-2sC">
+                    <rect key="frame" x="78.5" y="15" width="257" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tsB-Cy-c48">
+                    <rect key="frame" x="0.0" y="51.5" width="414" height="638.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="2hl-oc-pl2"/>
+                        <outlet property="delegate" destination="-1" id="W9y-Ka-yyY"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzY-RA-gpC">
+                    <rect key="frame" x="30" y="710" width="354" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="kGG-pf-u8R"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <state key="normal" title="Hoàn tất">
+                        <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="yQH-i4-GaX"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FzY-RA-gpC" secondAttribute="trailing" constant="30" id="82f-du-QX9"/>
+                <constraint firstItem="FzY-RA-gpC" firstAttribute="top" secondItem="tsB-Cy-c48" secondAttribute="bottom" constant="20" id="GG6-Sh-E7N"/>
+                <constraint firstItem="FzY-RA-gpC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Kxd-ev-e0N"/>
+                <constraint firstItem="tsB-Cy-c48" firstAttribute="top" secondItem="7rb-rv-2sC" secondAttribute="bottom" constant="15" id="Ueb-c4-szO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FzY-RA-gpC" secondAttribute="bottom" constant="20" id="VPh-SK-LyE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tsB-Cy-c48" secondAttribute="trailing" id="dBc-ex-ZeK"/>
+                <constraint firstItem="7rb-rv-2sC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="gU0-8i-Z0q"/>
+                <constraint firstItem="7rb-rv-2sC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qXb-4s-Rsw"/>
+                <constraint firstItem="tsB-Cy-c48" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vT2-iQ-L3J"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="91" y="102"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

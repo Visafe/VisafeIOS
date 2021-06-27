@@ -7,6 +7,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import SwiftMessages
 
 class BaseViewController: UIViewController {
 
@@ -39,14 +40,44 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func hideLoading() {
+    func hideLoading(completion: (() -> Void)? = nil) {
         indicatorView.stopAnimating()
         UIView.animate(withDuration: 0.2) { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.viewLoading.backgroundColor = UIColor.clear
         } completion: { [weak self] (success) in
             guard let weakSelf = self else { return }
-            weakSelf.indicatorView.removeFromSuperview()
+            weakSelf.viewLoading.removeFromSuperview()
+            completion?()
         }
+    }
+    
+    func showMemssage(title: String, content: String?, completion: (() -> Void)? = nil) {
+        guard let info = BaseMessageView.loadFromNib() else { return }
+        info.binding(title: title, content: content)
+        var infoConfig = SwiftMessages.defaultConfig
+        infoConfig.presentationStyle = .bottom
+        infoConfig.duration = .forever
+        infoConfig.dimMode = .blur(style: .dark, alpha: 0.2, interactive: true)
+        info.buttonTapHandler = { sender in
+            completion?()
+            SwiftMessages.hideAll()
+        }
+        SwiftMessages.show(config: infoConfig, view: info)
+    }
+    
+    func showError(title: String, content: String?, completion: (() -> Void)? = nil) {
+        guard let info = BaseMessageView.loadFromNib() else { return }
+        info.binding(title: title, content: content)
+        var infoConfig = SwiftMessages.defaultConfig
+        info.imageType.image = UIImage(named: "error_icon")
+        infoConfig.presentationStyle = .bottom
+        infoConfig.duration = .forever
+        infoConfig.dimMode = .blur(style: .dark, alpha: 0.2, interactive: true)
+        info.buttonTapHandler = { sender in
+            completion?()
+            SwiftMessages.hideAll()
+        }
+        SwiftMessages.show(config: infoConfig, view: info)
     }
 }

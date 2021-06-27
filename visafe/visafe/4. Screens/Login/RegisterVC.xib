@@ -27,10 +27,10 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4P-FK-tZP">
                             <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-eO-FFK" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-eO-FFK" customClass="TweeAttributedTextField" customModule="TweeTextField">
                                     <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
                                             <real key="value" value="0.20000000000000001"/>
@@ -88,10 +88,10 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-fy-t0g">
                             <rect key="frame" x="0.0" y="84" width="354" height="44"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="vZN-PS-gwZ" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vZN-PS-gwZ" customClass="TweeAttributedTextField" customModule="TweeTextField">
                                     <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -149,10 +149,10 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNh-HR-2a4">
                             <rect key="frame" x="0.0" y="168" width="354" height="44"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="2qL-Cr-3xn" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2qL-Cr-3xn" customClass="TweeAttributedTextField" customModule="TweeTextField">
                                     <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -213,6 +213,9 @@
                                     <state key="normal" title="Quên mật khẩu?">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="forgotPasswordAction:" destination="-1" eventType="touchUpInside" id="M1y-PA-y07"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -238,7 +241,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="registerAction:" destination="-1" eventType="touchUpInside" id="0IX-8w-v9S"/>
+                                        <action selector="registerAction:" destination="-1" eventType="touchUpInside" id="wwn-Vi-1fR"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6q-NV-0AT">
@@ -365,12 +368,15 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7M-Dt-l0d">
-                    <rect key="frame" x="30" y="44" width="44" height="44"/>
+                    <rect key="frame" x="20" y="54" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="FU8-yc-Xfh"/>
                         <constraint firstAttribute="width" constant="44" id="RGo-Hq-pYh"/>
                     </constraints>
                     <state key="normal" image="back_icon"/>
+                    <connections>
+                        <action selector="dismissAction:" destination="-1" eventType="touchUpInside" id="XL9-bE-TJt"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -378,11 +384,11 @@
             <constraints>
                 <constraint firstItem="fCm-zd-B8X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3wW-0X-p7C"/>
                 <constraint firstItem="aaX-SO-MHs" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="A56-jc-BXN"/>
-                <constraint firstItem="q7M-Dt-l0d" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="G7Q-m8-Sxc"/>
+                <constraint firstItem="q7M-Dt-l0d" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="G7Q-m8-Sxc"/>
                 <constraint firstItem="aaX-SO-MHs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Lq1-10-jOu"/>
                 <constraint firstItem="aaX-SO-MHs" firstAttribute="top" secondItem="fCm-zd-B8X" secondAttribute="bottom" constant="50" id="RB7-HP-NKf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aaX-SO-MHs" secondAttribute="trailing" constant="30" id="eSB-UH-yaU"/>
-                <constraint firstItem="q7M-Dt-l0d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="iYp-fy-8Fx"/>
+                <constraint firstItem="q7M-Dt-l0d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="iYp-fy-8Fx"/>
             </constraints>
             <point key="canvasLocation" x="138" y="102"/>
         </view>
