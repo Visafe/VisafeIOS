@@ -43,6 +43,7 @@ class ChooseTypeWorkspaceVC: BaseViewController {
     func updateView() {
         let type = workspace.type ?? .family
         typeImageView.image = type.getIcon()
+        nameTextfield.text = workspace.name
         updateStateButtonContinue()
     }
     

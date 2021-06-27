@@ -31,6 +31,10 @@
 		C919B96D26822157009982C3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96C26822157009982C3 /* BaseView.swift */; };
 		C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96F2682216B009982C3 /* BaseTableCell.swift */; };
 		C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B97A268222F6009982C3 /* JSONModelable.swift */; };
+		C93D924E2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D924D2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift */; };
+		C93D92512688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93D92502688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib */; };
+		C93D92542688BDD6006AD80C /* MoreActionWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D92532688BDD6006AD80C /* MoreActionWorkspaceView.swift */; };
+		C93D92572688BDDD006AD80C /* MoreActionWorkspaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93D92562688BDDD006AD80C /* MoreActionWorkspaceView.xib */; };
 		C93ED1592682328600B03E8A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED1572682328600B03E8A /* HomeVC.swift */; };
 		C93ED15A2682328600B03E8A /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED1582682328600B03E8A /* HomeVC.xib */; };
 		C93ED15E268232A100B03E8A /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED15C268232A100B03E8A /* SettingVC.swift */; };
@@ -128,6 +132,10 @@
 		C919B96C26822157009982C3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		C919B96F2682216B009982C3 /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
 		C919B97A268222F6009982C3 /* JSONModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONModelable.swift; sourceTree = "<group>"; };
+		C93D924D2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteWorkspaceView.swift; sourceTree = "<group>"; };
+		C93D92502688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmDeleteWorkspaceView.xib; sourceTree = "<group>"; };
+		C93D92532688BDD6006AD80C /* MoreActionWorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActionWorkspaceView.swift; sourceTree = "<group>"; };
+		C93D92562688BDDD006AD80C /* MoreActionWorkspaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreActionWorkspaceView.xib; sourceTree = "<group>"; };
 		C93ED1572682328600B03E8A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		C93ED1582682328600B03E8A /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		C93ED15C268232A100B03E8A /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -475,6 +483,10 @@
 				C95A5867268870620077112F /* ChooseTypeWorkspaceCell.xib */,
 				C9A6FEAA268883390002085E /* SecurityWorkspaceCell.swift */,
 				C9A6FEAB268883390002085E /* SecurityWorkspaceCell.xib */,
+				C93D924D2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift */,
+				C93D92502688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib */,
+				C93D92532688BDD6006AD80C /* MoreActionWorkspaceView.swift */,
+				C93D92562688BDDD006AD80C /* MoreActionWorkspaceView.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -658,6 +670,8 @@
 				C95A5869268870620077112F /* ChooseTypeWorkspaceCell.xib in Resources */,
 				C93ED164268232BE00B03E8A /* AdministrationVC.xib in Resources */,
 				C9B7949126862C2E00258A72 /* ForgotPasswordVC.xib in Resources */,
+				C93D92572688BDDD006AD80C /* MoreActionWorkspaceView.xib in Resources */,
+				C93D92512688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib in Resources */,
 				C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */,
 				C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */,
 				C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */,
@@ -764,6 +778,7 @@
 				C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */,
 				C9B79466268613A700258A72 /* RegisterVC.swift in Sources */,
 				C9B7948C268626AA00258A72 /* UserModel.swift in Sources */,
+				C93D92542688BDD6006AD80C /* MoreActionWorkspaceView.swift in Sources */,
 				0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */,
 				C9A6FEAC268883390002085E /* SecurityWorkspaceCell.swift in Sources */,
 				C9EDB55B26839E74009CBD93 /* GroupCell.swift in Sources */,
@@ -772,6 +787,7 @@
 				0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */,
 				C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */,
 				C940AE92268375C10069B830 /* WorkspaceModel.swift in Sources */,
+				C93D924E2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift in Sources */,
 				C940AE9C268377F00069B830 /* WorkspaceFooterView.swift in Sources */,
 				C95A5868268870620077112F /* ChooseTypeWorkspaceCell.swift in Sources */,
 				C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */,

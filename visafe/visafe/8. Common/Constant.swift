@@ -27,10 +27,12 @@ let hexRandomColor: [String] = ["54C0EB", "C18EFC", "63C663", "F89B4B", "F5766B"
 
 // Color
 let kColorMainOrange = "FFB31F"
-let kColorMainBlue = "449363"
+let kColorMainBlue = "33B6FF"
 
 // TableName
 let kDatabaseName = "ecdata"
 let kLessonTitles = "lesson_titles"
 let kLesson = "lessons"
 let kLessonId = "lesson_ids"
+
+let kNotificationUpdateWorkspace = "kNotificationUpdateWorkspace"

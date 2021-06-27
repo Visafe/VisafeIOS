@@ -61,7 +61,7 @@ class BaseViewController: UIViewController {
         infoConfig.dimMode = .blur(style: .dark, alpha: 0.2, interactive: true)
         info.buttonTapHandler = { sender in
             completion?()
-            SwiftMessages.hideAll()
+            SwiftMessages.hide()
         }
         SwiftMessages.show(config: infoConfig, view: info)
     }
@@ -76,7 +76,7 @@ class BaseViewController: UIViewController {
         infoConfig.dimMode = .blur(style: .dark, alpha: 0.2, interactive: true)
         info.buttonTapHandler = { sender in
             completion?()
-            SwiftMessages.hideAll()
+            SwiftMessages.hide()
         }
         SwiftMessages.show(config: infoConfig, view: info)
     }

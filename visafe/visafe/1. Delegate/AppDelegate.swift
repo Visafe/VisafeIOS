@@ -27,10 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configRootVC() {
-//        let vc = PostWorkspaceVC()
-//        let nav = BaseNavigationController(rootViewController: vc)
-//        self.window?.rootViewController = nav
-        
         if CacheManager.shared.getIsLogined() {
             setRootVCToTabVC()
         } else {
@@ -49,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func configureSideMenu() {
-        SideMenuController.preferences.basic.menuWidth = kScreenWidth - 100
+        SideMenuController.preferences.basic.menuWidth = kScreenWidth - 30
         SideMenuController.preferences.basic.defaultCacheKey = "0"
     }
 }

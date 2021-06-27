@@ -20,13 +20,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thiết lập an toàn, an ninh mạng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rb-rv-2sC">
-                    <rect key="frame" x="78.5" y="15" width="257" height="21.5"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <rect key="frame" x="67.5" y="15" width="279.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tsB-Cy-c48">
-                    <rect key="frame" x="0.0" y="51.5" width="414" height="638.5"/>
+                    <rect key="frame" x="0.0" y="54" width="414" height="636"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="2hl-oc-pl2"/>
@@ -62,7 +62,7 @@
                 <constraint firstItem="tsB-Cy-c48" firstAttribute="top" secondItem="7rb-rv-2sC" secondAttribute="bottom" constant="15" id="Ueb-c4-szO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FzY-RA-gpC" secondAttribute="bottom" constant="20" id="VPh-SK-LyE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tsB-Cy-c48" secondAttribute="trailing" id="dBc-ex-ZeK"/>
-                <constraint firstItem="7rb-rv-2sC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="gU0-8i-Z0q"/>
+                <constraint firstItem="7rb-rv-2sC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="gU0-8i-Z0q"/>
                 <constraint firstItem="7rb-rv-2sC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qXb-4s-Rsw"/>
                 <constraint firstItem="tsB-Cy-c48" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vT2-iQ-L3J"/>
             </constraints>

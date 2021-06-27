@@ -28,6 +28,11 @@ class SetupSecurityWorkspaceVC: BaseViewController {
         registerTableView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func registerTableView() {
         tableView.registerCells(cells: [SecurityWorkspaceCell.className])
     }
@@ -49,18 +54,25 @@ class SetupSecurityWorkspaceVC: BaseViewController {
         }
     }
     
-    func handleResult(result: BaseResult?, error: Error?) {
-        if result == nil && error == nil {
+    func handleResult(result: WorkspaceModel?, error: Error?) {
+        if result != nil && error == nil {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotificationUpdateWorkspace), object: nil)
             if editMode == .add {
-                showMemssage(title: "Tạo cấu hình thành công", content: "Visafe đã sẵn sàng bảo vệ bạn")
+                showMemssage(title: "Tạo cấu hình thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.parent?.dismiss(animated: true, completion: nil)
+                }
             } else {
-                showMemssage(title: "Sửa cấu hình thành công", content: "Visafe đã sẵn sàng bảo vệ bạn")
+                showMemssage(title: "Sửa cấu hình thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.parent?.dismiss(animated: true, completion: nil)
+                }
             }
         } else {
             if editMode == .add {
                 showError(title: "Tạo cấu hình thất bại", content: "Có lỗi xảy ra, vui lòng thử lại")
             } else {
-                showMemssage(title: "Sửa cấu hình thất bại", content: "Có lỗi xảy ra, vui lòng thử lại")
+                showError(title: "Sửa cấu hình thất bại", content: "Có lỗi xảy ra, vui lòng thử lại")
             }
         }
     }

@@ -81,7 +81,11 @@ class PostWorkspaceVC: BaseViewController {
     
     func configBarButtonItem() {
         // title
-        title = "Tạo cấu hình mới"
+        if editMode == .add {
+            title = "Tạo cấu hình mới"
+        } else {
+            title = "Chỉnh sửa cấu hình"
+        }
         // left
         let leftBarButton = UIBarButtonItem(image: UIImage(named: "cancel_icon"), style: .done, target: self, action: #selector(onClickLeftButton))
         navigationItem.leftBarButtonItem = leftBarButton
