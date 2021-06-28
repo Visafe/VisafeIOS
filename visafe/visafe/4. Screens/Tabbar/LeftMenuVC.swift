@@ -13,6 +13,7 @@ class LeftMenuVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var workspaces: [WorkspaceModel] = []
+    var selectedWorkspace:((_ workspace: WorkspaceModel) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,13 @@ extension LeftMenuVC: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        CacheManager.shared.setCurrentWorkspace(value: workspaces[indexPath.row])
+        selectedWorkspace?(workspaces[indexPath.row])
+        sideMenuController?.hideMenu()
+    }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = WorkspaceFooterView.loadFromNib()
@@ -80,7 +88,7 @@ extension LeftMenuVC: UITableViewDelegate, UITableViewDataSource {
         info.binding(workspaceName: workspace.name)
         info.deleteAction = { [weak self] in
             guard let weakSelf = self else { return }
-            weakSelf.showConfirmDeleteworkspace(workspace: workspace)
+            Timer.scheduledTimer(timeInterval: 0.3, target: weakSelf, selector:#selector(weakSelf.showConfirmDeleteworkspace(sender:)), userInfo: workspace , repeats:false)
         }
         info.editAction = { [weak self] in
             guard let weakSelf = self else { return }
@@ -89,24 +97,17 @@ extension LeftMenuVC: UITableViewDelegate, UITableViewDataSource {
             let nav = BaseNavigationController(rootViewController: vc)
             weakSelf.present(nav, animated: true, completion: nil)
         }
-        var infoConfig = SwiftMessages.defaultConfig
-        infoConfig.presentationStyle = .bottom
-        infoConfig.duration = .forever
-        infoConfig.dimMode = .blur(style: .dark, alpha: 0.2, interactive: true)
-        SwiftMessages.show(config: infoConfig, view: info)
+        showPopup(view: info)
     }
     
-    @objc func showConfirmDeleteworkspace(workspace: WorkspaceModel) {
+    @objc func showConfirmDeleteworkspace(sender: Timer) {
         guard let info = ConfirmDeleteWorkspaceView.loadFromNib() else { return }
+        guard let workspace = sender.userInfo as? WorkspaceModel else { return }
         info.acceptAction = { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.deleteWorkspace(workspace: workspace)
         }
-        var infoConfig = SwiftMessages.defaultConfig
-        infoConfig.presentationStyle = .bottom
-        infoConfig.duration = .forever
-        infoConfig.dimMode = .blur(style: .dark, alpha: 0.2, interactive: true)
-        SwiftMessages.show(config: infoConfig, view: info)
+        showPopup(view: info)
     }
     
     func deleteWorkspace(workspace: WorkspaceModel) {

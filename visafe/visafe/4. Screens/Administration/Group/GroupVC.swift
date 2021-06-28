@@ -21,7 +21,7 @@ class GroupVC: BaseViewController {
     }
     
     func showFormAddGroup() {
-        let vc = AddGroupVC()
+        let vc = PostGroupVC()
         let nav = BaseNavigationController(rootViewController: vc)
         present(nav, animated: true, completion: nil)
     }

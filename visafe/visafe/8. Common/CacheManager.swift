@@ -13,6 +13,7 @@ import ObjectMapper
 let kIsLogin = "kIsLogin"
 let kLoginResult = "kLoginResult"
 let kListWorkspace = "kListWorkspace"
+let kCurrentWorkspace = "kCurrentWorkspace"
 
 class CacheManager {
     
@@ -51,6 +52,18 @@ class CacheManager {
     
     func setWorkspacesResult(value: [WorkspaceModel]?) {
         userDefault.set(value?.toJSONString(), forKey: kListWorkspace)
+        userDefault.synchronize()
+    }
+    
+    func getCurrentWorkspace() -> WorkspaceModel? {
+        if let value = userDefault.string(forKey: kCurrentWorkspace) {
+            return Mapper<WorkspaceModel>().map(JSONString: value)
+        }
+        return nil
+    }
+    
+    func setCurrentWorkspace(value: WorkspaceModel?) {
+        userDefault.set(value?.toJSONString(), forKey: kCurrentWorkspace)
         userDefault.synchronize()
     }
 }

@@ -105,6 +105,9 @@
                                     <real key="value" value="0.20000000000000001"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="edittingChanged:" destination="-1" eventType="editingChanged" id="S9h-j0-k3H"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

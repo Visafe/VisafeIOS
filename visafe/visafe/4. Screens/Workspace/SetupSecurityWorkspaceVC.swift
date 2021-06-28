@@ -46,10 +46,16 @@ class SetupSecurityWorkspaceVC: BaseViewController {
                 weakSelf.handleResult(result: result, error: error)
             }
         } else {
-            WorkspaceWorker.update(workspace: workspace) { [weak self] (result, error) in
+            let param = WorkspaceUpdateNameParam()
+            param.workspace_name = workspace.name
+            param.workspace_id = workspace.id
+            WorkspaceWorker.updateName(param: param) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
-                weakSelf.hideLoading()
-                weakSelf.handleResult(result: result, error: error)
+                WorkspaceWorker.update(workspace: weakSelf.workspace) { [weak self] (result, error) in
+                    guard let weakSelf = self else { return }
+                    weakSelf.hideLoading()
+                    weakSelf.handleResult(result: result, error: error)
+                }
             }
         }
     }

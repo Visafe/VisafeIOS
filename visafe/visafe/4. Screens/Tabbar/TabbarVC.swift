@@ -16,11 +16,14 @@ class TabbarVC: BaseTabbarController {
     }
     
     func configView() {
-        
         let adminVC = AdministrationVC()
         adminVC.title = "Quản trị"
         let adminNav = BaseNavigationController(rootViewController: adminVC)
         let leftMenu = LeftMenuVC()
+        leftMenu.selectedWorkspace = { [weak self] workspace in
+            guard let weakSelf = self else { return }
+            adminVC.onChangeWorkspace(workspace: workspace)
+        }
         let sideMenuVC = SideMenuController(contentViewController: adminNav, menuViewController: leftMenu)
         sideMenuVC.title = "Quản trị"
         

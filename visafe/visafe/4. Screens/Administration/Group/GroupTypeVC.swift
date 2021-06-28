@@ -1,29 +1,28 @@
 //
-//  ChooseTypeWorkspaceVC.swift
+//  GroupTypeVC.swift
 //  visafe
 //
-//  Created by Cuong Nguyen on 6/27/21.
+//  Created by Cuong Nguyen on 6/28/21.
 //
 
 import UIKit
 import TweeTextField
 
-class ChooseTypeWorkspaceVC: BaseViewController {
-
+class GroupTypeVC: BaseViewController {
+    
     @IBOutlet weak var continueButton: UIButton!
-    @IBOutlet weak var typeImageView: UIImageView!
     @IBOutlet weak var nameTextfield: TweeAttributedTextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var workspace: WorkspaceModel
+    var group: GroupModel
     var editMode: EditModeEnum
     
     var onContinue:(() -> Void)?
     
-    init(workspace: WorkspaceModel, editMode: EditModeEnum) {
-        self.workspace = workspace
+    init(group: GroupModel, editMode: EditModeEnum) {
+        self.group = group
         self.editMode = editMode
-        super.init(nibName: ChooseTypeWorkspaceVC.className, bundle: nil)
+        super.init(nibName: GroupTypeVC.className, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +30,7 @@ class ChooseTypeWorkspaceVC: BaseViewController {
     }
     
     func registerTableView() {
-        collectionView.registerCells(cells: [ChooseTypeWorkspaceCell.className])
+        collectionView.registerCells(cells: [ChooseTypeGroupCell.className])
     }
     
     override func viewDidLoad() {
@@ -41,35 +40,33 @@ class ChooseTypeWorkspaceVC: BaseViewController {
     }
     
     func updateView() {
-        let type = workspace.type ?? .family
-        typeImageView.image = type.getIcon()
-        nameTextfield.text = workspace.name
+        nameTextfield.text = group.name
         updateStateButtonContinue()
     }
     
     @IBAction func continueAction(_ sender: Any) {
         if validateInfo() {
-            workspace.name = nameTextfield.text?.trim()
+            group.name = nameTextfield.text?.trim()
             onContinue?()
         }
     }
     
     @IBAction func edittingChanged(_ sender: TweeAttributedTextField) {
-        workspace.name = sender.text
+        group.name = sender.text
     }
     
     func validateInfo() -> Bool {
         var success = true
         let name = nameTextfield.text ?? ""
         if name.isEmpty {
-            nameTextfield.showInfo("Tên cấu hình không được để trống")
+            nameTextfield.showInfo("Tên nhóm không được để trống")
             success = false
         }
         return success
     }
     
     func updateStateButtonContinue() {
-        if workspace.type == nil {
+        if group.object_type.count == 0 {
             continueButton.backgroundColor = UIColor(hexString: "F8F8F8")
             continueButton.setTitleColor(UIColor(hexString: "111111"), for: .normal)
             continueButton.isUserInteractionEnabled = false
@@ -82,18 +79,18 @@ class ChooseTypeWorkspaceVC: BaseViewController {
 }
 
 
-extension ChooseTypeWorkspaceVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension GroupTypeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return WorkspaceTypeEnum.getAll().count
+        return GroupTypeEnum.getAll().count
     }
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // get a reference to our storyboard cell
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChooseTypeWorkspaceCell.className, for: indexPath as IndexPath) as? ChooseTypeWorkspaceCell {
-            cell.binding(workspace: workspace, type: WorkspaceTypeEnum.getAll()[indexPath.row])
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChooseTypeGroupCell.className, for: indexPath as IndexPath) as? ChooseTypeGroupCell {
+            cell.binding(group: group, type: GroupTypeEnum.getAll()[indexPath.row])
             return cell
         }
         return UICollectionViewCell()
@@ -102,8 +99,15 @@ extension ChooseTypeWorkspaceVC: UICollectionViewDataSource, UICollectionViewDel
     // MARK: - UICollectionViewDelegate protocol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let type = WorkspaceTypeEnum.getAll()[indexPath.row]
-        workspace.type = type
+        let type = GroupTypeEnum.getAll()[indexPath.row]
+        let index = group.object_type.firstIndex { (t) -> Bool in
+            if t == type { return true } else { return false }
+        } ?? -1
+        if index >= 0 {
+            group.object_type.remove(at: index)
+        } else {
+            group.object_type.append(type)
+        }
         updateView()
         collectionView.reloadData()
     }

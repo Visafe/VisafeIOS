@@ -64,6 +64,7 @@ class LoginVC: BaseViewController {
             weakSelf.hideLoading()
             CacheManager.shared.setIsLogined(value: true)
             CacheManager.shared.setWorkspacesResult(value: list)
+            CacheManager.shared.setCurrentWorkspace(value: list?.first)
             AppDelegate.appDelegate()?.setRootVCToTabVC()
         }
     }

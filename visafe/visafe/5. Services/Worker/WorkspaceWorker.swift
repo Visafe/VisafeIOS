@@ -66,4 +66,18 @@ class WorkspaceWorker {
             completion(loginResult, error)
         }
     }
+    
+    static func updateName(param: WorkspaceUpdateNameParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.updateNameWorkspace(param: param)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: BaseResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
 }

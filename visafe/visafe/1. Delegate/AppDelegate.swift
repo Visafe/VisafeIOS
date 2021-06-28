@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func configureSideMenu() {
-        SideMenuController.preferences.basic.menuWidth = kScreenWidth - 30
+        SideMenuController.preferences.basic.menuWidth = kScreenWidth - 60
         SideMenuController.preferences.basic.defaultCacheKey = "0"
     }
 }

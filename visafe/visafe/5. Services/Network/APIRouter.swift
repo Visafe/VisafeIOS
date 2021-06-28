@@ -26,6 +26,25 @@ enum APIRouter {
     case addWorkspace(param: WorkspaceModel)
     case updateWorkspace(param: WorkspaceModel)
     case deleteWorkspace(wspId: String?)
+    case updateNameWorkspace(param: WorkspaceUpdateNameParam)
+    
+    //group
+    case addGroup(param: GroupModel)
+    case updateGroup(param: GroupModel)
+    case renameGroup(param: RenameGroupParam)
+    case deleteGroup(groupId: String)
+    case addDeviceGroup(param: AddDeviceToGroupParam)
+    case deleteDeviceGroup(param: DeleteDeviceToGroupParam)
+    case createIdentifier(name: String, groupId: String)
+    case updateIdentifier(name: String, groupId: String)
+    case deleteIdentifier(id: String)
+    case getIdentifier(id: String)
+    case addDeviceToIden(param: AddDeviceToIdentifierParam)
+    case deleteDeviceToIden(param: DeleteDeviceToIdentifierParam)
+    case inviteToGroup(param: InviteToGroupParam)
+    case deleteToGroup(param: DeleteToGroupParam)
+    case changeManagerPermision(param: ChangeManagerPermisionParam)
+    case changeViewerPermision(param: ChangeViewerPermisionParam)
 }
 
 enum APIError: Error {
@@ -77,6 +96,40 @@ extension APIRouter: TargetType {
             return "/control/update-workspace"
         case .deleteWorkspace:
             return "/control/delete-workspace"
+        case .updateNameWorkspace:
+            return "/update-name-workspace"
+        case .addGroup:
+            return "/clients/add"
+        case .updateGroup:
+            return "/clients/update"
+        case .renameGroup:
+            return "/clients/rename"
+        case .deleteGroup:
+            return "/clients/delete"
+        case .addDeviceGroup:
+            return "/control/invite/device"
+        case .deleteDeviceGroup:
+            return "/control/device/delete"
+        case .createIdentifier:
+            return "/control/create-identifier"
+        case .updateIdentifier:
+            return "/control/update-identifier"
+        case .deleteIdentifier:
+            return "/control/del-identifier"
+        case .getIdentifier:
+            return "/control/identifiers"
+        case .addDeviceToIden:
+            return "/control/add-device-to-identifier"
+        case .deleteDeviceToIden:
+            return "/control/del-device-from-identifier"
+        case .inviteToGroup:
+            return "/control/invite/send-mail-invite"
+        case .deleteToGroup:
+            return "/control/del-user"
+        case .changeManagerPermision:
+            return "/control/change-permission-to-manage"
+        case .changeViewerPermision:
+            return "/control/change-permission-to-view"
         }
     }
     
@@ -111,6 +164,42 @@ extension APIRouter: TargetType {
             pars = param.toJSON()
         case .deleteWorkspace(wspId: let id):
             pars["workspaceId"] = id
+        case .updateNameWorkspace(param: let param):
+            pars = param.toJSON()
+        case .addGroup(param: let param):
+            pars = param.toJSON()
+        case .updateGroup(param: let param):
+            pars = param.toJSON()
+        case .renameGroup(param: let param):
+            pars = param.toJSON()
+        case .deleteGroup(groupId: let id):
+            pars["groupId"] = id
+        case .addDeviceGroup(param: let param):
+            pars = param.toJSON()
+        case .deleteDeviceGroup(param: let param):
+            pars = param.toJSON()
+        case .createIdentifier(name: let name, groupId: let groupId):
+            pars["groupId"] = groupId
+            pars["name"] = name
+        case .updateIdentifier(name: let name, groupId: let groupId):
+            pars["groupId"] = groupId
+            pars["name"] = name
+        case .deleteIdentifier(id: let id):
+            pars["id"] = id
+        case .getIdentifier(id: let id):
+            pars["id"] = id
+        case .addDeviceToIden(param: let param):
+            pars = param.toJSON()
+        case .deleteDeviceToIden(param: let param):
+            pars = param.toJSON()
+        case .inviteToGroup(param: let param):
+            pars = param.toJSON()
+        case .deleteToGroup(param: let param):
+            pars = param.toJSON()
+        case .changeManagerPermision(param: let param):
+            pars = param.toJSON()
+        case .changeViewerPermision(param: let param):
+            pars = param.toJSON()
         case .reactivation, .getListWorkspace:
             break
         }
@@ -119,7 +208,7 @@ extension APIRouter: TargetType {
     
     var task: Task {
         switch self {
-        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace:
+        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .renameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteToGroup, .changeManagerPermision, .changeViewerPermision:
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             break
@@ -134,7 +223,7 @@ extension APIRouter: TargetType {
     var headers: [String : String]? {
         var hea: [String: String] = [:]
         switch self {
-        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace:
+        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .renameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteToGroup, .changeManagerPermision, .changeViewerPermision:
             hea["Authorization"] = (CacheManager.shared.getLoginResult()?.token ?? "")
         default:
             break

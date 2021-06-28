@@ -59,6 +59,9 @@ class AdministrationVC: BaseViewController {
         navigationItem.rightBarButtonItem = notifiBarButton
     }
     
+    func onChangeWorkspace(workspace: WorkspaceModel) {
+        title = workspace.name
+    }
     
     func configSideMenu() {
         sideMenuController?.delegate = self

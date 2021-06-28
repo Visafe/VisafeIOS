@@ -55,29 +55,30 @@ class BaseViewController: UIViewController {
     func showMemssage(title: String, content: String?, completion: (() -> Void)? = nil) {
         guard let info = BaseMessageView.loadFromNib() else { return }
         info.binding(title: title, content: content)
-        var infoConfig = SwiftMessages.defaultConfig
-        infoConfig.presentationStyle = .bottom
-        infoConfig.duration = .forever
-        infoConfig.dimMode = .blur(style: .dark, alpha: 0.2, interactive: true)
         info.buttonTapHandler = { sender in
             completion?()
             SwiftMessages.hide()
         }
-        SwiftMessages.show(config: infoConfig, view: info)
+        showPopup(view: info)
     }
     
     func showError(title: String, content: String?, completion: (() -> Void)? = nil) {
         guard let info = BaseMessageView.loadFromNib() else { return }
         info.binding(title: title, content: content)
-        var infoConfig = SwiftMessages.defaultConfig
         info.imageType.image = UIImage(named: "error_icon")
-        infoConfig.presentationStyle = .bottom
-        infoConfig.duration = .forever
-        infoConfig.dimMode = .blur(style: .dark, alpha: 0.2, interactive: true)
         info.buttonTapHandler = { sender in
             completion?()
             SwiftMessages.hide()
         }
-        SwiftMessages.show(config: infoConfig, view: info)
+        showPopup(view: info)
+    }
+    
+    func showPopup(view: MessageView) {
+        var infoConfig = SwiftMessages.defaultConfig
+        infoConfig.presentationStyle = .bottom
+        infoConfig.duration = .forever
+        infoConfig.dimMode = .blur(style: .dark, alpha: 0.2, interactive: true)
+        infoConfig.presentationContext = .window(windowLevel: UIWindow.Level.normal)
+        SwiftMessages.show(config: infoConfig, view: view)
     }
 }
