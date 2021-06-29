@@ -130,6 +130,8 @@
 		C9FA1602268A2DE400A1A6C6 /* GroupTimeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FA1600268A2DE400A1A6C6 /* GroupTimeVC.xib */; };
 		C9FA1606268A344B00A1A6C6 /* ChooseTypeGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FA1604268A344B00A1A6C6 /* ChooseTypeGroupCell.xib */; };
 		C9FA1607268A344B00A1A6C6 /* ChooseTypeGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA1605268A344B00A1A6C6 /* ChooseTypeGroupCell.swift */; };
+		C9FA160B268B611200A1A6C6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA160A268B611200A1A6C6 /* StringExtension.swift */; };
+		C9FA161B268B794300A1A6C6 /* ActiveAccountResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA161A268B794300A1A6C6 /* ActiveAccountResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -245,6 +247,8 @@
 		C9FA1600268A2DE400A1A6C6 /* GroupTimeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTimeVC.xib; sourceTree = "<group>"; };
 		C9FA1604268A344B00A1A6C6 /* ChooseTypeGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTypeGroupCell.xib; sourceTree = "<group>"; };
 		C9FA1605268A344B00A1A6C6 /* ChooseTypeGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTypeGroupCell.swift; sourceTree = "<group>"; };
+		C9FA160A268B611200A1A6C6 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		C9FA161A268B794300A1A6C6 /* ActiveAccountResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAccountResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -499,6 +503,7 @@
 				C940AEA1268378F20069B830 /* UIViewExtension.swift */,
 				C99F333626838E4300859DF6 /* UIButtonExtension.swift */,
 				C95A5861268867310077112F /* PageViewControllerExtension.swift */,
+				C9FA160A268B611200A1A6C6 /* StringExtension.swift */,
 			);
 			path = "9. Extension";
 			sourceTree = "<group>";
@@ -571,6 +576,7 @@
 				C9E5C77D26872ADC00D159EF /* LoginResult.swift */,
 				C9F9384F2688146200D30F28 /* ForgotPasswordResult.swift */,
 				C95A58452688233F0077112F /* ResetPasswordResult.swift */,
+				C9FA161A268B794300A1A6C6 /* ActiveAccountResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -832,6 +838,7 @@
 				C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */,
 				C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */,
 				C919B94826821DA9009982C3 /* APIRouter.swift in Sources */,
+				C9FA160B268B611200A1A6C6 /* StringExtension.swift in Sources */,
 				C940AE8E268375A30069B830 /* WorkspaceCell.swift in Sources */,
 				C94B39C2268A260D00046958 /* DeleteToGroupParam.swift in Sources */,
 				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
@@ -852,6 +859,7 @@
 				C9B7948C268626AA00258A72 /* UserModel.swift in Sources */,
 				C93D92542688BDD6006AD80C /* MoreActionWorkspaceView.swift in Sources */,
 				C94B39B6268A20EB00046958 /* DeleteDeviceToGroupParam.swift in Sources */,
+				C9FA161B268B794300A1A6C6 /* ActiveAccountResult.swift in Sources */,
 				0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */,
 				C9A6FEAC268883390002085E /* SecurityWorkspaceCell.swift in Sources */,
 				C94B39BF268A258C00046958 /* InviteToGroupParam.swift in Sources */,
@@ -1041,6 +1049,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Z59HFVS9G;
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1061,6 +1070,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Z59HFVS9G;
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

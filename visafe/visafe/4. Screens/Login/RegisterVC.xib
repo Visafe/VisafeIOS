@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,9 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterVC" customModule="visafe" customModuleProvider="target">
             <connections>
-                <outlet property="emailTextfield" destination="hZg-eO-FFK" id="KUD-zc-yc9"/>
                 <outlet property="passwordTextfield" destination="vZN-PS-gwZ" id="eXd-Ly-F1D"/>
                 <outlet property="rePasswordTextfield" destination="2qL-Cr-3xn" id="6Db-WA-fB3"/>
+                <outlet property="usernameTextfield" destination="hZg-eO-FFK" id="KUD-zc-yc9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,7 +31,7 @@
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-eO-FFK" customClass="TweeAttributedTextField" customModule="TweeTextField">
                                     <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    <textInputTraits key="textInputTraits"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
                                             <real key="value" value="0.20000000000000001"/>
@@ -56,7 +57,7 @@
                                         <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                             <color key="value" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Email"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Email hoặc số điện thoại"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                             <real key="value" value="0.5"/>
                                         </userDefinedRuntimeAttribute>
@@ -367,35 +368,21 @@
                         <constraint firstAttribute="height" constant="43" id="rRJ-Rn-fKi"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7M-Dt-l0d">
-                    <rect key="frame" x="20" y="54" width="44" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="FU8-yc-Xfh"/>
-                        <constraint firstAttribute="width" constant="44" id="RGo-Hq-pYh"/>
-                    </constraints>
-                    <state key="normal" image="back_icon"/>
-                    <connections>
-                        <action selector="dismissAction:" destination="-1" eventType="touchUpInside" id="XL9-bE-TJt"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fCm-zd-B8X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3wW-0X-p7C"/>
                 <constraint firstItem="aaX-SO-MHs" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="A56-jc-BXN"/>
-                <constraint firstItem="q7M-Dt-l0d" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="G7Q-m8-Sxc"/>
                 <constraint firstItem="aaX-SO-MHs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Lq1-10-jOu"/>
                 <constraint firstItem="aaX-SO-MHs" firstAttribute="top" secondItem="fCm-zd-B8X" secondAttribute="bottom" constant="50" id="RB7-HP-NKf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aaX-SO-MHs" secondAttribute="trailing" constant="30" id="eSB-UH-yaU"/>
-                <constraint firstItem="q7M-Dt-l0d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="iYp-fy-8Fx"/>
             </constraints>
             <point key="canvasLocation" x="138" y="102"/>
         </view>
     </objects>
     <resources>
         <image name="apple_icon" width="48" height="48"/>
-        <image name="back_icon" width="24" height="24"/>
         <image name="facebook_icon" width="40" height="40"/>
         <image name="google_icon" width="48" height="48"/>
         <image name="logo_icon" width="191" height="43"/>

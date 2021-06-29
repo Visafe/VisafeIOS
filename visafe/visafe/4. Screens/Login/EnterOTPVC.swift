@@ -8,6 +8,11 @@
 import UIKit
 import SVPinView
 
+public enum EnterOTPEnum: Int {
+    case activeAccount = 1
+    case forgotpassword = 2
+}
+
 class EnterOTPVC: BaseViewController {
     
     @IBOutlet weak var sendOTPButton: UIButton!
@@ -16,9 +21,11 @@ class EnterOTPVC: BaseViewController {
     var model: PasswordModel
     var timeDown: Int = 30
     var timer = Timer()
+    var type: EnterOTPEnum
     
-    init(model: PasswordModel) {
+    init(model: PasswordModel, type: EnterOTPEnum) {
         self.model = model
+        self.type = type
         super.init(nibName: EnterOTPVC.className, bundle: nil)
     }
     
@@ -41,9 +48,62 @@ class EnterOTPVC: BaseViewController {
     }
     
     func didFinishEnteringPin(pin:String) {
-        model.otp = pin
-        let vc = SetPasswordVC(model: model)
-        navigationController?.pushViewController(vc)
+        if type == .activeAccount {
+            showLoading()
+            model.otp = pin
+            AuthenWorker.activeAccount(param: model) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                weakSelf.hideLoading()
+                weakSelf.handleResponse(result: result)
+            }
+        } else {
+            model.otp = pin
+            let vc = SetPasswordVC(model: model)
+            navigationController?.pushViewController(vc)
+        }
+    }
+    
+    func handleResponse(result: ActiveAccountResult?) {
+        if result?.status_code == .success {
+            // thực hiện login lại
+            let loginParam = LoginParam()
+            loginParam.username = model.email ?? model.phone_number
+            loginParam.password = model.password
+            AuthenWorker.login(param: loginParam) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                weakSelf.handleLogin(result: result, error: error)
+            }
+        } else {
+            let type = result?.status_code ?? .inccorectinfo
+            showError(title: "Xác thực không thành công", content: type.getDescription())
+        }
+    }
+    
+    func handleLogin(result: LoginResult?, error: Error?) {
+        if let res = result {
+            if res.token != nil { // login thanh cong
+                CacheManager.shared.setLoginResult(value: res)
+                actionAfterLogin()
+            } else {
+                let type = res.status_code ?? .error
+                showError(title: "Đăng nhập không thành công", content: type.getDescription())
+            }
+        } else {
+            let type = LoginStatusEnum.error
+            showError(title: "Đăng nhập không thành công", content: type.getDescription())
+        }
+    }
+    
+    func actionAfterLogin() {
+        showLoading()
+        WorkspaceWorker.getList { [weak self] (list, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            CacheManager.shared.setIsLogined(value: true)
+            CacheManager.shared.setWorkspacesResult(value: list)
+            CacheManager.shared.setCurrentWorkspace(value: list?.first)
+            AppDelegate.appDelegate()?.setRootVCToTabVC()
+        }
     }
     
     @objc func timerAction() {
@@ -61,8 +121,8 @@ class EnterOTPVC: BaseViewController {
     
     @IBAction func reSendOTPAction(_ sender: UIButton) {
         sender.isUserInteractionEnabled = false
-        showLoading()
-        AuthenWorker.forgotPassword(email: model.email) { [weak self] (result, error) in
+        let username = model.email ?? model.phone_number ?? ""
+        AuthenWorker.forgotPassword(username: username) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
         }

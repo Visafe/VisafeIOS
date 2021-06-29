@@ -11,6 +11,7 @@ import ObjectMapper
 class PasswordModel: NSObject, Mappable {
     var email: String?
     var password: String?
+    var phone_number: String?
     var otp: String?
     
     override init() {
@@ -25,5 +26,6 @@ class PasswordModel: NSObject, Mappable {
         email <- map["email"]
         password <- map["password"]
         otp <- map["otp"]
+        phone_number <- map["phone_number"]
     }
 }

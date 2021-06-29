@@ -15,11 +15,13 @@ enum APIRouter {
     //authen
     case login(param: LoginParam)
     case register(param: RegisterParam)
-    case forgotPassword(email: String?)
+    case forgotPassword(username: String?)
     case resetPassword(param: ResetPassParam)
     case changePassword(param: ChangePassParam)
     case changeProfile(param: UserModel)
     case reactivation
+    case profile
+    case activeAccount(param: PasswordModel)
     
     //workspace
     case getListWorkspace
@@ -64,7 +66,7 @@ extension APIError: LocalizedError {
 }
 
 enum APIConstant {
-    static let baseURL = "https://staging.visafe.vn"
+    static let baseURL = "https://staging.visafe.vn/api/v1"
 }
 
 extension APIRouter: TargetType {
@@ -75,31 +77,35 @@ extension APIRouter: TargetType {
     var path: String {
         switch self {
         case .login:
-            return "/control/login"
+            return "/login"
         case .register:
-            return "/control/register"
+            return "/register"
         case .forgotPassword:
-            return "/control/forgot-password"
+            return "/forgot-password"
         case .resetPassword:
-            return "/control/reset-password"
+            return "/reset-password"
         case .changePassword:
-            return "/control/change_password"
+            return "/change_password"
         case .changeProfile:
-            return "/control/change_profile"
+            return "/change_profile"
         case .reactivation:
             return "/re-activation"
+        case .profile:
+            return "/user/profile"
+        case .activeAccount:
+            return "/activate-account"
         case .getListWorkspace:
-            return "/control/get-workspace"
+            return "/workspaces"
         case .addWorkspace:
-            return "/control/create-workspace"
+            return "/workspace/add"
         case .updateWorkspace:
-            return "/control/update-workspace"
+            return "/workspace/update"
         case .deleteWorkspace:
-            return "/control/delete-workspace"
+            return "/workspace/delete"
         case .updateNameWorkspace:
-            return "/update-name-workspace"
+            return "/workspace/update/rename"
         case .addGroup:
-            return "/clients/add"
+            return "/group/add"
         case .updateGroup:
             return "/clients/update"
         case .renameGroup:
@@ -107,29 +113,29 @@ extension APIRouter: TargetType {
         case .deleteGroup:
             return "/clients/delete"
         case .addDeviceGroup:
-            return "/control/invite/device"
+            return "/invite/device"
         case .deleteDeviceGroup:
-            return "/control/device/delete"
+            return "/device/delete"
         case .createIdentifier:
-            return "/control/create-identifier"
+            return "/create-identifier"
         case .updateIdentifier:
-            return "/control/update-identifier"
+            return "/update-identifier"
         case .deleteIdentifier:
-            return "/control/del-identifier"
+            return "/del-identifier"
         case .getIdentifier:
-            return "/control/identifiers"
+            return "/identifiers"
         case .addDeviceToIden:
-            return "/control/add-device-to-identifier"
+            return "/add-device-to-identifier"
         case .deleteDeviceToIden:
-            return "/control/del-device-from-identifier"
+            return "/del-device-from-identifier"
         case .inviteToGroup:
-            return "/control/invite/send-mail-invite"
+            return "/invite/send-mail-invite"
         case .deleteToGroup:
-            return "/control/del-user"
+            return "/del-user"
         case .changeManagerPermision:
-            return "/control/change-permission-to-manage"
+            return "/change-permission-to-manage"
         case .changeViewerPermision:
-            return "/control/change-permission-to-view"
+            return "/change-permission-to-view"
         }
     }
     
@@ -150,8 +156,8 @@ extension APIRouter: TargetType {
             pars = param.toJSON()
         case .register(param: let param):
             pars = param.toJSON()
-        case .forgotPassword(email: let email):
-            pars["email"] = email
+        case .forgotPassword(username: let username):
+            pars["username"] = username
         case .resetPassword(param: let param):
             pars = param.toJSON()
         case .changePassword(param: let param):
@@ -200,7 +206,9 @@ extension APIRouter: TargetType {
             pars = param.toJSON()
         case .changeViewerPermision(param: let param):
             pars = param.toJSON()
-        case .reactivation, .getListWorkspace:
+        case .activeAccount(param: let param):
+            pars = param.toJSON()
+        case .reactivation, .getListWorkspace, .profile:
             break
         }
         return pars
@@ -208,7 +216,7 @@ extension APIRouter: TargetType {
     
     var task: Task {
         switch self {
-        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .renameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteToGroup, .changeManagerPermision, .changeViewerPermision:
+        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .renameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteToGroup, .changeManagerPermision, .changeViewerPermision, .activeAccount:
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             break
@@ -223,7 +231,7 @@ extension APIRouter: TargetType {
     var headers: [String : String]? {
         var hea: [String: String] = [:]
         switch self {
-        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .renameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteToGroup, .changeManagerPermision, .changeViewerPermision:
+        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .renameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteToGroup, .changeManagerPermision, .changeViewerPermision, .profile:
             hea["Authorization"] = (CacheManager.shared.getLoginResult()?.token ?? "")
         default:
             break
