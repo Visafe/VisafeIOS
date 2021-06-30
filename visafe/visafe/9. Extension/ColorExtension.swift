@@ -23,4 +23,7 @@ extension UIColor {
     class func mainColorGray() -> UIColor {
         return UIColor.init(hexString: "E6E6E6")!
     }
+
+    static let color_0F1733 = UIColor(hexString: "0F1733")!
+    static let color_102366 = UIColor(hexString: "102366")!
 }

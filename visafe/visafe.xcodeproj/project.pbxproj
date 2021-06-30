@@ -10,6 +10,10 @@
 		0E229D652682CC0300559B67 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D642682CC0300559B67 /* Kingfisher */; };
 		0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */; };
 		0E229D872682D3AF00559B67 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D862682D3AF00559B67 /* Moya */; };
+		0E61B04B2688327D00652CEC /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E798386268485E60023C916 /* NetworkExtension.framework */; };
+		0E61B04E2688327D00652CEC /* AppProxyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E61B04D2688327D00652CEC /* AppProxyProvider.swift */; };
+		0E61B0532688327D00652CEC /* networkextention.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0E61B04A2688327D00652CEC /* networkextention.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0E798387268485E60023C916 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E798386268485E60023C916 /* NetworkExtension.framework */; };
 		0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA42681F29E00572C4E /* AppDelegate.swift */; };
 		0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA82681F29E00572C4E /* ViewController.swift */; };
 		0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAA2681F29E00572C4E /* Main.storyboard */; };
@@ -132,8 +136,38 @@
 		C9FA1607268A344B00A1A6C6 /* ChooseTypeGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA1605268A344B00A1A6C6 /* ChooseTypeGroupCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0E61B0512688327D00652CEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0EDEEF992681F29E00572C4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E61B0492688327D00652CEC;
+			remoteInfo = networkextention;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0E61B0572688327D00652CEC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0E61B0532688327D00652CEC /* networkextention.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0495B1120504033333DDDB59 /* Pods-visafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visafe.release.xcconfig"; path = "Target Support Files/Pods-visafe/Pods-visafe.release.xcconfig"; sourceTree = "<group>"; };
+		0E61B04A2688327D00652CEC /* networkextention.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = networkextention.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E61B04D2688327D00652CEC /* AppProxyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProxyProvider.swift; sourceTree = "<group>"; };
+		0E61B04F2688327D00652CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E61B0502688327D00652CEC /* networkextention.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = networkextention.entitlements; sourceTree = "<group>"; };
+		0E798385268485E60023C916 /* visafe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visafe.entitlements; sourceTree = "<group>"; };
+		0E798386268485E60023C916 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		0EDEEFA12681F29E00572C4E /* visafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = visafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDEEFA42681F29E00572C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EDEEFA82681F29E00572C4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -248,11 +282,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E61B0472688327D00652CEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E61B04B2688327D00652CEC /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EDEEF9E2681F29E00572C4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0EDEEFCD2681F43D00572C4E /* Realm in Frameworks */,
+				0E798387268485E60023C916 /* NetworkExtension.framework in Frameworks */,
 				0EDEEFC32681F33600572C4E /* SwiftyJSON in Frameworks */,
 				C9E5C78526872E8100D159EF /* SwiftMessages in Frameworks */,
 				C940AEA626837C8E0069B830 /* SwifterSwift in Frameworks */,
@@ -274,10 +317,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E61B0092685BEA500652CEC /* VPN */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VPN;
+			sourceTree = "<group>";
+		};
+		0E61B04C2688327D00652CEC /* networkextention */ = {
+			isa = PBXGroup;
+			children = (
+				0E61B04D2688327D00652CEC /* AppProxyProvider.swift */,
+				0E61B04F2688327D00652CEC /* Info.plist */,
+				0E61B0502688327D00652CEC /* networkextention.entitlements */,
+			);
+			path = networkextention;
+			sourceTree = "<group>";
+		};
 		0EDEEF982681F29E00572C4E = {
 			isa = PBXGroup;
 			children = (
 				0EDEEFA32681F29E00572C4E /* visafe */,
+				0E61B04C2688327D00652CEC /* networkextention */,
 				0EDEEFA22681F29E00572C4E /* Products */,
 				CB200029E33700DD2D0EDA4D /* Pods */,
 				74CD99A04854465BFB8CCB31 /* Frameworks */,
@@ -288,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				0EDEEFA12681F29E00572C4E /* visafe.app */,
+				0E61B04A2688327D00652CEC /* networkextention.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -295,6 +357,7 @@
 		0EDEEFA32681F29E00572C4E /* visafe */ = {
 			isa = PBXGroup;
 			children = (
+				0E798385268485E60023C916 /* visafe.entitlements */,
 				C919B9722682217D009982C3 /* 1. Delegate */,
 				C919B965268220B3009982C3 /* 2. Base */,
 				C919B966268220D4009982C3 /* 3. Models */,
@@ -311,6 +374,7 @@
 		74CD99A04854465BFB8CCB31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E798386268485E60023C916 /* NetworkExtension.framework */,
 				B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */,
 			);
 			name = Frameworks;
@@ -422,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				C95A5848268829B60077112F /* CacheManager.swift */,
+				0E61B0092685BEA500652CEC /* VPN */,
 				C93ED1952682456500B03E8A /* Constant.swift */,
 				C919B979268222F6009982C3 /* Protocols */,
 			);
@@ -627,6 +692,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E61B0492688327D00652CEC /* networkextention */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E61B0542688327D00652CEC /* Build configuration list for PBXNativeTarget "networkextention" */;
+			buildPhases = (
+				0E61B0462688327D00652CEC /* Sources */,
+				0E61B0472688327D00652CEC /* Frameworks */,
+				0E61B0482688327D00652CEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = networkextention;
+			productName = networkextention;
+			productReference = 0E61B04A2688327D00652CEC /* networkextention.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		0EDEEFA02681F29E00572C4E /* visafe */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EDEEFB52681F2A000572C4E /* Build configuration list for PBXNativeTarget "visafe" */;
@@ -637,10 +719,12 @@
 				0EDEEF9F2681F29E00572C4E /* Resources */,
 				EFE82053407D103D67E1C35D /* [CP] Embed Pods Frameworks */,
 				1FC4039839961F79796F508B /* [CP] Copy Pods Resources */,
+				0E61B0572688327D00652CEC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0E61B0522688327D00652CEC /* PBXTargetDependency */,
 			);
 			name = visafe;
 			packageProductDependencies = (
@@ -673,6 +757,9 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					0E61B0492688327D00652CEC = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					0EDEEFA02681F29E00572C4E = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -706,11 +793,19 @@
 			projectRoot = "";
 			targets = (
 				0EDEEFA02681F29E00572C4E /* visafe */,
+				0E61B0492688327D00652CEC /* networkextention */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E61B0482688327D00652CEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EDEEF9F2681F29E00572C4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -812,6 +907,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E61B0462688327D00652CEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E61B04E2688327D00652CEC /* AppProxyProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EDEEF9D2681F29E00572C4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -896,6 +999,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0E61B0522688327D00652CEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E61B0492688327D00652CEC /* networkextention */;
+			targetProxy = 0E61B0512688327D00652CEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		0EDEEFAA2681F29E00572C4E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -916,6 +1027,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E61B0552688327D00652CEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = networkextention/networkextention.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6P799F3DP3;
+				INFOPLIST_FILE = networkextention/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shjn.visafe.networkextention;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E61B0562688327D00652CEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = networkextention/networkextention.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6P799F3DP3;
+				INFOPLIST_FILE = networkextention/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shjn.visafe.networkextention;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		0EDEEFB32681F2A000572C4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1036,16 +1189,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 907E3660E73749DFAE56C748 /* Pods-visafe.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = visafe/visafe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3Z59HFVS9G;
+				DEVELOPMENT_TEAM = 6P799F3DP3;
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vn.com.ct1355;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shjn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1056,16 +1212,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0495B1120504033333DDDB59 /* Pods-visafe.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = visafe/visafe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3Z59HFVS9G;
+				DEVELOPMENT_TEAM = 6P799F3DP3;
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vn.com.ct1355;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shjn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1075,6 +1234,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E61B0542688327D00652CEC /* Build configuration list for PBXNativeTarget "networkextention" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E61B0552688327D00652CEC /* Debug */,
+				0E61B0562688327D00652CEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0EDEEF9C2681F29E00572C4E /* Build configuration list for PBXProject "visafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

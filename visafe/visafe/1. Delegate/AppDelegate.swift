@@ -27,11 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configRootVC() {
-        if CacheManager.shared.getIsLogined() {
+//        if CacheManager.shared.getIsLogined() {
             setRootVCToTabVC()
-        } else {
-            setRootVCToLoginVC()
-        }
+//        } else {
+//            setRootVCToLoginVC()
+//        }
     }
     
     func setRootVCToTabVC() {
