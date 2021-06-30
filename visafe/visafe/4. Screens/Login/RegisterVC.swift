@@ -12,15 +12,17 @@ import SwiftMessages
 class RegisterVC: BaseViewController {
 
     @IBOutlet weak var passwordTextfield: TweeAttributedTextField!
-    @IBOutlet weak var emailTextfield: TweeAttributedTextField!
+    @IBOutlet weak var usernameTextfield: TweeAttributedTextField!
     @IBOutlet weak var rePasswordTextfield: TweeAttributedTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // left
+        let leftBarButton = UIBarButtonItem(image: UIImage(named: "back_icon"), style: .done, target: self, action: #selector(dismissAction))
+        navigationItem.leftBarButtonItem = leftBarButton
     }
     
     @IBAction func editingEnd(_ sender: Any) {
-//        _ = validateInfo()
     }
     
     
@@ -32,15 +34,15 @@ class RegisterVC: BaseViewController {
     
     func validateInfo() -> Bool {
         var success = true
-        let email = emailTextfield.text ?? ""
-        if email.isEmpty {
+        let username = usernameTextfield.text ?? ""
+        if username.isEmpty {
             success = false
-            emailTextfield.showInfo("Email không được để trống")
-        } else if !email.isValidEmail {
+            usernameTextfield.showInfo("Username không được để trống")
+        } else if (!username.isValidEmail && !username.isValidPhone()) {
             success = false
-            emailTextfield.showInfo("Email không đúng định dạng")
+            usernameTextfield.showInfo("Username không đúng định dạng")
         } else {
-            emailTextfield.hideInfo()
+            usernameTextfield.hideInfo()
         }
         let password = passwordTextfield.text ?? ""
         if password.isEmpty {
@@ -65,10 +67,15 @@ class RegisterVC: BaseViewController {
     
     func register() {
         let param = RegisterParam()
-        param.username = emailTextfield.text
-        param.email = emailTextfield.text
+        let username = usernameTextfield.text ?? "0"
+        if username.isValidEmail {
+            param.email = username
+        } else {
+            param.phone_number = "84" + username.dropFirst()
+        }
+        param.full_name = usernameTextfield.text
         param.password = passwordTextfield.text
-        param.passwordagain = rePasswordTextfield.text
+        param.repeat_password = rePasswordTextfield.text
         showLoading()
         AuthenWorker.register(param: param) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
@@ -78,11 +85,17 @@ class RegisterVC: BaseViewController {
     }
     
     func handleRegisterResult(result: ResgisterResult?, error: Error?) {
-        if error == nil && result == nil {
-            showMemssage(title: "Đăng ký thành công", content: "Vui lòng vào email của bạn và kích hoạt tài khoản") { [weak self] in
-                guard let weakSelf = self else { return }
-                weakSelf.dismiss(animated: true, completion: nil)
+        if result?.status_code == .successWithEmail || result?.status_code == .successWithPhone {
+            let model = PasswordModel()
+            let username = usernameTextfield.text ?? "0"
+            if username.isValidEmail {
+                model.email = username
+            } else {
+                model.phone_number = "84" + username.dropFirst()
             }
+            model.password = passwordTextfield.text
+            let vc = EnterOTPVC(model: model, type: .activeAccount)
+            navigationController?.pushViewController(vc)
         } else {
             let errorCode = result?.status_code ?? .error
             showError(title: "Đăng ký không thành công", content: errorCode.getDescription())
@@ -93,7 +106,7 @@ class RegisterVC: BaseViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func dismissAction(_ sender: Any) {
+    @objc func dismissAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     

@@ -12,7 +12,7 @@ import SwiftMessages
 
 class LoginVC: BaseViewController {
 
-    @IBOutlet weak var emailTextfield: TweeAttributedTextField!
+    @IBOutlet weak var usernameTextfield: TweeAttributedTextField!
     @IBOutlet weak var passwordTextfield: TweeAttributedTextField!
     
     override func viewDidLoad() {
@@ -21,14 +21,15 @@ class LoginVC: BaseViewController {
     
     @IBAction func regiterAction(_ sender: Any) {
         let vc = RegisterVC()
-        present(vc, animated: true, completion: nil)
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
     }
     
     @IBAction func loginAction(_ sender: Any) {
         if validate() {
             showLoading()
             let loginParam = LoginParam()
-            loginParam.email = emailTextfield.text
+            loginParam.username = usernameTextfield.text
             loginParam.password = passwordTextfield.text
             AuthenWorker.login(param: loginParam) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
@@ -77,15 +78,15 @@ class LoginVC: BaseViewController {
     
     func validate() -> Bool {
         var success = true
-        let email = emailTextfield.text ?? ""
-        if email.isEmpty {
-            emailTextfield.showInfo("Email không được để trống")
+        let username = usernameTextfield.text ?? ""
+        if username.isEmpty {
             success = false
-        } else if !email.isValidEmail {
-            emailTextfield.showInfo("Email không đúng định dạng")
+            usernameTextfield.showInfo("Tên đăng nhập không được để trống")
+        } else if (!username.isValidEmail && !username.isValidPhone()) {
             success = false
+            usernameTextfield.showInfo("Tên đăng nhập không đúng định dạng")
         } else {
-            emailTextfield.hideInfo()
+            usernameTextfield.hideInfo()
         }
         let password = passwordTextfield.text ?? ""
         if password.isEmpty {

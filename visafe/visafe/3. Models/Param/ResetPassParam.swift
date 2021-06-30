@@ -9,7 +9,7 @@ import UIKit
 import ObjectMapper
 
 class ResetPassParam: NSObject, Mappable {
-    var email: String?
+    var username: String?
     var otp: String?
     var password: String?
     var repeat_password: String?
@@ -24,7 +24,7 @@ class ResetPassParam: NSObject, Mappable {
     
     func mapping(map: Map) {
         password <- map["password"]
-        email <- map["email"]
+        username <- map["username"]
         otp <- map["otp"]
         repeat_password <- map["repeat_password"]
     }

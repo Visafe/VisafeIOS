@@ -9,7 +9,8 @@ import UIKit
 import ObjectMapper
 
 class LoginParam: NSObject, Mappable {
-    var email: String?
+    
+    var username: String?
     var password: String?
     
     override init() {
@@ -22,6 +23,6 @@ class LoginParam: NSObject, Mappable {
     
     func mapping(map: Map) {
         password <- map["password"]
-        email <- map["email"]
+        username <- map["username"]
     }
 }

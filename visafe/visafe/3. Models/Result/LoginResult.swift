@@ -19,7 +19,7 @@ public enum LoginStatusEnum: Int {
         case .unactiveAccount:
             message = "Vui lòng kích hoạt tài khoản của bạn"
         case .unauthen:
-            message = "Email hoặc mật khẩu không chính xác"
+            message = "Tên đăng nhập hoặc mật khẩu không chính xác"
         case .error:
             message = "Có lỗi xảy ra. Vui lòng thử lại."
         }
@@ -34,7 +34,11 @@ public enum ResiterStatusEnum: Int {
     case emailExist = 409
     case error = 500
     case passwordweak = 2
-    case unactiveAccount = 1
+    case usernamenotempty = 3
+    case invalidpassword = 6
+    case phoneexists = 4
+    case successWithEmail = 1
+    case successWithPhone = 0
     
     func getDescription() -> String {
         var message = ""
@@ -44,15 +48,21 @@ public enum ResiterStatusEnum: Int {
         case .passwordweak:
             message = "Mật khẩu không đủ mạnh. Vui lòng nhập cả chữ và số"
         case .emailExist:
-            message = "Địa chỉ email đã được sử dụng. Vui lòng sử dụng email khác"
+            message = "Tên đăng nhập đã được sử dụng. Vui lòng sử dụng email khác"
         case .invalidate:
-            message = "Email và password không hợp lệ. Vui lòng kiểm tra lại"
+            message = "Tên đăng nhập và password không hợp lệ. Vui lòng kiểm tra lại"
         case .error:
             message = "Có lỗi xảy ra. Vui lòng thử lại"
         case .empty:
-            message = "Email và password không được để trống. Vui lòng kiểm tra lại"
-        case .unactiveAccount:
-            message = "Vui lòng kích hoạt tài khoản của bạn"
+            message = "Tên đăng nhập và password không được để trống. Vui lòng kiểm tra lại"
+        case .usernamenotempty:
+            message = "Tên người dùng không được để trống"
+        case .invalidpassword:
+            message = "Mật khẩu không hợp lệ"
+        case .phoneexists:
+            message = "Tên đăng nhập đã được sử dụng"
+        case .successWithEmail, .successWithPhone:
+            message = "Đăng ký thành công"
         }
         return message
     }

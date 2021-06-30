@@ -9,9 +9,9 @@
 		<string>dns-settings</string>
 		<string>packet-tunnel-provider</string>
 	</array>
-	<key>keychain-access-groups</key>
-	<array>
-		<string>$(AppIdentifierPrefix)com.shjn.visafe.networkextention</string>
-	</array>
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+	<key>com.apple.security.network.client</key>
+	<true/>
 </dict>
 </plist>

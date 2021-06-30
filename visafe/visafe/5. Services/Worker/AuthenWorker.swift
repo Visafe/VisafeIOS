@@ -40,8 +40,8 @@ class AuthenWorker {
         }
     }
     
-    static func forgotPassword(email: String?, completion: @escaping (_ result: ForgotPasswordResult?, _ error: Error?) -> Void) {
-        let router = APIRouter.forgotPassword(email: email)
+    static func forgotPassword(username: String?, completion: @escaping (_ result: ForgotPasswordResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.forgotPassword(username: username)
         APIManager.shared.request(target: router) { (data, error) in
             var loginResult: ForgotPasswordResult?
             if let data = data {
@@ -104,6 +104,36 @@ class AuthenWorker {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
                     loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
+    
+    static func profile(completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.reactivation
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: BaseResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
+    
+    static func activeAccount(param: PasswordModel, completion: @escaping (_ result: ActiveAccountResult?, _ error: Error?) -> Void) {
+        let newParam = param
+        newParam.password = nil
+        let router = APIRouter.activeAccount(param: param)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: ActiveAccountResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<ActiveAccountResult>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)

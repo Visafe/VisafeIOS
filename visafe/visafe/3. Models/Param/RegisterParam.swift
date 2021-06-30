@@ -9,10 +9,11 @@ import UIKit
 import ObjectMapper
 
 class RegisterParam: NSObject, Mappable {
-    var username: String?
+    var full_name: String?
     var email: String?
     var password: String?
-    var passwordagain: String?
+    var repeat_password: String?
+    var phone_number: String?
     
     override init() {
         super.init()
@@ -23,9 +24,10 @@ class RegisterParam: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
-        username <- map["username"]
+        full_name <- map["full_name"]
         password <- map["password"]
         email <- map["email"]
-        passwordagain <- map["passwordagain"]
+        repeat_password <- map["repeat_password"]
+        phone_number <- map["phone_number"]
     }
 }
