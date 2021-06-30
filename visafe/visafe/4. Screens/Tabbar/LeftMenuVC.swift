@@ -13,7 +13,7 @@ class LeftMenuVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var workspaces: [WorkspaceModel] = []
-    var selectedWorkspace:((_ workspace: WorkspaceModel) -> Void)?
+    var selectedWorkspace:((_ workspace: WorkspaceModel?) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,23 @@ class LeftMenuVC: BaseViewController {
     
     func prepareData() {
         workspaces = CacheManager.shared.getWorkspacesResult() ?? []
+        if workspaces.count > 0 {
+            if let w = CacheManager.shared.getCurrentWorkspace() {
+                if let newValue = workspaces.filter({ (wm) -> Bool in
+                    if wm.id == w.id { return true } else { return false }
+                }).first {
+                    CacheManager.shared.setCurrentWorkspace(value: newValue)
+                    selectedWorkspace?(newValue)
+                }
+            } else {
+                CacheManager.shared.setCurrentWorkspace(value: workspaces[0])
+                selectedWorkspace?(workspaces[0])
+            }
+        } else {
+            CacheManager.shared.setCurrentWorkspace(value: nil)
+            selectedWorkspace?(nil)
+        }
+        
         tableView.reloadData()
     }
 }
@@ -116,6 +133,13 @@ extension LeftMenuVC: UITableViewDelegate, UITableViewDataSource {
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.refreshData()
+            weakSelf.removeCacheWorkspaceIfNeed(id: workspace.id)
+        }
+    }
+    
+    func removeCacheWorkspaceIfNeed(id: String?) {
+        if id == CacheManager.shared.getCurrentWorkspace()?.id {
+            CacheManager.shared.setCurrentWorkspace(value: nil)
         }
     }
 }

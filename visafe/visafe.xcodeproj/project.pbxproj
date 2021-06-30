@@ -620,17 +620,17 @@
 		C9EDB54C26839E74009CBD93 /* Group */ = {
 			isa = PBXGroup;
 			children = (
-				C9EDB54D26839E74009CBD93 /* GroupVC.xib */,
-				C9EDB54E26839E74009CBD93 /* GroupVC.swift */,
 				C9EDB54F26839E74009CBD93 /* Cell */,
-				C9EDB55426839E74009CBD93 /* PostGroupVC.swift */,
-				C9EDB55526839E74009CBD93 /* PostGroupVC.xib */,
-				C9FA15F5268A2DBF00A1A6C6 /* GroupTypeVC.swift */,
-				C9FA15F6268A2DBF00A1A6C6 /* GroupTypeVC.xib */,
 				C9FA15FA268A2DD700A1A6C6 /* GroupSettingVC.swift */,
 				C9FA15FB268A2DD700A1A6C6 /* GroupSettingVC.xib */,
 				C9FA15FF268A2DE400A1A6C6 /* GroupTimeVC.swift */,
 				C9FA1600268A2DE400A1A6C6 /* GroupTimeVC.xib */,
+				C9FA15F5268A2DBF00A1A6C6 /* GroupTypeVC.swift */,
+				C9FA15F6268A2DBF00A1A6C6 /* GroupTypeVC.xib */,
+				C9EDB54E26839E74009CBD93 /* GroupVC.swift */,
+				C9EDB54D26839E74009CBD93 /* GroupVC.xib */,
+				C9EDB55426839E74009CBD93 /* PostGroupVC.swift */,
+				C9EDB55526839E74009CBD93 /* PostGroupVC.xib */,
 			);
 			path = Group;
 			sourceTree = "<group>";

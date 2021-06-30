@@ -141,8 +141,12 @@ extension APIRouter: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .forgotPassword, .getListWorkspace:
+        case .forgotPassword, .getListWorkspace, .profile:
             return .get
+        case .deleteWorkspace:
+            return .delete
+        case .updateWorkspace, .updateNameWorkspace:
+            return .patch
         default:
             break
         }
@@ -216,7 +220,7 @@ extension APIRouter: TargetType {
     
     var task: Task {
         switch self {
-        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .renameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteToGroup, .changeManagerPermision, .changeViewerPermision, .activeAccount:
+        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .renameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteToGroup, .changeManagerPermision, .changeViewerPermision, .activeAccount, .deleteWorkspace:
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             break

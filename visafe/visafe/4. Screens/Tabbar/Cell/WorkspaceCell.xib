@@ -42,23 +42,23 @@
                         </subviews>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xho-2p-kL0">
-                        <rect key="frame" x="287" y="27" width="100" height="24.5"/>
+                        <rect key="frame" x="287" y="23" width="100" height="32"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Thành viên" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ9-T0-CfH">
-                                <rect key="frame" x="10" y="5" width="80" height="14.5"/>
+                                <rect key="frame" x="10" y="8" width="80" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="k9O-4V-Lqe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FQ9-T0-CfH" firstAttribute="top" secondItem="xho-2p-kL0" secondAttribute="top" constant="5" id="TCe-XO-pVk"/>
+                            <constraint firstItem="FQ9-T0-CfH" firstAttribute="top" secondItem="xho-2p-kL0" secondAttribute="top" constant="8" id="TCe-XO-pVk"/>
                             <constraint firstAttribute="trailing" secondItem="FQ9-T0-CfH" secondAttribute="trailing" constant="10" id="Z6q-Sc-Dci"/>
-                            <constraint firstAttribute="bottom" secondItem="FQ9-T0-CfH" secondAttribute="bottom" constant="5" id="dbR-cr-RFb"/>
+                            <constraint firstAttribute="bottom" secondItem="FQ9-T0-CfH" secondAttribute="bottom" constant="8" id="dbR-cr-RFb"/>
                             <constraint firstItem="FQ9-T0-CfH" firstAttribute="leading" secondItem="xho-2p-kL0" secondAttribute="leading" constant="10" id="pWG-cQ-6MB"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

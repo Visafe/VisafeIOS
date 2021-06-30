@@ -181,6 +181,9 @@
             </constraints>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="fullnameLabel" destination="WBI-fv-GX3" id="xcm-CC-8Oi"/>
+            </connections>
             <point key="canvasLocation" x="337.68115942028987" y="-87.723214285714278"/>
         </view>
     </objects>

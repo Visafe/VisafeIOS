@@ -14,6 +14,7 @@ let kIsLogin = "kIsLogin"
 let kLoginResult = "kLoginResult"
 let kListWorkspace = "kListWorkspace"
 let kCurrentWorkspace = "kCurrentWorkspace"
+let kCurrentUser = "kCurrentUser"
 
 class CacheManager {
     
@@ -64,6 +65,18 @@ class CacheManager {
     
     func setCurrentWorkspace(value: WorkspaceModel?) {
         userDefault.set(value?.toJSONString(), forKey: kCurrentWorkspace)
+        userDefault.synchronize()
+    }
+    
+    func getCurrentUser() -> UserModel? {
+        if let value = userDefault.string(forKey: kCurrentUser) {
+            return Mapper<UserModel>().map(JSONString: value)
+        }
+        return nil
+    }
+    
+    func setCurrentUser(value: UserModel?) {
+        userDefault.set(value?.toJSONString(), forKey: kCurrentUser)
         userDefault.synchronize()
     }
 }

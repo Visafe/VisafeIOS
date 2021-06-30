@@ -110,14 +110,14 @@ class AuthenWorker {
         }
     }
     
-    static func profile(completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
-        let router = APIRouter.reactivation
+    static func profile(completion: @escaping (_ result: UserModel?, _ error: Error?) -> Void) {
+        let router = APIRouter.profile
         APIManager.shared.request(target: router) { (data, error) in
-            var loginResult: BaseResult?
+            var loginResult: UserModel?
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                    loginResult = Mapper<UserModel>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)
@@ -125,9 +125,11 @@ class AuthenWorker {
     }
     
     static func activeAccount(param: PasswordModel, completion: @escaping (_ result: ActiveAccountResult?, _ error: Error?) -> Void) {
-        let newParam = param
-        newParam.password = nil
-        let router = APIRouter.activeAccount(param: param)
+        let p = PasswordModel()
+        p.email = param.email
+        p.otp = param.otp
+        p.phone_number = param.phone_number
+        let router = APIRouter.activeAccount(param: p)
         APIManager.shared.request(target: router) { (data, error) in
             var loginResult: ActiveAccountResult?
             if let data = data {

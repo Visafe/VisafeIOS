@@ -59,8 +59,8 @@ class AdministrationVC: BaseViewController {
         navigationItem.rightBarButtonItem = notifiBarButton
     }
     
-    func onChangeWorkspace(workspace: WorkspaceModel) {
-        title = workspace.name
+    func onChangeWorkspace(workspace: WorkspaceModel?) {
+        title = workspace?.name ?? "Quản trị"
     }
     
     func configSideMenu() {

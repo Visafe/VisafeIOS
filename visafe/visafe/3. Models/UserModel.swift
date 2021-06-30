@@ -9,8 +9,12 @@ import UIKit
 import ObjectMapper
 
 class UserModel: NSObject, Mappable {
+    var userid: String?
     var email: String?
-    var username: String?
+    var fullname: String?
+    var phonenumber: String?
+    var isverify: Bool?
+    var isActive: Bool?
     
     override init() {
         super.init()
@@ -21,7 +25,11 @@ class UserModel: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
+        userid <- map["UserID"]
+        fullname <- map["FullName"]
         email <- map["email"]
-        username <- map["username"]
+        phonenumber <- map["PhoneNumber"]
+        isverify <- map["IsVerify"]
+        isActive <- map["IsActive"]
     }
 }

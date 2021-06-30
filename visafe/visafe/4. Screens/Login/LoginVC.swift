@@ -40,26 +40,18 @@ class LoginVC: BaseViewController {
     }
     
     func handleLogin(result: LoginResult?, error: Error?) {
-        if let res = result {
-            if res.token != nil { // login thanh cong
-                CacheManager.shared.setLoginResult(value: res)
-                actionAfterLogin()
-            } else {
-                let type = res.status_code ?? .error
-                showError(title: "Đăng nhập không thành công", content: type.getDescription())
-            }
+        if let res = result, res.token != nil {
+            CacheManager.shared.setLoginResult(value: res)
+            getProfile()
         } else {
             let type = LoginStatusEnum.error
             showError(title: "Đăng nhập không thành công", content: type.getDescription())
         }
     }
     
-    @IBAction func endEditing(_ sender: TweeAttributedTextField) {
-//        _ = validate()
-    }
     
-    func actionAfterLogin() {
-        showLoading()
+    
+    func getWorkspaces() {
         WorkspaceWorker.getList { [weak self] (list, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
@@ -70,10 +62,13 @@ class LoginVC: BaseViewController {
         }
     }
     
-    @IBAction func forgotPasswordAction(_ sender: Any) {
-        let vc = ForgotPasswordVC()
-        let nav = BaseNavigationController(rootViewController: vc)
-        present(nav, animated: true, completion: nil)
+    func getProfile() {
+        showLoading()
+        AuthenWorker.profile { [weak self] (user, error) in
+            guard let weakSelf = self else { return }
+            CacheManager.shared.setCurrentUser(value: user)
+            weakSelf.getWorkspaces()
+        }
     }
     
     func validate() -> Bool {
@@ -96,5 +91,15 @@ class LoginVC: BaseViewController {
             passwordTextfield.hideInfo()
         }
         return success
+    }
+    
+    @IBAction func forgotPasswordAction(_ sender: Any) {
+        let vc = ForgotPasswordVC()
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
+    }
+    
+    @IBAction func endEditing(_ sender: TweeAttributedTextField) {
+        
     }
 }

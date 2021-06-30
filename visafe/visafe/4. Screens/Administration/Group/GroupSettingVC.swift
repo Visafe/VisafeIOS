@@ -14,6 +14,8 @@ class GroupSettingVC: BaseViewController {
     
     var onContinue:(() -> Void)?
     
+    @IBOutlet weak var tableView: UITableView!
+    
     init(group: GroupModel, editMode: EditModeEnum) {
         self.group = group
         self.editMode = editMode
@@ -26,6 +28,5 @@ class GroupSettingVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }
