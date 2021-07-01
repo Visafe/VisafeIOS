@@ -9,8 +9,6 @@ import UIKit
 
 class GroupTimeVC: BaseViewController {
     
-    
-
     var group: GroupModel
     var editMode: EditModeEnum
     
@@ -29,5 +27,22 @@ class GroupTimeVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    @IBAction func doneAction(_ sender: Any) {
+        showLoading()
+        GroupWorker.add(group: group) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            weakSelf.handleResponse(group: result, error: error)
+        }
+    }
+    
+    func handleResponse(group: GroupModel?, error: Error?) {
+        if group != nil {
+            showMemssage(title: "Tạo nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn khởi tạo.")
+        } else {
+            showError(title: "Tạo nhóm không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
+        }
     }
 }

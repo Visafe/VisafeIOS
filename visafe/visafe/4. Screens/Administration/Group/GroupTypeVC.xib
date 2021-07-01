@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcg-2V-XnO">
-                    <rect key="frame" x="30" y="714" width="354" height="50"/>
+                    <rect key="frame" x="16" y="718" width="382" height="48"/>
                     <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="lQT-Yc-wCP"/>
+                        <constraint firstAttribute="height" constant="48" id="lQT-Yc-wCP"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <state key="normal" title="Tiếp tục">
@@ -138,13 +138,13 @@
                 <constraint firstItem="7V0-VG-Fly" firstAttribute="trailing" secondItem="4ay-WA-NP5" secondAttribute="trailing" constant="30" id="RcW-W0-mFc"/>
                 <constraint firstItem="4ay-WA-NP5" firstAttribute="top" secondItem="prT-tZ-3Fj" secondAttribute="bottom" constant="30" id="SIu-qg-nbH"/>
                 <constraint firstItem="prT-tZ-3Fj" firstAttribute="leading" secondItem="7V0-VG-Fly" secondAttribute="leading" constant="30" id="XHp-D0-6CI"/>
-                <constraint firstItem="7V0-VG-Fly" firstAttribute="bottom" secondItem="bcg-2V-XnO" secondAttribute="bottom" constant="10" id="YkE-hl-GeV"/>
+                <constraint firstItem="7V0-VG-Fly" firstAttribute="bottom" secondItem="bcg-2V-XnO" secondAttribute="bottom" constant="8" id="YkE-hl-GeV"/>
                 <constraint firstAttribute="trailing" secondItem="eRl-CS-MDn" secondAttribute="trailing" constant="30" id="Ztj-pK-WMg"/>
                 <constraint firstItem="eRl-CS-MDn" firstAttribute="top" secondItem="7V0-VG-Fly" secondAttribute="top" constant="30" id="hrh-E4-Pc5"/>
-                <constraint firstItem="7V0-VG-Fly" firstAttribute="trailing" secondItem="bcg-2V-XnO" secondAttribute="trailing" constant="30" id="iKi-RR-Jus"/>
+                <constraint firstItem="7V0-VG-Fly" firstAttribute="trailing" secondItem="bcg-2V-XnO" secondAttribute="trailing" constant="16" id="iKi-RR-Jus"/>
                 <constraint firstItem="prT-tZ-3Fj" firstAttribute="top" secondItem="eRl-CS-MDn" secondAttribute="bottom" constant="40" id="wrW-S4-PQl"/>
                 <constraint firstItem="pNu-mm-QRc" firstAttribute="top" secondItem="4ay-WA-NP5" secondAttribute="bottom" constant="35" id="xbe-DE-xpq"/>
-                <constraint firstItem="bcg-2V-XnO" firstAttribute="leading" secondItem="lRm-vD-dxi" secondAttribute="leading" constant="30" id="xfI-bP-Tf3"/>
+                <constraint firstItem="bcg-2V-XnO" firstAttribute="leading" secondItem="lRm-vD-dxi" secondAttribute="leading" constant="16" id="xfI-bP-Tf3"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="-77" y="62"/>

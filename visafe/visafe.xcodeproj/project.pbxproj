@@ -86,6 +86,9 @@
 		C95A5862268867310077112F /* PageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5861268867310077112F /* PageViewControllerExtension.swift */; };
 		C95A5868268870620077112F /* ChooseTypeWorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5866268870620077112F /* ChooseTypeWorkspaceCell.swift */; };
 		C95A5869268870620077112F /* ChooseTypeWorkspaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95A5867268870620077112F /* ChooseTypeWorkspaceCell.xib */; };
+		C999AB03268DFD1200F657A9 /* GroupSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C999AB02268DFD1200F657A9 /* GroupSettingHeaderView.xib */; };
+		C999AB07268E03F200F657A9 /* GroupSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999AB05268E03F200F657A9 /* GroupSettingCell.swift */; };
+		C999AB08268E03F200F657A9 /* GroupSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C999AB06268E03F200F657A9 /* GroupSettingCell.xib */; };
 		C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F333626838E4300859DF6 /* UIButtonExtension.swift */; };
 		C9A6FEAC268883390002085E /* SecurityWorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6FEAA268883390002085E /* SecurityWorkspaceCell.swift */; };
 		C9A6FEAD268883390002085E /* SecurityWorkspaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A6FEAB268883390002085E /* SecurityWorkspaceCell.xib */; };
@@ -133,6 +136,7 @@
 		C9FA1607268A344B00A1A6C6 /* ChooseTypeGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA1605268A344B00A1A6C6 /* ChooseTypeGroupCell.swift */; };
 		C9FA160B268B611200A1A6C6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA160A268B611200A1A6C6 /* StringExtension.swift */; };
 		C9FA161B268B794300A1A6C6 /* ActiveAccountResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA161A268B794300A1A6C6 /* ActiveAccountResult.swift */; };
+		C9FA1671268DFC4C00A1A6C6 /* GroupSettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA1670268DFC4900A1A6C6 /* GroupSettingHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -223,6 +227,9 @@
 		C95A5861268867310077112F /* PageViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewControllerExtension.swift; sourceTree = "<group>"; };
 		C95A5866268870620077112F /* ChooseTypeWorkspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeWorkspaceCell.swift; sourceTree = "<group>"; };
 		C95A5867268870620077112F /* ChooseTypeWorkspaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeWorkspaceCell.xib; sourceTree = "<group>"; };
+		C999AB02268DFD1200F657A9 /* GroupSettingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingHeaderView.xib; sourceTree = "<group>"; };
+		C999AB05268E03F200F657A9 /* GroupSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingCell.swift; sourceTree = "<group>"; };
+		C999AB06268E03F200F657A9 /* GroupSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingCell.xib; sourceTree = "<group>"; };
 		C99F333626838E4300859DF6 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		C9A6FEAA268883390002085E /* SecurityWorkspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityWorkspaceCell.swift; sourceTree = "<group>"; };
 		C9A6FEAB268883390002085E /* SecurityWorkspaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityWorkspaceCell.xib; sourceTree = "<group>"; };
@@ -265,6 +272,7 @@
 		C9FA1605268A344B00A1A6C6 /* ChooseTypeGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTypeGroupCell.swift; sourceTree = "<group>"; };
 		C9FA160A268B611200A1A6C6 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C9FA161A268B794300A1A6C6 /* ActiveAccountResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAccountResult.swift; sourceTree = "<group>"; };
+		C9FA1670268DFC4900A1A6C6 /* GroupSettingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -640,10 +648,14 @@
 			children = (
 				C9FA1605268A344B00A1A6C6 /* ChooseTypeGroupCell.swift */,
 				C9FA1604268A344B00A1A6C6 /* ChooseTypeGroupCell.xib */,
+				C9EDB55326839E74009CBD93 /* GroupCell.swift */,
 				C9EDB55026839E74009CBD93 /* GroupCell.xib */,
 				C9EDB55126839E74009CBD93 /* GroupFooterView.swift */,
 				C9EDB55226839E74009CBD93 /* GroupFooterView.xib */,
-				C9EDB55326839E74009CBD93 /* GroupCell.swift */,
+				C9FA1670268DFC4900A1A6C6 /* GroupSettingHeaderView.swift */,
+				C999AB02268DFD1200F657A9 /* GroupSettingHeaderView.xib */,
+				C999AB05268E03F200F657A9 /* GroupSettingCell.swift */,
+				C999AB06268E03F200F657A9 /* GroupSettingCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -767,6 +779,7 @@
 				C93ED164268232BE00B03E8A /* AdministrationVC.xib in Resources */,
 				C9B7949126862C2E00258A72 /* ForgotPasswordVC.xib in Resources */,
 				C93D92572688BDDD006AD80C /* MoreActionWorkspaceView.xib in Resources */,
+				C999AB03268DFD1200F657A9 /* GroupSettingHeaderView.xib in Resources */,
 				C93D92512688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib in Resources */,
 				C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */,
 				C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */,
@@ -778,6 +791,7 @@
 				C93ED15F268232A100B03E8A /* SettingVC.xib in Resources */,
 				C9B7949626862C4800258A72 /* EnterOTPVC.xib in Resources */,
 				0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */,
+				C999AB08268E03F200F657A9 /* GroupSettingCell.xib in Resources */,
 				C90EA7402684C298002502F5 /* LoginVC.xib in Resources */,
 				C95A585F268863790077112F /* SetupSecurityWorkspaceVC.xib in Resources */,
 				C940AE8F268375A30069B830 /* WorkspaceCell.xib in Resources */,
@@ -851,6 +865,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B7947A2686199200258A72 /* AuthenWorker.swift in Sources */,
+				C999AB07268E03F200F657A9 /* GroupSettingCell.swift in Sources */,
 				C9B7949A26862C5F00258A72 /* SetPasswordVC.swift in Sources */,
 				C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */,
 				C9FA1607268A344B00A1A6C6 /* ChooseTypeGroupCell.swift in Sources */,
@@ -868,6 +883,7 @@
 				C919B94826821DA9009982C3 /* APIRouter.swift in Sources */,
 				C9FA160B268B611200A1A6C6 /* StringExtension.swift in Sources */,
 				C940AE8E268375A30069B830 /* WorkspaceCell.swift in Sources */,
+				C9FA1671268DFC4C00A1A6C6 /* GroupSettingHeaderView.swift in Sources */,
 				C94B39C2268A260D00046958 /* DeleteToGroupParam.swift in Sources */,
 				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
 				C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */,

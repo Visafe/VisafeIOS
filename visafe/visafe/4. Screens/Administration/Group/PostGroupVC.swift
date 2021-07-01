@@ -13,6 +13,7 @@ class PostGroupVC: BaseViewController {
     @IBOutlet weak var leadingSegment: NSLayoutConstraint!
     var editMode: EditModeEnum = .add
     var group: GroupModel
+    var workspaceId: String?
     
     var pageViewController: UIPageViewController!
     let typeVC: GroupTypeVC!
@@ -28,7 +29,8 @@ class PostGroupVC: BaseViewController {
             settingVC = GroupSettingVC(group: self.group, editMode: self.editMode)
             timeVC = GroupTimeVC(group: self.group, editMode: self.editMode)
         } else {
-            self.group = GroupModel()
+            self.group = GroupModel.getDefaultModel()
+            self.group.workspace_id = CacheManager.shared.getCurrentWorkspace()?.id
             editMode = .add
             typeVC = GroupTypeVC(group: self.group, editMode: self.editMode)
             settingVC = GroupSettingVC(group: self.group, editMode: self.editMode)
@@ -61,6 +63,13 @@ class PostGroupVC: BaseViewController {
         typeVC.onContinue = { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.pageViewController.setViewControllers([weakSelf.settingVC], direction: UIPageViewController.NavigationDirection.forward, animated: true) { (success) in
+                weakSelf.updateHeaderSegmentedState()
+            }
+        }
+        
+        settingVC.onContinue = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.pageViewController.setViewControllers([weakSelf.timeVC], direction: UIPageViewController.NavigationDirection.forward, animated: true) { (success) in
                 weakSelf.updateHeaderSegmentedState()
             }
         }

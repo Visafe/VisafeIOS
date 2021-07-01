@@ -93,7 +93,7 @@ class GroupTypeVC: BaseViewController {
         if let userInfo = (sender as NSNotification).userInfo {
             if let _ = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height {
                 //key point 0,
-                self.bottomContraint.constant =  10
+                self.bottomContraint.constant =  8
                 UIView.animate(withDuration: 0.25, animations: { () -> Void in self.view.layoutIfNeeded() })
             }
         }
@@ -102,7 +102,7 @@ class GroupTypeVC: BaseViewController {
     @objc func keyboardWillShow(_ sender: Notification) {
         if let userInfo = (sender as NSNotification).userInfo {
             if let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height {
-                self.bottomContraint.constant = keyboardHeight + 10
+                self.bottomContraint.constant = keyboardHeight + 8
                 
                 UIView.animate(withDuration: 0.25, animations: { () -> Void in
                     self.view.layoutIfNeeded()

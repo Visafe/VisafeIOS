@@ -51,7 +51,7 @@ public enum GroupAppAdsEnum: String {
     func getIcon() -> UIImage? {
         switch self {
         case .instagram:
-            return UIImage(named: "instagram_icon")
+            return UIImage(named: "insta_icon")
         case .youtube:
             return UIImage(named: "youtube_icon")
         case .spotify:
@@ -59,6 +59,10 @@ public enum GroupAppAdsEnum: String {
         case .facebook:
             return UIImage(named: "facebook_icon")
         }
+    }
+    
+    static func getAll() -> [GroupAppAdsEnum] {
+        return [.instagram, .youtube, .spotify, .facebook]
     }
 }
 
@@ -72,6 +76,10 @@ public enum BlockServcieEnum: String {
     case netflix = "netflix"
     case reddit = "reddit"
     case _9gag = "9gag"
+    
+    static func getAll() -> [BlockServcieEnum] {
+        return [.facebook, .zalo, .tiktok, .instagram, .tinder, .twitter, .netflix, .reddit, ._9gag]
+    }
     
     func getTitle() -> String {
         switch self {
@@ -105,7 +113,7 @@ public enum BlockServcieEnum: String {
         case .tiktok:
             return UIImage(named: "")
         case .instagram:
-            return UIImage(named: "instagram_icon")
+            return UIImage(named: "insta_icon")
         case .tinder:
             return UIImage(named: "")
         case .twitter:
@@ -129,6 +137,10 @@ public enum NativeTrackingEnum : String {
     case sonos = "sonos"
     case windows = "windows"
     case xiaomi = "xiaomi"
+    
+    static func getAll() -> [NativeTrackingEnum] {
+        return [.alexa, .apple, .huawei, .roku, .samsung, .sonos, .windows, .xiaomi]
+    }
     
     func getTitle() -> String {
         switch self {
@@ -186,7 +198,7 @@ public enum SafesearchEnum: Int {
             return "Youtube"
         }
     }
-        
+    
     func getIcon() -> UIImage? {
         switch self {
         case .safesearch:
@@ -194,6 +206,10 @@ public enum SafesearchEnum: Int {
         case .youtuberestrict:
             return UIImage(named: "youtube_icon")
         }
+    }
+    
+    static func getAll() -> [SafesearchEnum] {
+        return [.safesearch, .youtuberestrict]
     }
 }
 
@@ -274,7 +290,7 @@ public class NativeTrackingModel: BaseGroupModel {
 }
 
 public class BlockServiceModel: BaseGroupModel {
-    var type: NativeTrackingEnum?
+    var type: BlockServcieEnum?
 }
 
 public class SafeSearchModel: BaseGroupModel {
@@ -308,7 +324,7 @@ class GroupModel: NSObject, Mappable {
     override init() {
         super.init()
     }
-
+    
     convenience required init?(map: Map) {
         self.init()
     }
@@ -333,6 +349,52 @@ class GroupModel: NSObject, Mappable {
         workspace_id <- map["workspace_id"]
     }
     
+    func buildModelsAppAds(value: [String]) -> [AppAdsModel] {
+        var responses: [AppAdsModel] = []
+        for type in GroupAppAdsEnum.getAll() {
+            let model = AppAdsModel()
+            model.type = type
+            model.isSelected = value.contains(type.rawValue)
+            responses.append(model)
+        }
+        return responses
+    }
+    
+    func buildTracking(value: [String]) -> [NativeTrackingModel] {
+        var responses: [NativeTrackingModel] = []
+        for type in NativeTrackingEnum.getAll() {
+            let model = NativeTrackingModel()
+            model.type = type
+            model.isSelected = value.contains(type.rawValue)
+            responses.append(model)
+        }
+        return responses
+    }
+    
+    func buildModelsBlockService(value: [String]) -> [BlockServiceModel] {
+        var responses: [BlockServiceModel] = []
+        for type in BlockServcieEnum.getAll() {
+            let model = BlockServiceModel()
+            model.type = type
+            model.isSelected = value.contains(type.rawValue)
+            responses.append(model)
+        }
+        return responses
+    }
+    
+    func buildModelsSafeSearch() -> [SafeSearchModel] {
+        var responses: [SafeSearchModel] = []
+        let model = SafeSearchModel()
+        model.type = .safesearch
+        model.isSelected = safesearch_enabled
+        responses.append(model)
+        let model2 = SafeSearchModel()
+        model2.type = .youtuberestrict
+        model2.isSelected = youtuberestrict_enabled
+        responses.append(model2)
+        return responses
+    }
+    
     func buildSource() -> [PostGroupModel] {
         var sources = [PostGroupModel]()
         // Chặn quảng cáo Website
@@ -349,50 +411,120 @@ class GroupModel: NSObject, Mappable {
         let m3 = PostGroupModel()
         m3.isSelected = app_ads?.count ?? 0 > 0
         m3.type = .appads
-        m3.children = app_ads ?? []
+        m3.children = buildModelsAppAds(value: app_ads ?? [])
         sources.append(m3)
         // Chặn theo dõi thiết bị
         let m4 = PostGroupModel()
+        m4.type = .nativetracking
         m4.isSelected = native_tracking?.count ?? 0 > 0
-        m4.children = native_tracking ?? []
+        m4.children = buildTracking(value: native_tracking ?? [])
         sources.append(m4)
         // Ứng dụng
         let m5 = PostGroupModel()
+        m5.type = .service
         m5.isSelected = blocked_services?.count ?? 0 > 0
-        m5.children = blocked_services ?? []
+        m5.children = buildModelsBlockService(value: blocked_services ?? [])
         sources.append(m5)
         // Website
         let m6 = PostGroupModel()
+        m6.type = .website
         m6.isSelected = block_webs?.count ?? 0 > 0
         m6.children = block_webs ?? []
         sources.append(m6)
-        
         // Giới hạn nội dung tìm kiếm
         let m7 = PostGroupModel()
+        m7.type = .safesearch
         m7.isSelected = safesearch_enabled ?? youtuberestrict_enabled ?? false
-        var children = [SafeSearchModel]()
-        let safeModel = SafeSearchModel()
-        safeModel.type = .safesearch
-        safeModel.isSelected = safesearch_enabled
-        children.append(safeModel)
-        let youtubeModel = SafeSearchModel()
-        youtubeModel.type = .youtuberestrict
-        youtubeModel.isSelected = youtuberestrict_enabled
-        children.append(youtubeModel)
+        m7.children = buildModelsSafeSearch()
         sources.append(m7)
-        
         // Chặn nội dung nhạy cảm
         let m8 = PostGroupModel()
         m8.isSelected = porn_enabled
         m8.type = .porn
         sources.append(m8)
-        
         // Chống ByPass
         let m9 = PostGroupModel()
         m9.isSelected = bypass_enabled
         m9.type = .bypass
         sources.append(m9)
         return sources
+    }
+    
+    func bindingData(sources: [PostGroupModel]) {
+        for model in sources {
+            guard let type = model.type else { break }
+            switch type {
+            case .adblock:
+                adblock_enabled = model.isSelected
+            case .gameads:
+                game_ads_enabled = model.isSelected
+            case .appads:
+                if model.isSelected ?? false {
+                    var res: [String] = []
+                    for item in model.children as? [AppAdsModel] ?? [] {
+                        if item.isSelected == true {
+                            if let type = item.type {
+                                res.append(type.rawValue)
+                            }
+                        }
+                    }
+                    app_ads = res
+                } else {
+                    app_ads = []
+                }
+            case .nativetracking:
+                if model.isSelected ?? false {
+                    var res: [String] = []
+                    for item in model.children as? [NativeTrackingModel] ?? [] {
+                        if item.isSelected == true {
+                            if let type = item.type {
+                                res.append(type.rawValue)
+                            }
+                        }
+                    }
+                    native_tracking = res
+                } else {
+                    native_tracking = []
+                }
+            case .service:
+                if model.isSelected ?? false {
+                    var res: [String] = []
+                    for item in model.children as? [BlockServiceModel] ?? [] {
+                        if item.isSelected == true {
+                            if let type = item.type {
+                                res.append(type.rawValue)
+                            }
+                        }
+                    }
+                    blocked_services = res
+                } else {
+                    blocked_services = []
+                }
+            case .safesearch:
+                if model.isSelected ?? false {
+                    let models = model.children as? [SafeSearchModel] ?? []
+                    for item in models {
+                        if let type = item.type {
+                            switch type {
+                            case .safesearch:
+                                safesearch_enabled = item.isSelected
+                            case .youtuberestrict:
+                                youtuberestrict_enabled = item.isSelected
+                            }
+                        }
+                    }
+                } else {
+                    safesearch_enabled = false
+                    youtuberestrict_enabled = false
+                }
+            case .bypass:
+                bypass_enabled = model.isSelected
+            case .porn:
+                porn_enabled = model.isSelected
+            default:
+                break
+            }
+        }
     }
     
     static func getDefaultModel() -> GroupModel {
