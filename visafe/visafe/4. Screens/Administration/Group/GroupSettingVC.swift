@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftMessages
 
 class GroupSettingVC: BaseViewController {
 
@@ -44,7 +45,7 @@ class GroupSettingVC: BaseViewController {
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 25
         
-        tableView.registerCells(cells: [GroupSettingCell.className])
+        tableView.registerCells(cells: [GroupSettingCell.className, GroupSettingLinkCell.className])
     }
     
     func prepareData() {
@@ -103,38 +104,52 @@ extension GroupSettingVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = sources[indexPath.section]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupSettingCell.className) as? GroupSettingCell else {
-            return UITableViewCell()
-        }
-        switch model.type {
-        case .appads:
-            if let data = model.children[indexPath.row] as? AppAdsModel {
-                cell.bindingData(ads: data)
-            } else {
-                cell.bindingData(ads: nil)
+        if model.type == .website {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupSettingLinkCell.className) as? GroupSettingLinkCell else {
+                return UITableViewCell()
             }
-        case .service:
-            if let data = model.children[indexPath.row] as? BlockServiceModel {
-                cell.bindingData(service: data)
-            } else {
-                cell.bindingData(service: nil)
+            if let link = model.children[indexPath.row] as? String {
+                cell.binding(link: link)
+                cell.moreAction = { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.moreLinkAction(link: link, index: indexPath.row)
+                }
             }
-        case .nativetracking:
-            if let data = model.children[indexPath.row] as? NativeTrackingModel {
-                cell.bindingData(tracking: data)
-            } else {
-                cell.bindingData(tracking: nil)
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupSettingCell.className) as? GroupSettingCell else {
+                return UITableViewCell()
             }
-        case .safesearch:
-            if let data = model.children[indexPath.row] as? SafeSearchModel {
-                cell.bindingData(safeSearch: data)
-            } else {
+            switch model.type {
+            case .appads:
+                if let data = model.children[indexPath.row] as? AppAdsModel {
+                    cell.bindingData(ads: data)
+                } else {
+                    cell.bindingData(ads: nil)
+                }
+            case .service:
+                if let data = model.children[indexPath.row] as? BlockServiceModel {
+                    cell.bindingData(service: data)
+                } else {
+                    cell.bindingData(service: nil)
+                }
+            case .nativetracking:
+                if let data = model.children[indexPath.row] as? NativeTrackingModel {
+                    cell.bindingData(tracking: data)
+                } else {
+                    cell.bindingData(tracking: nil)
+                }
+            case .safesearch:
+                if let data = model.children[indexPath.row] as? SafeSearchModel {
+                    cell.bindingData(safeSearch: data)
+                } else {
+                    cell.bindingData(safeSearch: nil)
+                }
+            default:
                 cell.bindingData(safeSearch: nil)
             }
-        default:
-            cell.bindingData(safeSearch: nil)
+            return cell
         }
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -143,11 +158,99 @@ extension GroupSettingVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
+        let model = sources[section]
+        if model.type == .website {
+            let viewFooter = GroupSettingFooterView.loadFromNib()
+            viewFooter?.onClickAddLink = { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.handleActionAddLink()
+            }
+            return viewFooter
+        } else {
+            return UIView()
+        }
+    }
+    
+    func moreLinkAction(link: String, index: Int) {
+        guard let view = MoreLinkSettingView.loadFromNib() else { return }
+        view.binding(name: link)
+        view.editAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            var dic: [String: Any] = [:]
+            dic["link"] = link
+            dic["index"] = index
+            Timer.scheduledTimer(timeInterval: 0.3, target: weakSelf, selector:#selector(weakSelf.editLinkAction(sender:)), userInfo: dic , repeats:false)
+        }
+        view.deleteAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.removeLink(index: index)
+        }
+        showPopup(view: view)
+    }
+    
+    @objc func editLinkAction(sender: Timer) {
+        guard let view = EnterLinkWebsiteView.loadFromNib() else { return }
+        guard let dic = sender.userInfo as? [String: Any] else { return }
+        let link = dic["link"] as? String ?? ""
+        let index = dic["index"] as? Int ?? 0
+        view.websiteTextfield.text = link
+        view.acceptAction = { [weak self] link in
+            guard let weakSelf = self else { return }
+            guard let linkAddress = link else { return }
+            weakSelf.handleEditlink(link: linkAddress, index: index)
+        }
+        showPopup(view: view)
+    }
+    
+    func handleEditlink(link: String, index: Int) {
+        for item in sources {
+            if item.type == .website {
+                item.children[index] = link
+            }
+        }
+        tableView.reloadData()
+    }
+    
+    func removeLink(index: Int) {
+        for item in sources {
+            if item.type == .website {
+                if item.children.count >= index {
+                    item.children.remove(at: index)
+                    tableView.reloadData()
+                }
+                return
+            }
+        }
+    }
+    
+    func handleActionAddLink() {
+        guard let view = EnterLinkWebsiteView.loadFromNib() else { return }
+        view.nameLabel.text = group.name
+        view.acceptAction = { [weak self] link in
+            guard let weakSelf = self else { return }
+            guard let linkAddress = link else { return }
+            weakSelf.handleAddlink(link: linkAddress)
+        }
+        showPopup(view: view)
+    }
+    
+    func handleAddlink(link: String) {
+        guard let postModel = sources.filter({ (post) -> Bool in
+            return post.type == .website
+        }).first else { return }
+        var listAddress: [String] = postModel.children as? [String] ?? []
+        listAddress.append(link)
+        postModel.children = listAddress
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.0001
+        let model = sources[section]
+        if model.type == .website {
+            return 80.0000
+        } else {
+            return 0.0001
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

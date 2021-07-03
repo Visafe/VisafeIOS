@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j8G-YM-0F7">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="714"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="726"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="jI1-zJ-tdq"/>
@@ -57,7 +57,7 @@
                 <constraint firstItem="EE2-FP-4e3" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="8" id="XpM-qj-Ajs"/>
                 <constraint firstItem="EE2-FP-4e3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="gro-xQ-aVm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EE2-FP-4e3" secondAttribute="trailing" constant="16" id="haN-zR-vx4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="j8G-YM-0F7" secondAttribute="bottom" constant="60" id="m4o-bm-AWf"/>
+                <constraint firstItem="EE2-FP-4e3" firstAttribute="top" secondItem="j8G-YM-0F7" secondAttribute="bottom" constant="8" id="m9c-Gv-Awc"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="90" y="84"/>

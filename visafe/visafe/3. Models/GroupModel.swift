@@ -100,7 +100,7 @@ public enum BlockServcieEnum: String {
         case .reddit:
             return "Reddit"
         case ._9gag:
-            return "9gag"
+            return "9GAG"
         }
     }
     
@@ -303,6 +303,7 @@ public class PostGroupModel: BaseGroupModel {
 }
 
 class GroupModel: NSObject, Mappable {
+    var groupid: String?
     var adblock_enabled: Bool?
     var app_ads: [String]?
     var block_webs: [String]?
@@ -320,6 +321,8 @@ class GroupModel: NSObject, Mappable {
     var safesearch_enabled: Bool?
     var youtuberestrict_enabled: Bool?
     var workspace_id: String?
+    var isOwner: Bool?
+    var fkUserId: Int?
     
     override init() {
         super.init()
@@ -347,6 +350,9 @@ class GroupModel: NSObject, Mappable {
         safesearch_enabled <- map["safesearch_enabled"]
         youtuberestrict_enabled <- map["youtuberestrict_enabled"]
         workspace_id <- map["workspace_id"]
+        isOwner <- map["isOwner"]
+        groupid <- map["groupid"]
+        fkUserId <- map["fkUserId"]
     }
     
     func buildModelsAppAds(value: [String]) -> [AppAdsModel] {
@@ -409,26 +415,26 @@ class GroupModel: NSObject, Mappable {
         sources.append(m2)
         // Chặn quảng cáo nâng cao
         let m3 = PostGroupModel()
-        m3.isSelected = app_ads?.count ?? 0 > 0
+        m3.isSelected = true
         m3.type = .appads
         m3.children = buildModelsAppAds(value: app_ads ?? [])
         sources.append(m3)
         // Chặn theo dõi thiết bị
         let m4 = PostGroupModel()
         m4.type = .nativetracking
-        m4.isSelected = native_tracking?.count ?? 0 > 0
+        m4.isSelected = true
         m4.children = buildTracking(value: native_tracking ?? [])
         sources.append(m4)
         // Ứng dụng
         let m5 = PostGroupModel()
         m5.type = .service
-        m5.isSelected = blocked_services?.count ?? 0 > 0
+        m5.isSelected = true
         m5.children = buildModelsBlockService(value: blocked_services ?? [])
         sources.append(m5)
         // Website
         let m6 = PostGroupModel()
         m6.type = .website
-        m6.isSelected = block_webs?.count ?? 0 > 0
+        m6.isSelected = true
         m6.children = block_webs ?? []
         sources.append(m6)
         // Giới hạn nội dung tìm kiếm
@@ -471,6 +477,12 @@ class GroupModel: NSObject, Mappable {
                     app_ads = res
                 } else {
                     app_ads = []
+                }
+            case .website:
+                if model.isSelected ?? false {
+                    block_webs = model.children as? [String] ?? []
+                } else {
+                    block_webs = []
                 }
             case .nativetracking:
                 if model.isSelected ?? false {
@@ -521,8 +533,6 @@ class GroupModel: NSObject, Mappable {
                 bypass_enabled = model.isSelected
             case .porn:
                 porn_enabled = model.isSelected
-            default:
-                break
             }
         }
     }

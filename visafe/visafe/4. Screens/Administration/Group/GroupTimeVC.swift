@@ -30,19 +30,49 @@ class GroupTimeVC: BaseViewController {
     }
     
     @IBAction func doneAction(_ sender: Any) {
-        showLoading()
-        GroupWorker.add(group: group) { [weak self] (result, error) in
-            guard let weakSelf = self else { return }
-            weakSelf.hideLoading()
-            weakSelf.handleResponse(group: result, error: error)
+        
+        if editMode == .add {
+            showLoading()
+            GroupWorker.add(group: group) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                weakSelf.hideLoading()
+                weakSelf.handleResponse(group: result, error: error)
+            }
+        } else {
+            let param = RenameGroupParam()
+            param.group_id = group.groupid
+            param.group_name = group.name
+            showLoading()
+            GroupWorker.rename(param: param) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                GroupWorker.update(group: weakSelf.group) { [weak self] (result, error) in
+                    guard let weakSelf = self else { return }
+                    weakSelf.hideLoading()
+                    weakSelf.handleResponseUpdate(group: result, error: error)
+                }
+            }
         }
     }
     
     func handleResponse(group: GroupModel?, error: Error?) {
         if group != nil {
-            showMemssage(title: "Tạo nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn khởi tạo.")
+            showMemssage(title: "Tạo nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn khởi tạo.") { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.parent?.dismiss(animated: true, completion: nil)
+            }
         } else {
             showError(title: "Tạo nhóm không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
+        }
+    }
+    
+    func handleResponseUpdate(group: GroupModel?, error: Error?) {
+        if error == nil {
+            showMemssage(title: "Sửa nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn cập nhật.") { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.parent?.dismiss(animated: true, completion: nil)
+            }
+        } else {
+            showError(title: "Sửa nhóm không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
         }
     }
 }

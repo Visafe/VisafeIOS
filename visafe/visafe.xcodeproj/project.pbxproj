@@ -32,6 +32,7 @@
 		C919B96D26822157009982C3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96C26822157009982C3 /* BaseView.swift */; };
 		C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96F2682216B009982C3 /* BaseTableCell.swift */; };
 		C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B97A268222F6009982C3 /* JSONModelable.swift */; };
+		C923C838268F57BC00FE34DC /* ListGroupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923C837268F57BC00FE34DC /* ListGroupResult.swift */; };
 		C93D924E2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D924D2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift */; };
 		C93D92512688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93D92502688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib */; };
 		C93D92542688BDD6006AD80C /* MoreActionWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D92532688BDD6006AD80C /* MoreActionWorkspaceView.swift */; };
@@ -86,6 +87,10 @@
 		C95A5862268867310077112F /* PageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5861268867310077112F /* PageViewControllerExtension.swift */; };
 		C95A5868268870620077112F /* ChooseTypeWorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5866268870620077112F /* ChooseTypeWorkspaceCell.swift */; };
 		C95A5869268870620077112F /* ChooseTypeWorkspaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95A5867268870620077112F /* ChooseTypeWorkspaceCell.xib */; };
+		C97032322690750E007F45E0 /* GroupSettingFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97032302690750E007F45E0 /* GroupSettingFooterView.xib */; };
+		C97032332690750E007F45E0 /* GroupSettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97032312690750E007F45E0 /* GroupSettingFooterView.swift */; };
+		C970323726907AA2007F45E0 /* EnterLinkWebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970323526907AA2007F45E0 /* EnterLinkWebsiteView.swift */; };
+		C970323826907AA2007F45E0 /* EnterLinkWebsiteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C970323626907AA2007F45E0 /* EnterLinkWebsiteView.xib */; };
 		C999AB03268DFD1200F657A9 /* GroupSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C999AB02268DFD1200F657A9 /* GroupSettingHeaderView.xib */; };
 		C999AB07268E03F200F657A9 /* GroupSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999AB05268E03F200F657A9 /* GroupSettingCell.swift */; };
 		C999AB08268E03F200F657A9 /* GroupSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C999AB06268E03F200F657A9 /* GroupSettingCell.xib */; };
@@ -116,6 +121,14 @@
 		C9E5C78526872E8100D159EF /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = C9E5C78426872E8100D159EF /* SwiftMessages */; };
 		C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E5C78826873BC600D159EF /* BaseMessageView.swift */; };
 		C9E5C78D26873BCF00D159EF /* BaseMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E5C78C26873BCF00D159EF /* BaseMessageView.xib */; };
+		C9E7A493269087240012985B /* GroupSettingLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7A491269087240012985B /* GroupSettingLinkCell.swift */; };
+		C9E7A494269087240012985B /* GroupSettingLinkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E7A492269087240012985B /* GroupSettingLinkCell.xib */; };
+		C9E7A49826909E890012985B /* MoreLinkSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7A49626909E890012985B /* MoreLinkSettingView.swift */; };
+		C9E7A49926909E890012985B /* MoreLinkSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E7A49726909E890012985B /* MoreLinkSettingView.xib */; };
+		C9E7A49D2690B1610012985B /* MoreGroupActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E7A49B2690B1610012985B /* MoreGroupActionView.xib */; };
+		C9E7A49E2690B1610012985B /* MoreGroupActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7A49C2690B1610012985B /* MoreGroupActionView.swift */; };
+		C9E7A4A22690C6100012985B /* ConfirmDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7A4A02690C60F0012985B /* ConfirmDeleteView.swift */; };
+		C9E7A4A32690C6100012985B /* ConfirmDeleteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E7A4A12690C6100012985B /* ConfirmDeleteView.xib */; };
 		C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB54D26839E74009CBD93 /* GroupVC.xib */; };
 		C9EDB55726839E74009CBD93 /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EDB54E26839E74009CBD93 /* GroupVC.swift */; };
 		C9EDB55826839E74009CBD93 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB55026839E74009CBD93 /* GroupCell.xib */; };
@@ -174,6 +187,7 @@
 		C919B96C26822157009982C3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		C919B96F2682216B009982C3 /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
 		C919B97A268222F6009982C3 /* JSONModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONModelable.swift; sourceTree = "<group>"; };
+		C923C837268F57BC00FE34DC /* ListGroupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupResult.swift; sourceTree = "<group>"; };
 		C93D924D2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteWorkspaceView.swift; sourceTree = "<group>"; };
 		C93D92502688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmDeleteWorkspaceView.xib; sourceTree = "<group>"; };
 		C93D92532688BDD6006AD80C /* MoreActionWorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActionWorkspaceView.swift; sourceTree = "<group>"; };
@@ -227,6 +241,10 @@
 		C95A5861268867310077112F /* PageViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewControllerExtension.swift; sourceTree = "<group>"; };
 		C95A5866268870620077112F /* ChooseTypeWorkspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeWorkspaceCell.swift; sourceTree = "<group>"; };
 		C95A5867268870620077112F /* ChooseTypeWorkspaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeWorkspaceCell.xib; sourceTree = "<group>"; };
+		C97032302690750E007F45E0 /* GroupSettingFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupSettingFooterView.xib; sourceTree = "<group>"; };
+		C97032312690750E007F45E0 /* GroupSettingFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSettingFooterView.swift; sourceTree = "<group>"; };
+		C970323526907AA2007F45E0 /* EnterLinkWebsiteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterLinkWebsiteView.swift; sourceTree = "<group>"; };
+		C970323626907AA2007F45E0 /* EnterLinkWebsiteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterLinkWebsiteView.xib; sourceTree = "<group>"; };
 		C999AB02268DFD1200F657A9 /* GroupSettingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingHeaderView.xib; sourceTree = "<group>"; };
 		C999AB05268E03F200F657A9 /* GroupSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingCell.swift; sourceTree = "<group>"; };
 		C999AB06268E03F200F657A9 /* GroupSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingCell.xib; sourceTree = "<group>"; };
@@ -252,6 +270,14 @@
 		C9E5C77D26872ADC00D159EF /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		C9E5C78826873BC600D159EF /* BaseMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMessageView.swift; sourceTree = "<group>"; };
 		C9E5C78C26873BCF00D159EF /* BaseMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseMessageView.xib; sourceTree = "<group>"; };
+		C9E7A491269087240012985B /* GroupSettingLinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingLinkCell.swift; sourceTree = "<group>"; };
+		C9E7A492269087240012985B /* GroupSettingLinkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingLinkCell.xib; sourceTree = "<group>"; };
+		C9E7A49626909E890012985B /* MoreLinkSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLinkSettingView.swift; sourceTree = "<group>"; };
+		C9E7A49726909E890012985B /* MoreLinkSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreLinkSettingView.xib; sourceTree = "<group>"; };
+		C9E7A49B2690B1610012985B /* MoreGroupActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreGroupActionView.xib; sourceTree = "<group>"; };
+		C9E7A49C2690B1610012985B /* MoreGroupActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreGroupActionView.swift; sourceTree = "<group>"; };
+		C9E7A4A02690C60F0012985B /* ConfirmDeleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteView.swift; sourceTree = "<group>"; };
+		C9E7A4A12690C6100012985B /* ConfirmDeleteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmDeleteView.xib; sourceTree = "<group>"; };
 		C9EDB54D26839E74009CBD93 /* GroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupVC.xib; sourceTree = "<group>"; };
 		C9EDB54E26839E74009CBD93 /* GroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		C9EDB55026839E74009CBD93 /* GroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
@@ -446,12 +472,12 @@
 		C919B97626822222009982C3 /* 4. Screens */ = {
 			isa = PBXGroup;
 			children = (
-				C95A5851268861670077112F /* Workspace */,
+				C93ED14E2682320C00B03E8A /* Administration */,
+				C93ED14F2682323500B03E8A /* Home */,
 				C90EA73C2684C278002502F5 /* Login */,
 				C93ED1502682324400B03E8A /* Setting */,
-				C93ED14F2682323500B03E8A /* Home */,
-				C93ED14E2682320C00B03E8A /* Administration */,
 				C93ED14D2682320000B03E8A /* Tabbar */,
+				C95A5851268861670077112F /* Workspace */,
 			);
 			path = "4. Screens";
 			sourceTree = "<group>";
@@ -612,6 +638,7 @@
 				C9F9384F2688146200D30F28 /* ForgotPasswordResult.swift */,
 				C95A58452688233F0077112F /* ResetPasswordResult.swift */,
 				C9FA161A268B794300A1A6C6 /* ActiveAccountResult.swift */,
+				C923C837268F57BC00FE34DC /* ListGroupResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -619,6 +646,8 @@
 		C9E5C78726873BA800D159EF /* MessageView */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7A4A02690C60F0012985B /* ConfirmDeleteView.swift */,
+				C9E7A4A12690C6100012985B /* ConfirmDeleteView.xib */,
 				C9E5C78826873BC600D159EF /* BaseMessageView.swift */,
 				C9E5C78C26873BCF00D159EF /* BaseMessageView.xib */,
 			);
@@ -646,6 +675,14 @@
 		C9EDB54F26839E74009CBD93 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7A49C2690B1610012985B /* MoreGroupActionView.swift */,
+				C9E7A49B2690B1610012985B /* MoreGroupActionView.xib */,
+				C9E7A49626909E890012985B /* MoreLinkSettingView.swift */,
+				C9E7A49726909E890012985B /* MoreLinkSettingView.xib */,
+				C970323526907AA2007F45E0 /* EnterLinkWebsiteView.swift */,
+				C970323626907AA2007F45E0 /* EnterLinkWebsiteView.xib */,
+				C97032312690750E007F45E0 /* GroupSettingFooterView.swift */,
+				C97032302690750E007F45E0 /* GroupSettingFooterView.xib */,
 				C9FA1605268A344B00A1A6C6 /* ChooseTypeGroupCell.swift */,
 				C9FA1604268A344B00A1A6C6 /* ChooseTypeGroupCell.xib */,
 				C9EDB55326839E74009CBD93 /* GroupCell.swift */,
@@ -656,6 +693,8 @@
 				C999AB02268DFD1200F657A9 /* GroupSettingHeaderView.xib */,
 				C999AB05268E03F200F657A9 /* GroupSettingCell.swift */,
 				C999AB06268E03F200F657A9 /* GroupSettingCell.xib */,
+				C9E7A491269087240012985B /* GroupSettingLinkCell.swift */,
+				C9E7A492269087240012985B /* GroupSettingLinkCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -768,8 +807,11 @@
 				C9EDB55D26839E74009CBD93 /* PostGroupVC.xib in Resources */,
 				C9A6FEAD268883390002085E /* SecurityWorkspaceCell.xib in Resources */,
 				C93ED15A2682328600B03E8A /* HomeVC.xib in Resources */,
+				C97032322690750E007F45E0 /* GroupSettingFooterView.xib in Resources */,
 				C9FA15FD268A2DD700A1A6C6 /* GroupSettingVC.xib in Resources */,
 				C9B79465268613A700258A72 /* RegisterVC.xib in Resources */,
+				C9E7A4A32690C6100012985B /* ConfirmDeleteView.xib in Resources */,
+				C9E7A494269087240012985B /* GroupSettingLinkCell.xib in Resources */,
 				C9FA15F8268A2DBF00A1A6C6 /* GroupTypeVC.xib in Resources */,
 				C9B7949B26862C5F00258A72 /* SetPasswordVC.xib in Resources */,
 				C9EDB55826839E74009CBD93 /* GroupCell.xib in Resources */,
@@ -779,6 +821,7 @@
 				C93ED164268232BE00B03E8A /* AdministrationVC.xib in Resources */,
 				C9B7949126862C2E00258A72 /* ForgotPasswordVC.xib in Resources */,
 				C93D92572688BDDD006AD80C /* MoreActionWorkspaceView.xib in Resources */,
+				C9E7A49D2690B1610012985B /* MoreGroupActionView.xib in Resources */,
 				C999AB03268DFD1200F657A9 /* GroupSettingHeaderView.xib in Resources */,
 				C93D92512688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib in Resources */,
 				C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */,
@@ -795,6 +838,8 @@
 				C90EA7402684C298002502F5 /* LoginVC.xib in Resources */,
 				C95A585F268863790077112F /* SetupSecurityWorkspaceVC.xib in Resources */,
 				C940AE8F268375A30069B830 /* WorkspaceCell.xib in Resources */,
+				C9E7A49926909E890012985B /* MoreLinkSettingView.xib in Resources */,
+				C970323826907AA2007F45E0 /* EnterLinkWebsiteView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,6 +918,7 @@
 				C919B94726821DA9009982C3 /* APIManager.swift in Sources */,
 				C9F938502688146200D30F28 /* ForgotPasswordResult.swift in Sources */,
 				C94B39AD268A1CF100046958 /* GroupModel.swift in Sources */,
+				C97032332690750E007F45E0 /* GroupSettingFooterView.swift in Sources */,
 				C93ED15E268232A100B03E8A /* SettingVC.swift in Sources */,
 				C93ED167268232ED00B03E8A /* BaseTabbarController.swift in Sources */,
 				C9B7947F26861B4900258A72 /* BaseResult.swift in Sources */,
@@ -892,6 +938,7 @@
 				C93ED1962682456500B03E8A /* Constant.swift in Sources */,
 				C95A585E268863790077112F /* SetupSecurityWorkspaceVC.swift in Sources */,
 				C9B794512684D72400258A72 /* ColorExtension.swift in Sources */,
+				C9E7A49E2690B1610012985B /* MoreGroupActionView.swift in Sources */,
 				C9F9385326881A4A00D30F28 /* PasswordModel.swift in Sources */,
 				C940AE96268376A70069B830 /* TableViewExtension.swift in Sources */,
 				C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */,
@@ -901,9 +948,11 @@
 				C9FA15FC268A2DD700A1A6C6 /* GroupSettingVC.swift in Sources */,
 				C9B79466268613A700258A72 /* RegisterVC.swift in Sources */,
 				C9B7948C268626AA00258A72 /* UserModel.swift in Sources */,
+				C9E7A49826909E890012985B /* MoreLinkSettingView.swift in Sources */,
 				C93D92542688BDD6006AD80C /* MoreActionWorkspaceView.swift in Sources */,
 				C94B39B6268A20EB00046958 /* DeleteDeviceToGroupParam.swift in Sources */,
 				C9FA161B268B794300A1A6C6 /* ActiveAccountResult.swift in Sources */,
+				C923C838268F57BC00FE34DC /* ListGroupResult.swift in Sources */,
 				0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */,
 				C9A6FEAC268883390002085E /* SecurityWorkspaceCell.swift in Sources */,
 				C94B39BF268A258C00046958 /* InviteToGroupParam.swift in Sources */,
@@ -915,10 +964,12 @@
 				0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */,
 				C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */,
 				C940AE92268375C10069B830 /* WorkspaceModel.swift in Sources */,
+				C9E7A493269087240012985B /* GroupSettingLinkCell.swift in Sources */,
 				C93D924E2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift in Sources */,
 				C940AE9C268377F00069B830 /* WorkspaceFooterView.swift in Sources */,
 				C95A5868268870620077112F /* ChooseTypeWorkspaceCell.swift in Sources */,
 				C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */,
+				C970323726907AA2007F45E0 /* EnterLinkWebsiteView.swift in Sources */,
 				C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */,
 				C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */,
 				C9EDB55C26839E74009CBD93 /* PostGroupVC.swift in Sources */,
@@ -940,6 +991,7 @@
 				C9B7946A2686150100258A72 /* RegisterParam.swift in Sources */,
 				C93ED1592682328600B03E8A /* HomeVC.swift in Sources */,
 				C919B96D26822157009982C3 /* BaseView.swift in Sources */,
+				C9E7A4A22690C6100012985B /* ConfirmDeleteView.swift in Sources */,
 				C93ED16A2682332A00B03E8A /* TabbarVC.swift in Sources */,
 				C95A5849268829B60077112F /* CacheManager.swift in Sources */,
 				C94B39B0268A1F2E00046958 /* RenameGroupParam.swift in Sources */,

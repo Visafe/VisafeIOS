@@ -32,18 +32,31 @@
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4A-Ci-Hvj">
                         <rect key="frame" x="317" y="16.5" width="51" height="31"/>
                         <color key="onTintColor" red="1" green="0.70196078431372544" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <action selector="valueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="2Nb-kJ-CaB"/>
+                        </connections>
                     </switch>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cr6-J8-ZQB">
+                        <rect key="frame" x="0.0" y="63.5" width="382" height="0.5"/>
+                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="y7d-Jz-xu9"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="cr6-J8-ZQB" secondAttribute="bottom" id="CWV-Vq-Owm"/>
                     <constraint firstItem="Fh6-1B-2tm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="OKn-1e-p02"/>
                     <constraint firstAttribute="bottom" secondItem="Fh6-1B-2tm" secondAttribute="bottom" constant="16" id="ZuM-yc-FFG"/>
                     <constraint firstItem="B4A-Ci-Hvj" firstAttribute="leading" secondItem="zMm-zF-REs" secondAttribute="trailing" constant="8" id="bXV-Hw-fXM"/>
                     <constraint firstAttribute="trailing" secondItem="B4A-Ci-Hvj" secondAttribute="trailing" constant="16" id="djg-hP-zX6"/>
                     <constraint firstItem="Fh6-1B-2tm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ibb-KE-Z1d"/>
+                    <constraint firstAttribute="trailing" secondItem="cr6-J8-ZQB" secondAttribute="trailing" id="inr-Rh-KkE"/>
                     <constraint firstItem="Fh6-1B-2tm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="pfc-Wj-8cY"/>
                     <constraint firstItem="zMm-zF-REs" firstAttribute="leading" secondItem="Fh6-1B-2tm" secondAttribute="trailing" constant="8" id="pt1-cP-wVb"/>
                     <constraint firstItem="B4A-Ci-Hvj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rme-H7-oFH"/>
                     <constraint firstItem="zMm-zF-REs" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="w3J-nj-9O3"/>
+                    <constraint firstItem="cr6-J8-ZQB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wFO-02-eC6"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

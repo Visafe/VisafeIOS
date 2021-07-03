@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configView() {
-        UITabBar.appearance().backgroundColor = UIColor.black
+        UITabBar.appearance().tintColor = UIColor.black
         UIBarButtonItem.appearance().tintColor = UIColor.black
     }
     

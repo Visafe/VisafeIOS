@@ -10,24 +10,6 @@ import Foundation
 import ObjectMapper
 import SwiftyJSON
 
-//group
-//case addGroup(param: GroupModel)
-//case updateGroup(param: GroupModel)
-//case renameGroup(param: RenameGroupParam)
-//case deleteGroup(groupId: String)
-//case addDeviceGroup(param: AddDeviceToGroupParam)
-//case deleteDeviceGroup(param: DeleteDeviceToGroupParam)
-//case createIdentifier(name: String, groupId: String)
-//case updateIdentifier(name: String, groupId: String)
-//case deleteIdentifier(id: String)
-//case getIdentifier(id: String)
-//case addDeviceToIden(param: AddDeviceToIdentifierParam)
-//case deleteDeviceToIden(param: DeleteDeviceToIdentifierParam)
-//case inviteToGroup(param: InviteToGroupParam)
-//case deleteToGroup(param: DeleteToGroupParam)
-//case changeManagerPermision(param: ChangeManagerPermisionParam)
-//case changeViewerPermision(param: ChangeViewerPermisionParam)
-
 class GroupWorker {
     
     static func add(group: GroupModel, completion: @escaping (_ result: GroupModel?, _ error: Error?) -> Void) {
@@ -59,7 +41,7 @@ class GroupWorker {
     }
     
     static func rename(param: RenameGroupParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
-        let router = APIRouter.renameGroup(param: param)
+        let router = APIRouter.updateNameGroup(param: param)
         APIManager.shared.request(target: router) { (data, error) in
             var loginResult: BaseResult?
             if let data = data {
@@ -72,8 +54,22 @@ class GroupWorker {
         }
     }
     
-    static func delete(groupId: String, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
-        let router = APIRouter.deleteGroup(groupId: groupId)
+    static func list(wsid: String?, completion: @escaping (_ result: ListGroupResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.getGroups(wspId: wsid ?? "")
+        APIManager.shared.request(target: router) { (data, error) in
+            var result: ListGroupResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    result = Mapper<ListGroupResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(result, error)
+        }
+    }
+    
+    static func delete(groupId: String, userId: Int, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.deleteGroup(groupId: groupId, fkUserId: userId)
         APIManager.shared.request(target: router) { (data, error) in
             var loginResult: BaseResult?
             if let data = data {

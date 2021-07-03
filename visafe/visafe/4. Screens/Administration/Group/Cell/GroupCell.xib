@@ -57,6 +57,9 @@
                                     <constraint firstAttribute="height" constant="44" id="uBi-Mf-cmn"/>
                                 </constraints>
                                 <state key="normal" image="more_icon"/>
+                                <connections>
+                                    <action selector="onClickMoreButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Bsf-6d-qtp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -92,6 +95,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentLabel" destination="KkC-Oc-fE7" id="VP3-Yh-cfU"/>
+                <outlet property="moreButton" destination="kxh-i5-EXd" id="lEb-DV-141"/>
+                <outlet property="titleLabel" destination="Ht4-oM-Vt9" id="DDT-PM-g63"/>
+            </connections>
             <point key="canvasLocation" x="224.63768115942031" y="97.767857142857139"/>
         </tableViewCell>
     </objects>

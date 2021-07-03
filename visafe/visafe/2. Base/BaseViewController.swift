@@ -26,6 +26,13 @@ class BaseViewController: UIViewController {
         viewLoading.addSubview(indicatorView)
     }
     
+    override func present(_ viewControllerToPresent: UIViewController,
+                            animated flag: Bool,
+                            completion: (() -> Void)? = nil) {
+        viewControllerToPresent.modalPresentationStyle = .fullScreen
+        super.present(viewControllerToPresent, animated: flag, completion: completion)
+    }
+    
     func showLoading() {
         viewLoading.frame = view.bounds
         indicatorView.center = viewLoading.center
@@ -80,5 +87,15 @@ class BaseViewController: UIViewController {
         infoConfig.dimMode = .blur(style: .dark, alpha: 0.2, interactive: true)
         infoConfig.presentationContext = .window(windowLevel: UIWindow.Level.normal)
         SwiftMessages.show(config: infoConfig, view: view)
+    }
+    
+    func showConfirmDelete(title: String, acceptCompletion: (() -> Void)? = nil) {
+        guard let info = ConfirmDeleteView.loadFromNib() else { return }
+        info.nameLabel?.text = title
+        info.acceptAction = {
+            acceptCompletion?()
+            SwiftMessages.hide()
+        }
+        showPopup(view: info)
     }
 }

@@ -15,15 +15,20 @@ extension String {
     }
     
     func applyPatternOnNumbers(pattern: String, replacementCharacter: Character) -> String {
-            var pureNumber = self.replacingOccurrences( of: "[^0-9]", with: "", options: .regularExpression)
-            for index in 0 ..< pattern.count {
-                guard index < pureNumber.count else { return pureNumber }
-                let stringIndex = String.Index(utf16Offset: index, in: pattern)
-                let patternCharacter = pattern[stringIndex]
-                guard patternCharacter != replacementCharacter else { continue }
-                pureNumber.insert(patternCharacter, at: stringIndex)
-            }
-            return pureNumber
+        var pureNumber = self.replacingOccurrences( of: "[^0-9]", with: "", options: .regularExpression)
+        for index in 0 ..< pattern.count {
+            guard index < pureNumber.count else { return pureNumber }
+            let stringIndex = String.Index(utf16Offset: index, in: pattern)
+            let patternCharacter = pattern[stringIndex]
+            guard patternCharacter != replacementCharacter else { continue }
+            pureNumber.insert(patternCharacter, at: stringIndex)
         }
+        return pureNumber
+    }
+    
+    var isValidUrl: Bool {
+            let urlRegEx = "((?:http|https)://)?(?:www\\.)?[\\w\\d\\-_]+\\.\\w{2,3}(\\.\\w{2})?(/(?<=/)(?:[\\w\\d\\-./_]+)?)?"
+            return NSPredicate(format: "SELF MATCHES %@", urlRegEx).evaluate(with: self)
+    }
 }
 
