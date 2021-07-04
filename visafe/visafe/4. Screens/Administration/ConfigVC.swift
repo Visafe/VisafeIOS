@@ -17,16 +17,27 @@ class ConfigVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
+        configRefreshData()
     }
     
     func registerTableView() {
         tableView.registerCells(cells: [SecurityWorkspaceCell.className])
     }
     
+    func configRefreshData() {
+        tableView.addPullToRefresh { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.refreshData()
+        }
+    }
+    
     func refreshData() {
         if isViewLoaded {
             workspace = CacheManager.shared.getCurrentWorkspace() ?? WorkspaceModel()
-            tableView.reloadData()
+            tableView.reloadData { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.tableView.endRefreshing()
+            }
         }
     }
 }

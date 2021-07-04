@@ -18,12 +18,21 @@ class LeftMenuVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+        configRefreshData()
         prepareData()
+    }
+    
+    func configRefreshData() {
+        tableView.addPullToRefresh { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.refreshData()
+        }
     }
     
     @objc func refreshData() {
         WorkspaceWorker.getList { [weak self] (list, error) in
             guard let weakSelf = self else { return }
+            weakSelf.tableView.endRefreshing()
             CacheManager.shared.setWorkspacesResult(value: list)
             weakSelf.prepareData()
         }

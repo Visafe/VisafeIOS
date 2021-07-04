@@ -16,6 +16,7 @@ class GroupVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+        configRefreshData()
         prepareData()
     }
     
@@ -41,12 +42,20 @@ class GroupVC: BaseViewController {
         }
     }
     
+    func configRefreshData() {
+        tableView.addPullToRefresh { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.refreshData()
+        }
+    }
+    
     func refreshData() {
         let workspace = CacheManager.shared.getCurrentWorkspace()
         GroupWorker.list(wsid: workspace?.id) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.groups = result?.clients ?? []
             weakSelf.tableView.reloadData()
+            weakSelf.tableView.endRefreshing()
         }
     }
 }
