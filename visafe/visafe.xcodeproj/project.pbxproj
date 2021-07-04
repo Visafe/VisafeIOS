@@ -472,6 +472,7 @@
 		C919B97626822222009982C3 /* 4. Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C966FE8A2691A4D60049458C /* Notification */,
 				C93ED14E2682320C00B03E8A /* Administration */,
 				C93ED14F2682323500B03E8A /* Home */,
 				C90EA73C2684C278002502F5 /* Login */,
@@ -596,6 +597,13 @@
 				C93D92562688BDDD006AD80C /* MoreActionWorkspaceView.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C966FE8A2691A4D60049458C /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		C9B79468268614EE00258A72 /* Param */ = {

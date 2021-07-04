@@ -62,6 +62,7 @@ class SecurityWorkspaceCell: UITableViewCell {
         // Initialization code
     }
 
+    var onChangeSwitch:(() -> Void)?
     var type: SecurityWorkspaceEnum?
     var workspace: WorkspaceModel?
     
@@ -99,5 +100,6 @@ class SecurityWorkspaceCell: UITableViewCell {
         case .log:
             workspace?.logEnabled = sender.isOn
         }
+        onChangeSwitch?()
     }
 }

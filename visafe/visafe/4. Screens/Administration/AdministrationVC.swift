@@ -67,8 +67,30 @@ class AdministrationVC: BaseViewController {
         sideMenuController?.delegate = self
     }
     
-    
     @objc private func onClickNotifiButton() {
+        
+    }
+    
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        if pageViewController.viewControllers?.first is DashboardVC {
+            if sender.selectedSegmentIndex == 1 {
+                pageViewController.setViewControllers([groupVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
+            } else if sender.selectedSegmentIndex == 2 {
+                pageViewController.setViewControllers([configVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
+            }
+        } else if pageViewController.viewControllers?.first is GroupVC {
+            if sender.selectedSegmentIndex == 0 {
+                pageViewController.setViewControllers([dashboardVC], direction: UIPageViewController.NavigationDirection.reverse, animated: true, completion: nil)
+            } else if sender.selectedSegmentIndex == 2 {
+                pageViewController.setViewControllers([configVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
+            }
+        } else if pageViewController.viewControllers?.first is ConfigVC  {
+            if sender.selectedSegmentIndex == 0 {
+                pageViewController.setViewControllers([dashboardVC], direction: UIPageViewController.NavigationDirection.reverse, animated: true, completion: nil)
+            } else if sender.selectedSegmentIndex == 1 {
+                pageViewController.setViewControllers([groupVC], direction: UIPageViewController.NavigationDirection.reverse, animated: true, completion: nil)
+            }
+        }
     }
 }
 
