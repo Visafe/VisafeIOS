@@ -22,6 +22,13 @@ class ConfigVC: BaseViewController {
     func registerTableView() {
         tableView.registerCells(cells: [SecurityWorkspaceCell.className])
     }
+    
+    func refreshData() {
+        if isViewLoaded {
+            workspace = CacheManager.shared.getCurrentWorkspace() ?? WorkspaceModel()
+            tableView.reloadData()
+        }
+    }
 }
 
 extension ConfigVC: UITableViewDelegate, UITableViewDataSource {

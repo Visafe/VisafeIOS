@@ -33,8 +33,6 @@
 		C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96F2682216B009982C3 /* BaseTableCell.swift */; };
 		C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B97A268222F6009982C3 /* JSONModelable.swift */; };
 		C923C838268F57BC00FE34DC /* ListGroupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923C837268F57BC00FE34DC /* ListGroupResult.swift */; };
-		C93D924E2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D924D2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift */; };
-		C93D92512688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93D92502688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib */; };
 		C93D92542688BDD6006AD80C /* MoreActionWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D92532688BDD6006AD80C /* MoreActionWorkspaceView.swift */; };
 		C93D92572688BDDD006AD80C /* MoreActionWorkspaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93D92562688BDDD006AD80C /* MoreActionWorkspaceView.xib */; };
 		C93ED1592682328600B03E8A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED1572682328600B03E8A /* HomeVC.swift */; };
@@ -188,8 +186,6 @@
 		C919B96F2682216B009982C3 /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
 		C919B97A268222F6009982C3 /* JSONModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONModelable.swift; sourceTree = "<group>"; };
 		C923C837268F57BC00FE34DC /* ListGroupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupResult.swift; sourceTree = "<group>"; };
-		C93D924D2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteWorkspaceView.swift; sourceTree = "<group>"; };
-		C93D92502688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmDeleteWorkspaceView.xib; sourceTree = "<group>"; };
 		C93D92532688BDD6006AD80C /* MoreActionWorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActionWorkspaceView.swift; sourceTree = "<group>"; };
 		C93D92562688BDDD006AD80C /* MoreActionWorkspaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreActionWorkspaceView.xib; sourceTree = "<group>"; };
 		C93ED1572682328600B03E8A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -591,8 +587,6 @@
 				C95A5867268870620077112F /* ChooseTypeWorkspaceCell.xib */,
 				C9A6FEAA268883390002085E /* SecurityWorkspaceCell.swift */,
 				C9A6FEAB268883390002085E /* SecurityWorkspaceCell.xib */,
-				C93D924D2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift */,
-				C93D92502688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib */,
 				C93D92532688BDD6006AD80C /* MoreActionWorkspaceView.swift */,
 				C93D92562688BDDD006AD80C /* MoreActionWorkspaceView.xib */,
 			);
@@ -831,7 +825,6 @@
 				C93D92572688BDDD006AD80C /* MoreActionWorkspaceView.xib in Resources */,
 				C9E7A49D2690B1610012985B /* MoreGroupActionView.xib in Resources */,
 				C999AB03268DFD1200F657A9 /* GroupSettingHeaderView.xib in Resources */,
-				C93D92512688BDBC006AD80C /* ConfirmDeleteWorkspaceView.xib in Resources */,
 				C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */,
 				C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */,
 				C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */,
@@ -973,7 +966,6 @@
 				C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */,
 				C940AE92268375C10069B830 /* WorkspaceModel.swift in Sources */,
 				C9E7A493269087240012985B /* GroupSettingLinkCell.swift in Sources */,
-				C93D924E2688BD98006AD80C /* ConfirmDeleteWorkspaceView.swift in Sources */,
 				C940AE9C268377F00069B830 /* WorkspaceFooterView.swift in Sources */,
 				C95A5868268870620077112F /* ChooseTypeWorkspaceCell.swift in Sources */,
 				C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */,

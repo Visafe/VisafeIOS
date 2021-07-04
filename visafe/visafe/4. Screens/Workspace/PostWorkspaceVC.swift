@@ -56,7 +56,7 @@ class PostWorkspaceVC: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let heightPage = kScreenHeight - kNavigationHeight - kTabbarHeight - hightSegment
+        let heightPage = kScreenHeight - kNavigationHeight - hightSegment
         pageViewController.view.frame = CGRect(x: 0, y: kNavigationHeight + hightSegment, width: kScreenWidth, height: heightPage)
     }
     

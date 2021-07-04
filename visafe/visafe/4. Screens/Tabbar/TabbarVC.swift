@@ -20,8 +20,7 @@ class TabbarVC: BaseTabbarController {
         adminVC.title = "Quản trị"
         let adminNav = BaseNavigationController(rootViewController: adminVC)
         let leftMenu = LeftMenuVC()
-        leftMenu.selectedWorkspace = { [weak self] workspace in
-            guard let weakSelf = self else { return }
+        leftMenu.selectedWorkspace = { workspace in
             adminVC.onChangeWorkspace(workspace: workspace)
         }
         let sideMenuVC = SideMenuController(contentViewController: adminNav, menuViewController: leftMenu)
@@ -35,6 +34,8 @@ class TabbarVC: BaseTabbarController {
         settingVC.title = "Cài đặt"
         let settingNav = BaseNavigationController(rootViewController: settingVC)
     
+        
+        
         self.viewControllers = [sideMenuVC, homeNav, settingNav]
         let adminItem = self.tabBar.items![0]
         adminItem.image = UIImage(named: "tabbar_admin")

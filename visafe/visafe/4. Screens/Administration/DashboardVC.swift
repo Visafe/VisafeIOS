@@ -12,4 +12,9 @@ class DashboardVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func refreshData() {
+        if isViewLoaded {
+        }
+    }
 }

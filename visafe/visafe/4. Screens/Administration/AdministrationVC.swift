@@ -61,6 +61,9 @@ class AdministrationVC: BaseViewController {
     
     func onChangeWorkspace(workspace: WorkspaceModel?) {
         title = workspace?.name ?? "Quản trị"
+        dashboardVC.refreshData()
+        configVC.refreshData()
+        groupVC.refreshData()
     }
     
     func configSideMenu() {

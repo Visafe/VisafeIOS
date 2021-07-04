@@ -26,7 +26,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tsB-Cy-c48">
-                    <rect key="frame" x="0.0" y="54" width="414" height="636"/>
+                    <rect key="frame" x="0.0" y="54" width="414" height="656"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="2hl-oc-pl2"/>
@@ -34,10 +34,10 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzY-RA-gpC">
-                    <rect key="frame" x="30" y="710" width="354" height="44"/>
+                    <rect key="frame" x="16" y="718" width="382" height="48"/>
                     <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="kGG-pf-u8R"/>
+                        <constraint firstAttribute="height" constant="48" id="kGG-pf-u8R"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <state key="normal" title="Hoàn tất">
@@ -45,7 +45,7 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="10"/>
+                            <real key="value" value="8"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -56,11 +56,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FzY-RA-gpC" secondAttribute="trailing" constant="30" id="82f-du-QX9"/>
-                <constraint firstItem="FzY-RA-gpC" firstAttribute="top" secondItem="tsB-Cy-c48" secondAttribute="bottom" constant="20" id="GG6-Sh-E7N"/>
-                <constraint firstItem="FzY-RA-gpC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Kxd-ev-e0N"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FzY-RA-gpC" secondAttribute="trailing" constant="16" id="82f-du-QX9"/>
+                <constraint firstItem="FzY-RA-gpC" firstAttribute="top" secondItem="tsB-Cy-c48" secondAttribute="bottom" constant="8" id="GG6-Sh-E7N"/>
+                <constraint firstItem="FzY-RA-gpC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Kxd-ev-e0N"/>
                 <constraint firstItem="tsB-Cy-c48" firstAttribute="top" secondItem="7rb-rv-2sC" secondAttribute="bottom" constant="15" id="Ueb-c4-szO"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FzY-RA-gpC" secondAttribute="bottom" constant="20" id="VPh-SK-LyE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FzY-RA-gpC" secondAttribute="bottom" constant="8" id="VPh-SK-LyE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tsB-Cy-c48" secondAttribute="trailing" id="dBc-ex-ZeK"/>
                 <constraint firstItem="7rb-rv-2sC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="gU0-8i-Z0q"/>
                 <constraint firstItem="7rb-rv-2sC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qXb-4s-Rsw"/>

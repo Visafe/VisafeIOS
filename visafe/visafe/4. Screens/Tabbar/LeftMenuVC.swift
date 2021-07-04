@@ -118,13 +118,11 @@ extension LeftMenuVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func showConfirmDeleteworkspace(sender: Timer) {
-        guard let info = ConfirmDeleteWorkspaceView.loadFromNib() else { return }
         guard let workspace = sender.userInfo as? WorkspaceModel else { return }
-        info.acceptAction = { [weak self] in
+        showConfirmDelete(title: "Bạn có chắc chắn muốn xoá workspace \(workspace.name ?? "") không?") { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.deleteWorkspace(workspace: workspace)
         }
-        showPopup(view: info)
     }
     
     func deleteWorkspace(workspace: WorkspaceModel) {
