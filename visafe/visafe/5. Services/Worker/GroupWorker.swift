@@ -209,7 +209,7 @@ class GroupWorker {
     }
     
     static func deleteToGroup(param: DeleteToGroupParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
-        let router = APIRouter.deleteToGroup(param: param)
+        let router = APIRouter.deleteGroupMember(param: param)
         APIManager.shared.request(target: router) { (data, error) in
             var loginResult: BaseResult?
             if let data = data {

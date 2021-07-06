@@ -37,14 +37,14 @@ class AdministrationVC: BaseViewController {
     }
     
     func configSegmentControl() {
-        headerSegmented.selectedSegmentIndex = 1
+        headerSegmented.selectedSegmentIndex = 0
     }
     
     func configPageView() {
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.delegate = self
         pageViewController.dataSource = self
-        pageViewController.setViewControllers([groupVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
+        pageViewController.setViewControllers([dashboardVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
         self.view.addSubview(pageViewController.view)
         self.addChild(pageViewController)
         self.pageViewController.didMove(toParent: self)

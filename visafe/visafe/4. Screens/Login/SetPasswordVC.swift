@@ -6,20 +6,19 @@
 //
 
 import UIKit
-import TweeTextField
 
 class SetPasswordVC: BaseViewController {
     
-    @IBOutlet weak var passwordTextfield: TweeAttributedTextField!
-    @IBOutlet weak var bottomButtonContraint: NSLayoutConstraint!
-    @IBOutlet weak var rePasswordTextfield: TweeAttributedTextField!
+    @IBOutlet weak var passwordTextfield: BaseTextField!
+    @IBOutlet weak var passwordInfoLabel: UILabel!
+    @IBOutlet weak var rePasswordTextfield: BaseTextField!
+    @IBOutlet weak var rePasswordInfoLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     
     var model: PasswordModel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configObserve()
     }
     
     init(model: PasswordModel) {
@@ -30,13 +29,9 @@ class SetPasswordVC: BaseViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configObserve() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController()
     }
-    
     @IBAction func acceptAction(_ sender: Any) {
         if validateInfo() {
             let param = ResetPassParam()
@@ -58,26 +53,26 @@ class SetPasswordVC: BaseViewController {
         let password = passwordTextfield.text ?? ""
         if password.isEmpty {
             success = false
-            passwordTextfield.showInfo("Mật khẩu không được để trống")
+            passwordInfoLabel.text = "Mật khẩu không được để trống"
         } else {
-            passwordTextfield.hideInfo()
+            passwordInfoLabel.text = nil
         }
         let repassword = rePasswordTextfield.text ?? ""
         if repassword.isEmpty {
             success = false
-            rePasswordTextfield.showInfo("Mật khẩu không được để trống")
+            passwordInfoLabel.text = "Mật khẩu không được để trống"
         } else {
-            rePasswordTextfield.hideInfo()
+            passwordInfoLabel.text = nil
         }
         if !password.isEmpty && !repassword.isEmpty && password != repassword {
-            passwordTextfield.showInfo("Mật khẩu không trùng nhau")
-            rePasswordTextfield.showInfo("Mật khẩu không trùng nhau")
+            passwordInfoLabel.text = "Mật khẩu không trùng nhau"
+            passwordInfoLabel.text = "Mật khẩu không trùng nhau"
         }
         return success
     }
     
     func handleResponse(result: ResetPasswordResult?, error: Error?) {
-        if result == nil && error != nil {
+        if result == nil && error == nil {
             authen()
         } else if let res = result {
             showError(title: "Đặt mật khẩu lỗi", content: res.status_code?.getDescription())
@@ -119,27 +114,6 @@ class SetPasswordVC: BaseViewController {
             CacheManager.shared.setWorkspacesResult(value: list)
             CacheManager.shared.setCurrentWorkspace(value: list?.first)
             AppDelegate.appDelegate()?.setRootVCToTabVC()
-        }
-    }
-    
-    @objc func keyboardWillHide(_ sender: Notification) {
-        if let userInfo = (sender as NSNotification).userInfo {
-            if let _ = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height {
-                //key point 0,
-                self.bottomButtonContraint.constant =  30
-                UIView.animate(withDuration: 0.25, animations: { () -> Void in self.view.layoutIfNeeded() })
-            }
-        }
-    }
-    @objc func keyboardWillShow(_ sender: Notification) {
-        if let userInfo = (sender as NSNotification).userInfo {
-            if let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height {
-                self.bottomButtonContraint.constant = keyboardHeight + 10
-                
-                UIView.animate(withDuration: 0.25, animations: { () -> Void in
-                    self.view.layoutIfNeeded()
-                })
-            }
         }
     }
 }

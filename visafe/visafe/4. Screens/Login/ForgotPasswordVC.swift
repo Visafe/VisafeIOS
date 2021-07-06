@@ -6,32 +6,22 @@
 //
 
 import UIKit
-import TweeTextField
 
 class ForgotPasswordVC: BaseViewController {
 
-    @IBOutlet weak var bottomButtonContraint: NSLayoutConstraint!
-    @IBOutlet weak var usernameTextfield: TweeAttributedTextField!
+    @IBOutlet weak var usernameTextfield: BaseTextField!
+    @IBOutlet weak var usernameInfoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configNavigationItem()
-        configObserve()
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
-    func configNavigationItem() {
-        // left
-        let leftBarButton = UIBarButtonItem(image: UIImage(named: "back_icon"), style: .done, target: self, action: #selector(onClickLeftButton))
-        navigationItem.leftBarButtonItem = leftBarButton
+    @IBAction func onClickLeftButton() {
+        dismiss(animated: true, completion: nil)
     }
     
-    func configObserve() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func onClickLeftButton() {
+    @IBAction func backAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
@@ -54,7 +44,7 @@ class ForgotPasswordVC: BaseViewController {
     }
     
     func handleResponse(result: ForgotPasswordResult?, error: Error?) {
-        if result == nil && error == nil {
+        if result != nil && error == nil {
             showEnterPasscode()
         } else if let res = result {
             showError(title: "Gửi email không thành công", content: res.status_code?.getDescription())
@@ -78,34 +68,30 @@ class ForgotPasswordVC: BaseViewController {
         let username = usernameTextfield.text ?? ""
         if username.isEmpty {
             success = false
-            usernameTextfield.showInfo("Tên đăng nhập không được để trống")
+            usernameInfoLabel.text = "Tên đăng nhập không được để trống"
         } else if (!username.isValidEmail && !username.isValidPhone()) {
             success = false
-            usernameTextfield.showInfo("Tên đăng nhập không đúng định dạng")
+            usernameInfoLabel.text = "Tên đăng nhập không đúng định dạng"
         } else {
-            usernameTextfield.hideInfo()
+            usernameInfoLabel.text = nil
         }
         return success
     }
+}
+
+extension ForgotPasswordVC: UITextFieldDelegate {
     
-    @objc func keyboardWillHide(_ sender: Notification) {
-        if let userInfo = (sender as NSNotification).userInfo {
-            if let _ = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height {
-                //key point 0,
-                self.bottomButtonContraint.constant =  30
-                UIView.animate(withDuration: 0.25, animations: { () -> Void in self.view.layoutIfNeeded() })
-            }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        guard let field = textField as? BaseTextField else { return }
+        if field.type != .error {
+            field.setState(type: .active)
         }
     }
-    @objc func keyboardWillShow(_ sender: Notification) {
-        if let userInfo = (sender as NSNotification).userInfo {
-            if let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height {
-                self.bottomButtonContraint.constant = keyboardHeight + 10
-                
-                UIView.animate(withDuration: 0.25, animations: { () -> Void in
-                    self.view.layoutIfNeeded()
-                })
-            }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let field = textField as? BaseTextField else { return }
+        if field.type != .error {
+            field.setState(type: .normal)
         }
     }
 }

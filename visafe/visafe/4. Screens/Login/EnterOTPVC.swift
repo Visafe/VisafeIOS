@@ -15,9 +15,10 @@ public enum EnterOTPEnum: Int {
 
 class EnterOTPVC: BaseViewController {
     
+    @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var sendOTPButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pinView: SVPinView!
-    @IBOutlet weak var sendOTPLabel: UILabel!
     var model: PasswordModel
     var timeDown: Int = 90
     var timer = Timer()
@@ -35,31 +36,37 @@ class EnterOTPVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        continueButton.backgroundColor = UIColor(hexString: "F8F8F8")
+        continueButton.setTitleColor(UIColor(hexString: "111111"), for: .normal)
+        continueButton.isUserInteractionEnabled = false
         
         pinView.style = .underline
         pinView.font = UIFont.systemFont(ofSize: 30)
         pinView.keyboardType = .numberPad
-        sendOTPLabel.text = "Gửi lại OTP sau \(timeDown)s"
-        pinView.didFinishCallback = didFinishEnteringPin(pin:)
+        if let phone = model.phone_number, !phone.isEmpty {
+            descriptionLabel.text = "ViSafe đã gửi mã xác thực OTP đến số điện thoại \(phone)"
+        } else if let email = model.email, !email.isEmpty {
+            descriptionLabel.text = "ViSafe đã gửi mã xác thực OTP đến số email \(email)"
+        } else {
+            descriptionLabel.text = "ViSafe đã gửi mã xác thực OTP đến tài khoản của bạn"
+        }
+        sendOTPButton.setTitle("Gửi lại OTP (\(timeDown)s)", for: .normal)
+        pinView.didChangeCallback = didChangeEnteringPin(pin:)
         
         // start the timer
         timer.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
-    func didFinishEnteringPin(pin:String) {
-        if type == .activeAccount {
-            showLoading()
-            model.otp = pin
-            AuthenWorker.activeAccount(param: model) { [weak self] (result, error) in
-                guard let weakSelf = self else { return }
-                weakSelf.hideLoading()
-                weakSelf.handleResponse(result: result)
-            }
+    func didChangeEnteringPin(pin:String) {
+        if pin.count == 6 {
+            continueButton.backgroundColor = UIColor.mainColorOrange()
+            continueButton.setTitleColor(UIColor.white, for: .normal)
+            continueButton.isUserInteractionEnabled = true
         } else {
-            model.otp = pin
-            let vc = SetPasswordVC(model: model)
-            navigationController?.pushViewController(vc)
+            continueButton.backgroundColor = UIColor(hexString: "F8F8F8")
+            continueButton.setTitleColor(UIColor(hexString: "111111"), for: .normal)
+            continueButton.isUserInteractionEnabled = false
         }
     }
     
@@ -109,12 +116,11 @@ class EnterOTPVC: BaseViewController {
     @objc func timerAction() {
         if timeDown > 1 {
             timeDown -= 1
-            sendOTPLabel.text = "Gửi lại OTP sau \(timeDown)s"
-            sendOTPLabel.isHidden = false
+            sendOTPButton.setTitle("Gửi lại OTP (\(timeDown)s)", for: .normal)
             sendOTPButton.isUserInteractionEnabled = false
         } else {
             timer.invalidate()
-            sendOTPLabel.isHidden = true
+            sendOTPButton.setTitle("Gửi lại OTP", for: .normal)
             sendOTPButton.isUserInteractionEnabled = true
         }
     }
@@ -125,6 +131,25 @@ class EnterOTPVC: BaseViewController {
         AuthenWorker.forgotPassword(username: username) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
+        }
+    }
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController()
+    }
+    
+    @IBAction func continueAction(_ sender: UIButton) {
+        if type == .activeAccount {
+            showLoading()
+            model.otp = pinView.getPin()
+            AuthenWorker.activeAccount(param: model) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                weakSelf.hideLoading()
+                weakSelf.handleResponse(result: result)
+            }
+        } else {
+            model.otp = pinView.getPin()
+            let vc = SetPasswordVC(model: model)
+            navigationController?.pushViewController(vc)
         }
     }
 }

@@ -12,6 +12,7 @@ public enum ForgotPasswordStatus: Int {
     case cantsendemail = 424
     case invalidateEmail = 1
     case error = 500
+    case sendThroughEmail = 2
     
     func getDescription() -> String {
         var message = ""
@@ -22,6 +23,8 @@ public enum ForgotPasswordStatus: Int {
             message = "Email không hợp lệ. Vui lòng kiểm tra lại"
         case .cantsendemail:
             message = "Không thể gửi email. Vui lòng thử lại"
+        case .sendThroughEmail:
+            message = "Gửi OTP thành công. Vui lòng kiểm tra email để lấy mã"
         }
         return message
     }

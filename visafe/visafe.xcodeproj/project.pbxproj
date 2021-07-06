@@ -32,6 +32,7 @@
 		C919B96D26822157009982C3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96C26822157009982C3 /* BaseView.swift */; };
 		C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96F2682216B009982C3 /* BaseTableCell.swift */; };
 		C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B97A268222F6009982C3 /* JSONModelable.swift */; };
+		C91D45962694CCB900055A4E /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D45952694CCB900055A4E /* BaseTextField.swift */; };
 		C923C838268F57BC00FE34DC /* ListGroupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923C837268F57BC00FE34DC /* ListGroupResult.swift */; };
 		C93D92542688BDD6006AD80C /* MoreActionWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D92532688BDD6006AD80C /* MoreActionWorkspaceView.swift */; };
 		C93D92572688BDDD006AD80C /* MoreActionWorkspaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93D92562688BDDD006AD80C /* MoreActionWorkspaceView.xib */; };
@@ -85,10 +86,15 @@
 		C95A5862268867310077112F /* PageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5861268867310077112F /* PageViewControllerExtension.swift */; };
 		C95A5868268870620077112F /* ChooseTypeWorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5866268870620077112F /* ChooseTypeWorkspaceCell.swift */; };
 		C95A5869268870620077112F /* ChooseTypeWorkspaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95A5867268870620077112F /* ChooseTypeWorkspaceCell.xib */; };
+		C966FE932694A8EB0049458C /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966FE912694A8EB0049458C /* OnboardingVC.swift */; };
+		C966FE942694A8EB0049458C /* OnboardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C966FE922694A8EB0049458C /* OnboardingVC.xib */; };
+		C966FE982694A9500049458C /* OnboardingChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966FE962694A9500049458C /* OnboardingChildVC.swift */; };
+		C966FE992694A9500049458C /* OnboardingChildVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C966FE972694A9500049458C /* OnboardingChildVC.xib */; };
 		C97032322690750E007F45E0 /* GroupSettingFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97032302690750E007F45E0 /* GroupSettingFooterView.xib */; };
 		C97032332690750E007F45E0 /* GroupSettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97032312690750E007F45E0 /* GroupSettingFooterView.swift */; };
 		C970323726907AA2007F45E0 /* EnterLinkWebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970323526907AA2007F45E0 /* EnterLinkWebsiteView.swift */; };
 		C970323826907AA2007F45E0 /* EnterLinkWebsiteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C970323626907AA2007F45E0 /* EnterLinkWebsiteView.xib */; };
+		C99034D32694C3C1009C078F /* TextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99034D22694C3C0009C078F /* TextfieldExtension.swift */; };
 		C999AB03268DFD1200F657A9 /* GroupSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C999AB02268DFD1200F657A9 /* GroupSettingHeaderView.xib */; };
 		C999AB07268E03F200F657A9 /* GroupSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999AB05268E03F200F657A9 /* GroupSettingCell.swift */; };
 		C999AB08268E03F200F657A9 /* GroupSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C999AB06268E03F200F657A9 /* GroupSettingCell.xib */; };
@@ -185,6 +191,7 @@
 		C919B96C26822157009982C3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		C919B96F2682216B009982C3 /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
 		C919B97A268222F6009982C3 /* JSONModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONModelable.swift; sourceTree = "<group>"; };
+		C91D45952694CCB900055A4E /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		C923C837268F57BC00FE34DC /* ListGroupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupResult.swift; sourceTree = "<group>"; };
 		C93D92532688BDD6006AD80C /* MoreActionWorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActionWorkspaceView.swift; sourceTree = "<group>"; };
 		C93D92562688BDDD006AD80C /* MoreActionWorkspaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreActionWorkspaceView.xib; sourceTree = "<group>"; };
@@ -237,10 +244,15 @@
 		C95A5861268867310077112F /* PageViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewControllerExtension.swift; sourceTree = "<group>"; };
 		C95A5866268870620077112F /* ChooseTypeWorkspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeWorkspaceCell.swift; sourceTree = "<group>"; };
 		C95A5867268870620077112F /* ChooseTypeWorkspaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeWorkspaceCell.xib; sourceTree = "<group>"; };
+		C966FE912694A8EB0049458C /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		C966FE922694A8EB0049458C /* OnboardingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingVC.xib; sourceTree = "<group>"; };
+		C966FE962694A9500049458C /* OnboardingChildVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingChildVC.swift; sourceTree = "<group>"; };
+		C966FE972694A9500049458C /* OnboardingChildVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingChildVC.xib; sourceTree = "<group>"; };
 		C97032302690750E007F45E0 /* GroupSettingFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupSettingFooterView.xib; sourceTree = "<group>"; };
 		C97032312690750E007F45E0 /* GroupSettingFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSettingFooterView.swift; sourceTree = "<group>"; };
 		C970323526907AA2007F45E0 /* EnterLinkWebsiteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterLinkWebsiteView.swift; sourceTree = "<group>"; };
 		C970323626907AA2007F45E0 /* EnterLinkWebsiteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterLinkWebsiteView.xib; sourceTree = "<group>"; };
+		C99034D22694C3C0009C078F /* TextfieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldExtension.swift; sourceTree = "<group>"; };
 		C999AB02268DFD1200F657A9 /* GroupSettingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingHeaderView.xib; sourceTree = "<group>"; };
 		C999AB05268E03F200F657A9 /* GroupSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingCell.swift; sourceTree = "<group>"; };
 		C999AB06268E03F200F657A9 /* GroupSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingCell.xib; sourceTree = "<group>"; };
@@ -421,6 +433,7 @@
 				C919B96F2682216B009982C3 /* BaseTableCell.swift */,
 				C93ED166268232ED00B03E8A /* BaseTabbarController.swift */,
 				C93ED16C2682343C00B03E8A /* BaseNavigationController.swift */,
+				C91D45952694CCB900055A4E /* BaseTextField.swift */,
 			);
 			path = "2. Base";
 			sourceTree = "<group>";
@@ -468,6 +481,8 @@
 		C919B97626822222009982C3 /* 4. Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C966FE8F2694A5630049458C /* Onboarding */,
+				C966FE8D2694A52D0049458C /* Splash */,
 				C966FE8A2691A4D60049458C /* Notification */,
 				C93ED14E2682320C00B03E8A /* Administration */,
 				C93ED14F2682323500B03E8A /* Home */,
@@ -562,6 +577,7 @@
 				C99F333626838E4300859DF6 /* UIButtonExtension.swift */,
 				C95A5861268867310077112F /* PageViewControllerExtension.swift */,
 				C9FA160A268B611200A1A6C6 /* StringExtension.swift */,
+				C99034D22694C3C0009C078F /* TextfieldExtension.swift */,
 			);
 			path = "9. Extension";
 			sourceTree = "<group>";
@@ -598,6 +614,24 @@
 			children = (
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		C966FE8D2694A52D0049458C /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		C966FE8F2694A5630049458C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C966FE912694A8EB0049458C /* OnboardingVC.swift */,
+				C966FE922694A8EB0049458C /* OnboardingVC.xib */,
+				C966FE962694A9500049458C /* OnboardingChildVC.swift */,
+				C966FE972694A9500049458C /* OnboardingChildVC.xib */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		C9B79468268614EE00258A72 /* Param */ = {
@@ -807,9 +841,11 @@
 				C95A5855268861940077112F /* PostWorkspaceVC.xib in Resources */,
 				C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */,
 				C9EDB55D26839E74009CBD93 /* PostGroupVC.xib in Resources */,
+				C966FE942694A8EB0049458C /* OnboardingVC.xib in Resources */,
 				C9A6FEAD268883390002085E /* SecurityWorkspaceCell.xib in Resources */,
 				C93ED15A2682328600B03E8A /* HomeVC.xib in Resources */,
 				C97032322690750E007F45E0 /* GroupSettingFooterView.xib in Resources */,
+				C966FE992694A9500049458C /* OnboardingChildVC.xib in Resources */,
 				C9FA15FD268A2DD700A1A6C6 /* GroupSettingVC.xib in Resources */,
 				C9B79465268613A700258A72 /* RegisterVC.xib in Resources */,
 				C9E7A4A32690C6100012985B /* ConfirmDeleteView.xib in Resources */,
@@ -910,6 +946,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C966FE982694A9500049458C /* OnboardingChildVC.swift in Sources */,
+				C99034D32694C3C1009C078F /* TextfieldExtension.swift in Sources */,
 				C9B7947A2686199200258A72 /* AuthenWorker.swift in Sources */,
 				C999AB07268E03F200F657A9 /* GroupSettingCell.swift in Sources */,
 				C9B7949A26862C5F00258A72 /* SetPasswordVC.swift in Sources */,
@@ -969,6 +1007,7 @@
 				C940AE9C268377F00069B830 /* WorkspaceFooterView.swift in Sources */,
 				C95A5868268870620077112F /* ChooseTypeWorkspaceCell.swift in Sources */,
 				C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */,
+				C966FE932694A8EB0049458C /* OnboardingVC.swift in Sources */,
 				C970323726907AA2007F45E0 /* EnterLinkWebsiteView.swift in Sources */,
 				C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */,
 				C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */,
@@ -991,6 +1030,7 @@
 				C9B7946A2686150100258A72 /* RegisterParam.swift in Sources */,
 				C93ED1592682328600B03E8A /* HomeVC.swift in Sources */,
 				C919B96D26822157009982C3 /* BaseView.swift in Sources */,
+				C91D45962694CCB900055A4E /* BaseTextField.swift in Sources */,
 				C9E7A4A22690C6100012985B /* ConfirmDeleteView.swift in Sources */,
 				C93ED16A2682332A00B03E8A /* TabbarVC.swift in Sources */,
 				C95A5849268829B60077112F /* CacheManager.swift in Sources */,

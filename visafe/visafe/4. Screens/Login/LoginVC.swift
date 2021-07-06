@@ -6,17 +6,25 @@
 //
 
 import UIKit
-import TweeTextField
 import SwifterSwift
 import SwiftMessages
 
 class LoginVC: BaseViewController {
 
-    @IBOutlet weak var usernameTextfield: TweeAttributedTextField!
-    @IBOutlet weak var passwordTextfield: TweeAttributedTextField!
+    @IBOutlet weak var passwordInfoLabel: UILabel!
+    @IBOutlet weak var usernameInfoLabel: UILabel!
+    @IBOutlet weak var usernameTextfield: BaseTextField!
+    @IBOutlet weak var passwordTextfield: BaseTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configUI()
+    }
+    
+    func configUI() {
+        
+        usernameTextfield.setState(type: .normal)
+        passwordTextfield.setState(type: .normal)
     }
     
     @IBAction func regiterAction(_ sender: Any) {
@@ -76,19 +84,24 @@ class LoginVC: BaseViewController {
         let username = usernameTextfield.text ?? ""
         if username.isEmpty {
             success = false
-            usernameTextfield.showInfo("Tên đăng nhập không được để trống")
+            usernameInfoLabel.text = "Tên đăng nhập không được để trống"
+            usernameTextfield.setState(type: .error)
         } else if (!username.isValidEmail && !username.isValidPhone()) {
             success = false
-            usernameTextfield.showInfo("Tên đăng nhập không đúng định dạng")
+            usernameInfoLabel.text = "Tên đăng nhập không đúng định dạng"
+            usernameTextfield.setState(type: .error)
         } else {
-            usernameTextfield.hideInfo()
+            usernameInfoLabel.text = nil
+            usernameTextfield.setState(type: .normal)
         }
         let password = passwordTextfield.text ?? ""
         if password.isEmpty {
-            passwordTextfield.showInfo("Mật khẩu không được để trống")
+            passwordInfoLabel.text = "Mật khẩu không được để trống"
+            passwordTextfield.setState(type: .error)
             success = false
         } else {
-            passwordTextfield.hideInfo()
+            passwordInfoLabel.text = nil
+            passwordTextfield.setState(type: .normal)
         }
         return success
     }
@@ -99,7 +112,27 @@ class LoginVC: BaseViewController {
         present(nav, animated: true, completion: nil)
     }
     
-    @IBAction func endEditing(_ sender: TweeAttributedTextField) {
-        
+    @IBAction func cancelAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func edittingBegin(_ sender: UITextField) {
+    }
+}
+
+extension LoginVC: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        guard let field = textField as? BaseTextField else { return }
+        if field.type != .error {
+            field.setState(type: .active)
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let field = textField as? BaseTextField else { return }
+        if field.type != .error {
+            field.setState(type: .normal)
+        }
     }
 }

@@ -50,12 +50,14 @@ class GroupVC: BaseViewController {
     }
     
     func refreshData() {
-        let workspace = CacheManager.shared.getCurrentWorkspace()
-        GroupWorker.list(wsid: workspace?.id) { [weak self] (result, error) in
-            guard let weakSelf = self else { return }
-            weakSelf.groups = result?.clients ?? []
-            weakSelf.tableView.reloadData()
-            weakSelf.tableView.endRefreshing()
+        if isViewLoaded {
+            let workspace = CacheManager.shared.getCurrentWorkspace()
+            GroupWorker.list(wsid: workspace?.id) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                weakSelf.groups = result?.clients ?? []
+                weakSelf.tableView.reloadData()
+                weakSelf.tableView.endRefreshing()
+            }
         }
     }
 }

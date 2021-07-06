@@ -27,10 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configRootVC() {
-        if CacheManager.shared.getIsLogined() {
+        if CacheManager.shared.getIsShowOnboarding() {
             setRootVCToTabVC()
         } else {
-            setRootVCToLoginVC()
+            setRootVCToOnboardingVC()
         }
     }
     
@@ -39,8 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setRootViewController(vc)
     }
     
-    func setRootVCToLoginVC() {
-        let vc = LoginVC()
+    func setRootVCToOnboardingVC() {
+        let vc = OnboardingVC()
         setRootViewController(vc)
     }
     

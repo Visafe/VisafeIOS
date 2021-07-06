@@ -10,25 +10,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EnterOTPVC" customModule="visafe" customModuleProvider="target">
             <connections>
+                <outlet property="continueButton" destination="EUs-Wk-z0c" id="msQ-YD-vPL"/>
+                <outlet property="descriptionLabel" destination="VuK-qu-AR9" id="xZ5-4c-hBd"/>
                 <outlet property="pinView" destination="xNu-QY-0vd" id="J5b-f9-KLQ"/>
                 <outlet property="sendOTPButton" destination="mvW-He-0yO" id="mND-8C-Ul3"/>
-                <outlet property="sendOTPLabel" destination="t0G-aE-a6h" id="rQt-b8-lfc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhập mã OTP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msg-q2-4A7">
-                    <rect key="frame" x="153.5" y="30" width="107.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNu-QY-0vd" customClass="SVPinView" customModule="SVPinView">
-                    <rect key="frame" x="30" y="154.5" width="354" height="64"/>
+                    <rect key="frame" x="30" y="259.5" width="354" height="64"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="5zD-lH-N11"/>
@@ -41,7 +36,7 @@
                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="activeBorderLineColor">
-                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="value" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="shouldSecureText" value="NO"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="borderLineThickness">
@@ -52,58 +47,100 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng nhập mã xác nhận được gửi tới địa chỉ email của bạn" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmK-go-LHS">
-                    <rect key="frame" x="30" y="71" width="354" height="33.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gửi lại OTP sau 30s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0G-aE-a6h">
-                    <rect key="frame" x="143.5" y="737" width="127" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvW-He-0yO">
-                    <rect key="frame" x="157" y="683" width="100" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvW-He-0yO">
+                    <rect key="frame" x="137" y="810" width="140" height="44"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
                     </accessibility>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Wul-QG-rr8"/>
-                        <constraint firstAttribute="width" constant="100" id="vOd-sC-3Bj"/>
+                        <constraint firstAttribute="width" constant="140" id="vOd-sC-3Bj"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                    <state key="normal" title="Gửi lại OTP">
+                    <state key="normal" title="Gửi lại OTP (90s)">
                         <color key="titleColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="reSendOTPAction:" destination="-1" eventType="touchUpInside" id="czE-dk-g5R"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="3Om-Rl-tTv">
+                    <rect key="frame" x="145.5" y="64" width="123" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="123" id="6MJ-iY-Ocl"/>
+                        <constraint firstAttribute="height" constant="42" id="JSu-a7-2ke"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWL-K0-yhS">
+                    <rect key="frame" x="16" y="44" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="4ZW-bb-C09"/>
+                        <constraint firstAttribute="height" constant="44" id="gh7-8L-yY7"/>
+                    </constraints>
+                    <state key="normal" image="back_icon"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="ntb-Pv-dkN"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xác thực tài khoản" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwR-7J-InN">
+                    <rect key="frame" x="40" y="162" width="334" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ViSafe đã gửi mã xác thực OTP đến số điện thoại 0362519215" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuK-qu-AR9">
+                    <rect key="frame" x="16" y="202" width="382" height="33.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUs-Wk-z0c">
+                    <rect key="frame" x="24" y="754" width="366" height="48"/>
+                    <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="934-j5-cgT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <state key="normal" title="Tiếp tục">
+                        <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="continueAction:" destination="-1" eventType="touchUpInside" id="CBo-5P-t36"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="xNu-QY-0vd" firstAttribute="top" secondItem="wmK-go-LHS" secondAttribute="bottom" constant="50" id="1FO-rN-8Qq"/>
-                <constraint firstItem="Msg-q2-4A7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="1iu-T7-46q"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="t0G-aE-a6h" secondAttribute="bottom" constant="20" id="APz-fC-ZO0"/>
-                <constraint firstItem="t0G-aE-a6h" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Jkd-Ys-ifk"/>
-                <constraint firstItem="wmK-go-LHS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kds-0v-3sL"/>
+                <constraint firstItem="EUs-Wk-z0c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="147-7Y-Ljc"/>
+                <constraint firstItem="lwR-7J-InN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="5IL-uZ-kKk"/>
+                <constraint firstItem="lwR-7J-InN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5rK-4o-AWl"/>
+                <constraint firstItem="gWL-K0-yhS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="CPJ-cV-Boj"/>
+                <constraint firstItem="3Om-Rl-tTv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="IKM-G1-wVz"/>
+                <constraint firstItem="VuK-qu-AR9" firstAttribute="top" secondItem="lwR-7J-InN" secondAttribute="bottom" constant="16" id="LMO-Lk-Y6B"/>
+                <constraint firstItem="VuK-qu-AR9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="ObR-yi-AjJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mvW-He-0yO" secondAttribute="bottom" constant="8" id="UJo-Rg-mGd"/>
+                <constraint firstItem="3Om-Rl-tTv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="X8r-Sk-n8c"/>
                 <constraint firstItem="xNu-QY-0vd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Xe8-qg-9UH"/>
+                <constraint firstItem="mvW-He-0yO" firstAttribute="top" secondItem="EUs-Wk-z0c" secondAttribute="bottom" constant="8" id="YVt-Al-FbR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xNu-QY-0vd" secondAttribute="trailing" constant="30" id="as4-r5-sBi"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wmK-go-LHS" secondAttribute="trailing" constant="30" id="dXO-1h-luK"/>
-                <constraint firstItem="wmK-go-LHS" firstAttribute="top" secondItem="Msg-q2-4A7" secondAttribute="bottom" constant="20" id="e9y-Fw-CXn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EUs-Wk-z0c" secondAttribute="trailing" constant="24" id="gR1-ul-AdN"/>
                 <constraint firstItem="mvW-He-0yO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gq8-PY-a7r"/>
-                <constraint firstItem="wmK-go-LHS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="miK-gD-1bV"/>
-                <constraint firstItem="Msg-q2-4A7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qHe-kz-GxB"/>
-                <constraint firstItem="t0G-aE-a6h" firstAttribute="top" secondItem="mvW-He-0yO" secondAttribute="bottom" constant="10" id="uaV-P2-90V"/>
+                <constraint firstItem="lwR-7J-InN" firstAttribute="top" secondItem="3Om-Rl-tTv" secondAttribute="bottom" constant="56" id="kaG-10-EMn"/>
+                <constraint firstItem="VuK-qu-AR9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qbd-PW-MJ1"/>
+                <constraint firstItem="xNu-QY-0vd" firstAttribute="top" secondItem="VuK-qu-AR9" secondAttribute="bottom" constant="24" id="soR-zp-R2P"/>
+                <constraint firstItem="gWL-K0-yhS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wN0-h2-LF8"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="105.79710144927537" y="101.78571428571428"/>
         </view>
     </objects>
     <resources>
+        <image name="back_icon" width="24" height="24"/>
+        <image name="login_logo" width="122.5" height="42"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

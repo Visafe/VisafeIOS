@@ -125,10 +125,9 @@ class AuthenWorker {
     }
     
     static func activeAccount(param: PasswordModel, completion: @escaping (_ result: ActiveAccountResult?, _ error: Error?) -> Void) {
-        let p = PasswordModel()
-        p.email = param.email
+        let p = ActiveAccountParam()
+        p.username = param.email ?? param.phone_number
         p.otp = param.otp
-        p.phone_number = param.phone_number
         let router = APIRouter.activeAccount(param: p)
         APIManager.shared.request(target: router) { (data, error) in
             var loginResult: ActiveAccountResult?

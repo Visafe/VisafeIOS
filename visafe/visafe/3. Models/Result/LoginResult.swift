@@ -39,6 +39,7 @@ public enum ResiterStatusEnum: Int {
     case phoneexists = 4
     case successWithEmail = 1
     case successWithPhone = 0
+    case strengthInvalid = 5
     
     func getDescription() -> String {
         var message = ""
@@ -61,6 +62,8 @@ public enum ResiterStatusEnum: Int {
             message = "Mật khẩu không hợp lệ"
         case .phoneexists:
             message = "Tên đăng nhập đã được sử dụng"
+        case .strengthInvalid:
+            message = "Mật khẩu quá ngắn. Vui lòng kiểm tra lại"
         case .successWithEmail, .successWithPhone:
             message = "Đăng ký thành công"
         }

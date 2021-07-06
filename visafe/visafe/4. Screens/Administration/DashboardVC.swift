@@ -17,4 +17,9 @@ class DashboardVC: BaseViewController {
         if isViewLoaded {
         }
     }
+    
+    @IBAction func doneAction(_ sender: UIButton) {
+        let vc = LoginVC()
+        present(vc, animated: true)
+    }
 }

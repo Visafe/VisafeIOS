@@ -323,6 +323,15 @@ class GroupModel: NSObject, Mappable {
     var workspace_id: String?
     var isOwner: Bool?
     var fkUserId: Int?
+    var ids: [String]?
+    var tags: [String]?
+    var use_global_settings: Bool?
+    var use_global_blocked_services: Bool?
+    var upstreams: [String]?
+    var disallowed: Bool?
+    var usersActive: [UserModel]?
+    var userManage: [UserModel]?
+    var usersGroupInfo: [UserModel]?
     
     override init() {
         super.init()
@@ -353,6 +362,15 @@ class GroupModel: NSObject, Mappable {
         isOwner <- map["isOwner"]
         groupid <- map["groupid"]
         fkUserId <- map["fkUserId"]
+        ids <- map["ids"]
+        tags <- map["tags"]
+        use_global_settings <- map["use_global_settings"]
+        use_global_blocked_services <- map["use_global_blocked_services"]
+        upstreams <- map["upstreams"]
+        disallowed <- map["disallowed"]
+        usersActive <- map["usersActive"]
+        userManage <- map["userManage"]
+        usersGroupInfo <- map["usersGroupInfo"]
     }
     
     func buildModelsAppAds(value: [String]) -> [AppAdsModel] {

@@ -6,25 +6,19 @@
 //
 
 import UIKit
-import TweeTextField
 import SwiftMessages
 
 class RegisterVC: BaseViewController {
 
-    @IBOutlet weak var passwordTextfield: TweeAttributedTextField!
-    @IBOutlet weak var usernameTextfield: TweeAttributedTextField!
-    @IBOutlet weak var rePasswordTextfield: TweeAttributedTextField!
+    @IBOutlet weak var passwordInfoLabel: UILabel!
+    @IBOutlet weak var usernameInfoLabel: UILabel!
+    @IBOutlet weak var usernameTextfield: BaseTextField!
+    @IBOutlet weak var passwordTextfield: BaseTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // left
-        let leftBarButton = UIBarButtonItem(image: UIImage(named: "back_icon"), style: .done, target: self, action: #selector(dismissAction))
-        navigationItem.leftBarButtonItem = leftBarButton
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
-    @IBAction func editingEnd(_ sender: Any) {
-    }
-    
     
     @IBAction func registerAction(_ sender: Any) {
         if validateInfo() {
@@ -37,30 +31,19 @@ class RegisterVC: BaseViewController {
         let username = usernameTextfield.text ?? ""
         if username.isEmpty {
             success = false
-            usernameTextfield.showInfo("Username không được để trống")
+            usernameInfoLabel.text = "Tên đăng nhập không được để trống"
         } else if (!username.isValidEmail && !username.isValidPhone()) {
             success = false
-            usernameTextfield.showInfo("Username không đúng định dạng")
+            usernameInfoLabel.text = "Tên đăng nhập không đúng định dạng"
         } else {
-            usernameTextfield.hideInfo()
+            usernameInfoLabel.text = nil
         }
         let password = passwordTextfield.text ?? ""
         if password.isEmpty {
             success = false
-            passwordTextfield.showInfo("Mật khẩu không được để trống")
+            passwordInfoLabel.text = "Mật khẩu không được để trống"
         } else {
-            passwordTextfield.hideInfo()
-        }
-        let repassword = rePasswordTextfield.text ?? ""
-        if repassword.isEmpty {
-            success = false
-            rePasswordTextfield.showInfo("Mật khẩu không được để trống")
-        } else {
-            rePasswordTextfield.hideInfo()
-        }
-        if !password.isEmpty && !repassword.isEmpty && password != repassword {
-            passwordTextfield.showInfo("Mật khẩu không trùng nhau")
-            rePasswordTextfield.showInfo("Mật khẩu không trùng nhau")
+            passwordInfoLabel.text = nil
         }
         return success
     }
@@ -75,7 +58,7 @@ class RegisterVC: BaseViewController {
         }
         param.full_name = usernameTextfield.text
         param.password = passwordTextfield.text
-        param.repeat_password = rePasswordTextfield.text
+        param.repeat_password = passwordTextfield.text
         showLoading()
         AuthenWorker.register(param: param) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
@@ -102,17 +85,28 @@ class RegisterVC: BaseViewController {
         }
     }
     
-    @IBAction func cancelAction(_ sender: Any) {
+    @IBAction func loginAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func dismissAction(_ sender: Any) {
+    @IBAction func dismissAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+}
+
+extension RegisterVC: UITextFieldDelegate {
     
-    @IBAction func forgotPasswordAction(_ sender: Any) {
-        let vc = ForgotPasswordVC()
-        let nav = BaseNavigationController(rootViewController: vc)
-        present(nav, animated: true, completion: nil)
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        guard let field = textField as? BaseTextField else { return }
+        if field.type != .error {
+            field.setState(type: .active)
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let field = textField as? BaseTextField else { return }
+        if field.type != .error {
+            field.setState(type: .normal)
+        }
     }
 }

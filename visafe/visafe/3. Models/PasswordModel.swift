@@ -29,3 +29,21 @@ class PasswordModel: NSObject, Mappable {
         phone_number <- map["phone_number"]
     }
 }
+
+class ActiveAccountParam: NSObject, Mappable {
+    var username: String?
+    var otp: String?
+    
+    override init() {
+        super.init()
+    }
+
+    convenience required init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        username <- map["username"]
+        otp <- map["otp"]
+    }
+}

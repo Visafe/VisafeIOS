@@ -15,6 +15,7 @@ let kLoginResult = "kLoginResult"
 let kListWorkspace = "kListWorkspace"
 let kCurrentWorkspace = "kCurrentWorkspace"
 let kCurrentUser = "kCurrentUser"
+let kShowOnboarding = "kShowOnboarding"
 
 class CacheManager {
     
@@ -77,6 +78,16 @@ class CacheManager {
     
     func setCurrentUser(value: UserModel?) {
         userDefault.set(value?.toJSONString(), forKey: kCurrentUser)
+        userDefault.synchronize()
+    }
+    
+    func getIsShowOnboarding() -> Bool {
+        let value = userDefault.bool(forKey: kShowOnboarding)
+        return value
+    }
+    
+    func setIsShowOnboarding(value: Bool) {
+        userDefault.set(value, forKey: kShowOnboarding)
         userDefault.synchronize()
     }
 }
