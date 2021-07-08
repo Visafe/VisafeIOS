@@ -94,11 +94,21 @@
 		C97032332690750E007F45E0 /* GroupSettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97032312690750E007F45E0 /* GroupSettingFooterView.swift */; };
 		C970323726907AA2007F45E0 /* EnterLinkWebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970323526907AA2007F45E0 /* EnterLinkWebsiteView.swift */; };
 		C970323826907AA2007F45E0 /* EnterLinkWebsiteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C970323626907AA2007F45E0 /* EnterLinkWebsiteView.xib */; };
+		C971F9FF2697498A00BB7118 /* PostGroupAboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971F9FD2697498A00BB7118 /* PostGroupAboutVC.swift */; };
+		C971FA002697498A00BB7118 /* PostGroupAboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C971F9FE2697498A00BB7118 /* PostGroupAboutVC.xib */; };
+		C971FA0426974E6F00BB7118 /* PostGroupAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971FA0226974E6F00BB7118 /* PostGroupAboutCell.swift */; };
+		C971FA0526974E6F00BB7118 /* PostGroupAboutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C971FA0326974E6F00BB7118 /* PostGroupAboutCell.xib */; };
 		C99034D32694C3C1009C078F /* TextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99034D22694C3C0009C078F /* TextfieldExtension.swift */; };
 		C999AB03268DFD1200F657A9 /* GroupSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C999AB02268DFD1200F657A9 /* GroupSettingHeaderView.xib */; };
 		C999AB07268E03F200F657A9 /* GroupSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999AB05268E03F200F657A9 /* GroupSettingCell.swift */; };
 		C999AB08268E03F200F657A9 /* GroupSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C999AB06268E03F200F657A9 /* GroupSettingCell.xib */; };
 		C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F333626838E4300859DF6 /* UIButtonExtension.swift */; };
+		C99FD1CB2697462700A8F731 /* ProtectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FD1C92697462700A8F731 /* ProtectVC.swift */; };
+		C99FD1CC2697462700A8F731 /* ProtectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99FD1CA2697462700A8F731 /* ProtectVC.xib */; };
+		C99FD1D12697465B00A8F731 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FD1CF2697465B00A8F731 /* NotificationVC.swift */; };
+		C99FD1D22697465B00A8F731 /* NotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99FD1D02697465B00A8F731 /* NotificationVC.xib */; };
+		C99FD1D8269746C200A8F731 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FD1D6269746C200A8F731 /* ProfileVC.swift */; };
+		C99FD1D9269746C200A8F731 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99FD1D7269746C200A8F731 /* ProfileVC.xib */; };
 		C9A6FEAC268883390002085E /* SecurityWorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6FEAA268883390002085E /* SecurityWorkspaceCell.swift */; };
 		C9A6FEAD268883390002085E /* SecurityWorkspaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A6FEAB268883390002085E /* SecurityWorkspaceCell.xib */; };
 		C9B794512684D72400258A72 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B794502684D72400258A72 /* ColorExtension.swift */; };
@@ -121,6 +131,12 @@
 		C9B7949A26862C5F00258A72 /* SetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7949826862C5F00258A72 /* SetPasswordVC.swift */; };
 		C9B7949B26862C5F00258A72 /* SetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7949926862C5F00258A72 /* SetPasswordVC.xib */; };
 		C9B7949F26862DF000258A72 /* TweeTextField in Frameworks */ = {isa = PBXBuildFile; productRef = C9B7949E26862DF000258A72 /* TweeTextField */; };
+		C9BCBC5F26975C92007F652C /* GroupSettingParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCBC5D26975C92007F652C /* GroupSettingParentVC.swift */; };
+		C9BCBC6026975C92007F652C /* GroupSettingParentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */; };
+		C9BCBC6426975DEC007F652C /* GroupSettingParentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */; };
+		C9BCBC6526975DEC007F652C /* GroupSettingParentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BCBC6326975DEC007F652C /* GroupSettingParentCell.xib */; };
+		C9BCBC6926976AD3007F652C /* GroupSettingChildrenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCBC6726976AD3007F652C /* GroupSettingChildrenVC.swift */; };
+		C9BCBC6A26976AD3007F652C /* GroupSettingChildrenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BCBC6826976AD3007F652C /* GroupSettingChildrenVC.xib */; };
 		C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E5C77D26872ADC00D159EF /* LoginResult.swift */; };
 		C9E5C78526872E8100D159EF /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = C9E5C78426872E8100D159EF /* SwiftMessages */; };
 		C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E5C78826873BC600D159EF /* BaseMessageView.swift */; };
@@ -143,8 +159,8 @@
 		C9EDB55D26839E74009CBD93 /* PostGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB55526839E74009CBD93 /* PostGroupVC.xib */; };
 		C9F938502688146200D30F28 /* ForgotPasswordResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9384F2688146200D30F28 /* ForgotPasswordResult.swift */; };
 		C9F9385326881A4A00D30F28 /* PasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9385226881A4A00D30F28 /* PasswordModel.swift */; };
-		C9FA15F7268A2DBF00A1A6C6 /* GroupTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA15F5268A2DBF00A1A6C6 /* GroupTypeVC.swift */; };
-		C9FA15F8268A2DBF00A1A6C6 /* GroupTypeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FA15F6268A2DBF00A1A6C6 /* GroupTypeVC.xib */; };
+		C9FA15F7268A2DBF00A1A6C6 /* GroupNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA15F5268A2DBF00A1A6C6 /* GroupNameVC.swift */; };
+		C9FA15F8268A2DBF00A1A6C6 /* GroupNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FA15F6268A2DBF00A1A6C6 /* GroupNameVC.xib */; };
 		C9FA15FC268A2DD700A1A6C6 /* GroupSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA15FA268A2DD700A1A6C6 /* GroupSettingVC.swift */; };
 		C9FA15FD268A2DD700A1A6C6 /* GroupSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FA15FB268A2DD700A1A6C6 /* GroupSettingVC.xib */; };
 		C9FA1601268A2DE400A1A6C6 /* GroupTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA15FF268A2DE400A1A6C6 /* GroupTimeVC.swift */; };
@@ -252,11 +268,21 @@
 		C97032312690750E007F45E0 /* GroupSettingFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSettingFooterView.swift; sourceTree = "<group>"; };
 		C970323526907AA2007F45E0 /* EnterLinkWebsiteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterLinkWebsiteView.swift; sourceTree = "<group>"; };
 		C970323626907AA2007F45E0 /* EnterLinkWebsiteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterLinkWebsiteView.xib; sourceTree = "<group>"; };
+		C971F9FD2697498A00BB7118 /* PostGroupAboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGroupAboutVC.swift; sourceTree = "<group>"; };
+		C971F9FE2697498A00BB7118 /* PostGroupAboutVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostGroupAboutVC.xib; sourceTree = "<group>"; };
+		C971FA0226974E6F00BB7118 /* PostGroupAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGroupAboutCell.swift; sourceTree = "<group>"; };
+		C971FA0326974E6F00BB7118 /* PostGroupAboutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostGroupAboutCell.xib; sourceTree = "<group>"; };
 		C99034D22694C3C0009C078F /* TextfieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldExtension.swift; sourceTree = "<group>"; };
 		C999AB02268DFD1200F657A9 /* GroupSettingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingHeaderView.xib; sourceTree = "<group>"; };
 		C999AB05268E03F200F657A9 /* GroupSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingCell.swift; sourceTree = "<group>"; };
 		C999AB06268E03F200F657A9 /* GroupSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingCell.xib; sourceTree = "<group>"; };
 		C99F333626838E4300859DF6 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		C99FD1C92697462700A8F731 /* ProtectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectVC.swift; sourceTree = "<group>"; };
+		C99FD1CA2697462700A8F731 /* ProtectVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProtectVC.xib; sourceTree = "<group>"; };
+		C99FD1CF2697465B00A8F731 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		C99FD1D02697465B00A8F731 /* NotificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationVC.xib; sourceTree = "<group>"; };
+		C99FD1D6269746C200A8F731 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		C99FD1D7269746C200A8F731 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		C9A6FEAA268883390002085E /* SecurityWorkspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityWorkspaceCell.swift; sourceTree = "<group>"; };
 		C9A6FEAB268883390002085E /* SecurityWorkspaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityWorkspaceCell.xib; sourceTree = "<group>"; };
 		C9B794502684D72400258A72 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -275,6 +301,12 @@
 		C9B7949426862C4800258A72 /* EnterOTPVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterOTPVC.xib; sourceTree = "<group>"; };
 		C9B7949826862C5F00258A72 /* SetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordVC.swift; sourceTree = "<group>"; };
 		C9B7949926862C5F00258A72 /* SetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetPasswordVC.xib; sourceTree = "<group>"; };
+		C9BCBC5D26975C92007F652C /* GroupSettingParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingParentVC.swift; sourceTree = "<group>"; };
+		C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingParentVC.xib; sourceTree = "<group>"; };
+		C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingParentCell.swift; sourceTree = "<group>"; };
+		C9BCBC6326975DEC007F652C /* GroupSettingParentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingParentCell.xib; sourceTree = "<group>"; };
+		C9BCBC6726976AD3007F652C /* GroupSettingChildrenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingChildrenVC.swift; sourceTree = "<group>"; };
+		C9BCBC6826976AD3007F652C /* GroupSettingChildrenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingChildrenVC.xib; sourceTree = "<group>"; };
 		C9E5C77D26872ADC00D159EF /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		C9E5C78826873BC600D159EF /* BaseMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMessageView.swift; sourceTree = "<group>"; };
 		C9E5C78C26873BCF00D159EF /* BaseMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseMessageView.xib; sourceTree = "<group>"; };
@@ -296,8 +328,8 @@
 		C9EDB55526839E74009CBD93 /* PostGroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostGroupVC.xib; sourceTree = "<group>"; };
 		C9F9384F2688146200D30F28 /* ForgotPasswordResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResult.swift; sourceTree = "<group>"; };
 		C9F9385226881A4A00D30F28 /* PasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordModel.swift; sourceTree = "<group>"; };
-		C9FA15F5268A2DBF00A1A6C6 /* GroupTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTypeVC.swift; sourceTree = "<group>"; };
-		C9FA15F6268A2DBF00A1A6C6 /* GroupTypeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTypeVC.xib; sourceTree = "<group>"; };
+		C9FA15F5268A2DBF00A1A6C6 /* GroupNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNameVC.swift; sourceTree = "<group>"; };
+		C9FA15F6268A2DBF00A1A6C6 /* GroupNameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupNameVC.xib; sourceTree = "<group>"; };
 		C9FA15FA268A2DD700A1A6C6 /* GroupSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingVC.swift; sourceTree = "<group>"; };
 		C9FA15FB268A2DD700A1A6C6 /* GroupSettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingVC.xib; sourceTree = "<group>"; };
 		C9FA15FF268A2DE400A1A6C6 /* GroupTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTimeVC.swift; sourceTree = "<group>"; };
@@ -481,13 +513,16 @@
 		C919B97626822222009982C3 /* 4. Screens */ = {
 			isa = PBXGroup;
 			children = (
-				C966FE8F2694A5630049458C /* Onboarding */,
-				C966FE8D2694A52D0049458C /* Splash */,
-				C966FE8A2691A4D60049458C /* Notification */,
 				C93ED14E2682320C00B03E8A /* Administration */,
+				C9EDB54C26839E74009CBD93 /* Group */,
 				C93ED14F2682323500B03E8A /* Home */,
 				C90EA73C2684C278002502F5 /* Login */,
+				C966FE8A2691A4D60049458C /* Notification */,
+				C966FE8F2694A5630049458C /* Onboarding */,
+				C99FD1D52697469E00A8F731 /* Profile */,
+				C99FD1C82697461300A8F731 /* Protect */,
 				C93ED1502682324400B03E8A /* Setting */,
+				C966FE8D2694A52D0049458C /* Splash */,
 				C93ED14D2682320000B03E8A /* Tabbar */,
 				C95A5851268861670077112F /* Workspace */,
 			);
@@ -527,7 +562,6 @@
 		C93ED14E2682320C00B03E8A /* Administration */ = {
 			isa = PBXGroup;
 			children = (
-				C9EDB54C26839E74009CBD93 /* Group */,
 				C93ED161268232BE00B03E8A /* AdministrationVC.swift */,
 				C93ED162268232BE00B03E8A /* AdministrationVC.xib */,
 				C93ED1862682445E00B03E8A /* DashboardVC.swift */,
@@ -612,6 +646,8 @@
 		C966FE8A2691A4D60049458C /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				C99FD1CF2697465B00A8F731 /* NotificationVC.swift */,
+				C99FD1D02697465B00A8F731 /* NotificationVC.xib */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -632,6 +668,24 @@
 				C966FE972694A9500049458C /* OnboardingChildVC.xib */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C99FD1C82697461300A8F731 /* Protect */ = {
+			isa = PBXGroup;
+			children = (
+				C99FD1C92697462700A8F731 /* ProtectVC.swift */,
+				C99FD1CA2697462700A8F731 /* ProtectVC.xib */,
+			);
+			path = Protect;
+			sourceTree = "<group>";
+		};
+		C99FD1D52697469E00A8F731 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C99FD1D6269746C200A8F731 /* ProfileVC.swift */,
+				C99FD1D7269746C200A8F731 /* ProfileVC.xib */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		C9B79468268614EE00258A72 /* Param */ = {
@@ -698,12 +752,18 @@
 				C9FA15FB268A2DD700A1A6C6 /* GroupSettingVC.xib */,
 				C9FA15FF268A2DE400A1A6C6 /* GroupTimeVC.swift */,
 				C9FA1600268A2DE400A1A6C6 /* GroupTimeVC.xib */,
-				C9FA15F5268A2DBF00A1A6C6 /* GroupTypeVC.swift */,
-				C9FA15F6268A2DBF00A1A6C6 /* GroupTypeVC.xib */,
+				C9FA15F5268A2DBF00A1A6C6 /* GroupNameVC.swift */,
+				C9FA15F6268A2DBF00A1A6C6 /* GroupNameVC.xib */,
 				C9EDB54E26839E74009CBD93 /* GroupVC.swift */,
 				C9EDB54D26839E74009CBD93 /* GroupVC.xib */,
 				C9EDB55426839E74009CBD93 /* PostGroupVC.swift */,
 				C9EDB55526839E74009CBD93 /* PostGroupVC.xib */,
+				C971F9FD2697498A00BB7118 /* PostGroupAboutVC.swift */,
+				C971F9FE2697498A00BB7118 /* PostGroupAboutVC.xib */,
+				C9BCBC5D26975C92007F652C /* GroupSettingParentVC.swift */,
+				C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */,
+				C9BCBC6726976AD3007F652C /* GroupSettingChildrenVC.swift */,
+				C9BCBC6826976AD3007F652C /* GroupSettingChildrenVC.xib */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -731,6 +791,10 @@
 				C999AB06268E03F200F657A9 /* GroupSettingCell.xib */,
 				C9E7A491269087240012985B /* GroupSettingLinkCell.swift */,
 				C9E7A492269087240012985B /* GroupSettingLinkCell.xib */,
+				C971FA0226974E6F00BB7118 /* PostGroupAboutCell.swift */,
+				C971FA0326974E6F00BB7118 /* PostGroupAboutCell.xib */,
+				C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */,
+				C9BCBC6326975DEC007F652C /* GroupSettingParentCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -836,7 +900,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BCBC6526975DEC007F652C /* GroupSettingParentCell.xib in Resources */,
 				C93ED193268244A900B03E8A /* ConfigVC.xib in Resources */,
+				C971FA0526974E6F00BB7118 /* PostGroupAboutCell.xib in Resources */,
 				0EDEEFB12681F2A000572C4E /* LaunchScreen.storyboard in Resources */,
 				C95A5855268861940077112F /* PostWorkspaceVC.xib in Resources */,
 				C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */,
@@ -850,22 +916,28 @@
 				C9B79465268613A700258A72 /* RegisterVC.xib in Resources */,
 				C9E7A4A32690C6100012985B /* ConfirmDeleteView.xib in Resources */,
 				C9E7A494269087240012985B /* GroupSettingLinkCell.xib in Resources */,
-				C9FA15F8268A2DBF00A1A6C6 /* GroupTypeVC.xib in Resources */,
+				C9FA15F8268A2DBF00A1A6C6 /* GroupNameVC.xib in Resources */,
 				C9B7949B26862C5F00258A72 /* SetPasswordVC.xib in Resources */,
 				C9EDB55826839E74009CBD93 /* GroupCell.xib in Resources */,
 				C9EDB55A26839E74009CBD93 /* GroupFooterView.xib in Resources */,
+				C99FD1CC2697462700A8F731 /* ProtectVC.xib in Resources */,
 				C940AE9F268377FF0069B830 /* WorkspaceFooterView.xib in Resources */,
 				C95A5869268870620077112F /* ChooseTypeWorkspaceCell.xib in Resources */,
+				C9BCBC6A26976AD3007F652C /* GroupSettingChildrenVC.xib in Resources */,
 				C93ED164268232BE00B03E8A /* AdministrationVC.xib in Resources */,
 				C9B7949126862C2E00258A72 /* ForgotPasswordVC.xib in Resources */,
 				C93D92572688BDDD006AD80C /* MoreActionWorkspaceView.xib in Resources */,
 				C9E7A49D2690B1610012985B /* MoreGroupActionView.xib in Resources */,
 				C999AB03268DFD1200F657A9 /* GroupSettingHeaderView.xib in Resources */,
+				C971FA002697498A00BB7118 /* PostGroupAboutVC.xib in Resources */,
+				C99FD1D22697465B00A8F731 /* NotificationVC.xib in Resources */,
+				C9BCBC6026975C92007F652C /* GroupSettingParentVC.xib in Resources */,
 				C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */,
 				C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */,
 				C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */,
 				0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */,
 				C9E5C78D26873BCF00D159EF /* BaseMessageView.xib in Resources */,
+				C99FD1D9269746C200A8F731 /* ProfileVC.xib in Resources */,
 				C9FA1606268A344B00A1A6C6 /* ChooseTypeGroupCell.xib in Resources */,
 				C9FA1602268A2DE400A1A6C6 /* GroupTimeVC.xib in Resources */,
 				C93ED15F268232A100B03E8A /* SettingVC.xib in Resources */,
@@ -959,17 +1031,20 @@
 				C94B39AD268A1CF100046958 /* GroupModel.swift in Sources */,
 				C97032332690750E007F45E0 /* GroupSettingFooterView.swift in Sources */,
 				C93ED15E268232A100B03E8A /* SettingVC.swift in Sources */,
+				C9BCBC5F26975C92007F652C /* GroupSettingParentVC.swift in Sources */,
 				C93ED167268232ED00B03E8A /* BaseTabbarController.swift in Sources */,
 				C9B7947F26861B4900258A72 /* BaseResult.swift in Sources */,
 				C94B39A7268A109800046958 /* WorkspaceUpdateNameParam.swift in Sources */,
 				C94B39CB268A278B00046958 /* GroupWorker.swift in Sources */,
 				C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */,
+				C971F9FF2697498A00BB7118 /* PostGroupAboutVC.swift in Sources */,
 				C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */,
 				C919B94826821DA9009982C3 /* APIRouter.swift in Sources */,
 				C9FA160B268B611200A1A6C6 /* StringExtension.swift in Sources */,
 				C940AE8E268375A30069B830 /* WorkspaceCell.swift in Sources */,
 				C9FA1671268DFC4C00A1A6C6 /* GroupSettingHeaderView.swift in Sources */,
 				C94B39C2268A260D00046958 /* DeleteToGroupParam.swift in Sources */,
+				C99FD1D8269746C200A8F731 /* ProfileVC.swift in Sources */,
 				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
 				C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */,
 				C9B7949026862C2E00258A72 /* ForgotPasswordVC.swift in Sources */,
@@ -983,10 +1058,11 @@
 				C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */,
 				C9FA1601268A2DE400A1A6C6 /* GroupTimeVC.swift in Sources */,
 				C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */,
-				C9FA15F7268A2DBF00A1A6C6 /* GroupTypeVC.swift in Sources */,
+				C9FA15F7268A2DBF00A1A6C6 /* GroupNameVC.swift in Sources */,
 				C9FA15FC268A2DD700A1A6C6 /* GroupSettingVC.swift in Sources */,
 				C9B79466268613A700258A72 /* RegisterVC.swift in Sources */,
 				C9B7948C268626AA00258A72 /* UserModel.swift in Sources */,
+				C9BCBC6426975DEC007F652C /* GroupSettingParentCell.swift in Sources */,
 				C9E7A49826909E890012985B /* MoreLinkSettingView.swift in Sources */,
 				C93D92542688BDD6006AD80C /* MoreActionWorkspaceView.swift in Sources */,
 				C94B39B6268A20EB00046958 /* DeleteDeviceToGroupParam.swift in Sources */,
@@ -1010,7 +1086,9 @@
 				C966FE932694A8EB0049458C /* OnboardingVC.swift in Sources */,
 				C970323726907AA2007F45E0 /* EnterLinkWebsiteView.swift in Sources */,
 				C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */,
+				C9BCBC6926976AD3007F652C /* GroupSettingChildrenVC.swift in Sources */,
 				C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */,
+				C971FA0426974E6F00BB7118 /* PostGroupAboutCell.swift in Sources */,
 				C9EDB55C26839E74009CBD93 /* PostGroupVC.swift in Sources */,
 				C9B7949526862C4800258A72 /* EnterOTPVC.swift in Sources */,
 				C9EDB55926839E74009CBD93 /* GroupFooterView.swift in Sources */,
@@ -1020,7 +1098,9 @@
 				C94B39C8268A26DA00046958 /* ChangeViewerPermisionParam.swift in Sources */,
 				C919B96926822144009982C3 /* BaseViewController.swift in Sources */,
 				C9B794892686262300258A72 /* ChangePassParam.swift in Sources */,
+				C99FD1CB2697462700A8F731 /* ProtectVC.swift in Sources */,
 				C94B39B9268A244200046958 /* AddDeviceToIdentifierParam.swift in Sources */,
+				C99FD1D12697465B00A8F731 /* NotificationVC.swift in Sources */,
 				C9EDB55726839E74009CBD93 /* GroupVC.swift in Sources */,
 				C9B79483268622BE00258A72 /* LoginParam.swift in Sources */,
 				C95A58462688233F0077112F /* ResetPasswordResult.swift in Sources */,

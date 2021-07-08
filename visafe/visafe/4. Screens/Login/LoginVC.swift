@@ -37,7 +37,12 @@ class LoginVC: BaseViewController {
         if validate() {
             showLoading()
             let loginParam = LoginParam()
-            loginParam.username = usernameTextfield.text
+            let username = usernameTextfield.text ?? "0"
+            if username.isValidEmail {
+                loginParam.username = username
+            } else {
+                loginParam.username = "84" + username.dropFirst()
+            }
             loginParam.password = passwordTextfield.text
             AuthenWorker.login(param: loginParam) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }

@@ -16,40 +16,36 @@ class TabbarVC: BaseTabbarController {
     }
     
     func configView() {
-        let adminVC = AdministrationVC()
-        adminVC.title = "Quản trị"
-        let adminNav = BaseNavigationController(rootViewController: adminVC)
-        let leftMenu = LeftMenuVC()
-        leftMenu.selectedWorkspace = { workspace in
-            adminVC.onChangeWorkspace(workspace: workspace)
-        }
-        let sideMenuVC = SideMenuController(contentViewController: adminNav, menuViewController: leftMenu)
-        sideMenuVC.title = "Quản trị"
+        let protectVC = ProtectVC()
+        protectVC.title = "Bảo vệ"
+        let protectNav = BaseNavigationController(rootViewController: protectVC)
         
-        let homeVC = HomeVC()
-        homeVC.title = "Bảo vệ"
-        let homeNav = BaseNavigationController(rootViewController: homeVC)
+        let groupVC = GroupVC()
+        groupVC.title = "Nhóm"
+        let groupNav = BaseNavigationController(rootViewController: groupVC)
         
-        let settingVC = SettingVC()
-        settingVC.title = "Cài đặt"
-        let settingNav = BaseNavigationController(rootViewController: settingVC)
+        let notiVC = NotificationVC()
+        notiVC.title = "Thông báo"
+        let notiNav = BaseNavigationController(rootViewController: notiVC)
+        
+        let profileVC = ProfileVC()
+        profileVC.title = "Tài khoản"
+        let profileNav = BaseNavigationController(rootViewController: profileVC)
     
-        
-        
-        self.viewControllers = [sideMenuVC, homeNav, settingNav]
+        self.viewControllers = [protectNav, groupNav, notiNav, profileNav]
         let adminItem = self.tabBar.items![0]
-        adminItem.image = UIImage(named: "tabbar_admin")
-        adminItem.selectedImage = UIImage(named: "tabbar_admin_select")
+        adminItem.image = UIImage(named: "protect_tabbar")
         
         let homeItem = self.tabBar.items![1]
-        homeItem.image = UIImage(named: "tabbar_home")
-        homeItem.selectedImage = UIImage(named: "tabbar_home")
+        homeItem.image = UIImage(named: "group_tabbar")
         
         let settingItem = self.tabBar.items![2]
-        settingItem.image = UIImage(named: "tabbar_setting")
-        settingItem.selectedImage = UIImage(named: "tabbar_setting_select")
+        settingItem.image = UIImage(named: "notification_tabbar")
         
-        selectedIndex = 0
+        let profileItem = self.tabBar.items![3]
+        profileItem.image = UIImage(named: "profile_tabbar")
+        
+        selectedIndex = 1
         tabBar.tintColor = UIColor.black
     }
 }

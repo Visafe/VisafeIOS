@@ -221,17 +221,17 @@ public enum PostGroupEnum: Int {
     case service = 5
     case website = 6
     case safesearch = 7
-    case porn = 8
-    case bypass = 9
+    case gamble = 8
+    case phishing = 9
     
     func getTitle() -> String {
         switch self {
         case .adblock:
             return "Chặn quảng cáo Website"
         case .gameads:
-            return "Chặn quảng cáo game, ứng dụng"
+            return "Chặn quảng cáo Game"
         case .appads:
-            return "Chặn quảng cáo nâng cao"
+            return "Chặn quảng cáo ứng dụng"
         case .nativetracking:
             return "Chặn theo dõi trên thiết bị"
         case .service:
@@ -239,11 +239,11 @@ public enum PostGroupEnum: Int {
         case .website:
             return "Websites"
         case .safesearch:
-            return "Giới hạn nội dung tìm kiếm"
-        case .porn:
-            return "Chặn nội dung nhạy cảm"
-        case .bypass:
-            return "Chống ByPass"
+            return "Chặn nội dung người lớn"
+        case .gamble:
+            return "Chặn nội dung cờ bạc"
+        case .phishing:
+            return "Chặn tin tức giả"
         }
     }
     
@@ -263,15 +263,15 @@ public enum PostGroupEnum: Int {
             return "Chặn truy cập đến các website trong danh sách"
         case .safesearch:
             return "Ngăn chặn các nội dung không phù hợp, nhạy cảm, bình luận,..."
-        case .porn:
-            return "Chặn nội dung xấu, 18+"
-        case .bypass:
-            return "Ngăn chặn VPN, Proxy,..."
+        case .gamble:
+            return "Ngăn chặn các nội dung liên quan đến cờ bạc, cá độ"
+        case .phishing:
+            return "Ngăn chặn các tin tức giả, không chính thống"
         }
     }
     
     static func getAll() -> [PostGroupEnum] {
-        return [.adblock, .gameads, .appads, .nativetracking, .service, .website, .safesearch, .porn, .bypass]
+        return [.adblock, .gameads, .appads, .nativetracking, .service, .website, .safesearch, .gamble, .phishing]
     }
 }
 
@@ -301,6 +301,7 @@ public class PostGroupModel: BaseGroupModel {
     var type: PostGroupEnum?
     var children: [Any] = []
 }
+
 
 class GroupModel: NSObject, Mappable {
     var groupid: String?
@@ -419,59 +420,72 @@ class GroupModel: NSObject, Mappable {
         return responses
     }
     
-    func buildSource() -> [PostGroupModel] {
-        var sources = [PostGroupModel]()
-        // Chặn quảng cáo Website
-        let m1 = PostGroupModel()
-        m1.isSelected = adblock_enabled
-        m1.type = .adblock
-        sources.append(m1)
-        // Chặn quảng cáo game, ứng dụng
-        let m2 = PostGroupModel()
-        m2.isSelected = game_ads_enabled
-        m2.type = .gameads
-        sources.append(m2)
-        // Chặn quảng cáo nâng cao
-        let m3 = PostGroupModel()
-        m3.isSelected = true
-        m3.type = .appads
-        m3.children = buildModelsAppAds(value: app_ads ?? [])
-        sources.append(m3)
-        // Chặn theo dõi thiết bị
-        let m4 = PostGroupModel()
-        m4.type = .nativetracking
-        m4.isSelected = true
-        m4.children = buildTracking(value: native_tracking ?? [])
-        sources.append(m4)
-        // Ứng dụng
-        let m5 = PostGroupModel()
-        m5.type = .service
-        m5.isSelected = true
-        m5.children = buildModelsBlockService(value: blocked_services ?? [])
-        sources.append(m5)
-        // Website
-        let m6 = PostGroupModel()
-        m6.type = .website
-        m6.isSelected = true
-        m6.children = block_webs ?? []
-        sources.append(m6)
-        // Giới hạn nội dung tìm kiếm
-        let m7 = PostGroupModel()
-        m7.type = .safesearch
-        m7.isSelected = safesearch_enabled ?? youtuberestrict_enabled ?? false
-        m7.children = buildModelsSafeSearch()
-        sources.append(m7)
-        // Chặn nội dung nhạy cảm
-        let m8 = PostGroupModel()
-        m8.isSelected = porn_enabled
-        m8.type = .porn
-        sources.append(m8)
-        // Chống ByPass
-        let m9 = PostGroupModel()
-        m9.isSelected = bypass_enabled
-        m9.type = .bypass
-        sources.append(m9)
-        return sources
+    func buildSource(type: GroupSettingParentEnum) -> [PostGroupModel] {
+        if type == .blockAds {
+            var sources = [PostGroupModel]()
+            // Chặn quảng cáo Website
+            let m1 = PostGroupModel()
+            m1.isSelected = adblock_enabled
+            m1.type = .adblock
+            sources.append(m1)
+            // Chặn quảng cáo game, ứng dụng
+            let m2 = PostGroupModel()
+            m2.isSelected = game_ads_enabled
+            m2.type = .gameads
+            sources.append(m2)
+            // Chặn quảng cáo nâng cao
+            let m3 = PostGroupModel()
+            m3.isSelected = true
+            m3.type = .appads
+            m3.children = buildModelsAppAds(value: app_ads ?? [])
+            sources.append(m3)
+            return sources
+        } else if type == .blockConnect {
+            var sources = [PostGroupModel]()
+            // Ứng dụng
+            let m5 = PostGroupModel()
+            m5.type = .service
+            m5.isSelected = true
+            m5.children = buildModelsBlockService(value: blocked_services ?? [])
+            sources.append(m5)
+            // Website
+            let m6 = PostGroupModel()
+            m6.type = .website
+            m6.isSelected = true
+            m6.children = block_webs ?? []
+            sources.append(m6)
+            return sources
+        } else if type == .blockContent {
+            var sources = [PostGroupModel]()
+            // Giới hạn nội dung tìm kiếm
+            let m7 = PostGroupModel()
+            m7.type = .safesearch
+            m7.isSelected = safesearch_enabled ?? youtuberestrict_enabled ?? false
+            m7.children = buildModelsSafeSearch()
+            sources.append(m7)
+            // Chặn nội dung cờ bạc
+            let m8 = PostGroupModel()
+            m8.isSelected = gambling_enabled
+            m8.type = .gamble
+            sources.append(m8)
+            // Chặn tin tức giả
+            let m9 = PostGroupModel()
+            m9.isSelected = phishing_enabled
+            m9.type = .phishing
+            sources.append(m9)
+            return sources
+        } else if type == .blockFollow {
+            var sources = [PostGroupModel]()
+            // Chặn theo dõi thiết bị
+            let m4 = PostGroupModel()
+            m4.type = .nativetracking
+            m4.isSelected = true
+            m4.children = buildTracking(value: native_tracking ?? [])
+            sources.append(m4)
+            return sources
+        } else {
+            return []
+        }
     }
     
     func bindingData(sources: [PostGroupModel]) {
@@ -547,10 +561,10 @@ class GroupModel: NSObject, Mappable {
                     safesearch_enabled = false
                     youtuberestrict_enabled = false
                 }
-            case .bypass:
-                bypass_enabled = model.isSelected
-            case .porn:
-                porn_enabled = model.isSelected
+            case .gamble:
+                gambling_enabled = model.isSelected
+            case .phishing:
+                phishing_enabled = model.isSelected
             }
         }
     }

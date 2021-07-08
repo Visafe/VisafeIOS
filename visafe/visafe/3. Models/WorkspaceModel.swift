@@ -45,6 +45,41 @@ public enum WorkspaceTypeEnum: String {
         }
     }
     
+    //intro
+    func getImageIntro() -> UIImage? {
+        switch self {
+        case .family:
+            return UIImage(named: "protect_family")
+        case .enterprise:
+            return UIImage(named: "protect_orgnization")
+        case .govermnent:
+            return UIImage(named: "protect_orgnization")
+        case .school:
+            return UIImage(named: "protect_orgnization")
+        default:
+            return UIImage(named: "protect_orgnization")
+        }
+    }
+    
+    func getTitleIntro() -> String? {
+        switch self {
+        case .family:
+            return "Bảo vệ gia đình & nhóm"
+        case .enterprise:
+            return "Bảo vệ tổ chức"
+        case .govermnent:
+            return "Bảo vệ tổ chức"
+        case .school:
+            return "Bảo vệ tổ chức"
+        default:
+            return "Bảo vệ tổ chức"
+        }
+    }
+    
+    func getContentIntro() -> String? {
+        return "Tất cả thành viên tham gia nhóm đều được ViSafe bảo vệ trên môi trường mạng"
+    }
+    
     static func getAll() -> [WorkspaceTypeEnum] {
         return [.personal, .family, .school, .enterprise, .govermnent]
     }
