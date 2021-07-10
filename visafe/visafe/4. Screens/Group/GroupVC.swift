@@ -11,18 +11,30 @@ class GroupVC: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var groups: [GroupModel] = []
+    var myGroups: [GroupModel] = []
+    var inviteGroups: [GroupModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configView()
         configRefreshData()
+        configView()
         prepareData()
     }
     
     func configView() {
         // tableview
         tableView.registerCells(cells: [GroupCell.className])
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        tableView.backgroundColor = UIColor.clear
+        tableView.contentInset = UIEdgeInsets(top: kScreenWidth*180/375-54, left: 0, bottom: 0, right: 0)
+        
+        //create view as header view
+        guard let headerView = GroupHeaderView.loadFromNib() else { return }
+        headerView.addGroupAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.showFormAddGroup()
+        }
+        tableView.tableHeaderView = headerView
     }
     
     func showFormAddGroup() {
@@ -50,7 +62,12 @@ class GroupVC: BaseViewController {
         GroupWorker.list(wsid: workspace?.id) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
-            weakSelf.groups = result?.clients ?? []
+            weakSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
+                return m.isOwner == true
+            }) ?? []
+            weakSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
+                return m.isOwner == false
+            }) ?? []
             weakSelf.tableView.reloadData()
         }
     }
@@ -67,7 +84,12 @@ class GroupVC: BaseViewController {
             let workspace = CacheManager.shared.getCurrentWorkspace()
             GroupWorker.list(wsid: workspace?.id) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
-                weakSelf.groups = result?.clients ?? []
+                weakSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
+                    return m.isOwner == true
+                }) ?? []
+                weakSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
+                    return m.isOwner == false
+                }) ?? []
                 weakSelf.tableView.reloadData()
                 weakSelf.tableView.endRefreshing()
             }
@@ -77,20 +99,66 @@ class GroupVC: BaseViewController {
 
 extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groups.count
+        if section == 0 {
+            return myGroups.count
+        } else {
+            return inviteGroups.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupCell.className) as? GroupCell else {
             return UITableViewCell()
         }
-        cell.bindingData(group: groups[indexPath.row])
-        cell.onMoreAction = { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.showMoreAction(group: weakSelf.groups[indexPath.row])
+        if indexPath.section == 0 {
+            cell.bindingData(group: myGroups[indexPath.row])
+            cell.onMoreAction = { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.showMoreAction(group: weakSelf.myGroups[indexPath.row])
+            }
+        } else {
+            cell.bindingData(group: inviteGroups[indexPath.row])
+            cell.onMoreAction = { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.showMoreAction(group: weakSelf.inviteGroups[indexPath.row])
+            }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            guard myGroups.count > 0 else { return UIView() }
+            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 44))
+            headerView.backgroundColor = UIColor.white
+            let titleLabel = UILabel(frame: CGRect(x: 16, y: 0, width: kScreenWidth-32, height: 44))
+            titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+            titleLabel.text = "Nhóm bạn quản lý"
+            headerView.addSubview(titleLabel)
+            return headerView
+        } else {
+            guard inviteGroups.count > 0 else { return UIView() }
+            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 44))
+            headerView.backgroundColor = UIColor.white
+            let titleLabel = UILabel(frame: CGRect(x: 16, y: 0, width: kScreenWidth-32, height: 44))
+            titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+            titleLabel.text = "Nhóm bạn đã tham gia"
+            headerView.addSubview(titleLabel)
+            return headerView
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return myGroups.count > 0 ? 44 : 0
+        } else {
+            return inviteGroups.count > 0 ? 44 : 0
+        }
     }
     
     func showMoreAction(group: GroupModel) {
@@ -136,19 +204,8 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = GroupFooterView.loadFromNib()
-        footerView?.isUserInteractionEnabled = true
-        footerView?.configView()
-        footerView?.onClickAddGroup = { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.showFormAddGroup()
-        }
-        return footerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 84
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

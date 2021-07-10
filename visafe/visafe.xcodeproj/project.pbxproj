@@ -109,6 +109,8 @@
 		C99FD1D22697465B00A8F731 /* NotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99FD1D02697465B00A8F731 /* NotificationVC.xib */; };
 		C99FD1D8269746C200A8F731 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FD1D6269746C200A8F731 /* ProfileVC.swift */; };
 		C99FD1D9269746C200A8F731 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99FD1D7269746C200A8F731 /* ProfileVC.xib */; };
+		C9A15B4D2699BFDA0065D5C2 /* GroupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A15B4C2699BFDA0065D5C2 /* GroupHeaderView.swift */; };
+		C9A15B502699BFE50065D5C2 /* GroupHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A15B4F2699BFE50065D5C2 /* GroupHeaderView.xib */; };
 		C9A6FEAC268883390002085E /* SecurityWorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6FEAA268883390002085E /* SecurityWorkspaceCell.swift */; };
 		C9A6FEAD268883390002085E /* SecurityWorkspaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A6FEAB268883390002085E /* SecurityWorkspaceCell.xib */; };
 		C9B794512684D72400258A72 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B794502684D72400258A72 /* ColorExtension.swift */; };
@@ -283,6 +285,8 @@
 		C99FD1D02697465B00A8F731 /* NotificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationVC.xib; sourceTree = "<group>"; };
 		C99FD1D6269746C200A8F731 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		C99FD1D7269746C200A8F731 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		C9A15B4C2699BFDA0065D5C2 /* GroupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHeaderView.swift; sourceTree = "<group>"; };
+		C9A15B4F2699BFE50065D5C2 /* GroupHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupHeaderView.xib; sourceTree = "<group>"; };
 		C9A6FEAA268883390002085E /* SecurityWorkspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityWorkspaceCell.swift; sourceTree = "<group>"; };
 		C9A6FEAB268883390002085E /* SecurityWorkspaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityWorkspaceCell.xib; sourceTree = "<group>"; };
 		C9B794502684D72400258A72 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -795,6 +799,8 @@
 				C971FA0326974E6F00BB7118 /* PostGroupAboutCell.xib */,
 				C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */,
 				C9BCBC6326975DEC007F652C /* GroupSettingParentCell.xib */,
+				C9A15B4C2699BFDA0065D5C2 /* GroupHeaderView.swift */,
+				C9A15B4F2699BFE50065D5C2 /* GroupHeaderView.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -935,6 +941,7 @@
 				C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */,
 				C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */,
 				C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */,
+				C9A15B502699BFE50065D5C2 /* GroupHeaderView.xib in Resources */,
 				0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */,
 				C9E5C78D26873BCF00D159EF /* BaseMessageView.xib in Resources */,
 				C99FD1D9269746C200A8F731 /* ProfileVC.xib in Resources */,
@@ -1041,6 +1048,7 @@
 				C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */,
 				C919B94826821DA9009982C3 /* APIRouter.swift in Sources */,
 				C9FA160B268B611200A1A6C6 /* StringExtension.swift in Sources */,
+				C9A15B4D2699BFDA0065D5C2 /* GroupHeaderView.swift in Sources */,
 				C940AE8E268375A30069B830 /* WorkspaceCell.swift in Sources */,
 				C9FA1671268DFC4C00A1A6C6 /* GroupSettingHeaderView.swift in Sources */,
 				C94B39C2268A260D00046958 /* DeleteToGroupParam.swift in Sources */,

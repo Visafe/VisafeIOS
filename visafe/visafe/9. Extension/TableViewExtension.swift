@@ -23,6 +23,7 @@ extension UITableView {
     
     func addPullToRefresh(_ block: @escaping MJRefreshComponentAction) -> Void {
         let header = MJRefreshNormalHeader(refreshingBlock: block)
+        header.arrowView?.image = nil
         header.lastUpdatedTimeLabel?.isHidden = true
         header.stateLabel?.isHidden = true
         
