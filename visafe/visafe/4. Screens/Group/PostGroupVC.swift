@@ -20,6 +20,8 @@ class PostGroupVC: BaseViewController {
     let settingVC: GroupSettingParentVC!
     let timeVC: GroupTimeVC!
     let hightSegment: CGFloat = 2
+    
+    var onDone:(() -> Void)?
 
     init(group: GroupModel? = nil) {
         if let g = group {
@@ -67,14 +69,12 @@ class PostGroupVC: BaseViewController {
             }
         }
         
-//        settingVC.onContinue = { [weak self] in
-//            guard let weakSelf = self else { return }
-//            weakSelf.pageViewController.setViewControllers([weakSelf.timeVC], direction: UIPageViewController.NavigationDirection.forward, animated: true) { (success) in
-//                weakSelf.updateHeaderSegmentedState()
-//            }
-//        }
+        settingVC.onContinue = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.doneAction()
+        }
         
-        self.leadingSegment.constant = 2*kScreenWidth/3
+        self.leadingSegment.constant = kScreenWidth/2
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.delegate = self
         pageViewController.dataSource = self
@@ -86,11 +86,62 @@ class PostGroupVC: BaseViewController {
     }
     
     func configBarButtonItem() {
-        // title
-        title = "Tạo nhóm mới"
+        if editMode == .add {
+            title = "Thêm nhóm mới"
+        } else {
+            title = "Chỉnh sửa nhóm"
+        }
         // left
         let leftBarButton = UIBarButtonItem(image: UIImage(named: "cancel_icon"), style: .done, target: self, action: #selector(onClickLeftButton))
         navigationItem.leftBarButtonItem = leftBarButton
+    }
+    
+    func doneAction() {
+        if editMode == .add {
+            showLoading()
+            GroupWorker.add(group: group) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                weakSelf.hideLoading()
+                weakSelf.handleResponse(group: result, error: error)
+            }
+        } else {
+            let param = RenameGroupParam()
+            param.group_id = group.groupid
+            param.group_name = group.name
+            showLoading()
+            GroupWorker.rename(param: param) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                GroupWorker.update(group: weakSelf.group) { [weak self] (result, error) in
+                    guard let weakSelf = self else { return }
+                    weakSelf.hideLoading()
+                    weakSelf.handleResponseUpdate(group: result, error: error)
+                }
+            }
+        }
+    }
+    
+    func handleResponse(group: GroupModel?, error: Error?) {
+        if group != nil {
+            showMemssage(title: "Tạo nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn khởi tạo.") { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.dismiss(animated: true, completion: nil)
+                weakSelf.onDone?()
+            }
+        } else {
+            showError(title: "Tạo nhóm không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
+        }
+    }
+    
+    func handleResponseUpdate(group: GroupModel?, error: Error?) {
+        if error == nil {
+            showMemssage(title: "Sửa nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn cập nhật.") { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.dismiss(animated: true, completion: nil)
+                weakSelf.onDone?()
+            }
+        } else {
+            showError(title: "Sửa nhóm không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
+        }
     }
 }
 
@@ -129,9 +180,7 @@ extension PostGroupVC: UIPageViewControllerDelegate, UIPageViewControllerDataSou
     func updateHeaderSegmentedState() {
         var leading: CGFloat = 0
         if pageViewController.viewControllers?.first is GroupNameVC {
-            leading = 2*kScreenWidth/3
-        } else if pageViewController.viewControllers?.first is GroupSettingVC {
-            leading = kScreenWidth/3
+            leading = kScreenWidth/2
         } else {
             leading = 0
         }

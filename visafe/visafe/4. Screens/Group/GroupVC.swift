@@ -29,11 +29,19 @@ class GroupVC: BaseViewController {
         let vc = PostGroupAboutVC()
         vc.startAction = { [weak self] in
             guard let weakSelf = self else { return }
-            let postVC = PostGroupVC()
-            let nav = BaseNavigationController(rootViewController: postVC)
-            weakSelf.present(nav, animated: true, completion: nil)
+            weakSelf.postGroup()
         }
         present(vc, animated: true, completion: nil)
+    }
+    
+    func postGroup() {
+        let postVC = PostGroupVC()
+        postVC.onDone = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.refreshData()
+        }
+        let nav = BaseNavigationController(rootViewController: postVC)
+        present(nav, animated: true, completion: nil)
     }
     
     func prepareData() {
@@ -101,6 +109,10 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func editGroup(group: GroupModel) {
         let vc = PostGroupVC(group: group)
+        vc.onDone = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.refreshData()
+        }
         let nav = BaseNavigationController(rootViewController: vc)
         present(nav, animated: true, completion: nil)
     }

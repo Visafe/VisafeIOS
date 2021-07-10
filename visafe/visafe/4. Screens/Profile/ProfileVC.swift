@@ -11,7 +11,6 @@ class ProfileVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func loginAction(_ sender: Any) {

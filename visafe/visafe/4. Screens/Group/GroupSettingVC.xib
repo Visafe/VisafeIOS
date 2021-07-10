@@ -43,7 +43,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="continueActionButton:" destination="-1" eventType="touchUpInside" id="M5W-KD-qTC"/>
                         <action selector="resetDefaultAction:" destination="-1" eventType="touchUpInside" id="66m-QF-phC"/>
                     </connections>
                 </button>

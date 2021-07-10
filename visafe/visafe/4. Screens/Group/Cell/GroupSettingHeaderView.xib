@@ -15,19 +15,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chặn quảng cáo Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvG-tV-4JZ">
-                    <rect key="frame" x="20" y="20" width="305" height="20"/>
+                    <rect key="frame" x="24" y="20" width="301" height="20"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chặn các quảng cáo hiển thị trên các website " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bei-qM-14g">
-                    <rect key="frame" x="20" y="55" width="314" height="17"/>
+                    <rect key="frame" x="24" y="55" width="310" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4f-mF-idt">
-                    <rect key="frame" x="345" y="14.5" width="51" height="31"/>
+                    <rect key="frame" x="341" y="14.5" width="51" height="31"/>
                     <color key="onTintColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <action selector="switchChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="8lo-gQ-ylY"/>
@@ -47,14 +47,14 @@
                 <constraint firstItem="pgJ-9x-H1q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0rf-IX-ohe"/>
                 <constraint firstItem="g4f-mF-idt" firstAttribute="centerY" secondItem="mvG-tV-4JZ" secondAttribute="centerY" id="1JZ-Yu-Fod"/>
                 <constraint firstItem="mvG-tV-4JZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="6Qb-Ji-NHt"/>
-                <constraint firstItem="g4f-mF-idt" firstAttribute="leading" secondItem="mvG-tV-4JZ" secondAttribute="trailing" constant="20" id="DU2-jX-mxg"/>
+                <constraint firstItem="g4f-mF-idt" firstAttribute="leading" secondItem="mvG-tV-4JZ" secondAttribute="trailing" constant="16" id="DU2-jX-mxg"/>
                 <constraint firstItem="pgJ-9x-H1q" firstAttribute="top" secondItem="Bei-qM-14g" secondAttribute="bottom" constant="20.5" id="JK3-7m-d89"/>
-                <constraint firstItem="Bei-qM-14g" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="QX3-3U-Eka"/>
-                <constraint firstItem="mvG-tV-4JZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="UhF-4b-SJ2"/>
+                <constraint firstItem="Bei-qM-14g" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="QX3-3U-Eka"/>
+                <constraint firstItem="mvG-tV-4JZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="UhF-4b-SJ2"/>
                 <constraint firstItem="Bei-qM-14g" firstAttribute="top" secondItem="mvG-tV-4JZ" secondAttribute="bottom" constant="15" id="WIw-mf-9yn"/>
                 <constraint firstAttribute="trailing" secondItem="pgJ-9x-H1q" secondAttribute="trailing" id="XP3-k0-J3x"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Bei-qM-14g" secondAttribute="trailing" constant="80" id="ljl-xq-ckD"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="g4f-mF-idt" secondAttribute="trailing" constant="20" id="qV3-9m-ZVk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="g4f-mF-idt" secondAttribute="trailing" constant="24" id="qV3-9m-ZVk"/>
                 <constraint firstAttribute="bottom" secondItem="pgJ-9x-H1q" secondAttribute="bottom" id="tgP-pc-owA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

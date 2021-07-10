@@ -77,18 +77,6 @@ public enum GroupSettingParentEnum: Int {
     static func getAll() -> [GroupSettingParentEnum] {
         return [.blockAds, .blockFollow, .blockConnect, .blockContent, .blockVPN]
     }
-    
-    static func getAllModel() -> [PostGroupParentModel] {
-        var sources: [PostGroupParentModel] = []
-        let enums: [GroupSettingParentEnum] = [.blockAds, .blockFollow, .blockConnect, .blockContent, .blockVPN]
-        for item in enums {
-            let model = PostGroupParentModel()
-            model.type = item
-            model.isSelected = true
-            sources.append(model)
-        }
-        return sources
-    }
 }
 
 public class PostGroupParentModel: BaseGroupModel {
@@ -103,7 +91,7 @@ class GroupSettingParentVC: BaseViewController {
     
     var onContinue:(() -> Void)?
     
-    var sources: [PostGroupParentModel] = GroupSettingParentEnum.getAllModel()
+    var sources: [PostGroupParentModel] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -128,53 +116,12 @@ class GroupSettingParentVC: BaseViewController {
     }
     
     func bindingData() {
+        sources = group.getAllModel()
         tableView.reloadData()
     }
     
     @IBAction func doneAction(_ sender: Any) {
-        if editMode == .add {
-            showLoading()
-            GroupWorker.add(group: group) { [weak self] (result, error) in
-                guard let weakSelf = self else { return }
-                weakSelf.hideLoading()
-                weakSelf.handleResponse(group: result, error: error)
-            }
-        } else {
-            let param = RenameGroupParam()
-            param.group_id = group.groupid
-            param.group_name = group.name
-            showLoading()
-            GroupWorker.rename(param: param) { [weak self] (result, error) in
-                guard let weakSelf = self else { return }
-                GroupWorker.update(group: weakSelf.group) { [weak self] (result, error) in
-                    guard let weakSelf = self else { return }
-                    weakSelf.hideLoading()
-                    weakSelf.handleResponseUpdate(group: result, error: error)
-                }
-            }
-        }
-    }
-    
-    func handleResponse(group: GroupModel?, error: Error?) {
-        if group != nil {
-            showMemssage(title: "Tạo nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn khởi tạo.") { [weak self] in
-                guard let weakSelf = self else { return }
-                weakSelf.parent?.dismiss(animated: true, completion: nil)
-            }
-        } else {
-            showError(title: "Tạo nhóm không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
-        }
-    }
-    
-    func handleResponseUpdate(group: GroupModel?, error: Error?) {
-        if error == nil {
-            showMemssage(title: "Sửa nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn cập nhật.") { [weak self] in
-                guard let weakSelf = self else { return }
-                weakSelf.parent?.dismiss(animated: true, completion: nil)
-            }
-        } else {
-            showError(title: "Sửa nhóm không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
-        }
+        onContinue?()
     }
 }
 
@@ -198,6 +145,14 @@ extension GroupSettingParentVC: UITableViewDelegate, UITableViewDataSource {
             guard let weakSelf = self else { return }
             let vc = GroupSettingVC(group: weakSelf.group, editMode: weakSelf.editMode, parentType: model.type!)
             weakSelf.navigationController?.pushViewController(vc)
+        }
+        cell.switchAction = { [weak self] isOn in
+            guard let weakSelf = self else { return }
+            if isOn {
+                weakSelf.group.setDefault(type: model.type!)
+            } else {
+                weakSelf.group.disable(type: model.type!)
+            }
         }
         return cell
     }

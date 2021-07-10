@@ -62,7 +62,7 @@ public enum GroupAppAdsEnum: String {
     }
     
     static func getAll() -> [GroupAppAdsEnum] {
-        return [.instagram, .youtube, .spotify, .facebook]
+        return [.facebook, .youtube, .instagram, .spotify, ]
     }
 }
 
@@ -139,7 +139,7 @@ public enum NativeTrackingEnum : String {
     case xiaomi = "xiaomi"
     
     static func getAll() -> [NativeTrackingEnum] {
-        return [.alexa, .apple, .huawei, .roku, .samsung, .sonos, .windows, .xiaomi]
+        return [.apple,.samsung, .windows, .alexa, .huawei, .roku, .sonos, .xiaomi]
     }
     
     func getTitle() -> String {
@@ -306,15 +306,15 @@ public class PostGroupModel: BaseGroupModel {
 class GroupModel: NSObject, Mappable {
     var groupid: String?
     var adblock_enabled: Bool?
-    var app_ads: [String]?
-    var block_webs: [String]?
-    var blocked_services: [String]?
+    var app_ads: [String] = []
+    var block_webs: [String] = []
+    var blocked_services: [String] = []
     var bypass_enabled: Bool?
     var gambling_enabled: Bool?
     var game_ads_enabled: Bool?
     var malware_enabled: Bool?
     var name: String?
-    var native_tracking: [String]?
+    var native_tracking: [String] = []
     var object_type: [GroupTypeEnum] = []
     var parental_enabled: Bool?
     var phishing_enabled: Bool?
@@ -333,6 +333,8 @@ class GroupModel: NSObject, Mappable {
     var usersActive: [UserModel]?
     var userManage: [UserModel]?
     var usersGroupInfo: [UserModel]?
+    var days: [String] = []
+    var times: [String] = []
     
     override init() {
         super.init()
@@ -372,6 +374,8 @@ class GroupModel: NSObject, Mappable {
         usersActive <- map["usersActive"]
         userManage <- map["userManage"]
         usersGroupInfo <- map["usersGroupInfo"]
+        days <- map["days"]
+        times <- map["times"]
     }
     
     func buildModelsAppAds(value: [String]) -> [AppAdsModel] {
@@ -437,7 +441,7 @@ class GroupModel: NSObject, Mappable {
             let m3 = PostGroupModel()
             m3.isSelected = true
             m3.type = .appads
-            m3.children = buildModelsAppAds(value: app_ads ?? [])
+            m3.children = buildModelsAppAds(value: app_ads)
             sources.append(m3)
             return sources
         } else if type == .blockConnect {
@@ -446,13 +450,13 @@ class GroupModel: NSObject, Mappable {
             let m5 = PostGroupModel()
             m5.type = .service
             m5.isSelected = true
-            m5.children = buildModelsBlockService(value: blocked_services ?? [])
+            m5.children = buildModelsBlockService(value: blocked_services)
             sources.append(m5)
             // Website
             let m6 = PostGroupModel()
             m6.type = .website
             m6.isSelected = true
-            m6.children = block_webs ?? []
+            m6.children = block_webs
             sources.append(m6)
             return sources
         } else if type == .blockContent {
@@ -480,7 +484,7 @@ class GroupModel: NSObject, Mappable {
             let m4 = PostGroupModel()
             m4.type = .nativetracking
             m4.isSelected = true
-            m4.children = buildTracking(value: native_tracking ?? [])
+            m4.children = buildTracking(value: native_tracking)
             sources.append(m4)
             return sources
         } else {
@@ -573,9 +577,80 @@ class GroupModel: NSObject, Mappable {
         let model = GroupModel()
         model.adblock_enabled = true
         model.game_ads_enabled = true
-        model.porn_enabled = true
+        model.app_ads = [GroupAppAdsEnum.facebook.rawValue, GroupAppAdsEnum.youtube.rawValue]
+        model.native_tracking = [NativeTrackingEnum.apple.rawValue, NativeTrackingEnum.samsung.rawValue]
+        model.blocked_services = [BlockServcieEnum.facebook.rawValue, BlockServcieEnum.zalo.rawValue, BlockServcieEnum.instagram.rawValue, BlockServcieEnum.tiktok.rawValue]
+        
+        model.bypass_enabled = true
         model.safesearch_enabled = true
         return model
+    }
+    
+    func setDefault(type: GroupSettingParentEnum) {
+        if type == .blockAds {
+            adblock_enabled = true
+            game_ads_enabled = true
+            app_ads = [GroupAppAdsEnum.facebook.rawValue, GroupAppAdsEnum.youtube.rawValue]
+        } else if type == .blockConnect { // truy cập
+            blocked_services = [BlockServcieEnum.facebook.rawValue, BlockServcieEnum.zalo.rawValue, BlockServcieEnum.instagram.rawValue, BlockServcieEnum.tiktok.rawValue]
+            block_webs = []
+        } else if type == .blockContent {
+            safesearch_enabled = true
+            youtuberestrict_enabled = false
+            gambling_enabled = false
+            phishing_enabled = false
+        } else if type == .blockFollow {
+            native_tracking = [NativeTrackingEnum.apple.rawValue, NativeTrackingEnum.samsung.rawValue]
+        } else {
+            bypass_enabled = true
+        }
+    }
+    
+    func getState(type: GroupSettingParentEnum) -> Bool {
+        if type == .blockAds {
+            return (adblock_enabled == true ||
+                game_ads_enabled == true ||
+                app_ads.count > 0)
+        } else if type == .blockConnect { // truy cập
+            return (app_ads.count > 0)
+        } else if type == .blockContent {
+            return (safesearch_enabled == true)
+        } else if type == .blockFollow {
+            return (native_tracking.count > 0)
+        } else {
+            return (bypass_enabled == true)
+        }
+    }
+    
+    func disable(type: GroupSettingParentEnum) {
+        if type == .blockAds {
+            adblock_enabled = false
+            game_ads_enabled = false
+            app_ads = []
+        } else if type == .blockConnect { // truy cập
+            blocked_services = []
+        } else if type == .blockContent {
+            safesearch_enabled = false
+            youtuberestrict_enabled = false
+            gambling_enabled = false
+            phishing_enabled = false
+        } else if type == .blockFollow {
+            native_tracking = []
+        } else {
+            bypass_enabled = false
+        }
+    }
+    
+    func getAllModel() -> [PostGroupParentModel] {
+        var sources: [PostGroupParentModel] = []
+        let enums: [GroupSettingParentEnum] = [.blockAds, .blockFollow, .blockConnect, .blockContent, .blockVPN]
+        for item in enums {
+            let model = PostGroupParentModel()
+            model.type = item
+            model.isSelected = getState(type: item)
+            sources.append(model)
+        }
+        return sources
     }
 }
 

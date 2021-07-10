@@ -17,6 +17,7 @@ class GroupSettingParentCell: BaseTableCell {
     @IBOutlet weak var allowrightImage: UIImageView!
     
     var actionMore:(() -> Void)?
+    var switchAction:((_ isOn: Bool) -> Void)?
     var group: PostGroupParentModel = PostGroupParentModel()
     
     override func awakeFromNib() {
@@ -33,6 +34,7 @@ class GroupSettingParentCell: BaseTableCell {
         iconImageView.image = group.type?.getImage()
         titleLabel.text = group.type?.getTitle()
         contentLabel.text = group.type?.getContent()
+        onSwitch.isOn = group.isSelected ?? false
         if group.type == .blockVPN {
             settingButton.isHidden = true
             allowrightImage.isHidden = true
@@ -47,6 +49,7 @@ class GroupSettingParentCell: BaseTableCell {
     }
     
     @IBAction func switchChanged(_ sender: UISwitch) {
-        group.isSelected = !group.isSelected!
+        group.isSelected = sender.isOn
+        switchAction?(sender.isOn)
     }
 }

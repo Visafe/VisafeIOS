@@ -48,6 +48,9 @@ class GroupSettingVC: BaseViewController {
     
     
     @IBAction func resetDefaultAction(_ sender: Any) {
+        group.setDefault(type: parentType)
+        sources = group.buildSource(type: parentType)
+        tableView.reloadData()
     }
     
     @IBAction func continueActionButton(_ sender: Any) {
