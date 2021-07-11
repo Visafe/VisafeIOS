@@ -40,7 +40,7 @@ public enum ProfileSettingEnum: Int {
         case .language:
             return "Ngôn ngữ"
         case .logout:
-            return "Ngôn ngữ"
+            return "Đăng xuất"
         }
     }
     

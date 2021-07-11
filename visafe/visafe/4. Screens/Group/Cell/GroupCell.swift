@@ -9,6 +9,7 @@ import UIKit
 
 class GroupCell: BaseTableCell {
 
+    @IBOutlet weak var letterLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
@@ -25,6 +26,7 @@ class GroupCell: BaseTableCell {
     
     func bindingData(group: GroupModel) {
         titleLabel.text = group.name
+        letterLabel.text = group.name?.getLetterString()
     }
     
     @IBAction func onClickMoreButton(_ sender: Any) {

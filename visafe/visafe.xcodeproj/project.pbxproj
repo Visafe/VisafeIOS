@@ -32,6 +32,11 @@
 		C9181401269B045E00DC0E83 /* ChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91813FF269B045E00DC0E83 /* ChangePasswordVC.xib */; };
 		C9181402269B045E00DC0E83 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9181400269B045E00DC0E83 /* ChangePasswordVC.swift */; };
 		C9181405269B0C5600DC0E83 /* ChangePasswordResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9181404269B0C5600DC0E83 /* ChangePasswordResult.swift */; };
+		C918140B269B416800DC0E83 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918140A269B416800DC0E83 /* NotificationModel.swift */; };
+		C918140E269B465700DC0E83 /* NotificationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918140D269B465700DC0E83 /* NotificationResult.swift */; };
+		C9181411269B46CA00DC0E83 /* NotificationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9181410269B46CA00DC0E83 /* NotificationWorker.swift */; };
+		C9181416269B486300DC0E83 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9181414269B486300DC0E83 /* NotificationCell.swift */; };
+		C9181417269B486300DC0E83 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9181415269B486300DC0E83 /* NotificationCell.xib */; };
 		C919B94726821DA9009982C3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B93B26821DA8009982C3 /* APIManager.swift */; };
 		C919B94826821DA9009982C3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B93C26821DA8009982C3 /* APIRouter.swift */; };
 		C919B94926821DA9009982C3 /* VisafeRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B93D26821DA8009982C3 /* VisafeRequestAdapter.swift */; };
@@ -228,6 +233,11 @@
 		C91813FF269B045E00DC0E83 /* ChangePasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordVC.xib; sourceTree = "<group>"; };
 		C9181400269B045E00DC0E83 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		C9181404269B0C5600DC0E83 /* ChangePasswordResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordResult.swift; sourceTree = "<group>"; };
+		C918140A269B416800DC0E83 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		C918140D269B465700DC0E83 /* NotificationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResult.swift; sourceTree = "<group>"; };
+		C9181410269B46CA00DC0E83 /* NotificationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWorker.swift; sourceTree = "<group>"; };
+		C9181414269B486300DC0E83 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		C9181415269B486300DC0E83 /* NotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
 		C919B93B26821DA8009982C3 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		C919B93C26821DA8009982C3 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		C919B93D26821DA8009982C3 /* VisafeRequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisafeRequestAdapter.swift; sourceTree = "<group>"; };
@@ -479,6 +489,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		C9181413269B485100DC0E83 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C9181414269B486300DC0E83 /* NotificationCell.swift */,
+				C9181415269B486300DC0E83 /* NotificationCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		C919B93926821DA8009982C3 /* 5. Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +540,7 @@
 				C9B7948B268626AA00258A72 /* UserModel.swift */,
 				C9F9385226881A4A00D30F28 /* PasswordModel.swift */,
 				C94B39AC268A1CF100046958 /* GroupModel.swift */,
+				C918140A269B416800DC0E83 /* NotificationModel.swift */,
 			);
 			path = "3. Models";
 			sourceTree = "<group>";
@@ -679,6 +699,7 @@
 		C966FE8A2691A4D60049458C /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				C9181413269B485100DC0E83 /* Cell */,
 				C99FD1CF2697465B00A8F731 /* NotificationVC.swift */,
 				C99FD1D02697465B00A8F731 /* NotificationVC.xib */,
 			);
@@ -784,6 +805,7 @@
 				C9B794792686199200258A72 /* AuthenWorker.swift */,
 				C95A584B2688339D0077112F /* WorkspaceWorker.swift */,
 				C94B39CA268A278B00046958 /* GroupWorker.swift */,
+				C9181410269B46CA00DC0E83 /* NotificationWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -798,6 +820,7 @@
 				C9FA161A268B794300A1A6C6 /* ActiveAccountResult.swift */,
 				C923C837268F57BC00FE34DC /* ListGroupResult.swift */,
 				C9181404269B0C5600DC0E83 /* ChangePasswordResult.swift */,
+				C918140D269B465700DC0E83 /* NotificationResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -979,6 +1002,7 @@
 				C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */,
 				C969B39B269ADB210066A88A /* SecurityWorkspaceCell.xib in Resources */,
 				C9EDB55D26839E74009CBD93 /* PostGroupVC.xib in Resources */,
+				C9181417269B486300DC0E83 /* NotificationCell.xib in Resources */,
 				C966FE942694A8EB0049458C /* OnboardingVC.xib in Resources */,
 				C93ED15A2682328600B03E8A /* HomeVC.xib in Resources */,
 				C97032322690750E007F45E0 /* GroupSettingFooterView.xib in Resources */,
@@ -1124,6 +1148,7 @@
 				C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */,
 				C9777A3B269ACDE500C40031 /* ProfileFooterView.swift in Sources */,
 				C919B94826821DA9009982C3 /* APIRouter.swift in Sources */,
+				C918140B269B416800DC0E83 /* NotificationModel.swift in Sources */,
 				C93FFDE7269AF48800D7B02A /* ProfileSettingVC.swift in Sources */,
 				C9FA160B268B611200A1A6C6 /* StringExtension.swift in Sources */,
 				C9A15B4D2699BFDA0065D5C2 /* GroupHeaderView.swift in Sources */,
@@ -1171,6 +1196,7 @@
 				C966FE932694A8EB0049458C /* OnboardingVC.swift in Sources */,
 				C970323726907AA2007F45E0 /* EnterLinkWebsiteView.swift in Sources */,
 				C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */,
+				C9181411269B46CA00DC0E83 /* NotificationWorker.swift in Sources */,
 				C9777A31269AC5E100C40031 /* ProfileCell.swift in Sources */,
 				C9BCBC6926976AD3007F652C /* GroupSettingChildrenVC.swift in Sources */,
 				C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */,
@@ -1195,11 +1221,13 @@
 				C9777A35269ACABF00C40031 /* ProfileHeaderView.swift in Sources */,
 				C91813FC269AFE7000DC0E83 /* ProfileHelpCell.swift in Sources */,
 				C95A58462688233F0077112F /* ResetPasswordResult.swift in Sources */,
+				C918140E269B465700DC0E83 /* NotificationResult.swift in Sources */,
 				C95A584F26885EBD0077112F /* WorkspageParam.swift in Sources */,
 				C93ED163268232BE00B03E8A /* AdministrationVC.swift in Sources */,
 				C940AEA2268378F20069B830 /* UIViewExtension.swift in Sources */,
 				C9B7946A2686150100258A72 /* RegisterParam.swift in Sources */,
 				C969B39A269ADB210066A88A /* MoreActionWorkspaceView.swift in Sources */,
+				C9181416269B486300DC0E83 /* NotificationCell.swift in Sources */,
 				C93ED1592682328600B03E8A /* HomeVC.swift in Sources */,
 				C919B96D26822157009982C3 /* BaseView.swift in Sources */,
 				C91D45962694CCB900055A4E /* BaseTextField.swift in Sources */,

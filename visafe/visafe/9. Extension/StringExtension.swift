@@ -30,5 +30,38 @@ extension String {
             let urlRegEx = "((?:http|https)://)?(?:www\\.)?[\\w\\d\\-_]+\\.\\w{2,3}(\\.\\w{2})?(/(?<=/)(?:[\\w\\d\\-./_]+)?)?"
             return NSPredicate(format: "SELF MATCHES %@", urlRegEx).evaluate(with: self)
     }
+    
+    /// Returns the first element of the collection of string. If a collection
+    /// is empty, returns nil.
+    var first: Character? {
+        if isEmpty {
+            return nil
+        }
+        return self[index(startIndex, offsetBy: 0)]
+    }
+    
+    
+    func getLetterString() -> String {
+        var letters = String()
+        // Obtains an array of words by using a given username
+        let components = self.components(separatedBy: " ")
+        // If there are whether two words or more
+        if components.count > 1 {
+            for component in components.prefix(2) {
+                if let letter = component.first {
+                    letters.append(letter.uppercased())
+                }
+            }
+        } else {
+            // If given just one word
+            if let component = components.first {
+                // Process the firs name letter
+                if let letter = component.first {
+                    letters.append(letter.uppercased())
+                }
+            }
+        }
+        return letters
+    }
 }
 

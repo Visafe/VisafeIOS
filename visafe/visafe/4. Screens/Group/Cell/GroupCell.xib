@@ -38,9 +38,19 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTU-0q-xhj">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTt-aC-CLL">
+                                        <rect key="frame" x="16" y="15.5" width="18.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="LTt-aC-CLL" firstAttribute="centerX" secondItem="wTU-0q-xhj" secondAttribute="centerX" id="2XP-JE-X9j"/>
                                     <constraint firstAttribute="width" constant="50" id="apg-ZY-NIS"/>
+                                    <constraint firstItem="LTt-aC-CLL" firstAttribute="centerY" secondItem="wTU-0q-xhj" secondAttribute="centerY" id="bUd-BK-2lH"/>
                                     <constraint firstAttribute="height" constant="50" id="fAr-qf-KEG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -99,6 +109,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="contentLabel" destination="KkC-Oc-fE7" id="VP3-Yh-cfU"/>
+                <outlet property="letterLabel" destination="LTt-aC-CLL" id="S7d-K9-yeO"/>
                 <outlet property="titleLabel" destination="Ht4-oM-Vt9" id="DDT-PM-g63"/>
             </connections>
             <point key="canvasLocation" x="224.63768115942031" y="97.767857142857139"/>

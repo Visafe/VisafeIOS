@@ -48,6 +48,9 @@ enum APIRouter {
     case changeManagerPermision(param: ChangeManagerPermisionParam)
     case changeViewerPermision(param: ChangeViewerPermisionParam)
     case getGroups(wspId: String)
+    
+    //notification
+    case listNotification(pageIndex: Int)
 }
 
 enum APIError: Error {
@@ -139,12 +142,14 @@ extension APIRouter: TargetType {
             return "/group/update/user-to-manager"
         case .changeViewerPermision:
             return "/group/update/user-to-viewer"
+        case .listNotification:
+            return "/user/notifications"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .forgotPassword, .getListWorkspace, .profile, .getGroups:
+        case .forgotPassword, .getListWorkspace, .profile, .getGroups, .listNotification:
             return .get
         case .deleteWorkspace, .deleteGroup:
             return .delete
@@ -218,6 +223,8 @@ extension APIRouter: TargetType {
             pars = param.toJSON()
         case .activeAccount(param: let param):
             pars = param.toJSON()
+        case .listNotification(pageIndex: let page):
+            pars["page"] = page
         case .reactivation, .getListWorkspace, .profile:
             break
         }
@@ -241,7 +248,7 @@ extension APIRouter: TargetType {
     var headers: [String : String]? {
         var hea: [String: String] = [:]
         switch self {
-        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .profile, .getGroups:
+        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .profile, .getGroups, .listNotification:
             hea["Authorization"] = (CacheManager.shared.getLoginResult()?.token ?? "")
         default:
             break
