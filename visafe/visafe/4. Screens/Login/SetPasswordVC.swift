@@ -117,3 +117,20 @@ class SetPasswordVC: BaseViewController {
         }
     }
 }
+
+extension SetPasswordVC: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        guard let field = textField as? BaseTextField else { return }
+        if field.type != .error {
+            field.setState(type: .active)
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let field = textField as? BaseTextField else { return }
+        if field.type != .error {
+            field.setState(type: .normal)
+        }
+    }
+}

@@ -155,9 +155,9 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-            return myGroups.count > 0 ? 44 : 0
+            return myGroups.count > 0 ? 44 : 0.001
         } else {
-            return inviteGroups.count > 0 ? 44 : 0
+            return inviteGroups.count > 0 ? 44 : 0.001
         }
     }
     
@@ -206,6 +206,14 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.001
     }
 }
 

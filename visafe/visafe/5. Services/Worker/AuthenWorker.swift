@@ -68,14 +68,14 @@ class AuthenWorker {
         }
     }
     
-    static func changePassword(param: ChangePassParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+    static func changePassword(param: ChangePassParam, completion: @escaping (_ result: ChangePasswordResult?, _ error: Error?) -> Void) {
         let router = APIRouter.changePassword(param: param)
         APIManager.shared.request(target: router) { (data, error) in
-            var loginResult: BaseResult?
+            var loginResult: ChangePasswordResult?
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                    loginResult = Mapper<ChangePasswordResult>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)
