@@ -26,6 +26,34 @@ class AuthenWorker {
         }
     }
     
+    static func loginGoogle(token: String?, completion: @escaping (_ result: LoginResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.loginGoogle(token: token)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: LoginResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<LoginResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
+    
+    static func loginFacebook(token: String?, completion: @escaping (_ result: LoginResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.loginFacebook(token: token)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: LoginResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<LoginResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
+    
     static func login(param: LoginParam, completion: @escaping (_ result: LoginResult?, _ error: Error?) -> Void) {
         let router = APIRouter.login(param: param)
         APIManager.shared.request(target: router) { (data, error) in

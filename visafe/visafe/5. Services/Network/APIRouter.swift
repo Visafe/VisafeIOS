@@ -13,6 +13,8 @@ import ObjectMapper
 
 enum APIRouter {
     //authen
+    case loginGoogle(token: String?)
+    case loginFacebook(token: String?)
     case login(param: LoginParam)
     case register(param: RegisterParam)
     case forgotPassword(username: String?)
@@ -80,6 +82,10 @@ extension APIRouter: TargetType {
     
     var path: String {
         switch self {
+        case .loginFacebook:
+            return "/login/facebook"
+        case .loginGoogle:
+            return "/login/google"
         case .login:
             return "/login"
         case .register:
@@ -164,6 +170,10 @@ extension APIRouter: TargetType {
     var parameters: [String: Any] {
         var pars = [String: Any]()
         switch self {
+        case .loginGoogle(token: let token):
+            pars["token"] = token
+        case .loginFacebook(token: let token):
+            pars["token"] = token
         case .login(param: let param):
             pars = param.toJSON()
         case .register(param: let param):
@@ -233,7 +243,7 @@ extension APIRouter: TargetType {
     
     var task: Task {
         switch self {
-        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .activeAccount, .deleteWorkspace:
+        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .activeAccount, .deleteWorkspace, .loginFacebook, .loginGoogle:
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             break

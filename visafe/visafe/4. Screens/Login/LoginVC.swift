@@ -8,9 +8,12 @@
 import UIKit
 import SwifterSwift
 import SwiftMessages
+import GoogleSignIn
+import FacebookLogin
+import AuthenticationServices
 
 class LoginVC: BaseViewController {
-
+    
     @IBOutlet weak var passwordInfoLabel: UILabel!
     @IBOutlet weak var usernameInfoLabel: UILabel!
     @IBOutlet weak var usernameTextfield: BaseTextField!
@@ -22,7 +25,6 @@ class LoginVC: BaseViewController {
     }
     
     func configUI() {
-        
         usernameTextfield.setState(type: .normal)
         passwordTextfield.setState(type: .normal)
     }
@@ -61,8 +63,6 @@ class LoginVC: BaseViewController {
             showError(title: "Đăng nhập không thành công", content: type.getDescription())
         }
     }
-    
-    
     
     func getWorkspaces() {
         WorkspaceWorker.getList { [weak self] (list, error) in
@@ -122,8 +122,90 @@ class LoginVC: BaseViewController {
     }
     
     @IBAction func edittingBegin(_ sender: UITextField) {
+        
+    }
+    
+    @IBAction func googleAuthen(_ sender: UIButton) {
+        GIDSignIn.sharedInstance()?.delegate = self
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    @IBAction func facebookAuthen(_ sender: UIButton) {
+        let manager = LoginManager()
+        manager.logIn(permissions: [], from: self) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            if let token = result?.token?.tokenString {
+                weakSelf.loginFacebook(token: token)
+            }
+        }
+    }
+    
+    @IBAction func appleAuthen(_ sender: UIButton) {
+        loginApple()
+    }
+    
+    
+    func loginFacebook(token: String?) {
+        showLoading()
+        AuthenWorker.loginFacebook(token: token) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            weakSelf.handleLogin(result: result, error: error)
+        }
+    }
+    
+    func loginApple() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
     }
 }
+
+extension LoginVC: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let token = user?.authentication.idToken {
+            showLoading()
+            AuthenWorker.loginGoogle(token: token) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                weakSelf.hideLoading()
+                weakSelf.handleLogin(result: result, error: error)
+            }
+        }
+    }
+}
+
+extension LoginVC: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            let userIdentifier = appleIDCredential.user
+            let userFirstName = appleIDCredential.fullName?.givenName
+            let userLastName = appleIDCredential.fullName?.familyName
+            let username = appleIDCredential.fullName
+            let userEmail = appleIDCredential.email
+            let token = appleIDCredential.identityToken
+            print(userIdentifier)
+            print(userFirstName)
+            print(userEmail)
+            let token_string =  String(decoding: appleIDCredential.identityToken!, as: UTF8.self)
+            print(token_string)
+        }
+    }
+    
+    public func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+    }
+    
+    public func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return AppDelegate.appDelegate()?.window ?? self.view.window!
+    }
+}
+
 
 extension LoginVC: UITextFieldDelegate {
     

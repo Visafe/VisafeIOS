@@ -83,4 +83,3 @@ extension NotificationVC: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-

@@ -7,6 +7,9 @@
 
 import UIKit
 import SideMenuSwift
+import GoogleSignIn
+import FacebookLogin
+import FBSDKCoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,10 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         configRootVC()
         configView()
         configureSideMenu()
+        googleAuthen()
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance()?.handle(url) ?? false
+    }
+    
+    func googleAuthen() {
+        GIDSignIn.sharedInstance().clientID = "364533202921-h0510keg49fuo2okdgopo48mato4905d.apps.googleusercontent.com"
     }
     
     func configView() {

@@ -10,6 +10,8 @@ import SwiftMessages
 
 class RegisterVC: BaseViewController {
 
+    @IBOutlet weak var fullNameTextfield: BaseTextField!
+    @IBOutlet weak var fullnameInfoLabel: UILabel!
     @IBOutlet weak var passwordInfoLabel: UILabel!
     @IBOutlet weak var usernameInfoLabel: UILabel!
     @IBOutlet weak var usernameTextfield: BaseTextField!
@@ -28,13 +30,20 @@ class RegisterVC: BaseViewController {
     
     func validateInfo() -> Bool {
         var success = true
+        let fullname = fullNameTextfield.text ?? ""
+        if fullname.isEmpty {
+            success = false
+            fullnameInfoLabel.text = "Tên người dùng không được để trống"
+        } else {
+            fullnameInfoLabel.text = nil
+        }
         let username = usernameTextfield.text ?? ""
         if username.isEmpty {
             success = false
-            usernameInfoLabel.text = "Tên đăng nhập không được để trống"
+            usernameInfoLabel.text = "Số điện thoại/email không được để trống"
         } else if (!username.isValidEmail && !username.isValidPhone()) {
             success = false
-            usernameInfoLabel.text = "Tên đăng nhập không đúng định dạng"
+            usernameInfoLabel.text = "Số điện thoại/email không đúng định dạng"
         } else {
             usernameInfoLabel.text = nil
         }
@@ -56,7 +65,7 @@ class RegisterVC: BaseViewController {
         } else {
             param.phone_number = "84" + username.dropFirst()
         }
-        param.full_name = usernameTextfield.text
+        param.full_name = fullNameTextfield.text
         param.password = passwordTextfield.text
         param.repeat_password = passwordTextfield.text
         showLoading()
