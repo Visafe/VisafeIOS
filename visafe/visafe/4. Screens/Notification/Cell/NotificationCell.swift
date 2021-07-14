@@ -9,15 +9,19 @@ import UIKit
 
 class NotificationCell: BaseTableCell {
 
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func bindingData(model: NotificationModel) {
+        contentLabel.text = model.buildContent()
+        timeLabel.text = model.buildTime()
+    }
 }

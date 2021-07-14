@@ -9,6 +9,9 @@ import UIKit
 
 class NotificationVC: BaseViewController {
 
+    var canLoadMore: Bool = true
+    var pageIndex: Int = 1
+    
     @IBOutlet weak var tableView: UITableView!
     
     var sources: [NotificationModel] = []
@@ -45,23 +48,63 @@ class NotificationVC: BaseViewController {
     
     func prepareData() {
         showLoading()
-        NotificationWorker.list(page: 1) { [weak self] (result, error) in
+        NotificationWorker.list(page: pageIndex) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
-            weakSelf.sources = result?.notis ?? []
             weakSelf.hideLoading()
+            weakSelf.sources = weakSelf.sources + (result?.notis ?? [])
             weakSelf.tableView.endRefreshing()
+            weakSelf.canLoadMore = ((result?.notis?.count ?? 0) >= 15)
+            if weakSelf.canLoadMore {
+                weakSelf.pageIndex += 1
+                weakSelf.addLoadMore()
+            } else {
+                weakSelf.tableView.mj_footer = nil
+            }
             weakSelf.tableView.reloadData()
         }
     }
     
     func refreshData() {
         if isViewLoaded {
-            NotificationWorker.list(page: 1) { [weak self] (result, error) in
+            pageIndex = 1
+            sources = []
+            NotificationWorker.list(page: pageIndex) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
-                weakSelf.sources = result?.notis ?? []
+                weakSelf.sources = weakSelf.sources + (result?.notis ?? [])
                 weakSelf.tableView.endRefreshing()
+                weakSelf.canLoadMore = ((result?.notis?.count ?? 0) >= 15)
+                if weakSelf.canLoadMore {
+                    weakSelf.pageIndex += 1
+                    weakSelf.addLoadMore()
+                } else {
+                    weakSelf.tableView.mj_footer = nil
+                }
                 weakSelf.tableView.reloadData()
             }
+        }
+    }
+    
+    func loadNotifications() {
+        if canLoadMore == false { return }
+        NotificationWorker.list(page: pageIndex) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.sources = weakSelf.sources + (result?.notis ?? [])
+            weakSelf.tableView.endRefreshing()
+            weakSelf.canLoadMore = ((result?.notis?.count ?? 0) >= 15)
+            if weakSelf.canLoadMore {
+                weakSelf.pageIndex += 1
+                weakSelf.addLoadMore()
+            } else {
+                weakSelf.tableView.mj_footer = nil
+            }
+            weakSelf.tableView.reloadData()
+        }
+    }
+    
+    private func addLoadMore() {
+        tableView.addLoadmore(canLoadMore: true) { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.loadNotifications()
         }
     }
 }
@@ -76,6 +119,7 @@ extension NotificationVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationCell.className) as? NotificationCell else {
             return UITableViewCell()
         }
+        cell.bindingData(model: sources[indexPath.row])
         return cell
     }
     

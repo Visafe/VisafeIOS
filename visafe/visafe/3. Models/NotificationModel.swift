@@ -44,10 +44,17 @@ class NotificationDeviceModel: NSObject, Mappable {
     }
 }
 
+public enum NotificationContentTypeEnum: String {
+    case alertDomain = "ALERT_DOMAIN"
+    case deviceJoinSuccess = "DEVICE_JOIN_SUCCESS"
+    case inviteSuccess = "INVITE_SUCCESS"
+    case userJoinSuccess = "USER_JOIN_SUCCESS"
+}
+
 class NotificationContentModel: NSObject, Mappable {
     
     var affected: NotificationDeviceModel?
-    var type: String?
+    var type: NotificationContentTypeEnum?
     var target: NotificationTargetModel?
     
     override init() {
@@ -89,5 +96,22 @@ class NotificationModel: NSObject, Mappable {
         createdAt <- map["createdAt"]
         group <- map["group"]
         content <- map["content"]
+    }
+    
+    func buildContent() -> String {
+        switch (content?.type ?? .alertDomain) {
+        case .alertDomain:
+            return "Thiết bị \(content?.affected?.name ?? "") đã cố gắng truy cập vào trang web: \(content?.target?.domain ?? "")"
+        case .deviceJoinSuccess:
+            return "Thiết bị \(content?.affected?.name ?? "") vừa được thêm vào nhóm: \(group?.name ?? "")"
+        case .userJoinSuccess:
+            return " \(content?.affected?.name ?? "") đã là thành viên của nhóm: \(group?.name ?? "")"
+        case .inviteSuccess:
+            return " \(content?.affected?.name ?? "") đã là thành viên của nhóm: \(group?.name ?? "")"
+        }
+    }
+    
+    func buildTime() -> String {
+        return Date(timeIntervalSince1970: TimeInterval(createdAt?.int ?? 0)).getTimeOnFeed()
     }
 }
