@@ -48,7 +48,7 @@ public enum NotificationContentTypeEnum: String {
     case alertDomain = "ALERT_DOMAIN"
     case deviceJoinSuccess = "DEVICE_JOIN_SUCCESS"
     case inviteSuccess = "INVITE_SUCCESS"
-    case userJoinSuccess = "USER_JOIN_SUCCESS"
+    case joinSuccess = "JOIN_SUCCESS"
 }
 
 class NotificationContentModel: NSObject, Mappable {
@@ -104,8 +104,8 @@ class NotificationModel: NSObject, Mappable {
             return "Thiết bị \(content?.affected?.name ?? "") đã cố gắng truy cập vào trang web: \(content?.target?.domain ?? "")"
         case .deviceJoinSuccess:
             return "Thiết bị \(content?.affected?.name ?? "") vừa được thêm vào nhóm: \(group?.name ?? "")"
-        case .userJoinSuccess:
-            return " \(content?.affected?.name ?? "") đã là thành viên của nhóm: \(group?.name ?? "")"
+        case .joinSuccess:
+            return "Bạn đã là thành viên của nhóm: \(group?.name ?? "")"
         case .inviteSuccess:
             return " \(content?.affected?.name ?? "") đã là thành viên của nhóm: \(group?.name ?? "")"
         }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 public enum ProfileHelpEnum: Int {
     case question = 0
@@ -31,6 +32,17 @@ public enum ProfileHelpEnum: Int {
             return "Điều khoản & Điều kiện"
         case .security:
             return "Chính sách bảo mật"
+        }
+    }
+    
+    func getUrlString() -> String {
+        switch self {
+        case .question:
+            return "https://visafe.vn/faq"
+        case .policy:
+            return "https://visafe.vn/privacy"
+        case .security:
+            return "https://visafe.vn/security"
         }
     }
 }
@@ -161,6 +173,55 @@ extension ProfileHelpVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0 {
+            showUrl(urlString: sourcesHelp[indexPath.row].getUrlString())
+        } else {
+            showHelpNow(type: sourcesHelpNow[indexPath.row])
+        }
+    }
+    
+    func showUrl(urlString: String) {
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url)
+            present(vc, animated: true)
+        }
+    }
+    
+    func showHelpNow(type: ProfileHelpNowEnum) {
+        switch type {
+        case .call:
+            showPhoneTell(tel: type.getContent())
+        case .facebook:
+            showLinkFb(fb: type.getContent())
+        case .messenger:
+            showLinkMessager(mes: type.getContent())
+        case .email:
+            showMail(mail: type.getContent())
+        }
+    }
+    
+    func showPhoneTell(tel: String) {
+        if let url = URL(string: "tel:+84 24 32091616") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    func showLinkFb(fb: String) {
+        if let url = URL(string: "fb://\(fb)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    func showLinkMessager(mes: String) {
+        if let url = URL(string: "fb://\(mes)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    func showMail(mail: String) {
+        if let url = URL(string: "mailto:\(mail)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
 

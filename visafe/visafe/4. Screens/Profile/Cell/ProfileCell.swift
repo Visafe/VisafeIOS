@@ -8,10 +8,12 @@
 import UIKit
 
 class ProfileCell: BaseTableCell {
-    @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var heightFooterLineContraint: NSLayoutConstraint!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -24,6 +26,7 @@ class ProfileCell: BaseTableCell {
         titleLabel.text = type.getTitle()
         contentLabel.text = type.getContent()
         iconImageView.image = type.getIcon()
+        heightFooterLineContraint.constant = type.getFoooterLineHeight()
     }
     
     func bindingData(type: ProfileSettingEnum) {

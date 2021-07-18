@@ -12,7 +12,6 @@ public enum ProfileSettingEnum: Int {
     case enterpin = 1
     case settingnoti = 2
     case language = 3
-    case logout = 4
     
     func getIcon() -> UIImage? {
         switch self {
@@ -24,8 +23,6 @@ public enum ProfileSettingEnum: Int {
             return UIImage(named: "ic_noti")
         case .language:
             return UIImage(named: "ic_language")
-        case .logout:
-            return UIImage(named: "ic_logout")
         }
     }
     
@@ -39,8 +36,6 @@ public enum ProfileSettingEnum: Int {
             return "Cấu hình thông báo"
         case .language:
             return "Ngôn ngữ"
-        case .logout:
-            return "Đăng xuất"
         }
     }
     
@@ -58,7 +53,7 @@ class ProfileSettingVC: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var sources: [ProfileSettingEnum] = [.changepass, .enterpin, .settingnoti, .language, .logout]
+    var sources: [ProfileSettingEnum] = [.changepass, .enterpin, .settingnoti, .language]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +62,6 @@ class ProfileSettingVC: BaseViewController {
     
     func configView() {
         title = "Cài đặt"
-        tableView.sectionHeaderHeight = UITableView.automaticDimension
-        tableView.estimatedSectionHeaderHeight = 25
-        tableView.sectionFooterHeight = UITableView.automaticDimension
-        tableView.estimatedSectionFooterHeight = 25
         tableView.registerCells(cells: [ProfileCell.className])
     }
 }
@@ -99,13 +90,36 @@ extension ProfileSettingVC: UITableViewDelegate, UITableViewDataSource {
         switch type {
         case .changepass:
             changePass()
+        case .enterpin:
+            enterPin()
         default:
             break
         }
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.0001
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.0001
+    }
+    
     func changePass() {
         let vc = ChangePasswordVC()
+        navigationController?.pushViewController(vc)
+    }
+    
+    func enterPin() {
+        let vc = EnterPinVC()
         navigationController?.pushViewController(vc)
     }
 }
