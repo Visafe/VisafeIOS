@@ -16,6 +16,7 @@ let kListWorkspace = "kListWorkspace"
 let kCurrentWorkspace = "kCurrentWorkspace"
 let kCurrentUser = "kCurrentUser"
 let kShowOnboarding = "kShowOnboarding"
+let kPin = "kPin"
 
 class CacheManager {
     
@@ -88,6 +89,16 @@ class CacheManager {
     
     func setIsShowOnboarding(value: Bool) {
         userDefault.set(value, forKey: kShowOnboarding)
+        userDefault.synchronize()
+    }
+    
+    func getPin() -> String? {
+        let value = userDefault.string(forKey: kPin)
+        return value
+    }
+    
+    func setPin(value: String) {
+        userDefault.set(value, forKey: kPin)
         userDefault.synchronize()
     }
 }

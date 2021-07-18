@@ -14,6 +14,7 @@ public enum ProfileEnum: Int {
     case help = 3
     case share = 4
     case rate = 5
+    case logout = 6
     
     func getIcon() -> UIImage? {
         switch self {
@@ -29,6 +30,8 @@ public enum ProfileEnum: Int {
             return UIImage(named: "ic_share")
         case .rate:
             return UIImage(named: "ic_rate")
+        case .logout:
+            return UIImage(named: "ic_logout")
         }
     }
     
@@ -46,6 +49,8 @@ public enum ProfileEnum: Int {
             return "Chia sẻ ứng dụng"
         case .rate:
             return "Đánh giá ứng dụng"
+        case .logout:
+            return "Đăng xuất"
         }
     }
     
@@ -61,13 +66,22 @@ public enum ProfileEnum: Int {
             return ""
         }
     }
+    
+    func getFoooterLineHeight() -> CGFloat {
+        switch self {
+        case .rate:
+            return 6
+        default:
+            return 0.5
+        }
+    }
 }
 
 class ProfileVC: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var sources: [ProfileEnum] = [.accountType, .upgradeAccount, .setting, .help, .share, .rate]
+    var sources: [ProfileEnum] = [.accountType, .upgradeAccount, .setting, .help, .share, .rate, .logout]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +136,8 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             showSetting()
         case .help:
             showHelp()
+        case .logout:
+            logout()
         default:
             break
         }
@@ -152,6 +168,15 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func showHelp() {
         let vc = ProfileHelpVC()
         navigationController?.pushViewController(vc)
+    }
+    
+    func logout() {
+        showConfirmDelete(title: "Bạn có chắc chắn muốn đăng xuất không?") {
+            CacheManager.shared.setIsLogined(value: false)
+            CacheManager.shared.setCurrentUser(value: nil)
+            CacheManager.shared.setCurrentWorkspace(value: nil)
+            AppDelegate.appDelegate()?.configRootVC()
+        }
     }
 }
 
