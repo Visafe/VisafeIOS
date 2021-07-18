@@ -28,6 +28,7 @@ class HomeVC: BaseViewController {
     var providerManagerType: NETunnelProviderManager.Type = NETunnelProviderManager.self
     private var vpnInstalledValue: Bool?
     var manager: NETunnelProviderManager!
+    var session: NETunnelProviderSession!
     let gradient = CAGradientLayer()
     var isEnabled = false {
         didSet {
@@ -40,6 +41,7 @@ class HomeVC: BaseViewController {
         super.viewDidLoad()
         setupUI()
         updateDNSStatus()
+//        initVpn()
         NotificationCenter.default.addObserver(self, selector: #selector(updateDNSStatus), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
 
@@ -129,7 +131,7 @@ extension HomeVC {
     private func getDnsManagerStatus(_ onStatusReceived: @escaping (_ isInstalled: Bool, _ isEnabled: Bool) -> Void) {
         loadDnsManager { dnsManager in
             guard let manager = dnsManager else {
-//                DDLogError("Received nil DNS manager")
+//                ////DDLogError("Received nil DNS manager")
                 onStatusReceived(false, false)
                 return
             }
@@ -142,7 +144,7 @@ extension HomeVC {
         let dnsManager = NEDNSSettingsManager.shared()
         dnsManager.loadFromPreferences { error in
             if let error = error {
-//                DDLogError("Error loading DNS manager: \(error)")
+//                ////DDLogError("Error loading DNS manager: \(error)")
                 onManagerLoaded(nil)
                 return
             }
@@ -170,153 +172,45 @@ extension HomeVC {
 //MARK: - VPN
 
 extension HomeVC {
-    func initVpn() {
-        loadManager()
-    }
-
-    private func setupConfiguration() {
-
-
-        // setup protocol configuration
-        let protocolConfiguration = NETunnelProviderProtocol()
-        protocolConfiguration.providerBundleIdentifier = "com.shjn.visafe.networkextention"
-        protocolConfiguration.serverAddress = "127.0.0.1"
-
-        manager.protocolConfiguration = protocolConfiguration
-
-        let onDemandRuled = onDemandRules()
-        manager.onDemandRules = onDemandRuled
-
-//        if !vpnInstalled {
-//            enabled = true // install configuration with enable = true
-//        }
-//        else {
-//           enabled = self.complexProtection?.systemProtectionEnabled ?? false || !vpnInstalled
-//        }
-//
-//        if resources.dnsImplementation == .native {
-//            DDLogInfo("(VpnManager) set manager isEnabled = false because native mode is enabled ")
-//        }
-
-        manager.isEnabled = true
-        manager.isOnDemandEnabled = true
-
-        manager.localizedDescription = "Visafe"
-    }
-
-
-    func onDemandRules() -> [NEOnDemandRule] {
-        var onDemandRules = [NEOnDemandRule]()
-
-//        let SSIDs = enabledExceptions.map{ $0.rule }
-//        if SSIDs.count > 0 {
-//            let disconnectRule = NEOnDemandRuleDisconnect()
-//            disconnectRule.ssidMatch = SSIDs
-//            onDemandRules.append(disconnectRule)
-//        }
-//
-        let disconnectRule = NEOnDemandRuleDisconnect()
-
-//        switch (filterWifiDataEnabled, filterMobileDataEnabled) {
-//        case (false, false):
-//            disconnectRule.interfaceTypeMatch = .any
-//            onDemandRules.append(disconnectRule)
-//        case (false, _):
-//            disconnectRule.interfaceTypeMatch = .wiFi
-//            onDemandRules.append(disconnectRule)
-//        case (_, false):
-            disconnectRule.interfaceTypeMatch = .cellular
-            onDemandRules.append(disconnectRule)
-//        default:
-//            break
-//        }
-
-        let connectRule = NEOnDemandRuleConnect()
-        connectRule.interfaceTypeMatch = .any
-        let evaluationRule = NEEvaluateConnectionRule(matchDomains: ["visafe.vn"], andAction: .connectIfNeeded)
-        evaluationRule.useDNSServers = ["https://dns-staging.visafe.vn/dns-query/"]
-
-
-        let onDemandRule = NEOnDemandRuleEvaluateConnection()
-                onDemandRule.connectionRules = [evaluationRule]
-                onDemandRule.interfaceTypeMatch = NEOnDemandRuleInterfaceType.any
-        onDemandRules.append(onDemandRule)
-        onDemandRules.append(connectRule)
-        return onDemandRules
-    }
-
-    private func saveManager()->Error? {
-
-        var resultError: Error?
-
-        let group = DispatchGroup()
-        group.enter()
-
-        manager.saveToPreferences { (error) in
-            resultError = error
-            if error != nil {
-
-            }
-            else {
-                do {
-                    try self.manager.connection.startVPNTunnel()
-                } catch {
-                    print("(VpnManager) - start tunnel error: \(error.localizedDescription)")
-                }
-            }
-            group.leave()
-        }
-
-//        group.wait()
-
-        return resultError
-    }
-
-    private func loadManager() {
-
-//        var manager: NETunnelProviderManager?
-//        var resultError: Error?
-//        let group = DispatchGroup()
-//        group.enter()
-
+    private func loadManager(_  complete:@escaping ((NETunnelProviderManager?, Error?) -> Void)) {
+//        //////DDLogInfo("(VpnManager) loadManager ")
         providerManagerType.self.loadAllFromPreferences { [weak self] (managers, error) in
-
-//            defer { group.leave() }
-
             guard let self = self else { return }
+            var manager: NETunnelProviderManager?
+            var resultError: Error?
             if error != nil {
-//                resultError = error
+                resultError = error
+//                ////DDLogError("(VpnManager) loadManager error: \(error!)")
+                complete(nil, nil)
                 return
             }
+
             if managers?.count ?? 0 == 0 {
-                self.manager = self.createManager()
-                self.setupConfiguration()
-                self.saveManager()
+//                //////DDLogInfo("(VpnManager) loadManager - manager not installed")
+                complete(nil, nil)
                 return
             }
 
             if managers!.count > 1 {
+//                ////DDLogError("(VpnManager) loadManager error - there are \(managers!.count) managers installed. Delete all managers")
+
                 for manager in managers! {
                     _ = self.removeManager(manager)
                 }
 
-
-
+                manager = self.createManager()
+                complete(manager, nil)
                 return
             }
 
-//            self.manager = managers?.first
+//            //////DDLogInfo("(VpnManager) loadManager success)")
+            manager = managers?.first
+            complete(manager, nil)
         }
-
-//        group.wait()
-
-//        vpnInstalledValue = manager != nil
-//        return (manager, resultError)
-//        setupConfiguration(manage!)
-//        let (error1) = saveManager(manage!)
     }
 
     private func removeManager(_ manager: NETunnelProviderManager)->Error? {
+//        //////DDLogInfo("(VpnManager) - removeManager called")
 
         var resultError: Error?
         let group = DispatchGroup()
@@ -327,14 +221,96 @@ extension HomeVC {
             group.leave()
         }
 
-//        group.wait()
+        group.wait()
 
         return resultError
     }
 
     private func createManager()->NETunnelProviderManager {
+
+//        //////DDLogInfo("(VpnManager) createManager")
+
         let manager = providerManagerType.self.init()
 
         return manager
+    }
+
+    private func setupConfiguration(_ manager: NETunnelProviderManager) {
+//        //////DDLogInfo("(VpnManager) setupConfiguration called")
+
+        // do not update configuration for not premium users
+//        if !appConfiguration.proStatus {
+//            return
+//        }
+
+        // setup protocol configuration
+        let protocolConfiguration = NETunnelProviderProtocol()
+        protocolConfiguration.providerBundleIdentifier = "vn.visafe.tunnel"
+        protocolConfiguration.serverAddress = "127.0.0.1"
+        protocolConfiguration.username = "uid"
+
+        manager.protocolConfiguration = protocolConfiguration
+        manager.isEnabled = true
+
+        let connectRule = NEOnDemandRuleConnect()
+        connectRule.interfaceTypeMatch = .any
+//        connectRule.dnsServerAddressMatch = ["https://dns-staging.visafe.vn/dns-query/"]
+//        connectRule.dnsSearchDomainMatch = ["https://dns-staging.visafe.vn/dns-query/"]
+//        let evaluationRule = NEEvaluateConnectionRule(matchDomains: ["visafe.vn"], andAction: .connectIfNeeded)
+//        evaluationRule.useDNSServers = ["https://dns-staging.visafe.vn/dns-query/"]
+//        let onDemandRule = NEOnDemandRuleEvaluateConnection()
+//        onDemandRule.connectionRules = [evaluationRule]
+//        onDemandRule.interfaceTypeMatch = NEOnDemandRuleInterfaceType.any
+        manager.onDemandRules = [connectRule]
+
+        manager.isOnDemandEnabled = true
+
+        manager.localizedDescription = "Visafe"
+    }
+
+    private func saveManager(_ manager: NETunnelProviderManager, _ complete:@escaping ((Error?) -> Void)) {
+        manager.saveToPreferences { (error) in
+            complete(error)
+        }
+    }
+}
+
+extension HomeVC {
+    func initVpn() {
+
+        self.loadManager { (oldManager, error) in
+            if oldManager != nil {
+//                _ = self.removeManager(oldManager!)
+                self.manager = oldManager
+                self.session = (self.manager.connection as! NETunnelProviderSession)
+                do {
+                    try self.session.startVPNTunnel(options: nil)
+                } catch let error1 {
+                    print(error1.localizedDescription)
+                }
+                return
+            }
+            let ma = self.createManager()
+    //
+            self.setupConfiguration(ma)
+    //
+            self.saveManager(ma, { error in
+                if error == nil {
+//                    do {
+//                        try self.manager.connection.startVPNTunnel()
+//                    } catch let error1 {
+//                        print(error1.localizedDescription)
+//                    }
+                    self.initVpn()
+                } else {
+                    print("save fail")
+                }
+            })
+        }
+
+
+
+//
+//        self.vpnInstalledValue = error == nil
     }
 }

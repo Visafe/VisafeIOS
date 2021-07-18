@@ -23,6 +23,10 @@ class TabbarVC: BaseTabbarController {
         let groupVC = GroupVC()
         groupVC.title = "Nhóm"
         let groupNav = BaseNavigationController(rootViewController: groupVC)
+
+        let homeVC = HomeVC()
+        homeVC.title = "Home"
+        let homeNav = BaseNavigationController(rootViewController: homeVC)
         
         let notiVC = NotificationVC()
         notiVC.title = "Thông báo"
@@ -32,17 +36,20 @@ class TabbarVC: BaseTabbarController {
         profileVC.title = "Tài khoản"
         let profileNav = BaseNavigationController(rootViewController: profileVC)
     
-        self.viewControllers = [protectNav, groupNav, notiNav, profileNav]
+        self.viewControllers = [protectNav, groupNav, homeNav, notiNav, profileNav]
         let adminItem = self.tabBar.items![0]
         adminItem.image = UIImage(named: "protect_tabbar")
         
-        let homeItem = self.tabBar.items![1]
-        homeItem.image = UIImage(named: "group_tabbar")
+        let groupItem = self.tabBar.items![1]
+        groupItem.image = UIImage(named: "group_tabbar")
+
+        let homeItem = self.tabBar.items![2]
+        homeItem.image = UIImage(named: "notification_tabbar")
         
-        let settingItem = self.tabBar.items![2]
+        let settingItem = self.tabBar.items![3]
         settingItem.image = UIImage(named: "notification_tabbar")
         
-        let profileItem = self.tabBar.items![3]
+        let profileItem = self.tabBar.items![4]
         profileItem.image = UIImage(named: "profile_tabbar")
         
         selectedIndex = 1

@@ -11,6 +11,27 @@ import UIKit
 import SwifterSwift
 
 extension UIColor {
+    func hex()->String {
+
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+
+        let redInt = Int(red * 255)
+        let greenInt = Int(green * 255)
+        let blueInt = Int(blue * 255)
+        let alphaInt = Int(alpha * 255)
+
+        let redHex = String(format: "%02x", redInt)
+        let greenHex = String(format: "%02x", greenInt)
+        let blueHex = String(format: "%02x", blueInt)
+        let alphaHex = String(format: "%02x", alphaInt)
+
+        return "#\(redHex)\(greenHex)\(blueHex)\(alphaHex)"
+    }
     
     class func mainColorOrange() -> UIColor {
         return UIColor.init(hexString: kColorMainOrange)!
