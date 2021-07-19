@@ -13,5 +13,6 @@ target 'visafe' do
   pod 'SwiftyUserDefaults'
   pod 'SideMenuSwift'
   pod 'SVPinView'
+  pod "ESTabBarController-swift"
 
 end

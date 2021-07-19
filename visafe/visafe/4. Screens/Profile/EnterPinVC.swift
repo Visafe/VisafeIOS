@@ -19,7 +19,7 @@ class EnterPinVC: BaseViewController {
         title = "Cập nhật mã PIN"
         
         pinView.style = .underline
-        pinView.font = UIFont.systemFont(ofSize: 30)
+        pinView.font = UIFont.systemFont(ofSize: 24)
         pinView.keyboardType = .numberPad
         pinView.shouldSecureText = true
         pinView.secureTextDelay = 0

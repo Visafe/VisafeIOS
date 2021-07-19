@@ -5,6 +5,7 @@ PODS:
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
   - DACircularProgress (2.3.1)
+  - ESTabBarController-swift (2.8.0)
   - GoogleSignIn (5.0.2):
     - AppAuth (~> 1.2)
     - GTMAppAuth (~> 1.0)
@@ -21,6 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - DACircularProgress
+  - ESTabBarController-swift
   - GoogleSignIn
   - MBProgressHUD
   - MJRefresh
@@ -32,6 +34,7 @@ SPEC REPOS:
   trunk:
     - AppAuth
     - DACircularProgress
+    - ESTabBarController-swift
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
@@ -44,6 +47,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GTMAppAuth: 5b53231ef6920f149ab84b2969cb0ab572da3077
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
@@ -53,6 +57,6 @@ SPEC CHECKSUMS:
   SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
 
-PODFILE CHECKSUM: 1d244982a859b904cffac8d1f72edc20d49b6440
+PODFILE CHECKSUM: 82dc6b25a0ecb7533bea8296f88f5d78070bb651
 
 COCOAPODS: 1.10.1

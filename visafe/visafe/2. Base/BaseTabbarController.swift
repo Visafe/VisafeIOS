@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import ESTabBarController_swift
 
-class BaseTabbarController: UITabBarController {
+class BaseTabbarController: ESTabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
