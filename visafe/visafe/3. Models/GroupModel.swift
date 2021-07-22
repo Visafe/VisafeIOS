@@ -100,31 +100,12 @@ public enum BlockServcieEnum: String {
         case .reddit:
             return "Reddit"
         case ._9gag:
-            return "9GAG"
+            return "9gag"
         }
     }
     
     func getIcon() -> UIImage? {
-        switch self {
-        case .facebook:
-            return UIImage(named: "facebook_icon_group")
-        case .zalo:
-            return UIImage(named: "")
-        case .tiktok:
-            return UIImage(named: "")
-        case .instagram:
-            return UIImage(named: "insta_icon")
-        case .tinder:
-            return UIImage(named: "")
-        case .twitter:
-            return UIImage(named: "")
-        case .netflix:
-            return UIImage(named: "")
-        case .reddit:
-            return UIImage(named: "")
-        case ._9gag:
-            return UIImage(named: "")
-        }
+        return UIImage(named: "ic_app_\(self.rawValue)")
     }
 }
 
@@ -164,24 +145,7 @@ public enum NativeTrackingEnum : String {
     }
     
     func getIcon() -> UIImage? {
-        switch self {
-        case .alexa:
-            return UIImage(named: "")
-        case .apple:
-            return UIImage(named: "apple_icon_group")
-        case .huawei:
-            return UIImage(named: "huawei_icon")
-        case .roku:
-            return UIImage(named: "")
-        case .samsung:
-            return UIImage(named: "samsung_icon")
-        case .sonos:
-            return UIImage(named: "")
-        case .windows:
-            return UIImage(named: "")
-        case .xiaomi:
-            return UIImage(named: "xiaomi_icon")
-        }
+        return UIImage(named: "ic_device_\(self.rawValue)")
     }
 }
 

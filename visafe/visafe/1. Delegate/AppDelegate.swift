@@ -40,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configRootVC() {
+//        let vc = GroupDetailVC(group: GroupModel())
+//        let nav = BaseNavigationController(rootViewController: vc)
+//        setRootViewController(vc)
         if CacheManager.shared.getIsShowOnboarding() {
             setRootVCToTabVC()
         } else {
@@ -85,6 +88,14 @@ extension AppDelegate {
                           options: .transitionCrossDissolve,
                           animations: nil,
                           completion: nil)
+    }
+    
+    func getTopViewController() -> UIViewController? {
+        var topViewController = self.window?.rootViewController
+        while let presentedViewController = topViewController?.presentedViewController {
+            topViewController = presentedViewController
+        }
+        return topViewController
     }
 }
 

@@ -211,6 +211,9 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nI-Ls-CzN">
                                     <rect key="frame" x="72" y="10" width="50" height="50"/>
                                     <state key="normal" image="facebook_icon"/>
+                                    <connections>
+                                        <action selector="facebookAuthen:" destination="-1" eventType="touchUpInside" id="odL-fo-KZL"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ck9-l2-rCz">
                                     <rect key="frame" x="152" y="10" width="50" height="50"/>
@@ -219,10 +222,16 @@
                                         <constraint firstAttribute="width" constant="50" id="hSS-Fg-Ij3"/>
                                     </constraints>
                                     <state key="normal" image="google_icon"/>
+                                    <connections>
+                                        <action selector="googleAuthen:" destination="-1" eventType="touchUpInside" id="RKD-mx-b8S"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xR5-HE-cg0">
                                     <rect key="frame" x="232" y="10" width="50" height="50"/>
                                     <state key="normal" image="apple_icon"/>
+                                    <connections>
+                                        <action selector="appleAuthen:" destination="-1" eventType="touchUpInside" id="nEg-xW-Ao8"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

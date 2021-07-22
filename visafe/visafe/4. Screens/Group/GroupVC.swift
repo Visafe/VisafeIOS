@@ -206,6 +206,11 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0 {
+            detailGroup(group: myGroups[indexPath.row])
+        } else {
+            detailGroup(group: inviteGroups[indexPath.row])
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -214,6 +219,13 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.001
+    }
+    
+    func detailGroup(group: GroupModel) {
+        let vc = GroupDetailVC(group: group)
+        present(vc, animated: true, completion: nil)
+        let _ = BaseNavigationController(rootViewController: vc)
+        
     }
 }
 

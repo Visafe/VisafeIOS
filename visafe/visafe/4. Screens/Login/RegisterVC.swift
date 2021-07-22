@@ -7,6 +7,9 @@
 
 import UIKit
 import SwiftMessages
+import GoogleSignIn
+import FacebookLogin
+import AuthenticationServices
 
 class RegisterVC: BaseViewController {
 
@@ -100,6 +103,116 @@ class RegisterVC: BaseViewController {
     
     @IBAction func dismissAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func googleAuthen(_ sender: UIButton) {
+        GIDSignIn.sharedInstance()?.delegate = self
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    @IBAction func facebookAuthen(_ sender: UIButton) {
+        let manager = LoginManager()
+        manager.logIn(permissions: [], from: self) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            if let token = result?.token?.tokenString {
+                weakSelf.loginFacebook(token: token)
+            }
+        }
+    }
+    
+    @IBAction func appleAuthen(_ sender: UIButton) {
+        loginApple()
+    }
+    
+    
+    func loginFacebook(token: String?) {
+        showLoading()
+        AuthenWorker.loginFacebook(token: token) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            weakSelf.handleLogin(result: result, error: error)
+        }
+    }
+    
+    func loginApple() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+    
+    func handleLogin(result: LoginResult?, error: Error?) {
+        if let res = result, res.token != nil {
+            CacheManager.shared.setLoginResult(value: res)
+            getProfile()
+        } else {
+            let type = LoginStatusEnum.error
+            showError(title: "Đăng nhập không thành công", content: type.getDescription())
+        }
+    }
+    
+    func getWorkspaces() {
+        WorkspaceWorker.getList { [weak self] (list, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            CacheManager.shared.setIsLogined(value: true)
+            CacheManager.shared.setWorkspacesResult(value: list)
+            CacheManager.shared.setCurrentWorkspace(value: list?.first)
+            AppDelegate.appDelegate()?.setRootVCToTabVC()
+        }
+    }
+    
+    func getProfile() {
+        showLoading()
+        AuthenWorker.profile { [weak self] (user, error) in
+            guard let weakSelf = self else { return }
+            CacheManager.shared.setCurrentUser(value: user)
+            weakSelf.getWorkspaces()
+        }
+    }
+}
+
+extension RegisterVC: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let token = user?.authentication.idToken {
+            showLoading()
+            AuthenWorker.loginGoogle(token: token) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                weakSelf.hideLoading()
+                weakSelf.handleLogin(result: result, error: error)
+            }
+        }
+    }
+}
+
+extension RegisterVC: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            let userIdentifier = appleIDCredential.user
+            let userFirstName = appleIDCredential.fullName?.givenName
+            let userLastName = appleIDCredential.fullName?.familyName
+            let username = appleIDCredential.fullName
+            let userEmail = appleIDCredential.email
+            let token = appleIDCredential.identityToken
+            print(userIdentifier)
+            print(userFirstName)
+            print(userEmail)
+            let token_string =  String(decoding: appleIDCredential.identityToken!, as: UTF8.self)
+            print(token_string)
+        }
+    }
+    
+    public func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+    }
+    
+    public func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return AppDelegate.appDelegate()?.window ?? self.view.window!
     }
 }
 

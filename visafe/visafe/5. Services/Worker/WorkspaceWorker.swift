@@ -80,4 +80,18 @@ class WorkspaceWorker {
             completion(loginResult, error)
         }
     }
+    
+    static func getStatistic(wspId: String, completion: @escaping (_ result: StatisticModel?, _ error: Error?) -> Void) {
+        let router = APIRouter.statisticWorkspace(id: wspId)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: StatisticModel?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<StatisticModel>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
 }
