@@ -15,12 +15,12 @@ class GroupDetailVC: MXSegmentedPagerController {
     var group: GroupModel
     
     let vc1: GroupStatisticVC!
-    let vc2: GroupStatisticVC!
+    let vc2: GroupSettingDetailVC!
     
     init(group: GroupModel) {
         self.group = group
         self.vc1 = GroupStatisticVC(group: group)
-        self.vc2 = GroupStatisticVC(group: group)
+        self.vc2 = GroupSettingDetailVC(group: group)
         super.init(nibName: GroupDetailVC.className, bundle: nil)
     }
     

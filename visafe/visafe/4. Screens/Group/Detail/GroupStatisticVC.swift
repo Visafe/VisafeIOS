@@ -33,7 +33,7 @@ class GroupStatisticVC: BaseViewController {
     }
     
     func configUI() {
-        tableView.registerCells(cells: [StatisticCategoryCell.className])
+        tableView.registerCells(cells: [StatisticCategoryCell.className, StatisticSumaryCell.className])
     }
     
     func prepareData() {
@@ -68,11 +68,13 @@ class GroupStatisticVC: BaseViewController {
 extension GroupStatisticVC: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
+            return 1
+        } else if section == 1 {
             return statisticCategory.count
         } else {
             return statisticCategoryApp.count
@@ -80,33 +82,59 @@ extension GroupStatisticVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: StatisticCategoryCell.className) as? StatisticCategoryCell else {
-            return UITableViewCell()
-        }
         if indexPath.section == 0 {
-            cell.bindingData(category: statisticCategory[indexPath.row])
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: StatisticSumaryCell.className) as? StatisticSumaryCell else {
+                return UITableViewCell()
+            }
+            return cell
         } else {
-            cell.bindingData(app: statisticCategoryApp[indexPath.row])
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: StatisticCategoryCell.className) as? StatisticCategoryCell else {
+                return UITableViewCell()
+            }
+            if indexPath.section == 1 {
+                cell.bindingData(category: statisticCategory[indexPath.row])
+            } else if indexPath.section == 2 {
+                cell.bindingData(app: statisticCategoryApp[indexPath.row])
+            }
+            return cell
         }
-        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let viewHeader = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 48))
-        viewHeader.backgroundColor = UIColor.white
-        let label = UILabel(frame: CGRect(x: 16, y: 0, width: kScreenWidth - 32, height: 48))
         if section == 0 {
-            label.text = "Nội dung dùng nhiều"
+            return UIView()
         } else {
-            label.text = "Ứng dụng dùng nhiều"
+            let viewHeader = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 54))
+            viewHeader.backgroundColor = UIColor.white
+            let lineView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 6))
+            lineView.backgroundColor = UIColor(hexString: "F7F8FA")
+            viewHeader.addSubview(lineView)
+            let label = UILabel(frame: CGRect(x: 16, y: 6, width: kScreenWidth - 32, height: 54))
+            if section == 1 {
+                label.text = "Nội dung dùng nhiều"
+            } else if section == 2 {
+                label.text = "Ứng dụng dùng nhiều"
+            }
+            label.textAlignment = .left
+            label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+            viewHeader.addSubview(label)
+            return viewHeader
         }
-        label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        viewHeader.addSubview(label)
-        return viewHeader
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 48
+        if section == 0 {
+            return 0.0001
+        } else {
+            return 54
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.001
     }
 }
