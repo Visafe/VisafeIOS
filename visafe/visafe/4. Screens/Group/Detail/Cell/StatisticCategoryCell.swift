@@ -27,11 +27,13 @@ class StatisticCategoryCell: UITableViewCell {
         titleLabel.text = category.name?.getTitle()
         iconImageView.image = category.name?.getIcon()
         percentLabel.text = "\(category.percent)%"
+        contraintWidth.constant = (kScreenWidth - 88) * CGFloat(category.percent) / 100
     }
     
     func bindingData(app: StatisticCategoryApp) {
         titleLabel.text = app.name?.getTitle()
         iconImageView.image = app.name?.getIcon()
         percentLabel.text = "\(app.percent)%"
+        contraintWidth.constant = (kScreenWidth - 88) * CGFloat(app.percent) / 100
     }
 }

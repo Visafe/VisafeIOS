@@ -14,6 +14,7 @@ class GroupSettingVC: BaseViewController {
     var editMode: EditModeEnum
     var sources: [PostGroupModel] = []
     var parentType: GroupSettingParentEnum
+    var scrollDelegateFunc: ((UIScrollView)->Void)?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -233,6 +234,15 @@ extension GroupSettingVC: UITableViewDelegate, UITableViewDataSource {
             weakSelf.tableView.reloadData()
         }
         return headerView
+    }
+}
+
+extension GroupSettingVC: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.scrollDelegateFunc != nil {
+            self.scrollDelegateFunc!(scrollView)
+        }
     }
 }
 

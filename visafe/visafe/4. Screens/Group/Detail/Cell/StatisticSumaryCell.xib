@@ -31,13 +31,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wG-4w-Wbe">
-                                        <rect key="frame" x="41" y="60" width="28" height="59"/>
+                                        <rect key="frame" x="41" y="60" width="28" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguy hại" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cx-fq-Yhl">
-                                        <rect key="frame" x="25" y="123" width="60.5" height="18"/>
+                                        <rect key="frame" x="25" y="93" width="60.5" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -136,6 +136,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="blockedLabel" destination="7vp-TR-cMS" id="3TW-UE-TCX"/>
+                <outlet property="dangerousLabel" destination="0wG-4w-Wbe" id="q7s-vY-Ev0"/>
+                <outlet property="violationLabel" destination="2KK-5I-I1B" id="wer-kj-pFe"/>
+            </connections>
             <point key="canvasLocation" x="168.84057971014494" y="96.763392857142847"/>
         </tableViewCell>
     </objects>

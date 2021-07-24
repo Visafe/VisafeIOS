@@ -57,6 +57,8 @@ enum APIRouter {
     //statistic
     case statisticWorkspace(id: String)
     case statisticGroup(id: String, limit: Int)
+    case logGroup(param: QueryLogParam)
+    case logWorkspace(param: QueryLogParam)
 }
 
 enum APIError: Error {
@@ -76,7 +78,7 @@ extension APIError: LocalizedError {
 }
 
 enum APIConstant {
-    static let baseURL = "https://staging.visafe.vn/api/v1"
+    static let baseURL = "https://app.visafe.vn/api/v1"
 }
 
 extension APIRouter: TargetType {
@@ -158,12 +160,16 @@ extension APIRouter: TargetType {
             return "/stats/workspace"
         case .statisticGroup:
             return "/stats/group"
+        case .logGroup:
+            return "/stats/group"
+        case .logWorkspace:
+            return "/querylog_workspace"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getListWorkspace, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup:
+        case .getListWorkspace, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup, .logGroup, .logWorkspace:
             return .get
         case .deleteWorkspace, .deleteGroup:
             return .delete
@@ -248,6 +254,10 @@ extension APIRouter: TargetType {
         case .statisticGroup(id: let gId, limit: let time):
             pars["group_id"] = gId
             pars["time_limit"] = time
+        case .logGroup(param: let param):
+            pars = param.toJSON()
+        case .logWorkspace(param: let param):
+            pars = param.toJSON()
         case .reactivation, .getListWorkspace, .profile:
             break
         }
@@ -271,7 +281,7 @@ extension APIRouter: TargetType {
     var headers: [String : String]? {
         var hea: [String: String] = [:]
         switch self {
-        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup:
+        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup, .logGroup, .logWorkspace:
             hea["Authorization"] = (CacheManager.shared.getLoginResult()?.token ?? "")
         default:
             break

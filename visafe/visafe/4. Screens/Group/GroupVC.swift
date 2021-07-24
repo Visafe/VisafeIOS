@@ -223,9 +223,8 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func detailGroup(group: GroupModel) {
         let vc = GroupDetailVC(group: group)
-        present(vc, animated: true, completion: nil)
-        let _ = BaseNavigationController(rootViewController: vc)
-        
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true)
     }
 }
 

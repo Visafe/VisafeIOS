@@ -50,6 +50,21 @@
 		C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96F2682216B009982C3 /* BaseTableCell.swift */; };
 		C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B97A268222F6009982C3 /* JSONModelable.swift */; };
 		C91D45962694CCB900055A4E /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D45952694CCB900055A4E /* BaseTextField.swift */; };
+		C91EE7D526AC1ABD006ADAE9 /* ProtectHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91EE7D426AC1ABD006ADAE9 /* ProtectHeaderView.xib */; };
+		C91EE7D926AC1ACE006ADAE9 /* ProtectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE7D826AC1ACE006ADAE9 /* ProtectHeaderView.swift */; };
+		C91EE7E026AC1F90006ADAE9 /* GroupProtectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE7DE26AC1F90006ADAE9 /* GroupProtectVC.swift */; };
+		C91EE7E126AC1F90006ADAE9 /* GroupProtectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91EE7DF26AC1F90006ADAE9 /* GroupProtectVC.xib */; };
+		C91EE7E626AC1FFA006ADAE9 /* GroupListBlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE7E426AC1FFA006ADAE9 /* GroupListBlockVC.swift */; };
+		C91EE7E726AC1FFA006ADAE9 /* GroupListBlockVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91EE7E526AC1FFA006ADAE9 /* GroupListBlockVC.xib */; };
+		C91EE7EE26AC7414006ADAE9 /* GroupListUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE7EC26AC7414006ADAE9 /* GroupListUserVC.swift */; };
+		C91EE7EF26AC7414006ADAE9 /* GroupListUserVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91EE7ED26AC7414006ADAE9 /* GroupListUserVC.xib */; };
+		C91EE7F426AC750B006ADAE9 /* GroupMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE7F226AC750B006ADAE9 /* GroupMemberCell.swift */; };
+		C91EE7F526AC750B006ADAE9 /* GroupMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91EE7F326AC750B006ADAE9 /* GroupMemberCell.xib */; };
+		C91EE7F926AC897A006ADAE9 /* QueryLogParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE7F826AC897A006ADAE9 /* QueryLogParam.swift */; };
+		C91EE7FD26AC8CD9006ADAE9 /* QueryLogResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE7FC26AC8CD9006ADAE9 /* QueryLogResult.swift */; };
+		C91EE80126AC8D17006ADAE9 /* QueryLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE80026AC8D17006ADAE9 /* QueryLogModel.swift */; };
+		C91EE80626AC8FE7006ADAE9 /* GroupBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE80426AC8FE7006ADAE9 /* GroupBlockCell.swift */; };
+		C91EE80726AC8FE7006ADAE9 /* GroupBlockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91EE80526AC8FE7006ADAE9 /* GroupBlockCell.xib */; };
 		C923C838268F57BC00FE34DC /* ListGroupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923C837268F57BC00FE34DC /* ListGroupResult.swift */; };
 		C924CFE526A7D5390058EEDD /* GroupStatisticVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924CFE326A7D5390058EEDD /* GroupStatisticVC.swift */; };
 		C924CFE626A7D5390058EEDD /* GroupStatisticVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C924CFE426A7D5390058EEDD /* GroupStatisticVC.xib */; };
@@ -135,6 +150,8 @@
 		C9777A3B269ACDE500C40031 /* ProfileFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9777A3A269ACDE500C40031 /* ProfileFooterView.swift */; };
 		C9777A3E269ACDFC00C40031 /* ProfileFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9777A3D269ACDFC00C40031 /* ProfileFooterView.xib */; };
 		C97A1C22269F39D200EC98DC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A1C21269F39D100EC98DC /* DateExtension.swift */; };
+		C98786EA26ABC7AD007639ED /* HeaderedCAPSPageMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98786E826ABC7AD007639ED /* HeaderedCAPSPageMenuViewController.swift */; };
+		C98786F826ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98786F726ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift */; };
 		C99034D32694C3C1009C078F /* TextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99034D22694C3C0009C078F /* TextfieldExtension.swift */; };
 		C993D24E26A425AF00684F80 /* EnterPinVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C993D24C26A425AF00684F80 /* EnterPinVC.xib */; };
 		C993D24F26A425AF00684F80 /* EnterPinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993D24D26A425AF00684F80 /* EnterPinVC.swift */; };
@@ -176,8 +193,6 @@
 		C9BCBC6026975C92007F652C /* GroupSettingParentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */; };
 		C9BCBC6426975DEC007F652C /* GroupSettingParentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */; };
 		C9BCBC6526975DEC007F652C /* GroupSettingParentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BCBC6326975DEC007F652C /* GroupSettingParentCell.xib */; };
-		C9BCBC6926976AD3007F652C /* GroupSettingChildrenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCBC6726976AD3007F652C /* GroupSettingChildrenVC.swift */; };
-		C9BCBC6A26976AD3007F652C /* GroupSettingChildrenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BCBC6826976AD3007F652C /* GroupSettingChildrenVC.xib */; };
 		C9C0B9CA26A580B600C9869A /* ExampleBackgroundContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9B926A580B600C9869A /* ExampleBackgroundContentView.swift */; };
 		C9C0B9CB26A580B600C9869A /* ExampleIrregularityContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9BB26A580B600C9869A /* ExampleIrregularityContentView.swift */; };
 		C9C0B9CC26A580B600C9869A /* ExampleHighlightableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9BD26A580B600C9869A /* ExampleHighlightableContentView.swift */; };
@@ -298,6 +313,21 @@
 		C919B96F2682216B009982C3 /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
 		C919B97A268222F6009982C3 /* JSONModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONModelable.swift; sourceTree = "<group>"; };
 		C91D45952694CCB900055A4E /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		C91EE7D426AC1ABD006ADAE9 /* ProtectHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProtectHeaderView.xib; sourceTree = "<group>"; };
+		C91EE7D826AC1ACE006ADAE9 /* ProtectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectHeaderView.swift; sourceTree = "<group>"; };
+		C91EE7DE26AC1F90006ADAE9 /* GroupProtectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupProtectVC.swift; sourceTree = "<group>"; };
+		C91EE7DF26AC1F90006ADAE9 /* GroupProtectVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupProtectVC.xib; sourceTree = "<group>"; };
+		C91EE7E426AC1FFA006ADAE9 /* GroupListBlockVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListBlockVC.swift; sourceTree = "<group>"; };
+		C91EE7E526AC1FFA006ADAE9 /* GroupListBlockVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupListBlockVC.xib; sourceTree = "<group>"; };
+		C91EE7EC26AC7414006ADAE9 /* GroupListUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListUserVC.swift; sourceTree = "<group>"; };
+		C91EE7ED26AC7414006ADAE9 /* GroupListUserVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupListUserVC.xib; sourceTree = "<group>"; };
+		C91EE7F226AC750B006ADAE9 /* GroupMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberCell.swift; sourceTree = "<group>"; };
+		C91EE7F326AC750B006ADAE9 /* GroupMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupMemberCell.xib; sourceTree = "<group>"; };
+		C91EE7F826AC897A006ADAE9 /* QueryLogParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryLogParam.swift; sourceTree = "<group>"; };
+		C91EE7FC26AC8CD9006ADAE9 /* QueryLogResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryLogResult.swift; sourceTree = "<group>"; };
+		C91EE80026AC8D17006ADAE9 /* QueryLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryLogModel.swift; sourceTree = "<group>"; };
+		C91EE80426AC8FE7006ADAE9 /* GroupBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBlockCell.swift; sourceTree = "<group>"; };
+		C91EE80526AC8FE7006ADAE9 /* GroupBlockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupBlockCell.xib; sourceTree = "<group>"; };
 		C923C837268F57BC00FE34DC /* ListGroupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupResult.swift; sourceTree = "<group>"; };
 		C924CFE326A7D5390058EEDD /* GroupStatisticVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStatisticVC.swift; sourceTree = "<group>"; };
 		C924CFE426A7D5390058EEDD /* GroupStatisticVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupStatisticVC.xib; sourceTree = "<group>"; };
@@ -382,6 +412,8 @@
 		C9777A3A269ACDE500C40031 /* ProfileFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooterView.swift; sourceTree = "<group>"; };
 		C9777A3D269ACDFC00C40031 /* ProfileFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileFooterView.xib; sourceTree = "<group>"; };
 		C97A1C21269F39D100EC98DC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		C98786E826ABC7AD007639ED /* HeaderedCAPSPageMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderedCAPSPageMenuViewController.swift; sourceTree = "<group>"; };
+		C98786F726ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractHeaderedTabScrollViewController.swift; sourceTree = "<group>"; };
 		C99034D22694C3C0009C078F /* TextfieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldExtension.swift; sourceTree = "<group>"; };
 		C993D24C26A425AF00684F80 /* EnterPinVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterPinVC.xib; sourceTree = "<group>"; };
 		C993D24D26A425AF00684F80 /* EnterPinVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPinVC.swift; sourceTree = "<group>"; };
@@ -419,8 +451,6 @@
 		C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingParentVC.xib; sourceTree = "<group>"; };
 		C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingParentCell.swift; sourceTree = "<group>"; };
 		C9BCBC6326975DEC007F652C /* GroupSettingParentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingParentCell.xib; sourceTree = "<group>"; };
-		C9BCBC6726976AD3007F652C /* GroupSettingChildrenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingChildrenVC.swift; sourceTree = "<group>"; };
-		C9BCBC6826976AD3007F652C /* GroupSettingChildrenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingChildrenVC.xib; sourceTree = "<group>"; };
 		C9C0B9B926A580B600C9869A /* ExampleBackgroundContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBackgroundContentView.swift; sourceTree = "<group>"; };
 		C9C0B9BB26A580B600C9869A /* ExampleIrregularityContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleIrregularityContentView.swift; sourceTree = "<group>"; };
 		C9C0B9BD26A580B600C9869A /* ExampleHighlightableContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleHighlightableContentView.swift; sourceTree = "<group>"; };
@@ -554,16 +584,16 @@
 		0EDEEFA32681F29E00572C4E /* visafe */ = {
 			isa = PBXGroup;
 			children = (
-				0E798385268485E60023C916 /* visafe.entitlements */,
 				C919B9722682217D009982C3 /* 1. Delegate */,
 				C919B965268220B3009982C3 /* 2. Base */,
 				C919B966268220D4009982C3 /* 3. Models */,
 				C919B97626822222009982C3 /* 4. Screens */,
 				C919B93926821DA8009982C3 /* 5. Services */,
 				C919B973268221A4009982C3 /* 6 .Resource */,
-				C919B967268220DE009982C3 /* 7. Shared */,
+				C98786E526ABC7AD007639ED /* 7 .Library */,
 				C919B978268222CF009982C3 /* 8. Common */,
 				C940AE942683766F0069B830 /* 9. Extension */,
+				0E798385268485E60023C916 /* visafe.entitlements */,
 			);
 			path = visafe;
 			sourceTree = "<group>";
@@ -647,15 +677,9 @@
 				C94B39AC268A1CF100046958 /* GroupModel.swift */,
 				C918140A269B416800DC0E83 /* NotificationModel.swift */,
 				C93C234F26A96255003AC717 /* StatisticModel.swift */,
+				C91EE80026AC8D17006ADAE9 /* QueryLogModel.swift */,
 			);
 			path = "3. Models";
-			sourceTree = "<group>";
-		};
-		C919B967268220DE009982C3 /* 7. Shared */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "7. Shared";
 			sourceTree = "<group>";
 		};
 		C919B9722682217D009982C3 /* 1. Delegate */ = {
@@ -721,6 +745,8 @@
 			children = (
 				C9DC8F6926A6ED540021A8BD /* GroupDetailHeader.swift */,
 				C9DC8F6D26A6ED610021A8BD /* GroupDetailHeader.xib */,
+				C91EE7D826AC1ACE006ADAE9 /* ProtectHeaderView.swift */,
+				C91EE7D426AC1ABD006ADAE9 /* ProtectHeaderView.xib */,
 				C9F2491A26AAA7AF00EE7442 /* StatisticSumaryView.swift */,
 				C9F2491E26AAA80900EE7442 /* StatisticSumaryView.xib */,
 			);
@@ -736,6 +762,10 @@
 				C93C235426A97FA1003AC717 /* StatisticCategoryCell.xib */,
 				C9F2492226AAB87200EE7442 /* StatisticSumaryCell.swift */,
 				C9F2492326AAB87200EE7442 /* StatisticSumaryCell.xib */,
+				C91EE7F226AC750B006ADAE9 /* GroupMemberCell.swift */,
+				C91EE7F326AC750B006ADAE9 /* GroupMemberCell.xib */,
+				C91EE80426AC8FE7006ADAE9 /* GroupBlockCell.swift */,
+				C91EE80526AC8FE7006ADAE9 /* GroupBlockCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -886,6 +916,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C98786E526ABC7AD007639ED /* 7 .Library */ = {
+			isa = PBXGroup;
+			children = (
+				C98786E626ABC7AD007639ED /* HeaderedTabScrollView */,
+			);
+			path = "7 .Library";
+			sourceTree = "<group>";
+		};
+		C98786E626ABC7AD007639ED /* HeaderedTabScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				C98786F726ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift */,
+				C98786E826ABC7AD007639ED /* HeaderedCAPSPageMenuViewController.swift */,
+			);
+			path = HeaderedTabScrollView;
+			sourceTree = "<group>";
+		};
 		C99FD1C82697461300A8F731 /* Protect */ = {
 			isa = PBXGroup;
 			children = (
@@ -931,6 +978,7 @@
 				C94B39C1268A260D00046958 /* DeleteToGroupParam.swift */,
 				C94B39C4268A26A300046958 /* ChangeManagerPermisionParam.swift */,
 				C94B39C7268A26DA00046958 /* ChangeViewerPermisionParam.swift */,
+				C91EE7F826AC897A006ADAE9 /* QueryLogParam.swift */,
 			);
 			path = Param;
 			sourceTree = "<group>";
@@ -958,6 +1006,7 @@
 				C923C837268F57BC00FE34DC /* ListGroupResult.swift */,
 				C9181404269B0C5600DC0E83 /* ChangePasswordResult.swift */,
 				C918140D269B465700DC0E83 /* NotificationResult.swift */,
+				C91EE7FC26AC8CD9006ADAE9 /* QueryLogResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -1047,6 +1096,12 @@
 				C924CFE326A7D5390058EEDD /* GroupStatisticVC.swift */,
 				C924CFE426A7D5390058EEDD /* GroupStatisticVC.xib */,
 				C924CFE126A7D4210058EEDD /* View */,
+				C91EE7DE26AC1F90006ADAE9 /* GroupProtectVC.swift */,
+				C91EE7DF26AC1F90006ADAE9 /* GroupProtectVC.xib */,
+				C91EE7E426AC1FFA006ADAE9 /* GroupListBlockVC.swift */,
+				C91EE7E526AC1FFA006ADAE9 /* GroupListBlockVC.xib */,
+				C91EE7EC26AC7414006ADAE9 /* GroupListUserVC.swift */,
+				C91EE7ED26AC7414006ADAE9 /* GroupListUserVC.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1081,8 +1136,6 @@
 				C971F9FE2697498A00BB7118 /* PostGroupAboutVC.xib */,
 				C9BCBC5D26975C92007F652C /* GroupSettingParentVC.swift */,
 				C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */,
-				C9BCBC6726976AD3007F652C /* GroupSettingChildrenVC.swift */,
-				C9BCBC6826976AD3007F652C /* GroupSettingChildrenVC.xib */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -1264,6 +1317,7 @@
 				C95A5855268861940077112F /* PostWorkspaceVC.xib in Resources */,
 				C924CFE626A7D5390058EEDD /* GroupStatisticVC.xib in Resources */,
 				C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */,
+				C91EE7D526AC1ABD006ADAE9 /* ProtectHeaderView.xib in Resources */,
 				C969B39B269ADB210066A88A /* SecurityWorkspaceCell.xib in Resources */,
 				C9EDB55D26839E74009CBD93 /* PostGroupVC.xib in Resources */,
 				C9181417269B486300DC0E83 /* NotificationCell.xib in Resources */,
@@ -1271,6 +1325,7 @@
 				C966FE942694A8EB0049458C /* OnboardingVC.xib in Resources */,
 				C93ED15A2682328600B03E8A /* HomeVC.xib in Resources */,
 				C97032322690750E007F45E0 /* GroupSettingFooterView.xib in Resources */,
+				C91EE7EF26AC7414006ADAE9 /* GroupListUserVC.xib in Resources */,
 				C969B398269ADB210066A88A /* ChooseTypeWorkspaceCell.xib in Resources */,
 				C966FE992694A9500049458C /* OnboardingChildVC.xib in Resources */,
 				C93FFDE6269AF48800D7B02A /* ProfileSettingVC.xib in Resources */,
@@ -1284,13 +1339,13 @@
 				C9E7A494269087240012985B /* GroupSettingLinkCell.xib in Resources */,
 				C9FA15F8268A2DBF00A1A6C6 /* GroupNameVC.xib in Resources */,
 				C9B7949B26862C5F00258A72 /* SetPasswordVC.xib in Resources */,
+				C91EE7E726AC1FFA006ADAE9 /* GroupListBlockVC.xib in Resources */,
 				C969B39E269ADB210066A88A /* WorkspaceFooterView.xib in Resources */,
 				C9777A38269ACACC00C40031 /* ProfileHeaderView.xib in Resources */,
 				C9EDB55826839E74009CBD93 /* GroupCell.xib in Resources */,
 				C9DC8F6E26A6ED610021A8BD /* GroupDetailHeader.xib in Resources */,
 				C9EDB55A26839E74009CBD93 /* GroupFooterView.xib in Resources */,
 				C99FD1CC2697462700A8F731 /* ProtectVC.xib in Resources */,
-				C9BCBC6A26976AD3007F652C /* GroupSettingChildrenVC.xib in Resources */,
 				C93ED164268232BE00B03E8A /* AdministrationVC.xib in Resources */,
 				C9181401269B045E00DC0E83 /* ChangePasswordVC.xib in Resources */,
 				C9B7949126862C2E00258A72 /* ForgotPasswordVC.xib in Resources */,
@@ -1300,7 +1355,9 @@
 				C99FD1D22697465B00A8F731 /* NotificationVC.xib in Resources */,
 				C9BCBC6026975C92007F652C /* GroupSettingParentVC.xib in Resources */,
 				C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */,
+				C91EE7E126AC1F90006ADAE9 /* GroupProtectVC.xib in Resources */,
 				C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */,
+				C91EE80726AC8FE7006ADAE9 /* GroupBlockCell.xib in Resources */,
 				C93C235626A97FA1003AC717 /* StatisticCategoryCell.xib in Resources */,
 				C969B3B0269AE9980066A88A /* PostWorkspacesVC.xib in Resources */,
 				C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */,
@@ -1322,6 +1379,7 @@
 				C9CCAB5426A5DFE300C04BC5 /* GroupDetailVC.xib in Resources */,
 				C9777A3E269ACDFC00C40031 /* ProfileFooterView.xib in Resources */,
 				C9E7A49926909E890012985B /* MoreLinkSettingView.xib in Resources */,
+				C91EE7F526AC750B006ADAE9 /* GroupMemberCell.xib in Resources */,
 				C91813FD269AFE7000DC0E83 /* ProfileHelpCell.xib in Resources */,
 				C970323826907AA2007F45E0 /* EnterLinkWebsiteView.xib in Resources */,
 			);
@@ -1407,8 +1465,10 @@
 				C993D28226A4952800684F80 /* TabbarItemContentView.swift in Sources */,
 				C99034D32694C3C1009C078F /* TextfieldExtension.swift in Sources */,
 				C9B7947A2686199200258A72 /* AuthenWorker.swift in Sources */,
+				C91EE7E626AC1FFA006ADAE9 /* GroupListBlockVC.swift in Sources */,
 				C999AB07268E03F200F657A9 /* GroupSettingCell.swift in Sources */,
 				C9B7949A26862C5F00258A72 /* SetPasswordVC.swift in Sources */,
+				C91EE7F426AC750B006ADAE9 /* GroupMemberCell.swift in Sources */,
 				C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */,
 				C969B39F269ADB210066A88A /* WorkspaceCell.swift in Sources */,
 				C9FA1607268A344B00A1A6C6 /* ChooseTypeGroupCell.swift in Sources */,
@@ -1441,6 +1501,7 @@
 				C9A15B4D2699BFDA0065D5C2 /* GroupHeaderView.swift in Sources */,
 				C9C0B9D026A580B600C9869A /* ExampleTipsContentView.swift in Sources */,
 				C9FA1671268DFC4C00A1A6C6 /* GroupSettingHeaderView.swift in Sources */,
+				C91EE7EE26AC7414006ADAE9 /* GroupListUserVC.swift in Sources */,
 				C94B39C2268A260D00046958 /* DeleteToGroupParam.swift in Sources */,
 				C99FD1D8269746C200A8F731 /* ProfileVC.swift in Sources */,
 				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
@@ -1464,6 +1525,8 @@
 				C969B395269ADB210066A88A /* WorkspaceFooterView.swift in Sources */,
 				C9FA15F7268A2DBF00A1A6C6 /* GroupNameVC.swift in Sources */,
 				C924CFE526A7D5390058EEDD /* GroupStatisticVC.swift in Sources */,
+				C98786F826ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift in Sources */,
+				C91EE7F926AC897A006ADAE9 /* QueryLogParam.swift in Sources */,
 				C9FA15FC268A2DD700A1A6C6 /* GroupSettingVC.swift in Sources */,
 				C9B79466268613A700258A72 /* RegisterVC.swift in Sources */,
 				C9B7948C268626AA00258A72 /* UserModel.swift in Sources */,
@@ -1471,9 +1534,12 @@
 				C9E7A49826909E890012985B /* MoreLinkSettingView.swift in Sources */,
 				C969B397269ADB210066A88A /* SecurityWorkspaceCell.swift in Sources */,
 				C969B399269ADB210066A88A /* ChooseTypeWorkspaceCell.swift in Sources */,
+				C91EE7E026AC1F90006ADAE9 /* GroupProtectVC.swift in Sources */,
 				C94B39B6268A20EB00046958 /* DeleteDeviceToGroupParam.swift in Sources */,
+				C91EE7FD26AC8CD9006ADAE9 /* QueryLogResult.swift in Sources */,
 				C9FA161B268B794300A1A6C6 /* ActiveAccountResult.swift in Sources */,
 				C923C838268F57BC00FE34DC /* ListGroupResult.swift in Sources */,
+				C91EE80626AC8FE7006ADAE9 /* GroupBlockCell.swift in Sources */,
 				0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */,
 				C94B39BF268A258C00046958 /* InviteToGroupParam.swift in Sources */,
 				C9EDB55B26839E74009CBD93 /* GroupCell.swift in Sources */,
@@ -1482,20 +1548,22 @@
 				C95A5862268867310077112F /* PageViewControllerExtension.swift in Sources */,
 				C94B39BC268A24D700046958 /* DeleteDeviceToIdentifierParam.swift in Sources */,
 				0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */,
+				C98786EA26ABC7AD007639ED /* HeaderedCAPSPageMenuViewController.swift in Sources */,
 				C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */,
 				C940AE92268375C10069B830 /* WorkspaceModel.swift in Sources */,
 				C9E7A493269087240012985B /* GroupSettingLinkCell.swift in Sources */,
 				C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */,
 				C966FE932694A8EB0049458C /* OnboardingVC.swift in Sources */,
 				C913CA78269CA88D00E8440F /* SSSS.swift in Sources */,
+				C91EE7D926AC1ACE006ADAE9 /* ProtectHeaderView.swift in Sources */,
 				C970323726907AA2007F45E0 /* EnterLinkWebsiteView.swift in Sources */,
 				C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */,
 				C9181411269B46CA00DC0E83 /* NotificationWorker.swift in Sources */,
 				C9777A31269AC5E100C40031 /* ProfileCell.swift in Sources */,
-				C9BCBC6926976AD3007F652C /* GroupSettingChildrenVC.swift in Sources */,
 				C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */,
 				C971FA0426974E6F00BB7118 /* PostGroupAboutCell.swift in Sources */,
 				C9C0B9CB26A580B600C9869A /* ExampleIrregularityContentView.swift in Sources */,
+				C91EE80126AC8D17006ADAE9 /* QueryLogModel.swift in Sources */,
 				C9EDB55C26839E74009CBD93 /* PostGroupVC.swift in Sources */,
 				C9B7949526862C4800258A72 /* EnterOTPVC.swift in Sources */,
 				C9EDB55926839E74009CBD93 /* GroupFooterView.swift in Sources */,

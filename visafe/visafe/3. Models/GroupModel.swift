@@ -296,7 +296,7 @@ class GroupModel: NSObject, Mappable {
     var disallowed: Bool?
     var usersActive: [UserModel]?
     var userManage: [UserModel]?
-    var usersGroupInfo: [UserModel]?
+    var usersGroupInfo: [UserModel] = []
     var days: [String] = []
     var times: [String] = []
     

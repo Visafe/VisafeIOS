@@ -1,6 +1,0 @@
-framework module MXSegmentedControl {
-  umbrella header "MXSegmentedControl-umbrella.h"
-
-  export *
-  module * { export * }
-}

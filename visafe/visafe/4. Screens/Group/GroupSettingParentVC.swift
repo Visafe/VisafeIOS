@@ -77,6 +77,66 @@ public enum GroupSettingParentEnum: Int {
     static func getAll() -> [GroupSettingParentEnum] {
         return [.blockAds, .blockFollow, .blockConnect, .blockContent, .blockVPN]
     }
+    
+    func getTopImage() -> UIImage? {
+        switch self {
+        case .blockAds:
+            return UIImage(named: "ic_detail_ads")
+        case .blockFollow:
+            return UIImage(named: "ic_detail_tracking")
+        case .blockConnect:
+            return UIImage(named: "ic_detail_connect")
+        case .blockContent:
+            return UIImage(named: "ic_detail_content")
+        case .blockVPN:
+            return UIImage(named: "")
+        }
+    }
+    
+    func getTopTitle() -> String {
+        switch self {
+        case .blockAds:
+            return "Đang bật chặn quảng cáo nhóm"
+        case .blockFollow:
+            return "Đang bật chặn theo dõi"
+        case .blockConnect:
+            return "Đang bật chặn truy cập"
+        case .blockContent:
+            return "Đang bật chặn nội dung"
+        case .blockVPN:
+            return ""
+        }
+    }
+    
+    func getTopContent() -> String {
+        switch self {
+        case .blockAds:
+            return "Website, Ứng dụng & Game"
+        case .blockFollow:
+            return "Apple, Samsung & 3 nhà phát triển khác"
+        case .blockConnect:
+            return "Website, Game & Ứng dụng"
+        case .blockContent:
+            return "Người lớn, cờ bạc & tin giả"
+        case .blockVPN:
+            return ""
+        }
+    }
+    
+    func getTypeQueryLog() -> QueryLogTypeEnum {
+        switch self {
+        case .blockAds:
+            return .ads_blocked
+        case .blockFollow:
+            return .all
+        case .blockConnect:
+            return .violation
+        case .blockContent:
+            return .dangerous
+        case .blockVPN:
+            return .all
+        }
+    }
 }
 
 public class PostGroupParentModel: BaseGroupModel {

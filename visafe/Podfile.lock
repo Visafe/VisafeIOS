@@ -16,13 +16,7 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.5.0)
-  - MXPagerView (0.2.1)
-  - MXParallaxHeader (1.1.0)
-  - MXSegmentedControl (1.1.0)
-  - MXSegmentedPager (4.0.0):
-    - MXPagerView (~> 0.2)
-    - MXParallaxHeader (~> 1.0)
-    - MXSegmentedControl (~> 1.1)
+  - PageMenu (2.0.0)
   - SideMenuSwift (2.0.7)
   - SVPinView (1.0.11)
   - SwiftyUserDefaults (5.3.0)
@@ -33,7 +27,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - MBProgressHUD
   - MJRefresh
-  - MXSegmentedPager
+  - PageMenu
   - SideMenuSwift
   - SVPinView
   - SwiftyUserDefaults
@@ -48,10 +42,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - MBProgressHUD
     - MJRefresh
-    - MXPagerView
-    - MXParallaxHeader
-    - MXSegmentedControl
-    - MXSegmentedPager
+    - PageMenu
     - SideMenuSwift
     - SVPinView
     - SwiftyUserDefaults
@@ -65,14 +56,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
-  MXPagerView: ede184b5191b2ed689ccf05a750a9978cce42414
-  MXParallaxHeader: de3c867e10ba46e8f6e20c8ee1f2a910372b3b94
-  MXSegmentedControl: f39e46199a52cbc03b1c845e150215119f2542f5
-  MXSegmentedPager: 527ee76513c96e6607eebe473fe49b7ab4971616
+  PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
   SideMenuSwift: ffbbc88d23741932177ad1320df837cedfb3bc5e
   SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
 
-PODFILE CHECKSUM: 35dc928e6086dfc11c64f40177e692d17a3f8ab2
+PODFILE CHECKSUM: b37e7e2f6d4c4511bb06dc02de1d0e41b9eaaec9
 
 COCOAPODS: 1.10.1

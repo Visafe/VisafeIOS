@@ -100,7 +100,7 @@ public enum StatisticCategoryEnum: String {
 }
 
 class StatisticCategoryApp: NSObject, Mappable {
-    var count: Int = 0
+    var count: Float = 0
     var name: StatisticCategoryAppEnum?
     
     // Thêm tỉ lệ phần trăm để hiển thị
@@ -122,7 +122,7 @@ class StatisticCategoryApp: NSObject, Mappable {
 
 class StatisticCategory: NSObject, Mappable {
     var apps: [StatisticCategoryApp]?
-    var count: Int = 0
+    var count: Float = 0
     var name: StatisticCategoryEnum?
     
     // Thêm tỉ lệ phần trăm để hiển thị

@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import MXParallaxHeader
-import MXSegmentedPager
+import PageMenu
 
-class GroupDetailVC: MXSegmentedPagerController {
-
-    var headerView: GroupDetailHeader!
+class GroupDetailVC: HeaderedCAPSPageMenuViewController, CAPSPageMenuDelegate {
+    
+    var subPageControllers: [UIViewController] = []
+    var header: GroupDetailHeader!
     var group: GroupModel
     
     let vc1: GroupStatisticVC!
@@ -31,33 +31,59 @@ class GroupDetailVC: MXSegmentedPagerController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configBarItem()
-        configHeader()
+        configView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    func configHeader() {
-        headerView = GroupDetailHeader.loadFromNib()
-        headerView.bindingData()
-        segmentedPager.parallaxHeader.view = headerView
-        segmentedPager.parallaxHeader.height = 410
-        segmentedPager.parallaxHeader.mode = .top
-        segmentedPager.parallaxHeader.minimumHeight = view.safeAreaInsets.top + 64
+    func configView() {
+        header = GroupDetailHeader.loadFromNib()
+        header.bindingData(group: group)
+        header.viewMemberAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            let vc = GroupListUserVC(group: weakSelf.group)
+            weakSelf.navigationController?.pushViewController(vc)
+        }
+        // 1) Set the header
+        self.headerView = header
         
-        // Segmented Control customization
-        segmentedPager.segmentedControl.indicator.linePosition = .bottom
-        segmentedPager.segmentedControl.textColor = UIColor(hexString: "222222")!
-        segmentedPager.segmentedControl.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        segmentedPager.segmentedControl.selectedTextColor = UIColor.black
-        segmentedPager.segmentedControl.indicator.lineView.backgroundColor = UIColor.mainColorOrange()
-        segmentedPager.backgroundColor = UIColor.white
-        segmentedPager.segmentedControl.backgroundColor = UIColor.white
-    }
-    
-    override func viewSafeAreaInsetsDidChange() {
-        segmentedPager.parallaxHeader.minimumHeight = view.safeAreaInsets.top + 64
+        // 2) Set the subpages
+        let vc = GroupStatisticVC(group: group)
+        vc.title = "Thống kê"
+        vc.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        vc.view.backgroundColor = .white
+        addChild(vc)
+        subPageControllers.append(vc)
+        vc.scrollDelegateFunc = { [weak self] in self?.pleaseScroll($0) }
+        
+        let vc2 = GroupSettingDetailVC(group: group)
+        vc2.parentVC = self
+        vc2.title = "Thiết lập bảo vệ"
+        vc2.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        vc2.view.backgroundColor = .white
+        addChild(vc2)
+        subPageControllers.append(vc2)
+        vc2.scrollDelegateFunc = { [weak self] in self?.pleaseScroll($0) }
+        
+        let parameters: [CAPSPageMenuOption] = [
+            .selectionIndicatorHeight(3),
+            .selectionIndicatorColor(UIColor.mainColorOrange()),
+            .menuItemWidth(kScreenWidth/2),
+            .viewBackgroundColor(.white),
+            .menuItemFont(UIFont.systemFont(ofSize: 16, weight: .semibold)),
+            .menuHeight(56),
+            .selectedMenuItemLabelColor(.black),
+            .unselectedMenuItemLabelColor(UIColor(hexString: "222222")!),
+            .menuMargin(0),
+            .scrollMenuBackgroundColor(.white)
+        ]
+        self.addPageMenu(menu: CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height), pageMenuOptions: parameters))
+        self.pageMenuController!.delegate = self
+
+        self.headerBackgroundColor = UIColor.white
+        self.navBarItemsColor = UIColor.black
     }
     
     func configBarItem() {
@@ -76,29 +102,5 @@ class GroupDetailVC: MXSegmentedPagerController {
     
     @objc private func onClickMoreButton() {
         dismiss(animated: true, completion: nil)
-    }
-    
-    override func numberOfPages(in segmentedPager: MXSegmentedPager) -> Int {
-        return 2
-    }
-    
-    override func segmentedPager(_ segmentedPager: MXSegmentedPager, titleForSectionAt index: Int) -> String {
-        return ["Thống kê", "Thiết lập bảo vệ"][index]
-    }
-    
-    override func segmentedPager(_ segmentedPager: MXSegmentedPager, didScrollWith parallaxHeader: MXParallaxHeader) {
-        print(1)
-    }
-    
-    override func segmentedPager(_ segmentedPager: MXSegmentedPager, viewControllerForPageAt index: Int) -> UIViewController {
-        if index == 0 {
-            return vc1
-        } else {
-            return vc2
-        }
-    }
-    
-    override func heightForSegmentedControl(in segmentedPager: MXSegmentedPager) -> CGFloat {
-        return 48
     }
 }

@@ -9,12 +9,13 @@ import UIKit
 import ObjectMapper
 
 class UserModel: NSObject, Mappable {
-    var userid: String?
+    var userid: Int?
     var email: String?
     var fullname: String?
     var phonenumber: String?
     var isverify: Bool?
     var isActive: Bool?
+    var isOwner: Bool?
     
     override init() {
         super.init()
@@ -31,5 +32,6 @@ class UserModel: NSObject, Mappable {
         phonenumber <- map["PhoneNumber"]
         isverify <- map["IsVerify"]
         isActive <- map["IsActive"]
+        isOwner <- map["IsOwner"]
     }
 }

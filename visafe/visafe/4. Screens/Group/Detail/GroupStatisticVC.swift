@@ -12,7 +12,7 @@ class GroupStatisticVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var group: GroupModel
-    
+    var scrollDelegateFunc: ((UIScrollView)->Void)?
     var statisticModel: StatisticModel = StatisticModel()
     var statisticCategory: [StatisticCategory] = []
     var statisticCategoryApp: [StatisticCategoryApp] = []
@@ -37,10 +37,9 @@ class GroupStatisticVC: BaseViewController {
     }
     
     func prepareData() {
-//        guard let grId = group.groupid else { return }
-        let grId = "58b0559e-9159-473c-a4d8-56651ad4b22b"
+        guard let grId = group.groupid else { return }
         showLoading()
-        GroupWorker.getStatistic(grId: grId, limit: 24) { [weak self] (statistic, error) in
+        GroupWorker.getStatistic(grId: grId, limit: 168) { [weak self] (statistic, error) in
             guard let weakSelf = self else { return }
             if let model = statistic {
                 weakSelf.statisticModel = model
@@ -53,14 +52,28 @@ class GroupStatisticVC: BaseViewController {
     
     func bindingData() {
         statisticCategory = statisticModel.top_categories?.sorted(by: { (model, model2) -> Bool in
-            return model.count < model2.count
+            return model.count > model2.count
+        }).filter({ (cate) -> Bool in
+            return cate.count > 0
         }) ?? []
         
         for item in statisticCategory {
             statisticCategoryApp += item.apps ?? []
         }
         statisticCategoryApp = statisticCategoryApp.sorted { (app1, app2) -> Bool in
-            return app1.count < app2.count
+            return app1.count > app2.count
+        }.filter({ (app) -> Bool in
+            return app.count > 0
+        })
+        
+        let numTotalCate = statisticCategory.map({$0.count}).reduce(0, +)
+        for item in statisticCategory {
+            item.percent = Int(item.count * 100 / numTotalCate)
+        }
+        
+        let numTotalCateApp = statisticCategoryApp.map({$0.count}).reduce(0, +)
+        for item in statisticCategoryApp {
+            item.percent = Int(item.count * 100 / numTotalCateApp)
         }
     }
 }
@@ -86,6 +99,7 @@ extension GroupStatisticVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: StatisticSumaryCell.className) as? StatisticSumaryCell else {
                 return UITableViewCell()
             }
+            cell.bindingData(statit: statisticModel)
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: StatisticCategoryCell.className) as? StatisticCategoryCell else {
@@ -104,6 +118,8 @@ extension GroupStatisticVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return UIView()
         } else {
+            if section == 1 && statisticCategory.count == 0 { return UIView() }
+            if section == 2 && statisticCategoryApp.count == 0 { return UIView() }
             let viewHeader = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 54))
             viewHeader.backgroundColor = UIColor.white
             let lineView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 6))
@@ -126,6 +142,8 @@ extension GroupStatisticVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 0.0001
         } else {
+            if section == 1 && statisticCategory.count == 0 { return 0.001 }
+            if section == 2 && statisticCategoryApp.count == 0 { return 0.001 }
             return 54
         }
     }
@@ -136,5 +154,14 @@ extension GroupStatisticVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.001
+    }
+}
+
+extension GroupStatisticVC: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.scrollDelegateFunc != nil {
+            self.scrollDelegateFunc!(scrollView)
+        }
     }
 }

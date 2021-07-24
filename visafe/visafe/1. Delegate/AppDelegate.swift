@@ -40,14 +40,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configRootVC() {
-        let vc = GroupDetailVC(group: GroupModel())
-        let nav = BaseNavigationController(rootViewController: vc)
-        setRootViewController(vc)
-//        if CacheManager.shared.getIsShowOnboarding() {
-//            setRootVCToTabVC()
-//        } else {
-//            setRootVCToOnboardingVC()
-//        }
+//        let vc = GroupDetailVC(group: GroupModel())
+//        let nav = BaseNavigationController(rootViewController: vc)
+//        setRootViewController(vc)
+        if CacheManager.shared.getIsShowOnboarding() {
+            setRootVCToTabVC()
+        } else {
+            setRootVCToOnboardingVC()
+        }
     }
     
     func setRootVCToTabVC() {

@@ -11,6 +11,8 @@ class GroupSettingDetailVC: BaseViewController {
     
     var group: GroupModel
     var onContinue:(() -> Void)?
+    var scrollDelegateFunc: ((UIScrollView)->Void)?
+    var parentVC: UIViewController?
     
     var sources: [PostGroupParentModel] = []
     
@@ -59,8 +61,8 @@ extension GroupSettingDetailVC: UITableViewDelegate, UITableViewDataSource {
         cell.bindingData(group: model)
         cell.actionMore = { [weak self] in
             guard let weakSelf = self else { return }
-//            let vc = GroupSettingVC(group: weakSelf.group, editMode: weakSelf.editMode, parentType: model.type!)
-//            weakSelf.navigationController?.pushViewController(vc)
+            let vc = GroupProtectVC(group: weakSelf.group, type: model.type!)
+            weakSelf.parentVC?.navigationController?.pushViewController(vc)
         }
         cell.switchAction = { [weak self] isOn in
             guard let weakSelf = self else { return }
@@ -73,3 +75,13 @@ extension GroupSettingDetailVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+
+extension GroupSettingDetailVC: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.scrollDelegateFunc != nil {
+            self.scrollDelegateFunc!(scrollView)
+        }
+    }
+}
+
