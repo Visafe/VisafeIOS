@@ -10,7 +10,7 @@ import UIKit
 import UIKit
 import PageMenu
 
-class GroupProtectVC: HeaderedCAPSPageMenuViewController, CAPSPageMenuDelegate {
+class GroupProtectVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate {
     
     var subPageControllers: [UIViewController] = []
     var header: ProtectHeaderView!

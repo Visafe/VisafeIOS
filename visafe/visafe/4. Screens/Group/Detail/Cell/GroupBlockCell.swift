@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Kingfisher
 
-class GroupBlockCell: UITableViewCell {
+class GroupBlockCell: BaseTableCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
     
@@ -26,6 +27,8 @@ class GroupBlockCell: UITableViewCell {
     
     func bindingData(model: QueryLogModel) {
         domainLabel.text = model.question?.host
-        
+        if let urlString = model.question?.host, let url = URL(string: "https://www.google.com/s2/favicons?sz=96&domain_url=\(urlString)") {
+            iconImageView.kf.setImage(with: url)
+        }
     }
 }

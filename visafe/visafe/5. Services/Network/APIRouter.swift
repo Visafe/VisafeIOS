@@ -55,7 +55,7 @@ enum APIRouter {
     case listNotification(pageIndex: Int)
     
     //statistic
-    case statisticWorkspace(id: String)
+    case statisticWorkspace(id: String, limit: Int)
     case statisticGroup(id: String, limit: Int)
     case logGroup(param: QueryLogParam)
     case logWorkspace(param: QueryLogParam)
@@ -249,8 +249,9 @@ extension APIRouter: TargetType {
             pars = param.toJSON()
         case .listNotification(pageIndex: let page):
             pars["page"] = page
-        case .statisticWorkspace(id: let wspId):
+        case .statisticWorkspace(id: let wspId, limit: let time):
             pars["workspace_id"] = wspId
+            pars["time_limit"] = time
         case .statisticGroup(id: let gId, limit: let time):
             pars["group_id"] = gId
             pars["time_limit"] = time

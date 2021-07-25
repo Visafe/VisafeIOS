@@ -8,14 +8,34 @@
 import UIKit
 import ObjectMapper
 
+public enum GroupMemberRoleEnum: Int {
+    case owner = 1
+    case admin = 2
+    case suppervisor = 3
+    case member = 4
+    
+    func getTitle() -> String {
+        switch self {
+        case .owner:
+            return "Chủ nhóm"
+        case .admin:
+            return "Quản trị viên"
+        case .suppervisor:
+            return "Giám sát viên"
+        default:
+            return "Thành viên"
+        }
+    }
+}
+
 class UserModel: NSObject, Mappable {
-    var userid: Int?
+    var userid: String?
     var email: String?
     var fullname: String?
     var phonenumber: String?
     var isverify: Bool?
     var isActive: Bool?
-    var isOwner: Bool?
+    var role: GroupMemberRoleEnum = .member
     
     override init() {
         super.init()
@@ -32,6 +52,5 @@ class UserModel: NSObject, Mappable {
         phonenumber <- map["PhoneNumber"]
         isverify <- map["IsVerify"]
         isActive <- map["IsActive"]
-        isOwner <- map["IsOwner"]
     }
 }

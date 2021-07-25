@@ -16,6 +16,7 @@ class GroupStatisticVC: BaseViewController {
     var statisticModel: StatisticModel = StatisticModel()
     var statisticCategory: [StatisticCategory] = []
     var statisticCategoryApp: [StatisticCategoryApp] = []
+    var timeType: ChooseTimeEnum = .day
     
     init(group: GroupModel) {
         self.group = group
@@ -39,7 +40,7 @@ class GroupStatisticVC: BaseViewController {
     func prepareData() {
         guard let grId = group.groupid else { return }
         showLoading()
-        GroupWorker.getStatistic(grId: grId, limit: 168) { [weak self] (statistic, error) in
+        GroupWorker.getStatistic(grId: grId, limit: timeType.rawValue) { [weak self] (statistic, error) in
             guard let weakSelf = self else { return }
             if let model = statistic {
                 weakSelf.statisticModel = model

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GroupSettingLinkCell: UITableViewCell {
+class GroupSettingLinkCell: BaseTableCell {
 
     @IBOutlet weak var linkLabel: UILabel!
     @IBOutlet weak var moreButton: UIButton!

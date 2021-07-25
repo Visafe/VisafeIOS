@@ -294,8 +294,8 @@ class GroupModel: NSObject, Mappable {
     var use_global_blocked_services: Bool?
     var upstreams: [String]?
     var disallowed: Bool?
-    var usersActive: [UserModel]?
-    var userManage: [UserModel]?
+    var usersActive: [Int] = []
+    var userManage: [Int] = []
     var usersGroupInfo: [UserModel] = []
     var days: [String] = []
     var times: [String] = []

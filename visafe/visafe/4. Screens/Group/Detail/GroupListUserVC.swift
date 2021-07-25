@@ -20,6 +20,25 @@ class GroupListUserVC: BaseViewController {
         super.init(nibName: GroupListUserVC.className, bundle: nil)
     }
     
+    func updateData() {
+        for item in listUser {
+            guard let userId = item.userid?.int else { continue }
+            if item.userid?.int == group.fkUserId {
+                item.role = .owner
+            }
+            if group.userManage.contains(where: { (id) -> Bool in
+                if (id == userId) { return true } else { return false }
+            }) {
+                item.role = .admin
+            }
+            if group.usersActive.contains(where: { (id) -> Bool in
+                if (id == userId) { return true } else { return false }
+            }) {
+                item.role = .suppervisor
+            }
+        }
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,6 +47,8 @@ class GroupListUserVC: BaseViewController {
         super.viewDidLoad()
         title = "Quản lý thành viên"
         tableView.registerCells(cells: [GroupMemberCell.className])
+        updateData()
+        tableView.reloadData()
     }
 }
 
@@ -46,7 +67,6 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let user = listUser[indexPath.row]
-        user.isOwner = (group.fkUserId == CacheManager.shared.getCurrentUser()?.userid)
         cell.binding(user: user)
         return cell
     }

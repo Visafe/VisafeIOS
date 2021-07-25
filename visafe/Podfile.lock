@@ -1,4 +1,5 @@
 PODS:
+  - ACTabScrollView (0.3.0)
   - AppAuth (1.4.0):
     - AppAuth/Core (= 1.4.0)
     - AppAuth/ExternalUserAgent (= 1.4.0)
@@ -22,6 +23,7 @@ PODS:
   - SwiftyUserDefaults (5.3.0)
 
 DEPENDENCIES:
+  - ACTabScrollView
   - DACircularProgress
   - ESTabBarController-swift
   - GoogleSignIn
@@ -34,6 +36,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ACTabScrollView
     - AppAuth
     - DACircularProgress
     - ESTabBarController-swift
@@ -48,6 +51,7 @@ SPEC REPOS:
     - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
+  ACTabScrollView: c24a83d10a6db5797392627a5eace49480b0d534
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
@@ -61,6 +65,6 @@ SPEC CHECKSUMS:
   SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
 
-PODFILE CHECKSUM: b37e7e2f6d4c4511bb06dc02de1d0e41b9eaaec9
+PODFILE CHECKSUM: d19032462cbd2bfd3f1583e9176235ee5c6423da
 
 COCOAPODS: 1.10.1

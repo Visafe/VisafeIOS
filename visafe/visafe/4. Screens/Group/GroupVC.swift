@@ -13,6 +13,9 @@ class GroupVC: BaseViewController {
     
     var myGroups: [GroupModel] = []
     var inviteGroups: [GroupModel] = []
+    var scrollDelegateFunc: ((UIScrollView)->Void)?
+    var statisticModel: StatisticModel = StatisticModel()
+    var timeType: ChooseTimeEnum = .day
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,18 +26,7 @@ class GroupVC: BaseViewController {
     
     func configView() {
         // tableview
-        tableView.registerCells(cells: [GroupCell.className])
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        tableView.backgroundColor = UIColor.clear
-        tableView.contentInset = UIEdgeInsets(top: kScreenWidth*180/375-54, left: 0, bottom: 0, right: 0)
-        
-        //create view as header view
-        guard let headerView = GroupHeaderView.loadFromNib() else { return }
-        headerView.addGroupAction = { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.showFormAddGroup()
-        }
-        tableView.tableHeaderView = headerView
+        tableView.registerCells(cells: [GroupCell.className, WorkspaceSumaryCell.className])
     }
     
     func showFormAddGroup() {
@@ -57,18 +49,24 @@ class GroupVC: BaseViewController {
     }
     
     func prepareData() {
+        guard let wspId = CacheManager.shared.getCurrentWorkspace()?.id else { return }
         showLoading()
-        let workspace = CacheManager.shared.getCurrentWorkspace()
-        GroupWorker.list(wsid: workspace?.id) { [weak self] (result, error) in
+        WorkspaceWorker.getStatistic(wspId: wspId, limit: timeType.rawValue) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
-            weakSelf.hideLoading()
-            weakSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
-                return m.isOwner == true
-            }) ?? []
-            weakSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
-                return m.isOwner == false
-            }) ?? []
-            weakSelf.tableView.reloadData()
+            if let model = result {
+                weakSelf.statisticModel = model
+            }
+            GroupWorker.list(wsid: wspId) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                weakSelf.hideLoading()
+                weakSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
+                    return m.isOwner == true
+                }) ?? []
+                weakSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
+                    return m.isOwner == false
+                }) ?? []
+                weakSelf.tableView.reloadData()
+            }
         }
     }
     
@@ -81,30 +79,60 @@ class GroupVC: BaseViewController {
     
     func refreshData() {
         if isViewLoaded {
-            let workspace = CacheManager.shared.getCurrentWorkspace()
-            GroupWorker.list(wsid: workspace?.id) { [weak self] (result, error) in
+            guard let wspId = CacheManager.shared.getCurrentWorkspace()?.id else { return }
+            WorkspaceWorker.getStatistic(wspId: wspId, limit: timeType.rawValue) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
-                weakSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
-                    return m.isOwner == true
-                }) ?? []
-                weakSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
-                    return m.isOwner == false
-                }) ?? []
-                weakSelf.tableView.reloadData()
-                weakSelf.tableView.endRefreshing()
+                if let model = result {
+                    weakSelf.statisticModel = model
+                }
+                GroupWorker.list(wsid: wspId) { [weak self] (result, error) in
+                    guard let weakSelf = self else { return }
+                    weakSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
+                        return m.isOwner == true
+                    }) ?? []
+                    weakSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
+                        return m.isOwner == false
+                    }) ?? []
+                    weakSelf.tableView.reloadData()
+                    weakSelf.tableView.endRefreshing()
+                }
             }
         }
+    }
+    
+    func chooseTimeAction() {
+        guard let view = ChooseTimeView.loadFromNib() else { return }
+        view.chooseTimeAction = { [weak self] type in
+            guard let weakSelf = self else { return }
+            guard weakSelf.timeType != type else { return }
+            weakSelf.timeType = type
+            weakSelf.prepareData()
+        }
+        view.binding()
+        showPopup(view: view)
+    }
+    
+    func changeWorkspace() {
+        let vc = ListWorkspaceVC()
+        let nav = BaseNavigationController(rootViewController: vc)
+        vc.selectedWorkspace = { [weak self] workspace in
+            guard let weakSelf = self else { return }
+            weakSelf.refreshData()
+        }
+        present(nav, animated: true)
     }
 }
 
 extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
+            return 1
+        } else if section == 1 {
             return myGroups.count
         } else {
             return inviteGroups.count
@@ -112,27 +140,47 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupCell.className) as? GroupCell else {
-            return UITableViewCell()
-        }
         if indexPath.section == 0 {
-            cell.bindingData(group: myGroups[indexPath.row])
-            cell.onMoreAction = { [weak self] in
-                guard let weakSelf = self else { return }
-                weakSelf.showMoreAction(group: weakSelf.myGroups[indexPath.row])
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: WorkspaceSumaryCell.className) as? WorkspaceSumaryCell else {
+                return UITableViewCell()
             }
+            cell.actionChooseTime = { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.chooseTimeAction()
+            }
+            cell.actionChangeWorkspace = { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.changeWorkspace()
+            }
+            cell.actionCreateGroup = { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.showFormAddGroup()
+            }
+            cell.bindingData(statistic: statisticModel, timeType: timeType)
+            return cell
         } else {
-            cell.bindingData(group: inviteGroups[indexPath.row])
-            cell.onMoreAction = { [weak self] in
-                guard let weakSelf = self else { return }
-                weakSelf.showMoreAction(group: weakSelf.inviteGroups[indexPath.row])
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupCell.className) as? GroupCell else {
+                return UITableViewCell()
             }
+            if indexPath.section == 1 {
+                cell.bindingData(group: myGroups[indexPath.row])
+                cell.onMoreAction = { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.showMoreAction(group: weakSelf.myGroups[indexPath.row])
+                }
+            } else {
+                cell.bindingData(group: inviteGroups[indexPath.row])
+                cell.onMoreAction = { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.showMoreAction(group: weakSelf.inviteGroups[indexPath.row])
+                }
+            }
+            return cell
         }
-        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
+        if section == 1 {
             guard myGroups.count > 0 else { return UIView() }
             let headerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 44))
             headerView.backgroundColor = UIColor.white
@@ -141,7 +189,7 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
             titleLabel.text = "Nhóm bạn quản lý"
             headerView.addSubview(titleLabel)
             return headerView
-        } else {
+        } else if section == 2 {
             guard inviteGroups.count > 0 else { return UIView() }
             let headerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 44))
             headerView.backgroundColor = UIColor.white
@@ -151,14 +199,16 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
             headerView.addSubview(titleLabel)
             return headerView
         }
+        return UIView()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
+        if section == 1 {
             return myGroups.count > 0 ? 44 : 0.001
-        } else {
+        } else if section == 2 {
             return inviteGroups.count > 0 ? 44 : 0.001
         }
+        return 0.001
     }
     
     func showMoreAction(group: GroupModel) {
@@ -206,9 +256,9 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             detailGroup(group: myGroups[indexPath.row])
-        } else {
+        } else if indexPath.section == 2 {
             detailGroup(group: inviteGroups[indexPath.row])
         }
     }
@@ -223,8 +273,18 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func detailGroup(group: GroupModel) {
         let vc = GroupDetailVC(group: group)
+        vc.timeType = timeType
         let nav = BaseNavigationController(rootViewController: vc)
         present(nav, animated: true)
+    }
+}
+
+extension GroupVC: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.scrollDelegateFunc != nil {
+            self.scrollDelegateFunc!(scrollView)
+        }
     }
 }
 

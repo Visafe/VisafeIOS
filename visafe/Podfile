@@ -15,5 +15,6 @@ target 'visafe' do
   pod 'SVPinView'
   pod "ESTabBarController-swift"
   pod 'PageMenu'
+  pod 'ACTabScrollView'
 
 end

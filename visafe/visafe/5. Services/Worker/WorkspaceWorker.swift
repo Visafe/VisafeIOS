@@ -81,8 +81,8 @@ class WorkspaceWorker {
         }
     }
     
-    static func getStatistic(wspId: String, completion: @escaping (_ result: StatisticModel?, _ error: Error?) -> Void) {
-        let router = APIRouter.statisticWorkspace(id: wspId)
+    static func getStatistic(wspId: String, limit: Int, completion: @escaping (_ result: StatisticModel?, _ error: Error?) -> Void) {
+        let router = APIRouter.statisticWorkspace(id: wspId, limit: limit)
         APIManager.shared.request(target: router) { (data, error) in
             var loginResult: StatisticModel?
             if let data = data {

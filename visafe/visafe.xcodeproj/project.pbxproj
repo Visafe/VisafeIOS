@@ -30,6 +30,8 @@
 		C90EA7402684C298002502F5 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90EA73E2684C298002502F5 /* LoginVC.xib */; };
 		C913CA74269CA1BD00E8440F /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = C913CA73269CA1BD00E8440F /* FacebookLogin */; };
 		C913CA78269CA88D00E8440F /* SSSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C913CA77269CA88D00E8440F /* SSSS.swift */; };
+		C9159C9B26ADB99E00497D86 /* ChooseTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9159C9926ADB99E00497D86 /* ChooseTimeCell.swift */; };
+		C9159C9C26ADB99E00497D86 /* ChooseTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9159C9A26ADB99E00497D86 /* ChooseTimeCell.xib */; };
 		C91813F7269AFB1300DC0E83 /* ProfileHelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91813F5269AFB1300DC0E83 /* ProfileHelpVC.xib */; };
 		C91813F8269AFB1300DC0E83 /* ProfileHelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91813F6269AFB1300DC0E83 /* ProfileHelpVC.swift */; };
 		C91813FC269AFE7000DC0E83 /* ProfileHelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91813FA269AFE7000DC0E83 /* ProfileHelpCell.swift */; };
@@ -150,7 +152,7 @@
 		C9777A3B269ACDE500C40031 /* ProfileFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9777A3A269ACDE500C40031 /* ProfileFooterView.swift */; };
 		C9777A3E269ACDFC00C40031 /* ProfileFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9777A3D269ACDFC00C40031 /* ProfileFooterView.xib */; };
 		C97A1C22269F39D200EC98DC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A1C21269F39D100EC98DC /* DateExtension.swift */; };
-		C98786EA26ABC7AD007639ED /* HeaderedCAPSPageMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98786E826ABC7AD007639ED /* HeaderedCAPSPageMenuViewController.swift */; };
+		C98786EA26ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98786E826ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift */; };
 		C98786F826ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98786F726ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift */; };
 		C99034D32694C3C1009C078F /* TextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99034D22694C3C0009C078F /* TextfieldExtension.swift */; };
 		C993D24E26A425AF00684F80 /* EnterPinVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C993D24C26A425AF00684F80 /* EnterPinVC.xib */; };
@@ -227,6 +229,14 @@
 		C9EDB55B26839E74009CBD93 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EDB55326839E74009CBD93 /* GroupCell.swift */; };
 		C9EDB55C26839E74009CBD93 /* PostGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EDB55426839E74009CBD93 /* PostGroupVC.swift */; };
 		C9EDB55D26839E74009CBD93 /* PostGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EDB55526839E74009CBD93 /* PostGroupVC.xib */; };
+		C9EEB8B726AD634B008F093C /* HeaderedACTabScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEB8B626AD634B008F093C /* HeaderedACTabScrollViewController.swift */; };
+		C9EEB8BB26AD641F008F093C /* WorkspaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEB8BA26AD641F008F093C /* WorkspaceVC.swift */; };
+		C9EEB8C126AD653A008F093C /* WorkspaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EEB8C026AD653A008F093C /* WorkspaceVC.xib */; };
+		C9EEB8C726AD7D8A008F093C /* AbstractHeaderedPageMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEB8C626AD7D8A008F093C /* AbstractHeaderedPageMenuViewController.swift */; };
+		C9EEB8E026ADAF38008F093C /* WorkspaceSumaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEB8DE26ADAF38008F093C /* WorkspaceSumaryCell.swift */; };
+		C9EEB8E126ADAF38008F093C /* WorkspaceSumaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EEB8DF26ADAF38008F093C /* WorkspaceSumaryCell.xib */; };
+		C9EEB8E726ADB768008F093C /* ChooseTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEB8E526ADB767008F093C /* ChooseTimeView.swift */; };
+		C9EEB8E826ADB768008F093C /* ChooseTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EEB8E626ADB768008F093C /* ChooseTimeView.xib */; };
 		C9F2491B26AAA7AF00EE7442 /* StatisticSumaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2491A26AAA7AF00EE7442 /* StatisticSumaryView.swift */; };
 		C9F2491F26AAA80900EE7442 /* StatisticSumaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F2491E26AAA80900EE7442 /* StatisticSumaryView.xib */; };
 		C9F2492426AAB87200EE7442 /* StatisticSumaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2492226AAB87200EE7442 /* StatisticSumaryCell.swift */; };
@@ -293,6 +303,8 @@
 		C90EA73D2684C298002502F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C90EA73E2684C298002502F5 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		C913CA77269CA88D00E8440F /* SSSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSS.swift; sourceTree = "<group>"; };
+		C9159C9926ADB99E00497D86 /* ChooseTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTimeCell.swift; sourceTree = "<group>"; };
+		C9159C9A26ADB99E00497D86 /* ChooseTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTimeCell.xib; sourceTree = "<group>"; };
 		C91813F5269AFB1300DC0E83 /* ProfileHelpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHelpVC.xib; sourceTree = "<group>"; };
 		C91813F6269AFB1300DC0E83 /* ProfileHelpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHelpVC.swift; sourceTree = "<group>"; };
 		C91813FA269AFE7000DC0E83 /* ProfileHelpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHelpCell.swift; sourceTree = "<group>"; };
@@ -412,7 +424,7 @@
 		C9777A3A269ACDE500C40031 /* ProfileFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooterView.swift; sourceTree = "<group>"; };
 		C9777A3D269ACDFC00C40031 /* ProfileFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileFooterView.xib; sourceTree = "<group>"; };
 		C97A1C21269F39D100EC98DC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		C98786E826ABC7AD007639ED /* HeaderedCAPSPageMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderedCAPSPageMenuViewController.swift; sourceTree = "<group>"; };
+		C98786E826ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderedPageMenuScrollViewController.swift; sourceTree = "<group>"; };
 		C98786F726ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractHeaderedTabScrollViewController.swift; sourceTree = "<group>"; };
 		C99034D22694C3C0009C078F /* TextfieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldExtension.swift; sourceTree = "<group>"; };
 		C993D24C26A425AF00684F80 /* EnterPinVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterPinVC.xib; sourceTree = "<group>"; };
@@ -485,6 +497,14 @@
 		C9EDB55326839E74009CBD93 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		C9EDB55426839E74009CBD93 /* PostGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostGroupVC.swift; sourceTree = "<group>"; };
 		C9EDB55526839E74009CBD93 /* PostGroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostGroupVC.xib; sourceTree = "<group>"; };
+		C9EEB8B626AD634B008F093C /* HeaderedACTabScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderedACTabScrollViewController.swift; sourceTree = "<group>"; };
+		C9EEB8BA26AD641F008F093C /* WorkspaceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceVC.swift; sourceTree = "<group>"; };
+		C9EEB8C026AD653A008F093C /* WorkspaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkspaceVC.xib; sourceTree = "<group>"; };
+		C9EEB8C626AD7D8A008F093C /* AbstractHeaderedPageMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractHeaderedPageMenuViewController.swift; sourceTree = "<group>"; };
+		C9EEB8DE26ADAF38008F093C /* WorkspaceSumaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceSumaryCell.swift; sourceTree = "<group>"; };
+		C9EEB8DF26ADAF38008F093C /* WorkspaceSumaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkspaceSumaryCell.xib; sourceTree = "<group>"; };
+		C9EEB8E526ADB767008F093C /* ChooseTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTimeView.swift; sourceTree = "<group>"; };
+		C9EEB8E626ADB768008F093C /* ChooseTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTimeView.xib; sourceTree = "<group>"; };
 		C9F2491A26AAA7AF00EE7442 /* StatisticSumaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticSumaryView.swift; sourceTree = "<group>"; };
 		C9F2491E26AAA80900EE7442 /* StatisticSumaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticSumaryView.xib; sourceTree = "<group>"; };
 		C9F2492226AAB87200EE7442 /* StatisticSumaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticSumaryCell.swift; sourceTree = "<group>"; };
@@ -891,12 +911,12 @@
 		C969B38A269ADB210066A88A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C969B38B269ADB210066A88A /* SecurityWorkspaceCell.swift */,
-				C969B38C269ADB210066A88A /* ChooseTypeWorkspaceCell.xib */,
 				C969B38D269ADB210066A88A /* ChooseTypeWorkspaceCell.swift */,
+				C969B38C269ADB210066A88A /* ChooseTypeWorkspaceCell.xib */,
 				C969B38E269ADB210066A88A /* MoreActionWorkspaceView.swift */,
-				C969B38F269ADB210066A88A /* SecurityWorkspaceCell.xib */,
 				C969B390269ADB210066A88A /* MoreActionWorkspaceView.xib */,
+				C969B38B269ADB210066A88A /* SecurityWorkspaceCell.swift */,
+				C969B38F269ADB210066A88A /* SecurityWorkspaceCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -927,8 +947,10 @@
 		C98786E626ABC7AD007639ED /* HeaderedTabScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				C9EEB8B626AD634B008F093C /* HeaderedACTabScrollViewController.swift */,
 				C98786F726ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift */,
-				C98786E826ABC7AD007639ED /* HeaderedCAPSPageMenuViewController.swift */,
+				C98786E826ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift */,
+				C9EEB8C626AD7D8A008F093C /* AbstractHeaderedPageMenuViewController.swift */,
 			);
 			path = HeaderedTabScrollView;
 			sourceTree = "<group>";
@@ -1120,6 +1142,9 @@
 		C9EDB54C26839E74009CBD93 /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				C9EEB8E426ADB725008F093C /* View */,
+				C9EEB8BA26AD641F008F093C /* WorkspaceVC.swift */,
+				C9EEB8C026AD653A008F093C /* WorkspaceVC.xib */,
 				C9CCAB5026A5DFCA00C04BC5 /* Detail */,
 				C9EDB54F26839E74009CBD93 /* Cell */,
 				C9FA15FA268A2DD700A1A6C6 /* GroupSettingVC.swift */,
@@ -1169,8 +1194,21 @@
 				C9BCBC6326975DEC007F652C /* GroupSettingParentCell.xib */,
 				C9A15B4C2699BFDA0065D5C2 /* GroupHeaderView.swift */,
 				C9A15B4F2699BFE50065D5C2 /* GroupHeaderView.xib */,
+				C9EEB8DE26ADAF38008F093C /* WorkspaceSumaryCell.swift */,
+				C9EEB8DF26ADAF38008F093C /* WorkspaceSumaryCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C9EEB8E426ADB725008F093C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9EEB8E526ADB767008F093C /* ChooseTimeView.swift */,
+				C9EEB8E626ADB768008F093C /* ChooseTimeView.xib */,
+				C9159C9926ADB99E00497D86 /* ChooseTimeCell.swift */,
+				C9159C9A26ADB99E00497D86 /* ChooseTimeCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CB200029E33700DD2D0EDA4D /* Pods */ = {
@@ -1309,6 +1347,7 @@
 				C9BCBC6526975DEC007F652C /* GroupSettingParentCell.xib in Resources */,
 				C93ED193268244A900B03E8A /* ConfigVC.xib in Resources */,
 				C993D24E26A425AF00684F80 /* EnterPinVC.xib in Resources */,
+				C9159C9C26ADB99E00497D86 /* ChooseTimeCell.xib in Resources */,
 				C971FA0526974E6F00BB7118 /* PostGroupAboutCell.xib in Resources */,
 				C9F2491F26AAA80900EE7442 /* StatisticSumaryView.xib in Resources */,
 				0EDEEFB12681F2A000572C4E /* LaunchScreen.storyboard in Resources */,
@@ -1334,6 +1373,7 @@
 				C9777A32269AC5E100C40031 /* ProfileCell.xib in Resources */,
 				C9FA15FD268A2DD700A1A6C6 /* GroupSettingVC.xib in Resources */,
 				C9B79465268613A700258A72 /* RegisterVC.xib in Resources */,
+				C9EEB8E126ADAF38008F093C /* WorkspaceSumaryCell.xib in Resources */,
 				C9C0B9D226A580B600C9869A /* LottieLogo1.json in Resources */,
 				C9E7A4A32690C6100012985B /* ConfirmDeleteView.xib in Resources */,
 				C9E7A494269087240012985B /* GroupSettingLinkCell.xib in Resources */,
@@ -1370,6 +1410,7 @@
 				C9FA1602268A2DE400A1A6C6 /* GroupTimeVC.xib in Resources */,
 				C93ED15F268232A100B03E8A /* SettingVC.xib in Resources */,
 				C9B7949626862C4800258A72 /* EnterOTPVC.xib in Resources */,
+				C9EEB8C126AD653A008F093C /* WorkspaceVC.xib in Resources */,
 				C969B396269ADB210066A88A /* WorkspaceCell.xib in Resources */,
 				0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */,
 				C999AB08268E03F200F657A9 /* GroupSettingCell.xib in Resources */,
@@ -1379,6 +1420,7 @@
 				C9CCAB5426A5DFE300C04BC5 /* GroupDetailVC.xib in Resources */,
 				C9777A3E269ACDFC00C40031 /* ProfileFooterView.xib in Resources */,
 				C9E7A49926909E890012985B /* MoreLinkSettingView.xib in Resources */,
+				C9EEB8E826ADB768008F093C /* ChooseTimeView.xib in Resources */,
 				C91EE7F526AC750B006ADAE9 /* GroupMemberCell.xib in Resources */,
 				C91813FD269AFE7000DC0E83 /* ProfileHelpCell.xib in Resources */,
 				C970323826907AA2007F45E0 /* EnterLinkWebsiteView.xib in Resources */,
@@ -1488,6 +1530,7 @@
 				C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */,
 				C971F9FF2697498A00BB7118 /* PostGroupAboutVC.swift in Sources */,
 				C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */,
+				C9EEB8B726AD634B008F093C /* HeaderedACTabScrollViewController.swift in Sources */,
 				C9777A3B269ACDE500C40031 /* ProfileFooterView.swift in Sources */,
 				C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */,
 				C9DC8F6A26A6ED540021A8BD /* GroupDetailHeader.swift in Sources */,
@@ -1517,6 +1560,7 @@
 				C969B3A7269ADFD30066A88A /* ListWorkspaceVC.swift in Sources */,
 				C940AE96268376A70069B830 /* TableViewExtension.swift in Sources */,
 				C97A1C22269F39D200EC98DC /* DateExtension.swift in Sources */,
+				C9EEB8E026ADAF38008F093C /* WorkspaceSumaryCell.swift in Sources */,
 				C993D24F26A425AF00684F80 /* EnterPinVC.swift in Sources */,
 				C9C0B9D326A580B600C9869A /* ExampleLottieAnimateContentView.swift in Sources */,
 				C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */,
@@ -1526,6 +1570,7 @@
 				C9FA15F7268A2DBF00A1A6C6 /* GroupNameVC.swift in Sources */,
 				C924CFE526A7D5390058EEDD /* GroupStatisticVC.swift in Sources */,
 				C98786F826ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift in Sources */,
+				C9EEB8BB26AD641F008F093C /* WorkspaceVC.swift in Sources */,
 				C91EE7F926AC897A006ADAE9 /* QueryLogParam.swift in Sources */,
 				C9FA15FC268A2DD700A1A6C6 /* GroupSettingVC.swift in Sources */,
 				C9B79466268613A700258A72 /* RegisterVC.swift in Sources */,
@@ -1548,7 +1593,8 @@
 				C95A5862268867310077112F /* PageViewControllerExtension.swift in Sources */,
 				C94B39BC268A24D700046958 /* DeleteDeviceToIdentifierParam.swift in Sources */,
 				0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */,
-				C98786EA26ABC7AD007639ED /* HeaderedCAPSPageMenuViewController.swift in Sources */,
+				C9EEB8E726ADB768008F093C /* ChooseTimeView.swift in Sources */,
+				C98786EA26ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift in Sources */,
 				C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */,
 				C940AE92268375C10069B830 /* WorkspaceModel.swift in Sources */,
 				C9E7A493269087240012985B /* GroupSettingLinkCell.swift in Sources */,
@@ -1574,7 +1620,9 @@
 				C94B39C8268A26DA00046958 /* ChangeViewerPermisionParam.swift in Sources */,
 				C919B96926822144009982C3 /* BaseViewController.swift in Sources */,
 				C9181402269B045E00DC0E83 /* ChangePasswordVC.swift in Sources */,
+				C9EEB8C726AD7D8A008F093C /* AbstractHeaderedPageMenuViewController.swift in Sources */,
 				C9C0B9CE26A580B600C9869A /* ExampleBouncesContentView.swift in Sources */,
+				C9159C9B26ADB99E00497D86 /* ChooseTimeCell.swift in Sources */,
 				C9B794892686262300258A72 /* ChangePassParam.swift in Sources */,
 				C9F2492A26AACB3D00EE7442 /* GroupSettingDetailVC.swift in Sources */,
 				C99FD1CB2697462700A8F731 /* ProtectVC.swift in Sources */,

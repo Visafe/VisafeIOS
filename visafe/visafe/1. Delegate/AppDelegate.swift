@@ -37,12 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configView() {
         UITabBar.appearance().tintColor = UIColor.mainColorOrange()
         UIBarButtonItem.appearance().tintColor = UIColor.black
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000, vertical: 0), for: .default)
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "navi_back")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "navi_back")
     }
     
     func configRootVC() {
-//        let vc = GroupDetailVC(group: GroupModel())
-//        let nav = BaseNavigationController(rootViewController: vc)
-//        setRootViewController(vc)
         if CacheManager.shared.getIsShowOnboarding() {
             setRootVCToTabVC()
         } else {

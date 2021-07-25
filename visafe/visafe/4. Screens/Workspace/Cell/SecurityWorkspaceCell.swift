@@ -50,7 +50,7 @@ public enum SecurityWorkspaceEnum: Int {
     }
 }
 
-class SecurityWorkspaceCell: UITableViewCell {
+class SecurityWorkspaceCell: BaseTableCell {
 
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!

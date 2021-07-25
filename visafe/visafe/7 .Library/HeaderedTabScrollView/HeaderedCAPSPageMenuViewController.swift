@@ -11,7 +11,7 @@ import PageMenu
 /**
  Basically an PagingMenu with an header on top of it with some cool scrolling effects.
  */
-open class HeaderedCAPSPageMenuViewController: AbstractHeaderedTabScrollViewController {
+open class HeaderedPageMenuScrollViewController: AbstractHeaderedTabScrollViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,12 +32,8 @@ open class HeaderedCAPSPageMenuViewController: AbstractHeaderedTabScrollViewCont
         pageMenuController = menu
         
         pageMenuContainer.addSubview(pageMenuController!.view)
-        
-        
     }
     
     public var pageMenuController: CAPSPageMenu?
     public let pageMenuContainer = UIView()
-    
-    
 }

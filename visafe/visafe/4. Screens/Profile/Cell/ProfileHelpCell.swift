@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileHelpCell: UITableViewCell {
+class ProfileHelpCell: BaseTableCell {
 
     @IBOutlet weak var contentButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!

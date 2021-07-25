@@ -8,12 +8,12 @@
 import UIKit
 import PageMenu
 
-class GroupDetailVC: HeaderedCAPSPageMenuViewController, CAPSPageMenuDelegate {
+class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate {
     
     var subPageControllers: [UIViewController] = []
     var header: GroupDetailHeader!
     var group: GroupModel
-    
+    var timeType: ChooseTimeEnum = .day
     let vc1: GroupStatisticVC!
     let vc2: GroupSettingDetailVC!
     
@@ -51,8 +51,9 @@ class GroupDetailVC: HeaderedCAPSPageMenuViewController, CAPSPageMenuDelegate {
         
         // 2) Set the subpages
         let vc = GroupStatisticVC(group: group)
+        vc.timeType = timeType
         vc.title = "Thống kê"
-        vc.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        vc.view.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: self.view.bounds.height)
         vc.view.backgroundColor = .white
         addChild(vc)
         subPageControllers.append(vc)
@@ -61,7 +62,7 @@ class GroupDetailVC: HeaderedCAPSPageMenuViewController, CAPSPageMenuDelegate {
         let vc2 = GroupSettingDetailVC(group: group)
         vc2.parentVC = self
         vc2.title = "Thiết lập bảo vệ"
-        vc2.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        vc2.view.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: self.view.bounds.height)
         vc2.view.backgroundColor = .white
         addChild(vc2)
         subPageControllers.append(vc2)
@@ -79,11 +80,12 @@ class GroupDetailVC: HeaderedCAPSPageMenuViewController, CAPSPageMenuDelegate {
             .menuMargin(0),
             .scrollMenuBackgroundColor(.white)
         ]
-        self.addPageMenu(menu: CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height), pageMenuOptions: parameters))
+        self.addPageMenu(menu: CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: pageMenuContainer.frame.height), pageMenuOptions: parameters))
         self.pageMenuController!.delegate = self
 
         self.headerBackgroundColor = UIColor.white
         self.navBarItemsColor = UIColor.black
+        self.navBarTransparancy = 1.0
     }
     
     func configBarItem() {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StatisticCategoryCell: UITableViewCell {
+class StatisticCategoryCell: BaseTableCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!

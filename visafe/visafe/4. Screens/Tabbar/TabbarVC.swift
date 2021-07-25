@@ -25,10 +25,10 @@ class TabbarVC: BaseTabbarController {
         let protectNav = BaseNavigationController(rootViewController: protectVC)
         protectVC.tabBarItem = UITabBarItem(title: "Bảo vệ", image: UIImage(named: "protect_tabbar"), selectedImage: UIImage(named: "protect_tabbar"))
         
-        let groupVC = GroupVC()
-        groupVC.title = "Nhóm"
-        let groupNav = BaseNavigationController(rootViewController: groupVC)
-        groupNav.tabBarItem = UITabBarItem(title: "Nhóm", image: UIImage(named: "group_tabbar"), selectedImage: UIImage(named: "group_tabbar"))
+        let workspace = WorkspaceVC()
+        workspace.title = "Workspace"
+        let workspaceNav = BaseNavigationController(rootViewController: workspace)
+        workspaceNav.tabBarItem = UITabBarItem(title: "Workspace", image: UIImage(named: "group_tabbar"), selectedImage: UIImage(named: "group_tabbar"))
 
         let homeVC = HomeVC()
         homeVC.tabBarItem = ESTabBarItem.init(ExampleBouncesContentView(), title: nil, image: UIImage(named: "ic_scan_select"), selectedImage: UIImage(named: "ic_scan_select"))
@@ -44,7 +44,7 @@ class TabbarVC: BaseTabbarController {
         let profileNav = BaseNavigationController(rootViewController: profileVC)
         profileNav.tabBarItem = UITabBarItem(title: "Tài khoản", image: UIImage(named: "profile_tabbar"), selectedImage: UIImage(named: "profile_tabbar"))
     
-        self.viewControllers = [protectNav, groupNav, homeNav, notiNav, profileNav]
+        self.viewControllers = [protectNav, workspaceNav, homeNav, notiNav, profileNav]
         selectedIndex = 2
         tabBar.tintColor = UIColor.black
     }

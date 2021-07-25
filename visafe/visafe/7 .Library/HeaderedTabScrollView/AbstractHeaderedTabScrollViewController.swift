@@ -49,11 +49,12 @@ open class AbstractHeaderedTabScrollViewController: UIViewController {
                 headerView!.trailingAnchor.constraint(equalTo: headerContainer.trailingAnchor).isActive = true
                 headerView!.bottomAnchor.constraint(equalTo: headerContainer.bottomAnchor).isActive = true
             }
+            
         }
     }
     
     /// Height of the header
-    public var headerHeight: CGFloat = 283 {
+    public var headerHeight: CGFloat = 210 {
         didSet {
             if let constraint = headerHeightConstraint {
                 constraint.constant = headerHeight
@@ -135,7 +136,7 @@ open class AbstractHeaderedTabScrollViewController: UIViewController {
         // Header
         self.view.addSubview(headerContainer)
         headerContainer.translatesAutoresizingMaskIntoConstraints = false
-        headerTopConstraint = headerContainer.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor)
+        headerTopConstraint = headerContainer.topAnchor.constraint(equalTo: self.view.topAnchor)
         headerTopConstraint!.isActive = true
         headerContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         headerContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
@@ -151,13 +152,13 @@ open class AbstractHeaderedTabScrollViewController: UIViewController {
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if let navCtrl = self.navigationController {
-            let navBar = navCtrl.navigationBar
-            navBar.setBackgroundImage(nil, for: UIBarMetrics.default)
-            navBar.shadowImage = nil
-            navBarOverlay?.removeFromSuperview()
-            navCtrl.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:self.navBarItemsColor.withAlphaComponent(1)]
-        }
+//        if let navCtrl = self.navigationController {
+//            let navBar = navCtrl.navigationBar
+//            navBar.setBackgroundImage(nil, for: UIBarMetrics.default)
+//            navBar.shadowImage = nil
+//            navBarOverlay?.removeFromSuperview()
+//            navCtrl.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:self.navBarItemsColor.withAlphaComponent(1)]
+//        }
         
         
     }
@@ -188,7 +189,7 @@ open class AbstractHeaderedTabScrollViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.tintColor = .white
     }
     public func setNavBarTitle(title: String) {
-        self.title = title
+        self.navigationItem.title = title
     }
     public func setNavbarTitleTransparency(alpha: CGFloat) {
         if let navCtrl = self.navigationController {
@@ -260,7 +261,7 @@ open class AbstractHeaderedTabScrollViewController: UIViewController {
     
     
     func navBarOffset() -> CGFloat {
-        return 0
+        return (self.navigationController?.navigationBar.bounds.height ?? 0) + UIApplication.shared.statusBarFrame.height
     }
     
     

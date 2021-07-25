@@ -34,10 +34,11 @@ class BaseViewController: UIViewController {
     }
     
     func showLoading() {
-        viewLoading.frame = view.bounds
+        guard let window = UIApplication.shared.windows.last else { return }
+        viewLoading.frame = window.bounds
+        window.addSubview(viewLoading)
         indicatorView.center = viewLoading.center
         indicatorView.stopAnimating()
-        view.addSubview(viewLoading)
         UIView.animate(withDuration: 0.2) { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.viewLoading.backgroundColor = UIColor(hexString: "000000", transparency: 0.2)

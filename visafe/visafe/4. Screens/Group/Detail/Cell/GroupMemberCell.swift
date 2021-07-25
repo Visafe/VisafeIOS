@@ -29,19 +29,18 @@ class GroupMemberCell: BaseTableCell {
     func binding(user: UserModel) {
         nameLabel.text = user.fullname
         descriptionLabel.text = user.email ?? user.phonenumber ?? "Chưa có email"
-        bindingRoleView(isOwner: user.isOwner)
+        bindingRoleView(role: user.role)
     }
     
-    func bindingRoleView(isOwner: Bool?) {
-        if let owner = isOwner, owner {
-            roleLabel.text = "Chủ nhóm"
-            roleLabel.textColor = UIColor.black
-            roleView.backgroundColor = UIColor(hexString: "FFCE21")
+    func bindingRoleView(role: GroupMemberRoleEnum) {
+        roleLabel.text = role.getTitle()
+        if role == .admin || role == .owner {
+            roleLabel.textColor = UIColor.mainColorOrange()
+            roleView.backgroundColor = UIColor(hexString: "FFF9ED")
             moreButton.isHidden = false
         } else {
-            roleLabel.text = "Thành viên"
-            roleLabel.textColor = UIColor.white
-            roleView.backgroundColor = UIColor.mainColorBlue()
+            roleLabel.textColor = UIColor.mainColorBlue()
+            roleView.backgroundColor = UIColor(hexString: "ECF7FF")
             moreButton.isHidden = true
         }
     }
