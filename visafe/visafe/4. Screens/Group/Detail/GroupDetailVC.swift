@@ -7,6 +7,7 @@
 
 import UIKit
 import PageMenu
+import SwiftMessages
 
 class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate {
     
@@ -39,11 +40,17 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
     }
     
     func configView() {
+        
         header = GroupDetailHeader.loadFromNib()
         header.bindingData(group: group)
         header.viewMemberAction = { [weak self] in
             guard let weakSelf = self else { return }
             let vc = GroupListUserVC(group: weakSelf.group)
+            weakSelf.navigationController?.pushViewController(vc)
+        }
+        header.viewDeviceAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            let vc = GroupListDeviceVC(group: weakSelf.group)
             weakSelf.navigationController?.pushViewController(vc)
         }
         // 1) Set the header
@@ -103,6 +110,44 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
     }
     
     @objc private func onClickMoreButton() {
-        dismiss(animated: true, completion: nil)
+        guard let view = MoreActionView.loadFromNib() else { return }
+        view.binding(title: group.name ?? "", type: .group)
+        view.deleteAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            Timer.scheduledTimer(timeInterval: 0.3, target: weakSelf, selector:#selector(weakSelf.deleteGroup(sender:)), userInfo: weakSelf.group , repeats:false)
+        }
+        view.editAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.editGroup()
+        }
+        showPopup(view: view)
+    }
+    
+    func editGroup() {
+        let vc = PostGroupVC(group: group)
+        vc.onDone = { [weak self] in
+            guard let weakSelf = self else { return }
+        }
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
+    }
+    
+    @objc func deleteGroup(sender: Timer) {
+        guard let group = sender.userInfo as? GroupModel else { return }
+        showConfirmDelete(title: "Bạn có chắc chắn muốn xoá nhóm \(group.name ?? "") không?") { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.deleteGroupAction(group: group)
+        }
+    }
+    
+    func deleteGroupAction(group: GroupModel) {
+        guard let groupId = group.groupid else { return }
+        guard let userId = CacheManager.shared.getCurrentUser()?.userid?.int else { return }
+        showLoading()
+        GroupWorker.delete(groupId: groupId, userId: userId) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            weakSelf.dismiss(animated: true, completion: nil)
+        }
     }
 }

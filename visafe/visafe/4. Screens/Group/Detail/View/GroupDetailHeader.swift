@@ -10,6 +10,7 @@ import UIKit
 
 class GroupDetailHeader: BaseView {
 
+    @IBOutlet weak var numDeviceLabel: UILabel!
     @IBOutlet weak var numMemberLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var sortTitleLabel: UILabel!
@@ -18,6 +19,7 @@ class GroupDetailHeader: BaseView {
     var addAction:(() -> Void)?
     var managerAction:(() -> Void)?
     var viewMemberAction:(() -> Void)?
+    var viewDeviceAction:(() -> Void)?
     
     class func loadFromNib() -> GroupDetailHeader? {
         return self.loadFromNib(withName: GroupDetailHeader.className)
@@ -28,6 +30,7 @@ class GroupDetailHeader: BaseView {
         sortTitleLabel.text = group.name?.getLetterString()
         contentWidth.constant = kScreenWidth - 32
         numMemberLabel.text = "\(group.usersGroupInfo.count) thành viên"
+        numDeviceLabel.text = "\(group.devicesGroupInfo.count) thiết bị"
     }
     
     @IBAction func addMemberAction(_ sender: UIButton) {
@@ -39,5 +42,9 @@ class GroupDetailHeader: BaseView {
     }
     @IBAction func actionViewMember(_ sender: Any) {
         viewMemberAction?()
+    }
+    
+    @IBAction func actionViewDevice(_ sender: Any) {
+        viewDeviceAction?()
     }
 }

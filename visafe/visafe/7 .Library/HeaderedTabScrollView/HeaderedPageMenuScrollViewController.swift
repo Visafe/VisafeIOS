@@ -11,7 +11,7 @@ import PageMenu
 /**
  Basically an PagingMenu with an header on top of it with some cool scrolling effects.
  */
-open class HeaderedPageMenuScrollViewController: AbstractHeaderedPageMenuViewController {
+class HeaderedPageMenuScrollViewController: AbstractHeaderedPageMenuViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         

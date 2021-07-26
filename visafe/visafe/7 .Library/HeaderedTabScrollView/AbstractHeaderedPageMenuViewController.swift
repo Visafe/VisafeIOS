@@ -11,7 +11,7 @@ import UIKit
 /**
  Base view controller
  */
-open class AbstractHeaderedPageMenuViewController: UIViewController {
+class AbstractHeaderedPageMenuViewController: BaseViewController {
     
     // MARK: - Private members
     // ====================================
@@ -53,7 +53,7 @@ open class AbstractHeaderedPageMenuViewController: UIViewController {
     }
     
     /// Height of the header
-    public var headerHeight: CGFloat = 283 {
+    public var headerHeight: CGFloat = 335 {
         didSet {
             if let constraint = headerHeightConstraint {
                 constraint.constant = headerHeight

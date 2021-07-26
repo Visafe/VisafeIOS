@@ -58,6 +58,9 @@
                             <constraint firstAttribute="width" constant="44" id="omL-MF-rCj"/>
                         </constraints>
                         <state key="normal" image="more_icon"/>
+                        <connections>
+                            <action selector="moreActionButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iHa-VR-IU5"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

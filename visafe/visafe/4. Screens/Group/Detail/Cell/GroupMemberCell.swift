@@ -37,11 +37,15 @@ class GroupMemberCell: BaseTableCell {
         if role == .admin || role == .owner {
             roleLabel.textColor = UIColor.mainColorOrange()
             roleView.backgroundColor = UIColor(hexString: "FFF9ED")
-            moreButton.isHidden = false
+            if role == .owner {
+                moreButton.isHidden = true
+            } else {
+                moreButton.isHidden = false
+            }
         } else {
             roleLabel.textColor = UIColor.mainColorBlue()
             roleView.backgroundColor = UIColor(hexString: "ECF7FF")
-            moreButton.isHidden = true
+            moreButton.isHidden = false
         }
     }
     

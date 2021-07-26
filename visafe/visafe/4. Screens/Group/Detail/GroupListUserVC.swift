@@ -27,12 +27,12 @@ class GroupListUserVC: BaseViewController {
                 item.role = .owner
             }
             if group.userManage.contains(where: { (id) -> Bool in
-                if (id == userId) { return true } else { return false }
+                if (id == userId.string) { return true } else { return false }
             }) {
                 item.role = .admin
             }
             if group.usersActive.contains(where: { (id) -> Bool in
-                if (id == userId) { return true } else { return false }
+                if (id == userId.string) { return true } else { return false }
             }) {
                 item.role = .suppervisor
             }
@@ -68,7 +68,78 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
         }
         let user = listUser[indexPath.row]
         cell.binding(user: user)
+        cell.moreAction = { [weak self] in
+            guard let weaSelf = self else { return }
+            weaSelf.moreAction(user: user)
+        }
         return cell
+    }
+    
+    func moreAction(user: UserModel) {
+        guard let view = MoreActionMemberView.loadFromNib() else { return }
+        view.binding(user: user)
+        view.editAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.editUser(user: user)
+        }
+        view.deleteAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            Timer.scheduledTimer(timeInterval: 0.3, target: weakSelf, selector:#selector(weakSelf.deleteUserAction(sender:)), userInfo: user , repeats:false)
+        }
+        showPopup(view: view)
+    }
+    
+    @objc func deleteUserAction(sender: Timer) {
+        guard let user = sender.userInfo as? UserModel else { return }
+        let title = "Bạn có chắc chắn muốn xóa thành viên \(user.fullname ?? "") khỏi nhóm?"
+        showConfirmDelete(title: title) { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.deleteUser(user: user)
+        }
+    }
+    
+    func deleteUser(user: UserModel) {
+        showLoading()
+        GroupWorker.groupDeleteUser(userId: user.userid?.int, groupId: group.groupid) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            for index in 0..<weakSelf.listUser.count {
+                let item = weakSelf.listUser[index]
+                if item.userid == user.userid {
+                    weakSelf.listUser.remove(at: index)
+                    break
+                }
+            }
+            weakSelf.tableView.reloadData()
+        }
+    }
+    
+    func editUser(user: UserModel) {
+        if user.role == .member || user.role == .suppervisor {
+            makeManagerRole(user: user)
+        } else {
+            makeViewerRole(user: user)
+        }
+    }
+    
+    func makeManagerRole(user: UserModel) {
+        showLoading()
+        GroupWorker.groupUserManager(userId: user.userid?.int, groupId: group.groupid) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            user.role = .admin
+            weakSelf.tableView.reloadData()
+        }
+    }
+    
+    func makeViewerRole(user: UserModel) {
+        showLoading()
+        GroupWorker.groupUserViewer(userId: user.userid?.int, groupId: group.groupid) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            user.role = .suppervisor
+            weakSelf.tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

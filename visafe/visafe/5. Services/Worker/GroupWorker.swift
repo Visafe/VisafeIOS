@@ -263,4 +263,60 @@ class GroupWorker {
             completion(loginResult, error)
         }
     }
+    
+    static func updateWhitelist(param: GroupUpdateWhitelistParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.groupUpdateWhitelist(param: param)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: BaseResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
+    
+    static func groupUserManager(userId: Int?, groupId: String?, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.groupUserToManager(userId: userId, groupId: groupId)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: BaseResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
+    
+    static func groupUserViewer(userId: Int?, groupId: String?, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.groupUserToViewer(userId: userId, groupId: groupId)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: BaseResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
+    
+    static func groupDeleteUser(userId: Int?, groupId: String?, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.groupDeleteUser(userId: userId, groupId: groupId)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: BaseResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
 }

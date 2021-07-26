@@ -12,6 +12,7 @@ class GroupCell: BaseTableCell {
     @IBOutlet weak var letterLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var numberMemberLabel: UILabel!
     
     var onMoreAction:(() -> Void)?
     
@@ -27,6 +28,7 @@ class GroupCell: BaseTableCell {
     func bindingData(group: GroupModel) {
         titleLabel.text = group.name
         letterLabel.text = group.name?.getLetterString()
+        numberMemberLabel.text = "\(group.usersGroupInfo.count) thành viên"
     }
     
     @IBAction func onClickMoreButton(_ sender: Any) {

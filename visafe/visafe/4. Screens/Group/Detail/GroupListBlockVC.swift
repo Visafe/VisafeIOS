@@ -27,12 +27,36 @@ class GroupListBlockVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configRefreshData()
         configUI()
         prepareData()
     }
     
     func configUI() {
         tableView.registerCells(cells: [GroupBlockCell.className])
+    }
+    
+    func configRefreshData() {
+        tableView.addPullToRefresh { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.refreshData()
+        }
+    }
+    
+    func refreshData() {
+        if isViewLoaded {
+            guard let wsId = CacheManager.shared.getCurrentWorkspace()?.id else { return }
+            let param = QueryLogParam()
+            param.workspace_id = wsId
+            param.limit = 20
+            param.response_status = type.getTypeQueryLog()
+            WorkspaceWorker.getLog(param: param) { [weak self] (result, error) in
+                guard let weakSelf = self else { return }
+                weakSelf.sources = result?.data ?? []
+                weakSelf.tableView.endRefreshing()
+                weakSelf.tableView.reloadData()
+            }
+        }
     }
     
     func prepareData() {
@@ -65,8 +89,32 @@ extension GroupListBlockVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupBlockCell.className) as? GroupBlockCell else {
             return UITableViewCell()
         }
+        cell.moreAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            guard let view = MoreActionLinkView.loadFromNib() else { return }
+            view.unBlockedAction = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.unBlockedDomain(domain: strongSelf.sources[indexPath.row])
+            }
+            weakSelf.showPopup(view: view)
+        }
         cell.bindingData(model: sources[indexPath.row])
         return cell
+    }
+    
+    func unBlockedDomain(domain: QueryLogModel) {
+        guard let link = domain.question?.host else { return }
+        var whitelist = group.white_list
+        whitelist.append(link)
+        let param = GroupUpdateWhitelistParam()
+        param.white_list = whitelist
+        param.group_id = group.groupid
+        showLoading()
+        GroupWorker.updateWhitelist(param: param) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            weakSelf.refreshData()
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

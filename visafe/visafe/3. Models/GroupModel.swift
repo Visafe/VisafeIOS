@@ -294,11 +294,13 @@ class GroupModel: NSObject, Mappable {
     var use_global_blocked_services: Bool?
     var upstreams: [String]?
     var disallowed: Bool?
-    var usersActive: [Int] = []
-    var userManage: [Int] = []
+    var usersActive: [String] = []
+    var userManage: [String] = []
     var usersGroupInfo: [UserModel] = []
     var days: [String] = []
     var times: [String] = []
+    var devicesGroupInfo: [DeviceGroupModel] = []
+    var white_list: [String] = []
     
     override init() {
         super.init()
@@ -340,6 +342,7 @@ class GroupModel: NSObject, Mappable {
         usersGroupInfo <- map["usersGroupInfo"]
         days <- map["days"]
         times <- map["times"]
+        devicesGroupInfo <- map["devicesGroupInfo"]
     }
     
     func buildModelsAppAds(value: [String]) -> [AppAdsModel] {

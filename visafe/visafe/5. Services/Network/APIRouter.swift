@@ -50,6 +50,10 @@ enum APIRouter {
     case changeManagerPermision(param: ChangeManagerPermisionParam)
     case changeViewerPermision(param: ChangeViewerPermisionParam)
     case getGroups(wspId: String)
+    case groupUpdateWhitelist(param: GroupUpdateWhitelistParam)
+    case groupUserToManager(userId: Int?, groupId: String?)
+    case groupUserToViewer(userId: Int?, groupId: String?)
+    case groupDeleteUser(userId: Int?, groupId: String?)
     
     //notification
     case listNotification(pageIndex: Int)
@@ -164,6 +168,14 @@ extension APIRouter: TargetType {
             return "/stats/group"
         case .logWorkspace:
             return "/querylog_workspace"
+        case .groupUpdateWhitelist:
+            return "/group/update/whitelist"
+        case .groupUserToManager:
+            return "/group/update/user-to-manager"
+        case .groupUserToViewer:
+            return "/group/update/user-to-viewer"
+        case .groupDeleteUser:
+            return "/group/delete/member"
         }
     }
     
@@ -171,9 +183,9 @@ extension APIRouter: TargetType {
         switch self {
         case .getListWorkspace, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup, .logGroup, .logWorkspace:
             return .get
-        case .deleteWorkspace, .deleteGroup:
+        case .deleteWorkspace, .deleteGroup, .groupDeleteUser:
             return .delete
-        case .updateWorkspace, .updateNameWorkspace, .updateGroup, .updateNameGroup:
+        case .updateWorkspace, .updateNameWorkspace, .updateGroup, .updateNameGroup, .groupUpdateWhitelist, .groupUserToViewer, .groupUserToManager:
             return .patch
         default:
             break
@@ -259,6 +271,17 @@ extension APIRouter: TargetType {
             pars = param.toJSON()
         case .logWorkspace(param: let param):
             pars = param.toJSON()
+        case .groupUpdateWhitelist(param: let param):
+            pars = param.toJSON()
+        case .groupUserToManager(userId: let userId, groupId: let groupId):
+            pars["userId"] = userId
+            pars["groupId"] = groupId
+        case .groupUserToViewer(userId: let userId, groupId: let groupId):
+            pars["userId"] = userId
+            pars["groupId"] = groupId
+        case .groupDeleteUser(userId: let userId, groupId: let groupId):
+            pars["userId"] = userId
+            pars["groupId"] = groupId
         case .reactivation, .getListWorkspace, .profile:
             break
         }
@@ -267,7 +290,7 @@ extension APIRouter: TargetType {
     
     var task: Task {
         switch self {
-        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .activeAccount, .deleteWorkspace, .loginFacebook, .loginGoogle, .forgotPassword:
+        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .activeAccount, .deleteWorkspace, .loginFacebook, .loginGoogle, .forgotPassword, .groupUpdateWhitelist, .groupUserToManager, .groupUserToViewer, .groupDeleteUser:
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             break
@@ -282,7 +305,7 @@ extension APIRouter: TargetType {
     var headers: [String : String]? {
         var hea: [String: String] = [:]
         switch self {
-        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup, .logGroup, .logWorkspace:
+        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup, .logGroup, .logWorkspace, .groupUpdateWhitelist, .groupUserToViewer, .groupUserToManager, .groupDeleteUser:
             hea["Authorization"] = (CacheManager.shared.getLoginResult()?.token ?? "")
         default:
             break

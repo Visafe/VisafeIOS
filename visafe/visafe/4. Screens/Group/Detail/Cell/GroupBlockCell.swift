@@ -11,6 +11,7 @@ import Kingfisher
 class GroupBlockCell: BaseTableCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
+    var moreAction:(() -> Void)?
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var domainLabel: UILabel!
@@ -30,5 +31,8 @@ class GroupBlockCell: BaseTableCell {
         if let urlString = model.question?.host, let url = URL(string: "https://www.google.com/s2/favicons?sz=96&domain_url=\(urlString)") {
             iconImageView.kf.setImage(with: url)
         }
+    }
+    @IBAction func moreActionButton(_ sender: Any) {
+        moreAction?()
     }
 }
