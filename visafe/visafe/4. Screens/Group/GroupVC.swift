@@ -57,15 +57,15 @@ class GroupVC: BaseViewController {
                 weakSelf.statisticModel = model
             }
             GroupWorker.list(wsid: wspId) { [weak self] (result, error) in
-                guard let weakSelf = self else { return }
-                weakSelf.hideLoading()
-                weakSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
+                guard let stringSelf = self else { return }
+                stringSelf.hideLoading()
+                stringSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
                     return m.isOwner == true
                 }) ?? []
-                weakSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
+                stringSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
                     return m.isOwner == false
                 }) ?? []
-                weakSelf.tableView.reloadData()
+                stringSelf.tableView.reloadData()
             }
         }
     }
@@ -86,15 +86,15 @@ class GroupVC: BaseViewController {
                     weakSelf.statisticModel = model
                 }
                 GroupWorker.list(wsid: wspId) { [weak self] (result, error) in
-                    guard let weakSelf = self else { return }
-                    weakSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
+                    guard let stringSelf = self else { return }
+                    stringSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
                         return m.isOwner == true
                     }) ?? []
-                    weakSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
+                    stringSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
                         return m.isOwner == false
                     }) ?? []
-                    weakSelf.tableView.reloadData()
-                    weakSelf.tableView.endRefreshing()
+                    stringSelf.tableView.reloadData()
+                    stringSelf.tableView.endRefreshing()
                 }
             }
         }
