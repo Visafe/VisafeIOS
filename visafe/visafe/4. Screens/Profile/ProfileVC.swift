@@ -138,6 +138,8 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             showHelp()
         case .logout:
             logout()
+        case .upgradeAccount:
+            showLicense()
         default:
             break
         }
@@ -168,6 +170,11 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func showHelp() {
         let vc = ProfileHelpVC()
         navigationController?.pushViewController(vc)
+    }
+    
+    func showLicense() {
+        let vc = LicenseOverviewVC()
+        present(vc, animated: true)
     }
     
     func logout() {

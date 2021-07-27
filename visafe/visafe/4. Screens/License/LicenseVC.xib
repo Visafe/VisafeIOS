@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LicenseVC" customModule="visafe" customModuleProvider="target">
+            <connections>
+                <outlet property="contentLabel" destination="jtH-Z6-9Jm" id="cIX-z9-byv"/>
+                <outlet property="imageLicense" destination="Zgd-cA-KLv" id="QFa-Bl-pTL"/>
+                <outlet property="tableView" destination="gkY-mu-DnZ" id="UA2-ET-Ijo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VyW-v1-gj5">
+                    <rect key="frame" x="105" y="4" width="204" height="24"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng ký gói" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TZ-md-r5V">
+                            <rect key="frame" x="0.0" y="0.0" width="111" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_license_business" translatesAutoresizingMaskIntoConstraints="NO" id="Zgd-cA-KLv">
+                            <rect key="frame" x="119" y="0.0" width="85" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="BvG-H9-6jl"/>
+                                <constraint firstAttribute="width" constant="85" id="zGY-23-Ccu"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Zgd-cA-KLv" secondAttribute="bottom" id="3uV-Xs-Hfb"/>
+                        <constraint firstItem="Zgd-cA-KLv" firstAttribute="leading" secondItem="2TZ-md-r5V" secondAttribute="trailing" constant="8" id="OId-zz-u9f"/>
+                        <constraint firstItem="Zgd-cA-KLv" firstAttribute="top" secondItem="VyW-v1-gj5" secondAttribute="top" id="P1o-qu-aWJ"/>
+                        <constraint firstItem="2TZ-md-r5V" firstAttribute="leading" secondItem="VyW-v1-gj5" secondAttribute="leading" id="XzM-u5-JhB"/>
+                        <constraint firstItem="2TZ-md-r5V" firstAttribute="centerY" secondItem="VyW-v1-gj5" secondAttribute="centerY" id="kes-zV-308"/>
+                        <constraint firstAttribute="trailing" secondItem="Zgd-cA-KLv" secondAttribute="trailing" id="mzN-wG-tPT"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nâng cấp lên phiên bản Business cho phép bạn quản lý và bảo vệ mọi thiết bị của thành viên trong công ty" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtH-Z6-9Jm">
+                    <rect key="frame" x="24" y="44" width="366" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gkY-mu-DnZ">
+                    <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="oak-1H-kdL"/>
+                        <outlet property="delegate" destination="-1" id="LD4-m5-dby"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="jtH-Z6-9Jm" firstAttribute="top" secondItem="VyW-v1-gj5" secondAttribute="bottom" constant="16" id="4hv-cw-sFx"/>
+                <constraint firstItem="VyW-v1-gj5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9Bx-jd-BAJ"/>
+                <constraint firstItem="VyW-v1-gj5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="4" id="Kql-Gm-Q41"/>
+                <constraint firstItem="jtH-Z6-9Jm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Tw2-O4-636"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gkY-mu-DnZ" secondAttribute="trailing" id="U55-iA-0Qt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jtH-Z6-9Jm" secondAttribute="trailing" constant="24" id="Xt1-Tq-ItN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gkY-mu-DnZ" secondAttribute="bottom" id="dRa-0P-8PY"/>
+                <constraint firstItem="gkY-mu-DnZ" firstAttribute="top" secondItem="jtH-Z6-9Jm" secondAttribute="bottom" constant="28" id="vOx-hd-iX4"/>
+                <constraint firstItem="gkY-mu-DnZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vip-0u-wFy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-78.260869565217391" y="31.473214285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_license_business" width="85" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
