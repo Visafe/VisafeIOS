@@ -14,6 +14,8 @@ class GroupListBlockVC: BaseViewController {
     var scrollDelegateFunc: ((UIScrollView)->Void)?
     var type: GroupSettingParentEnum
     var sources: [QueryLogModel] = []
+    var oldest: String?
+    var canLoadMore: Bool = true
     
     init(group: GroupModel, type: GroupSettingParentEnum) {
         self.group = group
@@ -45,14 +47,22 @@ class GroupListBlockVC: BaseViewController {
     
     func refreshData() {
         if isViewLoaded {
-            guard let wsId = CacheManager.shared.getCurrentWorkspace()?.id else { return }
+            guard let groupId = group.groupid else { return }
+            self.oldest = nil
             let param = QueryLogParam()
-            param.workspace_id = wsId
+            param.group_id = groupId
             param.limit = 20
             param.response_status = type.getTypeQueryLog()
-            WorkspaceWorker.getLog(param: param) { [weak self] (result, error) in
+            GroupWorker.getLog(param: param) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
                 weakSelf.sources = result?.data ?? []
+                weakSelf.canLoadMore = ((result?.data?.count ?? 0) >= 0)
+                if weakSelf.canLoadMore {
+                    weakSelf.oldest = result?.oldest
+                    weakSelf.addLoadMore()
+                } else {
+                    weakSelf.tableView.mj_footer = nil
+                }
                 weakSelf.tableView.endRefreshing()
                 weakSelf.tableView.reloadData()
             }
@@ -60,17 +70,54 @@ class GroupListBlockVC: BaseViewController {
     }
     
     func prepareData() {
-        guard let wsId = CacheManager.shared.getCurrentWorkspace()?.id else { return }
+        guard let groupId = group.groupid else { return }
         showLoading()
         let param = QueryLogParam()
-        param.workspace_id = wsId
+        param.group_id = groupId
         param.limit = 20
         param.response_status = type.getTypeQueryLog()
-        WorkspaceWorker.getLog(param: param) { [weak self] (result, error) in
+        GroupWorker.getLog(param: param) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.sources = result?.data ?? []
+            weakSelf.canLoadMore = ((result?.data?.count ?? 0) >= 0)
+            if weakSelf.canLoadMore {
+                weakSelf.oldest = result?.oldest
+                weakSelf.addLoadMore()
+            } else {
+                weakSelf.tableView.mj_footer = nil
+            }
             weakSelf.tableView.reloadData()
+        }
+    }
+    
+    func loadLogs() {
+        if canLoadMore == false { return }
+        guard let groupId = group.groupid else { return }
+        let param = QueryLogParam()
+        param.group_id = groupId
+        param.limit = 20
+        param.response_status = type.getTypeQueryLog()
+        param.older_than = oldest
+        GroupWorker.getLog(param: param) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.tableView.endRefreshing()
+            weakSelf.sources += (result?.data ?? [])
+            weakSelf.canLoadMore = ((result?.data?.count ?? 0) >= 0)
+            if weakSelf.canLoadMore {
+                weakSelf.oldest = result?.oldest
+                weakSelf.addLoadMore()
+            } else {
+                weakSelf.tableView.mj_footer = nil
+            }
+            weakSelf.tableView.reloadData()
+        }
+    }
+    
+    private func addLoadMore() {
+        tableView.addLoadmore(canLoadMore: true) { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.loadLogs()
         }
     }
 }
@@ -89,22 +136,24 @@ extension GroupListBlockVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupBlockCell.className) as? GroupBlockCell else {
             return UITableViewCell()
         }
+        let model = sources[indexPath.row]
         cell.moreAction = { [weak self] in
             guard let weakSelf = self else { return }
             guard let view = MoreActionLinkView.loadFromNib() else { return }
+            view.binding(groupName: weakSelf.group.name, time: "Đã chặn \(model.time?.getTimeOnFeed().lowercased() ?? "")")
             view.unBlockedAction = { [weak self] in
                 guard let strongSelf = self else { return }
                 strongSelf.unBlockedDomain(domain: strongSelf.sources[indexPath.row])
             }
             weakSelf.showPopup(view: view)
         }
-        cell.bindingData(model: sources[indexPath.row])
+        cell.bindingData(model: model)
         return cell
     }
     
     func unBlockedDomain(domain: QueryLogModel) {
         guard let link = domain.question?.host else { return }
-        var whitelist = group.white_list
+        var whitelist = group.whitelist
         whitelist.append(link)
         let param = GroupUpdateWhitelistParam()
         param.white_list = whitelist
@@ -113,7 +162,9 @@ extension GroupListBlockVC: UITableViewDelegate, UITableViewDataSource {
         GroupWorker.updateWhitelist(param: param) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
-            weakSelf.refreshData()
+            if let _ = result {
+                weakSelf.group.whitelist = whitelist
+            }
         }
     }
     

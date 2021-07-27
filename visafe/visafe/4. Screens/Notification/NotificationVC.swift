@@ -18,9 +18,9 @@ class NotificationVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configRefreshData()
+        configRefreshData()
         configView()
-//        prepareData()
+        prepareData()
     }
     
     init() {

@@ -12,13 +12,13 @@ class WorkspaceVC: HeaderedACTabScrollViewController, ACTabScrollViewDelegate,  
     var subPageViews: [UIView] = []
     
     override func viewDidLoad() {
+        self.headerHeight = kScreenWidth * 180 / 375
         super.viewDidLoad()
         configUI()
     }
     
     func configUI() {
         tabScrollView.tabSectionHeight = 0
-        headerHeight = kScreenWidth * 180 / 375
         
         // 1) Header init
         let imageview = UIImageView(image: UIImage(named: "wsp_family"))

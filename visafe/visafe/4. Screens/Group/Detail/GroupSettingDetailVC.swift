@@ -71,8 +71,17 @@ extension GroupSettingDetailVC: UITableViewDelegate, UITableViewDataSource {
             } else {
                 weakSelf.group.disable(type: model.type!)
             }
+            weakSelf.updateGroup()
         }
         return cell
+    }
+    
+    func updateGroup() {
+        showLoading()
+        GroupWorker.update(group: group) { [weak self] (group, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+        }
     }
 }
 

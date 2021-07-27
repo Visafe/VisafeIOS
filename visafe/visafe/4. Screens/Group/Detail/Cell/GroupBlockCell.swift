@@ -31,7 +31,9 @@ class GroupBlockCell: BaseTableCell {
         if let urlString = model.question?.host, let url = URL(string: "https://www.google.com/s2/favicons?sz=96&domain_url=\(urlString)") {
             iconImageView.kf.setImage(with: url)
         }
+        timeLabel.text = model.time?.getTimeOnFeed()
     }
+    
     @IBAction func moreActionButton(_ sender: Any) {
         moreAction?()
     }

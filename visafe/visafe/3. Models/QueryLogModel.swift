@@ -37,7 +37,7 @@ class QueryLogModel: NSObject, Mappable {
     var filterId: Int?
     var reason: String?
     var rule: String?
-    var time: String?
+    var time: Date?
     var upstream: String?
     var question: QueryLogModelQuestion?
     
@@ -57,7 +57,7 @@ class QueryLogModel: NSObject, Mappable {
         filterId <- map["filterId"]
         reason <- map["reason"]
         rule <- map["rule"]
-        time <- map["time"]
+        time <- (map["time"], ViSafeDateFormater())
         upstream <- map["upstream"]
         question <- map["question"]
     }

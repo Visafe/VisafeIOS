@@ -300,7 +300,7 @@ class GroupModel: NSObject, Mappable {
     var days: [String] = []
     var times: [String] = []
     var devicesGroupInfo: [DeviceGroupModel] = []
-    var white_list: [String] = []
+    var whitelist: [String] = []
     
     override init() {
         super.init()
@@ -343,6 +343,7 @@ class GroupModel: NSObject, Mappable {
         days <- map["days"]
         times <- map["times"]
         devicesGroupInfo <- map["devicesGroupInfo"]
+        whitelist <- map["WhiteList"]
     }
     
     func buildModelsAppAds(value: [String]) -> [AppAdsModel] {
@@ -406,9 +407,9 @@ class GroupModel: NSObject, Mappable {
             sources.append(m2)
             // Chặn quảng cáo nâng cao
             let m3 = PostGroupModel()
-            m3.isSelected = true
-            m3.type = .appads
             m3.children = buildModelsAppAds(value: app_ads)
+            m3.isSelected = (m3.children.count > 0)
+            m3.type = .appads
             sources.append(m3)
             return sources
         } else if type == .blockConnect {
@@ -416,8 +417,8 @@ class GroupModel: NSObject, Mappable {
             // Ứng dụng
             let m5 = PostGroupModel()
             m5.type = .service
-            m5.isSelected = true
             m5.children = buildModelsBlockService(value: blocked_services)
+            m5.isSelected = (m5.children.count > 0)
             sources.append(m5)
             // Website
             let m6 = PostGroupModel()
@@ -450,8 +451,8 @@ class GroupModel: NSObject, Mappable {
             // Chặn theo dõi thiết bị
             let m4 = PostGroupModel()
             m4.type = .nativetracking
-            m4.isSelected = true
             m4.children = buildTracking(value: native_tracking)
+            m4.isSelected = (m4.children.count > 0)
             sources.append(m4)
             return sources
         } else {

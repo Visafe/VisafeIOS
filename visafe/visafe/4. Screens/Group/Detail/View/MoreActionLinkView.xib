@@ -180,6 +180,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="nameLabel" destination="YCZ-cy-cPC" id="1Ik-lt-WSu"/>
+                <outlet property="timeLabel" destination="g9i-nL-qk6" id="eBK-g2-WwI"/>
             </connections>
             <point key="canvasLocation" x="72" y="291"/>
         </view>

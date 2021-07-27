@@ -165,7 +165,7 @@ extension APIRouter: TargetType {
         case .statisticGroup:
             return "/stats/group"
         case .logGroup:
-            return "/stats/group"
+            return "/querylog_group"
         case .logWorkspace:
             return "/querylog_workspace"
         case .groupUpdateWhitelist:

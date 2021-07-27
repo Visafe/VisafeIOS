@@ -57,15 +57,15 @@ class GroupVC: BaseViewController {
                 weakSelf.statisticModel = model
             }
             GroupWorker.list(wsid: wspId) { [weak self] (result, error) in
-                guard let stringSelf = self else { return }
-                stringSelf.hideLoading()
-                stringSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
+                guard let strongSelf = self else { return }
+                strongSelf.hideLoading()
+                strongSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
                     return m.isOwner == true
                 }) ?? []
-                stringSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
+                strongSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
                     return m.isOwner == false
                 }) ?? []
-                stringSelf.tableView.reloadData()
+                strongSelf.tableView.reloadData()
             }
         }
     }
@@ -86,15 +86,15 @@ class GroupVC: BaseViewController {
                     weakSelf.statisticModel = model
                 }
                 GroupWorker.list(wsid: wspId) { [weak self] (result, error) in
-                    guard let stringSelf = self else { return }
-                    stringSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
+                    guard let strongSelf = self else { return }
+                    strongSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
                         return m.isOwner == true
                     }) ?? []
-                    stringSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
+                    strongSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
                         return m.isOwner == false
                     }) ?? []
-                    stringSelf.tableView.reloadData()
-                    stringSelf.tableView.endRefreshing()
+                    strongSelf.tableView.reloadData()
+                    strongSelf.tableView.endRefreshing()
                 }
             }
         }

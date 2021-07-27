@@ -55,6 +55,9 @@
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGo-XV-I5v">
                     <rect key="frame" x="349" y="181.5" width="51" height="31"/>
                     <color key="onTintColor" red="1" green="0.70196078431372544" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="switchChange:" destination="iN0-l3-epB" eventType="valueChanged" id="TKb-xu-hwD"/>
+                    </connections>
                 </switch>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bu-HR-x2T">
                     <rect key="frame" x="16" y="252.5" width="382" height="0.5"/>

@@ -17,13 +17,17 @@ class ProtectHeaderView: BaseView {
     @IBOutlet weak var subContentLabel: UILabel!
     @IBOutlet weak var modelSwitch: UISwitch!
     
+    var switchValueChange:((_ value: Bool) -> Void)?
+    
     var group: PostGroupParentModel = PostGroupParentModel()
+    var type: GroupSettingParentEnum = .blockVPN
     
     class func loadFromNib() -> ProtectHeaderView? {
         return self.loadFromNib(withName: ProtectHeaderView.className)
     }
     
     func bindingData(type: GroupSettingParentEnum) {
+        self.type = type
         subIconImage.image = type.getImage()
         subTitleLabel.text = type.getTitle()
         subContentLabel.text = type.getContent()
@@ -31,5 +35,15 @@ class ProtectHeaderView: BaseView {
         logoImage.image = type.getTopImage()
         titleLabel.text = type.getTopTitle()
         contentLabel.text = type.getTopContent()
+    }
+    
+    func updateState(isOn: Bool) {
+        modelSwitch.isOn = isOn
+        logoImage.image = isOn ? type.getTopImage() : type.getTopImagePositive()
+        titleLabel.text = isOn ? type.getTopTitle() : type.getTopTitlePositive()
+    }
+    
+    @IBAction func switchChange(_ sender: UISwitch) {
+        switchValueChange?(sender.isOn)
     }
 }

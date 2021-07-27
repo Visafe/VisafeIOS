@@ -14,7 +14,8 @@ class GroupSettingVC: BaseViewController {
     var editMode: EditModeEnum
     var sources: [PostGroupModel] = []
     var parentType: GroupSettingParentEnum
-    var scrollDelegateFunc: ((UIScrollView)->Void)?
+    var scrollDelegateFunc:((UIScrollView)->Void)?
+    var continueAction:(() -> Void)?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,7 +37,7 @@ class GroupSettingVC: BaseViewController {
     }
     
     func configView() {
-        title = parentType.getTitleNavi()
+        navigationItem.title = parentType.getTitleNavi()
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 25
         tableView.registerCells(cells: [GroupSettingCell.className, GroupSettingLinkCell.className])
@@ -56,7 +57,11 @@ class GroupSettingVC: BaseViewController {
     
     @IBAction func continueActionButton(_ sender: Any) {
         group.bindingData(sources: sources)
-        navigationController?.popViewController()
+        if let action = continueAction {
+            action()
+        } else {
+            navigationController?.popViewController()
+        }
     }
 }
 
@@ -220,7 +225,7 @@ extension GroupSettingVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let model = sources[section]
         if model.type == .website {
-            return 80.0000
+            return 56.0000
         } else {
             return 0.0001
         }

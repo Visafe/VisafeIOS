@@ -214,6 +214,7 @@
 		C9C0B9D326A580B600C9869A /* ExampleLottieAnimateContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9C826A580B600C9869A /* ExampleLottieAnimateContentView.swift */; };
 		C9CCAB5326A5DFE300C04BC5 /* GroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCAB5126A5DFE300C04BC5 /* GroupDetailVC.swift */; };
 		C9CCAB5426A5DFE300C04BC5 /* GroupDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CCAB5226A5DFE300C04BC5 /* GroupDetailVC.xib */; };
+		C9CE383726B01E860010A43C /* VisafeDateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE383626B01E860010A43C /* VisafeDateFormater.swift */; };
 		C9DC8F6A26A6ED540021A8BD /* GroupDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC8F6926A6ED540021A8BD /* GroupDetailHeader.swift */; };
 		C9DC8F6E26A6ED610021A8BD /* GroupDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9DC8F6D26A6ED610021A8BD /* GroupDetailHeader.xib */; };
 		C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E5C77D26872ADC00D159EF /* LoginResult.swift */; };
@@ -495,6 +496,7 @@
 		C9C0B9C926A580B600C9869A /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Lottie.framework; sourceTree = "<group>"; };
 		C9CCAB5126A5DFE300C04BC5 /* GroupDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailVC.swift; sourceTree = "<group>"; };
 		C9CCAB5226A5DFE300C04BC5 /* GroupDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupDetailVC.xib; sourceTree = "<group>"; };
+		C9CE383626B01E860010A43C /* VisafeDateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisafeDateFormater.swift; sourceTree = "<group>"; };
 		C9DC8F6926A6ED540021A8BD /* GroupDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailHeader.swift; sourceTree = "<group>"; };
 		C9DC8F6D26A6ED610021A8BD /* GroupDetailHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupDetailHeader.xib; sourceTree = "<group>"; };
 		C9E5C77D26872ADC00D159EF /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 				C919B93B26821DA8009982C3 /* APIManager.swift */,
 				C919B93C26821DA8009982C3 /* APIRouter.swift */,
 				C919B93D26821DA8009982C3 /* VisafeRequestAdapter.swift */,
+				C9CE383626B01E860010A43C /* VisafeDateFormater.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1579,6 +1582,7 @@
 				C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */,
 				C9DC8F6A26A6ED540021A8BD /* GroupDetailHeader.swift in Sources */,
 				C919B94826821DA9009982C3 /* APIRouter.swift in Sources */,
+				C9CE383726B01E860010A43C /* VisafeDateFormater.swift in Sources */,
 				C9C0B9CC26A580B600C9869A /* ExampleHighlightableContentView.swift in Sources */,
 				C9C0B9CD26A580B600C9869A /* ExampleBasicContentView.swift in Sources */,
 				C9F2491B26AAA7AF00EE7442 /* StatisticSumaryView.swift in Sources */,

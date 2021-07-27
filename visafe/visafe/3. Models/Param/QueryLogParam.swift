@@ -19,8 +19,9 @@ class QueryLogParam: NSObject, Mappable {
     var group_id: String?
     var workspace_id: String?
     var response_status: QueryLogTypeEnum?
-    var older_than: Int?
+    var older_than: String?
     var limit: Int?
+    var search: String = ""
     
     override init() {
         super.init()
@@ -36,5 +37,6 @@ class QueryLogParam: NSObject, Mappable {
         response_status <- map["response_status"]
         older_than <- map["older_than"]
         limit <- map["limit"]
+        search <- map["search"]
     }
 }

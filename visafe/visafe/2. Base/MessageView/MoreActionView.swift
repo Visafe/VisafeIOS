@@ -18,6 +18,7 @@ class MoreActionView: MessageView {
     @IBOutlet weak var titleEditLabel: UILabel!
     @IBOutlet weak var titleDeleteLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    
     var editAction:(() -> Void)?
     var deleteAction:(() -> Void)?
     

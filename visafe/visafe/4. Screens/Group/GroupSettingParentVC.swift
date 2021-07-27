@@ -93,6 +93,10 @@ public enum GroupSettingParentEnum: Int {
         }
     }
     
+    func getTopImagePositive() -> UIImage? {
+        return UIImage(named: "ic_detail_unads")
+    }
+    
     func getTopTitle() -> String {
         switch self {
         case .blockAds:
@@ -103,6 +107,21 @@ public enum GroupSettingParentEnum: Int {
             return "Đang bật chặn truy cập"
         case .blockContent:
             return "Đang bật chặn nội dung"
+        case .blockVPN:
+            return ""
+        }
+    }
+    
+    func getTopTitlePositive() -> String {
+        switch self {
+        case .blockAds:
+            return "Đang tắt chặn quảng cáo nhóm"
+        case .blockFollow:
+            return "Đang tắt chặn theo dõi"
+        case .blockConnect:
+            return "Đang tắt chặn truy cập"
+        case .blockContent:
+            return "Đang tắt chặn nội dung"
         case .blockVPN:
             return ""
         }

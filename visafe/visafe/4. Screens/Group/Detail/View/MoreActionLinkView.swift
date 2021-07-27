@@ -10,6 +10,7 @@ import SwiftMessages
 
 class MoreActionLinkView: MessageView {
 
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     var unBlockedAction:(() -> Void)?
     var deleteAction:(() -> Void)?
@@ -18,8 +19,9 @@ class MoreActionLinkView: MessageView {
         return self.loadFromNib(withName: MoreActionLinkView.className)
     }
     
-    func binding(workspaceName: String?) {
-        nameLabel.text = workspaceName
+    func binding(groupName: String?, time: String?) {
+        nameLabel.text = groupName
+        timeLabel.text = time
     }
     
     @IBAction func editAction(_ sender: UIButton) {

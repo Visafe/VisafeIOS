@@ -264,14 +264,14 @@ class GroupWorker {
         }
     }
     
-    static func updateWhitelist(param: GroupUpdateWhitelistParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+    static func updateWhitelist(param: GroupUpdateWhitelistParam, completion: @escaping (_ result: GroupModel?, _ error: Error?) -> Void) {
         let router = APIRouter.groupUpdateWhitelist(param: param)
         APIManager.shared.request(target: router) { (data, error) in
-            var loginResult: BaseResult?
+            var loginResult: GroupModel?
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                    loginResult = Mapper<GroupModel>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)
@@ -314,6 +314,20 @@ class GroupWorker {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
                     loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
+    
+    static func getLog(param: QueryLogParam, completion: @escaping (_ result: QueryLogResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.logGroup(param: param)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: QueryLogResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<QueryLogResult>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)
