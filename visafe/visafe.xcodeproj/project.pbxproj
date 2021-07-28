@@ -220,6 +220,7 @@
 		C9C7A9E626B05E9F002C883A /* LicenseOverviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C7A9E426B05E9F002C883A /* LicenseOverviewVC.xib */; };
 		C9C7A9ED26B05EEC002C883A /* LicenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7A9EB26B05EEC002C883A /* LicenseVC.swift */; };
 		C9C7A9EE26B05EEC002C883A /* LicenseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C7A9EC26B05EEC002C883A /* LicenseVC.xib */; };
+		C9CBFDA826B1C0E50097A026 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CBFDA726B1C0E50097A026 /* UIImageViewExtension.swift */; };
 		C9CCAB5326A5DFE300C04BC5 /* GroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCAB5126A5DFE300C04BC5 /* GroupDetailVC.swift */; };
 		C9CCAB5426A5DFE300C04BC5 /* GroupDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CCAB5226A5DFE300C04BC5 /* GroupDetailVC.xib */; };
 		C9CE383726B01E860010A43C /* VisafeDateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE383626B01E860010A43C /* VisafeDateFormater.swift */; };
@@ -510,6 +511,7 @@
 		C9C7A9E426B05E9F002C883A /* LicenseOverviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseOverviewVC.xib; sourceTree = "<group>"; };
 		C9C7A9EB26B05EEC002C883A /* LicenseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseVC.swift; sourceTree = "<group>"; };
 		C9C7A9EC26B05EEC002C883A /* LicenseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseVC.xib; sourceTree = "<group>"; };
+		C9CBFDA726B1C0E50097A026 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		C9CCAB5126A5DFE300C04BC5 /* GroupDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailVC.swift; sourceTree = "<group>"; };
 		C9CCAB5226A5DFE300C04BC5 /* GroupDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupDetailVC.xib; sourceTree = "<group>"; };
 		C9CE383626B01E860010A43C /* VisafeDateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisafeDateFormater.swift; sourceTree = "<group>"; };
@@ -905,6 +907,7 @@
 				C99034D22694C3C0009C078F /* TextfieldExtension.swift */,
 				C97A1C21269F39D100EC98DC /* DateExtension.swift */,
 				C993D25326A46A9B00684F80 /* TabbarExtension.swift */,
+				C9CBFDA726B1C0E50097A026 /* UIImageViewExtension.swift */,
 			);
 			path = "9. Extension";
 			sourceTree = "<group>";
@@ -1651,6 +1654,7 @@
 				C9B794512684D72400258A72 /* ColorExtension.swift in Sources */,
 				C9E7A49E2690B1610012985B /* MoreGroupActionView.swift in Sources */,
 				C9F9385326881A4A00D30F28 /* PasswordModel.swift in Sources */,
+				C9CBFDA826B1C0E50097A026 /* UIImageViewExtension.swift in Sources */,
 				C969B3A7269ADFD30066A88A /* ListWorkspaceVC.swift in Sources */,
 				C940AE96268376A70069B830 /* TableViewExtension.swift in Sources */,
 				C97A1C22269F39D200EC98DC /* DateExtension.swift in Sources */,

@@ -146,14 +146,14 @@ class StatisticCategory: NSObject, Mappable {
 class StatisticModel: NSObject, Mappable {
     var time_units: String?
     var num_dns_queries: Int?
-    var num_blocked_filtering: Int?
-    var num_replaced_safebrowsing: Int?
-    var num_replaced_safesearch: Int?
-    var num_replaced_parental: Int?
     var num_dangerous_domain: Int?
+    var num_native_tracking: Int?
     var num_violation: Int?
     var num_ads_blocked: Int?
-    var avg_processing_time: Int?
+    var num_dangerous_domain_all: Int?
+    var num_ads_blocked_all: Int?
+    var num_violation_all: Int?
+    var num_native_tracking_all: Int?
     var top_categories: [StatisticCategory]?
     
     override init() {
@@ -167,14 +167,13 @@ class StatisticModel: NSObject, Mappable {
     func mapping(map: Map) {
         time_units <- map["time_units"]
         num_dns_queries <- map["num_dns_queries"]
-        num_blocked_filtering <- map["num_blocked_filtering"]
-        num_replaced_safebrowsing <- map["num_replaced_safebrowsing"]
-        num_replaced_safesearch <- map["num_replaced_safesearch"]
-        num_replaced_parental <- map["num_replaced_parental"]
         num_dangerous_domain <- map["num_dangerous_domain"]
         num_violation <- map["num_violation"]
-        num_ads_blocked <- map["num_ads_blocked"]
-        avg_processing_time <- map["avg_processing_time"]
+        num_native_tracking <- map["num_native_tracking"]
+        num_ads_blocked_all <- map["num_ads_blocked_all"]
+        num_dangerous_domain_all <- map["num_dangerous_domain_all"]
+        num_violation_all <- map["num_violation_all"]
+        num_ads_blocked_all <- map["num_ads_blocked_all"]
         top_categories <- map["top_categories"]
     }
 }

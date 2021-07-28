@@ -12,7 +12,7 @@ public enum QueryLogTypeEnum: String {
     case dangerous = "dangerous_domain"
     case violation = "violation"
     case ads_blocked = "ads_blocked"
-    case all = "all" // truy cập
+    case native_tracking = "native_tracking"
 }
 
 class QueryLogParam: NSObject, Mappable {

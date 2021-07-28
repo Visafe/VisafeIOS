@@ -17,6 +17,7 @@ class HomeVC: BaseViewController {
         case invalidUpstreamsNumber
     }
 
+    @IBOutlet weak var homeLoadingImage: UIImageView!
     @IBOutlet weak var connectionView: UIView!
     @IBOutlet weak var earthImageView: UIImageView!
     @IBOutlet weak var connectButton: UIButton!
@@ -68,6 +69,7 @@ class HomeVC: BaseViewController {
     }
 
     func setupUI() {
+        homeLoadingImage.alpha = 0
         connectionView.clipsToBounds = true
         gradient.frame = UIScreen.main.bounds
         gradient.colors = [UIColor.color_0F1733.cgColor, UIColor.color_102366.cgColor]
@@ -75,32 +77,69 @@ class HomeVC: BaseViewController {
     }
 
     func updateUI() {
-        firstLabel.text = isEnabled ? "": "Bấm"
-        lastLabel.text = isEnabled ? "Đang được bảo vệ": "để bật tính năng bảo vệ"
+        firstLabel.text = isEnabled ? "": "Bấm "
+        lastLabel.text = isEnabled ? "Đang được bảo vệ": " để bật tính năng bảo vệ"
         desImageView.image = isEnabled ? UIImage(named: "Shield_Done"): UIImage(named: "power")
         earthImageView.image = isEnabled ? UIImage(named: "connection_success"): UIImage(named: "no_connection")
         connectButton.setImage(isEnabled ? UIImage(named: "connect_on"): UIImage(named: "connect_off"), for: .normal)
+        homeLoadingImage.image = isEnabled ? UIImage(named: "ic_power_on"): nil
+    }
+    
+    func showAnimationLoading() {
+        self.homeLoadingImage.rotate()
+        self.homeLoadingImage.image = UIImage(named: "ic_loading_home")
+        UIView.animate(withDuration: 0.75) {
+            self.homeLoadingImage.alpha = 1
+        } completion: { (success) in
+        }
+    }
+    
+    func hideAnimationLoading() {
+        self.homeLoadingImage.endRotate()
+        UIView.animate(withDuration: 0.75) {
+            self.homeLoadingImage.alpha = 0
+        } completion: { (success) in
+        }
+    }
+    
+    func updateStateProtect(isOn: Bool) {
+        if isOn {
+            
+        } else {
+            
+        }
     }
 
     @IBAction func connectAction(_ sender: Any) {
-        if isInstalled {
-            if isEnabled {
-                removeDnsManager {[weak self] (error) in
-                    if let _error = error {
-                        self?.showError(title: "Thông báo", content: _error.localizedDescription)
-                    }
-                }
-            } else {
-                showError(title: "Thông báo", content: "Vui lòng vào Cài đặt -> Cài đặt chung -> VPN -> DNS để cài chọn Visafe")
-            }
-        } else {
-            saveDNS {[weak self] (error) in
-                if let _error = error {
-                    self?.showError(title: "Thông báo", content: _error.localizedDescription)
-                } else {
-                    self?.showError(title: "Thông báo", content: "Vui lòng vào Cài đặt -> Cài đặt chung -> VPN -> DNS để cài chọn Visafe")
-                }
-            }
+        showAnimationLoading()
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector:#selector(handleEnabelSuccess(sender:)), userInfo: nil , repeats:false)
+//        if isInstalled {
+//            if isEnabled {
+//                removeDnsManager {[weak self] (error) in
+//                    if let _error = error {
+//                        self?.showError(title: "Thông báo", content: _error.localizedDescription)
+//                    }
+//                }
+//            } else {
+//                showError(title: "Thông báo", content: "Vui lòng vào Cài đặt -> Cài đặt chung -> VPN -> DNS để cài chọn Visafe")
+//            }
+//        } else {
+//            saveDNS {[weak self] (error) in
+//                if let _error = error {
+//                    self?.showError(title: "Thông báo", content: _error.localizedDescription)
+//                } else {
+//                    self?.showError(title: "Thông báo", content: "Vui lòng vào Cài đặt -> Cài đặt chung -> VPN -> DNS để cài chọn Visafe")
+//                }
+//            }
+//        }
+    }
+    
+    @objc func handleEnabelSuccess(sender: Timer) {
+        hideAnimationLoading()
+        isEnabled = true
+        UIView.animate(withDuration: 0.75) {
+            self.homeLoadingImage.alpha = 1
+        } completion: { (success) in
         }
     }
 }

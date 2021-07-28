@@ -147,13 +147,13 @@ public enum GroupSettingParentEnum: Int {
         case .blockAds:
             return .ads_blocked
         case .blockFollow:
-            return .all
+            return .native_tracking
         case .blockConnect:
             return .violation
         case .blockContent:
             return .dangerous
         case .blockVPN:
-            return .all
+            return .native_tracking
         }
     }
 }
