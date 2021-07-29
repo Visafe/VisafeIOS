@@ -22,27 +22,35 @@ class TabbarVC: BaseTabbarController {
     func configView() {
         let protectVC = ProtectVC()
         protectVC.title = "Bảo vệ"
+        let tab1 = UITabBarItem(title: "Bảo vệ", image: UIImage(named: "protect_tabbar"), selectedImage: UIImage(named: "protect_tabbar"))
+        tab1.tag = 1
+        protectVC.tabBarItem = tab1
         let protectNav = BaseNavigationController(rootViewController: protectVC)
-        protectVC.tabBarItem = UITabBarItem(title: "Bảo vệ", image: UIImage(named: "protect_tabbar"), selectedImage: UIImage(named: "protect_tabbar"))
         
         let workspace = WorkspaceVC()
         workspace.title = "Workspace"
+        let tab2 = UITabBarItem(title: "Workspace", image: UIImage(named: "group_tabbar"), selectedImage: UIImage(named: "group_tabbar"))
+        tab2.tag = 2
+        workspace.tabBarItem = tab2
         let workspaceNav = BaseNavigationController(rootViewController: workspace)
-        workspaceNav.tabBarItem = UITabBarItem(title: "Workspace", image: UIImage(named: "group_tabbar"), selectedImage: UIImage(named: "group_tabbar"))
-
+        
         let homeVC = HomeVC()
         homeVC.tabBarItem = ESTabBarItem.init(ExampleBouncesContentView(), title: nil, image: UIImage(named: "ic_scan_select"), selectedImage: UIImage(named: "ic_scan_select"))
         let homeNav = BaseNavigationController(rootViewController: homeVC)
         
         let notiVC = NotificationVC()
         notiVC.title = "Thông báo"
+        let tab4 = UITabBarItem(title: "Thông báo", image: UIImage(named: "notification_tabbar"), selectedImage: UIImage(named: "notification_tabbar"))
+        tab4.tag = 4
+        notiVC.tabBarItem = tab4
         let notiNav = BaseNavigationController(rootViewController: notiVC)
-        notiNav.tabBarItem = UITabBarItem(title: "Thông báo", image: UIImage(named: "notification_tabbar"), selectedImage: UIImage(named: "notification_tabbar"))
         
         let profileVC = ProfileVC()
         profileVC.title = "Tài khoản"
+        let tab5 = UITabBarItem(title: "Tài khoản", image: UIImage(named: "profile_tabbar"), selectedImage: UIImage(named: "profile_tabbar"))
+        tab5.tag = 5
+        profileVC.tabBarItem = tab5
         let profileNav = BaseNavigationController(rootViewController: profileVC)
-        profileNav.tabBarItem = UITabBarItem(title: "Tài khoản", image: UIImage(named: "profile_tabbar"), selectedImage: UIImage(named: "profile_tabbar"))
     
         self.viewControllers = [protectNav, workspaceNav, homeNav, notiNav, profileNav]
         selectedIndex = 2
@@ -85,6 +93,16 @@ class TabbarVC: BaseTabbarController {
         } else {
             updateStateMainButton(selected: false)
         }
-        super.tabBar(tabBar, didSelect: item)
+        let isLogin = CacheManager.shared.getIsLogined()
+        if !isLogin && ([1, 2, 4].contains(item.tag)) {
+            showFormLogin()
+        } else {
+            super.tabBar(tabBar, didSelect: item)
+        }
+    }
+    
+    func showFormLogin() {
+        let vc = LoginVC()
+        present(vc, animated: true)
     }
 }

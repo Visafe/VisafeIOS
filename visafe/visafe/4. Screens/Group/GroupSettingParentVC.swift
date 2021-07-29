@@ -149,9 +149,9 @@ public enum GroupSettingParentEnum: Int {
         case .blockFollow:
             return .native_tracking
         case .blockConnect:
-            return .violation
+            return .access_blocked
         case .blockContent:
-            return .dangerous
+            return .content_blocked
         case .blockVPN:
             return .native_tracking
         }

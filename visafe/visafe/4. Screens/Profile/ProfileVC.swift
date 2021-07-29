@@ -147,6 +147,10 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = ProfileFooterView.loadFromNib()
+        footerView?.upgrade = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.showLicense()
+        }
         return footerView
     }
     

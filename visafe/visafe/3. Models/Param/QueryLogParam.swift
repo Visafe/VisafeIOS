@@ -9,8 +9,8 @@ import UIKit
 import ObjectMapper
 
 public enum QueryLogTypeEnum: String {
-    case dangerous = "dangerous_domain"
-    case violation = "violation"
+    case content_blocked = "content_blocked"
+    case access_blocked = "access_blocked"
     case ads_blocked = "ads_blocked"
     case native_tracking = "native_tracking"
 }

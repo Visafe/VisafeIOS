@@ -53,6 +53,7 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
             let vc = GroupListDeviceVC(group: weakSelf.group)
             weakSelf.navigationController?.pushViewController(vc)
         }
+        
         // 1) Set the header
         self.headerView = header
         

@@ -333,4 +333,18 @@ class GroupWorker {
             completion(loginResult, error)
         }
     }
+    
+    static func deleteLog(groupId: String?, logId: String?, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.deleteLog(group_id: groupId, logId: logId)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: BaseResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
 }

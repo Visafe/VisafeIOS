@@ -44,10 +44,9 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQe-fk-a1p">
-                    <rect key="frame" x="99" y="160.5" width="216" height="48"/>
+                    <rect key="frame" x="24" y="160.5" width="177" height="48"/>
                     <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="216" id="UFP-1r-czy"/>
                         <constraint firstAttribute="height" constant="48" id="dza-EK-uhj"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -59,6 +58,9 @@
                             <real key="value" value="24"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addMemberAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="iFH-Jc-sLb"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tất cả thành viên tham gia nhóm đều được ViSafe bảo vệ trên môi trường mạng" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xby-pi-Ms2">
                     <rect key="frame" x="16" y="108.5" width="382" height="36"/>
@@ -190,6 +192,25 @@
                         <constraint firstAttribute="height" constant="6" id="hN0-oy-dnt"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iuc-3z-4OW">
+                    <rect key="frame" x="213" y="160.5" width="177" height="48"/>
+                    <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="zu1-2a-Ddd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <state key="normal" title="Thêm thiết bị">
+                        <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addDeviceAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="dkg-iK-5Nm"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -197,15 +218,19 @@
                 <constraint firstItem="8VA-4R-8oO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9rJ-0D-e0F"/>
                 <constraint firstItem="Hje-jS-iQu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="BXu-cw-GSr"/>
                 <constraint firstItem="4B8-W7-Hk6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CHG-uX-yJy"/>
+                <constraint firstItem="Iuc-3z-4OW" firstAttribute="centerY" secondItem="nQe-fk-a1p" secondAttribute="centerY" id="CPN-hZ-kbZ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Xby-pi-Ms2" secondAttribute="trailing" constant="16" id="DTg-5R-qcZ"/>
+                <constraint firstItem="Iuc-3z-4OW" firstAttribute="width" secondItem="nQe-fk-a1p" secondAttribute="width" multiplier="1:1" id="Iup-m9-OpX"/>
                 <constraint firstItem="4B8-W7-Hk6" firstAttribute="top" secondItem="8VA-4R-8oO" secondAttribute="bottom" constant="8" id="LF4-pm-GaE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Iuc-3z-4OW" secondAttribute="trailing" constant="24" id="NcV-rK-ovu"/>
                 <constraint firstItem="2pl-sN-Lni" firstAttribute="top" secondItem="nQe-fk-a1p" secondAttribute="bottom" constant="24" id="O22-xG-hhT"/>
                 <constraint firstItem="4B8-W7-Hk6" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="PLq-18-c9u"/>
                 <constraint firstItem="gCj-55-9eP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="VgI-kp-DWx"/>
+                <constraint firstItem="Iuc-3z-4OW" firstAttribute="leading" secondItem="nQe-fk-a1p" secondAttribute="trailing" constant="12" id="XjH-js-SQg"/>
                 <constraint firstItem="Xby-pi-Ms2" firstAttribute="top" secondItem="tLj-JJ-Dec" secondAttribute="bottom" constant="4" id="Zc6-6r-eOm"/>
+                <constraint firstItem="nQe-fk-a1p" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="Zfj-gT-7ZB"/>
                 <constraint firstItem="Hje-jS-iQu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="anX-Uz-WGI"/>
                 <constraint firstItem="Xby-pi-Ms2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="bJZ-af-NLk"/>
-                <constraint firstItem="nQe-fk-a1p" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bdX-3O-cv7"/>
                 <constraint firstItem="8VA-4R-8oO" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="cba-1w-yLt"/>
                 <constraint firstItem="nQe-fk-a1p" firstAttribute="top" secondItem="Xby-pi-Ms2" secondAttribute="bottom" constant="16" id="f65-5e-moN"/>
                 <constraint firstItem="8VA-4R-8oO" firstAttribute="top" secondItem="2pl-sN-Lni" secondAttribute="bottom" constant="8" id="ihn-8h-90h"/>

@@ -20,6 +20,7 @@ class GroupDetailHeader: BaseView {
     var managerAction:(() -> Void)?
     var viewMemberAction:(() -> Void)?
     var viewDeviceAction:(() -> Void)?
+    var addDeviceAction:(() -> Void)?
     
     class func loadFromNib() -> GroupDetailHeader? {
         return self.loadFromNib(withName: GroupDetailHeader.className)
@@ -37,8 +38,8 @@ class GroupDetailHeader: BaseView {
         addAction?()
     }
     
-    @IBAction func managerMemberAction(_ sender: UIButton) {
-        managerAction?()
+    @IBAction func addDeviceAction(_ sender: UIButton) {
+        addDeviceAction?()
     }
     @IBAction func actionViewMember(_ sender: Any) {
         viewMemberAction?()

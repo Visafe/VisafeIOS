@@ -143,7 +143,11 @@ extension GroupListBlockVC: UITableViewDelegate, UITableViewDataSource {
             view.binding(groupName: weakSelf.group.name, time: "Đã chặn \(model.time?.getTimeOnFeed().lowercased() ?? "")")
             view.unBlockedAction = { [weak self] in
                 guard let strongSelf = self else { return }
-                strongSelf.unBlockedDomain(domain: strongSelf.sources[indexPath.row])
+                strongSelf.addToWhileList(domain: strongSelf.sources[indexPath.row])
+            }
+            view.deleteAction = { [weak self] in
+                guard let strongSelf = self else { return }
+                Timer.scheduledTimer(timeInterval: 0.3, target: strongSelf, selector:#selector(strongSelf.deleteLog(sender:)), userInfo: strongSelf.sources[indexPath.row] , repeats:false)
             }
             weakSelf.showPopup(view: view)
         }
@@ -151,7 +155,7 @@ extension GroupListBlockVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func unBlockedDomain(domain: QueryLogModel) {
+    func addToWhileList(domain: QueryLogModel) {
         guard let link = domain.question?.host else { return }
         var whitelist = group.whitelist
         whitelist.append(link)
@@ -165,6 +169,23 @@ extension GroupListBlockVC: UITableViewDelegate, UITableViewDataSource {
             if let _ = result {
                 weakSelf.group.whitelist = whitelist
             }
+        }
+    }
+    
+    @objc func deleteLog(sender: Timer) {
+        guard let domain = sender.userInfo as? QueryLogModel else { return }
+        showConfirmDelete(title: "Bạn có chắc chắn muốn xoá cảnh báo không?") { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.actionDeleteLog(domain: domain)
+        }
+    }
+    
+    func actionDeleteLog(domain: QueryLogModel) {
+        showLoading()
+        GroupWorker.deleteLog(groupId: group.groupid, logId: domain.doc_id) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            weakSelf.refreshData()
         }
     }
     
@@ -184,7 +205,6 @@ extension GroupListBlockVC: UITableViewDelegate, UITableViewDataSource {
         return 0.001
     }
 }
-
 
 extension GroupListBlockVC: UIScrollViewDelegate {
     

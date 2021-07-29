@@ -39,6 +39,7 @@ class QueryLogModel: NSObject, Mappable {
     var rule: String?
     var time: Date?
     var upstream: String?
+    var doc_id: String?
     var question: QueryLogModelQuestion?
     
     override init() {
@@ -60,5 +61,6 @@ class QueryLogModel: NSObject, Mappable {
         time <- (map["time"], ViSafeDateFormater())
         upstream <- map["upstream"]
         question <- map["question"]
+        doc_id <- map["doc_id"]
     }
 }
