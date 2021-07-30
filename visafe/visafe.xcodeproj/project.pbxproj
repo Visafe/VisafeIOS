@@ -224,6 +224,8 @@
 		C9CCAB5326A5DFE300C04BC5 /* GroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCAB5126A5DFE300C04BC5 /* GroupDetailVC.swift */; };
 		C9CCAB5426A5DFE300C04BC5 /* GroupDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CCAB5226A5DFE300C04BC5 /* GroupDetailVC.xib */; };
 		C9CE383726B01E860010A43C /* VisafeDateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE383626B01E860010A43C /* VisafeDateFormater.swift */; };
+		C9DB0EE526B2D316008084CC /* BaseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DB0EE426B2D316008084CC /* BaseAddView.swift */; };
+		C9DB0EE926B2D322008084CC /* BaseAddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9DB0EE826B2D322008084CC /* BaseAddView.xib */; };
 		C9DC8F6A26A6ED540021A8BD /* GroupDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC8F6926A6ED540021A8BD /* GroupDetailHeader.swift */; };
 		C9DC8F6E26A6ED610021A8BD /* GroupDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9DC8F6D26A6ED610021A8BD /* GroupDetailHeader.xib */; };
 		C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E5C77D26872ADC00D159EF /* LoginResult.swift */; };
@@ -515,6 +517,8 @@
 		C9CCAB5126A5DFE300C04BC5 /* GroupDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailVC.swift; sourceTree = "<group>"; };
 		C9CCAB5226A5DFE300C04BC5 /* GroupDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupDetailVC.xib; sourceTree = "<group>"; };
 		C9CE383626B01E860010A43C /* VisafeDateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisafeDateFormater.swift; sourceTree = "<group>"; };
+		C9DB0EE426B2D316008084CC /* BaseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAddView.swift; sourceTree = "<group>"; };
+		C9DB0EE826B2D322008084CC /* BaseAddView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseAddView.xib; sourceTree = "<group>"; };
 		C9DC8F6926A6ED540021A8BD /* GroupDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailHeader.swift; sourceTree = "<group>"; };
 		C9DC8F6D26A6ED610021A8BD /* GroupDetailHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupDetailHeader.xib; sourceTree = "<group>"; };
 		C9E5C77D26872ADC00D159EF /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
@@ -727,6 +731,8 @@
 				C93ED166268232ED00B03E8A /* BaseTabbarController.swift */,
 				C93ED16C2682343C00B03E8A /* BaseNavigationController.swift */,
 				C91D45952694CCB900055A4E /* BaseTextField.swift */,
+				C9DB0EE426B2D316008084CC /* BaseAddView.swift */,
+				C9DB0EE826B2D322008084CC /* BaseAddView.xib */,
 			);
 			path = "2. Base";
 			sourceTree = "<group>";
@@ -1459,6 +1465,7 @@
 				C969B39C269ADB210066A88A /* MoreActionWorkspaceView.xib in Resources */,
 				C9777A32269AC5E100C40031 /* ProfileCell.xib in Resources */,
 				C956058326AE9D8500AD8475 /* GroupListDeviceVC.xib in Resources */,
+				C9DB0EE926B2D322008084CC /* BaseAddView.xib in Resources */,
 				C9FA15FD268A2DD700A1A6C6 /* GroupSettingVC.xib in Resources */,
 				C9B79465268613A700258A72 /* RegisterVC.xib in Resources */,
 				C9EEB8E126ADAF38008F093C /* WorkspaceSumaryCell.xib in Resources */,
@@ -1689,6 +1696,7 @@
 				C9EDB55B26839E74009CBD93 /* GroupCell.swift in Sources */,
 				C94B39B3268A202500046958 /* AddDeviceToGroupParam.swift in Sources */,
 				C9B794862686250B00258A72 /* ResetPassParam.swift in Sources */,
+				C9DB0EE526B2D316008084CC /* BaseAddView.swift in Sources */,
 				C95A5862268867310077112F /* PageViewControllerExtension.swift in Sources */,
 				C94B39BC268A24D700046958 /* DeleteDeviceToIdentifierParam.swift in Sources */,
 				0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */,
@@ -1795,7 +1803,7 @@
 				CODE_SIGN_ENTITLEMENTS = tunnel/tunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
+				DEVELOPMENT_TEAM = 3Z59HFVS9G;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = tunnel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1818,9 +1826,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = tunnel/tunnel.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
+				DEVELOPMENT_TEAM = 3Z59HFVS9G;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = tunnel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1830,8 +1840,10 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.4.7;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe.tunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vn.apptest011111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1966,20 +1978,21 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = visafe/visafe.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cuong Nguyen (YH5Y72JF59)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
+				DEVELOPMENT_TEAM = 83SZM3BK5C;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.4.7;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vn.apptest01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1998,21 +2011,25 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = visafe/visafe.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cuong Nguyen (YH5Y72JF59)";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
+				DEVELOPMENT_TEAM = 83SZM3BK5C;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.4.7;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vn.apptest01;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AppTest_Develop;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;

@@ -183,18 +183,18 @@ extension LoginVC: GIDSignInDelegate {
 
 extension LoginVC: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            let userIdentifier = appleIDCredential.user
-            let userFirstName = appleIDCredential.fullName?.givenName
-            let userLastName = appleIDCredential.fullName?.familyName
-            let username = appleIDCredential.fullName
-            let userEmail = appleIDCredential.email
-            let token = appleIDCredential.identityToken
-            print(userIdentifier)
-            print(userFirstName)
-            print(userEmail)
-            let token_string =  String(decoding: appleIDCredential.identityToken!, as: UTF8.self)
-            print(token_string)
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential, let identityToken = appleIDCredential.identityToken {
+            let token_string =  String(decoding: identityToken, as: UTF8.self)
+            loginApple(token: token_string)
+        }
+    }
+    
+    func loginApple(token: String?) {
+        showLoading()
+        AuthenWorker.loginApple(token: token) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            weakSelf.handleLogin(result: result, error: error)
         }
     }
     

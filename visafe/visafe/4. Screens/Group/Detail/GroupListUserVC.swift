@@ -9,6 +9,7 @@ import UIKit
 
 class GroupListUserVC: BaseViewController {
     
+    @IBOutlet weak var searchTextField: BaseTextField!
     @IBOutlet weak var tableView: UITableView!
     var group: GroupModel
     
@@ -46,7 +47,10 @@ class GroupListUserVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Quản lý thành viên"
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 25
         tableView.registerCells(cells: [GroupMemberCell.className])
+        searchTextField.setState(type: .active)
         updateData()
         tableView.reloadData()
     }
@@ -55,24 +59,32 @@ class GroupListUserVC: BaseViewController {
 extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listUser.count
+        if section == 0 {
+            return 0
+        } else {
+            return listUser.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupMemberCell.className) as? GroupMemberCell else {
+        if indexPath.section == 0 {
             return UITableViewCell()
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupMemberCell.className) as? GroupMemberCell else {
+                return UITableViewCell()
+            }
+            let user = listUser[indexPath.row]
+            cell.binding(user: user)
+            cell.moreAction = { [weak self] in
+                guard let weaSelf = self else { return }
+                weaSelf.moreAction(user: user)
+            }
+            return cell
         }
-        let user = listUser[indexPath.row]
-        cell.binding(user: user)
-        cell.moreAction = { [weak self] in
-            guard let weaSelf = self else { return }
-            weaSelf.moreAction(user: user)
-        }
-        return cell
     }
     
     func moreAction(user: UserModel) {
@@ -143,20 +155,34 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if listUser.count == 0 { return UIView() }
-        let viewHeader = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 48))
-        viewHeader.backgroundColor = UIColor.white
-        let label = UILabel(frame: CGRect(x: 16, y: 6, width: kScreenWidth - 32, height: 48))
-        label.text = "\(listUser.count) thành viên"
-        label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        viewHeader.addSubview(label)
-        return viewHeader
+        if section == 0 {
+            guard let view = BaseAddView.loadFromNib() else { return UIView() }
+            view.bindingInfo(type: .member)
+            view.addAction = { [weak self] in
+                guard let weakSelf = self else { return }
+                
+            }
+            return view
+        } else {
+            if listUser.count == 0 { return UIView() }
+            let viewHeader = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 48))
+            viewHeader.backgroundColor = UIColor.white
+            let label = UILabel(frame: CGRect(x: 16, y: 6, width: kScreenWidth - 32, height: 48))
+            label.textAlignment = .right
+            label.text = "Số thành viên: \(listUser.count)"
+            label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+            viewHeader.addSubview(label)
+            return viewHeader
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if listUser.count == 0 { return 0.0001 }
-        return 48
+        if section == 0 {
+            return 72
+        } else {
+            if listUser.count == 0 { return 0.0001 }
+            return 48
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
