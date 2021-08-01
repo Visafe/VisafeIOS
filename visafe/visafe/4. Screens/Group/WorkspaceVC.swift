@@ -10,6 +10,7 @@ import ACTabScrollView
 class WorkspaceVC: HeaderedACTabScrollViewController, ACTabScrollViewDelegate,  ACTabScrollViewDataSource {
     
     var subPageViews: [UIView] = []
+    var imageview: UIImageView!
     
     override func viewDidLoad() {
         self.headerHeight = kScreenWidth * 180 / 375
@@ -21,15 +22,23 @@ class WorkspaceVC: HeaderedACTabScrollViewController, ACTabScrollViewDelegate,  
         tabScrollView.tabSectionHeight = 0
         
         // 1) Header init
-        let imageview = UIImageView(image: UIImage(named: "wsp_family"))
+        imageview = UIImageView(image: UIImage(named: "wsp_family"))
+        if let workspace = CacheManager.shared.getCurrentWorkspace(), workspace.type == .enterprise {
+            imageview.image = UIImage(named: "wsp_enterprise")
+        } else {
+            imageview.image = UIImage(named: "wsp_family")
+        }
         imageview.contentMode = .scaleToFill
         self.headerView = imageview
         
         // 2) Minimal ACTabScrollView initialisation
-        
         self.tabScrollView.dataSource = self
         self.tabScrollView.delegate = self
         let vc = GroupVC()
+        vc.selectedWorkspace = { [weak self] workspace in
+            guard let weakSelf = self else { return }
+            weakSelf.updateViewWithWsp(wsp: workspace)
+        }
         vc.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         addChild(vc)
         subPageViews.append(vc.view)
@@ -37,8 +46,15 @@ class WorkspaceVC: HeaderedACTabScrollViewController, ACTabScrollViewDelegate,  
         
         self.navBarColor = .white
         self.navBarItemsColor = UIColor.black
-        self.navBarTitleColor = UIColor.black.withAlphaComponent(0) // At first, the navbar's title is transparent (update according to scroll prosition)
-//        self.setNavBarTitle(title: CacheManager.shared.getCurrentWorkspace()?.name ?? "")
+        self.navBarTitleColor = UIColor.black.withAlphaComponent(0)
+    }
+    
+    func updateViewWithWsp(wsp: WorkspaceModel?) {
+        if let workspace = CacheManager.shared.getCurrentWorkspace(), workspace.type == .enterprise {
+            imageview.image = UIImage(named: "wsp_enterprise")
+        } else {
+            imageview.image = UIImage(named: "wsp_family")
+        }
     }
     
     // ACTabScrollViewDelegate & ACTabScrollViewDataSource

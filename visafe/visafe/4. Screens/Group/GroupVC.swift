@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import SwiftMessages
 
 class GroupVC: BaseViewController {
 
+    @IBOutlet weak var typeView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     var myGroups: [GroupModel] = []
     var inviteGroups: [GroupModel] = []
     var scrollDelegateFunc: ((UIScrollView)->Void)?
     var statisticModel: StatisticModel = StatisticModel()
+    var selectedWorkspace:((_ workspace: WorkspaceModel?) -> Void)?
     var timeType: ChooseTimeEnum = .day
     
     override func viewDidLoad() {
@@ -27,6 +30,18 @@ class GroupVC: BaseViewController {
     func configView() {
         // tableview
         tableView.registerCells(cells: [GroupCell.className, WorkspaceSumaryCell.className])
+        tableView.backgroundColor = UIColor.clear
+        
+        guard let wsp = CacheManager.shared.getCurrentWorkspace() else { return }
+        updateViewWithWsp(wsp: wsp)
+    }
+    
+    func updateViewWithWsp(wsp: WorkspaceModel?) {
+        if let workspace = CacheManager.shared.getCurrentWorkspace(), workspace.type == .enterprise {
+            typeView.backgroundColor = UIColor(hexString: "FADFE1")
+        } else {
+            typeView.backgroundColor = UIColor(hexString: "FFD98F")
+        }
     }
     
     func showFormAddGroup() {
@@ -113,13 +128,84 @@ class GroupVC: BaseViewController {
     }
     
     func changeWorkspace() {
-        let vc = ListWorkspaceVC()
-        let nav = BaseNavigationController(rootViewController: vc)
-        vc.selectedWorkspace = { [weak self] workspace in
+        guard let view = ListWorkspaceView.loadFromNib() else { return }
+        view.loadView()
+        view.selectedWorkspace = { [weak self] workspace in
             guard let weakSelf = self else { return }
-            weakSelf.refreshData()
+            weakSelf.selectedWorkspace?(workspace)
+            weakSelf.updateViewWithWsp(wsp: workspace)
+            weakSelf.prepareData()
         }
-        present(nav, animated: true)
+        view.moreWorkspace = { [weak self] workspace in
+            guard let weakSelf = self else { return }
+            weakSelf.moreAction(workspace: workspace)
+        }
+        view.addWorkspace = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.showFormAddGroup()
+        }
+        showPopup(view: view)
+    }
+    
+    func moreAction(workspace: WorkspaceModel) {
+        guard let info = MoreActionWorkspaceView.loadFromNib() else { return }
+        info.binding(workspaceName: workspace.name)
+        info.deleteAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            SwiftMessages.hide()
+            Timer.scheduledTimer(timeInterval: 0.3, target: weakSelf, selector:#selector(weakSelf.confirmDeleteWorkspace(sender:)), userInfo: workspace , repeats:false)
+        }
+        info.editAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.updateWorkspace(workspace: workspace)
+        }
+        showPopup(view: info)
+    }
+    
+    @objc func confirmDeleteWorkspace(sender: Timer) {
+        guard let workspace = sender.userInfo as? WorkspaceModel else { return }
+        showConfirmDelete(title: "Bạn có chắc chắn muốn xoá workspace \(workspace.name ?? "") không?") { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.deleteWorkspace(workspace: workspace)
+        }
+    }
+    
+    func deleteWorkspace(workspace: WorkspaceModel) {
+        showLoading()
+        WorkspaceWorker.delete(wspId: workspace.id) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            weakSelf.updateWorkspaceWithDelete(id: workspace.id)
+            weakSelf.prepareData()
+        }
+    }
+    
+    func updateWorkspaceWithDelete(id: String?) {
+        if id == CacheManager.shared.getCurrentWorkspace()?.id {
+            CacheManager.shared.setCurrentWorkspace(value: nil)
+            
+            let workspaces = CacheManager.shared.getWorkspacesResult() ?? []
+            if workspaces.count > 0 {
+                if let w = CacheManager.shared.getCurrentWorkspace() {
+                    if let newValue = workspaces.filter({ (wm) -> Bool in
+                        if wm.id == w.id { return true } else { return false }
+                    }).first {
+                        CacheManager.shared.setCurrentWorkspace(value: newValue)
+                    }
+                } else {
+                    CacheManager.shared.setCurrentWorkspace(value: workspaces[0])
+                }
+            } else {
+                CacheManager.shared.setCurrentWorkspace(value: nil)
+            }
+            tableView.reloadData()
+        }
+    }
+    
+    func updateWorkspace(workspace: WorkspaceModel) {
+        let vc = PostWorkspacesVC(workspace: workspace, editMode: .update)
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
     }
 }
 

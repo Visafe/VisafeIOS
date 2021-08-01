@@ -119,24 +119,6 @@
         }
       },
       {
-        "package": "Realm",
-        "repositoryURL": "https://github.com/realm/realm-cocoa.git",
-        "state": {
-          "branch": null,
-          "revision": "cde2dfe6adc917835ff1522ae043b75189791faf",
-          "version": "10.8.0"
-        }
-      },
-      {
-        "package": "RealmDatabase",
-        "repositoryURL": "https://github.com/realm/realm-core",
-        "state": {
-          "branch": null,
-          "revision": "d85d071cc25b6f64fabbbebbaaae20f367ef64ae",
-          "version": "11.0.3"
-        }
-      },
-      {
         "package": "Rocket",
         "repositoryURL": "https://github.com/shibapm/Rocket",
         "state": {
@@ -152,15 +134,6 @@
           "branch": null,
           "revision": "254617dd7fae0c45319ba5fbea435bf4d0e15b5d",
           "version": "5.1.2"
-        }
-      },
-      {
-        "package": "SnapKit",
-        "repositoryURL": "https://github.com/SnapKit/SnapKit.git",
-        "state": {
-          "branch": null,
-          "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
-          "version": "5.0.1"
         }
       },
       {

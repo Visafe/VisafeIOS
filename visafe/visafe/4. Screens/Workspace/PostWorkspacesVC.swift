@@ -40,9 +40,11 @@ class PostWorkspacesVC: BaseViewController {
         
         // title
         if editMode == .add {
-            title = "Tạo tài khoản"
+            title = "Tạo workspace"
+            continueButton.setTitle("Tạo", for: .normal)
         } else {
-            title = "Chỉnh sửa tài khoản"
+            title = "Chỉnh sửa workspace"
+            continueButton.setTitle("Sửa", for: .normal)
         }
         
         // left
@@ -84,7 +86,7 @@ class PostWorkspacesVC: BaseViewController {
     
     func handleUpdatename(result: WorkspaceModel?, error: Error?) {
         if result != nil && error == nil {
-            showMemssage(title: "Sửa cấu hình thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
+            showMemssage(title: "Sửa workspace thành công", content: "Bây giờ, bạn đã có thể thêm các nhóm để bảo vệ các thành viên khác") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.parent?.dismiss(animated: true, completion: nil)
             }
@@ -96,7 +98,7 @@ class PostWorkspacesVC: BaseViewController {
     func handleResult(result: WorkspaceModel?, error: Error?) {
         if result != nil && error == nil {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotificationUpdateWorkspace), object: nil)
-            showMemssage(title: "Tạo cấu hình thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
+            showMemssage(title: "Tạo workspace thành công", content: "Bây giờ, bạn đã có thể thêm các nhóm để bảo vệ các thành viên khác") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.parent?.dismiss(animated: true, completion: nil)
             }

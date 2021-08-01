@@ -8,17 +8,17 @@
 import UIKit
 
 extension UIView {
-   var safeAreaHeight: CGFloat {
-       if #available(iOS 11, *) {
-        return safeAreaLayoutGuide.layoutFrame.size.height
-       }
-       return bounds.height
-  }
+    var safeAreaHeight: CGFloat {
+        if #available(iOS 11, *) {
+            return safeAreaLayoutGuide.layoutFrame.size.height
+        }
+        return bounds.height
+    }
     var safeAreaTop: CGFloat {
-         if #available(iOS 11, *) {
+        if #available(iOS 11, *) {
             return safeAreaLayoutGuide.layoutFrame.origin.y
-         }
-         return bounds.height
+        }
+        return bounds.height
     }
 }
 
@@ -32,5 +32,31 @@ extension UIView {
             }
         }
         return nil
+    }
+    
+    // OUTPUT 1
+    func dropShadow(scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: -1, height: 1)
+        layer.shadowRadius = 1
+        
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+    
+    // OUTPUT 2
+    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offSet
+        layer.shadowRadius = radius
+        
+        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
 }

@@ -13,6 +13,7 @@ class WorkspaceSumaryCell: BaseTableCell {
     var actionChangeWorkspace:(() -> Void)?
     var actionCreateGroup:(() -> Void)?
     
+    @IBOutlet weak var summaryView: UIView!
     @IBOutlet weak var workspaceNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var blockedLabel: UILabel!
@@ -36,6 +37,9 @@ class WorkspaceSumaryCell: BaseTableCell {
         dangerousLabel.text = "\(statistic.num_dangerous_domain ?? 0)"
         timeLabel.text = timeType.getTitle()
         workspaceNameLabel.text = CacheManager.shared.getCurrentWorkspace()?.name
+        summaryView.dropShadow(color: .lightGray, opacity: 0.5, offSet: CGSize(width: -1, height: 1), radius: 24, scale: true)
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
     }
     
     @IBAction func chooseTimeAction(_ sender: Any) {

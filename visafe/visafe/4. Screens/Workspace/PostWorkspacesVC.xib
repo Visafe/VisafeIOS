@@ -36,7 +36,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRl-CS-MDn">
                     <rect key="frame" x="24" y="42" width="366" height="48"/>
                     <string key="text">Bạn muốn tên hiển thị
-của loại tài khoản là gì?</string>
+của workspace là gì?</string>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

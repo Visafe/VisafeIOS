@@ -59,8 +59,12 @@ class LoginVC: BaseViewController {
             CacheManager.shared.setLoginResult(value: res)
             getProfile()
         } else {
-            let type = LoginStatusEnum.error
-            showError(title: "Đăng nhập không thành công", content: type.getDescription())
+            let type = result?.status_code ?? LoginStatusEnum.error
+            if type == .unactiveAccount {
+                activationAccount()
+            } else {
+                showError(title: "Đăng nhập không thành công", content: type.getDescription())
+            }
         }
     }
     
@@ -121,10 +125,6 @@ class LoginVC: BaseViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func edittingBegin(_ sender: UITextField) {
-        
-    }
-    
     @IBAction func googleAuthen(_ sender: UIButton) {
         GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
@@ -145,6 +145,9 @@ class LoginVC: BaseViewController {
         loginApple()
     }
     
+    @IBAction func edittingBegin(_ sender: UITextField) {
+        
+    }
     
     func loginFacebook(token: String?) {
         showLoading()
@@ -164,6 +167,26 @@ class LoginVC: BaseViewController {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
+    }
+    
+    func activationAccount() {
+        let model = PasswordModel()
+        let username = usernameTextfield.text ?? "0"
+        if username.isValidEmail {
+            model.email = username
+        } else {
+            model.phone_number = "84" + username.dropFirst()
+        }
+        model.password = passwordTextfield.text
+        let vc = EnterOTPVC(model: model, type: .activeAccount)
+        sendOTP(model: model)
+        present(vc, animated: true)
+    }
+    
+    func sendOTP(model: PasswordModel) {
+        let username = model.email ?? model.phone_number ?? ""
+        AuthenWorker.forgotPassword(username: username) { (result, error) in
+        }
     }
 }
 

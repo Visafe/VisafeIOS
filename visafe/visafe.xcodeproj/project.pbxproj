@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E229D652682CC0300559B67 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D642682CC0300559B67 /* Kingfisher */; };
 		0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */; };
 		0E229D872682D3AF00559B67 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D862682D3AF00559B67 /* Moya */; };
 		0E798387268485E60023C916 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E798386268485E60023C916 /* NetworkExtension.framework */; };
@@ -19,17 +18,10 @@
 		0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAA2681F29E00572C4E /* Main.storyboard */; };
 		0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAD2681F2A000572C4E /* Assets.xcassets */; };
 		0EDEEFB12681F2A000572C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAF2681F2A000572C4E /* LaunchScreen.storyboard */; };
-		0EDEEFBF2681F30C00572C4E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFBE2681F30C00572C4E /* SnapKit */; };
-		0EDEEFC32681F33600572C4E /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFC22681F33600572C4E /* SwiftyJSON */; };
-		0EDEEFC72681F36E00572C4E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFC62681F36E00572C4E /* RxSwift */; };
-		0EDEEFC92681F36E00572C4E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFC82681F36E00572C4E /* RxCocoa */; };
-		0EDEEFCD2681F43D00572C4E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFCC2681F43D00572C4E /* Realm */; };
-		0EDEEFCF2681F43D00572C4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEEFCE2681F43D00572C4E /* RealmSwift */; };
 		35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */; };
 		C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90EA73D2684C298002502F5 /* LoginVC.swift */; };
 		C90EA7402684C298002502F5 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90EA73E2684C298002502F5 /* LoginVC.xib */; };
 		C913CA74269CA1BD00E8440F /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = C913CA73269CA1BD00E8440F /* FacebookLogin */; };
-		C913CA78269CA88D00E8440F /* SSSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C913CA77269CA88D00E8440F /* SSSS.swift */; };
 		C9159C9B26ADB99E00497D86 /* ChooseTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9159C9926ADB99E00497D86 /* ChooseTimeCell.swift */; };
 		C9159C9C26ADB99E00497D86 /* ChooseTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9159C9A26ADB99E00497D86 /* ChooseTimeCell.xib */; };
 		C91813F7269AFB1300DC0E83 /* ProfileHelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91813F5269AFB1300DC0E83 /* ProfileHelpVC.xib */; };
@@ -162,6 +154,8 @@
 		C9777A38269ACACC00C40031 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9777A37269ACACC00C40031 /* ProfileHeaderView.xib */; };
 		C9777A3B269ACDE500C40031 /* ProfileFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9777A3A269ACDE500C40031 /* ProfileFooterView.swift */; };
 		C9777A3E269ACDFC00C40031 /* ProfileFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9777A3D269ACDFC00C40031 /* ProfileFooterView.xib */; };
+		C979C96326B5D9AA00F97E4F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C979C96226B5D9AA00F97E4F /* Kingfisher */; };
+		C979C96826B5DB8100F97E4F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C979C96726B5DB8100F97E4F /* SwiftyJSON */; };
 		C97A1C22269F39D200EC98DC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A1C21269F39D100EC98DC /* DateExtension.swift */; };
 		C98786EA26ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98786E826ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift */; };
 		C98786F826ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98786F726ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift */; };
@@ -224,6 +218,8 @@
 		C9CCAB5326A5DFE300C04BC5 /* GroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCAB5126A5DFE300C04BC5 /* GroupDetailVC.swift */; };
 		C9CCAB5426A5DFE300C04BC5 /* GroupDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CCAB5226A5DFE300C04BC5 /* GroupDetailVC.xib */; };
 		C9CE383726B01E860010A43C /* VisafeDateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE383626B01E860010A43C /* VisafeDateFormater.swift */; };
+		C9D771DC26B538650078FFD9 /* ListWorkspaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D771DA26B538650078FFD9 /* ListWorkspaceView.xib */; };
+		C9D771DD26B538650078FFD9 /* ListWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D771DB26B538650078FFD9 /* ListWorkspaceView.swift */; };
 		C9DB0EE526B2D316008084CC /* BaseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DB0EE426B2D316008084CC /* BaseAddView.swift */; };
 		C9DB0EE926B2D322008084CC /* BaseAddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9DB0EE826B2D322008084CC /* BaseAddView.xib */; };
 		C9DC8F6A26A6ED540021A8BD /* GroupDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC8F6926A6ED540021A8BD /* GroupDetailHeader.swift */; };
@@ -326,7 +322,6 @@
 		B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90EA73D2684C298002502F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C90EA73E2684C298002502F5 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
-		C913CA77269CA88D00E8440F /* SSSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSS.swift; sourceTree = "<group>"; };
 		C9159C9926ADB99E00497D86 /* ChooseTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTimeCell.swift; sourceTree = "<group>"; };
 		C9159C9A26ADB99E00497D86 /* ChooseTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTimeCell.xib; sourceTree = "<group>"; };
 		C91813F5269AFB1300DC0E83 /* ProfileHelpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHelpVC.xib; sourceTree = "<group>"; };
@@ -517,6 +512,8 @@
 		C9CCAB5126A5DFE300C04BC5 /* GroupDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailVC.swift; sourceTree = "<group>"; };
 		C9CCAB5226A5DFE300C04BC5 /* GroupDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupDetailVC.xib; sourceTree = "<group>"; };
 		C9CE383626B01E860010A43C /* VisafeDateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisafeDateFormater.swift; sourceTree = "<group>"; };
+		C9D771DA26B538650078FFD9 /* ListWorkspaceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListWorkspaceView.xib; sourceTree = "<group>"; };
+		C9D771DB26B538650078FFD9 /* ListWorkspaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWorkspaceView.swift; sourceTree = "<group>"; };
 		C9DB0EE426B2D316008084CC /* BaseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAddView.swift; sourceTree = "<group>"; };
 		C9DB0EE826B2D322008084CC /* BaseAddView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseAddView.xib; sourceTree = "<group>"; };
 		C9DC8F6926A6ED540021A8BD /* GroupDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailHeader.swift; sourceTree = "<group>"; };
@@ -589,20 +586,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EDEEFCD2681F43D00572C4E /* Realm in Frameworks */,
+				C979C96826B5DB8100F97E4F /* SwiftyJSON in Frameworks */,
+				C979C96326B5D9AA00F97E4F /* Kingfisher in Frameworks */,
 				0E798387268485E60023C916 /* NetworkExtension.framework in Frameworks */,
-				0EDEEFC32681F33600572C4E /* SwiftyJSON in Frameworks */,
 				C9E5C78526872E8100D159EF /* SwiftMessages in Frameworks */,
 				C940AEA626837C8E0069B830 /* SwifterSwift in Frameworks */,
-				0EDEEFCF2681F43D00572C4E /* RealmSwift in Frameworks */,
-				0E229D652682CC0300559B67 /* Kingfisher in Frameworks */,
 				C9B7946E268615B700258A72 /* ObjectMapper in Frameworks */,
 				0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */,
 				C9B7945C2684EC9D00258A72 /* NVActivityIndicatorViewExtended in Frameworks */,
-				0EDEEFC92681F36E00572C4E /* RxCocoa in Frameworks */,
-				0EDEEFC72681F36E00572C4E /* RxSwift in Frameworks */,
 				C9B7949F26862DF000258A72 /* TweeTextField in Frameworks */,
-				0EDEEFBF2681F30C00572C4E /* SnapKit in Frameworks */,
 				C913CA74269CA1BD00E8440F /* FacebookLogin in Frameworks */,
 				C9B7945A2684EC9D00258A72 /* NVActivityIndicatorView in Frameworks */,
 				0E229D872682D3AF00559B67 /* Moya in Frameworks */,
@@ -787,7 +779,6 @@
 				C99FD1D52697469E00A8F731 /* Profile */,
 				C99FD1C82697461300A8F731 /* Protect */,
 				C93ED1502682324400B03E8A /* Setting */,
-				C966FE8D2694A52D0049458C /* Splash */,
 				C93ED14D2682320000B03E8A /* Tabbar */,
 				C95A5851268861670077112F /* Workspace */,
 			);
@@ -932,6 +923,7 @@
 		C95A5851268861670077112F /* Workspace */ = {
 			isa = PBXGroup;
 			children = (
+				C9D771D926B538650078FFD9 /* View */,
 				C969B3AF269AE9980066A88A /* PostWorkspacesVC.swift */,
 				C969B3AE269AE9980066A88A /* PostWorkspacesVC.xib */,
 				C969B3A5269ADFD30066A88A /* ListWorkspaceVC.swift */,
@@ -959,13 +951,6 @@
 				C99FD1D02697465B00A8F731 /* NotificationVC.xib */,
 			);
 			path = Notification;
-			sourceTree = "<group>";
-		};
-		C966FE8D2694A52D0049458C /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Splash;
 			sourceTree = "<group>";
 		};
 		C966FE8F2694A5630049458C /* Onboarding */ = {
@@ -1084,7 +1069,6 @@
 				C95A584B2688339D0077112F /* WorkspaceWorker.swift */,
 				C94B39CA268A278B00046958 /* GroupWorker.swift */,
 				C9181410269B46CA00DC0E83 /* NotificationWorker.swift */,
-				C913CA77269CA88D00E8440F /* SSSS.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -1212,6 +1196,15 @@
 				C91EE7ED26AC7414006ADAE9 /* GroupListUserVC.xib */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		C9D771D926B538650078FFD9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9D771DB26B538650078FFD9 /* ListWorkspaceView.swift */,
+				C9D771DA26B538650078FFD9 /* ListWorkspaceView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C9E5C78726873BA800D159EF /* MessageView */ = {
@@ -1347,13 +1340,6 @@
 			);
 			name = visafe;
 			packageProductDependencies = (
-				0EDEEFBE2681F30C00572C4E /* SnapKit */,
-				0EDEEFC22681F33600572C4E /* SwiftyJSON */,
-				0EDEEFC62681F36E00572C4E /* RxSwift */,
-				0EDEEFC82681F36E00572C4E /* RxCocoa */,
-				0EDEEFCC2681F43D00572C4E /* Realm */,
-				0EDEEFCE2681F43D00572C4E /* RealmSwift */,
-				0E229D642682CC0300559B67 /* Kingfisher */,
 				0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */,
 				0E229D862682D3AF00559B67 /* Moya */,
 				C940AEA526837C8E0069B830 /* SwifterSwift */,
@@ -1363,6 +1349,8 @@
 				C9B7949E26862DF000258A72 /* TweeTextField */,
 				C9E5C78426872E8100D159EF /* SwiftMessages */,
 				C913CA73269CA1BD00E8440F /* FacebookLogin */,
+				C979C96226B5D9AA00F97E4F /* Kingfisher */,
+				C979C96726B5DB8100F97E4F /* SwiftyJSON */,
 			);
 			productName = visafe;
 			productReference = 0EDEEFA12681F29E00572C4E /* visafe.app */;
@@ -1396,11 +1384,6 @@
 			);
 			mainGroup = 0EDEEF982681F29E00572C4E;
 			packageReferences = (
-				0EDEEFBD2681F30C00572C4E /* XCRemoteSwiftPackageReference "SnapKit" */,
-				0EDEEFC12681F33600572C4E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				0EDEEFC52681F36E00572C4E /* XCRemoteSwiftPackageReference "RxSwift" */,
-				0EDEEFCB2681F43D00572C4E /* XCRemoteSwiftPackageReference "realm-cocoa" */,
-				0E229D632682CC0300559B67 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				0E229D672682CC3A00559B67 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				0E229D852682D3AF00559B67 /* XCRemoteSwiftPackageReference "Moya" */,
 				C940AEA426837C8E0069B830 /* XCRemoteSwiftPackageReference "SwifterSwift" */,
@@ -1409,6 +1392,8 @@
 				C9B7949D26862DF000258A72 /* XCRemoteSwiftPackageReference "TweeTextField" */,
 				C9E5C78326872E8100D159EF /* XCRemoteSwiftPackageReference "SwiftMessages" */,
 				C913CA72269CA1BD00E8440F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				C979C96126B5D9AA00F97E4F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				C979C96626B5DB8100F97E4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 0EDEEFA22681F29E00572C4E /* Products */;
 			projectDirPath = "";
@@ -1491,6 +1476,7 @@
 				C971FA002697498A00BB7118 /* PostGroupAboutVC.xib in Resources */,
 				C99FD1D22697465B00A8F731 /* NotificationVC.xib in Resources */,
 				C9BCBC6026975C92007F652C /* GroupSettingParentVC.xib in Resources */,
+				C9D771DC26B538650078FFD9 /* ListWorkspaceView.xib in Resources */,
 				C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */,
 				C91EE7E126AC1F90006ADAE9 /* GroupProtectVC.xib in Resources */,
 				C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */,
@@ -1604,6 +1590,7 @@
 				C9F2494426AAD5AD00EE7442 /* GroupSettingDetailCell.swift in Sources */,
 				C993D28226A4952800684F80 /* TabbarItemContentView.swift in Sources */,
 				C99034D32694C3C1009C078F /* TextfieldExtension.swift in Sources */,
+				C9D771DD26B538650078FFD9 /* ListWorkspaceView.swift in Sources */,
 				C9B7947A2686199200258A72 /* AuthenWorker.swift in Sources */,
 				C91EE7E626AC1FFA006ADAE9 /* GroupListBlockVC.swift in Sources */,
 				C999AB07268E03F200F657A9 /* GroupSettingCell.swift in Sources */,
@@ -1709,7 +1696,6 @@
 				C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */,
 				C949D72D26B0755B00647FF6 /* LicensePackageCell.swift in Sources */,
 				C966FE932694A8EB0049458C /* OnboardingVC.swift in Sources */,
-				C913CA78269CA88D00E8440F /* SSSS.swift in Sources */,
 				C91EE7D926AC1ACE006ADAE9 /* ProtectHeaderView.swift in Sources */,
 				C970323726907AA2007F45E0 /* EnterLinkWebsiteView.swift in Sources */,
 				C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */,
@@ -1806,7 +1792,7 @@
 				DEVELOPMENT_TEAM = 3Z59HFVS9G;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = tunnel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1833,7 +1819,7 @@
 				DEVELOPMENT_TEAM = 3Z59HFVS9G;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = tunnel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1903,7 +1889,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1959,7 +1945,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1986,13 +1972,13 @@
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.4.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vn.apptest01;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2019,7 +2005,7 @@
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2070,14 +2056,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0E229D632682CC0300559B67 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.3.0;
-			};
-		};
 		0E229D672682CC3A00559B67 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -2094,38 +2072,6 @@
 				minimumVersion = 14.0.1;
 			};
 		};
-		0EDEEFBD2681F30C00572C4E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		0EDEEFC12681F33600572C4E /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		0EDEEFC52681F36E00572C4E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		0EDEEFCB2681F43D00572C4E /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.8.0;
-			};
-		};
 		C913CA72269CA1BD00E8440F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk.git";
@@ -2140,6 +2086,22 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.2.0;
+			};
+		};
+		C979C96126B5D9AA00F97E4F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
+		C979C96626B5DB8100F97E4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
 			};
 		};
 		C9B794582684EC9D00258A72 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
@@ -2177,11 +2139,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0E229D642682CC0300559B67 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0E229D632682CC0300559B67 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E229D672682CC3A00559B67 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
@@ -2192,36 +2149,6 @@
 			package = 0E229D852682D3AF00559B67 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
-		0EDEEFBE2681F30C00572C4E /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0EDEEFBD2681F30C00572C4E /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		0EDEEFC22681F33600572C4E /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0EDEEFC12681F33600572C4E /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
-		0EDEEFC62681F36E00572C4E /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0EDEEFC52681F36E00572C4E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		0EDEEFC82681F36E00572C4E /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0EDEEFC52681F36E00572C4E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		0EDEEFCC2681F43D00572C4E /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0EDEEFCB2681F43D00572C4E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		0EDEEFCE2681F43D00572C4E /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0EDEEFCB2681F43D00572C4E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
-		};
 		C913CA73269CA1BD00E8440F /* FacebookLogin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C913CA72269CA1BD00E8440F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
@@ -2231,6 +2158,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C940AEA426837C8E0069B830 /* XCRemoteSwiftPackageReference "SwifterSwift" */;
 			productName = SwifterSwift;
+		};
+		C979C96226B5D9AA00F97E4F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C979C96126B5D9AA00F97E4F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		C979C96726B5DB8100F97E4F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C979C96626B5DB8100F97E4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 		C9B794592684EC9D00258A72 /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;

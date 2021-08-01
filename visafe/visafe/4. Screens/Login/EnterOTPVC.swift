@@ -127,6 +127,7 @@ class EnterOTPVC: BaseViewController {
     
     @IBAction func reSendOTPAction(_ sender: UIButton) {
         sender.isUserInteractionEnabled = false
+        showLoading()
         let username = model.email ?? model.phone_number ?? ""
         AuthenWorker.forgotPassword(username: username) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
@@ -134,7 +135,10 @@ class EnterOTPVC: BaseViewController {
         }
     }
     @IBAction func backAction(_ sender: Any) {
-        navigationController?.popViewController()
+        if let _ = navigationController?.popViewController() {
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func continueAction(_ sender: UIButton) {
