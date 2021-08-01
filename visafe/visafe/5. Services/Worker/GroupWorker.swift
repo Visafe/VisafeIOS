@@ -194,14 +194,14 @@ class GroupWorker {
         }
     }
     
-    static func inviteToGroup(param: InviteToGroupParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+    static func inviteToGroup(param: InviteToGroupParam, completion: @escaping (_ result: InviteMemberResult?, _ error: Error?) -> Void) {
         let router = APIRouter.inviteToGroup(param: param)
         APIManager.shared.request(target: router) { (data, error) in
-            var loginResult: BaseResult?
+            var loginResult: InviteMemberResult?
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                    loginResult = Mapper<InviteMemberResult>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)

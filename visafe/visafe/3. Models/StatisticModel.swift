@@ -100,11 +100,11 @@ public enum StatisticCategoryEnum: String {
 }
 
 class StatisticCategoryApp: NSObject, Mappable {
-    var count: Float = 0
+    var count: CFloat = 0
     var name: StatisticCategoryAppEnum?
     
     // Thêm tỉ lệ phần trăm để hiển thị
-    var percent: Int = 0
+    var percent: CFloat = 0
     
     override init() {
         super.init()
@@ -122,11 +122,11 @@ class StatisticCategoryApp: NSObject, Mappable {
 
 class StatisticCategory: NSObject, Mappable {
     var apps: [StatisticCategoryApp]?
-    var count: Float = 0
+    var count: CFloat = 0
     var name: StatisticCategoryEnum?
     
     // Thêm tỉ lệ phần trăm để hiển thị
-    var percent: Int = 0
+    var percent: CFloat = 0
     
     override init() {
         super.init()

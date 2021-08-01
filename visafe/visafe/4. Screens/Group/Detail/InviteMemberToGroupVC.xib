@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InviteMemberToGroupVC" customModule="visafe" customModuleProvider="target">
+            <connections>
+                <outlet property="continueButton" destination="MQV-3V-JbQ" id="WmA-aO-uAz"/>
+                <outlet property="descriptionNameLabel" destination="BpM-YA-cUY" id="74A-RQ-jSC"/>
+                <outlet property="groupNameLabel" destination="eRl-CS-MDn" id="sVF-30-x5Q"/>
+                <outlet property="nameTextfield" destination="E1I-bp-G2E" id="ZEC-Dd-T0c"/>
+                <outlet property="view" destination="lRm-vD-dxi" id="oJS-8W-uOL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lRm-vD-dxi">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập Số điện thoại hoặc Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E1I-bp-G2E" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
+                    <rect key="frame" x="24" y="96" width="366" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="0hR-LE-I7b"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="valueChanged:" destination="-1" eventType="editingChanged" id="NQA-on-5DU"/>
+                        <outlet property="delegate" destination="-1" id="DAL-Z8-tLw"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRl-CS-MDn">
+                    <rect key="frame" x="24" y="24" width="366" height="48"/>
+                    <string key="text">Bạn muốn tên hiển thị
+của workspace là gì?</string>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpM-YA-cUY">
+                    <rect key="frame" x="24" y="156" width="366" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQV-3V-JbQ">
+                    <rect key="frame" x="24" y="168" width="366" height="48"/>
+                    <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="fwD-GI-V8h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <state key="normal" title="Gửi lời mời">
+                        <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="gvb-2g-3HB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="7V0-VG-Fly"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="7V0-VG-Fly" firstAttribute="trailing" secondItem="E1I-bp-G2E" secondAttribute="trailing" constant="24" id="0TZ-wo-i4P"/>
+                <constraint firstItem="MQV-3V-JbQ" firstAttribute="leading" secondItem="7V0-VG-Fly" secondAttribute="leading" constant="24" id="2Eg-OY-Gf0"/>
+                <constraint firstItem="BpM-YA-cUY" firstAttribute="top" secondItem="E1I-bp-G2E" secondAttribute="bottom" constant="12" id="6kK-Hf-HT8"/>
+                <constraint firstItem="BpM-YA-cUY" firstAttribute="leading" secondItem="lRm-vD-dxi" secondAttribute="leading" constant="24" id="IYO-A1-RRc"/>
+                <constraint firstItem="E1I-bp-G2E" firstAttribute="leading" secondItem="7V0-VG-Fly" secondAttribute="leading" constant="24" id="K5j-Ud-k1Z"/>
+                <constraint firstAttribute="trailing" secondItem="BpM-YA-cUY" secondAttribute="trailing" constant="24" id="Nae-zU-Hbs"/>
+                <constraint firstItem="eRl-CS-MDn" firstAttribute="leading" secondItem="7V0-VG-Fly" secondAttribute="leading" constant="24" id="QM9-hi-NRL"/>
+                <constraint firstItem="E1I-bp-G2E" firstAttribute="top" secondItem="eRl-CS-MDn" secondAttribute="bottom" constant="24" id="Rmq-7G-mWC"/>
+                <constraint firstAttribute="trailing" secondItem="eRl-CS-MDn" secondAttribute="trailing" constant="24" id="Ztj-pK-WMg"/>
+                <constraint firstItem="MQV-3V-JbQ" firstAttribute="top" secondItem="BpM-YA-cUY" secondAttribute="bottom" constant="12" id="hEQ-OP-Lch"/>
+                <constraint firstItem="eRl-CS-MDn" firstAttribute="top" secondItem="7V0-VG-Fly" secondAttribute="top" constant="24" id="hrh-E4-Pc5"/>
+                <constraint firstItem="7V0-VG-Fly" firstAttribute="trailing" secondItem="MQV-3V-JbQ" secondAttribute="trailing" constant="24" id="uGV-Ub-xiM"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="-78.260869565217391" y="61.607142857142854"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

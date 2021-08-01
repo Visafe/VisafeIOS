@@ -67,14 +67,14 @@ class GroupStatisticVC: BaseViewController {
             return app.count > 0
         })
         
-        let numTotalCate = statisticCategory.map({$0.count}).reduce(0, +)
+        let numTotalCate: CGFloat = CGFloat(statisticCategory.map({$0.count}).reduce(0, +))
         for item in statisticCategory {
-            item.percent = Int(item.count * 100 / numTotalCate)
+            item.percent = item.count * 100 / Float(numTotalCate)
         }
         
-        let numTotalCateApp = statisticCategoryApp.map({$0.count}).reduce(0, +)
+        let numTotalCateApp: CGFloat = CGFloat(statisticCategoryApp.map({$0.count}).reduce(0, +))
         for item in statisticCategoryApp {
-            item.percent = Int(item.count * 100 / numTotalCateApp)
+            item.percent = item.count * 100 / Float(numTotalCateApp)
         }
     }
 }

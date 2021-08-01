@@ -8,35 +8,67 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupListUserVC" customModule="visafe" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupListDeviceVC" customModule="visafe" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="Jh1-0G-cK4" id="bxT-ef-me5"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="tableView" destination="YmB-93-wIF" id="D65-RG-Qnm"/>
+                <outlet property="view" destination="2qh-I7-ZNt" id="07S-hT-y6a"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2qh-I7-ZNt">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jh1-0G-cK4">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vD-Tn-lo1">
+                    <rect key="frame" x="0.0" y="68" width="414" height="48"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tìm kiếm nhanh thành viên" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lHv-WL-6qx" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
+                            <rect key="frame" x="16" y="0.0" width="382" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="CoC-zU-PRP"/>
+                                <constraint firstAttribute="height" constant="48" id="Pe8-RE-Vgf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="lHv-WL-6qx" secondAttribute="bottom" id="FZT-Rb-2R9"/>
+                        <constraint firstItem="lHv-WL-6qx" firstAttribute="top" secondItem="9vD-Tn-lo1" secondAttribute="top" id="IXb-jl-ppj"/>
+                        <constraint firstAttribute="trailing" secondItem="lHv-WL-6qx" secondAttribute="trailing" constant="16" id="nRe-tS-iGY"/>
+                        <constraint firstItem="lHv-WL-6qx" firstAttribute="leading" secondItem="9vD-Tn-lo1" secondAttribute="leading" constant="16" id="y3f-fA-PDr"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YmB-93-wIF">
+                    <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="lRZ-df-Wsl"/>
-                        <outlet property="delegate" destination="-1" id="GJX-pV-uDl"/>
+                        <outlet property="dataSource" destination="-1" id="qYS-HN-SW0"/>
+                        <outlet property="delegate" destination="-1" id="ZzG-G2-MzZ"/>
                     </connections>
                 </tableView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <viewLayoutGuide key="safeArea" id="Heu-Yk-O33"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Jh1-0G-cK4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="eRZ-mD-tBe"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jh1-0G-cK4" secondAttribute="bottom" id="nGV-PT-g5m"/>
-                <constraint firstItem="Jh1-0G-cK4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pj7-OT-qyV"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jh1-0G-cK4" secondAttribute="trailing" id="uwQ-kE-IqS"/>
+                <constraint firstItem="9vD-Tn-lo1" firstAttribute="leading" secondItem="Heu-Yk-O33" secondAttribute="leading" id="4nK-BW-okg"/>
+                <constraint firstItem="YmB-93-wIF" firstAttribute="leading" secondItem="Heu-Yk-O33" secondAttribute="leading" id="AFd-Ii-ap5"/>
+                <constraint firstItem="Heu-Yk-O33" firstAttribute="trailing" secondItem="YmB-93-wIF" secondAttribute="trailing" id="Ica-wW-WNh"/>
+                <constraint firstItem="Heu-Yk-O33" firstAttribute="bottom" secondItem="YmB-93-wIF" secondAttribute="bottom" id="Nwy-xq-a9c"/>
+                <constraint firstItem="YmB-93-wIF" firstAttribute="bottom" secondItem="Heu-Yk-O33" secondAttribute="bottom" id="WEJ-gG-z0T"/>
+                <constraint firstItem="9vD-Tn-lo1" firstAttribute="trailing" secondItem="Heu-Yk-O33" secondAttribute="trailing" id="Z6x-td-mCH"/>
+                <constraint firstItem="YmB-93-wIF" firstAttribute="top" secondItem="9vD-Tn-lo1" secondAttribute="bottom" id="eEB-7G-4D5"/>
+                <constraint firstItem="9vD-Tn-lo1" firstAttribute="top" secondItem="Heu-Yk-O33" secondAttribute="top" constant="24" id="hWu-uS-m9e"/>
+                <constraint firstItem="9vD-Tn-lo1" firstAttribute="leading" secondItem="Heu-Yk-O33" secondAttribute="leading" id="nss-nu-3hR"/>
+                <constraint firstAttribute="trailing" secondItem="9vD-Tn-lo1" secondAttribute="trailing" id="ywf-kY-CHv"/>
             </constraints>
-            <point key="canvasLocation" x="46" y="74"/>
+            <point key="canvasLocation" x="44.927536231884062" y="73.660714285714278"/>
         </view>
     </objects>
     <resources>

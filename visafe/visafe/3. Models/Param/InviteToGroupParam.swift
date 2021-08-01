@@ -9,7 +9,7 @@ import UIKit
 import ObjectMapper
 
 class InviteToGroupParam: NSObject, Mappable {
-    var emails: [String]?
+    var usernames: [String]?
     var groupID: String?
     
     override init() {
@@ -21,7 +21,7 @@ class InviteToGroupParam: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
-        emails <- map["emails"]
+        usernames <- map["usernames"]
         groupID <- map["groupID"]
     }
 }

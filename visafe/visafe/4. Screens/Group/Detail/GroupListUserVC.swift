@@ -160,7 +160,12 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
             view.bindingInfo(type: .member)
             view.addAction = { [weak self] in
                 guard let weakSelf = self else { return }
-                
+                let vc = InviteMemberToGroupVC(group: weakSelf.group)
+                vc.onDone = { [weak self] user in
+                    guard let strongSelf = self else { return }
+                    strongSelf.addUserToList(user: user)
+                }
+                weakSelf.navigationController?.pushViewController(vc)
             }
             return view
         } else {
@@ -174,6 +179,11 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
             viewHeader.addSubview(label)
             return viewHeader
         }
+    }
+    
+    func addUserToList(user: UserModel) {
+        listUser.append(user)
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

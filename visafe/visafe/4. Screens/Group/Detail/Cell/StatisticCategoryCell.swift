@@ -26,14 +26,14 @@ class StatisticCategoryCell: BaseTableCell {
     func bindingData(category: StatisticCategory) {
         titleLabel.text = category.name?.getTitle()
         iconImageView.image = category.name?.getIcon()
-        percentLabel.text = "\(category.percent)%"
+        percentLabel.text = String(format: "%.1f", category.percent) + "%"
         contraintWidth.constant = (kScreenWidth - 120) * CGFloat(category.percent) / 100
     }
     
     func bindingData(app: StatisticCategoryApp) {
         titleLabel.text = app.name?.getTitle()
         iconImageView.image = app.name?.getIcon()
-        percentLabel.text = "\(app.percent)%"
+        percentLabel.text = String(format: "%.1f", app.percent) + "%"
         contraintWidth.constant = (kScreenWidth - 120) * CGFloat(app.percent) / 100
     }
 }
