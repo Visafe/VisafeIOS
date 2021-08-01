@@ -19,6 +19,7 @@ class WorkspaceSumaryCell: BaseTableCell {
     @IBOutlet weak var blockedLabel: UILabel!
     @IBOutlet weak var violationLabel: UILabel!
     @IBOutlet weak var dangerousLabel: UILabel!
+    @IBOutlet weak var descriptionWorkspaceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,7 +37,13 @@ class WorkspaceSumaryCell: BaseTableCell {
         violationLabel.text = "\(statistic.num_violation ?? 0)"
         dangerousLabel.text = "\(statistic.num_dangerous_domain ?? 0)"
         timeLabel.text = timeType.getTitle()
-        workspaceNameLabel.text = CacheManager.shared.getCurrentWorkspace()?.name
+        let workspace = CacheManager.shared.getCurrentWorkspace()
+        workspaceNameLabel.text = workspace?.name
+        if workspace?.type == .enterprise {
+            descriptionWorkspaceLabel.text = "Bảo vệ tổ chức của bạn trên môi trường mạng"
+        } else {
+            descriptionWorkspaceLabel.text = "Bảo vệ gia đình & người thân trên môi trường mạng"
+        }
         summaryView.dropShadow(color: .lightGray, opacity: 0.5, offSet: CGSize(width: -1, height: 1), radius: 24, scale: true)
         backgroundColor = .clear
         contentView.backgroundColor = .clear

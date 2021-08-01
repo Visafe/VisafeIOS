@@ -156,6 +156,8 @@
 		C9777A3E269ACDFC00C40031 /* ProfileFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9777A3D269ACDFC00C40031 /* ProfileFooterView.xib */; };
 		C979C96326B5D9AA00F97E4F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C979C96226B5D9AA00F97E4F /* Kingfisher */; };
 		C979C96826B5DB8100F97E4F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C979C96726B5DB8100F97E4F /* SwiftyJSON */; };
+		C979C96D26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C979C96B26B6B7D900F97E4F /* WorkspaceSumaryUnLoginCell.xib */; };
+		C979C96E26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979C96C26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.swift */; };
 		C97A1C22269F39D200EC98DC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A1C21269F39D100EC98DC /* DateExtension.swift */; };
 		C98786EA26ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98786E826ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift */; };
 		C98786F826ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98786F726ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift */; };
@@ -453,6 +455,8 @@
 		C9777A37269ACACC00C40031 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
 		C9777A3A269ACDE500C40031 /* ProfileFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooterView.swift; sourceTree = "<group>"; };
 		C9777A3D269ACDFC00C40031 /* ProfileFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileFooterView.xib; sourceTree = "<group>"; };
+		C979C96B26B6B7D900F97E4F /* WorkspaceSumaryUnLoginCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkspaceSumaryUnLoginCell.xib; sourceTree = "<group>"; };
+		C979C96C26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceSumaryUnLoginCell.swift; sourceTree = "<group>"; };
 		C97A1C21269F39D100EC98DC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		C98786E826ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderedPageMenuScrollViewController.swift; sourceTree = "<group>"; };
 		C98786F726ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractHeaderedTabScrollViewController.swift; sourceTree = "<group>"; };
@@ -1249,6 +1253,8 @@
 		C9EDB54F26839E74009CBD93 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C979C96C26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.swift */,
+				C979C96B26B6B7D900F97E4F /* WorkspaceSumaryUnLoginCell.xib */,
 				C9E7A49C2690B1610012985B /* MoreGroupActionView.swift */,
 				C9E7A49B2690B1610012985B /* MoreGroupActionView.xib */,
 				C9E7A49626909E890012985B /* MoreLinkSettingView.swift */,
@@ -1500,6 +1506,7 @@
 				C999AB08268E03F200F657A9 /* GroupSettingCell.xib in Resources */,
 				C90EA7402684C298002502F5 /* LoginVC.xib in Resources */,
 				C95A585F268863790077112F /* SetupSecurityWorkspaceVC.xib in Resources */,
+				C979C96D26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.xib in Resources */,
 				C969B3A8269ADFD30066A88A /* ListWorkspaceVC.xib in Resources */,
 				C9CCAB5426A5DFE300C04BC5 /* GroupDetailVC.xib in Resources */,
 				C9777A3E269ACDFC00C40031 /* ProfileFooterView.xib in Resources */,
@@ -1669,6 +1676,7 @@
 				C9B79466268613A700258A72 /* RegisterVC.swift in Sources */,
 				C9B7948C268626AA00258A72 /* UserModel.swift in Sources */,
 				C9BCBC6426975DEC007F652C /* GroupSettingParentCell.swift in Sources */,
+				C979C96E26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.swift in Sources */,
 				C9E7A49826909E890012985B /* MoreLinkSettingView.swift in Sources */,
 				C969B397269ADB210066A88A /* SecurityWorkspaceCell.swift in Sources */,
 				C969B399269ADB210066A88A /* ChooseTypeWorkspaceCell.swift in Sources */,

@@ -348,6 +348,7 @@
             <connections>
                 <outlet property="blockedLabel" destination="fCB-rv-dCm" id="ICa-Va-TBY"/>
                 <outlet property="dangerousLabel" destination="C1N-Zq-uyK" id="mYw-L5-yVB"/>
+                <outlet property="descriptionWorkspaceLabel" destination="qjf-JK-MKM" id="tnQ-Xt-mi1"/>
                 <outlet property="summaryView" destination="01c-EU-OGt" id="HpK-vG-sIA"/>
                 <outlet property="timeLabel" destination="DBm-04-sen" id="vNW-bv-leu"/>
                 <outlet property="violationLabel" destination="sIJ-hU-oeh" id="Byw-fd-4oT"/>

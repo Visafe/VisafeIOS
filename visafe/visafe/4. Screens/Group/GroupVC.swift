@@ -29,7 +29,7 @@ class GroupVC: BaseViewController {
     
     func configView() {
         // tableview
-        tableView.registerCells(cells: [GroupCell.className, WorkspaceSumaryCell.className])
+        tableView.registerCells(cells: [GroupCell.className, WorkspaceSumaryCell.className, WorkspaceSumaryUnLoginCell.className])
         tableView.backgroundColor = UIColor.clear
         
         guard let wsp = CacheManager.shared.getCurrentWorkspace() else { return }
@@ -86,6 +86,7 @@ class GroupVC: BaseViewController {
     }
     
     func configRefreshData() {
+        guard CacheManager.shared.getIsLogined() == true else { return }
         tableView.addPullToRefresh { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.refreshData()
@@ -212,89 +213,135 @@ class GroupVC: BaseViewController {
 extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        let isLogin = CacheManager.shared.getIsLogined()
+        if isLogin {
+            return 3
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else if section == 1 {
-            return myGroups.count
+        let isLogin = CacheManager.shared.getIsLogined()
+        if isLogin {
+            if section == 0 {
+                return 1
+            } else if section == 1 {
+                return myGroups.count
+            } else {
+                return inviteGroups.count
+            }
         } else {
-            return inviteGroups.count
+            return 1
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: WorkspaceSumaryCell.className) as? WorkspaceSumaryCell else {
+        let isLogin = CacheManager.shared.getIsLogined()
+        if isLogin {
+            if indexPath.section == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: WorkspaceSumaryCell.className) as? WorkspaceSumaryCell else {
+                    return UITableViewCell()
+                }
+                cell.actionChooseTime = { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.chooseTimeAction()
+                }
+                cell.actionChangeWorkspace = { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.changeWorkspace()
+                }
+                cell.actionCreateGroup = { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.showFormAddGroup()
+                }
+                cell.bindingData(statistic: statisticModel, timeType: timeType)
+                return cell
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupCell.className) as? GroupCell else {
+                    return UITableViewCell()
+                }
+                if indexPath.section == 1 {
+                    cell.bindingData(group: myGroups[indexPath.row])
+                    cell.onMoreAction = { [weak self] in
+                        guard let weakSelf = self else { return }
+                        weakSelf.showMoreAction(group: weakSelf.myGroups[indexPath.row])
+                    }
+                } else {
+                    cell.bindingData(group: inviteGroups[indexPath.row])
+                    cell.onMoreAction = { [weak self] in
+                        guard let weakSelf = self else { return }
+                        weakSelf.showMoreAction(group: weakSelf.inviteGroups[indexPath.row])
+                    }
+                }
+                return cell
+            }
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: WorkspaceSumaryUnLoginCell.className) as? WorkspaceSumaryUnLoginCell else {
                 return UITableViewCell()
-            }
-            cell.actionChooseTime = { [weak self] in
-                guard let weakSelf = self else { return }
-                weakSelf.chooseTimeAction()
-            }
-            cell.actionChangeWorkspace = { [weak self] in
-                guard let weakSelf = self else { return }
-                weakSelf.changeWorkspace()
             }
             cell.actionCreateGroup = { [weak self] in
                 guard let weakSelf = self else { return }
-                weakSelf.showFormAddGroup()
+                weakSelf.login()
             }
-            cell.bindingData(statistic: statisticModel, timeType: timeType)
-            return cell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupCell.className) as? GroupCell else {
-                return UITableViewCell()
+            cell.actionJoinGroup = { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.joinGroup()
             }
-            if indexPath.section == 1 {
-                cell.bindingData(group: myGroups[indexPath.row])
-                cell.onMoreAction = { [weak self] in
-                    guard let weakSelf = self else { return }
-                    weakSelf.showMoreAction(group: weakSelf.myGroups[indexPath.row])
-                }
-            } else {
-                cell.bindingData(group: inviteGroups[indexPath.row])
-                cell.onMoreAction = { [weak self] in
-                    guard let weakSelf = self else { return }
-                    weakSelf.showMoreAction(group: weakSelf.inviteGroups[indexPath.row])
-                }
-            }
+            cell.bindingData()
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 1 {
-            guard myGroups.count > 0 else { return UIView() }
-            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 44))
-            headerView.backgroundColor = UIColor.white
-            let titleLabel = UILabel(frame: CGRect(x: 16, y: 0, width: kScreenWidth-32, height: 44))
-            titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-            titleLabel.text = "Nhóm bạn quản lý"
-            headerView.addSubview(titleLabel)
-            return headerView
-        } else if section == 2 {
-            guard inviteGroups.count > 0 else { return UIView() }
-            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 44))
-            headerView.backgroundColor = UIColor.white
-            let titleLabel = UILabel(frame: CGRect(x: 16, y: 0, width: kScreenWidth-32, height: 44))
-            titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-            titleLabel.text = "Nhóm bạn đã tham gia"
-            headerView.addSubview(titleLabel)
-            return headerView
+        let isLogin = CacheManager.shared.getIsLogined()
+        if isLogin {
+            if section == 1 {
+                guard myGroups.count > 0 else { return UIView() }
+                let headerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 44))
+                headerView.backgroundColor = UIColor.white
+                let titleLabel = UILabel(frame: CGRect(x: 16, y: 0, width: kScreenWidth-32, height: 44))
+                titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+                titleLabel.text = "Nhóm bạn quản lý"
+                headerView.addSubview(titleLabel)
+                return headerView
+            } else if section == 2 {
+                guard inviteGroups.count > 0 else { return UIView() }
+                let headerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 44))
+                headerView.backgroundColor = UIColor.white
+                let titleLabel = UILabel(frame: CGRect(x: 16, y: 0, width: kScreenWidth-32, height: 44))
+                titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+                titleLabel.text = "Nhóm bạn đã tham gia"
+                headerView.addSubview(titleLabel)
+                return headerView
+            }
+            return UIView()
+        } else {
+            return UIView()
         }
-        return UIView()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1 {
-            return myGroups.count > 0 ? 44 : 0.001
-        } else if section == 2 {
-            return inviteGroups.count > 0 ? 44 : 0.001
+        let isLogin = CacheManager.shared.getIsLogined()
+        if isLogin {
+            if section == 1 {
+                return myGroups.count > 0 ? 44 : 0.001
+            } else if section == 2 {
+                return inviteGroups.count > 0 ? 44 : 0.001
+            }
+            return 0.001
+        } else {
+            return 0.001
         }
-        return 0.001
+    }
+    
+    func joinGroup() {
+        
+    }
+    
+    func login() {
+        let vc = LoginVC()
+        present(vc, animated: true)
     }
     
     func showMoreAction(group: GroupModel) {
