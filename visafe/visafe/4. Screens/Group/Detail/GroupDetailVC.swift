@@ -17,6 +17,7 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
     var timeType: ChooseTimeEnum = .day
     let vc1: GroupStatisticVC!
     let vc2: GroupSettingDetailVC!
+    var statisticModel: StatisticModel = StatisticModel()
     
     init(group: GroupModel) {
         self.group = group
@@ -68,6 +69,8 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
         vc.scrollDelegateFunc = { [weak self] in self?.pleaseScroll($0) }
         
         let vc2 = GroupSettingDetailVC(group: group)
+        statisticModel.timeType = timeType
+        vc2.statisticModel = statisticModel
         vc2.parentVC = self
         vc2.title = "Thiết lập bảo vệ"
         vc2.view.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: self.view.bounds.height)
@@ -128,6 +131,7 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
         let vc = PostGroupVC(group: group)
         vc.onDone = { [weak self] in
             guard let weakSelf = self else { return }
+            
         }
         let nav = BaseNavigationController(rootViewController: vc)
         present(nav, animated: true, completion: nil)

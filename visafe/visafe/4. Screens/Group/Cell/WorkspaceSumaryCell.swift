@@ -33,9 +33,9 @@ class WorkspaceSumaryCell: BaseTableCell {
     }
     
     func bindingData(statistic: StatisticModel, timeType: ChooseTimeEnum) {
-        blockedLabel.text = "\(statistic.num_ads_blocked ?? 0)"
-        violationLabel.text = "\(statistic.num_violation ?? 0)"
-        dangerousLabel.text = "\(statistic.num_dangerous_domain ?? 0)"
+        blockedLabel.text = "\(statistic.num_ads_blocked)"
+        violationLabel.text = "\(statistic.num_violation)"
+        dangerousLabel.text = "\(statistic.num_dangerous_domain)"
         timeLabel.text = timeType.getTitle()
         let workspace = CacheManager.shared.getCurrentWorkspace()
         workspaceNameLabel.text = workspace?.name

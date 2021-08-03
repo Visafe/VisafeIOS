@@ -407,6 +407,7 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     func detailGroup(group: GroupModel) {
         let vc = GroupDetailVC(group: group)
         vc.timeType = timeType
+        vc.statisticModel = statisticModel
         let nav = BaseNavigationController(rootViewController: vc)
         present(nav, animated: true)
     }

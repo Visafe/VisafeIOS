@@ -18,8 +18,8 @@ class StatisticSumaryView: BaseView {
     }
     
     func bindingData(statit: StatisticModel) {
-        blockedLabel.text = "\(statit.num_ads_blocked ?? 0)"
-        violationLabel.text = "\(statit.num_violation ?? 0)"
-        dangerousLabel.text = "\(statit.num_dangerous_domain ?? 0)"
+        blockedLabel.text = "\(statit.num_ads_blocked)"
+        violationLabel.text = "\(statit.num_violation)"
+        dangerousLabel.text = "\(statit.num_dangerous_domain)"
     }
 }

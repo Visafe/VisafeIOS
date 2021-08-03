@@ -13,6 +13,7 @@ class GroupSettingDetailVC: BaseViewController {
     var onContinue:(() -> Void)?
     var scrollDelegateFunc: ((UIScrollView)->Void)?
     var parentVC: UIViewController?
+    var statisticModel: StatisticModel = StatisticModel()
     
     var sources: [PostGroupParentModel] = []
     
@@ -62,6 +63,7 @@ extension GroupSettingDetailVC: UITableViewDelegate, UITableViewDataSource {
         cell.actionMore = { [weak self] in
             guard let weakSelf = self else { return }
             let vc = GroupProtectVC(group: weakSelf.group, type: model.type!)
+            vc.statisticModel = weakSelf.statisticModel
             weakSelf.parentVC?.navigationController?.pushViewController(vc)
         }
         cell.switchAction = { [weak self] isOn in

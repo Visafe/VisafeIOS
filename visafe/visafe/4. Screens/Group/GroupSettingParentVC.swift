@@ -8,21 +8,21 @@
 import UIKit
 
 public enum GroupSettingParentEnum: Int {
-    case blockAds = 0
-    case blockFollow = 1
-    case blockConnect = 2
-    case blockContent = 3
+    case ads_blocked = 0
+    case native_tracking = 1
+    case access_blocked = 2
+    case content_blocked = 3
     case blockVPN = 4
     
     func getImage() -> UIImage? {
         switch self {
-        case .blockAds:
+        case .ads_blocked:
             return UIImage(named: "block_ads")
-        case .blockFollow:
+        case .native_tracking:
             return UIImage(named: "block_follow")
-        case .blockConnect:
+        case .access_blocked:
             return UIImage(named: "block_connect")
-        case .blockContent:
+        case .content_blocked:
             return UIImage(named: "block_content")
         case .blockVPN:
             return UIImage(named: "block_vpn")
@@ -31,13 +31,13 @@ public enum GroupSettingParentEnum: Int {
     
     func getTitle() -> String {
         switch self {
-        case .blockAds:
+        case .ads_blocked:
             return "Chặn quảng cáo"
-        case .blockFollow:
+        case .native_tracking:
             return "Chặn theo dõi"
-        case .blockConnect:
+        case .access_blocked:
             return "Chặn truy cập"
-        case .blockContent:
+        case .content_blocked:
             return "Chặn nội dung"
         case .blockVPN:
             return "Chặn VPN, Proxy"
@@ -46,13 +46,13 @@ public enum GroupSettingParentEnum: Int {
     
     func getContent() -> String {
         switch self {
-        case .blockAds:
+        case .ads_blocked:
             return "Đang chặn quảng cáo 1 số Website, Game & Ứng dụng"
-        case .blockFollow:
+        case .native_tracking:
             return "Đang chặn theo dõi từ Apple, Samsung & 3 nhà phát triển khác"
-        case .blockConnect:
+        case .access_blocked:
             return "Đang chặn truy cập vào 1 số Website, Game & Ứng dụng"
-        case .blockContent:
+        case .content_blocked:
             return "Đang chặn các nội dung người lớn, cờ bạc & tin giả"
         case .blockVPN:
             return "Đang chặn truy cập vào các VPN, Proxy"
@@ -61,13 +61,13 @@ public enum GroupSettingParentEnum: Int {
     
     func getTitleNavi() -> String {
         switch self {
-        case .blockAds:
+        case .ads_blocked:
             return "Thiết lập chặn quảng cáo"
-        case .blockFollow:
+        case .native_tracking:
             return "Thiết lập chặn theo dõi"
-        case .blockConnect:
+        case .access_blocked:
             return "Thiết lập chặn truy cập"
-        case .blockContent:
+        case .content_blocked:
             return "Thiết lập chặn nội dung"
         case .blockVPN:
             return ""
@@ -75,18 +75,18 @@ public enum GroupSettingParentEnum: Int {
     }
     
     static func getAll() -> [GroupSettingParentEnum] {
-        return [.blockAds, .blockFollow, .blockConnect, .blockContent, .blockVPN]
+        return [.ads_blocked, .native_tracking, .access_blocked, .content_blocked, .blockVPN]
     }
     
     func getTopImage() -> UIImage? {
         switch self {
-        case .blockAds:
+        case .ads_blocked:
             return UIImage(named: "ic_detail_ads")
-        case .blockFollow:
+        case .native_tracking:
             return UIImage(named: "ic_detail_tracking")
-        case .blockConnect:
+        case .access_blocked:
             return UIImage(named: "ic_detail_connect")
-        case .blockContent:
+        case .content_blocked:
             return UIImage(named: "ic_detail_content")
         case .blockVPN:
             return UIImage(named: "")
@@ -99,13 +99,13 @@ public enum GroupSettingParentEnum: Int {
     
     func getTopTitle() -> String {
         switch self {
-        case .blockAds:
+        case .ads_blocked:
             return "Đang bật chặn quảng cáo nhóm"
-        case .blockFollow:
+        case .native_tracking:
             return "Đang bật chặn theo dõi"
-        case .blockConnect:
+        case .access_blocked:
             return "Đang bật chặn truy cập"
-        case .blockContent:
+        case .content_blocked:
             return "Đang bật chặn nội dung"
         case .blockVPN:
             return ""
@@ -114,13 +114,13 @@ public enum GroupSettingParentEnum: Int {
     
     func getTopTitlePositive() -> String {
         switch self {
-        case .blockAds:
+        case .ads_blocked:
             return "Đang tắt chặn quảng cáo nhóm"
-        case .blockFollow:
+        case .native_tracking:
             return "Đang tắt chặn theo dõi"
-        case .blockConnect:
+        case .access_blocked:
             return "Đang tắt chặn truy cập"
-        case .blockContent:
+        case .content_blocked:
             return "Đang tắt chặn nội dung"
         case .blockVPN:
             return ""
@@ -129,13 +129,13 @@ public enum GroupSettingParentEnum: Int {
     
     func getTopContent() -> String {
         switch self {
-        case .blockAds:
+        case .ads_blocked:
             return "Website, Ứng dụng & Game"
-        case .blockFollow:
+        case .native_tracking:
             return "Apple, Samsung & 3 nhà phát triển khác"
-        case .blockConnect:
+        case .access_blocked:
             return "Website, Game & Ứng dụng"
-        case .blockContent:
+        case .content_blocked:
             return "Người lớn, cờ bạc & tin giả"
         case .blockVPN:
             return ""
@@ -144,13 +144,13 @@ public enum GroupSettingParentEnum: Int {
     
     func getTypeQueryLog() -> QueryLogTypeEnum {
         switch self {
-        case .blockAds:
+        case .ads_blocked:
             return .ads_blocked
-        case .blockFollow:
+        case .native_tracking:
             return .native_tracking
-        case .blockConnect:
+        case .access_blocked:
             return .access_blocked
-        case .blockContent:
+        case .content_blocked:
             return .content_blocked
         case .blockVPN:
             return .native_tracking

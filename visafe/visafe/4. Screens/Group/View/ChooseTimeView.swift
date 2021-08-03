@@ -23,6 +23,17 @@ public enum ChooseTimeEnum: Int {
             return "Trong tháng"
         }
     }
+    
+    func getSubTitle() -> String {
+        switch self {
+        case .day:
+            return "Hôm nay"
+        case .week:
+            return "Tuần này"
+        case .month:
+            return "Tháng này"
+        }
+    }
 }
 
 class ChooseTimeView: MessageView {

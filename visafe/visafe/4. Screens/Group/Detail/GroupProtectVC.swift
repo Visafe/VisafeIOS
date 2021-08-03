@@ -16,8 +16,9 @@ class GroupProtectVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate
     var header: ProtectHeaderView!
     var group: GroupModel
     var type: GroupSettingParentEnum
-    var listBlockVC: GroupListBlockVC!
+    var listBlockVC: GroupListLogVC!
     var settingVC: GroupSettingVC!
+    var statisticModel: StatisticModel!
     
     var onUpdateGroup:(() -> Void)?
     
@@ -60,7 +61,7 @@ class GroupProtectVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate
         self.headerView = header
         
         // 2) Set the subpages
-        listBlockVC = GroupListBlockVC(group: group, type: type)
+        listBlockVC = GroupListLogVC(group: group, statistic: statisticModel, type: type)
         listBlockVC.title = "Quảng cáo đã chặn"
         listBlockVC.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         listBlockVC.view.backgroundColor = .white

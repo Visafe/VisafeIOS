@@ -79,7 +79,7 @@ public enum ProfileEnum: Int {
 }
 
 class ProfileVC: BaseViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var sources: [ProfileEnum] = [.accountType, .upgradeAccount, .setting, .help, .share, .rate, .logout]
@@ -145,8 +145,6 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             shareApp()
         case .rate:
             rateApp()
-        default:
-            break
         }
     }
     
@@ -196,7 +194,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func rateApp() {
-        SKStoreReviewController.requestReview()
+        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
+        }
     }
     
     func shareApp() {

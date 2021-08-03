@@ -393,7 +393,7 @@ class GroupModel: NSObject, Mappable {
     }
     
     func buildSource(type: GroupSettingParentEnum) -> [PostGroupModel] {
-        if type == .blockAds {
+        if type == .ads_blocked {
             var sources = [PostGroupModel]()
             // Chặn quảng cáo Website
             let m1 = PostGroupModel()
@@ -412,7 +412,7 @@ class GroupModel: NSObject, Mappable {
             m3.type = .appads
             sources.append(m3)
             return sources
-        } else if type == .blockConnect {
+        } else if type == .access_blocked {
             var sources = [PostGroupModel]()
             // Ứng dụng
             let m5 = PostGroupModel()
@@ -427,7 +427,7 @@ class GroupModel: NSObject, Mappable {
             m6.children = block_webs
             sources.append(m6)
             return sources
-        } else if type == .blockContent {
+        } else if type == .content_blocked {
             var sources = [PostGroupModel]()
             // Giới hạn nội dung tìm kiếm
             let m7 = PostGroupModel()
@@ -446,7 +446,7 @@ class GroupModel: NSObject, Mappable {
             m9.type = .phishing
             sources.append(m9)
             return sources
-        } else if type == .blockFollow {
+        } else if type == .native_tracking {
             var sources = [PostGroupModel]()
             // Chặn theo dõi thiết bị
             let m4 = PostGroupModel()
@@ -555,19 +555,19 @@ class GroupModel: NSObject, Mappable {
     }
     
     func setDefault(type: GroupSettingParentEnum) {
-        if type == .blockAds {
+        if type == .ads_blocked {
             adblock_enabled = true
             game_ads_enabled = true
             app_ads = [GroupAppAdsEnum.facebook.rawValue, GroupAppAdsEnum.youtube.rawValue]
-        } else if type == .blockConnect { // truy cập
+        } else if type == .access_blocked { // truy cập
             blocked_services = [BlockServcieEnum.facebook.rawValue, BlockServcieEnum.zalo.rawValue, BlockServcieEnum.instagram.rawValue, BlockServcieEnum.tiktok.rawValue]
             block_webs = []
-        } else if type == .blockContent {
+        } else if type == .content_blocked {
             safesearch_enabled = true
             youtuberestrict_enabled = false
             gambling_enabled = false
             phishing_enabled = false
-        } else if type == .blockFollow {
+        } else if type == .native_tracking {
             native_tracking = [NativeTrackingEnum.apple.rawValue, NativeTrackingEnum.samsung.rawValue]
         } else {
             bypass_enabled = true
@@ -575,15 +575,15 @@ class GroupModel: NSObject, Mappable {
     }
     
     func getState(type: GroupSettingParentEnum) -> Bool {
-        if type == .blockAds {
+        if type == .ads_blocked {
             return (adblock_enabled == true ||
                 game_ads_enabled == true ||
                 app_ads.count > 0)
-        } else if type == .blockConnect { // truy cập
+        } else if type == .access_blocked { // truy cập
             return (app_ads.count > 0)
-        } else if type == .blockContent {
+        } else if type == .content_blocked {
             return (safesearch_enabled == true)
-        } else if type == .blockFollow {
+        } else if type == .native_tracking {
             return (native_tracking.count > 0)
         } else {
             return (bypass_enabled == true)
@@ -591,18 +591,18 @@ class GroupModel: NSObject, Mappable {
     }
     
     func disable(type: GroupSettingParentEnum) {
-        if type == .blockAds {
+        if type == .ads_blocked {
             adblock_enabled = false
             game_ads_enabled = false
             app_ads = []
-        } else if type == .blockConnect { // truy cập
+        } else if type == .access_blocked { // truy cập
             blocked_services = []
-        } else if type == .blockContent {
+        } else if type == .content_blocked {
             safesearch_enabled = false
             youtuberestrict_enabled = false
             gambling_enabled = false
             phishing_enabled = false
-        } else if type == .blockFollow {
+        } else if type == .native_tracking {
             native_tracking = []
         } else {
             bypass_enabled = false
@@ -611,7 +611,7 @@ class GroupModel: NSObject, Mappable {
     
     func getAllModel() -> [PostGroupParentModel] {
         var sources: [PostGroupParentModel] = []
-        let enums: [GroupSettingParentEnum] = [.blockAds, .blockFollow, .blockConnect, .blockContent, .blockVPN]
+        let enums: [GroupSettingParentEnum] = [.ads_blocked, .native_tracking, .access_blocked, .content_blocked, .blockVPN]
         for item in enums {
             let model = PostGroupParentModel()
             model.type = item

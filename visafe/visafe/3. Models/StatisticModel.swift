@@ -145,16 +145,22 @@ class StatisticCategory: NSObject, Mappable {
 
 class StatisticModel: NSObject, Mappable {
     var time_units: String?
-    var num_dns_queries: Int?
-    var num_dangerous_domain: Int?
-    var num_native_tracking: Int?
-    var num_violation: Int?
-    var num_ads_blocked: Int?
-    var num_dangerous_domain_all: Int?
-    var num_ads_blocked_all: Int?
-    var num_violation_all: Int?
-    var num_native_tracking_all: Int?
+    var num_dns_queries: Int = 0
+    var num_dangerous_domain: Int = 0
+    var num_native_tracking: Int = 0
+    var num_violation: Int = 0
+    var num_ads_blocked: Int = 0
+    var num_dangerous_domain_all: Int = 0
+    var num_ads_blocked_all: Int = 0
+    var num_violation_all: Int = 0
+    var num_native_tracking_all: Int = 0
     var top_categories: [StatisticCategory]?
+    var num_access_blocked: Int = 0
+    var num_content_blocked: Int = 0
+    var num_access_blocked_all: Int = 0
+    var num_content_blocked_all: Int = 0
+    
+    var timeType: ChooseTimeEnum = .day
     
     override init() {
         super.init()
@@ -173,7 +179,11 @@ class StatisticModel: NSObject, Mappable {
         num_ads_blocked_all <- map["num_ads_blocked_all"]
         num_dangerous_domain_all <- map["num_dangerous_domain_all"]
         num_violation_all <- map["num_violation_all"]
-        num_ads_blocked_all <- map["num_ads_blocked_all"]
+        num_ads_blocked <- map["num_ads_blocked"]
+        num_access_blocked <- map["num_access_blocked"]
+        num_content_blocked <- map["num_content_blocked"]
+        num_access_blocked_all <- map["num_access_blocked_all"]
+        num_content_blocked_all <- map["num_content_blocked_all"]
         top_categories <- map["top_categories"]
     }
 }

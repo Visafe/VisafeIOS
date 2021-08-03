@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GroupListBlockVC: BaseViewController {
+class GroupListLogVC: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var group: GroupModel
@@ -16,11 +16,12 @@ class GroupListBlockVC: BaseViewController {
     var sources: [QueryLogModel] = []
     var oldest: String?
     var canLoadMore: Bool = true
-    
-    init(group: GroupModel, type: GroupSettingParentEnum) {
+    var statistic: StatisticModel
+    init(group: GroupModel, statistic: StatisticModel, type: GroupSettingParentEnum) {
         self.group = group
         self.type = type
-        super.init(nibName: GroupListBlockVC.className, bundle: nil)
+        self.statistic = statistic
+        super.init(nibName: GroupListLogVC.className, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -36,6 +37,9 @@ class GroupListBlockVC: BaseViewController {
     
     func configUI() {
         tableView.registerCells(cells: [GroupBlockCell.className])
+        
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 25
     }
     
     func configRefreshData() {
@@ -122,7 +126,7 @@ class GroupListBlockVC: BaseViewController {
     }
 }
 
-extension GroupListBlockVC: UITableViewDelegate, UITableViewDataSource {
+extension GroupListLogVC: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -190,11 +194,9 @@ extension GroupListBlockVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0001
+        guard let view = LogHeaderView.loadFromNib() else { return UIView() }
+        view.bindingData(statistic: statistic, typeTime: statistic.timeType, typeSetting: type)
+        return view
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -206,7 +208,7 @@ extension GroupListBlockVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension GroupListBlockVC: UIScrollViewDelegate {
+extension GroupListLogVC: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if self.scrollDelegateFunc != nil {
