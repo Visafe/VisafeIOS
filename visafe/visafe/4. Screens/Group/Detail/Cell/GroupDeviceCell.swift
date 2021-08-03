@@ -7,7 +7,7 @@
 
 import UIKit
 
-public enum DevcieTypeEnum: String {
+public enum DeviceTypeEnum: String {
     case desktop = "Desktop"
     case mobile = "Mobile"
     case tablet = "Tablet"

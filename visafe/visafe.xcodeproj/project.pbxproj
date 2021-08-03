@@ -59,6 +59,8 @@
 		C91EE80126AC8D17006ADAE9 /* QueryLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE80026AC8D17006ADAE9 /* QueryLogModel.swift */; };
 		C91EE80626AC8FE7006ADAE9 /* GroupBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE80426AC8FE7006ADAE9 /* GroupBlockCell.swift */; };
 		C91EE80726AC8FE7006ADAE9 /* GroupBlockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91EE80526AC8FE7006ADAE9 /* GroupBlockCell.xib */; };
+		C9223E8A26B929F800B18A76 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9223E8926B929F700B18A76 /* Common.swift */; };
+		C9223EAB26B93C4200B18A76 /* InviteDeviceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9223EAA26B93C4200B18A76 /* InviteDeviceResult.swift */; };
 		C923C838268F57BC00FE34DC /* ListGroupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923C837268F57BC00FE34DC /* ListGroupResult.swift */; };
 		C924CFE526A7D5390058EEDD /* GroupStatisticVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924CFE326A7D5390058EEDD /* GroupStatisticVC.swift */; };
 		C924CFE626A7D5390058EEDD /* GroupStatisticVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C924CFE426A7D5390058EEDD /* GroupStatisticVC.xib */; };
@@ -142,8 +144,8 @@
 		C969B3B1269AE9980066A88A /* PostWorkspacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B3AF269AE9980066A88A /* PostWorkspacesVC.swift */; };
 		C97032322690750E007F45E0 /* GroupSettingFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97032302690750E007F45E0 /* GroupSettingFooterView.xib */; };
 		C97032332690750E007F45E0 /* GroupSettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97032312690750E007F45E0 /* GroupSettingFooterView.swift */; };
-		C970323726907AA2007F45E0 /* EnterLinkWebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970323526907AA2007F45E0 /* EnterLinkWebsiteView.swift */; };
-		C970323826907AA2007F45E0 /* EnterLinkWebsiteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C970323626907AA2007F45E0 /* EnterLinkWebsiteView.xib */; };
+		C970323726907AA2007F45E0 /* BaseEnterValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970323526907AA2007F45E0 /* BaseEnterValueView.swift */; };
+		C970323826907AA2007F45E0 /* BaseEnterValueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C970323626907AA2007F45E0 /* BaseEnterValueView.xib */; };
 		C971F9FF2697498A00BB7118 /* PostGroupAboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971F9FD2697498A00BB7118 /* PostGroupAboutVC.swift */; };
 		C971FA002697498A00BB7118 /* PostGroupAboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C971F9FE2697498A00BB7118 /* PostGroupAboutVC.xib */; };
 		C971FA0426974E6F00BB7118 /* PostGroupAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971FA0226974E6F00BB7118 /* PostGroupAboutCell.swift */; };
@@ -284,6 +286,8 @@
 		C9FA160B268B611200A1A6C6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA160A268B611200A1A6C6 /* StringExtension.swift */; };
 		C9FA161B268B794300A1A6C6 /* ActiveAccountResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA161A268B794300A1A6C6 /* ActiveAccountResult.swift */; };
 		C9FA1671268DFC4C00A1A6C6 /* GroupSettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA1670268DFC4900A1A6C6 /* GroupSettingHeaderView.swift */; };
+		C9FE695C26B795740046AD79 /* AddDeviceToGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE695A26B795740046AD79 /* AddDeviceToGroupVC.swift */; };
+		C9FE695D26B795740046AD79 /* AddDeviceToGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FE695B26B795740046AD79 /* AddDeviceToGroupVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -365,6 +369,8 @@
 		C91EE80026AC8D17006ADAE9 /* QueryLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryLogModel.swift; sourceTree = "<group>"; };
 		C91EE80426AC8FE7006ADAE9 /* GroupBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBlockCell.swift; sourceTree = "<group>"; };
 		C91EE80526AC8FE7006ADAE9 /* GroupBlockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupBlockCell.xib; sourceTree = "<group>"; };
+		C9223E8926B929F700B18A76 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		C9223EAA26B93C4200B18A76 /* InviteDeviceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteDeviceResult.swift; sourceTree = "<group>"; };
 		C923C837268F57BC00FE34DC /* ListGroupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupResult.swift; sourceTree = "<group>"; };
 		C924CFE326A7D5390058EEDD /* GroupStatisticVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStatisticVC.swift; sourceTree = "<group>"; };
 		C924CFE426A7D5390058EEDD /* GroupStatisticVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupStatisticVC.xib; sourceTree = "<group>"; };
@@ -447,8 +453,8 @@
 		C969B3AF269AE9980066A88A /* PostWorkspacesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostWorkspacesVC.swift; sourceTree = "<group>"; };
 		C97032302690750E007F45E0 /* GroupSettingFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupSettingFooterView.xib; sourceTree = "<group>"; };
 		C97032312690750E007F45E0 /* GroupSettingFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSettingFooterView.swift; sourceTree = "<group>"; };
-		C970323526907AA2007F45E0 /* EnterLinkWebsiteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterLinkWebsiteView.swift; sourceTree = "<group>"; };
-		C970323626907AA2007F45E0 /* EnterLinkWebsiteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterLinkWebsiteView.xib; sourceTree = "<group>"; };
+		C970323526907AA2007F45E0 /* BaseEnterValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEnterValueView.swift; sourceTree = "<group>"; };
+		C970323626907AA2007F45E0 /* BaseEnterValueView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseEnterValueView.xib; sourceTree = "<group>"; };
 		C971F9FD2697498A00BB7118 /* PostGroupAboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGroupAboutVC.swift; sourceTree = "<group>"; };
 		C971F9FE2697498A00BB7118 /* PostGroupAboutVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostGroupAboutVC.xib; sourceTree = "<group>"; };
 		C971FA0226974E6F00BB7118 /* PostGroupAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGroupAboutCell.swift; sourceTree = "<group>"; };
@@ -583,6 +589,8 @@
 		C9FA160A268B611200A1A6C6 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C9FA161A268B794300A1A6C6 /* ActiveAccountResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAccountResult.swift; sourceTree = "<group>"; };
 		C9FA1670268DFC4900A1A6C6 /* GroupSettingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingHeaderView.swift; sourceTree = "<group>"; };
+		C9FE695A26B795740046AD79 /* AddDeviceToGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceToGroupVC.swift; sourceTree = "<group>"; };
+		C9FE695B26B795740046AD79 /* AddDeviceToGroupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDeviceToGroupVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -737,6 +745,8 @@
 				C91D45952694CCB900055A4E /* BaseTextField.swift */,
 				C9DB0EE426B2D316008084CC /* BaseAddView.swift */,
 				C9DB0EE826B2D322008084CC /* BaseAddView.xib */,
+				C970323526907AA2007F45E0 /* BaseEnterValueView.swift */,
+				C970323626907AA2007F45E0 /* BaseEnterValueView.xib */,
 			);
 			path = "2. Base";
 			sourceTree = "<group>";
@@ -804,6 +814,7 @@
 				0E61B0092685BEA500652CEC /* VPN */,
 				C93ED1952682456500B03E8A /* Constant.swift */,
 				C919B979268222F6009982C3 /* Protocols */,
+				C9223E8926B929F700B18A76 /* Common.swift */,
 			);
 			path = "8. Common";
 			sourceTree = "<group>";
@@ -1099,6 +1110,7 @@
 				C918140D269B465700DC0E83 /* NotificationResult.swift */,
 				C91EE7FC26AC8CD9006ADAE9 /* QueryLogResult.swift */,
 				C9B1E9A626B6EE2E00FC2F7E /* InviteMemberResult.swift */,
+				C9223EAA26B93C4200B18A76 /* InviteDeviceResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -1210,6 +1222,8 @@
 				C9F2492926AACB3D00EE7442 /* GroupSettingDetailVC.xib */,
 				C924CFE326A7D5390058EEDD /* GroupStatisticVC.swift */,
 				C924CFE426A7D5390058EEDD /* GroupStatisticVC.xib */,
+				C9FE695A26B795740046AD79 /* AddDeviceToGroupVC.swift */,
+				C9FE695B26B795740046AD79 /* AddDeviceToGroupVC.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1271,8 +1285,6 @@
 				C9E7A49B2690B1610012985B /* MoreGroupActionView.xib */,
 				C9E7A49626909E890012985B /* MoreLinkSettingView.swift */,
 				C9E7A49726909E890012985B /* MoreLinkSettingView.xib */,
-				C970323526907AA2007F45E0 /* EnterLinkWebsiteView.swift */,
-				C970323626907AA2007F45E0 /* EnterLinkWebsiteView.xib */,
 				C97032312690750E007F45E0 /* GroupSettingFooterView.swift */,
 				C97032302690750E007F45E0 /* GroupSettingFooterView.xib */,
 				C9FA1605268A344B00A1A6C6 /* ChooseTypeGroupCell.swift */,
@@ -1516,6 +1528,7 @@
 				C969B396269ADB210066A88A /* WorkspaceCell.xib in Resources */,
 				C949D72826B06BF700647FF6 /* LicenseCell.xib in Resources */,
 				0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */,
+				C9FE695D26B795740046AD79 /* AddDeviceToGroupVC.xib in Resources */,
 				C999AB08268E03F200F657A9 /* GroupSettingCell.xib in Resources */,
 				C90EA7402684C298002502F5 /* LoginVC.xib in Resources */,
 				C95A585F268863790077112F /* SetupSecurityWorkspaceVC.xib in Resources */,
@@ -1527,7 +1540,7 @@
 				C9EEB8E826ADB768008F093C /* ChooseTimeView.xib in Resources */,
 				C91EE7F526AC750B006ADAE9 /* GroupMemberCell.xib in Resources */,
 				C91813FD269AFE7000DC0E83 /* ProfileHelpCell.xib in Resources */,
-				C970323826907AA2007F45E0 /* EnterLinkWebsiteView.xib in Resources */,
+				C970323826907AA2007F45E0 /* BaseEnterValueView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1696,6 +1709,7 @@
 				C9E7A49826909E890012985B /* MoreLinkSettingView.swift in Sources */,
 				C969B397269ADB210066A88A /* SecurityWorkspaceCell.swift in Sources */,
 				C969B399269ADB210066A88A /* ChooseTypeWorkspaceCell.swift in Sources */,
+				C9FE695C26B795740046AD79 /* AddDeviceToGroupVC.swift in Sources */,
 				C91EE7E026AC1F90006ADAE9 /* GroupProtectVC.swift in Sources */,
 				C94B39B6268A20EB00046958 /* DeleteDeviceToGroupParam.swift in Sources */,
 				C91EE7FD26AC8CD9006ADAE9 /* QueryLogResult.swift in Sources */,
@@ -1721,7 +1735,7 @@
 				C949D72D26B0755B00647FF6 /* LicensePackageCell.swift in Sources */,
 				C966FE932694A8EB0049458C /* OnboardingVC.swift in Sources */,
 				C91EE7D926AC1ACE006ADAE9 /* ProtectHeaderView.swift in Sources */,
-				C970323726907AA2007F45E0 /* EnterLinkWebsiteView.swift in Sources */,
+				C970323726907AA2007F45E0 /* BaseEnterValueView.swift in Sources */,
 				C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */,
 				C9181411269B46CA00DC0E83 /* NotificationWorker.swift in Sources */,
 				C9777A31269AC5E100C40031 /* ProfileCell.swift in Sources */,
@@ -1737,6 +1751,7 @@
 				C919B94926821DA9009982C3 /* VisafeRequestAdapter.swift in Sources */,
 				C95A5854268861940077112F /* PostWorkspaceVC.swift in Sources */,
 				C9ECBFCD26AF228700E254BB /* MoreActionView.swift in Sources */,
+				C9223EAB26B93C4200B18A76 /* InviteDeviceResult.swift in Sources */,
 				C94B39C8268A26DA00046958 /* ChangeViewerPermisionParam.swift in Sources */,
 				C919B96926822144009982C3 /* BaseViewController.swift in Sources */,
 				C9181402269B045E00DC0E83 /* ChangePasswordVC.swift in Sources */,
@@ -1752,6 +1767,7 @@
 				C9EDB55726839E74009CBD93 /* GroupVC.swift in Sources */,
 				C9B79483268622BE00258A72 /* LoginParam.swift in Sources */,
 				C9777A35269ACABF00C40031 /* ProfileHeaderView.swift in Sources */,
+				C9223E8A26B929F800B18A76 /* Common.swift in Sources */,
 				C9CCAB5326A5DFE300C04BC5 /* GroupDetailVC.swift in Sources */,
 				C9F2492426AAB87200EE7442 /* StatisticSumaryCell.swift in Sources */,
 				C91813FC269AFE7000DC0E83 /* ProfileHelpCell.swift in Sources */,

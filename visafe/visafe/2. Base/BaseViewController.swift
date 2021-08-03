@@ -60,7 +60,7 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func showMemssage(title: String, content: String?, completion: (() -> Void)? = nil) {
+    func showMessage(title: String, content: String?, completion: (() -> Void)? = nil) {
         guard let info = BaseMessageView.loadFromNib() else { return }
         info.binding(title: title, content: content)
         info.buttonTapHandler = { sender in

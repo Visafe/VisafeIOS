@@ -167,11 +167,12 @@ extension GroupSettingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func editLinkAction(sender: Timer) {
-        guard let view = EnterLinkWebsiteView.loadFromNib() else { return }
+        guard let view = BaseEnterValueView.loadFromNib() else { return }
         guard let dic = sender.userInfo as? [String: Any] else { return }
+        view.bindingData(type: .link, name: group.name)
         let link = dic["link"] as? String ?? ""
         let index = dic["index"] as? Int ?? 0
-        view.websiteTextfield.text = link
+        view.enterTextfield.text = link
         view.acceptAction = { [weak self] link in
             guard let weakSelf = self else { return }
             guard let linkAddress = link else { return }
@@ -202,8 +203,8 @@ extension GroupSettingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func handleActionAddLink() {
-        guard let view = EnterLinkWebsiteView.loadFromNib() else { return }
-        view.nameLabel.text = group.name
+        guard let view = BaseEnterValueView.loadFromNib() else { return }
+        view.bindingData(type: .link, name: group.name)
         view.acceptAction = { [weak self] link in
             guard let weakSelf = self else { return }
             guard let linkAddress = link else { return }

@@ -9,16 +9,16 @@ import UIKit
 import SwiftMessages
 import TweeTextField
 
-class EnterLinkWebsiteView: MessageView {
+class BaseEnterValueView: MessageView {
     
     var acceptAction:((_ website: String?) -> Void)?
     var cancelAction:(() -> Void)?
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var websiteTextfield: TweeAttributedTextField!
+    @IBOutlet weak var enterTextfield: UITextField!
     
-    class func loadFromNib() -> EnterLinkWebsiteView? {
-        return self.loadFromNib(withName: EnterLinkWebsiteView.className)
+    class func loadFromNib() -> BaseEnterValueView? {
+        return self.loadFromNib(withName: BaseEnterValueView.className)
     }
     
     @IBAction func acceptAction(_ sender: Any) {

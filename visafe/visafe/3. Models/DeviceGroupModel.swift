@@ -12,7 +12,7 @@ class DeviceGroupModel: NSObject, Mappable {
     var groupID: String?
     var deviceID: String?
     var deviceName: String?
-    var deviceType: DevcieTypeEnum?
+    var deviceType: DeviceTypeEnum?
     var deviceOwner: String?
     var deviceJoinState: String?
     var deviceDetail: String?

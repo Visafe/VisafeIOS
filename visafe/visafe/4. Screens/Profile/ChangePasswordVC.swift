@@ -69,7 +69,7 @@ class ChangePasswordVC: BaseViewController {
     
     func handleResponse(result: ChangePasswordResult?, error: Error?) {
         if result == nil && error == nil {
-            showMemssage(title: "Đổi mật khẩu thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
+            showMessage(title: "Đổi mật khẩu thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.navigationController?.popViewController()
             }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 public enum ProfileEnum: Int {
     case accountType = 0
@@ -140,6 +141,10 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             logout()
         case .upgradeAccount:
             showLicense()
+        case .share:
+            shareApp()
+        case .rate:
+            rateApp()
         default:
             break
         }
@@ -189,5 +194,15 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             AppDelegate.appDelegate()?.configRootVC()
         }
     }
+    
+    func rateApp() {
+        SKStoreReviewController.requestReview()
+    }
+    
+    func shareApp() {
+        let activity = UIActivityViewController(activityItems: [URL(string: "https://apps.apple.com/vn/app/visafe/id1564635388")!],applicationActivities: nil)
+        present(activity, animated: true, completion: nil)
+    }
+    
 }
 

@@ -82,14 +82,28 @@ class GroupWorker {
         }
     }
     
-    static func addDevice(param: AddDeviceToGroupParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+    static func addDevice(param: AddDeviceToGroupParam, completion: @escaping (_ result: InviteDeviceResult?, _ error: Error?) -> Void) {
         let router = APIRouter.addDeviceGroup(param: param)
         APIManager.shared.request(target: router) { (data, error) in
-            var loginResult: BaseResult?
+            var loginResult: InviteDeviceResult?
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                    loginResult = Mapper<InviteDeviceResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
+    
+    static func updateDevice(param: AddDeviceToGroupParam, completion: @escaping (_ result: InviteDeviceResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.updateDeviceGroup(param: param)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: InviteDeviceResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<InviteDeviceResult>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)

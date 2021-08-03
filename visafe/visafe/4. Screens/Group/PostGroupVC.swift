@@ -122,7 +122,7 @@ class PostGroupVC: BaseViewController {
     
     func handleResponse(group: GroupModel?, error: Error?) {
         if group != nil {
-            showMemssage(title: "Tạo nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn khởi tạo.") { [weak self] in
+            showMessage(title: "Tạo nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn khởi tạo.") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.dismiss(animated: true, completion: nil)
                 weakSelf.onDone?()
@@ -134,7 +134,7 @@ class PostGroupVC: BaseViewController {
     
     func handleResponseUpdate(group: GroupModel?, error: Error?) {
         if error == nil {
-            showMemssage(title: "Sửa nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn cập nhật.") { [weak self] in
+            showMessage(title: "Sửa nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn cập nhật.") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.dismiss(animated: true, completion: nil)
                 weakSelf.onDone?()

@@ -38,4 +38,15 @@ class AddDeviceToGroupParam: NSObject, Mappable {
         deviceOwner <- map["deviceOwner"]
         deviceDetail <- map["deviceDetail"]
     }
+    
+    func toDeviceModel() -> DeviceGroupModel {
+        let model = DeviceGroupModel()
+        model.deviceID = deviceId
+        model.groupID = groupId
+        model.deviceName = deviceName
+        model.deviceType = DeviceTypeEnum(rawValue: deviceType ?? "")
+        model.deviceOwner = deviceOwner
+        model.deviceDetail = deviceDetail
+        return model
+    }
 }

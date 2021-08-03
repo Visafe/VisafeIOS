@@ -86,7 +86,7 @@ class PostWorkspacesVC: BaseViewController {
     
     func handleUpdatename(result: WorkspaceModel?, error: Error?) {
         if result != nil && error == nil {
-            showMemssage(title: "Sửa workspace thành công", content: "Bây giờ, bạn đã có thể thêm các nhóm để bảo vệ các thành viên khác") { [weak self] in
+            showMessage(title: "Sửa workspace thành công", content: "Bây giờ, bạn đã có thể thêm các nhóm để bảo vệ các thành viên khác") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.parent?.dismiss(animated: true, completion: nil)
             }
@@ -98,7 +98,7 @@ class PostWorkspacesVC: BaseViewController {
     func handleResult(result: WorkspaceModel?, error: Error?) {
         if result != nil && error == nil {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotificationUpdateWorkspace), object: nil)
-            showMemssage(title: "Tạo workspace thành công", content: "Bây giờ, bạn đã có thể thêm các nhóm để bảo vệ các thành viên khác") { [weak self] in
+            showMessage(title: "Tạo workspace thành công", content: "Bây giờ, bạn đã có thể thêm các nhóm để bảo vệ các thành viên khác") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.parent?.dismiss(animated: true, completion: nil)
             }

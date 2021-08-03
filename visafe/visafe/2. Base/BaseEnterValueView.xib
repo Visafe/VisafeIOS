@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="cGZ-6L-K2T" customClass="EnterLinkWebsiteView" customModule="visafe" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="cGZ-6L-K2T" customClass="BaseEnterValueView" customModule="visafe" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="333"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -23,47 +23,20 @@
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="82e-i3-PxS" customClass="TweeAttributedTextField" customModule="TweeTextField">
-                            <rect key="frame" x="25" y="99" width="364" height="48"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FPY-Ob-OSR" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
+                            <rect key="frame" x="24" y="95" width="366" height="48"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="48" id="zTb-Zj-hEC"/>
+                                <constraint firstAttribute="height" constant="48" id="wcY-oy-bp1"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <textInputTraits key="textInputTraits" keyboardType="URL"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
-                                    <real key="value" value="0.20000000000000001"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="infoTextColor">
-                                    <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
-                                    <real key="value" value="13"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
-                                    <real key="value" value="0.5"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
-                                    <color key="value" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
-                                    <real key="value" value="0.10000000000000001"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                    <color key="value" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Nhập link website muốn chặn"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                    <real key="value" value="0.5"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
-                                    <real key="value" value="0.20000000000000001"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1o-NH-AxY">
+                            <rect key="frame" x="24" y="155" width="366" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ow-Zp-JrV">
                             <rect key="frame" x="24" y="235" width="366" height="48"/>
                             <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -90,7 +63,7 @@
                                 <constraint firstAttribute="height" constant="48" id="AVk-BT-3ry"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                            <state key="normal" title="Xác nhận">
+                            <state key="normal" title="Lưu">
                                 <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -111,22 +84,25 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="FPY-Ob-OSR" secondAttribute="trailing" constant="24" id="5Yd-OB-ZI6"/>
                         <constraint firstAttribute="bottom" secondItem="5ow-Zp-JrV" secondAttribute="bottom" constant="100" id="7xc-aZ-Hvq"/>
                         <constraint firstItem="5ow-Zp-JrV" firstAttribute="top" secondItem="xtU-3Q-JTN" secondAttribute="bottom" constant="20" id="9DI-Mt-x0v"/>
                         <constraint firstItem="xtU-3Q-JTN" firstAttribute="leading" secondItem="D9s-Wx-DF5" secondAttribute="leading" constant="24" id="D5Z-50-zcs"/>
                         <constraint firstItem="hm7-mK-t3b" firstAttribute="top" secondItem="oL0-i9-Eqa" secondAttribute="bottom" constant="8" id="Dff-Co-g2R"/>
                         <constraint firstAttribute="trailing" secondItem="xtU-3Q-JTN" secondAttribute="trailing" constant="24" id="Qzl-dL-4ep"/>
+                        <constraint firstItem="b1o-NH-AxY" firstAttribute="top" secondItem="FPY-Ob-OSR" secondAttribute="bottom" constant="12" id="SyF-aw-cet"/>
                         <constraint firstAttribute="trailing" secondItem="oL0-i9-Eqa" secondAttribute="trailing" constant="24" id="Uwp-c9-eKD"/>
                         <constraint firstItem="oL0-i9-Eqa" firstAttribute="leading" secondItem="D9s-Wx-DF5" secondAttribute="leading" constant="24" id="Wfp-ld-o9g"/>
                         <constraint firstAttribute="trailing" secondItem="5ow-Zp-JrV" secondAttribute="trailing" constant="24" id="ZfT-5x-ful"/>
                         <constraint firstItem="hm7-mK-t3b" firstAttribute="leading" secondItem="D9s-Wx-DF5" secondAttribute="leading" constant="24" id="adS-2F-cWp"/>
+                        <constraint firstItem="FPY-Ob-OSR" firstAttribute="leading" secondItem="D9s-Wx-DF5" secondAttribute="leading" constant="24" id="d1V-To-opQ"/>
                         <constraint firstAttribute="trailing" secondItem="hm7-mK-t3b" secondAttribute="trailing" constant="24" id="e2b-ZP-Igq"/>
-                        <constraint firstItem="82e-i3-PxS" firstAttribute="leading" secondItem="D9s-Wx-DF5" secondAttribute="leading" constant="25" id="iUp-YQ-ABO"/>
-                        <constraint firstAttribute="trailing" secondItem="82e-i3-PxS" secondAttribute="trailing" constant="25" id="nBy-nS-J3y"/>
+                        <constraint firstItem="xtU-3Q-JTN" firstAttribute="top" secondItem="b1o-NH-AxY" secondAttribute="bottom" constant="12" id="fDx-sQ-hIk"/>
+                        <constraint firstItem="FPY-Ob-OSR" firstAttribute="top" secondItem="hm7-mK-t3b" secondAttribute="bottom" constant="24" id="j5b-eX-Thy"/>
+                        <constraint firstItem="b1o-NH-AxY" firstAttribute="leading" secondItem="D9s-Wx-DF5" secondAttribute="leading" constant="24" id="kIA-NN-bWr"/>
                         <constraint firstItem="5ow-Zp-JrV" firstAttribute="leading" secondItem="D9s-Wx-DF5" secondAttribute="leading" constant="24" id="qAF-Sn-53N"/>
+                        <constraint firstAttribute="trailing" secondItem="b1o-NH-AxY" secondAttribute="trailing" constant="24" id="tdb-za-63R"/>
                         <constraint firstItem="oL0-i9-Eqa" firstAttribute="centerX" secondItem="D9s-Wx-DF5" secondAttribute="centerX" id="vzu-gm-HL7"/>
-                        <constraint firstItem="82e-i3-PxS" firstAttribute="top" secondItem="hm7-mK-t3b" secondAttribute="bottom" constant="28" id="y1H-m4-mGw"/>
-                        <constraint firstItem="xtU-3Q-JTN" firstAttribute="top" secondItem="82e-i3-PxS" secondAttribute="bottom" constant="20" id="zDV-in-SGC"/>
                         <constraint firstItem="oL0-i9-Eqa" firstAttribute="top" secondItem="D9s-Wx-DF5" secondAttribute="top" constant="24" id="zFf-cR-Dxw"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -146,8 +122,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="descriptionLabel" destination="b1o-NH-AxY" id="XmF-2f-Srl"/>
+                <outlet property="enterTextfield" destination="FPY-Ob-OSR" id="0CA-ge-Tzs"/>
                 <outlet property="nameLabel" destination="hm7-mK-t3b" id="pzE-A3-w5O"/>
-                <outlet property="websiteTextfield" destination="82e-i3-PxS" id="pJa-Nx-RPy"/>
+                <outlet property="titleViewLabel" destination="oL0-i9-Eqa" id="iVr-3k-gox"/>
             </connections>
             <point key="canvasLocation" x="128.98550724637681" y="262.5"/>
         </view>

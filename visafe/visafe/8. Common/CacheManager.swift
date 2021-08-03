@@ -17,6 +17,7 @@ let kCurrentWorkspace = "kCurrentWorkspace"
 let kCurrentUser = "kCurrentUser"
 let kShowOnboarding = "kShowOnboarding"
 let kPin = "kPin"
+let kDeviceId = "kDeviceId"
 
 class CacheManager {
     
@@ -99,6 +100,21 @@ class CacheManager {
     
     func setPin(value: String) {
         userDefault.set(value, forKey: kPin)
+        userDefault.synchronize()
+    }
+    
+    func getDeviceId() -> String {
+        if let value = userDefault.string(forKey: kDeviceId) {
+            return value
+        } else {
+            let deviceId = Common.randomString(length: 12)
+            setDeviceId(value: deviceId)
+            return deviceId
+        }
+    }
+    
+    func setDeviceId(value: String) {
+        userDefault.set(value, forKey: kDeviceId)
         userDefault.synchronize()
     }
 }

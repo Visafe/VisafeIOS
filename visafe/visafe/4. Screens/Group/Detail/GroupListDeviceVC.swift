@@ -65,6 +65,7 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
             view.bindingInfo(type: .device)
             view.addAction = { [weak self] in
                 guard let weakSelf = self else { return }
+                weakSelf.addDevice()
             }
             return view
         } else {
@@ -78,7 +79,16 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
             viewHeader.addSubview(label)
             return viewHeader
         }
-        
+    }
+    
+    func addDevice() {
+        let vc = AddDeviceToGroupVC(group: group)
+        vc.addDevice = { [weak self] device in
+            guard let weakSelf = self else { return }
+            weakSelf.listDevice.append(device)
+            weakSelf.tableView.reloadData()
+        }
+        present(vc, animated: true)
     }
     
     func showMoreAction(device: DeviceGroupModel) {
@@ -90,7 +100,7 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
         }
         view.editAction = { [weak self] in
             guard let weakSelf = self else { return }
-            weakSelf.editDevice(device: device)
+            Timer.scheduledTimer(timeInterval: 0.3, target: weakSelf, selector:#selector(weakSelf.editDevice(sender:)), userInfo: device, repeats:false)
         }
         showPopup(view: view)
     }
@@ -112,12 +122,38 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
         GroupWorker.deleteDevice(param: param) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
-            
+            weakSelf.listDevice.removeFirst(where: { (d) -> Bool in
+                return d.deviceID == device.deviceID
+            })
+            weakSelf.tableView.reloadData()
         }
     }
     
-    func editDevice(device: DeviceGroupModel) {
-        
+    @objc func editDevice(sender: Timer) {
+        guard let device = sender.userInfo as? DeviceGroupModel else { return }
+        guard let view = BaseEnterValueView.loadFromNib() else { return }
+        view.bindingData(type: .deviceName, name: device.deviceOwner)
+        view.enterTextfield.text = device.deviceName
+        view.acceptAction = { [weak self] name in
+            guard let weakSelf = self else { return }
+            device.deviceName = name
+            weakSelf.updateNameDevice(device: device)
+        }
+        showPopup(view: view)
+    }
+    
+    func updateNameDevice(device: DeviceGroupModel) {
+        showLoading()
+        let param = Common.getDeviceInfo()
+        param.deviceId = device.deviceID
+        param.deviceName = device.deviceName
+        param.deviceOwner = device.deviceOwner
+        param.deviceType = device.deviceType?.rawValue
+        param.deviceDetail = device.deviceDetail
+        GroupWorker.updateDevice(param: param) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

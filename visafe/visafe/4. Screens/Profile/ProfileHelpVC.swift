@@ -82,11 +82,11 @@ public enum ProfileHelpNowEnum: Int {
     func getContent() -> String {
         switch self {
         case .call:
-            return "(+84) 24 3209 1616"
+            return "(+84)2432 091 616"
         case .email:
             return "ncsc@ais.gov.vn"
         case .messenger:
-            return "fb.com/govSOC"
+            return "m.me/govSOC"
         case .facebook:
             return "fb.com/govSOC"
         }
@@ -201,19 +201,19 @@ extension ProfileHelpVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func showPhoneTell(tel: String) {
-        if let url = URL(string: "tel:+84 24 32091616") {
+        if let url = URL(string: "tel://\(tel)") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
     func showLinkFb(fb: String) {
-        if let url = URL(string: "fb://\(fb)") {
+        if let url = URL(string: "https://www.facebook.com/govSOC") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
     func showLinkMessager(mes: String) {
-        if let url = URL(string: "fb://\(mes)") {
+        if let url = URL(string: "https://www.m.me/govSOC") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }

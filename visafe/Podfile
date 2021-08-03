@@ -16,5 +16,8 @@ target 'visafe' do
   pod "ESTabBarController-swift"
   pod 'PageMenu'
   pod 'ACTabScrollView'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/DynamicLinks'
+  pod 'Firebase/Messaging'
 
 end

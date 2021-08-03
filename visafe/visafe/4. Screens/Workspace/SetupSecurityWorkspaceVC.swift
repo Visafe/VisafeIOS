@@ -64,12 +64,12 @@ class SetupSecurityWorkspaceVC: BaseViewController {
         if result != nil && error == nil {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotificationUpdateWorkspace), object: nil)
             if editMode == .add {
-                showMemssage(title: "Tạo cấu hình thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
+                showMessage(title: "Tạo cấu hình thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
                     guard let weakSelf = self else { return }
                     weakSelf.parent?.dismiss(animated: true, completion: nil)
                 }
             } else {
-                showMemssage(title: "Sửa cấu hình thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
+                showMessage(title: "Sửa cấu hình thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
                     guard let weakSelf = self else { return }
                     weakSelf.parent?.dismiss(animated: true, completion: nil)
                 }
