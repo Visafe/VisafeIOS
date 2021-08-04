@@ -60,7 +60,7 @@ extension UIView {
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
 
-    func dropShadowEdge(color: UIColor = UIColor(red:0.32, green:0.32, blue:0.32, alpha:0.5),
+    func dropShadowEdge(color: UIColor = UIColor(hexString: "000000", transparency: 0.08)!,
                     opacity: Float = 0.8,
                     offset: CGSize = .init(width: 1.0, height: 1.0),
                     radius: CGFloat = 2.0,

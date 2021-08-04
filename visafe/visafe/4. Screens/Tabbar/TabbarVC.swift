@@ -105,7 +105,7 @@ class TabbarVC: BaseTabbarController {
             updateStateMainButton(selected: false)
         }
         let isLogin = CacheManager.shared.getIsLogined()
-        if !isLogin && ([1, 4].contains(item.tag)) {
+        if !isLogin && ([4].contains(item.tag)) {
             showFormLogin()
         } else {
             super.tabBar(tabBar, didSelect: item)
