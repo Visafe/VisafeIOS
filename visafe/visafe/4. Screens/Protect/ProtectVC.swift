@@ -11,6 +11,9 @@ class ProtectVC: BaseViewController {
     @IBOutlet weak var titleLB: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var overView: UIView!
+    @IBOutlet weak var blockedLabel: UILabel!
+    @IBOutlet weak var violationLabel: UILabel!
+    @IBOutlet weak var dangerousLabel: UILabel!
     // item of detail view
     @IBOutlet weak var vpnView: UIView!
     @IBOutlet weak var pakeWebView: UIView!
@@ -22,6 +25,7 @@ class ProtectVC: BaseViewController {
         super.viewDidLoad()
         setupUI()
         // Do any additional setup after loading the view.
+        prepareData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +60,27 @@ class ProtectVC: BaseViewController {
         titleLB.attributedText = attributedText
     }
 
+    func prepareData() {
+        let timeType: ChooseTimeEnum = .day
+        guard let wsp = CacheManager.shared.getCurrentWorkspace() else { return }
+        guard let groupId = wsp.groupIds?[safe: 0] else { return }
+        showLoading()
+        GroupWorker.getStatistic(grId: groupId,
+                                 limit: timeType.rawValue) { [weak self] (statistic, error) in
+            guard let self = self else { return }
+            self.hideLoading()
+            if let model = statistic {
+                self.bindingData(model)
+            }
+        }
+    }
+
+    private func bindingData(_ statistic: StatisticModel) {
+        blockedLabel.text = "\(statistic.num_ads_blocked ?? 0)"
+        violationLabel.text = "\(statistic.num_violation ?? 0)"
+        dangerousLabel.text = "\(statistic.num_dangerous_domain ?? 0)"
+    }
+
 }
 // MARK: Action in content
 extension ProtectVC {
@@ -66,13 +91,13 @@ extension ProtectVC {
 
     @IBAction func switchProtectDevice(_ sender: Any) {
         let vc = ProtectDeviceVC(type: .device)
-        self.navigationController?.isNavigationBarHidden = false
+//        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc)
     }
 
     @IBAction func switchProtectWifi(_ sender: Any) {
         let vc = ProtectDeviceVC(type: .wifi)
-        self.navigationController?.isNavigationBarHidden = false
+//        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc)
     }
 
@@ -82,7 +107,7 @@ extension ProtectVC {
         let group = GroupModel()
         group.groupid = groupId
         let vc = GroupProtectVC(group: group, type: .blockAds)
-        self.navigationController?.isNavigationBarHidden = false
+//        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc)
     }
 
@@ -92,7 +117,7 @@ extension ProtectVC {
         let group = GroupModel()
         group.groupid = groupId
         let vc = GroupProtectVC(group: group, type: .blockFollow)
-        self.navigationController?.isNavigationBarHidden = false
+//        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc)
     }
 }
