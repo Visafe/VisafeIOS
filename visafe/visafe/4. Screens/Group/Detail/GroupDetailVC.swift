@@ -18,6 +18,7 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
     let vc1: GroupStatisticVC!
     let vc2: GroupSettingDetailVC!
     var statisticModel: StatisticModel = StatisticModel()
+    var pageMenu: CAPSPageMenu!
     
     init(group: GroupModel) {
         self.group = group
@@ -34,6 +35,11 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
         super.viewDidLoad()
         configBarItem()
         configView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pageMenu.view.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: pageMenuContainer.frame.height)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,7 +97,9 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
             .menuMargin(0),
             .scrollMenuBackgroundColor(.white)
         ]
-        self.addPageMenu(menu: CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: pageMenuContainer.frame.height), pageMenuOptions: parameters))
+        
+        pageMenu = CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: pageMenuContainer.frame.height), pageMenuOptions: parameters)
+        self.addPageMenu(menu: pageMenu)
         self.pageMenuController!.delegate = self
 
         self.headerBackgroundColor = UIColor.white

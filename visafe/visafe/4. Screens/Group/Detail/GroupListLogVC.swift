@@ -37,7 +37,7 @@ class GroupListLogVC: BaseViewController {
     }
     
     func configUI() {
-        tableView.registerCells(cells: [GroupBlockCell.className])
+        tableView.registerCells(cells: [GroupLogCell.className])
         
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 25
@@ -138,7 +138,7 @@ extension GroupListLogVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupBlockCell.className) as? GroupBlockCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupLogCell.className) as? GroupLogCell else {
             return UITableViewCell()
         }
         let model = sources[indexPath.row]

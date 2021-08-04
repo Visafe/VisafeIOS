@@ -64,8 +64,8 @@
 		C91EE7F926AC897A006ADAE9 /* QueryLogParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE7F826AC897A006ADAE9 /* QueryLogParam.swift */; };
 		C91EE7FD26AC8CD9006ADAE9 /* QueryLogResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE7FC26AC8CD9006ADAE9 /* QueryLogResult.swift */; };
 		C91EE80126AC8D17006ADAE9 /* QueryLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE80026AC8D17006ADAE9 /* QueryLogModel.swift */; };
-		C91EE80626AC8FE7006ADAE9 /* GroupBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE80426AC8FE7006ADAE9 /* GroupBlockCell.swift */; };
-		C91EE80726AC8FE7006ADAE9 /* GroupBlockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91EE80526AC8FE7006ADAE9 /* GroupBlockCell.xib */; };
+		C91EE80626AC8FE7006ADAE9 /* GroupLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE80426AC8FE7006ADAE9 /* GroupLogCell.swift */; };
+		C91EE80726AC8FE7006ADAE9 /* GroupLogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91EE80526AC8FE7006ADAE9 /* GroupLogCell.xib */; };
 		C9223E8A26B929F800B18A76 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9223E8926B929F700B18A76 /* Common.swift */; };
 		C9223EAB26B93C4200B18A76 /* InviteDeviceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9223EAA26B93C4200B18A76 /* InviteDeviceResult.swift */; };
 		C923C838268F57BC00FE34DC /* ListGroupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923C837268F57BC00FE34DC /* ListGroupResult.swift */; };
@@ -385,8 +385,8 @@
 		C91EE7F826AC897A006ADAE9 /* QueryLogParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryLogParam.swift; sourceTree = "<group>"; };
 		C91EE7FC26AC8CD9006ADAE9 /* QueryLogResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryLogResult.swift; sourceTree = "<group>"; };
 		C91EE80026AC8D17006ADAE9 /* QueryLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryLogModel.swift; sourceTree = "<group>"; };
-		C91EE80426AC8FE7006ADAE9 /* GroupBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBlockCell.swift; sourceTree = "<group>"; };
-		C91EE80526AC8FE7006ADAE9 /* GroupBlockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupBlockCell.xib; sourceTree = "<group>"; };
+		C91EE80426AC8FE7006ADAE9 /* GroupLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupLogCell.swift; sourceTree = "<group>"; };
+		C91EE80526AC8FE7006ADAE9 /* GroupLogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupLogCell.xib; sourceTree = "<group>"; };
 		C9223E8926B929F700B18A76 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		C9223EAA26B93C4200B18A76 /* InviteDeviceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteDeviceResult.swift; sourceTree = "<group>"; };
 		C923C837268F57BC00FE34DC /* ListGroupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupResult.swift; sourceTree = "<group>"; };
@@ -902,8 +902,8 @@
 				C9F2492326AAB87200EE7442 /* StatisticSumaryCell.xib */,
 				C91EE7F226AC750B006ADAE9 /* GroupMemberCell.swift */,
 				C91EE7F326AC750B006ADAE9 /* GroupMemberCell.xib */,
-				C91EE80426AC8FE7006ADAE9 /* GroupBlockCell.swift */,
-				C91EE80526AC8FE7006ADAE9 /* GroupBlockCell.xib */,
+				C91EE80426AC8FE7006ADAE9 /* GroupLogCell.swift */,
+				C91EE80526AC8FE7006ADAE9 /* GroupLogCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1563,7 +1563,7 @@
 				C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */,
 				C91EE7E126AC1F90006ADAE9 /* GroupProtectVC.xib in Resources */,
 				C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */,
-				C91EE80726AC8FE7006ADAE9 /* GroupBlockCell.xib in Resources */,
+				C91EE80726AC8FE7006ADAE9 /* GroupLogCell.xib in Resources */,
 				C93C235626A97FA1003AC717 /* StatisticCategoryCell.xib in Resources */,
 				C969B3B0269AE9980066A88A /* PostWorkspacesVC.xib in Resources */,
 				C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */,
@@ -1772,7 +1772,7 @@
 				C91EE7FD26AC8CD9006ADAE9 /* QueryLogResult.swift in Sources */,
 				C9FA161B268B794300A1A6C6 /* ActiveAccountResult.swift in Sources */,
 				C923C838268F57BC00FE34DC /* ListGroupResult.swift in Sources */,
-				C91EE80626AC8FE7006ADAE9 /* GroupBlockCell.swift in Sources */,
+				C91EE80626AC8FE7006ADAE9 /* GroupLogCell.swift in Sources */,
 				0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */,
 				C94B39BF268A258C00046958 /* InviteToGroupParam.swift in Sources */,
 				C9EDB55B26839E74009CBD93 /* GroupCell.swift in Sources */,

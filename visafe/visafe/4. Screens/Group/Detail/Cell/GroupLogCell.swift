@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class GroupBlockCell: BaseTableCell {
+class GroupLogCell: BaseTableCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
     var moreAction:(() -> Void)?

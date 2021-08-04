@@ -11,11 +11,17 @@ class WorkspaceVC: HeaderedACTabScrollViewController, ACTabScrollViewDelegate,  
     
     var subPageViews: [UIView] = []
     var imageview: UIImageView!
+    let vc = GroupVC()
     
     override func viewDidLoad() {
         self.headerHeight = kScreenWidth * 180 / 375
         super.viewDidLoad()
         configUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        vc.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
     }
     
     func configUI() {
@@ -34,7 +40,6 @@ class WorkspaceVC: HeaderedACTabScrollViewController, ACTabScrollViewDelegate,  
         // 2) Minimal ACTabScrollView initialisation
         self.tabScrollView.dataSource = self
         self.tabScrollView.delegate = self
-        let vc = GroupVC()
         vc.selectedWorkspace = { [weak self] workspace in
             guard let weakSelf = self else { return }
             weakSelf.updateViewWithWsp(wsp: workspace)
