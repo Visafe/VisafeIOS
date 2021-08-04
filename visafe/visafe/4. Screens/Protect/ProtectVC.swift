@@ -88,6 +88,21 @@ class ProtectVC: BaseViewController {
 }
 // MARK: Action in content
 extension ProtectVC {
+    private func checkLoginState() -> Bool {
+        let isLogin = CacheManager.shared.getIsLogined()
+        if !isLogin  {
+            showFormLogin()
+            return false
+        } else {
+            return true
+        }
+    }
+
+    private func showFormLogin() {
+        let vc = LoginVC()
+        present(vc, animated: true)
+    }
+
     private func getProtectData() -> (group: GroupModel,
                                       statistic: StatisticModel)? {
         guard let wsp = CacheManager.shared.getCurrentWorkspace() else { return nil }
@@ -98,10 +113,12 @@ extension ProtectVC {
     }
 
     @IBAction func scanAction(_ sender: Any) {
+        guard checkLoginState() else { return }
         setSafeMode(isTrue: false)
     }
 
     @IBAction func showProtectDevice(_ sender: Any) {
+        guard checkLoginState() else { return }
         guard let data = getProtectData() else { return }
         let vc = ProtectDeviceVC(group: data.group,
                                  statistic: data.statistic,
@@ -110,6 +127,7 @@ extension ProtectVC {
     }
 
     @IBAction func showProtectWifi(_ sender: Any) {
+        guard checkLoginState() else { return }
         guard let data = getProtectData() else { return }
         let vc = ProtectDeviceVC(group: data.group,
                                  statistic: data.statistic,
@@ -118,6 +136,7 @@ extension ProtectVC {
     }
 
     @IBAction func showProtectAds(_ sender: Any) {
+        guard checkLoginState() else { return }
         guard let data = getProtectData() else { return }
         let vc = GroupProtectVC(group: data.group, type: .ads_blocked)
         vc.statisticModel = data.statistic
@@ -125,6 +144,7 @@ extension ProtectVC {
     }
 
     @IBAction func showProtectFolow(_ sender: Any) {
+        guard checkLoginState() else { return }
         guard let data = getProtectData() else { return }
         let vc = GroupProtectVC(group: data.group, type: .native_tracking)
         vc.statisticModel = data.statistic
