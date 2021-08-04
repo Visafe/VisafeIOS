@@ -23,6 +23,8 @@ class ProtectVC: BaseViewController {
     @IBOutlet weak var securityView: UIView!
     @IBOutlet weak var registerInfoView: UIView!
     @IBOutlet weak var otherView: UIView!
+    var statisticModel = StatisticModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -78,9 +80,10 @@ class ProtectVC: BaseViewController {
     }
 
     private func bindingData(_ statistic: StatisticModel) {
-        blockedLabel.text = "\(statistic.num_ads_blocked ?? 0)"
-        violationLabel.text = "\(statistic.num_violation ?? 0)"
-        dangerousLabel.text = "\(statistic.num_dangerous_domain ?? 0)"
+        statisticModel = statistic
+        blockedLabel.text = "\(statistic.num_ads_blocked)"
+        violationLabel.text = "\(statistic.num_violation)"
+        dangerousLabel.text = "\(statistic.num_dangerous_domain)"
     }
 
 }
@@ -93,13 +96,11 @@ extension ProtectVC {
 
     @IBAction func switchProtectDevice(_ sender: Any) {
         let vc = ProtectDeviceVC(type: .device)
-//        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc)
     }
 
     @IBAction func switchProtectWifi(_ sender: Any) {
         let vc = ProtectDeviceVC(type: .wifi)
-//        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc)
     }
 
@@ -108,8 +109,8 @@ extension ProtectVC {
         guard let groupId = wsp.groupIds?[safe: 0] else { return }
         let group = GroupModel()
         group.groupid = groupId
-        let vc = GroupProtectVC(group: group, type: .blockAds)
-//        self.navigationController?.isNavigationBarHidden = false
+        let vc = GroupProtectVC(group: group, type: .ads_blocked)
+        vc.statisticModel = statisticModel
         self.navigationController?.pushViewController(vc)
     }
 
@@ -118,8 +119,8 @@ extension ProtectVC {
         guard let groupId = wsp.groupIds?[safe: 0] else { return }
         let group = GroupModel()
         group.groupid = groupId
-        let vc = GroupProtectVC(group: group, type: .blockFollow)
-//        self.navigationController?.isNavigationBarHidden = false
+        let vc = GroupProtectVC(group: group, type: .native_tracking)
+        vc.statisticModel = statisticModel
         self.navigationController?.pushViewController(vc)
     }
 }
