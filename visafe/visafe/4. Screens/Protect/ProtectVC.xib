@@ -944,14 +944,14 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLk-Az-WjG">
                                                                     <rect key="frame" x="0.0" y="0.0" width="115.5" height="85"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_id" translatesAutoresizingMaskIntoConstraints="NO" id="cWs-ls-Am2">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_newspaper" translatesAutoresizingMaskIntoConstraints="NO" id="cWs-ls-Am2">
                                                                             <rect key="frame" x="33.5" y="0.0" width="48" height="48"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="48" id="LF2-fE-GBu"/>
                                                                                 <constraint firstAttribute="height" constant="48" id="ZWn-YN-ebB"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bảo vệ danh tính" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psC-zu-ndh">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tin tức cảnh báo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psC-zu-ndh">
                                                                             <rect key="frame" x="27.5" y="56" width="60" height="31.5"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="60" id="Jp0-SZ-v14"/>
@@ -979,14 +979,14 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xG7-iS-13z">
                                                                     <rect key="frame" x="115.5" y="0.0" width="115" height="85"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_web" translatesAutoresizingMaskIntoConstraints="NO" id="JKb-Cn-k0u">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_check-email-spoofing" translatesAutoresizingMaskIntoConstraints="NO" id="JKb-Cn-k0u">
                                                                             <rect key="frame" x="33.5" y="0.0" width="48" height="48"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="48" id="4AY-z3-uEy"/>
                                                                                 <constraint firstAttribute="height" constant="48" id="RZj-Nb-LnP"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website giả mạo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye7-ZJ-mtB">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gửi cảnh báo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye7-ZJ-mtB">
                                                                             <rect key="frame" x="27.5" y="56" width="60" height="31.5"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="60" id="8qk-5o-Liw"/>
@@ -1014,17 +1014,17 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGW-4L-5g9">
                                                                     <rect key="frame" x="230.5" y="0.0" width="115.5" height="85"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_email" translatesAutoresizingMaskIntoConstraints="NO" id="gjj-a6-82y">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_ipma" translatesAutoresizingMaskIntoConstraints="NO" id="gjj-a6-82y">
                                                                             <rect key="frame" x="34" y="0.0" width="48" height="48"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="48" id="VH0-zN-lgp"/>
                                                                                 <constraint firstAttribute="height" constant="48" id="qGt-gf-0RI"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email giả mạo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uF3-Lp-8Ek">
-                                                                            <rect key="frame" x="28" y="56" width="60" height="31.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiểm tra mạng Wifi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uF3-Lp-8Ek">
+                                                                            <rect key="frame" x="20.5" y="56" width="75" height="31.5"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="60" id="zij-0X-ZhX"/>
+                                                                                <constraint firstAttribute="width" constant="75" id="zij-0X-ZhX"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                             <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1057,17 +1057,17 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTQ-8f-u0W">
                                                                     <rect key="frame" x="0.0" y="0.0" width="115.5" height="85"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_file" translatesAutoresizingMaskIntoConstraints="NO" id="ZFw-Hc-cNj">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_check-data-leak" translatesAutoresizingMaskIntoConstraints="NO" id="ZFw-Hc-cNj">
                                                                             <rect key="frame" x="33.5" y="0.0" width="48" height="48"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="48" id="6wV-kp-uJB"/>
                                                                                 <constraint firstAttribute="width" constant="48" id="gUu-8I-XZO"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiểm tra tập tin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-B4-aTs">
-                                                                            <rect key="frame" x="27.5" y="56" width="60" height="31.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiểm tra lộ lọt tài khoản" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-B4-aTs">
+                                                                            <rect key="frame" x="17.5" y="56" width="80" height="31.5"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="60" id="2rC-4e-DKU"/>
+                                                                                <constraint firstAttribute="width" constant="80" id="2rC-4e-DKU"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                             <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1092,18 +1092,15 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGw-JS-9na">
                                                                     <rect key="frame" x="115.5" y="0.0" width="115" height="85"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_locked 1" translatesAutoresizingMaskIntoConstraints="NO" id="fxf-uh-8fO">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_check-phishing" translatesAutoresizingMaskIntoConstraints="NO" id="fxf-uh-8fO">
                                                                             <rect key="frame" x="33.5" y="0.0" width="48" height="48"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="48" id="9x5-LJ-WrD"/>
                                                                                 <constraint firstAttribute="width" constant="48" id="JOW-sR-tG1"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiểm tra lỗ hổng" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQA-wB-kAM">
-                                                                            <rect key="frame" x="27.5" y="56" width="60" height="31.5"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="60" id="4Pu-Vh-Ayj"/>
-                                                                            </constraints>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiểm tra webside lừa đảo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQA-wB-kAM">
+                                                                            <rect key="frame" x="0.0" y="56" width="115" height="31.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                             <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -1114,8 +1111,9 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="zQA-wB-kAM" secondAttribute="trailing" id="6Pf-7B-3Te"/>
                                                                         <constraint firstItem="FlQ-eE-XkE" firstAttribute="top" secondItem="XGw-JS-9na" secondAttribute="top" id="DJe-3W-oVn"/>
-                                                                        <constraint firstItem="zQA-wB-kAM" firstAttribute="centerX" secondItem="XGw-JS-9na" secondAttribute="centerX" id="JLt-vy-QfB"/>
+                                                                        <constraint firstItem="zQA-wB-kAM" firstAttribute="leading" secondItem="XGw-JS-9na" secondAttribute="leading" id="Grl-Sb-qpD"/>
                                                                         <constraint firstItem="FlQ-eE-XkE" firstAttribute="leading" secondItem="XGw-JS-9na" secondAttribute="leading" id="YCz-Ca-KVB"/>
                                                                         <constraint firstItem="zQA-wB-kAM" firstAttribute="top" secondItem="fxf-uh-8fO" secondAttribute="bottom" constant="8" id="jly-Qe-WOf"/>
                                                                         <constraint firstItem="fxf-uh-8fO" firstAttribute="top" secondItem="XGw-JS-9na" secondAttribute="top" id="lHk-N3-INk"/>
@@ -1246,18 +1244,18 @@
         <image name="ic_premium" width="82" height="24"/>
         <image name="ic_premium_bg" width="343" height="186"/>
         <image name="p_ads" width="36" height="36"/>
+        <image name="p_check-data-leak" width="48" height="48"/>
+        <image name="p_check-email-spoofing" width="48" height="48"/>
+        <image name="p_check-phishing" width="48" height="48"/>
         <image name="p_device" width="36" height="36"/>
-        <image name="p_email" width="48" height="48"/>
         <image name="p_fake" width="64" height="64"/>
         <image name="p_family" width="64" height="64"/>
-        <image name="p_file" width="48" height="48"/>
         <image name="p_folow" width="36" height="36"/>
-        <image name="p_id" width="48" height="48"/>
-        <image name="p_locked 1" width="48" height="48"/>
+        <image name="p_ipma" width="48" height="48"/>
+        <image name="p_newspaper" width="48" height="48"/>
         <image name="p_security" width="64" height="64"/>
         <image name="p_unlock" width="48" height="48"/>
         <image name="p_vpn" width="46" height="58"/>
-        <image name="p_web" width="48" height="48"/>
         <image name="p_wifi" width="36" height="36"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
