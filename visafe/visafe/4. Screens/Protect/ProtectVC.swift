@@ -8,6 +8,7 @@
 import UIKit
 
 class ProtectVC: BaseViewController {
+    @IBOutlet weak var heightViewConstant: NSLayoutConstraint!
     @IBOutlet weak var titleLB: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var overView: UIView!
@@ -15,6 +16,7 @@ class ProtectVC: BaseViewController {
     @IBOutlet weak var violationLabel: UILabel!
     @IBOutlet weak var dangerousLabel: UILabel!
     // item of detail view
+    @IBOutlet weak var detailView: UIStackView!
     @IBOutlet weak var vpnView: UIView!
     @IBOutlet weak var pakeWebView: UIView!
     @IBOutlet weak var protectFamilyView: UIView!
@@ -125,16 +127,43 @@ extension ProtectVC {
 
 // MARK: Action
 extension ProtectVC {
+    // layout subview when hide/unhide item in detail view
+    private func updateOverViewLayout() {
+        var heightDetailView: CGFloat = 30 // space bottom
+        //header view
+        heightDetailView += 175
+        heightDetailView += 20
+        //Content view
+        heightDetailView += 300
+        heightDetailView += 20
 
+        //Over view
+        heightDetailView += 200
+        heightDetailView += 20
 
-    @IBAction func addVPN(_ sender: Any) {
-        vpnView.isHidden = true
+        //Detail view
+        heightDetailView += 20
+        let unHidenViews = [vpnView,
+         pakeWebView,
+         protectFamilyView,
+         securityView
+        ].filter { $0.isHidden == false }
+        let count = unHidenViews.count
+        heightDetailView += CGFloat(count * 150 + (count - 1)  * 20)
+        heightDetailView += 275
+        heightDetailView += 300 + 20
+        heightViewConstant.constant = heightDetailView
+        detailView.layoutIfNeeded()
+        view.setNeedsLayout()
         view.layoutIfNeeded()
     }
 
+    @IBAction func addVPN(_ sender: Any) {
+        updateOverViewLayout()
+    }
+
     @IBAction func reportFake(_ sender: Any) {
-        vpnView.isHidden = false
-        view.layoutIfNeeded()
+        updateOverViewLayout()
     }
 
     @IBAction func createGroup(_ sender: Any) {
