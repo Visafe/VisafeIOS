@@ -37,5 +37,18 @@ class LogHeaderView: BaseView {
             break
         }
     }
-
+    func bindingData(statistic: StatisticModel, typeTime: ChooseTimeEnum, typeProtect: ProtectHomeType) {
+        timeTitleLabel.text = typeTime.getSubTitle()
+        // Todo
+        switch typeProtect {
+        case .device:
+            totalLabel.text = "\(statistic.num_access_blocked_all)"
+            timeLabel.text = "\(statistic.num_access_blocked)"
+        case .wifi:
+            totalLabel.text = "\(statistic.num_content_blocked_all)"
+            timeLabel.text = "\(statistic.num_content_blocked)"
+        default:
+            break
+        }
+    }
 }

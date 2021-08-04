@@ -22,6 +22,7 @@
 		0EF5EB1126BA7A8F002F5E84 /* GenDeviceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */; };
 		0EF5EB1526BA7E14002F5E84 /* DoHNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB1426BA7E14002F5E84 /* DoHNative.swift */; };
 		35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */; };
+		5111F0FA26BAE07200164148 /* ProtectDeviceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5111F0F926BAE07200164148 /* ProtectDeviceVC.xib */; };
 		518EC0EE26B98EDC00D88D2A /* ProtectDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0ED26B98EDC00D88D2A /* ProtectDeviceVC.swift */; };
 		518EC0F226B992EF00D88D2A /* ProtectHomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0F126B992EF00D88D2A /* ProtectHomeHeaderView.swift */; };
 		518EC0F626B9930100D88D2A /* ProtectHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518EC0F526B9930100D88D2A /* ProtectHomeHeaderView.xib */; };
@@ -345,6 +346,7 @@
 		0EF5EB0C26BA534C002F5E84 /* DeviceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceWorker.swift; sourceTree = "<group>"; };
 		0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenDeviceResult.swift; sourceTree = "<group>"; };
 		0EF5EB1426BA7E14002F5E84 /* DoHNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoHNative.swift; sourceTree = "<group>"; };
+		5111F0F926BAE07200164148 /* ProtectDeviceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProtectDeviceVC.xib; sourceTree = "<group>"; };
 		518EC0ED26B98EDC00D88D2A /* ProtectDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectDeviceVC.swift; sourceTree = "<group>"; };
 		518EC0F126B992EF00D88D2A /* ProtectHomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtectHomeHeaderView.swift; sourceTree = "<group>"; };
 		518EC0F526B9930100D88D2A /* ProtectHomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProtectHomeHeaderView.xib; sourceTree = "<group>"; };
@@ -712,6 +714,7 @@
 			children = (
 				518EC0FB26B9954E00D88D2A /* Header */,
 				518EC0ED26B98EDC00D88D2A /* ProtectDeviceVC.swift */,
+				5111F0F926BAE07200164148 /* ProtectDeviceVC.xib */,
 				518EC10426B9A36300D88D2A /* ProtectDetailListBlockVC.swift */,
 				518EC10026B9A35900D88D2A /* ProtectDetailListBlockVC.xib */,
 			);
@@ -1518,6 +1521,7 @@
 				C9C0B9D126A580B600C9869A /* IconTransitions.json in Resources */,
 				C956059126AEAB4500AD8475 /* GroupDeviceCell.xib in Resources */,
 				C95A5855268861940077112F /* PostWorkspaceVC.xib in Resources */,
+				5111F0FA26BAE07200164148 /* ProtectDeviceVC.xib in Resources */,
 				C9C7A9E626B05E9F002C883A /* LicenseOverviewVC.xib in Resources */,
 				C924CFE626A7D5390058EEDD /* GroupStatisticVC.xib in Resources */,
 				C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */,

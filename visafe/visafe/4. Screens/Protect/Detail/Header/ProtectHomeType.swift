@@ -125,6 +125,23 @@ public enum ProtectHomeType {
         }
     }
 
+    func getTitleWarning() -> String {
+        switch self {
+        case .device:
+            return "Không kiểm tra được nguy hại"
+        case .wifi:
+            return "Không kiểm tra được mã độc"
+        }
+    }
+
+    func getContentWarning() -> String {
+        switch self {
+        case .device:
+            return "Hãy bật bảo vệ thiết bị để xem các nguy hại đã chặn"
+        case .wifi:
+            return "Hãy bật bảo vệ Wi-Fi để kiểm tra an toàn mạng"
+        }
+    }
     // Todo:
     func getTypeQueryLog() -> QueryLogTypeEnum {
         switch self {
