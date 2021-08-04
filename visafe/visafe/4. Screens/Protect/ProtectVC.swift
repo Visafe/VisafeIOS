@@ -65,17 +65,35 @@ extension ProtectVC {
     }
 
     @IBAction func switchProtectDevice(_ sender: Any) {
-        setSafeMode()
+        let vc = ProtectDeviceVC(type: .device)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(vc)
     }
 
     @IBAction func switchProtectWifi(_ sender: Any) {
-        setSafeMode(isTrue: false)
+        let vc = ProtectDeviceVC(type: .wifi)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(vc)
     }
 
     @IBAction func switchProtectAds(_ sender: Any) {
+        guard let wsp = CacheManager.shared.getCurrentWorkspace() else { return }
+        guard let groupId = wsp.groupIds?[safe: 0] else { return }
+        let group = GroupModel()
+        group.groupid = groupId
+        let vc = GroupProtectVC(group: group, type: .blockAds)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(vc)
     }
 
     @IBAction func switchProtectFolow(_ sender: Any) {
+        guard let wsp = CacheManager.shared.getCurrentWorkspace() else { return }
+        guard let groupId = wsp.groupIds?[safe: 0] else { return }
+        let group = GroupModel()
+        group.groupid = groupId
+        let vc = GroupProtectVC(group: group, type: .blockFollow)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(vc)
     }
 }
 
@@ -95,11 +113,13 @@ extension ProtectVC {
     }
 
     @IBAction func createGroup(_ sender: Any) {
+
     }
 
     @IBAction func createSecurity(_ sender: Any) {
 
     }
+    
     @IBAction func upgradeNow(_ sender: Any) {
 
     }
