@@ -52,6 +52,7 @@
 		C919B96D26822157009982C3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96C26822157009982C3 /* BaseView.swift */; };
 		C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B96F2682216B009982C3 /* BaseTableCell.swift */; };
 		C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B97A268222F6009982C3 /* JSONModelable.swift */; };
+		C91AD1EA26BA5449002E13E1 /* MessageViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91AD1E926BA5449002E13E1 /* MessageViewBase.swift */; };
 		C91D45962694CCB900055A4E /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D45952694CCB900055A4E /* BaseTextField.swift */; };
 		C91EE7D526AC1ABD006ADAE9 /* ProtectHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91EE7D426AC1ABD006ADAE9 /* ProtectHeaderView.xib */; };
 		C91EE7D926AC1ACE006ADAE9 /* ProtectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91EE7D826AC1ACE006ADAE9 /* ProtectHeaderView.swift */; };
@@ -237,6 +238,8 @@
 		C9CE383726B01E860010A43C /* VisafeDateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE383626B01E860010A43C /* VisafeDateFormater.swift */; };
 		C9CF05FC26B995E800C7572F /* LogHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF05FB26B995E800C7572F /* LogHeaderView.swift */; };
 		C9CF060026B995F400C7572F /* LogHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CF05FF26B995F400C7572F /* LogHeaderView.xib */; };
+		C9CF060726B9A89B00C7572F /* DeviceListLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF060526B9A89B00C7572F /* DeviceListLogVC.swift */; };
+		C9CF060826B9A89B00C7572F /* DeviceListLogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CF060626B9A89B00C7572F /* DeviceListLogVC.xib */; };
 		C9D771DC26B538650078FFD9 /* ListWorkspaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D771DA26B538650078FFD9 /* ListWorkspaceView.xib */; };
 		C9D771DD26B538650078FFD9 /* ListWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D771DB26B538650078FFD9 /* ListWorkspaceView.swift */; };
 		C9DB0EE526B2D316008084CC /* BaseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DB0EE426B2D316008084CC /* BaseAddView.swift */; };
@@ -373,6 +376,7 @@
 		C919B96C26822157009982C3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		C919B96F2682216B009982C3 /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
 		C919B97A268222F6009982C3 /* JSONModelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONModelable.swift; sourceTree = "<group>"; };
+		C91AD1E926BA5449002E13E1 /* MessageViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessageViewBase.swift; path = ../MessageViewBase.swift; sourceTree = "<group>"; };
 		C91D45952694CCB900055A4E /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		C91EE7D426AC1ABD006ADAE9 /* ProtectHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProtectHeaderView.xib; sourceTree = "<group>"; };
 		C91EE7D826AC1ACE006ADAE9 /* ProtectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectHeaderView.swift; sourceTree = "<group>"; };
@@ -552,6 +556,8 @@
 		C9CE383626B01E860010A43C /* VisafeDateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisafeDateFormater.swift; sourceTree = "<group>"; };
 		C9CF05FB26B995E800C7572F /* LogHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHeaderView.swift; sourceTree = "<group>"; };
 		C9CF05FF26B995F400C7572F /* LogHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogHeaderView.xib; sourceTree = "<group>"; };
+		C9CF060526B9A89B00C7572F /* DeviceListLogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceListLogVC.swift; sourceTree = "<group>"; };
+		C9CF060626B9A89B00C7572F /* DeviceListLogVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceListLogVC.xib; sourceTree = "<group>"; };
 		C9D771DA26B538650078FFD9 /* ListWorkspaceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListWorkspaceView.xib; sourceTree = "<group>"; };
 		C9D771DB26B538650078FFD9 /* ListWorkspaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWorkspaceView.swift; sourceTree = "<group>"; };
 		C9DB0EE426B2D316008084CC /* BaseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAddView.swift; sourceTree = "<group>"; };
@@ -1253,16 +1259,17 @@
 		C9CCAB5026A5DFCA00C04BC5 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				C979C97126B6E39700F97E4F /* InviteMemberToGroupVC.swift */,
-				C979C97226B6E39700F97E4F /* InviteMemberToGroupVC.xib */,
+				C9FE695A26B795740046AD79 /* AddDeviceToGroupVC.swift */,
+				C9FE695B26B795740046AD79 /* AddDeviceToGroupVC.xib */,
 				C924CFE226A7D42E0058EEDD /* Cell */,
-				C924CFE126A7D4210058EEDD /* View */,
+				C9CF060526B9A89B00C7572F /* DeviceListLogVC.swift */,
+				C9CF060626B9A89B00C7572F /* DeviceListLogVC.xib */,
 				C9CCAB5126A5DFE300C04BC5 /* GroupDetailVC.swift */,
 				C9CCAB5226A5DFE300C04BC5 /* GroupDetailVC.xib */,
-				C91EE7E426AC1FFA006ADAE9 /* GroupListLogVC.swift */,
-				C91EE7E526AC1FFA006ADAE9 /* GroupListLogVC.xib */,
 				C956058026AE9D8300AD8475 /* GroupListDeviceVC.swift */,
 				C956058126AE9D8300AD8475 /* GroupListDeviceVC.xib */,
+				C91EE7E426AC1FFA006ADAE9 /* GroupListLogVC.swift */,
+				C91EE7E526AC1FFA006ADAE9 /* GroupListLogVC.xib */,
 				C91EE7EC26AC7414006ADAE9 /* GroupListUserVC.swift */,
 				C91EE7ED26AC7414006ADAE9 /* GroupListUserVC.xib */,
 				C91EE7DE26AC1F90006ADAE9 /* GroupProtectVC.swift */,
@@ -1271,8 +1278,9 @@
 				C9F2492926AACB3D00EE7442 /* GroupSettingDetailVC.xib */,
 				C924CFE326A7D5390058EEDD /* GroupStatisticVC.swift */,
 				C924CFE426A7D5390058EEDD /* GroupStatisticVC.xib */,
-				C9FE695A26B795740046AD79 /* AddDeviceToGroupVC.swift */,
-				C9FE695B26B795740046AD79 /* AddDeviceToGroupVC.xib */,
+				C979C97126B6E39700F97E4F /* InviteMemberToGroupVC.swift */,
+				C979C97226B6E39700F97E4F /* InviteMemberToGroupVC.xib */,
+				C924CFE126A7D4210058EEDD /* View */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1289,6 +1297,7 @@
 		C9E5C78726873BA800D159EF /* MessageView */ = {
 			isa = PBXGroup;
 			children = (
+				C91AD1E926BA5449002E13E1 /* MessageViewBase.swift */,
 				C9ECBFCB26AF228700E254BB /* MoreActionView.swift */,
 				C9ECBFCC26AF228700E254BB /* MoreActionView.xib */,
 				C9E7A4A02690C60F0012985B /* ConfirmDeleteView.swift */,
@@ -1540,6 +1549,7 @@
 				C9E7A494269087240012985B /* GroupSettingLinkCell.xib in Resources */,
 				C949D72E26B0755B00647FF6 /* LicensePackageCell.xib in Resources */,
 				C9FA15F8268A2DBF00A1A6C6 /* GroupNameVC.xib in Resources */,
+				C9CF060826B9A89B00C7572F /* DeviceListLogVC.xib in Resources */,
 				C9B7949B26862C5F00258A72 /* SetPasswordVC.xib in Resources */,
 				C91EE7E726AC1FFA006ADAE9 /* GroupListLogVC.xib in Resources */,
 				C969B39E269ADB210066A88A /* WorkspaceFooterView.xib in Resources */,
@@ -1695,6 +1705,7 @@
 				C919B94726821DA9009982C3 /* APIManager.swift in Sources */,
 				C9F938502688146200D30F28 /* ForgotPasswordResult.swift in Sources */,
 				C94B39AD268A1CF100046958 /* GroupModel.swift in Sources */,
+				C91AD1EA26BA5449002E13E1 /* MessageViewBase.swift in Sources */,
 				C97032332690750E007F45E0 /* GroupSettingFooterView.swift in Sources */,
 				C9CF05FC26B995E800C7572F /* LogHeaderView.swift in Sources */,
 				C9ECBFBC26AF0CB300E254BB /* GroupUpdateWhitelistParam.swift in Sources */,
@@ -1756,6 +1767,7 @@
 				C9EEB8BB26AD641F008F093C /* WorkspaceVC.swift in Sources */,
 				C91EE7F926AC897A006ADAE9 /* QueryLogParam.swift in Sources */,
 				C9FA15FC268A2DD700A1A6C6 /* GroupSettingVC.swift in Sources */,
+				C9CF060726B9A89B00C7572F /* DeviceListLogVC.swift in Sources */,
 				C9B79466268613A700258A72 /* RegisterVC.swift in Sources */,
 				C9B7948C268626AA00258A72 /* UserModel.swift in Sources */,
 				0EF5EB0D26BA534C002F5E84 /* DeviceWorker.swift in Sources */,

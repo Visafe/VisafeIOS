@@ -8,7 +8,7 @@
 import UIKit
 import SwiftMessages
 
-class MoreActionWorkspaceView: MessageView {
+class MoreActionWorkspaceView: MessageViewBase {
 
     @IBOutlet weak var nameLabel: UILabel!
     var editAction:(() -> Void)?

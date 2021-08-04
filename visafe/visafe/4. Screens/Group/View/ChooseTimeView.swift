@@ -36,7 +36,7 @@ public enum ChooseTimeEnum: Int {
     }
 }
 
-class ChooseTimeView: MessageView {
+class ChooseTimeView: MessageViewBase {
 
     @IBOutlet weak var tableView: UITableView!
     var chooseTimeAction:((_ type: ChooseTimeEnum) -> Void)?

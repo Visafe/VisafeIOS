@@ -8,7 +8,7 @@
 import UIKit
 import SwiftMessages
 
-class ListWorkspaceView: MessageView {
+class ListWorkspaceView: MessageViewBase {
 
     @IBOutlet weak var tableView: UITableView!
     

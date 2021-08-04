@@ -13,7 +13,7 @@ public enum MoreActionEnum: Int {
     case device = 2
 }
 
-class MoreActionView: MessageView {
+class MoreActionView: MessageViewBase {
 
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var titleEditLabel: UILabel!

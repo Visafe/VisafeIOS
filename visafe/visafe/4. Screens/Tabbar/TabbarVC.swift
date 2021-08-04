@@ -93,8 +93,14 @@ class TabbarVC: BaseTabbarController {
     func updateStateMainButton(selected: Bool) {
         if selected {
             mainButton.backgroundColor = UIColor.mainColorOrange()
+            tabBar.backgroundColor = UIColor(hexString: "0B1A48")
+            tabBar.barTintColor = UIColor(hexString: "0B1A48")
+            tabBar.isTranslucent = false
         } else {
             mainButton.backgroundColor = UIColor(hexString: "061448")
+            tabBar.backgroundColor = UIColor.white
+            tabBar.isTranslucent = false
+            tabBar.barTintColor = UIColor(hexString: "F7F7F7")
         }
     }
     

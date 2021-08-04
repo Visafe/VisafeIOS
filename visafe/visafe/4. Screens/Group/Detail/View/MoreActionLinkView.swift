@@ -8,7 +8,7 @@
 import UIKit
 import SwiftMessages
 
-class MoreActionLinkView: MessageView {
+class MoreActionLinkView: MessageViewBase {
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
