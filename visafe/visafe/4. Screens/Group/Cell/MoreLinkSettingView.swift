@@ -8,7 +8,7 @@
 import UIKit
 import SwiftMessages
 
-class MoreLinkSettingView: MessageView {
+class MoreLinkSettingView: MessageViewBase {
 
     @IBOutlet weak var nameLabel: UILabel!
     var editAction:(() -> Void)?

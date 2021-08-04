@@ -8,7 +8,7 @@
 import UIKit
 import SwiftMessages
 
-class MoreGroupActionView: MessageView {
+class MoreGroupActionView: MessageViewBase {
 
     @IBOutlet weak var nameLabel: UILabel!
     var editAction:(() -> Void)?

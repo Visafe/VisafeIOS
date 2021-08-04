@@ -8,7 +8,7 @@
 import UIKit
 import SwiftMessages
 
-class MoreActionMemberView: MessageView {
+class MoreActionMemberView: MessageViewBase {
 
     @IBOutlet weak var titleEditLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!

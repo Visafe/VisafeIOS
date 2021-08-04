@@ -1,5 +1,5 @@
 //
-//  GroupListBlockVC.swift
+//  DeviceListLogVC.swift
 //  visafe
 //
 //  Created by Cuong Nguyen on 7/24/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GroupListLogVC: BaseViewController {
+class DeviceListLogVC: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var group: GroupModel
@@ -127,7 +127,7 @@ class GroupListLogVC: BaseViewController {
     }
 }
 
-extension GroupListLogVC: UITableViewDelegate, UITableViewDataSource {
+extension DeviceListLogVC: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -209,7 +209,7 @@ extension GroupListLogVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension GroupListLogVC: UIScrollViewDelegate {
+extension DeviceListLogVC: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if self.scrollDelegateFunc != nil {

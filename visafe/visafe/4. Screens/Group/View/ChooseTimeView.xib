@@ -19,6 +19,7 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hiển thị thống kê theo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="958-Cc-1Je">
                             <rect key="frame" x="120" y="24" width="174.5" height="20"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="mIB-eo-93B"/>
                             </constraints>
@@ -58,7 +59,7 @@
                         </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="A68-SQ-EmZ"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Bs7-Ft-hPO" secondAttribute="trailing" constant="24" id="76n-fe-ELI"/>
                         <constraint firstItem="ove-3Q-Dby" firstAttribute="leading" secondItem="cxR-7l-wen" secondAttribute="leading" id="FNr-02-pCn"/>

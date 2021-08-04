@@ -8,7 +8,7 @@
 import UIKit
 import SwiftMessages
 
-class ConfirmDeleteView: MessageView {
+class ConfirmDeleteView: MessageViewBase {
     
     var acceptAction:(() -> Void)?
     var cancelAction:(() -> Void)?

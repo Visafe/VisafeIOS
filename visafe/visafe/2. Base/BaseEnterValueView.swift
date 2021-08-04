@@ -13,7 +13,7 @@ public enum EnterValueViewEnum: Int {
     case deviceName = 2
 }
 
-class BaseEnterValueView: MessageView {
+class BaseEnterValueView: MessageViewBase {
     
     var acceptAction:((_ name: String?) -> Void)?
     var cancelAction:(() -> Void)?
