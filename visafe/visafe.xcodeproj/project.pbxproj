@@ -19,6 +19,12 @@
 		0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAD2681F2A000572C4E /* Assets.xcassets */; };
 		0EDEEFB12681F2A000572C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAF2681F2A000572C4E /* LaunchScreen.storyboard */; };
 		35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */; };
+		518EC0EE26B98EDC00D88D2A /* ProtectDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0ED26B98EDC00D88D2A /* ProtectDeviceVC.swift */; };
+		518EC0F226B992EF00D88D2A /* ProtectHomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0F126B992EF00D88D2A /* ProtectHomeHeaderView.swift */; };
+		518EC0F626B9930100D88D2A /* ProtectHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518EC0F526B9930100D88D2A /* ProtectHomeHeaderView.xib */; };
+		518EC0FD26B9958900D88D2A /* ProtectHomeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0FC26B9958900D88D2A /* ProtectHomeType.swift */; };
+		518EC10126B9A35900D88D2A /* ProtectDetailListBlockVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518EC10026B9A35900D88D2A /* ProtectDetailListBlockVC.xib */; };
+		518EC10526B9A36300D88D2A /* ProtectDetailListBlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC10426B9A36300D88D2A /* ProtectDetailListBlockVC.swift */; };
 		C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90EA73D2684C298002502F5 /* LoginVC.swift */; };
 		C90EA7402684C298002502F5 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90EA73E2684C298002502F5 /* LoginVC.xib */; };
 		C913CA74269CA1BD00E8440F /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = C913CA73269CA1BD00E8440F /* FacebookLogin */; };
@@ -330,6 +336,12 @@
 		0EDEEFAD2681F2A000572C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EDEEFB02681F2A000572C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EDEEFB22681F2A000572C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		518EC0ED26B98EDC00D88D2A /* ProtectDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectDeviceVC.swift; sourceTree = "<group>"; };
+		518EC0F126B992EF00D88D2A /* ProtectHomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtectHomeHeaderView.swift; sourceTree = "<group>"; };
+		518EC0F526B9930100D88D2A /* ProtectHomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProtectHomeHeaderView.xib; sourceTree = "<group>"; };
+		518EC0FC26B9958900D88D2A /* ProtectHomeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectHomeType.swift; sourceTree = "<group>"; };
+		518EC10026B9A35900D88D2A /* ProtectDetailListBlockVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProtectDetailListBlockVC.xib; sourceTree = "<group>"; };
+		518EC10426B9A36300D88D2A /* ProtectDetailListBlockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtectDetailListBlockVC.swift; sourceTree = "<group>"; };
 		907E3660E73749DFAE56C748 /* Pods-visafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visafe.debug.xcconfig"; path = "Target Support Files/Pods-visafe/Pods-visafe.debug.xcconfig"; sourceTree = "<group>"; };
 		B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90EA73D2684C298002502F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -680,6 +692,27 @@
 				0E798385268485E60023C916 /* visafe.entitlements */,
 			);
 			path = visafe;
+			sourceTree = "<group>";
+		};
+		518EC0EC26B98EC100D88D2A /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0FB26B9954E00D88D2A /* Header */,
+				518EC0ED26B98EDC00D88D2A /* ProtectDeviceVC.swift */,
+				518EC10426B9A36300D88D2A /* ProtectDetailListBlockVC.swift */,
+				518EC10026B9A35900D88D2A /* ProtectDetailListBlockVC.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		518EC0FB26B9954E00D88D2A /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0F126B992EF00D88D2A /* ProtectHomeHeaderView.swift */,
+				518EC0F526B9930100D88D2A /* ProtectHomeHeaderView.xib */,
+				518EC0FC26B9958900D88D2A /* ProtectHomeType.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		74CD99A04854465BFB8CCB31 /* Frameworks */ = {
@@ -1043,6 +1076,7 @@
 		C99FD1C82697461300A8F731 /* Protect */ = {
 			isa = PBXGroup;
 			children = (
+				518EC0EC26B98EC100D88D2A /* Detail */,
 				C99FD1C92697462700A8F731 /* ProtectVC.swift */,
 				C99FD1CA2697462700A8F731 /* ProtectVC.xib */,
 			);
@@ -1484,6 +1518,7 @@
 				C93FFDE6269AF48800D7B02A /* ProfileSettingVC.xib in Resources */,
 				C91813F7269AFB1300DC0E83 /* ProfileHelpVC.xib in Resources */,
 				C969B39C269ADB210066A88A /* MoreActionWorkspaceView.xib in Resources */,
+				518EC10126B9A35900D88D2A /* ProtectDetailListBlockVC.xib in Resources */,
 				C9777A32269AC5E100C40031 /* ProfileCell.xib in Resources */,
 				C979C97426B6E39700F97E4F /* InviteMemberToGroupVC.xib in Resources */,
 				C956058326AE9D8500AD8475 /* GroupListDeviceVC.xib in Resources */,
@@ -1526,6 +1561,7 @@
 				C9A15B502699BFE50065D5C2 /* GroupHeaderView.xib in Resources */,
 				0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */,
 				C9E5C78D26873BCF00D159EF /* BaseMessageView.xib in Resources */,
+				518EC0F626B9930100D88D2A /* ProtectHomeHeaderView.xib in Resources */,
 				C99FD1D9269746C200A8F731 /* ProfileVC.xib in Resources */,
 				C9FA1606268A344B00A1A6C6 /* ChooseTypeGroupCell.xib in Resources */,
 				C9FA1602268A2DE400A1A6C6 /* GroupTimeVC.xib in Resources */,
@@ -1627,6 +1663,7 @@
 			files = (
 				C93C235026A96255003AC717 /* StatisticModel.swift in Sources */,
 				C9B1E9A726B6EE2E00FC2F7E /* InviteMemberResult.swift in Sources */,
+				518EC0F226B992EF00D88D2A /* ProtectHomeHeaderView.swift in Sources */,
 				C966FE982694A9500049458C /* OnboardingChildVC.swift in Sources */,
 				C9F2494426AAD5AD00EE7442 /* GroupSettingDetailCell.swift in Sources */,
 				C993D28226A4952800684F80 /* TabbarItemContentView.swift in Sources */,
@@ -1636,6 +1673,7 @@
 				C91EE7E626AC1FFA006ADAE9 /* GroupListLogVC.swift in Sources */,
 				C999AB07268E03F200F657A9 /* GroupSettingCell.swift in Sources */,
 				C9B7949A26862C5F00258A72 /* SetPasswordVC.swift in Sources */,
+				518EC0FD26B9958900D88D2A /* ProtectHomeType.swift in Sources */,
 				C91EE7F426AC750B006ADAE9 /* GroupMemberCell.swift in Sources */,
 				C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */,
 				C969B39F269ADB210066A88A /* WorkspaceCell.swift in Sources */,
@@ -1733,6 +1771,7 @@
 				C94B39BC268A24D700046958 /* DeleteDeviceToIdentifierParam.swift in Sources */,
 				0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */,
 				C9EEB8E726ADB768008F093C /* ChooseTimeView.swift in Sources */,
+				518EC10526B9A36300D88D2A /* ProtectDetailListBlockVC.swift in Sources */,
 				C98786EA26ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift in Sources */,
 				C9C7A9ED26B05EEC002C883A /* LicenseVC.swift in Sources */,
 				C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */,
@@ -1767,6 +1806,7 @@
 				C9159C9B26ADB99E00497D86 /* ChooseTimeCell.swift in Sources */,
 				C9B794892686262300258A72 /* ChangePassParam.swift in Sources */,
 				C9F2492A26AACB3D00EE7442 /* GroupSettingDetailVC.swift in Sources */,
+				518EC0EE26B98EDC00D88D2A /* ProtectDeviceVC.swift in Sources */,
 				C99FD1CB2697462700A8F731 /* ProtectVC.swift in Sources */,
 				C94B39B9268A244200046958 /* AddDeviceToIdentifierParam.swift in Sources */,
 				C9181405269B0C5600DC0E83 /* ChangePasswordResult.swift in Sources */,

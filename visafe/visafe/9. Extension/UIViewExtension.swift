@@ -59,4 +59,25 @@ extension UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
+
+    func dropShadowEdge(color: UIColor = UIColor(red:0.32, green:0.32, blue:0.32, alpha:0.5),
+                    opacity: Float = 0.8,
+                    offset: CGSize = .init(width: 1.0, height: 1.0),
+                    radius: CGFloat = 2.0,
+                    shouldRasterize: Bool = false,
+                    path: UIBezierPath? = nil,
+                    rasterizationScale: CGFloat? = nil) {
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowOffset = offset
+        self.layer.shadowRadius = radius
+        if let path = path?.cgPath {
+            self.layer.shadowPath = path
+        }
+        self.layer.shouldRasterize = shouldRasterize
+        if let scale = rasterizationScale {
+            self.layer.rasterizationScale = scale
+        }
+    }
 }
