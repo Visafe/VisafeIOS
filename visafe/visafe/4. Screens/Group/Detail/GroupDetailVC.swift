@@ -15,15 +15,12 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
     var header: GroupDetailHeader!
     var group: GroupModel
     var timeType: ChooseTimeEnum = .day
-    let vc1: GroupStatisticVC!
-    let vc2: GroupSettingDetailVC!
+    var statisticVC: GroupStatisticVC!
+    var settingVC: GroupSettingDetailVC!
     var statisticModel: StatisticModel = StatisticModel()
-    var pageMenu: CAPSPageMenu!
     
     init(group: GroupModel) {
         self.group = group
-        self.vc1 = GroupStatisticVC(group: group)
-        self.vc2 = GroupSettingDetailVC(group: group)
         super.init(nibName: GroupDetailVC.className, bundle: nil)
     }
     
@@ -39,7 +36,6 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        pageMenu.view.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: pageMenuContainer.frame.height)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,25 +61,25 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
         self.headerView = header
         
         // 2) Set the subpages
-        let vc = GroupStatisticVC(group: group)
-        vc.timeType = timeType
-        vc.title = "Thống kê"
-        vc.view.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: self.view.bounds.height)
-        vc.view.backgroundColor = .white
-        addChild(vc)
-        subPageControllers.append(vc)
-        vc.scrollDelegateFunc = { [weak self] in self?.pleaseScroll($0) }
+        statisticVC = GroupStatisticVC(group: group)
+        statisticVC.timeType = timeType
+        statisticVC.title = "Thống kê"
+        statisticVC.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        statisticVC.view.backgroundColor = .white
+        addChild(statisticVC)
+        subPageControllers.append(statisticVC)
+        statisticVC.scrollDelegateFunc = { [weak self] in self?.pleaseScroll($0) }
         
-        let vc2 = GroupSettingDetailVC(group: group)
+        settingVC = GroupSettingDetailVC(group: group)
         statisticModel.timeType = timeType
-        vc2.statisticModel = statisticModel
-        vc2.parentVC = self
-        vc2.title = "Thiết lập bảo vệ"
-        vc2.view.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: self.view.bounds.height)
-        vc2.view.backgroundColor = .white
-        addChild(vc2)
-        subPageControllers.append(vc2)
-        vc2.scrollDelegateFunc = { [weak self] in self?.pleaseScroll($0) }
+        settingVC.statisticModel = statisticModel
+        settingVC.parentVC = self
+        settingVC.title = "Thiết lập bảo vệ"
+        settingVC.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        settingVC.view.backgroundColor = .white
+        addChild(settingVC)
+        subPageControllers.append(settingVC)
+        settingVC.scrollDelegateFunc = { [weak self] in self?.pleaseScroll($0) }
         
         let parameters: [CAPSPageMenuOption] = [
             .selectionIndicatorHeight(3),
@@ -97,11 +93,10 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
             .menuMargin(0),
             .scrollMenuBackgroundColor(.white)
         ]
-        
-        pageMenu = CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: pageMenuContainer.frame.height), pageMenuOptions: parameters)
-        self.addPageMenu(menu: pageMenu)
+        self.addPageMenu(menu: CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height), pageMenuOptions: parameters))
         self.pageMenuController!.delegate = self
 
+        self.navBarColor = UIColor.white
         self.headerBackgroundColor = UIColor.white
         self.navBarItemsColor = UIColor.black
         self.navBarTransparancy = 1.0

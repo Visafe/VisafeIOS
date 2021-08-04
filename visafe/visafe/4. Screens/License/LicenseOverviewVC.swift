@@ -85,8 +85,7 @@ class LicenseOverviewVC: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let window = UIApplication.shared.windows.last else { return }
-        pageViewController.view.frame = CGRect(x: 0, y: window.safeAreaInsets.top + 44, width: kScreenWidth, height: kScreenHeight - window.safeAreaInsets.top - 44 - window.safeAreaInsets.bottom - 30)
+        pageViewController.view.frame = CGRect(x: 0, y: view.safeAreaInsets.top + 44, width: view.bounds.width, height: kScreenHeight - view.safeAreaInsets.top - 44 - view.safeAreaInsets.bottom - 30)
     }
     
     func configPageView() {

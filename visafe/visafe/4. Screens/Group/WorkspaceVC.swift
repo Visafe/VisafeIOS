@@ -21,7 +21,6 @@ class WorkspaceVC: HeaderedACTabScrollViewController, ACTabScrollViewDelegate,  
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        vc.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
     }
     
     func configUI() {
