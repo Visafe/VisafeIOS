@@ -18,6 +18,9 @@
 		0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAA2681F29E00572C4E /* Main.storyboard */; };
 		0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAD2681F2A000572C4E /* Assets.xcassets */; };
 		0EDEEFB12681F2A000572C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAF2681F2A000572C4E /* LaunchScreen.storyboard */; };
+		0EF5EB0D26BA534C002F5E84 /* DeviceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB0C26BA534C002F5E84 /* DeviceWorker.swift */; };
+		0EF5EB1126BA7A8F002F5E84 /* GenDeviceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */; };
+		0EF5EB1526BA7E14002F5E84 /* DoHNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB1426BA7E14002F5E84 /* DoHNative.swift */; };
 		35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */; };
 		C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90EA73D2684C298002502F5 /* LoginVC.swift */; };
 		C90EA7402684C298002502F5 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90EA73E2684C298002502F5 /* LoginVC.xib */; };
@@ -330,6 +333,9 @@
 		0EDEEFAD2681F2A000572C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EDEEFB02681F2A000572C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EDEEFB22681F2A000572C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EF5EB0C26BA534C002F5E84 /* DeviceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceWorker.swift; sourceTree = "<group>"; };
+		0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenDeviceResult.swift; sourceTree = "<group>"; };
+		0EF5EB1426BA7E14002F5E84 /* DoHNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoHNative.swift; sourceTree = "<group>"; };
 		907E3660E73749DFAE56C748 /* Pods-visafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visafe.debug.xcconfig"; path = "Target Support Files/Pods-visafe/Pods-visafe.debug.xcconfig"; sourceTree = "<group>"; };
 		B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90EA73D2684C298002502F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -629,11 +635,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E61B0092685BEA500652CEC /* VPN */ = {
+		0E61B0092685BEA500652CEC /* DoH Native */ = {
 			isa = PBXGroup;
 			children = (
+				0EF5EB1426BA7E14002F5E84 /* DoHNative.swift */,
 			);
-			path = VPN;
+			path = "DoH Native";
 			sourceTree = "<group>";
 		};
 		0EC217B22691BB0200B8B8F4 /* tunnel */ = {
@@ -815,7 +822,7 @@
 			isa = PBXGroup;
 			children = (
 				C95A5848268829B60077112F /* CacheManager.swift */,
-				0E61B0092685BEA500652CEC /* VPN */,
+				0E61B0092685BEA500652CEC /* DoH Native */,
 				C93ED1952682456500B03E8A /* Constant.swift */,
 				C919B979268222F6009982C3 /* Protocols */,
 				C9223E8926B929F700B18A76 /* Common.swift */,
@@ -1099,6 +1106,7 @@
 				C95A584B2688339D0077112F /* WorkspaceWorker.swift */,
 				C94B39CA268A278B00046958 /* GroupWorker.swift */,
 				C9181410269B46CA00DC0E83 /* NotificationWorker.swift */,
+				0EF5EB0C26BA534C002F5E84 /* DeviceWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -1117,6 +1125,7 @@
 				C91EE7FC26AC8CD9006ADAE9 /* QueryLogResult.swift */,
 				C9B1E9A626B6EE2E00FC2F7E /* InviteMemberResult.swift */,
 				C9223EAA26B93C4200B18A76 /* InviteDeviceResult.swift */,
+				0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -1711,12 +1720,15 @@
 				C9FA15FC268A2DD700A1A6C6 /* GroupSettingVC.swift in Sources */,
 				C9B79466268613A700258A72 /* RegisterVC.swift in Sources */,
 				C9B7948C268626AA00258A72 /* UserModel.swift in Sources */,
+				0EF5EB0D26BA534C002F5E84 /* DeviceWorker.swift in Sources */,
 				C9BCBC6426975DEC007F652C /* GroupSettingParentCell.swift in Sources */,
+				0EF5EB1526BA7E14002F5E84 /* DoHNative.swift in Sources */,
 				C979C96E26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.swift in Sources */,
 				C9E7A49826909E890012985B /* MoreLinkSettingView.swift in Sources */,
 				C969B397269ADB210066A88A /* SecurityWorkspaceCell.swift in Sources */,
 				C969B399269ADB210066A88A /* ChooseTypeWorkspaceCell.swift in Sources */,
 				C9FE695C26B795740046AD79 /* AddDeviceToGroupVC.swift in Sources */,
+				0EF5EB1126BA7A8F002F5E84 /* GenDeviceResult.swift in Sources */,
 				C91EE7E026AC1F90006ADAE9 /* GroupProtectVC.swift in Sources */,
 				C94B39B6268A20EB00046958 /* DeleteDeviceToGroupParam.swift in Sources */,
 				C91EE7FD26AC8CD9006ADAE9 /* QueryLogResult.swift in Sources */,
@@ -1836,7 +1848,7 @@
 				CODE_SIGN_ENTITLEMENTS = tunnel/tunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = 3Z59HFVS9G;
+				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = tunnel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2011,10 +2023,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = visafe/visafe.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Cuong Nguyen (YH5Y72JF59)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = 83SZM3BK5C;
+				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -2027,6 +2040,8 @@
 				MARKETING_VERSION = 1.4.7;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

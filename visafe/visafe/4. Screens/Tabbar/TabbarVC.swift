@@ -17,6 +17,17 @@ class TabbarVC: BaseTabbarController {
         super.viewDidLoad()
         configView()
         configMainTabbarItem()
+        genDeviceId()
+    }
+
+    func genDeviceId() {
+        if !CacheManager.shared.isDeviceIdExist() {
+            DeviceWorker.genDeviceId { (result, error) in
+                if let deviceId = result?.deviceId {
+                    CacheManager.shared.setDeviceId(value: deviceId)
+                }
+            }
+        }
     }
     
     func configView() {

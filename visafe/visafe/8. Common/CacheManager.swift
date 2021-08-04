@@ -117,4 +117,8 @@ class CacheManager {
         userDefault.set(value, forKey: kDeviceId)
         userDefault.synchronize()
     }
+
+    func isDeviceIdExist() -> Bool {
+        return userDefault.string(forKey: kDeviceId) != nil 
+    }
 }
