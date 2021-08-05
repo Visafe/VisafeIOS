@@ -114,7 +114,7 @@ extension ProfileSettingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func changePass() {
-        let vc = ChangePasswordVC()
+        let vc = ChangePasswordNameVC()
         navigationController?.pushViewController(vc)
     }
     

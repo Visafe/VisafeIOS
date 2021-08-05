@@ -48,12 +48,13 @@
                     <constraint firstItem="8iN-2X-Y8H" firstAttribute="centerY" secondItem="g9P-S7-JGo" secondAttribute="centerY" id="3Fw-zL-LAM"/>
                     <constraint firstItem="8iN-2X-Y8H" firstAttribute="leading" secondItem="tmK-zQ-CbW" secondAttribute="trailing" constant="8" id="3Li-ei-UNc"/>
                     <constraint firstItem="zQh-z0-tYW" firstAttribute="leading" secondItem="g9P-S7-JGo" secondAttribute="leading" id="43o-xI-j6k"/>
+                    <constraint firstItem="PzA-Al-hmr" firstAttribute="centerY" secondItem="g9P-S7-JGo" secondAttribute="centerY" id="9Yv-MI-eq3"/>
                     <constraint firstItem="PzA-Al-hmr" firstAttribute="leading" secondItem="g9P-S7-JGo" secondAttribute="leading" constant="16" id="EOT-5N-sPQ"/>
                     <constraint firstAttribute="trailing" secondItem="8iN-2X-Y8H" secondAttribute="trailing" constant="16" id="ODj-uZ-gs9"/>
                     <constraint firstAttribute="trailing" secondItem="zQh-z0-tYW" secondAttribute="trailing" id="U4b-cu-cMl"/>
                     <constraint firstItem="tmK-zQ-CbW" firstAttribute="centerY" secondItem="PzA-Al-hmr" secondAttribute="centerY" id="fcb-v3-Agy"/>
-                    <constraint firstAttribute="bottom" secondItem="PzA-Al-hmr" secondAttribute="bottom" constant="16" id="kgP-8e-X6d"/>
-                    <constraint firstItem="PzA-Al-hmr" firstAttribute="top" secondItem="g9P-S7-JGo" secondAttribute="top" constant="16" id="lLj-29-fqX"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PzA-Al-hmr" secondAttribute="bottom" constant="12" id="kgP-8e-X6d"/>
+                    <constraint firstItem="PzA-Al-hmr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="g9P-S7-JGo" secondAttribute="top" constant="12" id="lLj-29-fqX"/>
                     <constraint firstItem="tmK-zQ-CbW" firstAttribute="leading" secondItem="PzA-Al-hmr" secondAttribute="trailing" constant="8" id="p4u-hc-gPN"/>
                     <constraint firstAttribute="bottom" secondItem="zQh-z0-tYW" secondAttribute="bottom" id="wpp-qS-mth"/>
                 </constraints>

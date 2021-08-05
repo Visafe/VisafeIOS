@@ -27,6 +27,8 @@
 		518EC10526B9A36300D88D2A /* ProtectDetailListBlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC10426B9A36300D88D2A /* ProtectDetailListBlockVC.swift */; };
 		C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90EA73D2684C298002502F5 /* LoginVC.swift */; };
 		C90EA7402684C298002502F5 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90EA73E2684C298002502F5 /* LoginVC.xib */; };
+		C90F14F826BB9CD4008C19A1 /* ChangePasswordNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F14F626BB9CD4008C19A1 /* ChangePasswordNameVC.swift */; };
+		C90F14F926BB9CD4008C19A1 /* ChangePasswordNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90F14F726BB9CD4008C19A1 /* ChangePasswordNameVC.xib */; };
 		C913CA74269CA1BD00E8440F /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = C913CA73269CA1BD00E8440F /* FacebookLogin */; };
 		C9159C9B26ADB99E00497D86 /* ChooseTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9159C9926ADB99E00497D86 /* ChooseTimeCell.swift */; };
 		C9159C9C26ADB99E00497D86 /* ChooseTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9159C9A26ADB99E00497D86 /* ChooseTimeCell.xib */; };
@@ -349,6 +351,8 @@
 		B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90EA73D2684C298002502F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C90EA73E2684C298002502F5 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		C90F14F626BB9CD4008C19A1 /* ChangePasswordNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordNameVC.swift; sourceTree = "<group>"; };
+		C90F14F726BB9CD4008C19A1 /* ChangePasswordNameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordNameVC.xib; sourceTree = "<group>"; };
 		C9159C9926ADB99E00497D86 /* ChooseTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTimeCell.swift; sourceTree = "<group>"; };
 		C9159C9A26ADB99E00497D86 /* ChooseTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTimeCell.xib; sourceTree = "<group>"; };
 		C91813F5269AFB1300DC0E83 /* ProfileHelpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHelpVC.xib; sourceTree = "<group>"; };
@@ -1092,6 +1096,8 @@
 		C99FD1D52697469E00A8F731 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C90F14F626BB9CD4008C19A1 /* ChangePasswordNameVC.swift */,
+				C90F14F726BB9CD4008C19A1 /* ChangePasswordNameVC.xib */,
 				C993D24D26A425AF00684F80 /* EnterPinVC.swift */,
 				C993D24C26A425AF00684F80 /* EnterPinVC.xib */,
 				C9181400269B045E00DC0E83 /* ChangePasswordVC.swift */,
@@ -1506,6 +1512,7 @@
 				0EDEEFB12681F2A000572C4E /* LaunchScreen.storyboard in Resources */,
 				C9F2492B26AACB3E00EE7442 /* GroupSettingDetailVC.xib in Resources */,
 				C956059626AEDC9500AD8475 /* MoreActionLinkView.xib in Resources */,
+				C90F14F926BB9CD4008C19A1 /* ChangePasswordNameVC.xib in Resources */,
 				C9C0B9D126A580B600C9869A /* IconTransitions.json in Resources */,
 				C956059126AEAB4500AD8475 /* GroupDeviceCell.xib in Resources */,
 				C95A5855268861940077112F /* PostWorkspaceVC.xib in Resources */,
@@ -1684,6 +1691,7 @@
 				C999AB07268E03F200F657A9 /* GroupSettingCell.swift in Sources */,
 				C9B7949A26862C5F00258A72 /* SetPasswordVC.swift in Sources */,
 				518EC0FD26B9958900D88D2A /* ProtectHomeType.swift in Sources */,
+				C90F14F826BB9CD4008C19A1 /* ChangePasswordNameVC.swift in Sources */,
 				C91EE7F426AC750B006ADAE9 /* GroupMemberCell.swift in Sources */,
 				C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */,
 				C969B39F269ADB210066A88A /* WorkspaceCell.swift in Sources */,

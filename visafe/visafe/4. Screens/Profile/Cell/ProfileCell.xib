@@ -12,7 +12,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="KGk-i7-Jjw" customClass="ProfileCell" customModule="visafe" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -43,7 +43,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eu-3M-E1w">
-                        <rect key="frame" x="0.0" y="56" width="320" height="0.5"/>
+                        <rect key="frame" x="0.0" y="55.5" width="320" height="0.5"/>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="0.5" id="0qC-bT-nJ0"/>
@@ -54,13 +54,14 @@
                     <constraint firstItem="PaC-9v-Ngj" firstAttribute="centerY" secondItem="uBk-Bw-hHY" secondAttribute="centerY" id="2wk-2O-N1h"/>
                     <constraint firstAttribute="trailing" secondItem="4eu-3M-E1w" secondAttribute="trailing" id="9OL-Yk-vfp"/>
                     <constraint firstItem="WTH-R4-Hfm" firstAttribute="centerY" secondItem="PaC-9v-Ngj" secondAttribute="centerY" id="Bfo-Om-jxi"/>
-                    <constraint firstItem="4eu-3M-E1w" firstAttribute="top" secondItem="uBk-Bw-hHY" secondAttribute="bottom" constant="16" id="C22-od-6Xn"/>
+                    <constraint firstItem="4eu-3M-E1w" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uBk-Bw-hHY" secondAttribute="bottom" constant="12" id="C22-od-6Xn"/>
                     <constraint firstItem="wZM-xA-jMR" firstAttribute="leading" secondItem="uBk-Bw-hHY" secondAttribute="trailing" constant="8" id="HFu-DU-muH"/>
                     <constraint firstItem="WTH-R4-Hfm" firstAttribute="leading" secondItem="wZM-xA-jMR" secondAttribute="trailing" constant="8" id="IDu-l7-AuC"/>
                     <constraint firstItem="4eu-3M-E1w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JSg-uU-2n1"/>
                     <constraint firstItem="PaC-9v-Ngj" firstAttribute="leading" secondItem="WTH-R4-Hfm" secondAttribute="trailing" constant="4" id="KZX-U1-6kH"/>
                     <constraint firstItem="wZM-xA-jMR" firstAttribute="centerY" secondItem="uBk-Bw-hHY" secondAttribute="centerY" id="PER-iN-GSD"/>
-                    <constraint firstItem="uBk-Bw-hHY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="V4j-JV-bkX"/>
+                    <constraint firstItem="uBk-Bw-hHY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UJW-Hw-eBF"/>
+                    <constraint firstItem="uBk-Bw-hHY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="V4j-JV-bkX"/>
                     <constraint firstItem="uBk-Bw-hHY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="VVn-oq-hmJ"/>
                     <constraint firstAttribute="bottom" secondItem="4eu-3M-E1w" secondAttribute="bottom" id="qch-ve-yiM"/>
                     <constraint firstAttribute="trailing" secondItem="PaC-9v-Ngj" secondAttribute="trailing" constant="12" id="yTJ-Q3-maI"/>

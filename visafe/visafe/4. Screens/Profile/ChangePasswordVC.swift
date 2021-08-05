@@ -9,23 +9,34 @@ import UIKit
 
 class ChangePasswordVC: BaseViewController {
     
-    @IBOutlet weak var oldPassInfoLabel: UILabel!
-    @IBOutlet weak var oldPassTextfield: BaseTextField!
     @IBOutlet weak var passwordTextfield: BaseTextField!
     @IBOutlet weak var passwordInfoLabel: UILabel!
     @IBOutlet weak var rePasswordTextfield: BaseTextField!
     @IBOutlet weak var rePasswordInfoLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    var param = ChangePassParam()
+    
+    init(param: ChangePassParam) {
+        self.param = param
+        super.init(nibName: ChangePasswordVC.className, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Đổi mật khẩu"
+        if let user = CacheManager.shared.getCurrentUser() {
+            descriptionLabel.text = "Hãy nhập mật khẩu cho tài khoản \n \(user.phonenumber ?? user.email ?? "")"
+        }
     }
     
     @IBAction func acceptAction(_ sender: Any) {
         if validateInfo() {
-            let param = ChangePassParam()
-            param.currentPassword = oldPassTextfield.text
             param.newPassword = passwordTextfield.text
             param.repeatPassword = rePasswordTextfield.text
             showLoading()
@@ -39,13 +50,6 @@ class ChangePasswordVC: BaseViewController {
     
     func validateInfo() -> Bool {
         var success = true
-        let oldPassword = oldPassTextfield.text ?? ""
-        if oldPassword.isEmpty {
-            success = false
-            passwordInfoLabel.text = "Mật khẩu cũ không được để trống"
-        } else {
-            passwordInfoLabel.text = nil
-        }
         let password = passwordTextfield.text ?? ""
         if password.isEmpty {
             success = false
@@ -56,13 +60,13 @@ class ChangePasswordVC: BaseViewController {
         let repassword = rePasswordTextfield.text ?? ""
         if repassword.isEmpty {
             success = false
-            passwordInfoLabel.text = "Mật khẩu không được để trống"
+            rePasswordInfoLabel.text = "Mật khẩu không được để trống"
         } else {
-            passwordInfoLabel.text = nil
+            rePasswordInfoLabel.text = nil
         }
         if !password.isEmpty && !repassword.isEmpty && password != repassword {
             passwordInfoLabel.text = "Mật khẩu không trùng nhau"
-            passwordInfoLabel.text = "Mật khẩu không trùng nhau"
+            rePasswordInfoLabel.text = "Mật khẩu không trùng nhau"
         }
         return success
     }
@@ -72,8 +76,13 @@ class ChangePasswordVC: BaseViewController {
             showMessage(title: "Đổi mật khẩu thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.navigationController?.popViewController()
+                for controller in (weakSelf.navigationController!.viewControllers) {
+                    if controller.isKind(of: ProfileSettingVC.self) {
+                        _ =  weakSelf.navigationController!.popToViewController(controller, animated: true)
+                        break
+                    }
+                }
             }
-            
         } else if let res = result {
             showError(title: "Đổi mật khẩu lỗi", content: res.status_code?.getDescription())
         }
