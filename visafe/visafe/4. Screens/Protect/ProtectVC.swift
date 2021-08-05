@@ -8,7 +8,6 @@
 import UIKit
 
 class ProtectVC: BaseViewController {
-    @IBOutlet weak var heightViewConstant: NSLayoutConstraint!
     @IBOutlet weak var titleLB: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var overView: UIView!
@@ -89,38 +88,66 @@ class ProtectVC: BaseViewController {
 }
 // MARK: Action in content
 extension ProtectVC {
+    private func checkLoginState() -> Bool {
+        let isLogin = CacheManager.shared.getIsLogined()
+        if !isLogin  {
+            showFormLogin()
+            return false
+        } else {
+            return true
+        }
+    }
+
+    private func showFormLogin() {
+        let vc = LoginVC()
+        present(vc, animated: true)
+    }
+
+    private func getProtectData() -> (group: GroupModel,
+                                      statistic: StatisticModel)? {
+        guard let wsp = CacheManager.shared.getCurrentWorkspace() else { return nil }
+        guard let groupId = wsp.groupIds?[safe: 0] else { return nil }
+        let group = GroupModel()
+        group.groupid = groupId
+        return (group, statisticModel)
+    }
 
     @IBAction func scanAction(_ sender: Any) {
+        guard checkLoginState() else { return }
         setSafeMode(isTrue: false)
     }
 
-    @IBAction func switchProtectDevice(_ sender: Any) {
-        let vc = ProtectDeviceVC(type: .device)
+    @IBAction func showProtectDevice(_ sender: Any) {
+        guard checkLoginState() else { return }
+        guard let data = getProtectData() else { return }
+        let vc = ProtectDeviceVC(group: data.group,
+                                 statistic: data.statistic,
+                                 type: .device)
         self.navigationController?.pushViewController(vc)
     }
 
-    @IBAction func switchProtectWifi(_ sender: Any) {
-        let vc = ProtectDeviceVC(type: .wifi)
+    @IBAction func showProtectWifi(_ sender: Any) {
+        guard checkLoginState() else { return }
+        guard let data = getProtectData() else { return }
+        let vc = ProtectDeviceVC(group: data.group,
+                                 statistic: data.statistic,
+                                 type: .wifi)
         self.navigationController?.pushViewController(vc)
     }
 
-    @IBAction func switchProtectAds(_ sender: Any) {
-        guard let wsp = CacheManager.shared.getCurrentWorkspace() else { return }
-        guard let groupId = wsp.groupIds?[safe: 0] else { return }
-        let group = GroupModel()
-        group.groupid = groupId
-        let vc = GroupProtectVC(group: group, type: .ads_blocked)
-        vc.statisticModel = statisticModel
+    @IBAction func showProtectAds(_ sender: Any) {
+        guard checkLoginState() else { return }
+        guard let data = getProtectData() else { return }
+        let vc = GroupProtectVC(group: data.group, type: .ads_blocked)
+        vc.statisticModel = data.statistic
         self.navigationController?.pushViewController(vc)
     }
 
-    @IBAction func switchProtectFolow(_ sender: Any) {
-        guard let wsp = CacheManager.shared.getCurrentWorkspace() else { return }
-        guard let groupId = wsp.groupIds?[safe: 0] else { return }
-        let group = GroupModel()
-        group.groupid = groupId
-        let vc = GroupProtectVC(group: group, type: .native_tracking)
-        vc.statisticModel = statisticModel
+    @IBAction func showProtectFolow(_ sender: Any) {
+        guard checkLoginState() else { return }
+        guard let data = getProtectData() else { return }
+        let vc = GroupProtectVC(group: data.group, type: .native_tracking)
+        vc.statisticModel = data.statistic
         self.navigationController?.pushViewController(vc)
     }
 }
@@ -130,31 +157,6 @@ extension ProtectVC {
 extension ProtectVC {
     // layout subview when hide/unhide item in detail view
     private func updateOverViewLayout() {
-        var heightDetailView: CGFloat = 30 // space bottom
-        //header view
-        heightDetailView += 175
-        heightDetailView += 20
-        //Content view
-        heightDetailView += 300
-        heightDetailView += 20
-
-        //Over view
-        heightDetailView += 200
-        heightDetailView += 20
-
-        //Detail view
-        heightDetailView += 20
-        let unHidenViews = [vpnView,
-         pakeWebView,
-         protectFamilyView,
-         securityView
-        ].filter { $0.isHidden == false }
-        let count = unHidenViews.count
-        heightDetailView += CGFloat(count * 150 + (count - 1)  * 20)
-        heightDetailView += 275
-        heightDetailView += 300 + 20
-        heightViewConstant.constant = heightDetailView
-        detailView.layoutIfNeeded()
         view.setNeedsLayout()
         view.layoutIfNeeded()
     }

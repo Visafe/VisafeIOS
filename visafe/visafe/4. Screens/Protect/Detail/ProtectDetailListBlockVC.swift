@@ -8,17 +8,26 @@
 import UIKit
 
 class ProtectDetailListBlockVC: BaseViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
-    var scrollDelegateFunc: ((UIScrollView)->Void)?
+    @IBOutlet weak var warningView: UIView!
+    @IBOutlet weak var titleLB: UILabel!
+    @IBOutlet weak var contentLB: UILabel!
+    
+    var group: GroupModel
     var type: ProtectHomeType
-    var blockId: String?
+    var statistic: StatisticModel
+    var scrollDelegateFunc: ((UIScrollView)->Void)?
     var sources: [QueryLogModel] = []
     var oldest: String?
     var canLoadMore: Bool = true
-    
-    init(type: ProtectHomeType) {
+
+    init(group: GroupModel,
+         statistic: StatisticModel,
+         type: ProtectHomeType) {
+        self.group = group
         self.type = type
+        self.statistic = statistic
         super.init(nibName: ProtectDetailListBlockVC.className, bundle: nil)
     }
     
@@ -32,9 +41,20 @@ class ProtectDetailListBlockVC: BaseViewController {
         configUI()
         prepareData()
     }
+
+    func setProtect(_ isOnProtect: Bool) {
+        warningView.isHidden = isOnProtect
+        view.layoutIfNeeded()
+    }
     
     func configUI() {
         tableView.registerCells(cells: [GroupLogCell.className])
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 25
+
+        titleLB.text = type.getTitleWarning()
+        contentLB.text = type.getContentWarning()
+        warningView.isHidden = true
     }
     
     func configRefreshData() {
@@ -46,8 +66,7 @@ class ProtectDetailListBlockVC: BaseViewController {
     
     func refreshData() {
         if isViewLoaded {
-            // Todo: get data
-            guard let groupId = blockId else { return }
+            guard let groupId = group.groupid else { return }
             self.oldest = nil
             let param = QueryLogParam()
             param.group_id = groupId
@@ -70,7 +89,7 @@ class ProtectDetailListBlockVC: BaseViewController {
     }
     
     func prepareData() {
-        guard let groupId = blockId else { return }
+        guard let groupId = group.groupid else { return }
         showLoading()
         let param = QueryLogParam()
         param.group_id = groupId
@@ -93,7 +112,7 @@ class ProtectDetailListBlockVC: BaseViewController {
     
     func loadLogs() {
         if canLoadMore == false { return }
-        guard let groupId = blockId else { return }
+        guard let groupId = group.groupid else { return }
         let param = QueryLogParam()
         param.group_id = groupId
         param.limit = 20
@@ -123,15 +142,15 @@ class ProtectDetailListBlockVC: BaseViewController {
 }
 
 extension ProtectDetailListBlockVC: UITableViewDelegate, UITableViewDataSource {
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sources.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupLogCell.className) as? GroupLogCell else {
             return UITableViewCell()
@@ -140,7 +159,7 @@ extension ProtectDetailListBlockVC: UITableViewDelegate, UITableViewDataSource {
         cell.moreAction = { [weak self] in
             guard let weakSelf = self else { return }
             guard let view = MoreActionLinkView.loadFromNib() else { return }
-            view.binding(groupName: "QuocNV.name", time: "Đã chặn \(model.time?.getTimeOnFeed().lowercased() ?? "")")
+            view.binding(groupName: weakSelf.group.name, time: "Đã chặn \(model.time?.getTimeOnFeed().lowercased() ?? "")")
             view.unBlockedAction = { [weak self] in
                 guard let strongSelf = self else { return }
                 strongSelf.addToWhileList(domain: strongSelf.sources[indexPath.row])
@@ -156,20 +175,20 @@ extension ProtectDetailListBlockVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func addToWhileList(domain: QueryLogModel) {
-//        guard let link = domain.question?.host else { return }
-//        var whitelist = group.whitelist
-//        whitelist.append(link)
-//        let param = GroupUpdateWhitelistParam()
-//        param.white_list = whitelist
-//        param.group_id = group.groupid
-//        showLoading()
-//        GroupWorker.updateWhitelist(param: param) { [weak self] (result, error) in
-//            guard let weakSelf = self else { return }
-//            weakSelf.hideLoading()
-//            if let _ = result {
-//                weakSelf.group.whitelist = whitelist
-//            }
-//        }
+        guard let link = domain.question?.host else { return }
+        var whitelist = group.whitelist
+        whitelist.append(link)
+        let param = GroupUpdateWhitelistParam()
+        param.white_list = whitelist
+        param.group_id = group.groupid
+        showLoading()
+        GroupWorker.updateWhitelist(param: param) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            if let _ = result {
+                weakSelf.group.whitelist = whitelist
+            }
+        }
     }
     
     @objc func deleteLog(sender: Timer) {
@@ -181,20 +200,18 @@ extension ProtectDetailListBlockVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func actionDeleteLog(domain: QueryLogModel) {
-//        showLoading()
-//        GroupWorker.deleteLog(groupId: group.groupid, logId: domain.doc_id) { [weak self] (result, error) in
-//            guard let weakSelf = self else { return }
-//            weakSelf.hideLoading()
-//            weakSelf.refreshData()
-//        }
+        showLoading()
+        GroupWorker.deleteLog(groupId: group.groupid, logId: domain.doc_id) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            weakSelf.refreshData()
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0001
+        guard let view = LogHeaderView.loadFromNib() else { return UIView() }
+        view.bindingData(statistic: statistic, typeTime: statistic.timeType, typeProtect: type)
+        return view
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

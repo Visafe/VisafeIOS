@@ -11,14 +11,20 @@ import PageMenu
 class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate {
     var subPageControllers: [UIViewController] = []
     var header: ProtectHomeHeaderView!
+    var group: GroupModel
     var type: ProtectHomeType
+    var statistic: StatisticModel
     var listBlockVC: ProtectDetailListBlockVC!
 
     var onUpdateGroup:(() -> Void)?
 
-    init(type: ProtectHomeType) {
+    init(group: GroupModel,
+         statistic: StatisticModel,
+         type: ProtectHomeType) {
+        self.group = group
         self.type = type
-        super.init(nibName: GroupDetailVC.className, bundle: nil)
+        self.statistic = statistic
+        super.init(nibName: ProtectDeviceVC.className, bundle: nil)
     }
 
     required init?(coder: NSCoder) {
@@ -41,26 +47,23 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
         header = ProtectHomeHeaderView.loadFromNib()
         header.bindingData(type: type)
         header.switchValueChange = { [weak self] isOn in
-            guard let weakSelf = self else { return }
-//            if isOn {
-//                weakSelf.group.setDefault(type: weakSelf.type)
-//            } else {
-//                weakSelf.group.disable(type: weakSelf.type)
-//            }
-//            weakSelf.updateGroup()
+            guard let self = self else { return }
+            self.listBlockVC.setProtect(isOn)
         }
 
         // 1) Set the header
         self.headerView = header
 
         // 2) Set the subpages
-        listBlockVC = ProtectDetailListBlockVC(type: type)
+        listBlockVC = ProtectDetailListBlockVC(group: group,
+                                               statistic: statistic,
+                                               type: type)
         listBlockVC.title = type.getTitleContentView()
         listBlockVC.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         listBlockVC.view.backgroundColor = .white
         addChild(listBlockVC)
         subPageControllers.append(listBlockVC)
-//        listBlockVC.scrollDelegateFunc = { [weak self] in self?.pleaseScroll($0) }
+        listBlockVC.scrollDelegateFunc = { [weak self] in self?.pleaseScroll($0) }
         
         let parameters: [CAPSPageMenuOption] = [
             .menuItemWidth(kScreenWidth),
@@ -76,8 +79,8 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
         self.addPageMenu(menu: CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height), pageMenuOptions: parameters))
         self.pageMenuController!.delegate = self
 
-//        self.headerBackgroundColor = UIColor.white
-//        self.navBarColor = UIColor.white
+        self.headerBackgroundColor = UIColor.white
+        self.navBarColor = UIColor.black
     }
 
     func configBarItem() {

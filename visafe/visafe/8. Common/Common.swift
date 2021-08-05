@@ -32,4 +32,8 @@ class Common {
         param.deviceDetail = "{\"iOSVersion\":\"30 (11)\",\"kernel\":\"4.14.190-20973144-abA715FXXU3BUB5\"}"
         return param
     }
+
+    class func getDnsServer() -> String {
+        return String(format: dnsServer, CacheManager.shared.getDeviceId())
+    }
 }

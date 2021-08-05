@@ -23,113 +23,97 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E0AA2BB6-54D7-4D3C-B7E2-319256E11030"
+            uuid = "C32F9F2E-9645-4F01-9730-EE9BB7746B25"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "visafe/4. Screens/Home/HomeVC.swift"
+            filePath = "tunnel/PacketTunnelProvider.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "getDnsManagerStatus(_:)"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4F47509A-D4BE-4A2D-BF51-45031971224A"
+            uuid = "BD5D0F49-9D31-4ACB-88FC-A27E1DDA9F99"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "visafe/4. Screens/Home/HomeVC.swift"
+            filePath = "tunnel/PacketTunnelProvider.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "getDnsManagerStatus(_:)"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "startTunnel(options:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6DA59126-A1CC-4E76-B144-4084B7245EBE"
+            uuid = "62673F96-61FA-499E-B470-A770A5FA9B0F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "visafe/4. Screens/Home/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "getDnsManagerStatus(_:)"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "connectAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9E4FC598-E354-4F08-BDF6-40490B6B805E"
+            uuid = "56B1ACA0-769E-4D28-BFAA-3241B39F1F2B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "visafe/4. Screens/Home/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "loadDnsManager(_:)"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "connectAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ED0B732C-42CD-4ABE-8418-3AE3E0FB7928"
+            uuid = "D7F9EDEB-3A7E-413E-95A8-BD06437078DA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "visafe/4. Screens/Home/HomeVC.swift"
+            filePath = "visafe/3. Models/Result/NotificationResult.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "removeDnsManager(_:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "mapping(map:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "ED0B732C-42CD-4ABE-8418-3AE3E0FB7928 - 6aa791a7357946f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.NEDNSSettingsManager&gt;) -&gt; () in visafe.HomeVC.removeDnsManager((Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "visafe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Workspace/vifase_ios/visafe/visafe/4.%20Screens/Home/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "408">
-               </Location>
-               <Location
-                  uuid = "ED0B732C-42CD-4ABE-8418-3AE3E0FB7928 - 2c62215ea11b62a4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool, Swift.Bool) -&gt; () in closure #1 (Swift.Optional&lt;__C.NEDNSSettingsManager&gt;) -&gt; () in visafe.HomeVC.removeDnsManager((Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "visafe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Workspace/vifase_ios/visafe/visafe/4.%20Screens/Home/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E751AFBC-53B3-4FD1-A1E6-00323ABEA6AB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "visafe/5. Services/Worker/DeviceWorker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "genDeviceId(completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -10,13 +10,6 @@ import NetworkExtension
 
 class HomeVC: BaseViewController {
 
-    enum NativeDnsProviderError: Error {
-        case unsupportedDnsProtocol
-        case failedToLoadManager
-        case unsupportedProtocolsConfiguration
-        case invalidUpstreamsNumber
-    }
-
     @IBOutlet weak var homeLoadingImage: UIImageView!
     @IBOutlet weak var connectionView: UIView!
     @IBOutlet weak var earthImageView: UIImageView!
@@ -31,19 +24,18 @@ class HomeVC: BaseViewController {
     var manager: NETunnelProviderManager!
     var session: NETunnelProviderSession!
     let gradient = CAGradientLayer()
-    var isEnabled = false {
-        didSet {
-            updateUI()
-        }
-    }
 
-    var isInstalled = false
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         updateDNSStatus()
 //        initVpn()
-        NotificationCenter.default.addObserver(self, selector: #selector(updateDNSStatus), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDNSStatus),
+                                               name: UIApplication.didBecomeActiveNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI),
+                                               name: NSNotification.Name(rawValue: updateDnsStatus),
+                                               object: nil)
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -52,6 +44,7 @@ class HomeVC: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
         self.navigationController?.isNavigationBarHidden = true
     }
 
@@ -62,27 +55,38 @@ class HomeVC: BaseViewController {
     }
 
     @objc func updateDNSStatus() {
-        getDnsManagerStatus { (isInstalled, isEnabled) in
-            self.isInstalled = isInstalled
-            self.isEnabled = isEnabled
-        }
+        DoHNative.shared.getDnsManagerStatus()
     }
 
     func setupUI() {
-        homeLoadingImage.alpha = 0
         connectionView.clipsToBounds = true
         gradient.frame = UIScreen.main.bounds
         gradient.colors = [UIColor.color_0F1733.cgColor, UIColor.color_102366.cgColor]
         view.layer.insertSublayer(gradient, at: 0)
     }
 
-    func updateUI() {
+    @objc func updateUI() {
+        pushNoti()
+        let isEnabled = DoHNative.shared.isEnabled
         firstLabel.text = isEnabled ? "": "Bấm "
         lastLabel.text = isEnabled ? "Đang được bảo vệ": " để bật tính năng bảo vệ"
         desImageView.image = isEnabled ? UIImage(named: "Shield_Done"): UIImage(named: "power")
         earthImageView.image = isEnabled ? UIImage(named: "connection_success"): UIImage(named: "no_connection")
         connectButton.setImage(isEnabled ? UIImage(named: "connect_on"): UIImage(named: "connect_off"), for: .normal)
-        homeLoadingImage.image = isEnabled ? UIImage(named: "ic_power_on"): nil
+        homeLoadingImage.image = isEnabled ? UIImage(named: "ic_power_on"): UIImage(named: "ic_loading_home")
+    }
+
+    func pushNoti() {
+        let isEnabled = DoHNative.shared.isEnabled
+        let content = UNMutableNotificationContent()
+        content.title = isEnabled ? "Đã kích hoạt chế độ bảo vệ!": "Bạn đã tắt chế độ bảo vệ"
+        content.body = isEnabled ? "Chế độ chống lừa đảo, mã độc, tấn công mạng đã được kích hoạt!": "Thiết bị của bạn có thể bị ảnh hưởng bởi tấn công mạng"
+        content.sound = UNNotificationSound.default
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "localNotification", content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+
     }
     
     func showAnimationLoading() {
@@ -101,42 +105,50 @@ class HomeVC: BaseViewController {
         } completion: { (success) in
         }
     }
-    
-    func updateStateProtect(isOn: Bool) {
-        if isOn {
-            
+
+    @IBAction func connectAction(_ sender: Any) {
+        if DoHNative.shared.isInstalled {
+            if DoHNative.shared.isEnabled {
+                DoHNative.shared.removeDnsManager {[weak self] (error) in
+                    if let _error = error {
+                        self?.handleSaveError(_error)
+                        return
+                    }
+                    DoHNative.shared.saveDNS {[weak self] (_) in}
+                }
+            } else {
+                showAnimationLoading()
+                handleSaveSuccess()
+            }
         } else {
-            
+            showAnimationLoading()
+            DoHNative.shared.saveDNS {[weak self] (error) in
+                if let _error = error {
+                    self?.handleSaveError(_error)
+                } else {
+                    self?.handleSaveSuccess()
+                }
+            }
         }
     }
 
-    @IBAction func connectAction(_ sender: Any) {
-        showAnimationLoading()
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector:#selector(handleEnabelSuccess(sender:)), userInfo: nil , repeats:false)
-//        if isInstalled {
-//            if isEnabled {
-//                removeDnsManager {[weak self] (error) in
-//                    if let _error = error {
-//                        self?.showError(title: "Thông báo", content: _error.localizedDescription)
-//                    }
-//                }
-//            } else {
-//                showError(title: "Thông báo", content: "Vui lòng vào Cài đặt -> Cài đặt chung -> VPN -> DNS để cài chọn Visafe")
-//            }
-//        } else {
-//            saveDNS {[weak self] (error) in
-//                if let _error = error {
-//                    self?.showError(title: "Thông báo", content: _error.localizedDescription)
-//                } else {
-//                    self?.showError(title: "Thông báo", content: "Vui lòng vào Cài đặt -> Cài đặt chung -> VPN -> DNS để cài chọn Visafe")
-//                }
-//            }
-//        }
+    func handleSaveError(_ error: Error) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.stoprotate()
+            self.showError(title: "Thông báo", content: error.localizedDescription)
+        }
+    }
+
+    func handleSaveSuccess() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.stoprotate()
+            self.showError(title: "Thông báo",
+                           content: "Vui lòng vào Cài đặt -> Cài đặt chung -> VPN -> DNS để cài chọn Visafe")
+        }
     }
     
-    @objc func handleEnabelSuccess(sender: Timer) {
+    @objc func stoprotate() {
         hideAnimationLoading()
-        isEnabled = true
         UIView.animate(withDuration: 0.75) {
             self.homeLoadingImage.alpha = 1
         } completion: { (success) in
@@ -145,68 +157,68 @@ class HomeVC: BaseViewController {
 }
 
 //MARK: - DOH
-extension HomeVC {
-
-    func saveDNS(_ onSavedStatus: @escaping (_ error: Error?) -> Void) {
-        NEDNSSettingsManager.shared().loadFromPreferences { (error) in
-            if let _error = error {
-                onSavedStatus(_error)
-                return
-            }
-            let dohSetting = NEDNSOverHTTPSSettings(servers: [])
-            dohSetting.serverURL = URL(string: "https://dns-staging.visafe.vn/dns-query/")
-            NEDNSSettingsManager.shared().dnsSettings = dohSetting
-            NEDNSSettingsManager.shared().saveToPreferences { (saveError) in
-                if let _error = saveError {
-                    onSavedStatus(_error)
-                } else {
-                    onSavedStatus(nil)
-                }
-            }
-        }
-    }
-    
-    @available(iOS 14.0, *)
-    private func getDnsManagerStatus(_ onStatusReceived: @escaping (_ isInstalled: Bool, _ isEnabled: Bool) -> Void) {
-        loadDnsManager { dnsManager in
-            guard let manager = dnsManager else {
-//                ////DDLogError("Received nil DNS manager")
-                onStatusReceived(false, false)
-                return
-            }
-            onStatusReceived(manager.dnsSettings != nil, manager.isEnabled)
-        }
-    }
-
-    @available(iOS 14.0, *)
-    private func loadDnsManager(_ onManagerLoaded: @escaping (_ dnsManager: NEDNSSettingsManager?) -> Void) {
-        let dnsManager = NEDNSSettingsManager.shared()
-        dnsManager.loadFromPreferences { error in
-            if let error = error {
-//                ////DDLogError("Error loading DNS manager: \(error)")
-                onManagerLoaded(nil)
-                return
-            }
-            onManagerLoaded(dnsManager)
-        }
-    }
-
-    @available(iOS 14.0, *)
-    func removeDnsManager(_ onErrorReceived: @escaping (_ error: Error?) -> Void) {
-        loadDnsManager { [weak self] dnsManager in
-            guard let dnsManager = dnsManager else {
-                onErrorReceived(NativeDnsProviderError.failedToLoadManager)
-                return
-            }
-            dnsManager.removeFromPreferences(completionHandler: onErrorReceived)
-            // Check manager status after delete
-            self?.getDnsManagerStatus({ [weak self] isInstalled, isEnabled in
-                self?.isInstalled = isInstalled
-                self?.isEnabled = isEnabled
-            })
-        }
-    }
-}
+//extension HomeVC {
+//
+//    func saveDNS(_ onSavedStatus: @escaping (_ error: Error?) -> Void) {
+//        NEDNSSettingsManager.shared().loadFromPreferences { (error) in
+//            if let _error = error {
+//                onSavedStatus(_error)
+//                return
+//            }
+//            let dohSetting = NEDNSOverHTTPSSettings(servers: [])
+//            dohSetting.serverURL = URL(string: "https://dns-staging.visafe.vn/dns-query/")
+//            NEDNSSettingsManager.shared().dnsSettings = dohSetting
+//            NEDNSSettingsManager.shared().saveToPreferences { (saveError) in
+//                if let _error = saveError {
+//                    onSavedStatus(_error)
+//                } else {
+//                    onSavedStatus(nil)
+//                }
+//            }
+//        }
+//    }
+//
+//    @available(iOS 14.0, *)
+//    private func getDnsManagerStatus(_ onStatusReceived: @escaping (_ isInstalled: Bool, _ isEnabled: Bool) -> Void) {
+//        loadDnsManager { dnsManager in
+//            guard let manager = dnsManager else {
+////                ////DDLogError("Received nil DNS manager")
+//                onStatusReceived(false, false)
+//                return
+//            }
+//            onStatusReceived(manager.dnsSettings != nil, manager.isEnabled)
+//        }
+//    }
+//
+//    @available(iOS 14.0, *)
+//    private func loadDnsManager(_ onManagerLoaded: @escaping (_ dnsManager: NEDNSSettingsManager?) -> Void) {
+//        let dnsManager = NEDNSSettingsManager.shared()
+//        dnsManager.loadFromPreferences { error in
+//            if let error = error {
+////                ////DDLogError("Error loading DNS manager: \(error)")
+//                onManagerLoaded(nil)
+//                return
+//            }
+//            onManagerLoaded(dnsManager)
+//        }
+//    }
+//
+//    @available(iOS 14.0, *)
+//    func removeDnsManager(_ onErrorReceived: @escaping (_ error: Error?) -> Void) {
+//        loadDnsManager { [weak self] dnsManager in
+//            guard let dnsManager = dnsManager else {
+//                onErrorReceived(NativeDnsProviderError.failedToLoadManager)
+//                return
+//            }
+//            dnsManager.removeFromPreferences(completionHandler: onErrorReceived)
+//            // Check manager status after delete
+//            self?.getDnsManagerStatus({ [weak self] isInstalled, isEnabled in
+//                self?.isInstalled = isInstalled
+//                self?.isEnabled = isEnabled
+//            })
+//        }
+//    }
+//}
 
 //MARK: - VPN
 

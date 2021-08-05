@@ -17,6 +17,17 @@ class TabbarVC: BaseTabbarController {
         super.viewDidLoad()
         configView()
         configMainTabbarItem()
+        genDeviceId()
+    }
+
+    func genDeviceId() {
+        if !CacheManager.shared.isDeviceIdExist() {
+            DeviceWorker.genDeviceId { (result, error) in
+                if let deviceId = result?.deviceId {
+                    CacheManager.shared.setDeviceId(value: deviceId)
+                }
+            }
+        }
     }
     
     func configView() {
@@ -100,7 +111,7 @@ class TabbarVC: BaseTabbarController {
             updateStateMainButton(selected: false)
         }
         let isLogin = CacheManager.shared.getIsLogined()
-        if !isLogin && ([1, 4].contains(item.tag)) {
+        if !isLogin && ([4].contains(item.tag)) {
             showFormLogin()
         } else {
             super.tabBar(tabBar, didSelect: item)

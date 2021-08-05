@@ -67,6 +67,9 @@ enum APIRouter {
     case logGroup(param: QueryLogParam)
     case logWorkspace(param: QueryLogParam)
     case deleteLog(group_id: String?, logId: String?)
+
+    //gen device id
+    case genDeviceId
 }
 
 enum APIError: Error {
@@ -188,16 +191,24 @@ extension APIRouter: TargetType {
             return "/group/delete/device"
         case .updateDeviceGroup:
             return "/group/update/device"
+        case .genDeviceId:
+            return "/control/gen-device-id"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getListWorkspace, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup, .logGroup, .logWorkspace:
+        case .getListWorkspace, .profile, .getGroups, .listNotification,
+             .statisticWorkspace, .statisticGroup,
+             .logGroup, .logWorkspace, .genDeviceId:
             return .get
-        case .deleteWorkspace, .deleteGroup, .groupDeleteUser, .deleteDeviceFromGroup, .deleteDeviceGroup:
+        case .deleteWorkspace, .deleteGroup,
+             .groupDeleteUser, .deleteDeviceFromGroup, .deleteDeviceGroup:
             return .delete
-        case .updateWorkspace, .updateNameWorkspace, .updateGroup, .updateNameGroup, .groupUpdateWhitelist, .groupUserToViewer, .groupUserToManager, .updateDeviceGroup:
+        case .updateWorkspace, .updateNameWorkspace,
+             .updateGroup, .updateNameGroup,
+             .groupUpdateWhitelist, .groupUserToViewer,
+             .groupUserToManager, .updateDeviceGroup:
             return .patch
         default:
             break
@@ -303,7 +314,7 @@ extension APIRouter: TargetType {
             pars = param.toJSON()
         case .updateDeviceGroup(param: let param):
             pars = param.toJSON()
-        case .reactivation, .getListWorkspace, .profile:
+        case .reactivation, .getListWorkspace, .profile, .genDeviceId:
             break
         }
         return pars
