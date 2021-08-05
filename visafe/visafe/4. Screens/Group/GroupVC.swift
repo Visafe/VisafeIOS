@@ -336,7 +336,8 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func joinGroup() {
-        
+        let vc = ScanGroupVC()
+        present(vc, animated: true, completion: nil)
     }
     
     func login() {
@@ -421,4 +422,3 @@ extension GroupVC: UIScrollViewDelegate {
         }
     }
 }
-

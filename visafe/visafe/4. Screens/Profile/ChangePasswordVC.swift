@@ -75,7 +75,6 @@ class ChangePasswordVC: BaseViewController {
         if result == nil && error == nil {
             showMessage(title: "Đổi mật khẩu thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
                 guard let weakSelf = self else { return }
-                weakSelf.navigationController?.popViewController()
                 for controller in (weakSelf.navigationController!.viewControllers) {
                     if controller.isKind(of: ProfileSettingVC.self) {
                         _ =  weakSelf.navigationController!.popToViewController(controller, animated: true)
