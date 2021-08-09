@@ -63,9 +63,9 @@ class AppTabBar: UITabBar {
 }
 
 extension UITabBar {
-    override open func sizeThatFits(_ size: CGSize) -> CGSize {
-        var sizeThatFits = super.sizeThatFits(size)
-        sizeThatFits.height = 74
-        return sizeThatFits
-    }
+//    override open func sizeThatFits(_ size: CGSize) -> CGSize {
+//        var sizeThatFits = super.sizeThatFits(size)
+//        sizeThatFits.height = 74
+//        return sizeThatFits
+//    }
 }

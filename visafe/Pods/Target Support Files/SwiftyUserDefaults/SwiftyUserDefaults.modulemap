@@ -1,4 +1,4 @@
-framework module SwiftyUserDefaults {
+module SwiftyUserDefaults {
   umbrella header "SwiftyUserDefaults-umbrella.h"
 
   export *

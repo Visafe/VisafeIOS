@@ -264,6 +264,9 @@ open class AbstractHeaderedTabScrollViewController: UIViewController {
         return (self.navigationController?.navigationBar.bounds.height ?? 0) + UIApplication.shared.statusBarFrame.height
     }
     
+    func tabbarHeight() -> CGFloat {
+        return self.tabBarController?.tabBar.frame.height ?? 0
+    }
     
     /**
      Updates the transparency of the navigation bar according to the current position of the tabScrollview

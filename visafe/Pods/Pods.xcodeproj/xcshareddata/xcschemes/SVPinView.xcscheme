@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8C48B6722F02A3772707DAF5E1572C89"
-               BuildableName = "SVPinView.framework"
+               BuildableName = "libSVPinView.a"
                BlueprintName = "SVPinView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8C48B6722F02A3772707DAF5E1572C89"
-            BuildableName = "SVPinView.framework"
+            BuildableName = "libSVPinView.a"
             BlueprintName = "SVPinView"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

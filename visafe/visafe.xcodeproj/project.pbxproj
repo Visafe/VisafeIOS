@@ -10,9 +10,6 @@
 		0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */; };
 		0E229D872682D3AF00559B67 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D862682D3AF00559B67 /* Moya */; };
 		0E798387268485E60023C916 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E798386268485E60023C916 /* NetworkExtension.framework */; };
-		0EC217B12691BB0200B8B8F4 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E798386268485E60023C916 /* NetworkExtension.framework */; };
-		0EC217B92691BB0200B8B8F4 /* tunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0EC217B02691BB0200B8B8F4 /* tunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0EC217C12691BB1B00B8B8F4 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC217C02691BB1B00B8B8F4 /* PacketTunnelProvider.swift */; };
 		0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA42681F29E00572C4E /* AppDelegate.swift */; };
 		0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA82681F29E00572C4E /* ViewController.swift */; };
 		0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAA2681F29E00572C4E /* Main.storyboard */; };
@@ -21,7 +18,6 @@
 		0EF5EB0D26BA534C002F5E84 /* DeviceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB0C26BA534C002F5E84 /* DeviceWorker.swift */; };
 		0EF5EB1126BA7A8F002F5E84 /* GenDeviceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */; };
 		0EF5EB1526BA7E14002F5E84 /* DoHNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB1426BA7E14002F5E84 /* DoHNative.swift */; };
-		35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */; };
 		5111F0FA26BAE07200164148 /* ProtectDeviceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5111F0F926BAE07200164148 /* ProtectDeviceVC.xib */; };
 		518EC0EE26B98EDC00D88D2A /* ProtectDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0ED26B98EDC00D88D2A /* ProtectDeviceVC.swift */; };
 		518EC0F226B992EF00D88D2A /* ProtectHomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0F126B992EF00D88D2A /* ProtectHomeHeaderView.swift */; };
@@ -35,7 +31,7 @@
 		C90F14F926BB9CD4008C19A1 /* ChangePasswordNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90F14F726BB9CD4008C19A1 /* ChangePasswordNameVC.xib */; };
 		C90F150026BBD599008C19A1 /* ScanGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F14FE26BBD599008C19A1 /* ScanGroupVC.swift */; };
 		C90F150126BBD599008C19A1 /* ScanGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90F14FF26BBD599008C19A1 /* ScanGroupVC.xib */; };
-		C90F150626BBD6E5008C19A1 /* QRCodeReader in Frameworks */ = {isa = PBXBuildFile; productRef = C90F150526BBD6E5008C19A1 /* QRCodeReader */; };
+		C90F154826BBF71C008C19A1 /* KeyboardAvoidingView in Frameworks */ = {isa = PBXBuildFile; productRef = C90F154726BBF71C008C19A1 /* KeyboardAvoidingView */; };
 		C913CA74269CA1BD00E8440F /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = C913CA73269CA1BD00E8440F /* FacebookLogin */; };
 		C9159C9B26ADB99E00497D86 /* ChooseTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9159C9926ADB99E00497D86 /* ChooseTimeCell.swift */; };
 		C9159C9C26ADB99E00497D86 /* ChooseTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9159C9A26ADB99E00497D86 /* ChooseTimeCell.xib */; };
@@ -149,9 +145,7 @@
 		C969B397269ADB210066A88A /* SecurityWorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B38B269ADB210066A88A /* SecurityWorkspaceCell.swift */; };
 		C969B398269ADB210066A88A /* ChooseTypeWorkspaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C969B38C269ADB210066A88A /* ChooseTypeWorkspaceCell.xib */; };
 		C969B399269ADB210066A88A /* ChooseTypeWorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B38D269ADB210066A88A /* ChooseTypeWorkspaceCell.swift */; };
-		C969B39A269ADB210066A88A /* MoreActionWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B38E269ADB210066A88A /* MoreActionWorkspaceView.swift */; };
 		C969B39B269ADB210066A88A /* SecurityWorkspaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C969B38F269ADB210066A88A /* SecurityWorkspaceCell.xib */; };
-		C969B39C269ADB210066A88A /* MoreActionWorkspaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C969B390269ADB210066A88A /* MoreActionWorkspaceView.xib */; };
 		C969B39E269ADB210066A88A /* WorkspaceFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C969B392269ADB210066A88A /* WorkspaceFooterView.xib */; };
 		C969B39F269ADB210066A88A /* WorkspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B393269ADB210066A88A /* WorkspaceCell.swift */; };
 		C969B3A7269ADFD30066A88A /* ListWorkspaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B3A5269ADFD30066A88A /* ListWorkspaceVC.swift */; };
@@ -308,17 +302,8 @@
 		C9FA1671268DFC4C00A1A6C6 /* GroupSettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA1670268DFC4900A1A6C6 /* GroupSettingHeaderView.swift */; };
 		C9FE695C26B795740046AD79 /* AddDeviceToGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE695A26B795740046AD79 /* AddDeviceToGroupVC.swift */; };
 		C9FE695D26B795740046AD79 /* AddDeviceToGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FE695B26B795740046AD79 /* AddDeviceToGroupVC.xib */; };
+		F7386601EC9588D3F7F9E608 /* libPods-visafe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6FE2262B0B05F31C96F40F /* libPods-visafe.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0EC217B72691BB0200B8B8F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0EDEEF992681F29E00572C4E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0EC217AF2691BB0200B8B8F4;
-			remoteInfo = tunnel;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		0E61B0572688327D00652CEC /* Embed App Extensions */ = {
@@ -327,7 +312,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				0EC217B92691BB0200B8B8F4 /* tunnel.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +322,6 @@
 		0495B1120504033333DDDB59 /* Pods-visafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visafe.release.xcconfig"; path = "Target Support Files/Pods-visafe/Pods-visafe.release.xcconfig"; sourceTree = "<group>"; };
 		0E798385268485E60023C916 /* visafe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visafe.entitlements; sourceTree = "<group>"; };
 		0E798386268485E60023C916 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		0EC217B02691BB0200B8B8F4 /* tunnel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = tunnel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC217BF2691BB1B00B8B8F4 /* tunnel.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = tunnel.entitlements; sourceTree = "<group>"; };
 		0EC217C02691BB1B00B8B8F4 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		0EDEEFA12681F29E00572C4E /* visafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = visafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -351,6 +334,7 @@
 		0EF5EB0C26BA534C002F5E84 /* DeviceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceWorker.swift; sourceTree = "<group>"; };
 		0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenDeviceResult.swift; sourceTree = "<group>"; };
 		0EF5EB1426BA7E14002F5E84 /* DoHNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoHNative.swift; sourceTree = "<group>"; };
+		4D6FE2262B0B05F31C96F40F /* libPods-visafe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-visafe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5111F0F926BAE07200164148 /* ProtectDeviceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProtectDeviceVC.xib; sourceTree = "<group>"; };
 		518EC0ED26B98EDC00D88D2A /* ProtectDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectDeviceVC.swift; sourceTree = "<group>"; };
 		518EC0F126B992EF00D88D2A /* ProtectHomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtectHomeHeaderView.swift; sourceTree = "<group>"; };
@@ -359,13 +343,13 @@
 		518EC10026B9A35900D88D2A /* ProtectDetailListBlockVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProtectDetailListBlockVC.xib; sourceTree = "<group>"; };
 		518EC10426B9A36300D88D2A /* ProtectDetailListBlockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtectDetailListBlockVC.swift; sourceTree = "<group>"; };
 		907E3660E73749DFAE56C748 /* Pods-visafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visafe.debug.xcconfig"; path = "Target Support Files/Pods-visafe/Pods-visafe.debug.xcconfig"; sourceTree = "<group>"; };
-		B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90EA73D2684C298002502F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C90EA73E2684C298002502F5 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		C90F14F626BB9CD4008C19A1 /* ChangePasswordNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordNameVC.swift; sourceTree = "<group>"; };
 		C90F14F726BB9CD4008C19A1 /* ChangePasswordNameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordNameVC.xib; sourceTree = "<group>"; };
 		C90F14FE26BBD599008C19A1 /* ScanGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanGroupVC.swift; sourceTree = "<group>"; };
 		C90F14FF26BBD599008C19A1 /* ScanGroupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanGroupVC.xib; sourceTree = "<group>"; };
+		C90F150A26BBE682008C19A1 /* visafeDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visafeDebug.entitlements; sourceTree = "<group>"; };
 		C9159C9926ADB99E00497D86 /* ChooseTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTimeCell.swift; sourceTree = "<group>"; };
 		C9159C9A26ADB99E00497D86 /* ChooseTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTimeCell.xib; sourceTree = "<group>"; };
 		C91813F5269AFB1300DC0E83 /* ProfileHelpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHelpVC.xib; sourceTree = "<group>"; };
@@ -477,9 +461,7 @@
 		C969B38B269ADB210066A88A /* SecurityWorkspaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityWorkspaceCell.swift; sourceTree = "<group>"; };
 		C969B38C269ADB210066A88A /* ChooseTypeWorkspaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTypeWorkspaceCell.xib; sourceTree = "<group>"; };
 		C969B38D269ADB210066A88A /* ChooseTypeWorkspaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTypeWorkspaceCell.swift; sourceTree = "<group>"; };
-		C969B38E269ADB210066A88A /* MoreActionWorkspaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreActionWorkspaceView.swift; sourceTree = "<group>"; };
 		C969B38F269ADB210066A88A /* SecurityWorkspaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecurityWorkspaceCell.xib; sourceTree = "<group>"; };
-		C969B390269ADB210066A88A /* MoreActionWorkspaceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreActionWorkspaceView.xib; sourceTree = "<group>"; };
 		C969B392269ADB210066A88A /* WorkspaceFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkspaceFooterView.xib; sourceTree = "<group>"; };
 		C969B393269ADB210066A88A /* WorkspaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceCell.swift; sourceTree = "<group>"; };
 		C969B3A5269ADFD30066A88A /* ListWorkspaceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWorkspaceVC.swift; sourceTree = "<group>"; };
@@ -633,14 +615,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0EC217AD2691BB0200B8B8F4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0EC217B12691BB0200B8B8F4 /* NetworkExtension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0EDEEF9E2681F29E00572C4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -650,15 +624,15 @@
 				0E798387268485E60023C916 /* NetworkExtension.framework in Frameworks */,
 				C9E5C78526872E8100D159EF /* SwiftMessages in Frameworks */,
 				C940AEA626837C8E0069B830 /* SwifterSwift in Frameworks */,
-				C90F150626BBD6E5008C19A1 /* QRCodeReader in Frameworks */,
 				C9B7946E268615B700258A72 /* ObjectMapper in Frameworks */,
 				0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */,
+				C90F154826BBF71C008C19A1 /* KeyboardAvoidingView in Frameworks */,
 				C9B7945C2684EC9D00258A72 /* NVActivityIndicatorViewExtended in Frameworks */,
 				C9B7949F26862DF000258A72 /* TweeTextField in Frameworks */,
 				C913CA74269CA1BD00E8440F /* FacebookLogin in Frameworks */,
 				C9B7945A2684EC9D00258A72 /* NVActivityIndicatorView in Frameworks */,
 				0E229D872682D3AF00559B67 /* Moya in Frameworks */,
-				35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */,
+				F7386601EC9588D3F7F9E608 /* libPods-visafe.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,7 +671,6 @@
 			isa = PBXGroup;
 			children = (
 				0EDEEFA12681F29E00572C4E /* visafe.app */,
-				0EC217B02691BB0200B8B8F4 /* tunnel.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -705,6 +678,7 @@
 		0EDEEFA32681F29E00572C4E /* visafe */ = {
 			isa = PBXGroup;
 			children = (
+				C90F150A26BBE682008C19A1 /* visafeDebug.entitlements */,
 				C919B9722682217D009982C3 /* 1. Delegate */,
 				C919B965268220B3009982C3 /* 2. Base */,
 				C919B966268220D4009982C3 /* 3. Models */,
@@ -745,7 +719,7 @@
 			isa = PBXGroup;
 			children = (
 				0E798386268485E60023C916 /* NetworkExtension.framework */,
-				B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */,
+				4D6FE2262B0B05F31C96F40F /* libPods-visafe.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -932,7 +906,6 @@
 			isa = PBXGroup;
 			children = (
 				C9C0B9B726A580B600C9869A /* Content */,
-				C940AE8B268375710069B830 /* Cell */,
 				C93ED1692682332A00B03E8A /* TabbarVC.swift */,
 				C93ED181268240C300B03E8A /* LeftMenuVC.swift */,
 				C93ED182268240C300B03E8A /* LeftMenuVC.xib */,
@@ -970,13 +943,6 @@
 				C93ED15D268232A100B03E8A /* SettingVC.xib */,
 			);
 			path = Setting;
-			sourceTree = "<group>";
-		};
-		C940AE8B268375710069B830 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		C940AE942683766F0069B830 /* 9. Extension */ = {
@@ -1059,8 +1025,6 @@
 			children = (
 				C969B38D269ADB210066A88A /* ChooseTypeWorkspaceCell.swift */,
 				C969B38C269ADB210066A88A /* ChooseTypeWorkspaceCell.xib */,
-				C969B38E269ADB210066A88A /* MoreActionWorkspaceView.swift */,
-				C969B390269ADB210066A88A /* MoreActionWorkspaceView.xib */,
 				C969B38B269ADB210066A88A /* SecurityWorkspaceCell.swift */,
 				C969B38F269ADB210066A88A /* SecurityWorkspaceCell.xib */,
 			);
@@ -1409,23 +1373,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0EC217AF2691BB0200B8B8F4 /* tunnel */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0EC217BA2691BB0200B8B8F4 /* Build configuration list for PBXNativeTarget "tunnel" */;
-			buildPhases = (
-				0EC217AC2691BB0200B8B8F4 /* Sources */,
-				0EC217AD2691BB0200B8B8F4 /* Frameworks */,
-				0EC217AE2691BB0200B8B8F4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = tunnel;
-			productName = tunnel;
-			productReference = 0EC217B02691BB0200B8B8F4 /* tunnel.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		0EDEEFA02681F29E00572C4E /* visafe */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EDEEFB52681F2A000572C4E /* Build configuration list for PBXNativeTarget "visafe" */;
@@ -1434,14 +1381,12 @@
 				0EDEEF9D2681F29E00572C4E /* Sources */,
 				0EDEEF9E2681F29E00572C4E /* Frameworks */,
 				0EDEEF9F2681F29E00572C4E /* Resources */,
-				EFE82053407D103D67E1C35D /* [CP] Embed Pods Frameworks */,
 				1FC4039839961F79796F508B /* [CP] Copy Pods Resources */,
 				0E61B0572688327D00652CEC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0EC217B82691BB0200B8B8F4 /* PBXTargetDependency */,
 			);
 			name = visafe;
 			packageProductDependencies = (
@@ -1456,7 +1401,7 @@
 				C913CA73269CA1BD00E8440F /* FacebookLogin */,
 				C979C96226B5D9AA00F97E4F /* Kingfisher */,
 				C979C96726B5DB8100F97E4F /* SwiftyJSON */,
-				C90F150526BBD6E5008C19A1 /* QRCodeReader */,
+				C90F154726BBF71C008C19A1 /* KeyboardAvoidingView */,
 			);
 			productName = visafe;
 			productReference = 0EDEEFA12681F29E00572C4E /* visafe.app */;
@@ -1471,9 +1416,6 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					0EC217AF2691BB0200B8B8F4 = {
-						CreatedOnToolsVersion = 12.4;
-					};
 					0EDEEFA02681F29E00572C4E = {
 						CreatedOnToolsVersion = 12.4;
 						LastSwiftMigration = 1240;
@@ -1500,26 +1442,18 @@
 				C913CA72269CA1BD00E8440F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				C979C96126B5D9AA00F97E4F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				C979C96626B5DB8100F97E4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				C90F150426BBD6E5008C19A1 /* XCRemoteSwiftPackageReference "QRCodeReader.swift" */,
+				C90F154626BBF71C008C19A1 /* XCRemoteSwiftPackageReference "KeyboardAvoidingView" */,
 			);
 			productRefGroup = 0EDEEFA22681F29E00572C4E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0EDEEFA02681F29E00572C4E /* visafe */,
-				0EC217AF2691BB0200B8B8F4 /* tunnel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0EC217AE2691BB0200B8B8F4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0EDEEF9F2681F29E00572C4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1556,7 +1490,6 @@
 				C966FE992694A9500049458C /* OnboardingChildVC.xib in Resources */,
 				C93FFDE6269AF48800D7B02A /* ProfileSettingVC.xib in Resources */,
 				C91813F7269AFB1300DC0E83 /* ProfileHelpVC.xib in Resources */,
-				C969B39C269ADB210066A88A /* MoreActionWorkspaceView.xib in Resources */,
 				518EC10126B9A35900D88D2A /* ProtectDetailListBlockVC.xib in Resources */,
 				C9777A32269AC5E100C40031 /* ProfileCell.xib in Resources */,
 				C979C97426B6E39700F97E4F /* InviteMemberToGroupVC.xib in Resources */,
@@ -1670,34 +1603,9 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EFE82053407D103D67E1C35D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-visafe/Pods-visafe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-visafe/Pods-visafe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-visafe/Pods-visafe-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0EC217AC2691BB0200B8B8F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0EC217C12691BB1B00B8B8F4 /* PacketTunnelProvider.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0EDEEF9D2681F29E00572C4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1872,7 +1780,6 @@
 				C93ED163268232BE00B03E8A /* AdministrationVC.swift in Sources */,
 				C940AEA2268378F20069B830 /* UIViewExtension.swift in Sources */,
 				C9B7946A2686150100258A72 /* RegisterParam.swift in Sources */,
-				C969B39A269ADB210066A88A /* MoreActionWorkspaceView.swift in Sources */,
 				C9181416269B486300DC0E83 /* NotificationCell.swift in Sources */,
 				C93ED1592682328600B03E8A /* HomeVC.swift in Sources */,
 				C93C235526A97FA1003AC717 /* StatisticCategoryCell.swift in Sources */,
@@ -1889,14 +1796,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0EC217B82691BB0200B8B8F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0EC217AF2691BB0200B8B8F4 /* tunnel */;
-			targetProxy = 0EC217B72691BB0200B8B8F4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0EDEEFAA2681F29E00572C4E /* Main.storyboard */ = {
@@ -1918,60 +1817,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0EC217BB2691BB0200B8B8F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = tunnel/tunnel.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
-				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
-				INFOPLIST_FILE = tunnel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.4.7;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe.tunnel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		0EC217BC2691BB0200B8B8F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = tunnel/tunnel.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
-				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
-				INFOPLIST_FILE = tunnel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.4.7;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe.tunnel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		0EDEEFB32681F2A000572C4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2024,7 +1869,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2080,7 +1925,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2098,27 +1943,27 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = visafe/visafe.entitlements;
+				CODE_SIGN_ENTITLEMENTS = visafe/visafeDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
+				DEVELOPMENT_TEAM = 3Z59HFVS9G;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe111111.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -2144,7 +1989,7 @@
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2155,7 +2000,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2165,15 +2010,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0EC217BA2691BB0200B8B8F4 /* Build configuration list for PBXNativeTarget "tunnel" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0EC217BB2691BB0200B8B8F4 /* Debug */,
-				0EC217BC2691BB0200B8B8F4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		0EDEEF9C2681F29E00572C4E /* Build configuration list for PBXProject "visafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2211,12 +2047,12 @@
 				minimumVersion = 14.0.1;
 			};
 		};
-		C90F150426BBD6E5008C19A1 /* XCRemoteSwiftPackageReference "QRCodeReader.swift" */ = {
+		C90F154626BBF71C008C19A1 /* XCRemoteSwiftPackageReference "KeyboardAvoidingView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/yannickl/QRCodeReader.swift.git";
+			repositoryURL = "https://github.com/APUtils/KeyboardAvoidingView.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.1.1;
+				minimumVersion = 5.1.1;
 			};
 		};
 		C913CA72269CA1BD00E8440F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
@@ -2296,10 +2132,10 @@
 			package = 0E229D852682D3AF00559B67 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
-		C90F150526BBD6E5008C19A1 /* QRCodeReader */ = {
+		C90F154726BBF71C008C19A1 /* KeyboardAvoidingView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C90F150426BBD6E5008C19A1 /* XCRemoteSwiftPackageReference "QRCodeReader.swift" */;
-			productName = QRCodeReader;
+			package = C90F154626BBF71C008C19A1 /* XCRemoteSwiftPackageReference "KeyboardAvoidingView" */;
+			productName = KeyboardAvoidingView;
 		};
 		C913CA73269CA1BD00E8440F /* FacebookLogin */ = {
 			isa = XCSwiftPackageProductDependency;

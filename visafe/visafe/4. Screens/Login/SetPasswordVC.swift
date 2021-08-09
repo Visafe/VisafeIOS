@@ -10,6 +10,7 @@ import UIKit
 class SetPasswordVC: BaseViewController {
     
     @IBOutlet weak var passwordTextfield: BaseTextField!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var passwordInfoLabel: UILabel!
     @IBOutlet weak var rePasswordTextfield: BaseTextField!
     @IBOutlet weak var rePasswordInfoLabel: UILabel!
@@ -19,6 +20,11 @@ class SetPasswordVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let mutableAttributedString = NSMutableAttributedString.init(string: "Hãy nhập mật khẩu mới cho tài khoản \n\n")
+        let attribute2 = NSAttributedString(string: model.phone_number ?? model.email ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        mutableAttributedString.append(attribute2)
+        descriptionLabel.attributedText = mutableAttributedString
     }
     
     init(model: PasswordModel) {
@@ -29,9 +35,11 @@ class SetPasswordVC: BaseViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     @IBAction func backAction(_ sender: Any) {
         navigationController?.popViewController()
     }
+    
     @IBAction func acceptAction(_ sender: Any) {
         if validateInfo() {
             let param = ResetPassParam()

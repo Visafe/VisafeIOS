@@ -61,7 +61,6 @@ class AbstractHeaderedPageMenuViewController: BaseViewController {
         }
     }
     
-    
     /// get & set the alpha of the navigation bar.
     public var navBarTransparancy: CGFloat {
         get {
@@ -262,7 +261,6 @@ class AbstractHeaderedPageMenuViewController: BaseViewController {
     func navBarOffset() -> CGFloat {
         return 0
     }
-    
     
     /**
      Updates the transparency of the navigation bar according to the current position of the tabScrollview

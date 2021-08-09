@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,16 +16,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9s-Wx-DF5">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn có chắc chắn muốn xóa workspace?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oL0-i9-Eqa">
-                            <rect key="frame" x="24" y="28" width="366" height="14"/>
+                            <rect key="frame" x="24" y="60.5" width="366" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ow-Zp-JrV">
-                            <rect key="frame" x="24" y="142" width="366" height="48"/>
+                            <rect key="frame" x="24" y="168" width="366" height="48"/>
                             <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="Ezv-9o-WNA"/>
@@ -43,7 +44,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtU-3Q-JTN">
-                            <rect key="frame" x="24" y="70" width="366" height="48"/>
+                            <rect key="frame" x="24" y="108" width="366" height="48"/>
                             <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="AVk-BT-3ry"/>
@@ -64,17 +65,17 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="5ow-Zp-JrV" firstAttribute="top" secondItem="xtU-3Q-JTN" secondAttribute="bottom" constant="24" id="9DI-Mt-x0v"/>
+                        <constraint firstItem="5ow-Zp-JrV" firstAttribute="top" secondItem="xtU-3Q-JTN" secondAttribute="bottom" constant="12" id="9DI-Mt-x0v"/>
                         <constraint firstItem="xtU-3Q-JTN" firstAttribute="leading" secondItem="D9s-Wx-DF5" secondAttribute="leading" constant="24" id="D5Z-50-zcs"/>
                         <constraint firstAttribute="trailing" secondItem="xtU-3Q-JTN" secondAttribute="trailing" constant="24" id="Qzl-dL-4ep"/>
                         <constraint firstAttribute="trailing" secondItem="oL0-i9-Eqa" secondAttribute="trailing" constant="24" id="Uwp-c9-eKD"/>
                         <constraint firstItem="oL0-i9-Eqa" firstAttribute="leading" secondItem="D9s-Wx-DF5" secondAttribute="leading" constant="24" id="Wfp-ld-o9g"/>
-                        <constraint firstAttribute="bottom" secondItem="5ow-Zp-JrV" secondAttribute="bottom" constant="100" id="XvU-Mp-ZWz"/>
+                        <constraint firstAttribute="bottom" secondItem="5ow-Zp-JrV" secondAttribute="bottom" constant="24" id="XvU-Mp-ZWz"/>
                         <constraint firstAttribute="trailing" secondItem="5ow-Zp-JrV" secondAttribute="trailing" constant="24" id="ZfT-5x-ful"/>
                         <constraint firstItem="xtU-3Q-JTN" firstAttribute="top" secondItem="oL0-i9-Eqa" secondAttribute="bottom" constant="28" id="aeJ-T9-B9V"/>
                         <constraint firstItem="5ow-Zp-JrV" firstAttribute="leading" secondItem="D9s-Wx-DF5" secondAttribute="leading" constant="24" id="qAF-Sn-53N"/>
                         <constraint firstItem="oL0-i9-Eqa" firstAttribute="centerX" secondItem="D9s-Wx-DF5" secondAttribute="centerX" id="vzu-gm-HL7"/>
-                        <constraint firstItem="oL0-i9-Eqa" firstAttribute="top" secondItem="D9s-Wx-DF5" secondAttribute="top" constant="28" id="zFf-cR-Dxw"/>
+                        <constraint firstItem="oL0-i9-Eqa" firstAttribute="top" relation="greaterThanOrEqual" secondItem="D9s-Wx-DF5" secondAttribute="top" constant="28" id="zFf-cR-Dxw"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -88,7 +89,7 @@
             <constraints>
                 <constraint firstItem="D9s-Wx-DF5" firstAttribute="leading" secondItem="6kK-2U-jgB" secondAttribute="leading" id="4qq-Pk-yg0"/>
                 <constraint firstItem="6kK-2U-jgB" firstAttribute="trailing" secondItem="D9s-Wx-DF5" secondAttribute="trailing" id="Gea-lo-NHh"/>
-                <constraint firstItem="6kK-2U-jgB" firstAttribute="bottom" secondItem="D9s-Wx-DF5" secondAttribute="bottom" constant="-50" id="Ptu-xa-1IP"/>
+                <constraint firstItem="6kK-2U-jgB" firstAttribute="bottom" secondItem="D9s-Wx-DF5" secondAttribute="bottom" id="Ptu-xa-1IP"/>
                 <constraint firstItem="D9s-Wx-DF5" firstAttribute="top" secondItem="cGZ-6L-K2T" secondAttribute="top" id="Rcc-HU-axh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

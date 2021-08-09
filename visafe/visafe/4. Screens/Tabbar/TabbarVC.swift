@@ -98,7 +98,7 @@ class TabbarVC: BaseTabbarController {
             tabBar.isTranslucent = false
         } else {
             mainButton.backgroundColor = UIColor(hexString: "061448")
-            tabBar.backgroundColor = UIColor.white
+            tabBar.backgroundColor = UIColor(hexString: "F7F7F7")
             tabBar.isTranslucent = false
             tabBar.barTintColor = UIColor(hexString: "F7F7F7")
         }

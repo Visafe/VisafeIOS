@@ -41,7 +41,7 @@ class EnterOTPVC: BaseViewController {
         continueButton.isUserInteractionEnabled = false
         
         pinView.style = .underline
-        pinView.font = UIFont.systemFont(ofSize: 30)
+        pinView.font = UIFont.systemFont(ofSize: 24)
         pinView.keyboardType = .numberPad
         if let phone = model.phone_number, !phone.isEmpty {
             descriptionLabel.text = "ViSafe đã gửi mã xác thực OTP đến số điện thoại \(phone)"
@@ -52,6 +52,11 @@ class EnterOTPVC: BaseViewController {
         }
         sendOTPButton.setTitle("Gửi lại OTP (\(timeDown)s)", for: .normal)
         pinView.didChangeCallback = didChangeEnteringPin(pin:)
+        
+        let mutableAttributedString = NSMutableAttributedString.init(string: "ViSafe đã gửi mã xác thực OTP đến tài khoản\n\n")
+        let attribute2 = NSAttributedString(string: model.phone_number ?? model.email ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        mutableAttributedString.append(attribute2)
+        descriptionLabel.attributedText = mutableAttributedString
         
         // start the timer
         timer.invalidate()

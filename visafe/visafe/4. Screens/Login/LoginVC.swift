@@ -48,7 +48,6 @@ class LoginVC: BaseViewController {
             loginParam.password = passwordTextfield.text
             AuthenWorker.login(param: loginParam) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
-                weakSelf.hideLoading()
                 weakSelf.handleLogin(result: result, error: error)
             }
         }
@@ -59,6 +58,7 @@ class LoginVC: BaseViewController {
             CacheManager.shared.setLoginResult(value: res)
             getProfile()
         } else {
+            hideLoading()
             let type = result?.status_code ?? LoginStatusEnum.error
             if type == .unactiveAccount {
                 activationAccount()
@@ -80,7 +80,6 @@ class LoginVC: BaseViewController {
     }
     
     func getProfile() {
-        showLoading()
         AuthenWorker.profile { [weak self] (user, error) in
             guard let weakSelf = self else { return }
             CacheManager.shared.setCurrentUser(value: user)

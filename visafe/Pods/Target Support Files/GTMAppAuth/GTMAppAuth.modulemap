@@ -1,4 +1,4 @@
-framework module GTMAppAuth {
+module GTMAppAuth {
   umbrella header "GTMAppAuth-umbrella.h"
 
   export *

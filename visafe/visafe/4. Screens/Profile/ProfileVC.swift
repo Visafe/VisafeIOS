@@ -82,7 +82,7 @@ class ProfileVC: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var sources: [ProfileEnum] = [.accountType, .upgradeAccount, .setting, .help, .share, .rate, .logout]
+    var sources: [ProfileEnum] = CacheManager.shared.getIsLogined() ? [.accountType, .upgradeAccount, .setting, .help, .share, .rate, .logout] : [.accountType, .upgradeAccount, .setting, .help, .share, .rate]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,6 +148,15 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func checkLogin() -> Bool {
+        if CacheManager.shared.getIsLogined() {
+            return true
+        } else {
+            login()
+            return false
+        }
+    }
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = ProfileFooterView.loadFromNib()
         footerView?.upgrade = { [weak self] in
@@ -163,9 +172,11 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func chooseWorkspace() {
-        let vc = ListWorkspaceVC()
-        let nav = BaseNavigationController(rootViewController: vc)
-        present(nav, animated: true)
+        if checkLogin() {
+            let vc = ListWorkspaceVC()
+            let nav = BaseNavigationController(rootViewController: vc)
+            present(nav, animated: true)
+        }
     }
     
     func showSetting() {
@@ -180,8 +191,10 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func showLicense() {
-        let vc = LicenseOverviewVC()
-        present(vc, animated: true)
+        if checkLogin() {
+            let vc = LicenseOverviewVC()
+            present(vc, animated: true)
+        }
     }
     
     func logout() {
@@ -195,7 +208,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func rateApp() {
         if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
-            SKStoreReviewController.requestReview(in: scene)
+//            SKStoreReviewController.requestReview(in: scene)
         }
     }
     
@@ -203,6 +216,5 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         let activity = UIActivityViewController(activityItems: [URL(string: "https://apps.apple.com/vn/app/visafe/id1564635388")!],applicationActivities: nil)
         present(activity, animated: true, completion: nil)
     }
-    
 }
 

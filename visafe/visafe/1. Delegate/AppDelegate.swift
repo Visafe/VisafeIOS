@@ -6,13 +6,13 @@
 //
 
 import UIKit
-import SideMenuSwift
 import CoreData
 import Firebase
 import UserNotifications
 import FirebaseMessaging
 import FBSDKCoreKit
 import GoogleSignIn
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,9 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         configRootVC()
         configView()
-        configureSideMenu()
         googleAuthen()
+        configKeyboard()
         return true
+    }
+    
+    func configKeyboard() {
+        IQKeyboardManager.shared.enable = true
     }
     
     func googleAuthen() {
@@ -53,7 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func postSendToken(token: String?) {
-        
+        // regiser token
+        // https://app.visafe.vn/api/v1/device/register
     }
 
     func configApplePush(_ application: UIApplication) {
@@ -78,6 +83,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000, vertical: 0), for: .default)
         UINavigationBar.appearance().backIndicatorImage = UIImage(named: "navi_back")
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "navi_back")
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .medium)]
+        UINavigationBar.appearance().titleTextAttributes = attributes
     }
     
     func configRootVC() {
@@ -96,11 +103,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setRootVCToOnboardingVC() {
         let vc = OnboardingVC()
         setRootViewController(vc)
-    }
-    
-    private func configureSideMenu() {
-        SideMenuController.preferences.basic.menuWidth = kScreenWidth - 60
-        SideMenuController.preferences.basic.defaultCacheKey = "0"
     }
 }
 
@@ -140,5 +142,6 @@ extension AppDelegate {
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.list, .banner, .badge])
+//        completionHandler([.list, .banner, .badge])
     }
 }

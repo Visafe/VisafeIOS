@@ -112,7 +112,7 @@ extension LicenseVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 1 {
-            return 44.001
+            return 8.001
         }
         return 0.0001
     }

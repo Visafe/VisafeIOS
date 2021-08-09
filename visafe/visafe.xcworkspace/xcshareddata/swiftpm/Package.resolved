@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "KeyboardAvoidingView",
+        "repositoryURL": "https://github.com/APUtils/KeyboardAvoidingView.git",
+        "state": {
+          "branch": null,
+          "revision": "5f85be8f39a7328c3f8c8c822c6874c268a1ea14",
+          "version": "5.1.1"
+        }
+      },
+      {
         "package": "Kingfisher",
         "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
         "state": {
@@ -98,15 +107,6 @@
           "branch": null,
           "revision": "bf90dc69fa0792894b08a0b74cf34029694ae486",
           "version": "0.13.0"
-        }
-      },
-      {
-        "package": "QRCodeReader",
-        "repositoryURL": "https://github.com/yannickl/QRCodeReader.swift.git",
-        "state": {
-          "branch": null,
-          "revision": "5020b5a47199d8ba80c83a4b4fafd70e9dc9dc7f",
-          "version": "10.1.1"
         }
       },
       {
@@ -188,6 +188,15 @@
           "branch": null,
           "revision": "b712e44c1fe4020ee20f9d494572a9762ea5a59c",
           "version": "1.6.3"
+        }
+      },
+      {
+        "package": "ViewState",
+        "repositoryURL": "https://github.com/APUtils/ViewState.git",
+        "state": {
+          "branch": null,
+          "revision": "f59044bee010f67ad17dad5af553433d7806a00f",
+          "version": "1.2.2"
         }
       },
       {

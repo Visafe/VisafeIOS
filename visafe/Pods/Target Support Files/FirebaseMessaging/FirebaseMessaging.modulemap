@@ -1,4 +1,4 @@
-framework module FirebaseMessaging {
+module FirebaseMessaging {
   umbrella header "FirebaseMessaging-umbrella.h"
 
   export *

@@ -19,6 +19,10 @@ class ChangePasswordNameVC: BaseViewController {
         title = "Đổi mật khẩu"
         if let user = CacheManager.shared.getCurrentUser() {
             desctiptionLabel.text = "Hãy nhập mật khẩu cho tài khoản \n \(user.phonenumber ?? user.email ?? "")"
+            let mutableAttributedString = NSMutableAttributedString.init(string: "Hãy nhập mật khẩu cho tài khoản\n\n")
+            let attribute2 = NSAttributedString(string: user.phonenumber ?? user.email ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+            mutableAttributedString.append(attribute2)
+            desctiptionLabel.attributedText = mutableAttributedString
         }
     }
     
