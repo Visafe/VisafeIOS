@@ -9,81 +9,27 @@ import UIKit
 import AVFoundation
 
 class ScanGroupVC: BaseViewController, AVCaptureMetadataOutputObjectsDelegate {
-    var captureSession: AVCaptureSession!
-    var previewLayer: AVCaptureVideoPreviewLayer!
-
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var captureView: UIView!
+    var qrScannerView: QRScannerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.black
-        captureSession = AVCaptureSession()
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
-        let videoInput: AVCaptureDeviceInput
-        do {
-            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
-        } catch {
-            return
-        }
-        if (captureSession.canAddInput(videoInput)) {
-            captureSession.addInput(videoInput)
-        } else {
-            failed()
-            return
-        }
-        let metadataOutput = AVCaptureMetadataOutput()
-        if (captureSession.canAddOutput(metadataOutput)) {
-            captureSession.addOutput(metadataOutput)
-            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metadataOutput.metadataObjectTypes = [.qr]
-        } else {
-            failed()
-            return
-        }
-        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = view.layer.bounds
-        previewLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(previewLayer)
-        captureSession.startRunning()
-    }
-
-    func failed() {
-        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
-        captureSession = nil
+        qrScannerView = QRScannerView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight))
+        qrScannerView.focusImage = UIImage(named: "ic_bg_qr")
+        qrScannerView.isBlurEffectEnabled = true
+        captureView.addSubview(qrScannerView)
+        qrScannerView.configure(delegate: self)
+        qrScannerView.startRunning()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        if (captureSession?.isRunning == false) {
-            captureSession.startRunning()
-        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
-        if (captureSession?.isRunning == true) {
-            captureSession.stopRunning()
-        }
     }
-
-    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        captureSession.stopRunning()
-
-        if let metadataObject = metadataObjects.first {
-            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
-            guard let stringValue = readableObject.stringValue else { return }
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            found(code: stringValue)
-        }
-        dismiss(animated: true)
-    }
-
-    func found(code: String) {
-        print(code)
-    }
-
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -94,5 +40,44 @@ class ScanGroupVC: BaseViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
+    }
+}
+
+extension ScanGroupVC: QRScannerViewDelegate {
+    func qrScannerView(_ qrScannerView: QRScannerView, didFailure error: QRScannerError) {
+        print(error)
+    }
+
+    func qrScannerView(_ qrScannerView: QRScannerView, didSuccess code: String) {
+        guard let link = code.checkDeeplink() else { return }
+        let param = Common.getDeviceInfo()
+        param.updateGroupInfo(link: link)
+        
+        guard let view = BaseEnterValueView.loadFromNib() else { return }
+        view.bindingData(type: .deviceName, name: param.deviceName)
+        view.enterTextfield.text = param.deviceName
+        view.acceptAction = { [weak self] name in
+            guard let weakSelf = self else { return }
+            guard let deviceName = name else { return }
+            param.deviceName = deviceName
+            weakSelf.addDeviceToGroup(device: param)
+        }
+        showPopup(view: view)
+    }
+    
+    func addDeviceToGroup(device: AddDeviceToGroupParam) {
+        showLoading()
+        GroupWorker.addDevice(param: device) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            if result?.status_code == .success {
+                weakSelf.showMessage(title: "Thêm thiết bị thành công", content: InviteDeviceStatus.success.getDescription()) { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.dismiss(animated: true, completion: nil)
+                }
+            } else {
+                weakSelf.showError(title: "Thêm thiết bị thất bại", content: InviteDeviceStatus.defaultStatus.getDescription())
+            }
+        }
     }
 }

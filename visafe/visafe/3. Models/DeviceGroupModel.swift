@@ -20,6 +20,7 @@ class DeviceGroupModel: NSObject, Mappable {
     var deviceMonitorID: Int?
     var identifierId: String?
     var identifierName: String?
+    var groupName: String?
     
     override init() {
         super.init()
@@ -41,5 +42,8 @@ class DeviceGroupModel: NSObject, Mappable {
         deviceMonitorID <- map["deviceMonitorID"]
         identifierId <- map["identifierId"]
         identifierName <- map["identifierName"]
+        groupName <- map["groupName"]
     }
+    
+    
 }

@@ -192,6 +192,7 @@
 		C99FD1D9269746C200A8F731 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99FD1D7269746C200A8F731 /* ProfileVC.xib */; };
 		C9A15B4D2699BFDA0065D5C2 /* GroupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A15B4C2699BFDA0065D5C2 /* GroupHeaderView.swift */; };
 		C9A15B502699BFE50065D5C2 /* GroupHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A15B4F2699BFE50065D5C2 /* GroupHeaderView.xib */; };
+		C9B00E7726C19D01009AD4DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9B00E7626C19D01009AD4DB /* GoogleService-Info.plist */; };
 		C9B1E9A726B6EE2E00FC2F7E /* InviteMemberResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B1E9A626B6EE2E00FC2F7E /* InviteMemberResult.swift */; };
 		C9B1E9AD26B6FA9400FC2F7E /* DeleteDeviceGroupParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B1E9AC26B6FA9400FC2F7E /* DeleteDeviceGroupParam.swift */; };
 		C9B794512684D72400258A72 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B794502684D72400258A72 /* ColorExtension.swift */; };
@@ -279,6 +280,9 @@
 		C9EEB8E126ADAF38008F093C /* WorkspaceSumaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EEB8DF26ADAF38008F093C /* WorkspaceSumaryCell.xib */; };
 		C9EEB8E726ADB768008F093C /* ChooseTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEB8E526ADB767008F093C /* ChooseTimeView.swift */; };
 		C9EEB8E826ADB768008F093C /* ChooseTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9EEB8E626ADB768008F093C /* ChooseTimeView.xib */; };
+		C9F0940B26C14960001CD61D /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0940626C1495F001CD61D /* QRScannerView.swift */; };
+		C9F0940C26C14960001CD61D /* Bundle+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0940726C1495F001CD61D /* Bundle+Module.swift */; };
+		C9F0940D26C14960001CD61D /* QRScannerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0940926C14960001CD61D /* QRScannerError.swift */; };
 		C9F2491B26AAA7AF00EE7442 /* StatisticSumaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2491A26AAA7AF00EE7442 /* StatisticSumaryView.swift */; };
 		C9F2491F26AAA80900EE7442 /* StatisticSumaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F2491E26AAA80900EE7442 /* StatisticSumaryView.xib */; };
 		C9F2492426AAB87200EE7442 /* StatisticSumaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2492226AAB87200EE7442 /* StatisticSumaryCell.swift */; };
@@ -506,6 +510,7 @@
 		C99FD1D7269746C200A8F731 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		C9A15B4C2699BFDA0065D5C2 /* GroupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHeaderView.swift; sourceTree = "<group>"; };
 		C9A15B4F2699BFE50065D5C2 /* GroupHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupHeaderView.xib; sourceTree = "<group>"; };
+		C9B00E7626C19D01009AD4DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9B1E9A626B6EE2E00FC2F7E /* InviteMemberResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteMemberResult.swift; sourceTree = "<group>"; };
 		C9B1E9AC26B6FA9400FC2F7E /* DeleteDeviceGroupParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDeviceGroupParam.swift; sourceTree = "<group>"; };
 		C9B794502684D72400258A72 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -589,6 +594,10 @@
 		C9EEB8DF26ADAF38008F093C /* WorkspaceSumaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkspaceSumaryCell.xib; sourceTree = "<group>"; };
 		C9EEB8E526ADB767008F093C /* ChooseTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTimeView.swift; sourceTree = "<group>"; };
 		C9EEB8E626ADB768008F093C /* ChooseTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTimeView.xib; sourceTree = "<group>"; };
+		C9F0940626C1495F001CD61D /* QRScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		C9F0940726C1495F001CD61D /* Bundle+Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Module.swift"; sourceTree = "<group>"; };
+		C9F0940826C14960001CD61D /* QRScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRScanner.h; sourceTree = "<group>"; };
+		C9F0940926C14960001CD61D /* QRScannerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerError.swift; sourceTree = "<group>"; };
 		C9F2491A26AAA7AF00EE7442 /* StatisticSumaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticSumaryView.swift; sourceTree = "<group>"; };
 		C9F2491E26AAA80900EE7442 /* StatisticSumaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticSumaryView.xib; sourceTree = "<group>"; };
 		C9F2492226AAB87200EE7442 /* StatisticSumaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticSumaryCell.swift; sourceTree = "<group>"; };
@@ -819,6 +828,7 @@
 		C919B973268221A4009982C3 /* 6 .Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C9B00E7626C19D01009AD4DB /* GoogleService-Info.plist */,
 				0EDEEFAD2681F2A000572C4E /* Assets.xcassets */,
 				0EDEEFB22681F2A000572C4E /* Info.plist */,
 			);
@@ -1049,6 +1059,7 @@
 		C98786E526ABC7AD007639ED /* 7 .Library */ = {
 			isa = PBXGroup;
 			children = (
+				C9F0940526C1495F001CD61D /* QRScanner */,
 				C98786E626ABC7AD007639ED /* HeaderedTabScrollView */,
 			);
 			path = "7 .Library";
@@ -1361,6 +1372,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C9F0940526C1495F001CD61D /* QRScanner */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0940626C1495F001CD61D /* QRScannerView.swift */,
+				C9F0940726C1495F001CD61D /* Bundle+Module.swift */,
+				C9F0940826C14960001CD61D /* QRScanner.h */,
+				C9F0940926C14960001CD61D /* QRScannerError.swift */,
+			);
+			path = QRScanner;
+			sourceTree = "<group>";
+		};
 		CB200029E33700DD2D0EDA4D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1538,6 +1560,7 @@
 				518EC0F626B9930100D88D2A /* ProtectHomeHeaderView.xib in Resources */,
 				C99FD1D9269746C200A8F731 /* ProfileVC.xib in Resources */,
 				C9FA1606268A344B00A1A6C6 /* ChooseTypeGroupCell.xib in Resources */,
+				C9B00E7726C19D01009AD4DB /* GoogleService-Info.plist in Resources */,
 				C9FA1602268A2DE400A1A6C6 /* GroupTimeVC.xib in Resources */,
 				C93ED15F268232A100B03E8A /* SettingVC.xib in Resources */,
 				C9B7949626862C4800258A72 /* EnterOTPVC.xib in Resources */,
@@ -1706,6 +1729,7 @@
 				0EF5EB1526BA7E14002F5E84 /* DoHNative.swift in Sources */,
 				C979C96E26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.swift in Sources */,
 				C9E7A49826909E890012985B /* MoreLinkSettingView.swift in Sources */,
+				C9F0940D26C14960001CD61D /* QRScannerError.swift in Sources */,
 				C969B397269ADB210066A88A /* SecurityWorkspaceCell.swift in Sources */,
 				C969B399269ADB210066A88A /* ChooseTypeWorkspaceCell.swift in Sources */,
 				C9FE695C26B795740046AD79 /* AddDeviceToGroupVC.swift in Sources */,
@@ -1776,8 +1800,10 @@
 				C91813FC269AFE7000DC0E83 /* ProfileHelpCell.swift in Sources */,
 				C95A58462688233F0077112F /* ResetPasswordResult.swift in Sources */,
 				C918140E269B465700DC0E83 /* NotificationResult.swift in Sources */,
+				C9F0940B26C14960001CD61D /* QRScannerView.swift in Sources */,
 				C95A584F26885EBD0077112F /* WorkspageParam.swift in Sources */,
 				C93ED163268232BE00B03E8A /* AdministrationVC.swift in Sources */,
+				C9F0940C26C14960001CD61D /* Bundle+Module.swift in Sources */,
 				C940AEA2268378F20069B830 /* UIViewExtension.swift in Sources */,
 				C9B7946A2686150100258A72 /* RegisterParam.swift in Sources */,
 				C9181416269B486300DC0E83 /* NotificationCell.swift in Sources */,
@@ -1850,6 +1876,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = YES;
@@ -1869,7 +1896,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1912,6 +1939,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = YES;
@@ -1925,7 +1953,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1944,25 +1972,25 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = visafe/visafeDebug.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = 3Z59HFVS9G;
+				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe111111.1;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = visafe_develop;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = visafe_develop;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1980,8 +2008,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = visafe/visafe.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
@@ -1989,7 +2017,7 @@
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1998,8 +2026,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = visafe_develop;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = visafe_develop;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;

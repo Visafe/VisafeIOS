@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
+        genDeviceId()
         configApplePush(application) // đăng ký nhận push.
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         configRootVC()
@@ -35,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func googleAuthen() {
+        FirebaseApp.configure() // gọi hàm để cấu hình 1 app Firebase mặc định
+        Messaging.messaging().delegate = self //Nhận các message từ FirebaseMessaging
+        //google sign in
         GIDSignIn.sharedInstance().clientID = "364533202921-h0510keg49fuo2okdgopo48mato4905d.apps.googleusercontent.com"
     }
     
@@ -44,21 +48,68 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else if (ApplicationDelegate.shared.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation] )) {
             return true
+        } else if url.absoluteString.checkDeeplink() != nil {
+            handleUniversallink(code: url.absoluteString)
+            return true
         }
         return false
+    }
+    
+    func handleUniversallink(code: String) {
+        guard let link = code.checkDeeplink() else { return }
+        let param = Common.getDeviceInfo()
+        param.updateGroupInfo(link: link)
+        // create the actual alert controller view that will be the pop-up
+        let alertController = UIAlertController(title: "Xác nhận tham gia", message: "Bạn có chắc chắn muốn tham gia nhóm <" + (param.groupName ?? "") + "> với tên là:", preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            // configure the properties of the text field
+            textField.placeholder = "Tên thiết bị"
+        }
+        alertController.textFields![0].text = param.deviceName
+        // add the buttons/actions to the view controller
+        let saveAction = UIAlertAction(title: "Đồng ý", style: .cancel) { [weak self] alert in
+            guard let weakSelf = self else { return }
+            let inputName = alertController.textFields![0].text
+            param.deviceName = inputName
+            weakSelf.addDeviceToGroup(device: param)
+        }
+        let cancelAction = UIAlertAction(title: "Hủy bỏ", style: .default, handler: nil)
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    func addDeviceToGroup(device: AddDeviceToGroupParam) {
+        GroupWorker.addDevice(param: device) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            if result?.status_code == .success {
+                let alert = UIAlertController(title: "Thông báo", message: "Tham gia nhóm thành công" , preferredStyle: UIAlertController.Style.alert)
+                let okAction = UIAlertAction(title: "Xác nhận", style: UIAlertAction.Style.default) { _ in }
+                // add an action (button)
+                alert.addAction(okAction)
+                // show the alert
+                weakSelf.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            } else {
+                let type = result?.status_code ?? .defaultStatus
+                let message_alert = type.getDescription()
+                let alert = UIAlertController(title: "Thông báo", message: message_alert , preferredStyle: UIAlertController.Style.alert)
+                let okAction = UIAlertAction(title: "Xác nhận", style:
+                                                UIAlertAction.Style.default) { _ in }
+                // add an action (button)
+                alert.addAction(okAction)
+                // show the alert
+                weakSelf.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
     }
     
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        postSendToken(token: fcmToken)
-    }
-    
     func postSendToken(token: String?) {
         // regiser token
-        // https://app.visafe.vn/api/v1/device/register
+        DeviceWorker.registerDevice(token: token) { (result, error) in }
     }
 
     func configApplePush(_ application: UIApplication) {
@@ -104,6 +155,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = OnboardingVC()
         setRootViewController(vc)
     }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            let url = userActivity.webpageURL!
+            if url.absoluteString.checkDeeplink() != nil {
+                handleUniversallink(code: url.absoluteString)
+                return true
+            }
+        }
+        return true
+    }
+    
+    func genDeviceId() {
+        if !CacheManager.shared.isDeviceIdExist() {
+            DeviceWorker.genDeviceId { (result, error) in
+                if let deviceId = result?.deviceId {
+                    CacheManager.shared.setDeviceId(value: deviceId)
+                }
+            }
+        }
+    }
 }
 
 extension AppDelegate {
@@ -142,6 +214,11 @@ extension AppDelegate {
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.list, .banner, .badge])
-//        completionHandler([.list, .banner, .badge])
+    }
+}
+
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        postSendToken(token: fcmToken)
     }
 }

@@ -71,11 +71,12 @@ class LoginVC: BaseViewController {
     func getWorkspaces() {
         WorkspaceWorker.getList { [weak self] (list, error) in
             guard let weakSelf = self else { return }
-            weakSelf.hideLoading()
-            CacheManager.shared.setIsLogined(value: true)
-            CacheManager.shared.setWorkspacesResult(value: list)
-            CacheManager.shared.setCurrentWorkspace(value: list?.first)
-            AppDelegate.appDelegate()?.setRootVCToTabVC()
+            weakSelf.hideLoading {
+                CacheManager.shared.setIsLogined(value: true)
+                CacheManager.shared.setWorkspacesResult(value: list)
+                CacheManager.shared.setCurrentWorkspace(value: list?.first)
+                AppDelegate.appDelegate()?.setRootVCToTabVC()
+            }
         }
     }
     
@@ -152,7 +153,6 @@ class LoginVC: BaseViewController {
         showLoading()
         AuthenWorker.loginFacebook(token: token) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
-            weakSelf.hideLoading()
             weakSelf.handleLogin(result: result, error: error)
         }
     }
@@ -196,7 +196,6 @@ extension LoginVC: GIDSignInDelegate {
             showLoading()
             AuthenWorker.loginGoogle(token: token) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
-                weakSelf.hideLoading()
                 weakSelf.handleLogin(result: result, error: error)
             }
         }
@@ -215,7 +214,6 @@ extension LoginVC: ASAuthorizationControllerDelegate, ASAuthorizationControllerP
         showLoading()
         AuthenWorker.loginApple(token: token) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
-            weakSelf.hideLoading()
             weakSelf.handleLogin(result: result, error: error)
         }
     }

@@ -140,7 +140,7 @@ class AbstractHeaderedPageMenuViewController: BaseViewController {
         headerContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         headerHeightConstraint = headerContainer.heightAnchor.constraint(equalToConstant: self.headerHeight)
         headerHeightConstraint!.isActive = true
-        lastTabScrollViewOffset = CGPoint(x: CGFloat(0), y: navBarOffset())
+        lastTabScrollViewOffset = CGPoint(x: CGFloat(0), y: 0)
     }
     
     override open func viewWillAppear(_ animated: Bool) {
@@ -167,7 +167,7 @@ class AbstractHeaderedPageMenuViewController: BaseViewController {
             navBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
             navBar.shadowImage = UIImage()
             if navBarOverlay == nil {
-                navBarOverlay = UIView.init(frame: CGRect.init(x: 0, y: 0, width: navBar.bounds.width, height: self.navBarOffset()))
+                navBarOverlay = UIView.init(frame: CGRect.init(x: 0, y: 0, width: navBar.bounds.width, height: 0))
             }
             
             navBarOverlay!.autoresizingMask = UIView.AutoresizingMask.flexibleWidth
@@ -213,7 +213,7 @@ class AbstractHeaderedPageMenuViewController: BaseViewController {
         var delta =  scrollView.contentOffset.y - lastTabScrollViewOffset.y
         
         // Vertical bounds
-        let maxY: CGFloat = navBarOffset()
+        let maxY: CGFloat = 0
         let minY: CGFloat = self.headerHeight
         
         if tabTopConstraint == nil { return }
@@ -259,7 +259,7 @@ class AbstractHeaderedPageMenuViewController: BaseViewController {
     
     
     func navBarOffset() -> CGFloat {
-        return 0
+        return (self.navigationController?.navigationBar.bounds.height ?? 0) + UIApplication.shared.statusBarFrame.height
     }
     
     /**
@@ -283,7 +283,7 @@ class AbstractHeaderedPageMenuViewController: BaseViewController {
 //        navBarTitleColor = navBarTitleColor.withAlphaComponent(alpha)
         // do the following to update items too:
         // navBarItemsColor = navBarItemsColor.withAlphaComponent(alpha)
-        
+
     }
     
     /**

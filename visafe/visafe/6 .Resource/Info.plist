@@ -72,6 +72,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Cho phép ViSafe truy cập Camera để tham gia nhóm</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Cho phép ViSafe lưu ảnh vào Library của bạn</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
@@ -101,7 +103,5 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Cho phép ViSafe truy cập Camera để tham gia nhóm</string>
 </dict>
 </plist>

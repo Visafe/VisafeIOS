@@ -12,6 +12,7 @@ class WorkspaceSumaryCell: BaseTableCell {
     var actionChooseTime:(() -> Void)?
     var actionChangeWorkspace:(() -> Void)?
     var actionCreateGroup:(() -> Void)?
+    var actionJoinGroup:(() -> Void)?
     
     @IBOutlet weak var summaryView: UIView!
     @IBOutlet weak var workspaceNameLabel: UILabel!
@@ -59,5 +60,9 @@ class WorkspaceSumaryCell: BaseTableCell {
     
     @IBAction func createGroupAction(_ sender: Any) {
         actionCreateGroup?()
+    }
+    
+    @IBAction func joinGroupAction(_ sender: Any) {
+        actionJoinGroup?()
     }
 }

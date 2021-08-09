@@ -18,6 +18,8 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
     var statisticVC: GroupStatisticVC!
     var settingVC: GroupSettingDetailVC!
     var statisticModel: StatisticModel = StatisticModel()
+    var pageMenu: CAPSPageMenu!
+    var isSet = false
     
     init(group: GroupModel) {
         self.group = group
@@ -36,14 +38,20 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if !isSet {
+            isSet = true
+            pageMenu.view.frame = CGRect(x: 0, y: 0, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height)
+            statisticVC.view.frame = CGRect(x: 0, y: 56, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height - 56)
+            settingVC.view.frame = CGRect(x: 0, y: 56, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height - 56)
+        }
     }
     
     func configView() {
-        
         header = GroupDetailHeader.loadFromNib()
         header.bindingData(group: group)
         header.viewMemberAction = { [weak self] in
@@ -93,7 +101,8 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
             .menuMargin(0),
             .scrollMenuBackgroundColor(.white)
         ]
-        self.addPageMenu(menu: CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height), pageMenuOptions: parameters))
+        pageMenu = CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height), pageMenuOptions: parameters)
+        self.addPageMenu(menu: pageMenu)
         self.pageMenuController!.delegate = self
 
         self.navBarColor = UIColor.white

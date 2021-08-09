@@ -255,6 +255,10 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
                     guard let weakSelf = self else { return }
                     weakSelf.showFormAddGroup()
                 }
+                cell.actionJoinGroup = { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.joinGroup()
+                }
                 cell.bindingData(statistic: statisticModel, timeType: timeType)
                 return cell
             } else {

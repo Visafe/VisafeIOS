@@ -25,4 +25,18 @@ class DeviceWorker {
             completion(result, error)
         }
     }
+    
+    static func registerDevice(token: String?, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.registerDevice(token: token, deviceId: CacheManager.shared.getDeviceId())
+        APIManager.shared.request(target: router) { (data, error) in
+            var result: BaseResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    result = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(result, error)
+        }
+    }
 }

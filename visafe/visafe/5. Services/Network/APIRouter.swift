@@ -70,6 +70,7 @@ enum APIRouter {
 
     //gen device id
     case genDeviceId
+    case registerDevice(token: String?, deviceId: String?)
 }
 
 enum APIError: Error {
@@ -193,6 +194,8 @@ extension APIRouter: TargetType {
             return "/group/update/device"
         case .genDeviceId:
             return "/control/gen-device-id"
+        case .registerDevice:
+            return "/device/register"
         }
     }
     
@@ -314,6 +317,9 @@ extension APIRouter: TargetType {
             pars = param.toJSON()
         case .updateDeviceGroup(param: let param):
             pars = param.toJSON()
+        case .registerDevice(token: let token, deviceId: let deviceId):
+            pars["token"] = token
+            pars["deviceId"] = deviceId
         case .reactivation, .getListWorkspace, .profile, .genDeviceId:
             break
         }
@@ -322,7 +328,7 @@ extension APIRouter: TargetType {
     
     var task: Task {
         switch self {
-        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .activeAccount, .deleteWorkspace, .loginFacebook, .loginGoogle, .forgotPassword, .groupUpdateWhitelist, .groupUserToManager, .groupUserToViewer, .groupDeleteUser, .deleteLog, .loginApple, .deleteDeviceFromGroup, .updateDeviceGroup:
+        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .activeAccount, .deleteWorkspace, .loginFacebook, .loginGoogle, .forgotPassword, .groupUpdateWhitelist, .groupUserToManager, .groupUserToViewer, .groupDeleteUser, .deleteLog, .loginApple, .deleteDeviceFromGroup, .updateDeviceGroup, .registerDevice:
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             break
