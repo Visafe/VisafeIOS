@@ -14,10 +14,12 @@ class GroupListUserVC: BaseViewController {
     var group: GroupModel
     
     var listUser: [UserModel] = []
+    var listUserSearch: [UserModel] = []
     
     init(group: GroupModel) {
         self.group = group
         listUser = group.usersGroupInfo
+        listUserSearch = group.usersGroupInfo
         super.init(nibName: GroupListUserVC.className, bundle: nil)
     }
     
@@ -38,6 +40,7 @@ class GroupListUserVC: BaseViewController {
                 item.role = .suppervisor
             }
         }
+        listUserSearch = listUser
     }
     
     required init?(coder: NSCoder) {
@@ -54,6 +57,18 @@ class GroupListUserVC: BaseViewController {
         updateData()
         tableView.reloadData()
     }
+    
+    @IBAction func valueChanged(_ sender: UITextField) {
+        let text = sender.text?.lowercased() ?? ""
+        listUserSearch = listUser.filter({ (user) -> Bool in
+            if text.isEmpty { return true }
+            if user.fullname?.lowercased().contains(text) == true || user.email?.lowercased().contains(text) == true || user.phonenumber?.lowercased().contains(text) == true {
+                return true
+            }
+            return false
+        })
+        tableView.reloadData()
+    }
 }
 
 extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
@@ -66,7 +81,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 0
         } else {
-            return listUser.count
+            return listUserSearch.count
         }
     }
 
@@ -77,7 +92,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupMemberCell.className) as? GroupMemberCell else {
                 return UITableViewCell()
             }
-            let user = listUser[indexPath.row]
+            let user = listUserSearch[indexPath.row]
             cell.binding(user: user)
             cell.moreAction = { [weak self] in
                 guard let weaSelf = self else { return }
@@ -122,7 +137,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
                     break
                 }
             }
-            weakSelf.tableView.reloadData()
+            weakSelf.reloadData()
         }
     }
     
@@ -169,12 +184,12 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
             }
             return view
         } else {
-            if listUser.count == 0 { return UIView() }
+            if listUserSearch.count == 0 { return UIView() }
             let viewHeader = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 48))
             viewHeader.backgroundColor = UIColor.white
             let label = UILabel(frame: CGRect(x: 16, y: 6, width: kScreenWidth - 32, height: 48))
             label.textAlignment = .right
-            label.text = "Số thành viên: \(listUser.count)"
+            label.text = "Số thành viên: \(listUserSearch.count)"
             label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
             viewHeader.addSubview(label)
             return viewHeader
@@ -183,6 +198,18 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
     
     func addUserToList(user: UserModel) {
         listUser.append(user)
+        reloadData()
+    }
+    
+    func reloadData() {
+        let text = searchTextField.text ?? ""
+        listUserSearch = listUser.filter({ (user) -> Bool in
+            if text.isEmpty { return true }
+            if user.fullname?.contains(text) == true || user.email?.contains(text) == true || user.phonenumber?.contains(text) == true {
+                return true
+            }
+            return false
+        })
         tableView.reloadData()
     }
     
@@ -190,7 +217,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 72
         } else {
-            if listUser.count == 0 { return 0.0001 }
+            if listUserSearch.count == 0 { return 0.0001 }
             return 48
         }
     }

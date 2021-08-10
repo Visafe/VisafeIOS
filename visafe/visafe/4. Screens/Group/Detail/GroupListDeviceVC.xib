@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupListDeviceVC" customModule="visafe" customModuleProvider="target">
             <connections>
+                <outlet property="searchTextfield" destination="lHv-WL-6qx" id="pcd-8N-1yZ"/>
                 <outlet property="tableView" destination="YmB-93-wIF" id="D65-RG-Qnm"/>
                 <outlet property="view" destination="2qh-I7-ZNt" id="07S-hT-y6a"/>
             </connections>
@@ -20,21 +21,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vD-Tn-lo1">
-                    <rect key="frame" x="0.0" y="68" width="414" height="48"/>
+                    <rect key="frame" x="0.0" y="68" width="414" height="44"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tìm kiếm nhanh thành viên" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lHv-WL-6qx" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
-                            <rect key="frame" x="16" y="0.0" width="382" height="48"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tìm kiếm nhanh thành viên" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lHv-WL-6qx" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
+                            <rect key="frame" x="16" y="0.0" width="382" height="44"/>
                             <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="CoC-zU-PRP"/>
-                                <constraint firstAttribute="height" constant="48" id="Pe8-RE-Vgf"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="CoC-zU-PRP"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="16"/>
+                                    <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="valueChanged:" destination="-1" eventType="editingChanged" id="Qbm-5R-NOy"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -46,7 +49,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YmB-93-wIF">
-                    <rect key="frame" x="0.0" y="116" width="414" height="746"/>
+                    <rect key="frame" x="0.0" y="112" width="414" height="750"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="qYS-HN-SW0"/>

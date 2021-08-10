@@ -18,16 +18,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSN-x6-Pgh">
-                        <rect key="frame" x="16" y="29" width="485" height="93.5"/>
+                        <rect key="frame" x="16" y="33" width="485" height="85.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Văn A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aq-ND-dq5">
-                                <rect key="frame" x="12" y="24" width="111.5" height="20.5"/>
+                                <rect key="frame" x="12" y="20" width="111.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dqt-43-QDo">
-                                <rect key="frame" x="135.5" y="20" width="106" height="28"/>
+                                <rect key="frame" x="135.5" y="16" width="106" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="THÀNH VIÊN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAn-Pe-Tcp">
                                         <rect key="frame" x="8" y="6" width="90" height="16"/>
@@ -53,7 +53,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKI-Hw-hOb">
-                                <rect key="frame" x="441" y="24.5" width="44" height="44"/>
+                                <rect key="frame" x="441" y="20.5" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Jem-ZT-n2E"/>
                                     <constraint firstAttribute="height" constant="44" id="orB-d3-KhU"/>
@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPhone XS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7w-H7-w9Q">
-                                <rect key="frame" x="12" y="52.5" width="66" height="17"/>
+                                <rect key="frame" x="12" y="48.5" width="66" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
@@ -76,10 +76,10 @@
                             <constraint firstItem="6aq-ND-dq5" firstAttribute="leading" secondItem="jSN-x6-Pgh" secondAttribute="leading" constant="12" id="4Sa-4B-Xol"/>
                             <constraint firstItem="Dqt-43-QDo" firstAttribute="centerY" secondItem="6aq-ND-dq5" secondAttribute="centerY" id="7wK-aM-gPC"/>
                             <constraint firstItem="Dqt-43-QDo" firstAttribute="leading" secondItem="6aq-ND-dq5" secondAttribute="trailing" constant="12" id="Fqg-rH-EIq"/>
-                            <constraint firstAttribute="bottom" secondItem="M7w-H7-w9Q" secondAttribute="bottom" constant="24" id="IrD-ba-rxj"/>
+                            <constraint firstAttribute="bottom" secondItem="M7w-H7-w9Q" secondAttribute="bottom" constant="20" id="IrD-ba-rxj"/>
                             <constraint firstItem="AKI-Hw-hOb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Dqt-43-QDo" secondAttribute="trailing" id="Wro-ba-dwS"/>
                             <constraint firstItem="M7w-H7-w9Q" firstAttribute="leading" secondItem="jSN-x6-Pgh" secondAttribute="leading" constant="12" id="abh-Hq-VEj"/>
-                            <constraint firstItem="6aq-ND-dq5" firstAttribute="top" secondItem="jSN-x6-Pgh" secondAttribute="top" constant="24" id="ipx-xg-hvq"/>
+                            <constraint firstItem="6aq-ND-dq5" firstAttribute="top" secondItem="jSN-x6-Pgh" secondAttribute="top" constant="20" id="ipx-xg-hvq"/>
                             <constraint firstItem="M7w-H7-w9Q" firstAttribute="top" secondItem="6aq-ND-dq5" secondAttribute="bottom" constant="8" id="kOn-7Q-cl4"/>
                             <constraint firstItem="AKI-Hw-hOb" firstAttribute="centerY" secondItem="jSN-x6-Pgh" secondAttribute="centerY" id="ttB-ZM-VeD"/>
                         </constraints>
@@ -88,7 +88,7 @@
                                 <real key="value" value="12"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="0.5"/>
+                                <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                 <color key="value" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>

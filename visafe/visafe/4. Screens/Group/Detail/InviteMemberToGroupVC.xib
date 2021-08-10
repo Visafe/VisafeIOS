@@ -23,9 +23,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập Số điện thoại hoặc Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E1I-bp-G2E" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
-                    <rect key="frame" x="24" y="96" width="366" height="48"/>
+                    <rect key="frame" x="24" y="96" width="366" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="48" id="0hR-LE-I7b"/>
+                        <constraint firstAttribute="height" constant="44" id="0hR-LE-I7b"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
@@ -43,16 +43,16 @@ của workspace là gì?</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpM-YA-cUY">
-                    <rect key="frame" x="24" y="156" width="366" height="0.0"/>
+                    <rect key="frame" x="24" y="152" width="366" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQV-3V-JbQ">
-                    <rect key="frame" x="24" y="168" width="366" height="48"/>
+                    <rect key="frame" x="24" y="164" width="366" height="44"/>
                     <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="48" id="fwD-GI-V8h"/>
+                        <constraint firstAttribute="height" constant="44" id="fwD-GI-V8h"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <state key="normal" title="Gửi lời mời">
@@ -60,7 +60,7 @@ của workspace là gì?</string>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="24"/>
+                            <real key="value" value="22"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
