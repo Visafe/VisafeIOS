@@ -69,9 +69,16 @@ class ProtectVC: BaseDoHVC {
     var isProtectDevice = false {
         didSet {
             if oldValue != isProtectDevice {
-
                 let image = isProtectDevice ? UIImage(named: "Switch_on"): UIImage(named: "Switch_off")
                 protectDeviceStatusButton.setImage(image, for: .normal)
+            }
+        }
+    }
+
+    var isSetupPin = false {
+        didSet {
+            if oldValue != isSetupPin {
+                securityView.isHidden = isSetupPin
             }
         }
     }
@@ -86,14 +93,14 @@ class ProtectVC: BaseDoHVC {
                                                selector: #selector(updateProtectDevice),
                                                name: NSNotification.Name(rawValue: updateDnsStatus),
                                                object: nil)
-        isProtectWifi = CacheManager.shared.getProtectWifiStatus()
-        isProtectDevice = DoHNative.shared.isEnabled
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        isSetupPin = CacheManager.shared.getPin() != nil
+        isProtectWifi = CacheManager.shared.getProtectWifiStatus()
+        isProtectDevice = DoHNative.shared.isEnabled
     }
 
     private func setupUI() {
@@ -296,10 +303,45 @@ extension ProtectVC {
     }
 
     @IBAction func createSecurity(_ sender: Any) {
-
+        let vc = EnterPinVC()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc)
     }
     
     @IBAction func upgradeNow(_ sender: Any) {
 
     }
+
+    @IBAction func newFeeds(_ sender: Any) {
+        gotoWebview("https://congcu.khonggianmang.vn/news-feed")
+    }
+
+    @IBAction func checkIpma(_ sender: Any) {
+        gotoWebview("https://congcu.khonggianmang.vn/check-ipma")
+    }
+
+    @IBAction func checkPhishing(_ sender: Any) {
+        gotoWebview("https://congcu.khonggianmang.vn/check-phishing")
+    }
+
+    @IBAction func checkRansomware(_ sender: Any) {
+        gotoWebview("https://congcu.khonggianmang.vn/ransomware")
+    }
+
+    @IBAction func checkLead(_ sender: Any) {
+        gotoWebview("https://congcu.khonggianmang.vn/check-data-leak")
+    }
+
+    private func gotoWebview(_ url: String) {
+        let vc = WebViewVC()
+        vc.url = url
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc)
+    }
+
+//    tin tức, cảnh bảo: https://congcu.khonggianmang.vn/news-feed
+//    kiểm tra mạng wifi: https://congcu.khonggianmang.vn/check-ipma
+//    kiểm tra web lừa đảo: https://congcu.khonggianmang.vn/check-phishing
+//    nhận diện mã độc: https://congcu.khonggianmang.vn/ransomware
+//    kiểm tra lọt tài khoản: https://congcu.khonggianmang.vn/check-data-leak
 }

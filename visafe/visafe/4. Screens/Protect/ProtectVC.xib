@@ -1002,6 +1002,9 @@
                                                                         </label>
                                                                         <button opaque="NO" alpha="0.05000000074505806" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0O-8f-BNo">
                                                                             <rect key="frame" x="0.0" y="0.0" width="115.5" height="85"/>
+                                                                            <connections>
+                                                                                <action selector="newFeeds:" destination="-1" eventType="touchUpInside" id="h4w-CH-yd5"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1072,6 +1075,9 @@
                                                                         </label>
                                                                         <button opaque="NO" alpha="0.05000000074505806" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTQ-W2-q1D">
                                                                             <rect key="frame" x="0.0" y="0.0" width="115.5" height="85"/>
+                                                                            <connections>
+                                                                                <action selector="checkIpma:" destination="-1" eventType="touchUpInside" id="4Bz-aa-ql9"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1115,6 +1121,9 @@
                                                                         </label>
                                                                         <button opaque="NO" alpha="0.05000000074505806" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aX4-bX-AFX">
                                                                             <rect key="frame" x="0.0" y="0.0" width="115.5" height="85"/>
+                                                                            <connections>
+                                                                                <action selector="checkLead:" destination="-1" eventType="touchUpInside" id="Qoj-B6-rOz"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1147,6 +1156,9 @@
                                                                         </label>
                                                                         <button opaque="NO" alpha="0.05000000074505806" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlQ-eE-XkE">
                                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="85"/>
+                                                                            <connections>
+                                                                                <action selector="checkPhishing:" destination="-1" eventType="touchUpInside" id="8wB-FE-2o4"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1183,6 +1195,9 @@
                                                                         </label>
                                                                         <button opaque="NO" alpha="0.05000000074505806" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06d-Bs-F7j">
                                                                             <rect key="frame" x="0.0" y="0.0" width="115.5" height="85"/>
+                                                                            <connections>
+                                                                                <action selector="checkRansomware:" destination="-1" eventType="touchUpInside" id="7OY-fC-CxM"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

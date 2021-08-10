@@ -74,6 +74,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Cho phép ViSafe truy cập Camera để tham gia nhóm</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>usint vunt</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Cho phép ViSafe lưu ảnh vào Library của bạn</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
@@ -103,8 +105,6 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>usint vunt</string>
 	<key>com.apple.developer.networking.wifi-info</key>
 	<true/>
 </dict>

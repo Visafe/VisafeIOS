@@ -121,7 +121,7 @@ public enum ProtectHomeType {
         case .device:
             return "iPhone của \(UIDevice.current.name)"
         case .wifi:
-            return "Pit Studio 5GHz"
+            return ""
         }
     }
 
