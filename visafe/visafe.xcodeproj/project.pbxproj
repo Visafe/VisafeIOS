@@ -20,7 +20,6 @@
 		0EF5EB1126BA7A8F002F5E84 /* GenDeviceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */; };
 		0EF5EB1526BA7E14002F5E84 /* DoHNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB1426BA7E14002F5E84 /* DoHNative.swift */; };
 		0EF5EB2926BB9AB4002F5E84 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF5EB2826BB9AB4002F5E84 /* ExternalAccessory.framework */; };
-		35A71D23BBB163ECCAAAF6E0 /* Pods_visafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA00E0B14974DC3CA15663 /* Pods_visafe.framework */; };
 		5111F0FA26BAE07200164148 /* ProtectDeviceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5111F0F926BAE07200164148 /* ProtectDeviceVC.xib */; };
 		518EC0EE26B98EDC00D88D2A /* ProtectDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0ED26B98EDC00D88D2A /* ProtectDeviceVC.swift */; };
 		518EC0F226B992EF00D88D2A /* ProtectHomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0F126B992EF00D88D2A /* ProtectHomeHeaderView.swift */; };
@@ -86,17 +85,9 @@
 		C93ED15A2682328600B03E8A /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED1582682328600B03E8A /* HomeVC.xib */; };
 		C93ED15E268232A100B03E8A /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED15C268232A100B03E8A /* SettingVC.swift */; };
 		C93ED15F268232A100B03E8A /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED15D268232A100B03E8A /* SettingVC.xib */; };
-		C93ED163268232BE00B03E8A /* AdministrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED161268232BE00B03E8A /* AdministrationVC.swift */; };
-		C93ED164268232BE00B03E8A /* AdministrationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED162268232BE00B03E8A /* AdministrationVC.xib */; };
 		C93ED167268232ED00B03E8A /* BaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED166268232ED00B03E8A /* BaseTabbarController.swift */; };
 		C93ED16A2682332A00B03E8A /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED1692682332A00B03E8A /* TabbarVC.swift */; };
 		C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED16C2682343C00B03E8A /* BaseNavigationController.swift */; };
-		C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED181268240C300B03E8A /* LeftMenuVC.swift */; };
-		C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED182268240C300B03E8A /* LeftMenuVC.xib */; };
-		C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED1862682445E00B03E8A /* DashboardVC.swift */; };
-		C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED1872682445E00B03E8A /* DashboardVC.xib */; };
-		C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED190268244A900B03E8A /* ConfigVC.swift */; };
-		C93ED193268244A900B03E8A /* ConfigVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93ED191268244A900B03E8A /* ConfigVC.xib */; };
 		C93ED1962682456500B03E8A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93ED1952682456500B03E8A /* Constant.swift */; };
 		C93FFDE6269AF48800D7B02A /* ProfileSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93FFDE4269AF48800D7B02A /* ProfileSettingVC.xib */; };
 		C93FFDE7269AF48800D7B02A /* ProfileSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93FFDE5269AF48800D7B02A /* ProfileSettingVC.swift */; };
@@ -132,12 +123,6 @@
 		C95A5849268829B60077112F /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5848268829B60077112F /* CacheManager.swift */; };
 		C95A584C2688339D0077112F /* WorkspaceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A584B2688339D0077112F /* WorkspaceWorker.swift */; };
 		C95A584F26885EBD0077112F /* WorkspageParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A584E26885EBD0077112F /* WorkspageParam.swift */; };
-		C95A5854268861940077112F /* PostWorkspaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5852268861940077112F /* PostWorkspaceVC.swift */; };
-		C95A5855268861940077112F /* PostWorkspaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95A5853268861940077112F /* PostWorkspaceVC.xib */; };
-		C95A5859268862F00077112F /* ChooseTypeWorkspaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5857268862F00077112F /* ChooseTypeWorkspaceVC.swift */; };
-		C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95A5858268862F00077112F /* ChooseTypeWorkspaceVC.xib */; };
-		C95A585E268863790077112F /* SetupSecurityWorkspaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A585C268863790077112F /* SetupSecurityWorkspaceVC.swift */; };
-		C95A585F268863790077112F /* SetupSecurityWorkspaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95A585D268863790077112F /* SetupSecurityWorkspaceVC.xib */; };
 		C95A5862268867310077112F /* PageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A5861268867310077112F /* PageViewControllerExtension.swift */; };
 		C966FE932694A8EB0049458C /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966FE912694A8EB0049458C /* OnboardingVC.swift */; };
 		C966FE942694A8EB0049458C /* OnboardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C966FE922694A8EB0049458C /* OnboardingVC.xib */; };
@@ -222,16 +207,8 @@
 		C9BCBC6026975C92007F652C /* GroupSettingParentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */; };
 		C9BCBC6426975DEC007F652C /* GroupSettingParentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */; };
 		C9BCBC6526975DEC007F652C /* GroupSettingParentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BCBC6326975DEC007F652C /* GroupSettingParentCell.xib */; };
-		C9C0B9CA26A580B600C9869A /* ExampleBackgroundContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9B926A580B600C9869A /* ExampleBackgroundContentView.swift */; };
-		C9C0B9CB26A580B600C9869A /* ExampleIrregularityContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9BB26A580B600C9869A /* ExampleIrregularityContentView.swift */; };
-		C9C0B9CC26A580B600C9869A /* ExampleHighlightableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9BD26A580B600C9869A /* ExampleHighlightableContentView.swift */; };
 		C9C0B9CD26A580B600C9869A /* ExampleBasicContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9BF26A580B600C9869A /* ExampleBasicContentView.swift */; };
 		C9C0B9CE26A580B600C9869A /* ExampleBouncesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9C126A580B600C9869A /* ExampleBouncesContentView.swift */; };
-		C9C0B9CF26A580B600C9869A /* ExampleAnimateTipsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9C326A580B600C9869A /* ExampleAnimateTipsContentView.swift */; };
-		C9C0B9D026A580B600C9869A /* ExampleTipsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9C426A580B600C9869A /* ExampleTipsContentView.swift */; };
-		C9C0B9D126A580B600C9869A /* IconTransitions.json in Resources */ = {isa = PBXBuildFile; fileRef = C9C0B9C626A580B600C9869A /* IconTransitions.json */; };
-		C9C0B9D226A580B600C9869A /* LottieLogo1.json in Resources */ = {isa = PBXBuildFile; fileRef = C9C0B9C726A580B600C9869A /* LottieLogo1.json */; };
-		C9C0B9D326A580B600C9869A /* ExampleLottieAnimateContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9C826A580B600C9869A /* ExampleLottieAnimateContentView.swift */; };
 		C9C7A9E526B05E9F002C883A /* LicenseOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7A9E326B05E9F002C883A /* LicenseOverviewVC.swift */; };
 		C9C7A9E626B05E9F002C883A /* LicenseOverviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C7A9E426B05E9F002C883A /* LicenseOverviewVC.xib */; };
 		C9C7A9ED26B05EEC002C883A /* LicenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7A9EB26B05EEC002C883A /* LicenseVC.swift */; };
@@ -409,17 +386,9 @@
 		C93ED1582682328600B03E8A /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		C93ED15C268232A100B03E8A /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		C93ED15D268232A100B03E8A /* SettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
-		C93ED161268232BE00B03E8A /* AdministrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationVC.swift; sourceTree = "<group>"; };
-		C93ED162268232BE00B03E8A /* AdministrationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdministrationVC.xib; sourceTree = "<group>"; };
 		C93ED166268232ED00B03E8A /* BaseTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarController.swift; sourceTree = "<group>"; };
 		C93ED1692682332A00B03E8A /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		C93ED16C2682343C00B03E8A /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
-		C93ED181268240C300B03E8A /* LeftMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuVC.swift; sourceTree = "<group>"; };
-		C93ED182268240C300B03E8A /* LeftMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftMenuVC.xib; sourceTree = "<group>"; };
-		C93ED1862682445E00B03E8A /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
-		C93ED1872682445E00B03E8A /* DashboardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardVC.xib; sourceTree = "<group>"; };
-		C93ED190268244A900B03E8A /* ConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigVC.swift; sourceTree = "<group>"; };
-		C93ED191268244A900B03E8A /* ConfigVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigVC.xib; sourceTree = "<group>"; };
 		C93ED1952682456500B03E8A /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C93FFDE4269AF48800D7B02A /* ProfileSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileSettingVC.xib; sourceTree = "<group>"; };
 		C93FFDE5269AF48800D7B02A /* ProfileSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingVC.swift; sourceTree = "<group>"; };
@@ -454,12 +423,6 @@
 		C95A5848268829B60077112F /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		C95A584B2688339D0077112F /* WorkspaceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceWorker.swift; sourceTree = "<group>"; };
 		C95A584E26885EBD0077112F /* WorkspageParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspageParam.swift; sourceTree = "<group>"; };
-		C95A5852268861940077112F /* PostWorkspaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorkspaceVC.swift; sourceTree = "<group>"; };
-		C95A5853268861940077112F /* PostWorkspaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostWorkspaceVC.xib; sourceTree = "<group>"; };
-		C95A5857268862F00077112F /* ChooseTypeWorkspaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeWorkspaceVC.swift; sourceTree = "<group>"; };
-		C95A5858268862F00077112F /* ChooseTypeWorkspaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeWorkspaceVC.xib; sourceTree = "<group>"; };
-		C95A585C268863790077112F /* SetupSecurityWorkspaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSecurityWorkspaceVC.swift; sourceTree = "<group>"; };
-		C95A585D268863790077112F /* SetupSecurityWorkspaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetupSecurityWorkspaceVC.xib; sourceTree = "<group>"; };
 		C95A5861268867310077112F /* PageViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewControllerExtension.swift; sourceTree = "<group>"; };
 		C966FE912694A8EB0049458C /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		C966FE922694A8EB0049458C /* OnboardingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingVC.xib; sourceTree = "<group>"; };
@@ -538,17 +501,8 @@
 		C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingParentVC.xib; sourceTree = "<group>"; };
 		C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingParentCell.swift; sourceTree = "<group>"; };
 		C9BCBC6326975DEC007F652C /* GroupSettingParentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingParentCell.xib; sourceTree = "<group>"; };
-		C9C0B9B926A580B600C9869A /* ExampleBackgroundContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBackgroundContentView.swift; sourceTree = "<group>"; };
-		C9C0B9BB26A580B600C9869A /* ExampleIrregularityContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleIrregularityContentView.swift; sourceTree = "<group>"; };
-		C9C0B9BD26A580B600C9869A /* ExampleHighlightableContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleHighlightableContentView.swift; sourceTree = "<group>"; };
 		C9C0B9BF26A580B600C9869A /* ExampleBasicContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBasicContentView.swift; sourceTree = "<group>"; };
 		C9C0B9C126A580B600C9869A /* ExampleBouncesContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBouncesContentView.swift; sourceTree = "<group>"; };
-		C9C0B9C326A580B600C9869A /* ExampleAnimateTipsContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleAnimateTipsContentView.swift; sourceTree = "<group>"; };
-		C9C0B9C426A580B600C9869A /* ExampleTipsContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTipsContentView.swift; sourceTree = "<group>"; };
-		C9C0B9C626A580B600C9869A /* IconTransitions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IconTransitions.json; sourceTree = "<group>"; };
-		C9C0B9C726A580B600C9869A /* LottieLogo1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo1.json; sourceTree = "<group>"; };
-		C9C0B9C826A580B600C9869A /* ExampleLottieAnimateContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleLottieAnimateContentView.swift; sourceTree = "<group>"; };
-		C9C0B9C926A580B600C9869A /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Lottie.framework; sourceTree = "<group>"; };
 		C9C7A9E326B05E9F002C883A /* LicenseOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseOverviewVC.swift; sourceTree = "<group>"; };
 		C9C7A9E426B05E9F002C883A /* LicenseOverviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseOverviewVC.xib; sourceTree = "<group>"; };
 		C9C7A9EB26B05EEC002C883A /* LicenseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseVC.swift; sourceTree = "<group>"; };
@@ -846,7 +800,6 @@
 			isa = PBXGroup;
 			children = (
 				C9C7A9E226B05E85002C883A /* License */,
-				C93ED14E2682320C00B03E8A /* Administration */,
 				C9EDB54C26839E74009CBD93 /* Group */,
 				C93ED14F2682323500B03E8A /* Home */,
 				C90EA73C2684C278002502F5 /* Login */,
@@ -922,26 +875,10 @@
 		C93ED14D2682320000B03E8A /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				C9C0B9B726A580B600C9869A /* Content */,
+				C9C0B9B726A580B600C9869A /* Custom */,
 				C93ED1692682332A00B03E8A /* TabbarVC.swift */,
-				C93ED181268240C300B03E8A /* LeftMenuVC.swift */,
-				C93ED182268240C300B03E8A /* LeftMenuVC.xib */,
-				C993D28126A4952800684F80 /* TabbarItemContentView.swift */,
 			);
 			path = Tabbar;
-			sourceTree = "<group>";
-		};
-		C93ED14E2682320C00B03E8A /* Administration */ = {
-			isa = PBXGroup;
-			children = (
-				C93ED161268232BE00B03E8A /* AdministrationVC.swift */,
-				C93ED162268232BE00B03E8A /* AdministrationVC.xib */,
-				C93ED1862682445E00B03E8A /* DashboardVC.swift */,
-				C93ED1872682445E00B03E8A /* DashboardVC.xib */,
-				C93ED190268244A900B03E8A /* ConfigVC.swift */,
-				C93ED191268244A900B03E8A /* ConfigVC.xib */,
-			);
-			path = Administration;
 			sourceTree = "<group>";
 		};
 		C93ED14F2682323500B03E8A /* Home */ = {
@@ -1001,18 +938,6 @@
 				C969B3A5269ADFD30066A88A /* ListWorkspaceVC.swift */,
 				C969B3A6269ADFD30066A88A /* ListWorkspaceVC.xib */,
 				C969B38A269ADB210066A88A /* Cell */,
-				C969B393269ADB210066A88A /* WorkspaceCell.swift */,
-				C969B389269ADB210066A88A /* WorkspaceCell.xib */,
-				C969B388269ADB210066A88A /* WorkspaceFooterView.swift */,
-				C969B392269ADB210066A88A /* WorkspaceFooterView.xib */,
-				C95A5852268861940077112F /* PostWorkspaceVC.swift */,
-				C95A5853268861940077112F /* PostWorkspaceVC.xib */,
-				C95A5857268862F00077112F /* ChooseTypeWorkspaceVC.swift */,
-				C95A5858268862F00077112F /* ChooseTypeWorkspaceVC.xib */,
-				C95A585C268863790077112F /* SetupSecurityWorkspaceVC.swift */,
-				C95A585D268863790077112F /* SetupSecurityWorkspaceVC.xib */,
-				C90F14FE26BBD599008C19A1 /* ScanGroupVC.swift */,
-				C90F14FF26BBD599008C19A1 /* ScanGroupVC.xib */,
 			);
 			path = Workspace;
 			sourceTree = "<group>";
@@ -1041,6 +966,8 @@
 		C969B38A269ADB210066A88A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C969B393269ADB210066A88A /* WorkspaceCell.swift */,
+				C969B389269ADB210066A88A /* WorkspaceCell.xib */,
 				C969B38D269ADB210066A88A /* ChooseTypeWorkspaceCell.swift */,
 				C969B38C269ADB210066A88A /* ChooseTypeWorkspaceCell.xib */,
 				C969B38B269ADB210066A88A /* SecurityWorkspaceCell.swift */,
@@ -1170,42 +1097,14 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
-		C9C0B9B726A580B600C9869A /* Content */ = {
+		C9C0B9B726A580B600C9869A /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				C9C0B9B826A580B600C9869A /* Background */,
-				C9C0B9BA26A580B600C9869A /* Irregularity */,
-				C9C0B9BC26A580B600C9869A /* Highlight */,
+				C993D28126A4952800684F80 /* TabbarItemContentView.swift */,
 				C9C0B9BE26A580B600C9869A /* Basic */,
 				C9C0B9C026A580B600C9869A /* Bounces */,
-				C9C0B9C226A580B600C9869A /* Tips */,
-				C9C0B9C526A580B600C9869A /* Lottie */,
 			);
-			path = Content;
-			sourceTree = "<group>";
-		};
-		C9C0B9B826A580B600C9869A /* Background */ = {
-			isa = PBXGroup;
-			children = (
-				C9C0B9B926A580B600C9869A /* ExampleBackgroundContentView.swift */,
-			);
-			path = Background;
-			sourceTree = "<group>";
-		};
-		C9C0B9BA26A580B600C9869A /* Irregularity */ = {
-			isa = PBXGroup;
-			children = (
-				C9C0B9BB26A580B600C9869A /* ExampleIrregularityContentView.swift */,
-			);
-			path = Irregularity;
-			sourceTree = "<group>";
-		};
-		C9C0B9BC26A580B600C9869A /* Highlight */ = {
-			isa = PBXGroup;
-			children = (
-				C9C0B9BD26A580B600C9869A /* ExampleHighlightableContentView.swift */,
-			);
-			path = Highlight;
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		C9C0B9BE26A580B600C9869A /* Basic */ = {
@@ -1222,26 +1121,6 @@
 				C9C0B9C126A580B600C9869A /* ExampleBouncesContentView.swift */,
 			);
 			path = Bounces;
-			sourceTree = "<group>";
-		};
-		C9C0B9C226A580B600C9869A /* Tips */ = {
-			isa = PBXGroup;
-			children = (
-				C9C0B9C326A580B600C9869A /* ExampleAnimateTipsContentView.swift */,
-				C9C0B9C426A580B600C9869A /* ExampleTipsContentView.swift */,
-			);
-			path = Tips;
-			sourceTree = "<group>";
-		};
-		C9C0B9C526A580B600C9869A /* Lottie */ = {
-			isa = PBXGroup;
-			children = (
-				C9C0B9C626A580B600C9869A /* IconTransitions.json */,
-				C9C0B9C726A580B600C9869A /* LottieLogo1.json */,
-				C9C0B9C826A580B600C9869A /* ExampleLottieAnimateContentView.swift */,
-				C9C0B9C926A580B600C9869A /* Lottie.framework */,
-			);
-			path = Lottie;
 			sourceTree = "<group>";
 		};
 		C9C7A9E226B05E85002C883A /* License */ = {
@@ -1288,6 +1167,8 @@
 		C9D771D926B538650078FFD9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C969B388269ADB210066A88A /* WorkspaceFooterView.swift */,
+				C969B392269ADB210066A88A /* WorkspaceFooterView.xib */,
 				C9D771DB26B538650078FFD9 /* ListWorkspaceView.swift */,
 				C9D771DA26B538650078FFD9 /* ListWorkspaceView.xib */,
 			);
@@ -1330,6 +1211,8 @@
 				C9EEB8E426ADB725008F093C /* View */,
 				C9EEB8BA26AD641F008F093C /* WorkspaceVC.swift */,
 				C9EEB8C026AD653A008F093C /* WorkspaceVC.xib */,
+				C90F14FE26BBD599008C19A1 /* ScanGroupVC.swift */,
+				C90F14FF26BBD599008C19A1 /* ScanGroupVC.xib */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -1489,7 +1372,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9BCBC6526975DEC007F652C /* GroupSettingParentCell.xib in Resources */,
-				C93ED193268244A900B03E8A /* ConfigVC.xib in Resources */,
 				C993D24E26A425AF00684F80 /* EnterPinVC.xib in Resources */,
 				C9159C9C26ADB99E00497D86 /* ChooseTimeCell.xib in Resources */,
 				C9ECBFCE26AF228700E254BB /* MoreActionView.xib in Resources */,
@@ -1499,13 +1381,10 @@
 				C9F2492B26AACB3E00EE7442 /* GroupSettingDetailVC.xib in Resources */,
 				C956059626AEDC9500AD8475 /* MoreActionLinkView.xib in Resources */,
 				C90F14F926BB9CD4008C19A1 /* ChangePasswordNameVC.xib in Resources */,
-				C9C0B9D126A580B600C9869A /* IconTransitions.json in Resources */,
 				C956059126AEAB4500AD8475 /* GroupDeviceCell.xib in Resources */,
-				C95A5855268861940077112F /* PostWorkspaceVC.xib in Resources */,
 				5111F0FA26BAE07200164148 /* ProtectDeviceVC.xib in Resources */,
 				C9C7A9E626B05E9F002C883A /* LicenseOverviewVC.xib in Resources */,
 				C924CFE626A7D5390058EEDD /* GroupStatisticVC.xib in Resources */,
-				C93ED1892682445E00B03E8A /* DashboardVC.xib in Resources */,
 				C91EE7D526AC1ABD006ADAE9 /* ProtectHeaderView.xib in Resources */,
 				C969B39B269ADB210066A88A /* SecurityWorkspaceCell.xib in Resources */,
 				C9EDB55D26839E74009CBD93 /* PostGroupVC.xib in Resources */,
@@ -1528,7 +1407,6 @@
 				C9FA15FD268A2DD700A1A6C6 /* GroupSettingVC.xib in Resources */,
 				C9B79465268613A700258A72 /* RegisterVC.xib in Resources */,
 				C9EEB8E126ADAF38008F093C /* WorkspaceSumaryCell.xib in Resources */,
-				C9C0B9D226A580B600C9869A /* LottieLogo1.json in Resources */,
 				C9E7A4A32690C6100012985B /* ConfirmDeleteView.xib in Resources */,
 				C9E7A494269087240012985B /* GroupSettingLinkCell.xib in Resources */,
 				C949D72E26B0755B00647FF6 /* LicensePackageCell.xib in Resources */,
@@ -1543,7 +1421,6 @@
 				C9DC8F6E26A6ED610021A8BD /* GroupDetailHeader.xib in Resources */,
 				C9EDB55A26839E74009CBD93 /* GroupFooterView.xib in Resources */,
 				C99FD1CC2697462700A8F731 /* ProtectVC.xib in Resources */,
-				C93ED164268232BE00B03E8A /* AdministrationVC.xib in Resources */,
 				C9181401269B045E00DC0E83 /* ChangePasswordVC.xib in Resources */,
 				C9CF060026B995F400C7572F /* LogHeaderView.xib in Resources */,
 				C9B7949126862C2E00258A72 /* ForgotPasswordVC.xib in Resources */,
@@ -1553,13 +1430,11 @@
 				C99FD1D22697465B00A8F731 /* NotificationVC.xib in Resources */,
 				C9BCBC6026975C92007F652C /* GroupSettingParentVC.xib in Resources */,
 				C9D771DC26B538650078FFD9 /* ListWorkspaceView.xib in Resources */,
-				C95A585A268862F00077112F /* ChooseTypeWorkspaceVC.xib in Resources */,
 				C91EE7E126AC1F90006ADAE9 /* GroupProtectVC.xib in Resources */,
 				C9EDB55626839E74009CBD93 /* GroupVC.xib in Resources */,
 				C91EE80726AC8FE7006ADAE9 /* GroupLogCell.xib in Resources */,
 				C93C235626A97FA1003AC717 /* StatisticCategoryCell.xib in Resources */,
 				C969B3B0269AE9980066A88A /* PostWorkspacesVC.xib in Resources */,
-				C93ED184268240C300B03E8A /* LeftMenuVC.xib in Resources */,
 				C90F150126BBD599008C19A1 /* ScanGroupVC.xib in Resources */,
 				C9F2492526AAB87200EE7442 /* StatisticSumaryCell.xib in Resources */,
 				C9A15B502699BFE50065D5C2 /* GroupHeaderView.xib in Resources */,
@@ -1579,7 +1454,6 @@
 				C9FE695D26B795740046AD79 /* AddDeviceToGroupVC.xib in Resources */,
 				C999AB08268E03F200F657A9 /* GroupSettingCell.xib in Resources */,
 				C90EA7402684C298002502F5 /* LoginVC.xib in Resources */,
-				C95A585F268863790077112F /* SetupSecurityWorkspaceVC.xib in Resources */,
 				C979C96D26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.xib in Resources */,
 				C969B3A8269ADFD30066A88A /* ListWorkspaceVC.xib in Resources */,
 				C9CCAB5426A5DFE300C04BC5 /* GroupDetailVC.xib in Resources */,
@@ -1661,9 +1535,7 @@
 				C9B1E9AD26B6FA9400FC2F7E /* DeleteDeviceGroupParam.swift in Sources */,
 				C9ECBFC126AF15AB00E254BB /* MoreActionMemberView.swift in Sources */,
 				C9FA1607268A344B00A1A6C6 /* ChooseTypeGroupCell.swift in Sources */,
-				C95A5859268862F00077112F /* ChooseTypeWorkspaceVC.swift in Sources */,
 				C969B3B1269AE9980066A88A /* PostWorkspacesVC.swift in Sources */,
-				C9C0B9CF26A580B600C9869A /* ExampleAnimateTipsContentView.swift in Sources */,
 				C919B94726821DA9009982C3 /* APIManager.swift in Sources */,
 				C9F938502688146200D30F28 /* ForgotPasswordResult.swift in Sources */,
 				C94B39AD268A1CF100046958 /* GroupModel.swift in Sources */,
@@ -1679,7 +1551,6 @@
 				C94B39CB268A278B00046958 /* GroupWorker.swift in Sources */,
 				C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */,
 				C971F9FF2697498A00BB7118 /* PostGroupAboutVC.swift in Sources */,
-				C93ED183268240C300B03E8A /* LeftMenuVC.swift in Sources */,
 				C9EEB8B726AD634B008F093C /* HeaderedACTabScrollViewController.swift in Sources */,
 				C9777A3B269ACDE500C40031 /* ProfileFooterView.swift in Sources */,
 				C956057D26AE98BD00AD8475 /* DeviceGroupModel.swift in Sources */,
@@ -1687,26 +1558,21 @@
 				C919B94826821DA9009982C3 /* APIRouter.swift in Sources */,
 				C9C7A9E526B05E9F002C883A /* LicenseOverviewVC.swift in Sources */,
 				C9CE383726B01E860010A43C /* VisafeDateFormater.swift in Sources */,
-				C9C0B9CC26A580B600C9869A /* ExampleHighlightableContentView.swift in Sources */,
 				C9C0B9CD26A580B600C9869A /* ExampleBasicContentView.swift in Sources */,
 				C9F2491B26AAA7AF00EE7442 /* StatisticSumaryView.swift in Sources */,
 				C918140B269B416800DC0E83 /* NotificationModel.swift in Sources */,
 				C93FFDE7269AF48800D7B02A /* ProfileSettingVC.swift in Sources */,
 				C9FA160B268B611200A1A6C6 /* StringExtension.swift in Sources */,
 				C9A15B4D2699BFDA0065D5C2 /* GroupHeaderView.swift in Sources */,
-				C9C0B9D026A580B600C9869A /* ExampleTipsContentView.swift in Sources */,
 				C9FA1671268DFC4C00A1A6C6 /* GroupSettingHeaderView.swift in Sources */,
 				C91EE7EE26AC7414006ADAE9 /* GroupListUserVC.swift in Sources */,
 				C94B39C2268A260D00046958 /* DeleteToGroupParam.swift in Sources */,
 				C99FD1D8269746C200A8F731 /* ProfileVC.swift in Sources */,
 				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
-				C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */,
 				C9B7949026862C2E00258A72 /* ForgotPasswordVC.swift in Sources */,
 				C95A584C2688339D0077112F /* WorkspaceWorker.swift in Sources */,
 				C956059026AEAB4500AD8475 /* GroupDeviceCell.swift in Sources */,
 				C93ED1962682456500B03E8A /* Constant.swift in Sources */,
-				C95A585E268863790077112F /* SetupSecurityWorkspaceVC.swift in Sources */,
-				C9C0B9CA26A580B600C9869A /* ExampleBackgroundContentView.swift in Sources */,
 				C9B794512684D72400258A72 /* ColorExtension.swift in Sources */,
 				C9E7A49E2690B1610012985B /* MoreGroupActionView.swift in Sources */,
 				C9F9385326881A4A00D30F28 /* PasswordModel.swift in Sources */,
@@ -1717,7 +1583,6 @@
 				C97A1C22269F39D200EC98DC /* DateExtension.swift in Sources */,
 				C9EEB8E026ADAF38008F093C /* WorkspaceSumaryCell.swift in Sources */,
 				C993D24F26A425AF00684F80 /* EnterPinVC.swift in Sources */,
-				C9C0B9D326A580B600C9869A /* ExampleLottieAnimateContentView.swift in Sources */,
 				C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */,
 				C9FA1601268A2DE400A1A6C6 /* GroupTimeVC.swift in Sources */,
 				C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */,
@@ -1762,7 +1627,6 @@
 				518EC10526B9A36300D88D2A /* ProtectDetailListBlockVC.swift in Sources */,
 				C98786EA26ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift in Sources */,
 				C9C7A9ED26B05EEC002C883A /* LicenseVC.swift in Sources */,
-				C93ED1882682445E00B03E8A /* DashboardVC.swift in Sources */,
 				C940AE92268375C10069B830 /* WorkspaceModel.swift in Sources */,
 				C9E7A493269087240012985B /* GroupSettingLinkCell.swift in Sources */,
 				C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */,
@@ -1775,7 +1639,6 @@
 				C9777A31269AC5E100C40031 /* ProfileCell.swift in Sources */,
 				C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */,
 				C971FA0426974E6F00BB7118 /* PostGroupAboutCell.swift in Sources */,
-				C9C0B9CB26A580B600C9869A /* ExampleIrregularityContentView.swift in Sources */,
 				C91EE80126AC8D17006ADAE9 /* QueryLogModel.swift in Sources */,
 				C9EDB55C26839E74009CBD93 /* PostGroupVC.swift in Sources */,
 				C9B7949526862C4800258A72 /* EnterOTPVC.swift in Sources */,
@@ -1784,7 +1647,6 @@
 				C91813F8269AFB1300DC0E83 /* ProfileHelpVC.swift in Sources */,
 				C919B94926821DA9009982C3 /* VisafeRequestAdapter.swift in Sources */,
 				0EF0838D26C19BE500D58F12 /* BaseDoHVC.swift in Sources */,
-				C95A5854268861940077112F /* PostWorkspaceVC.swift in Sources */,
 				C9ECBFCD26AF228700E254BB /* MoreActionView.swift in Sources */,
 				C9223EAB26B93C4200B18A76 /* InviteDeviceResult.swift in Sources */,
 				C94B39C8268A26DA00046958 /* ChangeViewerPermisionParam.swift in Sources */,
@@ -1811,7 +1673,6 @@
 				C918140E269B465700DC0E83 /* NotificationResult.swift in Sources */,
 				C9F0940B26C14960001CD61D /* QRScannerView.swift in Sources */,
 				C95A584F26885EBD0077112F /* WorkspageParam.swift in Sources */,
-				C93ED163268232BE00B03E8A /* AdministrationVC.swift in Sources */,
 				C9F0940C26C14960001CD61D /* Bundle+Module.swift in Sources */,
 				C940AEA2268378F20069B830 /* UIViewExtension.swift in Sources */,
 				C9B7946A2686150100258A72 /* RegisterParam.swift in Sources */,

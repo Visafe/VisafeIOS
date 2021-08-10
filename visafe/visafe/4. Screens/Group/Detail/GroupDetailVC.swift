@@ -64,6 +64,14 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
             let vc = GroupListDeviceVC(group: weakSelf.group)
             weakSelf.navigationController?.pushViewController(vc)
         }
+        header.addDeviceAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.addDevice()
+        }
+        header.addMemberAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.addMember()
+        }
         
         // 1) Set the header
         self.headerView = header
@@ -110,6 +118,28 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
         self.navBarItemsColor = UIColor.black
         self.navBarTransparancy = 1.0
     }
+    
+    func addDevice() {
+        let vc = AddDeviceToGroupVC(group: group)
+        vc.addDevice = { [weak self] device in
+            guard let weakSelf = self else { return }
+            weakSelf.group.devicesGroupInfo.append(device)
+            weakSelf.header.bindingData(group: weakSelf.group)
+        }
+        present(vc, animated: true)
+    }
+    
+    func addMember() {
+        let vc = InviteMemberToGroupVC(group: group)
+        vc.onDone = { [weak self] user in
+            guard let strongSelf = self else { return }
+            strongSelf.group.usersGroupInfo.append(user)
+            strongSelf.header.bindingData(group: strongSelf.group)
+        }
+        navigationController?.pushViewController(vc)
+    }
+    
+    
     
     func configBarItem() {
         // left

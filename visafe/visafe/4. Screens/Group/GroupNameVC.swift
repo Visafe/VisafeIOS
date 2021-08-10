@@ -7,6 +7,12 @@
 
 import UIKit
 
+public enum EditModeEnum: Int {
+    case add = 1
+    case update = 2
+    case delete = 3
+}
+
 class GroupNameVC: BaseViewController {
     
     @IBOutlet weak var continueButton: UIButton!

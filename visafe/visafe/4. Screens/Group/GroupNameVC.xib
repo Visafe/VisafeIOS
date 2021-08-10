@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập tên của nhóm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E1I-bp-G2E" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập tên của nhóm" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="E1I-bp-G2E" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
                     <rect key="frame" x="24" y="122" width="366" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="0hR-LE-I7b"/>

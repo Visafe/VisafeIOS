@@ -16,11 +16,11 @@ class GroupDetailHeader: BaseView {
     @IBOutlet weak var sortTitleLabel: UILabel!
     @IBOutlet weak var contentWidth: NSLayoutConstraint!
     
-    var addAction:(() -> Void)?
     var managerAction:(() -> Void)?
     var viewMemberAction:(() -> Void)?
     var viewDeviceAction:(() -> Void)?
     var addDeviceAction:(() -> Void)?
+    var addMemberAction:(() -> Void)?
     
     class func loadFromNib() -> GroupDetailHeader? {
         return self.loadFromNib(withName: GroupDetailHeader.className)
@@ -35,7 +35,7 @@ class GroupDetailHeader: BaseView {
     }
     
     @IBAction func addMemberAction(_ sender: UIButton) {
-        addAction?()
+        addMemberAction?()
     }
     
     @IBAction func addDeviceAction(_ sender: UIButton) {
