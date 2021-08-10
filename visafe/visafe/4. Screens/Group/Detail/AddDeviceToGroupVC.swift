@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class AddDeviceToGroupVC: BaseViewController {
 
@@ -53,23 +54,33 @@ class AddDeviceToGroupVC: BaseViewController {
     }
     
     @IBAction func addCurrentDeviceAction(_ sender: Any) {
-        addDeviceToGroup()
+        let param = Common.getDeviceInfo()
+        guard let view = BaseEnterValueView.loadFromNib() else { return }
+        view.bindingData(type: .deviceName, name: param.deviceName)
+        view.enterTextfield.text = param.deviceName
+        view.acceptAction = { [weak self] name in
+            guard let weakSelf = self else { return }
+            guard let deviceName = name else { return }
+            param.deviceName = deviceName
+            weakSelf.addDeviceToGroup(device: param)
+        }
+        showPopup(view: view)
     }
     
-    func addDeviceToGroup() {
-        let param = Common.getDeviceInfo()
-        param.groupId = group.groupid
-        param.groupName = group.name
+    func addDeviceToGroup(device: AddDeviceToGroupParam) {
+        device.groupId = group.groupid
+        device.groupName = group.name
         showLoading()
-        GroupWorker.addDevice(param: param) { [weak self] (result, error) in
+        GroupWorker.addDevice(param: device) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             if result?.status_code == .success {
                 weakSelf.showMessage(title: "Thêm thiết bị thành công", content: InviteDeviceStatus.success.getDescription())
-                weakSelf.addDevice?(param.toDeviceModel())
+                weakSelf.addDevice?(device.toDeviceModel())
                 
             } else {
-                weakSelf.showError(title: "Thêm thiết bị thất bại", content: InviteDeviceStatus.defaultStatus.getDescription())
+                let error = result?.status_code ?? .defaultStatus
+                weakSelf.showError(title: "Thêm thiết bị thất bại", content: error.getDescription())
             }
         }
     }
@@ -78,6 +89,8 @@ class AddDeviceToGroupVC: BaseViewController {
         let pasteboard = UIPasteboard.general
         let link = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")"
         pasteboard.string = link
+        // toast with a specific duration and position
+        self.view.makeToast("Sao chép thành công", duration: 3.0, position: .bottom)
     }
     
     @IBAction func downloadAction(_ sender: Any) {
@@ -87,11 +100,9 @@ class AddDeviceToGroupVC: BaseViewController {
     //MARK: - Add image to Library
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let _ = error {
-            
-            showError(title: "Lưu ảnh thất bại", content: "Có lỗi xảy ra. Vui lòng thử lại")
+            self.view.makeToast("Lưu ảnh thất bại", duration: 3.0, position: .bottom)
         } else {
-            
-            showMessage(title: "Lưu ảnh thành công", content: "Mã QR code đã được lưu vào thư viện ảnh")
+            self.view.makeToast("Lưu ảnh thành công", duration: 3.0, position: .bottom)
         }
     }
     

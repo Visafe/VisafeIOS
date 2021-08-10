@@ -20,5 +20,6 @@ target 'visafe' do
   pod 'Firebase/Analytics'
   pod 'Firebase/DynamicLinks'
   pod 'Firebase/Messaging'
+  pod 'Toast-Swift'
 
 end

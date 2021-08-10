@@ -60,13 +60,6 @@
                                 <constraint firstAttribute="width" constant="120" id="xco-0e-UlN"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_qr" translatesAutoresizingMaskIntoConstraints="NO" id="yUX-Cz-dME">
-                            <rect key="frame" x="165" y="104" width="36" height="36"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="36" id="7jI-71-BnW"/>
-                                <constraint firstAttribute="height" constant="36" id="Nz5-R2-FK4"/>
-                            </constraints>
-                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phòng 1: Marketing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fW-r8-Xo0">
                             <rect key="frame" x="112" y="194" width="142.5" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -351,9 +344,7 @@
                         <constraint firstItem="RBY-QT-kdC" firstAttribute="top" secondItem="1fW-r8-Xo0" secondAttribute="bottom" constant="20" id="g4J-m7-ZWg"/>
                         <constraint firstItem="uEV-m6-BWq" firstAttribute="centerY" secondItem="dSr-kA-cWW" secondAttribute="centerY" id="hRD-Ze-UgG"/>
                         <constraint firstAttribute="trailing" secondItem="1Hq-F9-dkj" secondAttribute="trailing" id="iwD-iE-epU"/>
-                        <constraint firstItem="yUX-Cz-dME" firstAttribute="centerX" secondItem="Mvv-Bk-QhH" secondAttribute="centerX" id="jlb-WI-ItX"/>
                         <constraint firstItem="eLW-uv-kYx" firstAttribute="top" secondItem="MIv-7B-U69" secondAttribute="bottom" constant="4" id="nNW-5J-H3N"/>
-                        <constraint firstItem="yUX-Cz-dME" firstAttribute="centerY" secondItem="Mvv-Bk-QhH" secondAttribute="centerY" id="rmQ-eC-Esq"/>
                         <constraint firstAttribute="trailing" secondItem="RBY-QT-kdC" secondAttribute="trailing" constant="24" id="sWO-Od-C2b"/>
                         <constraint firstItem="y7G-dg-y9J" firstAttribute="top" secondItem="NSe-1s-hGW" secondAttribute="top" constant="20" id="u7E-tJ-lra"/>
                         <constraint firstItem="y7G-dg-y9J" firstAttribute="leading" secondItem="NSe-1s-hGW" secondAttribute="leading" constant="12" id="uFm-G1-U8N"/>
@@ -389,7 +380,6 @@
         <image name="ic_close_white" width="24" height="24"/>
         <image name="ic_copy_link" width="16" height="16"/>
         <image name="ic_download_link" width="24" height="24"/>
-        <image name="ic_logo_qr" width="36" height="36"/>
         <image name="ic_share_link" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
