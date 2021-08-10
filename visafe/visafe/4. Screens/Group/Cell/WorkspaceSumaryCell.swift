@@ -24,7 +24,7 @@ class WorkspaceSumaryCell: BaseTableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        summaryView.dropShadow(color: .lightGray, opacity: 0.5, offSet: CGSize(width: -1, height: 1), radius: 24, scale: true)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -45,7 +45,6 @@ class WorkspaceSumaryCell: BaseTableCell {
         } else {
             descriptionWorkspaceLabel.text = "Bảo vệ gia đình & người thân trên môi trường mạng"
         }
-        summaryView.dropShadow(color: .lightGray, opacity: 0.5, offSet: CGSize(width: -1, height: 1), radius: 24, scale: true)
         backgroundColor = .clear
         contentView.backgroundColor = .clear
     }
