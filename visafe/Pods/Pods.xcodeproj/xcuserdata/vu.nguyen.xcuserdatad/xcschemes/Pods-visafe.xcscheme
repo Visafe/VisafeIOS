@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0D83B17C3A8BF906695CFEFC108F9789"
-               BuildableName = "Pods_visafe.framework"
+               BuildableName = "libPods-visafe.a"
                BlueprintName = "Pods-visafe"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

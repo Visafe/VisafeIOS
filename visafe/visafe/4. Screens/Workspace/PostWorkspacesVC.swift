@@ -12,6 +12,7 @@ class PostWorkspacesVC: BaseViewController {
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var nameTextfield: BaseTextField!
     @IBOutlet weak var nameInfoLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     var workspace: WorkspaceModel
     var editMode: EditModeEnum
@@ -36,6 +37,14 @@ class PostWorkspacesVC: BaseViewController {
     
     func updateView() {
         nameTextfield.text = workspace.name
+        let mutableAttributedString = NSMutableAttributedString.init(string: "Khi nhấn tạo, bạn đã đồng ý với ")
+        let attribute1 = NSAttributedString(string: "Điều khoản & Chính sách", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: "15A1FA")!])
+        let attribute2 = NSAttributedString(string: " dành cho khách hàng của")
+        let attribute3 = NSAttributedString(string: " ViSafe", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        mutableAttributedString.append(attribute1)
+        mutableAttributedString.append(attribute2)
+        mutableAttributedString.append(attribute3)
+        descriptionLabel.attributedText = mutableAttributedString
         updateStateButtonContinue()
         
         // title

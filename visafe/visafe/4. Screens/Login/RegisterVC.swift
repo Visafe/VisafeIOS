@@ -14,6 +14,7 @@ import AuthenticationServices
 class RegisterVC: BaseViewController {
 
     @IBOutlet weak var fullNameTextfield: BaseTextField!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var fullnameInfoLabel: UILabel!
     @IBOutlet weak var passwordInfoLabel: UILabel!
     @IBOutlet weak var usernameInfoLabel: UILabel!
@@ -23,6 +24,14 @@ class RegisterVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: true)
+        let mutableAttributedString = NSMutableAttributedString.init(string: "Khi nhấn Đăng ký, bạn đã đồng ý với ")
+        let attribute1 = NSAttributedString(string: "Điều khoản & Chính sách", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: "15A1FA")!])
+        let attribute2 = NSAttributedString(string: " dành cho khách hàng của")
+        let attribute3 = NSAttributedString(string: " ViSafe", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        mutableAttributedString.append(attribute1)
+        mutableAttributedString.append(attribute2)
+        mutableAttributedString.append(attribute3)
+        descriptionLabel.attributedText = mutableAttributedString
     }
     
     @IBAction func registerAction(_ sender: Any) {

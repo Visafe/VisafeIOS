@@ -22,7 +22,7 @@ open class HeaderedACTabScrollViewController: AbstractHeaderedTabScrollViewContr
         tabScrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         tabTopConstraint = tabScrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: headerHeight)
         tabTopConstraint!.isActive = true
-        tabScrollView.heightAnchor.constraint(equalToConstant: self.view.frame.height - navBarOffset()).isActive = true
+        tabScrollView.heightAnchor.constraint(equalToConstant: kScreenHeight - navBarOffset() - tabbarHeight()).isActive = true
         
     }
     /// Get and set the datasource of the tabScrollView

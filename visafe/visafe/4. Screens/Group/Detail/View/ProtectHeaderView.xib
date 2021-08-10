@@ -15,45 +15,45 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_detail_ads" translatesAutoresizingMaskIntoConstraints="NO" id="Xek-Zy-Awp">
-                    <rect key="frame" x="173" y="24" width="68" height="68"/>
+                    <rect key="frame" x="173" y="30" width="68" height="68"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="68" id="PQj-0c-TPL"/>
                         <constraint firstAttribute="width" constant="68" id="aCy-HV-4aJ"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đang bật chặn quảng cáo nhóm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vuy-r6-s5w">
-                    <rect key="frame" x="16" y="108" width="382" height="20.5"/>
+                    <rect key="frame" x="16" y="114" width="382" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website, Ứng dụng &amp; Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iY4-4y-CTR">
-                    <rect key="frame" x="16" y="132.5" width="382" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <rect key="frame" x="16" y="138.5" width="382" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="block_ads" translatesAutoresizingMaskIntoConstraints="NO" id="hJ8-2L-IDt">
-                    <rect key="frame" x="16" y="181.5" width="32" height="32"/>
+                    <rect key="frame" x="16" y="186.5" width="32" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="1i6-eH-Wlx"/>
                         <constraint firstAttribute="width" constant="32" id="ZEX-sK-mOu"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chặn quảng cáo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCC-ye-jDS">
-                    <rect key="frame" x="60" y="181.5" width="277" height="19.5"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <rect key="frame" x="60" y="186.5" width="277" height="17"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nếu phát hiện quảng cáo nào như trong thiết lập, chúng tôi sẽ chặn chúng" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THK-dO-bOv">
-                    <rect key="frame" x="60" y="205" width="285" height="31.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <rect key="frame" x="60" y="207.5" width="285" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGo-XV-I5v">
-                    <rect key="frame" x="349" y="181.5" width="51" height="31"/>
+                    <rect key="frame" x="349" y="186.5" width="51" height="31"/>
                     <color key="onTintColor" red="1" green="0.70196078431372544" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <action selector="switchChange:" destination="iN0-l3-epB" eventType="valueChanged" id="TKb-xu-hwD"/>
@@ -71,7 +71,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="0bu-HR-x2T" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="2QT-31-iN2"/>
-                <constraint firstItem="Xek-Zy-Awp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="72p-6O-fUO"/>
+                <constraint firstItem="Xek-Zy-Awp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="72p-6O-fUO"/>
                 <constraint firstItem="AGo-XV-I5v" firstAttribute="top" secondItem="iY4-4y-CTR" secondAttribute="bottom" constant="32" id="BN5-EE-vuD"/>
                 <constraint firstItem="hJ8-2L-IDt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Emr-yg-97h"/>
                 <constraint firstItem="hJ8-2L-IDt" firstAttribute="top" secondItem="iY4-4y-CTR" secondAttribute="bottom" constant="32" id="Ff0-wv-UVW"/>

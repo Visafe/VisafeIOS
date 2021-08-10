@@ -24,7 +24,7 @@ class HeaderedPageMenuScrollViewController: AbstractHeaderedPageMenuViewControll
         
         tabTopConstraint = pageMenuContainer.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: headerHeight)
         tabTopConstraint!.isActive = true
-        pageMenuContainer.heightAnchor.constraint(equalToConstant: self.view.frame.height - navBarOffset()).isActive = true
+        pageMenuContainer.heightAnchor.constraint(equalToConstant: kScreenHeight - navBarOffset()).isActive = true
     }
     
     public func addPageMenu(menu: CAPSPageMenu) {

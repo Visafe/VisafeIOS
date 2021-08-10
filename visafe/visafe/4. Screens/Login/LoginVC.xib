@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,14 +31,14 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gGK-9k-JLs">
-                    <rect key="frame" x="30" y="223" width="354" height="400"/>
+                    <rect key="frame" x="30" y="220.33333333333337" width="354" height="400"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập số điện thoại/email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQb-ED-6gg" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="L53-8Y-RBH"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <action selector="edittingBegin:" destination="-1" eventType="editingDidBegin" id="Rhz-x8-QZL"/>
@@ -45,35 +46,35 @@
                             </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMH-zm-mgi">
-                            <rect key="frame" x="0.0" y="56" width="354" height="0.0"/>
+                            <rect key="frame" x="0.0" y="55.999999999999972" width="354" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="1" green="0.26666666666666666" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập mật khẩu" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mm2-3d-ne9" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="64" width="354" height="48"/>
+                            <rect key="frame" x="0.0" y="63.999999999999972" width="354" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="H6b-dU-mX5"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="ulD-th-Xpo"/>
                             </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTY-sa-gtg">
-                            <rect key="frame" x="0.0" y="120" width="354" height="0.0"/>
+                            <rect key="frame" x="0.0" y="119.99999999999997" width="354" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="1" green="0.26666666666666666" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8O-P5-SLD">
-                            <rect key="frame" x="0.0" y="128" width="354" height="48"/>
+                            <rect key="frame" x="0.0" y="127.99999999999997" width="354" height="48"/>
                             <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="X6h-J2-Ytz"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                             <state key="normal" title="Đăng nhập">
                                 <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -87,23 +88,23 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2o-yA-hZT">
-                            <rect key="frame" x="0.0" y="184" width="354" height="48"/>
+                            <rect key="frame" x="0.0" y="183.99999999999997" width="354" height="48"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKZ-3Y-o1Y">
-                                    <rect key="frame" x="62.333333333333329" y="0.0" width="229.33333333333337" height="48"/>
+                                    <rect key="frame" x="68.333333333333329" y="0.0" width="217.33333333333337" height="48"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn chưa có tài khoản?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iro-Tk-Snt">
-                                            <rect key="frame" x="8" y="15" width="158.33333333333334" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="8" y="15.666666666666686" width="149.33333333333334" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ff-NI-drA">
-                                            <rect key="frame" x="171.33333333333337" y="0.0" width="58" height="48"/>
+                                            <rect key="frame" x="162.33333333333337" y="0.0" width="55" height="48"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="48" id="nGn-A5-Kya"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                             <state key="normal" title="Đăng ký">
                                                 <color key="titleColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
@@ -139,7 +140,7 @@
                                         <constraint firstAttribute="height" constant="48" id="BMX-Ct-GV0"/>
                                         <constraint firstAttribute="width" constant="150" id="eDt-QS-Kp7"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                     <state key="normal" title="Quên mật khẩu?">
                                         <color key="titleColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
@@ -159,20 +160,20 @@
                             <rect key="frame" x="0.0" y="296" width="354" height="36"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8i-yF-P8b">
-                                    <rect key="frame" x="0.0" y="17.666666666666629" width="65.666666666666671" height="1"/>
+                                    <rect key="frame" x="0.0" y="17.666666666666629" width="81.666666666666671" height="1"/>
                                     <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="RF4-Bm-cE9"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoặc đăng nhập nhanh với" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leX-5O-P9p">
-                                    <rect key="frame" x="85.666666666666671" y="9" width="182.66666666666663" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <rect key="frame" x="101.66666666666667" y="11" width="150.66666666666663" height="14.333333333333336"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QL5-CD-JXo">
-                                    <rect key="frame" x="288.33333333333331" y="17.666666666666629" width="65.666666666666686" height="1"/>
+                                    <rect key="frame" x="272.33333333333331" y="17.666666666666629" width="81.666666666666686" height="1"/>
                                     <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="Cb2-rg-6wJ"/>
@@ -256,14 +257,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng nhập để bảo mật toàn diện hơn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ej8-ns-4sI">
-                    <rect key="frame" x="24" y="182" width="366" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <rect key="frame" x="24" y="182" width="366" height="14.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="ej8-ns-4sI" firstAttribute="top" secondItem="tJG-lw-WmQ" secondAttribute="bottom" constant="16" id="0KM-5W-EnT"/>
                 <constraint firstItem="tJG-lw-WmQ" firstAttribute="top" secondItem="00B-vD-Oqo" secondAttribute="bottom" constant="56" id="0eg-2g-OqQ"/>

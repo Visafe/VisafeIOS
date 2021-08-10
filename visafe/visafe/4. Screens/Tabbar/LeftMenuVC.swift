@@ -110,8 +110,8 @@ extension LeftMenuVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func moreAction(workspace: WorkspaceModel) {
-        guard let info = MoreActionWorkspaceView.loadFromNib() else { return }
-        info.binding(workspaceName: workspace.name)
+        guard let info = MoreActionView.loadFromNib() else { return }
+        info.binding(title: workspace.name ?? "", type: .workspace)
         info.deleteAction = { [weak self] in
             guard let weakSelf = self else { return }
             Timer.scheduledTimer(timeInterval: 0.3, target: weakSelf, selector:#selector(weakSelf.showConfirmDeleteworkspace(sender:)), userInfo: workspace , repeats:false)

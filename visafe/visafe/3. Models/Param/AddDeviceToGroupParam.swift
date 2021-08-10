@@ -49,4 +49,9 @@ class AddDeviceToGroupParam: NSObject, Mappable {
         model.deviceDetail = deviceDetail
         return model
     }
+    
+    func updateGroupInfo(link: String) {
+        groupId = link.getQueryStringParameter(queryParam: "groupId")
+        groupName = link.getQueryStringParameter(queryParam: "groupName")?.urlDecoded
+    }
 }

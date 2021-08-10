@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanGroupVC" customModule="visafe" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="Ldc-Je-AfZ" id="Alr-rB-8gZ"/>
+                <outlet property="captureView" destination="mSP-6j-JGd" id="YoQ-uJ-4YE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSP-6j-JGd">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldc-Je-AfZ">
+                    <rect key="frame" x="8" y="44" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="IDu-nA-zbL"/>
+                        <constraint firstAttribute="height" constant="44" id="cAj-qu-6rp"/>
+                    </constraints>
+                    <state key="normal" image="ic_close_white"/>
+                    <connections>
+                        <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="9UM-bC-19L"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quét mã QR tham gia nhóm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oq9-pU-hCb">
+                    <rect key="frame" x="103.5" y="56" width="207" height="20"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="oq9-pU-hCb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2wK-vt-hcE"/>
+                <constraint firstItem="mSP-6j-JGd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ikw-DK-PXy"/>
+                <constraint firstAttribute="trailing" secondItem="mSP-6j-JGd" secondAttribute="trailing" id="OET-iX-gee"/>
+                <constraint firstItem="oq9-pU-hCb" firstAttribute="centerY" secondItem="Ldc-Je-AfZ" secondAttribute="centerY" id="Oma-lw-ep3"/>
+                <constraint firstItem="Ldc-Je-AfZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Pug-bs-eqi"/>
+                <constraint firstItem="mSP-6j-JGd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b14-tQ-tX2"/>
+                <constraint firstItem="Ldc-Je-AfZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sH1-og-cMN"/>
+                <constraint firstAttribute="bottom" secondItem="mSP-6j-JGd" secondAttribute="bottom" id="wsa-Pb-zkZ"/>
+            </constraints>
+            <point key="canvasLocation" x="100.00000000000001" y="81.696428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_close_white" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

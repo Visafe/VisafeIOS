@@ -11,6 +11,7 @@ import SwiftMessages
 public enum MoreActionEnum: Int {
     case group = 1
     case device = 2
+    case workspace = 3
 }
 
 class MoreActionView: MessageViewBase {
@@ -38,6 +39,10 @@ class MoreActionView: MessageViewBase {
             titleEditLabel.text = "Chỉnh tên thiết bị"
             titleDeleteLabel.text = "Xóa thiết bị khỏi nhóm"
             subTitleLabel.text = "Thiết bị"
+        case .workspace:
+            titleEditLabel.text = "Chỉnh sửa workspace"
+            titleDeleteLabel.text = "Xóa workspace"
+            subTitleLabel.text = "Workspace"
         }
     }
     

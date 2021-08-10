@@ -149,8 +149,8 @@ class GroupVC: BaseViewController {
     }
     
     func moreAction(workspace: WorkspaceModel) {
-        guard let info = MoreActionWorkspaceView.loadFromNib() else { return }
-        info.binding(workspaceName: workspace.name)
+        guard let info = MoreActionView.loadFromNib() else { return }
+        info.binding(title: workspace.name ?? "", type: .workspace)
         info.deleteAction = { [weak self] in
             guard let weakSelf = self else { return }
             SwiftMessages.hide()
@@ -255,6 +255,10 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
                     guard let weakSelf = self else { return }
                     weakSelf.showFormAddGroup()
                 }
+                cell.actionJoinGroup = { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.joinGroup()
+                }
                 cell.bindingData(statistic: statisticModel, timeType: timeType)
                 return cell
             } else {
@@ -336,7 +340,8 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func joinGroup() {
-        
+        let vc = ScanGroupVC()
+        present(vc, animated: true, completion: nil)
     }
     
     func login() {
@@ -421,4 +426,3 @@ extension GroupVC: UIScrollViewDelegate {
         }
     }
 }
-

@@ -53,7 +53,7 @@ class ProfileSettingVC: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var sources: [ProfileSettingEnum] = [.changepass, .enterpin, .settingnoti, .language]
+    var sources: [ProfileSettingEnum] = CacheManager.shared.getIsLogined() ? [.changepass, .enterpin, .settingnoti, .language] :  [.enterpin, .settingnoti, .language]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,13 +114,29 @@ extension ProfileSettingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func changePass() {
-        let vc = ChangePasswordVC()
-        navigationController?.pushViewController(vc)
+        if checkLogin() {
+            let vc = ChangePasswordNameVC()
+            navigationController?.pushViewController(vc)
+        }
     }
     
     func enterPin() {
         let vc = EnterPinVC()
         navigationController?.pushViewController(vc)
+    }
+    
+    func checkLogin() -> Bool {
+        if CacheManager.shared.getIsLogined() {
+            return true
+        } else {
+            login()
+            return false
+        }
+    }
+    
+    func login() {
+        let vc = LoginVC()
+        present(vc, animated: true)
     }
 }
 

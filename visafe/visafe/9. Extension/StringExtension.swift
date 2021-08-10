@@ -63,6 +63,71 @@ extension String {
         }
         return letters
     }
+    
+    func getQueryStringParameter(queryParam: String) -> String? {
+        if queryParam == "groupId" {
+            var result: String = ""
+            for i in 52...87 {
+                result = result + self[i]
+            }
+            return result
+        } else if queryParam == "groupName" {
+            return self.substring(fromIndex: 99)
+        }
+        return nil
+    }
+}
+
+extension String {
+    func regex (pattern: String) -> [String] {
+        do {
+            let regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options(rawValue: 0))
+            let nsstr = self as NSString
+            let all = NSRange(location: 0, length: nsstr.length)
+            var matches : [String] = [String]()
+            regex.enumerateMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: all) {
+                (result : NSTextCheckingResult?, _, _) in
+                if let r = result {
+                    let result = nsstr.substring(with: r.range) as String
+                    matches.append(result)
+                }
+            }
+            return matches
+        } catch {
+            return [String]()
+        }
+    }
+    
+    func checkDeeplink() -> String? {
+        if !self.contains("https://app.visafe.vn/control/invite/device") || !self.contains("groupId") || !self.contains("groupName") {
+            return nil
+        }
+        if(self[51] != "=" || self[88] != "&") {
+            return nil
+        }
+        var count: Int = 0
+        for i in 51...88 {
+            if(self[i] == "-") {
+                count = count + 1
+            }
+        }
+        if(count != 4) {
+            return nil
+        }
+        return self
+    }
+    
+    func getGroupId(text: String) -> String {
+        var result: String = ""
+        for i in 52...87 {
+            result = result + text[i]
+        }
+        return result
+    }
+    
+    func getGroupName(text: String) -> String {
+        return text.substring(fromIndex: 99)
+    }
 }
 
 extension StringProtocol {
@@ -70,3 +135,30 @@ extension StringProtocol {
     var firstCapitalized: String { return prefix(1).capitalized + dropFirst() }
 }
 
+extension String {
+    
+    var length: Int {
+        return count
+    }
+    
+    subscript (i: Int) -> String {
+        return self[i ..< i + 1]
+    }
+    
+    func substring(fromIndex: Int) -> String {
+        return self[min(fromIndex, length) ..< length]
+    }
+    
+    func substring(toIndex: Int) -> String {
+        return self[0 ..< max(0, toIndex)]
+    }
+    
+    subscript (r: Range<Int>) -> String {
+        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
+                                            upper: min(length, max(0, r.upperBound))))
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+        return String(self[start ..< end])
+    }
+    
+}

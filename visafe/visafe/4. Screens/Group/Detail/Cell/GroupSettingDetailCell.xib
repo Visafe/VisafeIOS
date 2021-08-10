@@ -24,14 +24,14 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chặn theo dõi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb9-aH-BId">
-                        <rect key="frame" x="72" y="16" width="300" height="19.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <rect key="frame" x="72" y="25.5" width="300" height="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đang chặn theo dõi từ Apple, Samsung &amp; 3 nhà phát triển khác" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eah-fy-siJ">
-                        <rect key="frame" x="72" y="43.5" width="303" height="36"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="72" y="50.5" width="303" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -48,6 +48,7 @@
                             <constraint firstAttribute="width" constant="90" id="4Yl-jp-yAU"/>
                             <constraint firstAttribute="height" constant="36" id="qBY-5V-jIH"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="Xem chi tiết">
                             <color key="titleColor" red="0.082352941176470587" green="0.63137254901960782" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
@@ -72,7 +73,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="eah-fy-siJ" secondAttribute="trailing" constant="80" id="4ce-B9-eHM"/>
-                    <constraint firstItem="hb9-aH-BId" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="7Sb-YD-3V0"/>
+                    <constraint firstItem="hb9-aH-BId" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="7Sb-YD-3V0"/>
                     <constraint firstItem="TbC-Mm-zfU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="7UJ-m2-p44"/>
                     <constraint firstItem="ZIz-2E-TOj" firstAttribute="centerY" secondItem="hvW-FI-XdR" secondAttribute="centerY" id="83F-kM-SxP"/>
                     <constraint firstItem="GwI-cs-Qhl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Esl-TF-Ll2"/>
