@@ -119,7 +119,7 @@ public enum ProtectHomeType {
     func getTopContent() -> String {
         switch self {
         case .device:
-            return "iPhone của Bao Ngoc"
+            return "iPhone của \(UIDevice.current.name)"
         case .wifi:
             return "Pit Studio 5GHz"
         }

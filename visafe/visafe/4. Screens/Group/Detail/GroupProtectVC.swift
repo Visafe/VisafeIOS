@@ -26,6 +26,7 @@ class GroupProtectVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate
         self.group = group
         self.type = type
         super.init(nibName: GroupDetailVC.className, bundle: nil)
+        self.hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {
@@ -37,6 +38,11 @@ class GroupProtectVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate
         super.viewDidLoad()
         configBarItem()
         configView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {

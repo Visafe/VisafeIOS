@@ -25,6 +25,7 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
         self.type = type
         self.statistic = statistic
         super.init(nibName: ProtectDeviceVC.className, bundle: nil)
+        self.hidesBottomBarWhenPushed = true
     }
 
     required init?(coder: NSCoder) {
@@ -46,6 +47,10 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
     func configView() {
         header = ProtectHomeHeaderView.loadFromNib()
         header.bindingData(type: type)
+
+        let isOn = type == .device ? DoHNative.shared.isEnabled: CacheManager.shared.getProtectWifiStatus()
+        header.updateState(isOn: isOn)
+
         header.switchValueChange = { [weak self] isOn in
             guard let self = self else { return }
             self.listBlockVC.setProtect(isOn)
@@ -64,7 +69,7 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
         addChild(listBlockVC)
         subPageControllers.append(listBlockVC)
         listBlockVC.scrollDelegateFunc = { [weak self] in self?.pleaseScroll($0) }
-        
+        listBlockVC.setProtect(isOn)
         let parameters: [CAPSPageMenuOption] = [
             .menuItemWidth(kScreenWidth),
             .viewBackgroundColor(.white),

@@ -361,4 +361,18 @@ class GroupWorker {
             completion(loginResult, error)
         }
     }
+
+    static func getGroup(id: String, completion: @escaping (_ result: GroupModel?, _ error: Error?) -> Void) {
+        let router = APIRouter.getGroup(id: id)
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: GroupModel?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<GroupModel>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
 }

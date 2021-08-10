@@ -57,6 +57,7 @@ enum APIRouter {
     case groupUserToViewer(userId: Int?, groupId: String?)
     case groupDeleteUser(userId: Int?, groupId: String?)
     case deleteDeviceFromGroup(param: DeleteDeviceGroupParam)
+    case getGroup(id: String)
     
     //notification
     case listNotification(pageIndex: Int)
@@ -193,6 +194,8 @@ extension APIRouter: TargetType {
             return "/group/update/device"
         case .genDeviceId:
             return "/control/gen-device-id"
+        case .getGroup:
+            return "/group"
         }
     }
     
@@ -200,7 +203,7 @@ extension APIRouter: TargetType {
         switch self {
         case .getListWorkspace, .profile, .getGroups, .listNotification,
              .statisticWorkspace, .statisticGroup,
-             .logGroup, .logWorkspace, .genDeviceId:
+             .logGroup, .logWorkspace, .genDeviceId, .getGroup:
             return .get
         case .deleteWorkspace, .deleteGroup,
              .groupDeleteUser, .deleteDeviceFromGroup, .deleteDeviceGroup:
@@ -314,6 +317,8 @@ extension APIRouter: TargetType {
             pars = param.toJSON()
         case .updateDeviceGroup(param: let param):
             pars = param.toJSON()
+        case .getGroup(id: let groupId):
+            pars["groupid"] = groupId
         case .reactivation, .getListWorkspace, .profile, .genDeviceId:
             break
         }
@@ -337,7 +342,7 @@ extension APIRouter: TargetType {
     var headers: [String : String]? {
         var hea: [String: String] = [:]
         switch self {
-        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup, .logGroup, .logWorkspace, .groupUpdateWhitelist, .groupUserToViewer, .groupUserToManager, .groupDeleteUser, .deleteLog, .deleteDeviceFromGroup, .updateDeviceGroup:
+        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup, .logGroup, .logWorkspace, .groupUpdateWhitelist, .groupUserToViewer, .groupUserToManager, .groupDeleteUser, .deleteLog, .deleteDeviceFromGroup, .updateDeviceGroup, .getGroup:
             hea["Authorization"] = (CacheManager.shared.getLoginResult()?.token ?? "")
         default:
             break

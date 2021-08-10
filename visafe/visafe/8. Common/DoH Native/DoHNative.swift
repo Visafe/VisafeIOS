@@ -5,7 +5,7 @@
 //  Created by Nguyễn Tuấn Vũ on 04/08/2021.
 //
 
-import Foundation
+import UIKit
 import NetworkExtension
 
 class DoHNative {
@@ -13,10 +13,26 @@ class DoHNative {
     static let shared = DoHNative()
     var isEnabled = false {
         didSet {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: updateDnsStatus), object: nil)
+            if oldValue != isEnabled {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: updateDnsStatus), object: nil)
+                pushNoti()
+            }
         }
     }
     var isInstalled = false
+
+    func pushNoti() {
+        let isEnabled = DoHNative.shared.isEnabled
+        let content = UNMutableNotificationContent()
+        content.title = isEnabled ? "Đã kích hoạt chế độ bảo vệ!": "Bạn đã tắt chế độ bảo vệ"
+        content.body = isEnabled ? "Chế độ chống lừa đảo, mã độc, tấn công mạng đã được kích hoạt!": "Thiết bị của bạn có thể bị ảnh hưởng bởi tấn công mạng"
+        content.sound = UNNotificationSound.default
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "localNotification", content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+
+    }
 
     func saveDNS(_ onSavedStatus: @escaping (_ error: Error?) -> Void) {
         NEDNSSettingsManager.shared().loadFromPreferences { (error) in

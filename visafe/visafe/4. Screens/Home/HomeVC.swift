@@ -8,7 +8,7 @@
 import UIKit
 import NetworkExtension
 
-class HomeVC: BaseViewController {
+class HomeVC: BaseDoHVC {
 
     @IBOutlet weak var homeLoadingImage: UIImageView!
     @IBOutlet weak var connectionView: UIView!
@@ -66,7 +66,6 @@ class HomeVC: BaseViewController {
     }
 
     @objc func updateUI() {
-        pushNoti()
         let isEnabled = DoHNative.shared.isEnabled
         firstLabel.text = isEnabled ? "": "Bấm "
         lastLabel.text = isEnabled ? "Đang được bảo vệ": " để bật tính năng bảo vệ"
@@ -76,20 +75,11 @@ class HomeVC: BaseViewController {
         homeLoadingImage.image = isEnabled ? UIImage(named: "ic_power_on"): UIImage(named: "ic_loading_home")
     }
 
-    func pushNoti() {
-        let isEnabled = DoHNative.shared.isEnabled
-        let content = UNMutableNotificationContent()
-        content.title = isEnabled ? "Đã kích hoạt chế độ bảo vệ!": "Bạn đã tắt chế độ bảo vệ"
-        content.body = isEnabled ? "Chế độ chống lừa đảo, mã độc, tấn công mạng đã được kích hoạt!": "Thiết bị của bạn có thể bị ảnh hưởng bởi tấn công mạng"
-        content.sound = UNNotificationSound.default
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-        let request = UNNotificationRequest(identifier: "localNotification", content: content, trigger: trigger)
-
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-
+    @IBAction func connectAction(_ sender: Any) {
+        onOffDoH()
     }
-    
-    func showAnimationLoading() {
+
+    override func showAnimationLoading() {
         self.homeLoadingImage.rotate()
         self.homeLoadingImage.image = UIImage(named: "ic_loading_home")
         UIView.animate(withDuration: 0.75) {
@@ -97,8 +87,8 @@ class HomeVC: BaseViewController {
         } completion: { (success) in
         }
     }
-    
-    func hideAnimationLoading() {
+
+    override func hideAnimationLoading() {
         self.homeLoadingImage.endRotate()
         UIView.animate(withDuration: 0.75) {
             self.homeLoadingImage.alpha = 0
@@ -106,48 +96,7 @@ class HomeVC: BaseViewController {
         }
     }
 
-    @IBAction func connectAction(_ sender: Any) {
-        if DoHNative.shared.isInstalled {
-            if DoHNative.shared.isEnabled {
-                DoHNative.shared.removeDnsManager {[weak self] (error) in
-                    if let _error = error {
-                        self?.handleSaveError(_error)
-                        return
-                    }
-                    DoHNative.shared.saveDNS {[weak self] (_) in}
-                }
-            } else {
-                showAnimationLoading()
-                handleSaveSuccess()
-            }
-        } else {
-            showAnimationLoading()
-            DoHNative.shared.saveDNS {[weak self] (error) in
-                if let _error = error {
-                    self?.handleSaveError(_error)
-                } else {
-                    self?.handleSaveSuccess()
-                }
-            }
-        }
-    }
-
-    func handleSaveError(_ error: Error) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.stoprotate()
-            self.showError(title: "Thông báo", content: error.localizedDescription)
-        }
-    }
-
-    func handleSaveSuccess() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.stoprotate()
-            self.showError(title: "Thông báo",
-                           content: "Vui lòng vào Cài đặt -> Cài đặt chung -> VPN -> DNS để cài chọn Visafe")
-        }
-    }
-    
-    @objc func stoprotate() {
+    override func stoprotate() {
         hideAnimationLoading()
         UIView.animate(withDuration: 0.75) {
             self.homeLoadingImage.alpha = 1
@@ -157,68 +106,9 @@ class HomeVC: BaseViewController {
 }
 
 //MARK: - DOH
-//extension HomeVC {
-//
-//    func saveDNS(_ onSavedStatus: @escaping (_ error: Error?) -> Void) {
-//        NEDNSSettingsManager.shared().loadFromPreferences { (error) in
-//            if let _error = error {
-//                onSavedStatus(_error)
-//                return
-//            }
-//            let dohSetting = NEDNSOverHTTPSSettings(servers: [])
-//            dohSetting.serverURL = URL(string: "https://dns-staging.visafe.vn/dns-query/")
-//            NEDNSSettingsManager.shared().dnsSettings = dohSetting
-//            NEDNSSettingsManager.shared().saveToPreferences { (saveError) in
-//                if let _error = saveError {
-//                    onSavedStatus(_error)
-//                } else {
-//                    onSavedStatus(nil)
-//                }
-//            }
-//        }
-//    }
-//
-//    @available(iOS 14.0, *)
-//    private func getDnsManagerStatus(_ onStatusReceived: @escaping (_ isInstalled: Bool, _ isEnabled: Bool) -> Void) {
-//        loadDnsManager { dnsManager in
-//            guard let manager = dnsManager else {
-////                ////DDLogError("Received nil DNS manager")
-//                onStatusReceived(false, false)
-//                return
-//            }
-//            onStatusReceived(manager.dnsSettings != nil, manager.isEnabled)
-//        }
-//    }
-//
-//    @available(iOS 14.0, *)
-//    private func loadDnsManager(_ onManagerLoaded: @escaping (_ dnsManager: NEDNSSettingsManager?) -> Void) {
-//        let dnsManager = NEDNSSettingsManager.shared()
-//        dnsManager.loadFromPreferences { error in
-//            if let error = error {
-////                ////DDLogError("Error loading DNS manager: \(error)")
-//                onManagerLoaded(nil)
-//                return
-//            }
-//            onManagerLoaded(dnsManager)
-//        }
-//    }
-//
-//    @available(iOS 14.0, *)
-//    func removeDnsManager(_ onErrorReceived: @escaping (_ error: Error?) -> Void) {
-//        loadDnsManager { [weak self] dnsManager in
-//            guard let dnsManager = dnsManager else {
-//                onErrorReceived(NativeDnsProviderError.failedToLoadManager)
-//                return
-//            }
-//            dnsManager.removeFromPreferences(completionHandler: onErrorReceived)
-//            // Check manager status after delete
-//            self?.getDnsManagerStatus({ [weak self] isInstalled, isEnabled in
-//                self?.isInstalled = isInstalled
-//                self?.isEnabled = isEnabled
-//            })
-//        }
-//    }
-//}
+extension HomeVC {
+
+}
 
 //MARK: - VPN
 

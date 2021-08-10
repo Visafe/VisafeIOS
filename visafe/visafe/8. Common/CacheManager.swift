@@ -18,6 +18,7 @@ let kCurrentUser = "kCurrentUser"
 let kShowOnboarding = "kShowOnboarding"
 let kPin = "kPin"
 let kDeviceId = "kDeviceId"
+let kProtectWifi = "kProtectWifi"
 
 class CacheManager {
     
@@ -120,5 +121,15 @@ class CacheManager {
 
     func isDeviceIdExist() -> Bool {
         return userDefault.string(forKey: kDeviceId) != nil 
+    }
+
+    func getProtectWifiStatus() -> Bool {
+        let value = userDefault.bool(forKey: kProtectWifi)
+        return value
+    }
+
+    func setProtectWifiStatus(value: Bool) {
+        userDefault.set(value, forKey: kProtectWifi)
+        userDefault.synchronize()
     }
 }
