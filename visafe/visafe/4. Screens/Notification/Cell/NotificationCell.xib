@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,13 +24,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nội dung thông báo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmw-pE-S7D">
-                        <rect key="frame" x="48" y="12" width="256" height="17"/>
+                        <rect key="frame" x="48" y="16" width="256" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:34 13 thg12, 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yg-sR-o2W">
-                        <rect key="frame" x="48" y="37" width="256" height="14.5"/>
+                        <rect key="frame" x="48" y="41" width="256" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -45,12 +44,12 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1yg-sR-o2W" secondAttribute="bottom" constant="12" id="3k5-GC-qhu"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1yg-sR-o2W" secondAttribute="bottom" constant="16" id="3k5-GC-qhu"/>
                     <constraint firstItem="1yg-sR-o2W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="48" id="6kY-7w-OmO"/>
                     <constraint firstItem="ibo-8S-21L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="J89-Ri-IPH"/>
                     <constraint firstAttribute="trailing" secondItem="gug-8V-HAJ" secondAttribute="trailing" id="NGJ-Ej-50A"/>
                     <constraint firstItem="1yg-sR-o2W" firstAttribute="top" secondItem="Nmw-pE-S7D" secondAttribute="bottom" constant="8" id="Pmg-th-nnb"/>
-                    <constraint firstItem="Nmw-pE-S7D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Rqe-Vx-79s"/>
+                    <constraint firstItem="Nmw-pE-S7D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Rqe-Vx-79s"/>
                     <constraint firstItem="ibo-8S-21L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="YS6-M5-eDH"/>
                     <constraint firstAttribute="trailing" secondItem="1yg-sR-o2W" secondAttribute="trailing" constant="16" id="cME-VD-IL7"/>
                     <constraint firstItem="Nmw-pE-S7D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="48" id="eyF-wf-ywv"/>

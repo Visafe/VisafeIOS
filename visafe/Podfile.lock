@@ -106,6 +106,7 @@ PODS:
   - SideMenuSwift (2.0.7)
   - SVPinView (1.0.11)
   - SwiftyUserDefaults (5.3.0)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - ACTabScrollView
@@ -121,6 +122,7 @@ DEPENDENCIES:
   - SideMenuSwift
   - SVPinView
   - SwiftyUserDefaults
+  - Toast-Swift
 
 SPEC REPOS:
   trunk:
@@ -150,6 +152,7 @@ SPEC REPOS:
     - SideMenuSwift
     - SVPinView
     - SwiftyUserDefaults
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   ACTabScrollView: c24a83d10a6db5797392627a5eace49480b0d534
@@ -178,7 +181,8 @@ SPEC CHECKSUMS:
   SideMenuSwift: ffbbc88d23741932177ad1320df837cedfb3bc5e
   SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 32240ae69e2aeb2d9e397ed150e651c04c0765ff
+PODFILE CHECKSUM: 64659a522b991f6eeef0798cccf8a4887e267ff6
 
 COCOAPODS: 1.10.1

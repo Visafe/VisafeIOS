@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,7 +32,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gGK-9k-JLs">
                     <rect key="frame" x="30" y="220.33333333333337" width="354" height="400"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập số điện thoại/email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQb-ED-6gg" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập số điện thoại/email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eQb-ED-6gg" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="L53-8Y-RBH"/>
@@ -51,7 +50,7 @@
                             <color key="textColor" red="1" green="0.26666666666666666" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập mật khẩu" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mm2-3d-ne9" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập mật khẩu" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Mm2-3d-ne9" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="63.999999999999972" width="354" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="H6b-dU-mX5"/>

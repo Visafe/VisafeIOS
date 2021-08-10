@@ -23,5 +23,18 @@ class NotificationCell: BaseTableCell {
     func bindingData(model: NotificationModel) {
         contentLabel.text = model.buildContent()
         timeLabel.text = model.buildTime()
+        bindingIsRead(isRead: model.isRead ?? true)
+    }
+    
+    func bindingIsRead(isRead: Bool) {
+        if isRead {
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = UIColor.white
+            backgroundView = bgColorView
+        } else {
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = UIColor(hexString: "FFB31F", transparency: 0.15)
+            backgroundView = bgColorView
+        }
     }
 }

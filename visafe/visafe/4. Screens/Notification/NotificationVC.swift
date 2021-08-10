@@ -125,5 +125,15 @@ extension NotificationVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        readNotification(notifi: sources[indexPath.row])
+    }
+    
+    func readNotification(notifi: NotificationModel) {
+        guard let id = notifi.id else { return }
+        if notifi.isRead == false {
+            notifi.isRead = true
+            NotificationWorker.readNotification(id: id) { (result, error) in }
+            tableView.reloadData()
+        }
     }
 }

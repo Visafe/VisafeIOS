@@ -48,7 +48,7 @@ extension URL {
     let qrData = absoluteString.data(using: String.Encoding.ascii)
     qrFilter.setValue(qrData, forKey: "inputMessage")
 
-    let qrTransform = CGAffineTransform(scaleX: 12, y: 12)
+    let qrTransform = CGAffineTransform(scaleX: 5, y: 5)
     return qrFilter.outputImage?.transformed(by: qrTransform)
   }
 }

@@ -45,7 +45,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSe-1s-hGW">
-                    <rect key="frame" x="24" y="224" width="366" height="448"/>
+                    <rect key="frame" x="24" y="226" width="366" height="444"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quét mã QR để tham gia nhóm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7G-dg-y9J">
                             <rect key="frame" x="12" y="20" width="342" height="18"/>
@@ -60,13 +60,6 @@
                                 <constraint firstAttribute="width" constant="120" id="xco-0e-UlN"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_qr" translatesAutoresizingMaskIntoConstraints="NO" id="yUX-Cz-dME">
-                            <rect key="frame" x="165" y="104" width="36" height="36"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="36" id="7jI-71-BnW"/>
-                                <constraint firstAttribute="height" constant="36" id="Nz5-R2-FK4"/>
-                            </constraints>
-                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phòng 1: Marketing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fW-r8-Xo0">
                             <rect key="frame" x="112" y="194" width="142.5" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -74,10 +67,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBY-QT-kdC">
-                            <rect key="frame" x="24" y="233.5" width="318" height="48"/>
+                            <rect key="frame" x="24" y="233.5" width="318" height="44"/>
                             <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="48" id="gGj-Qc-Haj"/>
+                                <constraint firstAttribute="height" constant="44" id="gGj-Qc-Haj"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <state key="normal" title="Thêm thiết bị này vào nhóm">
@@ -85,7 +78,7 @@
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="24"/>
+                                    <real key="value" value="22"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
@@ -93,13 +86,13 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoặc dùng liên kết tham gia nhóm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIv-7B-U69">
-                            <rect key="frame" x="66.5" y="305.5" width="233.5" height="18"/>
+                            <rect key="frame" x="66.5" y="301.5" width="233.5" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLW-uv-kYx">
-                            <rect key="frame" x="68" y="327.5" width="230" height="24"/>
+                            <rect key="frame" x="68" y="323.5" width="230" height="24"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7D-xx-fh9">
                                     <rect key="frame" x="0.0" y="0.0" width="206" height="24"/>
@@ -132,14 +125,14 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSr-kA-cWW">
-                            <rect key="frame" x="0.0" y="375.5" width="366" height="0.5"/>
+                            <rect key="frame" x="0.0" y="371.5" width="366" height="0.5"/>
                             <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="0.5" id="WmN-Qj-lta"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hq-F9-dkj">
-                            <rect key="frame" x="0.0" y="376" width="366" height="72"/>
+                            <rect key="frame" x="0.0" y="372" width="366" height="72"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pmc-25-4sE">
                                     <rect key="frame" x="183" y="8" width="0.5" height="56"/>
@@ -302,7 +295,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEV-m6-BWq">
-                            <rect key="frame" x="-8" y="368" width="16" height="16"/>
+                            <rect key="frame" x="-8" y="364" width="16" height="16"/>
                             <color key="backgroundColor" red="0.0094849569720000006" green="0.097734533250000005" blue="0.3233026564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="UYo-c2-V01"/>
@@ -315,7 +308,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYZ-xJ-nIw">
-                            <rect key="frame" x="358" y="368" width="16" height="16"/>
+                            <rect key="frame" x="358" y="364" width="16" height="16"/>
                             <color key="backgroundColor" red="0.0094849569720000006" green="0.097734533250000005" blue="0.3233026564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="16" id="M5v-yO-lZt"/>
@@ -351,9 +344,7 @@
                         <constraint firstItem="RBY-QT-kdC" firstAttribute="top" secondItem="1fW-r8-Xo0" secondAttribute="bottom" constant="20" id="g4J-m7-ZWg"/>
                         <constraint firstItem="uEV-m6-BWq" firstAttribute="centerY" secondItem="dSr-kA-cWW" secondAttribute="centerY" id="hRD-Ze-UgG"/>
                         <constraint firstAttribute="trailing" secondItem="1Hq-F9-dkj" secondAttribute="trailing" id="iwD-iE-epU"/>
-                        <constraint firstItem="yUX-Cz-dME" firstAttribute="centerX" secondItem="Mvv-Bk-QhH" secondAttribute="centerX" id="jlb-WI-ItX"/>
                         <constraint firstItem="eLW-uv-kYx" firstAttribute="top" secondItem="MIv-7B-U69" secondAttribute="bottom" constant="4" id="nNW-5J-H3N"/>
-                        <constraint firstItem="yUX-Cz-dME" firstAttribute="centerY" secondItem="Mvv-Bk-QhH" secondAttribute="centerY" id="rmQ-eC-Esq"/>
                         <constraint firstAttribute="trailing" secondItem="RBY-QT-kdC" secondAttribute="trailing" constant="24" id="sWO-Od-C2b"/>
                         <constraint firstItem="y7G-dg-y9J" firstAttribute="top" secondItem="NSe-1s-hGW" secondAttribute="top" constant="20" id="u7E-tJ-lra"/>
                         <constraint firstItem="y7G-dg-y9J" firstAttribute="leading" secondItem="NSe-1s-hGW" secondAttribute="leading" constant="12" id="uFm-G1-U8N"/>
@@ -389,7 +380,6 @@
         <image name="ic_close_white" width="24" height="24"/>
         <image name="ic_copy_link" width="16" height="16"/>
         <image name="ic_download_link" width="24" height="24"/>
-        <image name="ic_logo_qr" width="36" height="36"/>
         <image name="ic_share_link" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

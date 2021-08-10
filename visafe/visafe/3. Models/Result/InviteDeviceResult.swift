@@ -10,12 +10,15 @@ import ObjectMapper
 
 public enum InviteDeviceStatus: Int {
     case defaultStatus = 1
+    case deviceExist = 2
     case success = 200
     
     func getDescription() -> String {
         var message = "Có lỗi xảy ra. Vui lòng thử lại"
         switch self {
         case .success:
+            message = "Thiết bị đã được thêm vào nhóm"
+        case .deviceExist:
             message = "Thiết bị đã được thêm vào nhóm"
         default:
             message = "Có lỗi xảy ra. Vui lòng thử lại"

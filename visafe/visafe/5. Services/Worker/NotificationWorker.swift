@@ -25,4 +25,18 @@ class NotificationWorker {
             completion(result, error)
         }
     }
+    
+    static func readNotification(id: Int, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.readNotification(id: id)
+        APIManager.shared.request(target: router) { (data, error) in
+            var result: BaseResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    result = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(result, error)
+        }
+    }
 }

@@ -36,7 +36,7 @@
                             <constraint firstAttribute="height" constant="0.5" id="JNO-I5-mpo"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iN-2X-Y8H">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iN-2X-Y8H">
                         <rect key="frame" x="145.5" y="14" width="158.5" height="28"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="Button">

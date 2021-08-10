@@ -10,13 +10,16 @@ import UIKit
 class GroupListDeviceVC: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchTextfield: BaseTextField!
     
     var group: GroupModel
     var listDevice: [DeviceGroupModel] = []
+    var listDeviceSearch: [DeviceGroupModel] = []
     
     init(group: GroupModel) {
         self.group = group
         listDevice = group.devicesGroupInfo
+        listDeviceSearch = group.devicesGroupInfo
         super.init(nibName: GroupListDeviceVC.className, bundle: nil)
     }
     
@@ -28,6 +31,19 @@ class GroupListDeviceVC: BaseViewController {
         super.viewDidLoad()
         title = "Quản lý thiết bị"
         tableView.registerCells(cells: [GroupDeviceCell.className])
+        searchTextfield.setState(type: .active)
+        tableView.reloadData()
+    }
+    
+    @IBAction func valueChanged(_ sender: UITextField) {
+        let text = sender.text?.lowercased() ?? ""
+        listDeviceSearch = listDevice.filter({ (device) -> Bool in
+            if text.isEmpty { return true }
+            if device.deviceName?.lowercased().contains(text) == true {
+                return true
+            }
+            return false
+        })
         tableView.reloadData()
     }
 }
@@ -42,7 +58,7 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 0
         } else {
-            return listDevice.count
+            return listDeviceSearch.count
         }
     }
 
@@ -50,7 +66,7 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupDeviceCell.className) as? GroupDeviceCell else {
             return UITableViewCell()
         }
-        let device = listDevice[indexPath.row]
+        let device = listDeviceSearch[indexPath.row]
         cell.binding(device: device)
         cell.moreAction = { [weak self] in
             guard let weakSelf = self else { return }
@@ -69,12 +85,12 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
             }
             return view
         } else {
-            if listDevice.count == 0 { return UIView() }
+            if listDeviceSearch.count == 0 { return UIView() }
             let viewHeader = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 48))
             viewHeader.backgroundColor = UIColor.white
             let label = UILabel(frame: CGRect(x: 16, y: 6, width: kScreenWidth - 32, height: 48))
-            label.text = "\(listDevice.count) thiết bị"
-            label.textAlignment = .left
+            label.text = "\(listDeviceSearch.count) thiết bị"
+            label.textAlignment = .right
             label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
             viewHeader.addSubview(label)
             return viewHeader
@@ -86,7 +102,7 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
         vc.addDevice = { [weak self] device in
             guard let weakSelf = self else { return }
             weakSelf.listDevice.append(device)
-            weakSelf.tableView.reloadData()
+            weakSelf.reloadData()
         }
         present(vc, animated: true)
     }
@@ -125,7 +141,7 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
             weakSelf.listDevice.removeFirst(where: { (d) -> Bool in
                 return d.deviceID == device.deviceID
             })
-            weakSelf.tableView.reloadData()
+            weakSelf.reloadData()
         }
     }
     
@@ -153,14 +169,27 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
         GroupWorker.updateDevice(param: param) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
+            weakSelf.reloadData()
         }
+    }
+    
+    func reloadData() {
+        let text = searchTextfield.text ?? ""
+        listDeviceSearch = listDevice.filter({ (device) -> Bool in
+            if text.isEmpty { return true }
+            if device.deviceName?.contains(text) == true {
+                return true
+            }
+            return false
+        })
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 72
         } else {
-            if listDevice.count == 0 { return 0.0001 }
+            if listDeviceSearch.count == 0 { return 0.0001 }
             return 48
         }
     }

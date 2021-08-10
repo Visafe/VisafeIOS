@@ -179,6 +179,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
+    
     class func appDelegate() -> AppDelegate? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return nil

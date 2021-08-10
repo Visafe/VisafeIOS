@@ -15,13 +15,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBf-fb-RtG">
-                    <rect key="frame" x="16" y="50" width="382" height="52"/>
+                    <rect key="frame" x="16" y="54" width="382" height="48"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvF-lL-HPy">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="52"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="52" id="f4S-vf-MDU"/>
-                            </constraints>
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
                             <state key="normal" title=" Thêm thành viên" image="add_icon">
                                 <color key="titleColor" red="1" green="0.70613008740000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -33,6 +30,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="JvF-lL-HPy" firstAttribute="top" secondItem="YBf-fb-RtG" secondAttribute="top" id="0ge-H8-16F"/>
+                        <constraint firstAttribute="height" constant="48" id="eoZ-qx-vZI"/>
                         <constraint firstAttribute="trailing" secondItem="JvF-lL-HPy" secondAttribute="trailing" id="lQg-K1-tf0"/>
                         <constraint firstAttribute="bottom" secondItem="JvF-lL-HPy" secondAttribute="bottom" id="qku-iK-aeE"/>
                         <constraint firstItem="JvF-lL-HPy" firstAttribute="leading" secondItem="YBf-fb-RtG" secondAttribute="leading" id="vZM-sH-AI4"/>
@@ -42,7 +40,7 @@
                             <color key="value" red="1" green="0.70613008740000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="0.5"/>
+                            <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="12"/>
