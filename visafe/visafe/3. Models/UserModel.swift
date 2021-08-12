@@ -36,6 +36,14 @@ class UserModel: NSObject, Mappable {
     var isverify: Bool?
     var isActive: Bool?
     var role: GroupMemberRoleEnum = .member
+    var defaultGroup: String?
+    var defaultWorkspace: String?
+    var accountType: String?
+    var timeStart: String?
+    var timeEnd: String?
+    var maxWorkspace: Int = 0
+    var maxGroup: Int = 0
+    var maxDevice: Int = 0
     
     override init() {
         super.init()
@@ -52,5 +60,13 @@ class UserModel: NSObject, Mappable {
         phonenumber <- map["PhoneNumber"]
         isverify <- map["IsVerify"]
         isActive <- map["IsActive"]
+        defaultGroup <- map["DefaultGroup"]
+        defaultWorkspace <- map["DefaultWorkspace"]
+        accountType <- map["AccountType"]
+        timeStart <- map["TimeStart"]
+        timeEnd <- map["TimeEnd"]
+        maxWorkspace <- map["MaxWorkspace"]
+        maxGroup <- map["MaxGroup"]
+        maxDevice <- map["MaxDevice"]
     }
 }

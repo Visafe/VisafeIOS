@@ -82,6 +82,15 @@ class ListWorkspaceVC: BaseViewController {
                     CacheManager.shared.setCurrentWorkspace(value: newValue)
                     selectedWorkspace?(newValue)
                 }
+            } else if let newValue = workspaces.filter({ (wm) -> Bool in
+                if wm.id == CacheManager.shared.getCurrentUser()?.defaultWorkspace {
+                    return true
+                } else {
+                    return false
+                }
+            }).first {
+                CacheManager.shared.setCurrentWorkspace(value: newValue)
+                selectedWorkspace?(newValue)
             } else {
                 CacheManager.shared.setCurrentWorkspace(value: workspaces[0])
                 selectedWorkspace?(workspaces[0])
@@ -90,7 +99,6 @@ class ListWorkspaceVC: BaseViewController {
             CacheManager.shared.setCurrentWorkspace(value: nil)
             selectedWorkspace?(nil)
         }
-        
         tableView.reloadData()
     }
 }
@@ -148,6 +156,10 @@ extension ListWorkspaceVC: UITableViewDelegate, UITableViewDataSource {
         info.binding(title: workspace.name ?? "", type: .workspace)
         info.deleteAction = { [weak self] in
             guard let weakSelf = self else { return }
+            if workspace.id == CacheManager.shared.getCurrentUser()?.defaultWorkspace {
+                weakSelf.view.makeToast("Bạn không được phép xoá workspace mặc định")
+                return
+            }
             Timer.scheduledTimer(timeInterval: 0.3, target: weakSelf, selector:#selector(weakSelf.showConfirmDeleteworkspace(sender:)), userInfo: workspace , repeats:false)
         }
         info.editAction = { [weak self] in

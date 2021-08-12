@@ -153,6 +153,10 @@ class GroupVC: BaseViewController {
         info.binding(title: workspace.name ?? "", type: .workspace)
         info.deleteAction = { [weak self] in
             guard let weakSelf = self else { return }
+            if workspace.id == CacheManager.shared.getCurrentUser()?.defaultWorkspace {
+                weakSelf.view.makeToast("Bạn không được phép xoá workspace mặc định")
+                return
+            }
             SwiftMessages.hide()
             Timer.scheduledTimer(timeInterval: 0.3, target: weakSelf, selector:#selector(weakSelf.confirmDeleteWorkspace(sender:)), userInfo: workspace , repeats:false)
         }
@@ -184,7 +188,6 @@ class GroupVC: BaseViewController {
     func updateWorkspaceWithDelete(id: String?) {
         if id == CacheManager.shared.getCurrentWorkspace()?.id {
             CacheManager.shared.setCurrentWorkspace(value: nil)
-            
             let workspaces = CacheManager.shared.getWorkspacesResult() ?? []
             if workspaces.count > 0 {
                 if let w = CacheManager.shared.getCurrentWorkspace() {

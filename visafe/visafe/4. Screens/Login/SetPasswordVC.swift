@@ -120,8 +120,18 @@ class SetPasswordVC: BaseViewController {
             weakSelf.hideLoading()
             CacheManager.shared.setIsLogined(value: true)
             CacheManager.shared.setWorkspacesResult(value: list)
-            CacheManager.shared.setCurrentWorkspace(value: list?.first)
+            weakSelf.setCurrentWorkspace(list: list ?? [])
             AppDelegate.appDelegate()?.setRootVCToTabVC()
+        }
+    }
+    
+    func setCurrentWorkspace(list: [WorkspaceModel]) {
+        if let workspace = list.first(where: { (m) -> Bool in
+            return m.id == CacheManager.shared.getCurrentUser()?.defaultWorkspace
+        }) {
+            CacheManager.shared.setCurrentWorkspace(value: workspace)
+        } else {
+            CacheManager.shared.setCurrentWorkspace(value: list.first)
         }
     }
 }

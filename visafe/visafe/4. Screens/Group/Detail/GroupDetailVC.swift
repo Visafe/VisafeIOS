@@ -159,6 +159,10 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
         view.binding(title: group.name ?? "", type: .group)
         view.deleteAction = { [weak self] in
             guard let weakSelf = self else { return }
+            if group.groupid == CacheManager.shared.getCurrentUser()?.defaultGroup {
+                weakSelf.view.makeToast("Bạn không được phép xoá nhóm mặc định")
+                return
+            }
             Timer.scheduledTimer(timeInterval: 0.3, target: weakSelf, selector:#selector(weakSelf.deleteGroup(sender:)), userInfo: weakSelf.group , repeats:false)
         }
         view.editAction = { [weak self] in
