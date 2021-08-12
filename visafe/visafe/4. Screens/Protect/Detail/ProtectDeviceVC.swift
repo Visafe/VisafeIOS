@@ -7,6 +7,8 @@
 
 import UIKit
 import PageMenu
+import SystemConfiguration.CaptiveNetwork
+import CoreLocation
 
 class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate {
     var subPageControllers: [UIViewController] = []
@@ -17,6 +19,13 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
     var listBlockVC: ProtectDetailListBlockVC!
 
     var onUpdateGroup:(() -> Void)?
+
+    var locationManager = CLLocationManager()
+    var currentNetworkInfos: Array<NetworkInfo>? {
+        get {
+            return SSID.fetchNetworkInfo()
+        }
+    }
 
     init(group: GroupModel,
          statistic: StatisticModel,
@@ -37,6 +46,20 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
         super.viewDidLoad()
         configBarItem()
         configView()
+
+        if type == .wifi {
+            if #available(iOS 13.0, *) {
+                let status = locationManager.authorizationStatus
+                if status == .authorizedWhenInUse {
+                    updateWiFi()
+                } else {
+                    locationManager.delegate = self
+                    locationManager.requestWhenInUseAuthorization()
+                }
+            } else {
+                updateWiFi()
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -92,4 +115,45 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
         title = type.getTitle()
         navigationController?.title = type.getTitle()
     }
+}
+
+extension ProtectDeviceVC: CLLocationManagerDelegate {
+    func updateWiFi() {
+        header.setContent(currentNetworkInfos?.first?.ssid ?? "")
+    }
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            updateWiFi()
+        }
+    }
+}
+
+public class SSID {
+    class func fetchNetworkInfo() -> [NetworkInfo]? {
+        if let interfaces: NSArray = CNCopySupportedInterfaces() {
+            var networkInfos = [NetworkInfo]()
+            for interface in interfaces {
+                let interfaceName = interface as! String
+                var networkInfo = NetworkInfo(interface: interfaceName,
+                                              success: false,
+                                              ssid: nil,
+                                              bssid: nil)
+                if let dict = CNCopyCurrentNetworkInfo(interfaceName as CFString) as NSDictionary? {
+                    networkInfo.success = true
+                    networkInfo.ssid = dict[kCNNetworkInfoKeySSID as String] as? String
+                    networkInfo.bssid = dict[kCNNetworkInfoKeyBSSID as String] as? String
+                }
+                networkInfos.append(networkInfo)
+            }
+            return networkInfos
+        }
+        return nil
+    }
+}
+
+struct NetworkInfo {
+    var interface: String
+    var success: Bool = false
+    var ssid: String?
+    var bssid: String?
 }

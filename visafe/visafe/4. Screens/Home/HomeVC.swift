@@ -7,7 +7,7 @@
 
 import UIKit
 import NetworkExtension
-
+import DeviceKit
 class HomeVC: BaseDoHVC {
 
     @IBOutlet weak var homeLoadingImage: UIImageView!
@@ -19,6 +19,10 @@ class HomeVC: BaseDoHVC {
     @IBOutlet weak var lastLabel: UILabel!
     @IBOutlet weak var desImageView: UIImageView!
 
+    @IBOutlet weak var powerViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var boundLeading: NSLayoutConstraint!
+    @IBOutlet weak var scanHeight: NSLayoutConstraint!
+    @IBOutlet weak var earthleading: NSLayoutConstraint!
     var providerManagerType: NETunnelProviderManager.Type = NETunnelProviderManager.self
     private var vpnInstalledValue: Bool?
     var manager: NETunnelProviderManager!
@@ -63,6 +67,19 @@ class HomeVC: BaseDoHVC {
         gradient.frame = UIScreen.main.bounds
         gradient.colors = [UIColor.color_0F1733.cgColor, UIColor.color_102366.cgColor]
         view.layer.insertSublayer(gradient, at: 0)
+        let device = Device.current
+        switch device {
+        case .iPhone4, .iPhone5, .iPhone6, .iPhone7, .iPhone8, .iPhoneSE, .iPhoneSE2, .simulator(.iPhone8):
+            boundLeading.constant = 32
+            scanHeight.constant = 50
+            powerViewBottom.constant = 24
+            earthleading.constant = 50
+        default:
+            boundLeading.constant = 0
+            scanHeight.constant = 64
+            powerViewBottom.constant = 48
+            earthleading.constant = 30
+        }
     }
 
     @objc func updateUI() {
@@ -103,11 +120,6 @@ class HomeVC: BaseDoHVC {
         } completion: { (success) in
         }
     }
-}
-
-//MARK: - DOH
-extension HomeVC {
-
 }
 
 //MARK: - VPN

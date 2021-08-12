@@ -35,6 +35,10 @@ class ProtectHomeHeaderView: BaseView {
         titleLabel.attributedText = type.getTopTitle()
         contentLabel.text = type.getTopContent()
     }
+
+    func setContent(_ ssid: String) {
+        contentLabel.text = ssid
+    }
     
     func updateState(isOn: Bool) {
         modelSwitch.isOn = isOn

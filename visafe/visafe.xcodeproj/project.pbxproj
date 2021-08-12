@@ -15,7 +15,10 @@
 		0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAA2681F29E00572C4E /* Main.storyboard */; };
 		0EDEEFAE2681F2A000572C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAD2681F2A000572C4E /* Assets.xcassets */; };
 		0EDEEFB12681F2A000572C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAF2681F2A000572C4E /* LaunchScreen.storyboard */; };
+		0EDFD25526C2C65A0053E82B /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDFD25426C2C65A0053E82B /* DeviceKit */; };
 		0EF0838D26C19BE500D58F12 /* BaseDoHVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF0838C26C19BE500D58F12 /* BaseDoHVC.swift */; };
+		0EF083AF26C23C2900D58F12 /* WebViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF083AD26C23C2800D58F12 /* WebViewVC.xib */; };
+		0EF083B026C23C2900D58F12 /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF083AE26C23C2800D58F12 /* WebViewVC.swift */; };
 		0EF5EB0D26BA534C002F5E84 /* DeviceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB0C26BA534C002F5E84 /* DeviceWorker.swift */; };
 		0EF5EB1126BA7A8F002F5E84 /* GenDeviceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */; };
 		0EF5EB1526BA7E14002F5E84 /* DoHNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5EB1426BA7E14002F5E84 /* DoHNative.swift */; };
@@ -316,6 +319,8 @@
 		0EDEEFB02681F2A000572C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EDEEFB22681F2A000572C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EF0838C26C19BE500D58F12 /* BaseDoHVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDoHVC.swift; sourceTree = "<group>"; };
+		0EF083AD26C23C2800D58F12 /* WebViewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewVC.xib; sourceTree = "<group>"; };
+		0EF083AE26C23C2800D58F12 /* WebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
 		0EF5EB0C26BA534C002F5E84 /* DeviceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceWorker.swift; sourceTree = "<group>"; };
 		0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenDeviceResult.swift; sourceTree = "<group>"; };
 		0EF5EB1426BA7E14002F5E84 /* DoHNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoHNative.swift; sourceTree = "<group>"; };
@@ -588,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C979C96826B5DB8100F97E4F /* SwiftyJSON in Frameworks */,
+				0EDFD25526C2C65A0053E82B /* DeviceKit in Frameworks */,
 				C979C96326B5D9AA00F97E4F /* Kingfisher in Frameworks */,
 				0E798387268485E60023C916 /* NetworkExtension.framework in Frameworks */,
 				C9E5C78526872E8100D159EF /* SwiftMessages in Frameworks */,
@@ -1014,6 +1020,8 @@
 		C99FD1C82697461300A8F731 /* Protect */ = {
 			isa = PBXGroup;
 			children = (
+				0EF083AE26C23C2800D58F12 /* WebViewVC.swift */,
+				0EF083AD26C23C2800D58F12 /* WebViewVC.xib */,
 				518EC0EC26B98EC100D88D2A /* Detail */,
 				C99FD1C92697462700A8F731 /* ProtectVC.swift */,
 				C99FD1CA2697462700A8F731 /* ProtectVC.xib */,
@@ -1315,6 +1323,7 @@
 				C979C96226B5D9AA00F97E4F /* Kingfisher */,
 				C979C96726B5DB8100F97E4F /* SwiftyJSON */,
 				C90F154726BBF71C008C19A1 /* KeyboardAvoidingView */,
+				0EDFD25426C2C65A0053E82B /* DeviceKit */,
 			);
 			productName = visafe;
 			productReference = 0EDEEFA12681F29E00572C4E /* visafe.app */;
@@ -1356,6 +1365,7 @@
 				C979C96126B5D9AA00F97E4F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				C979C96626B5DB8100F97E4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				C90F154626BBF71C008C19A1 /* XCRemoteSwiftPackageReference "KeyboardAvoidingView" */,
+				0EDFD25326C2C65A0053E82B /* XCRemoteSwiftPackageReference "DeviceKit" */,
 			);
 			productRefGroup = 0EDEEFA22681F29E00572C4E /* Products */;
 			projectDirPath = "";
@@ -1397,6 +1407,7 @@
 				C91EE7EF26AC7414006ADAE9 /* GroupListUserVC.xib in Resources */,
 				C969B398269ADB210066A88A /* ChooseTypeWorkspaceCell.xib in Resources */,
 				C966FE992694A9500049458C /* OnboardingChildVC.xib in Resources */,
+				0EF083AF26C23C2900D58F12 /* WebViewVC.xib in Resources */,
 				C93FFDE6269AF48800D7B02A /* ProfileSettingVC.xib in Resources */,
 				C91813F7269AFB1300DC0E83 /* ProfileHelpVC.xib in Resources */,
 				518EC10126B9A35900D88D2A /* ProtectDetailListBlockVC.xib in Resources */,
@@ -1569,6 +1580,8 @@
 				C94B39C2268A260D00046958 /* DeleteToGroupParam.swift in Sources */,
 				C99FD1D8269746C200A8F731 /* ProfileVC.swift in Sources */,
 				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
+				0EF083B026C23C2900D58F12 /* WebViewVC.swift in Sources */,
+				C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */,
 				C9B7949026862C2E00258A72 /* ForgotPasswordVC.swift in Sources */,
 				C95A584C2688339D0077112F /* WorkspaceWorker.swift in Sources */,
 				C956059026AEAB4500AD8475 /* GroupDeviceCell.swift in Sources */,
@@ -1842,10 +1855,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = visafe/visafeDebug.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
@@ -1859,7 +1872,7 @@
 				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = visafe_develop;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = visafe_develop;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1878,10 +1891,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = visafe/visafe.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
@@ -1896,7 +1909,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = visafe_develop;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = visafe_develop;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1943,6 +1956,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 14.0.1;
+			};
+		};
+		0EDFD25326C2C65A0053E82B /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devicekit/DeviceKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
 			};
 		};
 		C90F154626BBF71C008C19A1 /* XCRemoteSwiftPackageReference "KeyboardAvoidingView" */ = {
@@ -2029,6 +2050,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0E229D852682D3AF00559B67 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		0EDFD25426C2C65A0053E82B /* DeviceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EDFD25326C2C65A0053E82B /* XCRemoteSwiftPackageReference "DeviceKit" */;
+			productName = DeviceKit;
 		};
 		C90F154726BBF71C008C19A1 /* KeyboardAvoidingView */ = {
 			isa = XCSwiftPackageProductDependency;
