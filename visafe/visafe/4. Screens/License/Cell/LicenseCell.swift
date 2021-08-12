@@ -19,7 +19,7 @@ class LicenseCell: BaseTableCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func bindingData(value: String) {
-        titleLabel.text = value
+    func bindingData(value: LicenseDescriptionEnum, package: PackageModel) {
+        titleLabel.text = value.getDescription(package: package)
     }
 }

@@ -30,6 +30,9 @@
 		518EC0FD26B9958900D88D2A /* ProtectHomeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0FC26B9958900D88D2A /* ProtectHomeType.swift */; };
 		518EC10126B9A35900D88D2A /* ProtectDetailListBlockVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518EC10026B9A35900D88D2A /* ProtectDetailListBlockVC.xib */; };
 		518EC10526B9A36300D88D2A /* ProtectDetailListBlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC10426B9A36300D88D2A /* ProtectDetailListBlockVC.swift */; };
+		C90AD90426C52371003539FF /* PackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AD90326C52371003539FF /* PackageModel.swift */; };
+		C90AD90726C52669003539FF /* PaymentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AD90626C52669003539FF /* PaymentWorker.swift */; };
+		C90AD90A26C55380003539FF /* OrderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AD90926C55380003539FF /* OrderResult.swift */; };
 		C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90EA73D2684C298002502F5 /* LoginVC.swift */; };
 		C90EA7402684C298002502F5 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90EA73E2684C298002502F5 /* LoginVC.xib */; };
 		C90F14F826BB9CD4008C19A1 /* ChangePasswordNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F14F626BB9CD4008C19A1 /* ChangePasswordNameVC.swift */; };
@@ -334,6 +337,9 @@
 		518EC10026B9A35900D88D2A /* ProtectDetailListBlockVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProtectDetailListBlockVC.xib; sourceTree = "<group>"; };
 		518EC10426B9A36300D88D2A /* ProtectDetailListBlockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtectDetailListBlockVC.swift; sourceTree = "<group>"; };
 		907E3660E73749DFAE56C748 /* Pods-visafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visafe.debug.xcconfig"; path = "Target Support Files/Pods-visafe/Pods-visafe.debug.xcconfig"; sourceTree = "<group>"; };
+		C90AD90326C52371003539FF /* PackageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageModel.swift; sourceTree = "<group>"; };
+		C90AD90626C52669003539FF /* PaymentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWorker.swift; sourceTree = "<group>"; };
+		C90AD90926C55380003539FF /* OrderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResult.swift; sourceTree = "<group>"; };
 		C90EA73D2684C298002502F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C90EA73E2684C298002502F5 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		C90F14F626BB9CD4008C19A1 /* ChangePasswordNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordNameVC.swift; sourceTree = "<group>"; };
@@ -777,6 +783,7 @@
 				C93C234F26A96255003AC717 /* StatisticModel.swift */,
 				C91EE80026AC8D17006ADAE9 /* QueryLogModel.swift */,
 				C956057C26AE98BD00AD8475 /* DeviceGroupModel.swift */,
+				C90AD90326C52371003539FF /* PackageModel.swift */,
 			);
 			path = "3. Models";
 			sourceTree = "<group>";
@@ -1082,6 +1089,7 @@
 				C94B39CA268A278B00046958 /* GroupWorker.swift */,
 				C9181410269B46CA00DC0E83 /* NotificationWorker.swift */,
 				0EF5EB0C26BA534C002F5E84 /* DeviceWorker.swift */,
+				C90AD90626C52669003539FF /* PaymentWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -1101,6 +1109,7 @@
 				C9B1E9A626B6EE2E00FC2F7E /* InviteMemberResult.swift */,
 				C9223EAA26B93C4200B18A76 /* InviteDeviceResult.swift */,
 				0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */,
+				C90AD90926C55380003539FF /* OrderResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -1530,6 +1539,7 @@
 				C9B1E9A726B6EE2E00FC2F7E /* InviteMemberResult.swift in Sources */,
 				518EC0F226B992EF00D88D2A /* ProtectHomeHeaderView.swift in Sources */,
 				C966FE982694A9500049458C /* OnboardingChildVC.swift in Sources */,
+				C90AD90426C52371003539FF /* PackageModel.swift in Sources */,
 				C9F2494426AAD5AD00EE7442 /* GroupSettingDetailCell.swift in Sources */,
 				C993D28226A4952800684F80 /* TabbarItemContentView.swift in Sources */,
 				C99034D32694C3C1009C078F /* TextfieldExtension.swift in Sources */,
@@ -1561,6 +1571,7 @@
 				C94B39A7268A109800046958 /* WorkspaceUpdateNameParam.swift in Sources */,
 				C94B39CB268A278B00046958 /* GroupWorker.swift in Sources */,
 				C919B9702682216B009982C3 /* BaseTableCell.swift in Sources */,
+				C90AD90A26C55380003539FF /* OrderResult.swift in Sources */,
 				C971F9FF2697498A00BB7118 /* PostGroupAboutVC.swift in Sources */,
 				C9EEB8B726AD634B008F093C /* HeaderedACTabScrollViewController.swift in Sources */,
 				C9777A3B269ACDE500C40031 /* ProfileFooterView.swift in Sources */,
@@ -1581,7 +1592,6 @@
 				C99FD1D8269746C200A8F731 /* ProfileVC.swift in Sources */,
 				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
 				0EF083B026C23C2900D58F12 /* WebViewVC.swift in Sources */,
-				C93ED192268244A900B03E8A /* ConfigVC.swift in Sources */,
 				C9B7949026862C2E00258A72 /* ForgotPasswordVC.swift in Sources */,
 				C95A584C2688339D0077112F /* WorkspaceWorker.swift in Sources */,
 				C956059026AEAB4500AD8475 /* GroupDeviceCell.swift in Sources */,
@@ -1644,6 +1654,7 @@
 				C9E7A493269087240012985B /* GroupSettingLinkCell.swift in Sources */,
 				C9E5C77E26872ADC00D159EF /* LoginResult.swift in Sources */,
 				C949D72D26B0755B00647FF6 /* LicensePackageCell.swift in Sources */,
+				C90AD90726C52669003539FF /* PaymentWorker.swift in Sources */,
 				C966FE932694A8EB0049458C /* OnboardingVC.swift in Sources */,
 				C91EE7D926AC1ACE006ADAE9 /* ProtectHeaderView.swift in Sources */,
 				C970323726907AA2007F45E0 /* BaseEnterValueView.swift in Sources */,

@@ -22,13 +22,15 @@ class LicensePackageCell: BaseTableCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func bindingData(type: LicenseTypeEnum, package: LicensePackageEnum) {
-        if package == .month {
-            priceLabel.text = type.getPriceMonth()
+    func bindingData(price: PackagePriceModel) {
+        if price.isBusiness {
+            priceLabel.text = "Liên hệ"
+            titleLabel.text = "Gói 12 tháng"
+            contentLabel.text = "+90 NGÀY DÙNG THỬ"
         } else {
-            priceLabel.text = type.getPriceYear()
+            priceLabel.text = "\(price.price)₫ / Tháng"
+            titleLabel.text = "Gói \(price.duration) tháng"
+            contentLabel.text = "+ \(price.day_trail) NGÀY DÙNG THỬ"
         }
-        titleLabel.text = package.getTitle()
-        contentLabel.text = package.getContent()
     }
 }

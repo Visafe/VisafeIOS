@@ -7,6 +7,42 @@
 
 import UIKit
 
+public enum LicenseDescriptionEnum: String {
+    case device = "Bảo vệ thiết bị"
+    case wifi = "Bảo vệ Wi-Fi"
+    case protect = "Chặn theo dõi, quảng cáo không giới hạn"
+    case statis = "Phân tích & Báo cáo"
+    case maxdevice = "Tối đa %ld thiết bị"
+    case maxgroup = "Quản lý tối đa %ld nhóm"
+    case maxworkspace = "Quản lý tối đa %ld workspace"
+    case help = "Hỗ trợ qua Chat/Call"
+    
+    func getDescription(package: PackageModel) -> String {
+        switch self {
+        case .device:
+            return "Bảo vệ thiết bị"
+        case .wifi:
+            return "Bảo vệ Wi-Fi"
+        case .protect:
+            return "Chặn theo dõi, quảng cáo không giới hạn"
+        case .statis:
+            return "Phân tích & Báo cáo"
+        case .maxdevice:
+            return "Tối đa \(package.max_device) thiết bị"
+        case .maxgroup:
+            return "Quản lý tối đa \(package.max_group) nhóm"
+        case .maxworkspace:
+            return "Quản lý tối đa \(package.max_workspace) workspace"
+        case .help:
+            return "Hỗ trợ qua Chat/Call"
+        }
+    }
+    
+    static func getSource() -> [LicenseDescriptionEnum] {
+        return [.device, .wifi, .protect, .statis, .maxdevice, .maxgroup, .maxworkspace, .help]
+    }
+}
+
 public enum LicensePackageEnum: Int {
     case month = 1
     case year = 2
@@ -31,10 +67,11 @@ public enum LicensePackageEnum: Int {
 }
 
 class LicenseVC: BaseViewController {
-    var type: LicenseTypeEnum
-    var sources: [String] = []
+    var package: PackageModel
+    var type: PakageNameEnum = .family
+    var sources: [LicenseDescriptionEnum] = []
     
-    var prices: [LicensePackageEnum] = [.year, .month]
+    var prices: [PackagePriceModel] = []
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageLicense: UIImageView!
@@ -45,9 +82,14 @@ class LicenseVC: BaseViewController {
         configView()
     }
     
-    init(type: LicenseTypeEnum) {
-        self.type = type
-        self.sources = type.getListSource()
+    init(package: PackageModel) {
+        self.package = package
+        self.type = package.name ?? .family
+        self.sources = LicenseDescriptionEnum.getSource()
+        self.prices = package.prices.sorted(by: { (p1, p2) -> Bool in
+            return p1.duration < p2.duration
+        })
+        if self.prices.count == 0 { self.prices.append(PackagePriceModel.getPriceBusiness()) }
         super.init(nibName: LicenseVC.className, bundle: nil)
     }
     
@@ -82,20 +124,32 @@ extension LicenseVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: LicenseCell.className) as? LicenseCell else {
                 return UITableViewCell()
             }
-            cell.bindingData(value: sources[indexPath.row])
+            cell.bindingData(value: sources[indexPath.row], package: package)
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: LicensePackageCell.className) as? LicensePackageCell else {
                 return UITableViewCell()
             }
-            cell.bindingData(type: type, package: prices[indexPath.row])
+            cell.bindingData(price: prices[indexPath.row])
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        if indexPath.section == 1 {
+            let price = prices[indexPath.row]
+            if let id = price.id {
+                showLoading()
+                PaymentWorker.order(id: id) { [weak self] (result, error) in
+                    guard let weakSelf = self else { return }
+                    weakSelf.hideLoading()
+                    if let string = result?.payUrl, let url = URL(string: string) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }
+            }
+        }
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
