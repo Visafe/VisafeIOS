@@ -70,7 +70,7 @@ class NotificationVC: BaseViewController {
             sources = []
             NotificationWorker.list(page: pageIndex) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
-                weakSelf.sources = weakSelf.sources + (result?.notis ?? [])
+                weakSelf.sources = result?.notis ?? []
                 weakSelf.tableView.endRefreshing()
                 weakSelf.canLoadMore = ((result?.notis?.count ?? 0) >= 15)
                 if weakSelf.canLoadMore {
