@@ -340,6 +340,7 @@ extension APIRouter: TargetType {
             pars["id"] = id
         case .order(id: let id):
             pars["package_price_time_id"] = id
+            pars["device_id"] = CacheManager.shared.getDeviceId()
         case .reactivation, .getListWorkspace, .profile, .genDeviceId, .packages:
             break
         }

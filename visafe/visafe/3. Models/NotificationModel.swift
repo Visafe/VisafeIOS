@@ -49,6 +49,7 @@ public enum NotificationContentTypeEnum: String {
     case deviceJoinSuccess = "DEVICE_JOIN_SUCCESS"
     case inviteSuccess = "INVITE_SUCCESS"
     case joinSuccess = "JOIN_SUCCESS"
+    case alertTransaction = "ALERT_TRANSACTION"
 }
 
 class NotificationContentModel: NSObject, Mappable {
@@ -56,6 +57,9 @@ class NotificationContentModel: NSObject, Mappable {
     var affected: NotificationDeviceModel?
     var type: NotificationContentTypeEnum?
     var target: NotificationTargetModel?
+    var duration: String?
+    var package_name: String?
+    var status_payment: String?
     
     override init() {
         super.init()
@@ -69,6 +73,9 @@ class NotificationContentModel: NSObject, Mappable {
         affected <- map["affected"]
         type <- map["type"]
         target <- map["target"]
+        duration <- map["duration"]
+        package_name <- map["package_name"]
+        status_payment <- map["status_payment"]
     }
 }
 
@@ -108,6 +115,12 @@ class NotificationModel: NSObject, Mappable {
             return "Bạn đã là thành viên của nhóm: \(group?.name ?? "")"
         case .inviteSuccess:
             return " \(content?.affected?.name ?? "") đã là thành viên của nhóm: \(group?.name ?? "")"
+        case .alertTransaction:
+            if content?.status_payment == "0" {
+                return "Bạn đã giao dịch thành công gói \(content?.package_name ?? "") trong thời gian \(content?.duration ?? "") tháng"
+            } else {
+                return "Giao dịch thất bại gói \(content?.package_name ?? "") trong thời gian \(content?.duration ?? "") tháng"
+            }
         }
     }
     
