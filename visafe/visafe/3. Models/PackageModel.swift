@@ -65,6 +65,19 @@ public enum PakageNameEnum: String {
             return nil
         }
     }
+    
+    func getDesciptionInfo() -> String? {
+        switch self {
+        case .premium:
+            return "Phiên bản Premium cho phép bạn truy cập không giới hạn tính năng của ứng dụng"
+        case .family:
+            return "Phiên bản Family cho phép bạn truy cập không giới hạn tính năng của ứng dụng"
+        case .business:
+            return "Phiên bản Business cho phép bạn truy cập không giới hạn tính năng của ứng dụng"
+        case .personal:
+            return nil
+        }
+    }
 }
 
 class PackageModel: NSObject, Mappable {

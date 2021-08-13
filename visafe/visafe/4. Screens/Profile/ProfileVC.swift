@@ -140,12 +140,27 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         case .logout:
             logout()
         case .upgradeAccount:
-            showLicense()
+            if CacheManager.shared.getIsLogined() {
+                showLicenseInfo()
+            } else {
+                showLicense()
+            }
         case .share:
             shareApp()
         case .rate:
             rateApp()
         }
+    }
+    
+    func showLicenseInfo() {
+        let vc = LicenseInfoVC()
+        vc.morePackage = { [weak self] in
+            self?.showLicense()
+        }
+        vc.workspace = { [weak self] in
+            self?.chooseWorkspace()
+        }
+        present(vc, animated: true)
     }
     
     func checkLogin() -> Bool {

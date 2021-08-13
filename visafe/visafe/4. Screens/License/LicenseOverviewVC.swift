@@ -27,6 +27,10 @@ class LicenseOverviewVC: BaseViewController {
         super.viewWillAppear(animated)
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func prepareData() {
         showLoading()
         PaymentWorker.getPackages { [weak self] (result, error) in
@@ -42,18 +46,20 @@ class LicenseOverviewVC: BaseViewController {
     // handle notification
     @objc func handlePayment(notification: NSNotification) {
         if let dic = notification.userInfo as? [String : Any], let result = Mapper<PaymentResult>().map(JSON: dic) {
-            DispatchQueue.main.async { [weak self] in
-                guard let strongSelf = self else { return }
-                if result.errorCode == "0" { // success
-                    strongSelf.showMessage(title: "Thanh toán thành công", content: "Bạn đã thanh toàn thành công. Bắt đầu trải nghiệm ngay") { [weak self] in
-                        guard let weakSelf = self else { return }
-                        weakSelf.paymentSuccess?()
-                        weakSelf.dismiss(animated: true, completion: nil)
-                    }
-                } else { // error
-                    strongSelf.showError(title: "Thanh toán không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
-                }
+            Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(self.showMessage(sender:)), userInfo: result , repeats:false)
+        }
+    }
+    
+    @objc func showMessage(sender: Timer) {
+        guard let result = sender.userInfo as? PaymentResult else { return }
+        if result.errorCode == "0" { // success
+            showMessage(title: "Thanh toán thành công", content: "Bạn đã thanh toàn thành công. Bắt đầu trải nghiệm ngay") { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.paymentSuccess?()
+                weakSelf.dismiss(animated: true, completion: nil)
             }
+        } else { // error
+            showError(title: "Thanh toán không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
         }
     }
     

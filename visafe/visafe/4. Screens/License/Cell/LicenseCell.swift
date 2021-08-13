@@ -22,4 +22,8 @@ class LicenseCell: BaseTableCell {
     func bindingData(value: LicenseDescriptionEnum, package: PackageModel) {
         titleLabel.text = value.getDescription(package: package)
     }
+    
+    func bindingData(value: LicenseDescriptionEnum) {
+        titleLabel.text = value.getDescription()
+    }
 }

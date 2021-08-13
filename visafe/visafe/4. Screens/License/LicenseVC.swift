@@ -39,6 +39,28 @@ public enum LicenseDescriptionEnum: String {
         }
     }
     
+    func getDescription() -> String {
+        guard let user = CacheManager.shared.getCurrentUser() else { return "" }
+        switch self {
+        case .device:
+            return "Bảo vệ thiết bị"
+        case .wifi:
+            return "Bảo vệ Wi-Fi"
+        case .protect:
+            return "Chặn theo dõi, quảng cáo không giới hạn"
+        case .statis:
+            return "Phân tích & Báo cáo"
+        case .maxdevice:
+            return "Tối đa \(user.maxDevice) thiết bị"
+        case .maxgroup:
+            return "Quản lý tối đa \(user.maxGroup) nhóm"
+        case .maxworkspace:
+            return "Quản lý tối đa \(user.maxWorkspace) workspace"
+        case .help:
+            return "Hỗ trợ qua Chat/Call"
+        }
+    }
+    
     static func getSource() -> [LicenseDescriptionEnum] {
         return [.device, .wifi, .protect, .statis, .maxdevice, .maxgroup, .maxworkspace, .help]
     }

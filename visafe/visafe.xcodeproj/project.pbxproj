@@ -119,6 +119,8 @@
 		C94B39C5268A26A300046958 /* ChangeManagerPermisionParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B39C4268A26A300046958 /* ChangeManagerPermisionParam.swift */; };
 		C94B39C8268A26DA00046958 /* ChangeViewerPermisionParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B39C7268A26DA00046958 /* ChangeViewerPermisionParam.swift */; };
 		C94B39CB268A278B00046958 /* GroupWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B39CA268A278B00046958 /* GroupWorker.swift */; };
+		C952E21A26C61DD500406B61 /* LicenseInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C952E21826C61DD200406B61 /* LicenseInfoVC.swift */; };
+		C952E21B26C61DD500406B61 /* LicenseInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C952E21926C61DD300406B61 /* LicenseInfoVC.xib */; };
 		C956057D26AE98BD00AD8475 /* DeviceGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956057C26AE98BD00AD8475 /* DeviceGroupModel.swift */; };
 		C956058226AE9D8500AD8475 /* GroupListDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956058026AE9D8300AD8475 /* GroupListDeviceVC.swift */; };
 		C956058326AE9D8500AD8475 /* GroupListDeviceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C956058126AE9D8300AD8475 /* GroupListDeviceVC.xib */; };
@@ -425,6 +427,8 @@
 		C94B39C4268A26A300046958 /* ChangeManagerPermisionParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeManagerPermisionParam.swift; sourceTree = "<group>"; };
 		C94B39C7268A26DA00046958 /* ChangeViewerPermisionParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeViewerPermisionParam.swift; sourceTree = "<group>"; };
 		C94B39CA268A278B00046958 /* GroupWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupWorker.swift; sourceTree = "<group>"; };
+		C952E21826C61DD200406B61 /* LicenseInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseInfoVC.swift; sourceTree = "<group>"; };
+		C952E21926C61DD300406B61 /* LicenseInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LicenseInfoVC.xib; sourceTree = "<group>"; };
 		C956057C26AE98BD00AD8475 /* DeviceGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceGroupModel.swift; sourceTree = "<group>"; };
 		C956058026AE9D8300AD8475 /* GroupListDeviceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListDeviceVC.swift; sourceTree = "<group>"; };
 		C956058126AE9D8300AD8475 /* GroupListDeviceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupListDeviceVC.xib; sourceTree = "<group>"; };
@@ -1146,6 +1150,8 @@
 		C9C7A9E226B05E85002C883A /* License */ = {
 			isa = PBXGroup;
 			children = (
+				C952E21826C61DD200406B61 /* LicenseInfoVC.swift */,
+				C952E21926C61DD300406B61 /* LicenseInfoVC.xib */,
 				C949D72226B06BE200647FF6 /* Cell */,
 				C9C7A9E326B05E9F002C883A /* LicenseOverviewVC.swift */,
 				C9C7A9E426B05E9F002C883A /* LicenseOverviewVC.xib */,
@@ -1475,6 +1481,7 @@
 				C949D72826B06BF700647FF6 /* LicenseCell.xib in Resources */,
 				0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */,
 				C9FE695D26B795740046AD79 /* AddDeviceToGroupVC.xib in Resources */,
+				C952E21B26C61DD500406B61 /* LicenseInfoVC.xib in Resources */,
 				C999AB08268E03F200F657A9 /* GroupSettingCell.xib in Resources */,
 				C90EA7402684C298002502F5 /* LoginVC.xib in Resources */,
 				C979C96D26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.xib in Resources */,
@@ -1635,6 +1642,7 @@
 				C9FE695C26B795740046AD79 /* AddDeviceToGroupVC.swift in Sources */,
 				0EF5EB1126BA7A8F002F5E84 /* GenDeviceResult.swift in Sources */,
 				C91EE7E026AC1F90006ADAE9 /* GroupProtectVC.swift in Sources */,
+				C952E21A26C61DD500406B61 /* LicenseInfoVC.swift in Sources */,
 				C90F150026BBD599008C19A1 /* ScanGroupVC.swift in Sources */,
 				C94B39B6268A20EB00046958 /* DeleteDeviceToGroupParam.swift in Sources */,
 				C91EE7FD26AC8CD9006ADAE9 /* QueryLogResult.swift in Sources */,
@@ -1794,7 +1802,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1851,7 +1859,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1879,7 +1887,7 @@
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1915,7 +1923,7 @@
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/visafe/6 .Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
