@@ -98,7 +98,7 @@ extension String {
         }
     }
     
-    func checkDeeplink() -> String? {
+    func checkInviteDevicelink() -> String? {
         if !self.contains("https://app.visafe.vn/control/invite/device") || !self.contains("groupId") || !self.contains("groupName") {
             return nil
         }
@@ -112,6 +112,13 @@ extension String {
             }
         }
         if(count != 4) {
+            return nil
+        }
+        return self
+    }
+    
+    func checkPaymentlink() -> String? {
+        if !self.contains("partnerCode") || !self.contains("accessKey") || !self.contains("requestId") || !self.contains("signature"){
             return nil
         }
         return self
@@ -161,4 +168,15 @@ extension String {
         return String(self[start ..< end])
     }
     
+}
+
+extension URL {
+    public var queryParameters: [String: Any]? {
+        guard
+            let components = URLComponents(url: self, resolvingAgainstBaseURL: true),
+            let queryItems = components.queryItems else { return nil }
+        return queryItems.reduce(into: [String: Any]()) { (result, item) in
+            result[item.name] = item.value
+        }
+    }
 }

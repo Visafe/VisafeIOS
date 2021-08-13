@@ -13,6 +13,7 @@ class ProfileCell: BaseTableCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,9 +25,18 @@ class ProfileCell: BaseTableCell {
     
     func bindingData(type: ProfileEnum) {
         titleLabel.text = type.getTitle()
-        contentLabel.text = type.getContent()
         iconImageView.image = type.getIcon()
         heightFooterLineContraint.constant = type.getFoooterLineHeight()
+        if type == .upgradeAccount {
+            contentImage.isHidden = false
+            contentLabel.isHidden = true
+            let type = CacheManager.shared.getCurrentUser()?.accountType ?? .personal
+            contentImage.image = type.getLogo()
+        } else {
+            contentImage.isHidden = true
+            contentLabel.isHidden = false
+            contentLabel.text = type.getContent()
+        }
     }
     
     func bindingData(type: ProfileSettingEnum) {

@@ -9,18 +9,34 @@ import UIKit
 import ObjectMapper
 
 public enum PakageNameEnum: String {
+    case personal = "PERSONAL"
     case family = "FAMILY"
     case premium = "PREMIUM"
     case business = "BUSINESS"
     
     func getIndex() -> Int {
         switch self {
+        case .personal:
+            return 0
         case .premium:
             return 1
         case .family:
             return 2
         case .business:
             return 3
+        }
+    }
+    
+    func getNextPackage() -> PakageNameEnum {
+        switch self {
+        case .personal:
+            return .premium
+        case .premium:
+            return .family
+        case .family:
+            return .business
+        case .business:
+            return .business
         }
     }
     
@@ -32,6 +48,8 @@ public enum PakageNameEnum: String {
             return UIImage(named: "ic_license_family")
         case .business:
             return UIImage(named: "ic_license_business")
+        case .personal:
+            return UIImage(named: "ic_basic")
         }
     }
     
@@ -43,39 +61,8 @@ public enum PakageNameEnum: String {
             return "Nâng cấp lên phiên bản Family cho phép bạn bảo vệ mọi thiết bị của thành viên trong gia đình"
         case .business:
             return "Nâng cấp lên phiên bản Business cho phép bạn quản lý và bảo vệ mọi thiết bị của thành viên trong công ty"
-        }
-    }
-    
-    func getListSource() -> [String] {
-        switch self {
-        case .premium:
-            return ["Bảo vệ thiết bị", "Bảo vệ Wi-Fi", "Chặn theo dõi, quảng cáo không giới hạn", "Phân tích & Báo cáo", "Tối đa 3 thiết bị", "Quản lý tối đa 1 nhóm", "Hỗ trợ qua Chat/Call"]
-        case .family:
-            return ["Bảo vệ thiết bị", "Bảo vệ Wi-Fi", "Chặn theo dõi, quảng cáo không giới hạn", "Phân tích & Báo cáo", "Tối đa 9 thiết bị", "Quản lý tối đa 1 nhóm", "Hỗ trợ qua Chat/Call"]
-        case .business:
-            return ["Bảo vệ thiết bị", "Bảo vệ Wi-Fi", "Chặn theo dõi, quảng cáo không giới hạn", "Phân tích & Báo cáo", "Không giới hạn thiết bị", "Không giới hạn nhóm", "Hỗ trợ qua Hotline 24/7"]
-        }
-    }
-    
-    func getPriceYear() -> String {
-        switch self {
-        case .premium:
-            return "49.000₫ / Năm"
-        case .family:
-            return "249.000₫ / Năm"
-        case .business:
-            return "Liên hệ"
-        }
-    }
-    
-    func getPriceMonth() -> String {
-        switch self {
-        case .premium:
-            return "10.000₫ / Tháng"
-        case .family:
-            return "50.000₫ / Tháng"
-        case .business:
-            return "Liên hệ"
+        case .personal:
+            return nil
         }
     }
 }

@@ -59,7 +59,11 @@ class HomeVC: BaseDoHVC {
     }
 
     @objc func updateDNSStatus() {
-        DoHNative.shared.getDnsManagerStatus()
+        if #available(iOS 14.0, *) {
+            DoHNative.shared.getDnsManagerStatus()
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     func setupUI() {

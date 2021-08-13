@@ -19,12 +19,16 @@ class BaseDoHVC: BaseViewController {
     func onOffDoH() {
         if DoHNative.shared.isInstalled {
             if DoHNative.shared.isEnabled {
-                DoHNative.shared.removeDnsManager {[weak self] (error) in
-                    if let _error = error {
-                        self?.handleSaveError(_error)
-                        return
+                if #available(iOS 14.0, *) {
+                    DoHNative.shared.removeDnsManager {[weak self] (error) in
+                        if let _error = error {
+                            self?.handleSaveError(_error)
+                            return
+                        }
+                        DoHNative.shared.saveDNS {[weak self] (_) in}
                     }
-                    DoHNative.shared.saveDNS {[weak self] (_) in}
+                } else {
+                    // Fallback on earlier versions
                 }
             } else {
                 showAnimationLoading()

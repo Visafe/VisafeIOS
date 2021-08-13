@@ -35,19 +35,21 @@ class DoHNative {
     }
 
     func saveDNS(_ onSavedStatus: @escaping (_ error: Error?) -> Void) {
-        NEDNSSettingsManager.shared().loadFromPreferences { (error) in
-            if let _error = error {
-                onSavedStatus(_error)
-                return
-            }
-            let dohSetting = NEDNSOverHTTPSSettings(servers: [])
-            dohSetting.serverURL = URL(string: Common.getDnsServer())
-            NEDNSSettingsManager.shared().dnsSettings = dohSetting
-            NEDNSSettingsManager.shared().saveToPreferences { (saveError) in
-                if let _error = saveError {
+        if #available(iOS 14.0, *) {
+            NEDNSSettingsManager.shared().loadFromPreferences { (error) in
+                if let _error = error {
                     onSavedStatus(_error)
-                } else {
-                    onSavedStatus(nil)
+                    return
+                }
+                let dohSetting = NEDNSOverHTTPSSettings(servers: [])
+                dohSetting.serverURL = URL(string: Common.getDnsServer())
+                NEDNSSettingsManager.shared().dnsSettings = dohSetting
+                NEDNSSettingsManager.shared().saveToPreferences { (saveError) in
+                    if let _error = saveError {
+                        onSavedStatus(_error)
+                    } else {
+                        onSavedStatus(nil)
+                    }
                 }
             }
         }

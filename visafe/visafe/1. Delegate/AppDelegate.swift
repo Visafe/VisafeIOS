@@ -13,6 +13,7 @@ import FirebaseMessaging
 import FBSDKCoreKit
 import GoogleSignIn
 import IQKeyboardManagerSwift
+import ObjectMapper
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -48,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else if (ApplicationDelegate.shared.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation] )) {
             return true
-        } else if url.absoluteString.checkDeeplink() != nil {
+        } else if url.absoluteString.checkInviteDevicelink() != nil {
             handleUniversallink(code: url.absoluteString)
             return true
         }
@@ -56,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func handleUniversallink(code: String) {
-        guard let link = code.checkDeeplink() else { return }
+        guard let link = code.checkInviteDevicelink() else { return }
         let param = Common.getDeviceInfo()
         param.updateGroupInfo(link: link)
         // create the actual alert controller view that will be the pop-up
@@ -159,8 +160,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
             let url = userActivity.webpageURL!
-            if url.absoluteString.checkDeeplink() != nil {
+            if url.absoluteString.checkInviteDevicelink() != nil {
                 handleUniversallink(code: url.absoluteString)
+                return true
+            } else if url.absoluteString.checkPaymentlink() != nil {
+                handlePaymentLink(code: url.absoluteString)
                 return true
             }
         }
@@ -174,6 +178,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     CacheManager.shared.setDeviceId(value: deviceId)
                 }
             }
+        }
+    }
+    
+    func handlePaymentLink(code: String) {
+        if let url = URL(string: code), let dic = url.queryParameters {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kPaymentSuccess), object: nil, userInfo: dic)
         }
     }
 }
@@ -214,7 +224,11 @@ extension AppDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.list, .banner, .badge])
+        if #available(iOS 14.0, *) {
+            completionHandler([.list, .banner, .badge])
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }
 

@@ -38,7 +38,7 @@ class UserModel: NSObject, Mappable {
     var role: GroupMemberRoleEnum = .member
     var defaultGroup: String?
     var defaultWorkspace: String?
-    var accountType: String?
+    var accountType: PakageNameEnum = .personal
     var timeStart: String?
     var timeEnd: String?
     var maxWorkspace: Int = 0

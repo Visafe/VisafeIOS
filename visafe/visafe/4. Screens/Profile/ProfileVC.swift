@@ -82,7 +82,7 @@ class ProfileVC: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var sources: [ProfileEnum] = CacheManager.shared.getIsLogined() ? [.accountType, .upgradeAccount, .setting, .help, .share, .rate, .logout] : [.accountType, .upgradeAccount, .setting, .help, .share, .rate]
+    var sources: [ProfileEnum] = CacheManager.shared.getIsLogined() ? [.upgradeAccount, .setting, .help, .share, .rate, .logout] : [.upgradeAccount, .setting, .help, .share, .rate]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,9 +159,14 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = ProfileFooterView.loadFromNib()
+        footerView?.bindingData()
         footerView?.upgrade = { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.showLicense()
+        }
+        footerView?.register = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.login()
         }
         return footerView
     }
@@ -193,7 +198,20 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func showLicense() {
         if checkLogin() {
             let vc = LicenseOverviewVC()
+            vc.paymentSuccess = { [weak self] in
+                self?.paymentSuccess()
+            }
             present(vc, animated: true)
+        }
+    }
+    
+    func paymentSuccess() {
+        AuthenWorker.profile { [weak self] (user, error) in
+            guard let weakSelf = self else { return }
+            if let u = user {
+                CacheManager.shared.setCurrentUser(value: u)
+                weakSelf.tableView.reloadData()
+            }
         }
     }
     
@@ -208,7 +226,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func rateApp() {
         if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
-            SKStoreReviewController.requestReview(in: scene)
+            if #available(iOS 14.0, *) {
+                SKStoreReviewController.requestReview(in: scene)
+            }
         }
     }
     

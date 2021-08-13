@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class LicenseOverviewVC: BaseViewController {
 
@@ -14,9 +15,11 @@ class LicenseOverviewVC: BaseViewController {
     var packages: [PackageModel] = []
     var pageViewController: UIPageViewController!
     var listPackageVC: [LicenseVC] = []
+    var paymentSuccess:(() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(handlePayment(notification:)), name: NSNotification.Name(rawValue: kPaymentSuccess), object: nil)
         prepareData()
     }
     
@@ -36,10 +39,32 @@ class LicenseOverviewVC: BaseViewController {
         }
     }
     
+    // handle notification
+    @objc func handlePayment(notification: NSNotification) {
+        if let dic = notification.userInfo as? [String : Any], let result = Mapper<PaymentResult>().map(JSON: dic) {
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                if result.errorCode == "0" { // success
+                    strongSelf.showMessage(title: "Thanh toán thành công", content: "Bạn đã thanh toàn thành công. Bắt đầu trải nghiệm ngay") { [weak self] in
+                        guard let weakSelf = self else { return }
+                        weakSelf.paymentSuccess?()
+                        weakSelf.dismiss(animated: true, completion: nil)
+                    }
+                } else { // error
+                    strongSelf.showError(title: "Thanh toán không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
+                }
+            }
+        }
+    }
+    
     func configPageView() {
         guard packages.count > 0 else { return }
         for item in packages {
             let vc = LicenseVC(package: item)
+            vc.paymentSuccess = { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.paymentSuccess?()
+            }
             listPackageVC.append(vc)
         }
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)

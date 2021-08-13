@@ -48,7 +48,7 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
         configView()
 
         if type == .wifi {
-            if #available(iOS 13.0, *) {
+            if #available(iOS 14.0, *) {
                 let status = locationManager.authorizationStatus
                 if status == .authorizedWhenInUse {
                     updateWiFi()

@@ -33,6 +33,7 @@
 		C90AD90426C52371003539FF /* PackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AD90326C52371003539FF /* PackageModel.swift */; };
 		C90AD90726C52669003539FF /* PaymentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AD90626C52669003539FF /* PaymentWorker.swift */; };
 		C90AD90A26C55380003539FF /* OrderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AD90926C55380003539FF /* OrderResult.swift */; };
+		C90AD91026C572AA003539FF /* PaymentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AD90F26C572AA003539FF /* PaymentResult.swift */; };
 		C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90EA73D2684C298002502F5 /* LoginVC.swift */; };
 		C90EA7402684C298002502F5 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90EA73E2684C298002502F5 /* LoginVC.xib */; };
 		C90F14F826BB9CD4008C19A1 /* ChangePasswordNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F14F626BB9CD4008C19A1 /* ChangePasswordNameVC.swift */; };
@@ -340,6 +341,7 @@
 		C90AD90326C52371003539FF /* PackageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageModel.swift; sourceTree = "<group>"; };
 		C90AD90626C52669003539FF /* PaymentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWorker.swift; sourceTree = "<group>"; };
 		C90AD90926C55380003539FF /* OrderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResult.swift; sourceTree = "<group>"; };
+		C90AD90F26C572AA003539FF /* PaymentResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResult.swift; sourceTree = "<group>"; };
 		C90EA73D2684C298002502F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C90EA73E2684C298002502F5 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		C90F14F626BB9CD4008C19A1 /* ChangePasswordNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordNameVC.swift; sourceTree = "<group>"; };
@@ -1110,6 +1112,7 @@
 				C9223EAA26B93C4200B18A76 /* InviteDeviceResult.swift */,
 				0EF5EB1026BA7A8E002F5E84 /* GenDeviceResult.swift */,
 				C90AD90926C55380003539FF /* OrderResult.swift */,
+				C90AD90F26C572AA003539FF /* PaymentResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -1552,6 +1555,7 @@
 				C90F14F826BB9CD4008C19A1 /* ChangePasswordNameVC.swift in Sources */,
 				C91EE7F426AC750B006ADAE9 /* GroupMemberCell.swift in Sources */,
 				C90EA73F2684C298002502F5 /* LoginVC.swift in Sources */,
+				C90AD91026C572AA003539FF /* PaymentResult.swift in Sources */,
 				C969B39F269ADB210066A88A /* WorkspaceCell.swift in Sources */,
 				C9B1E9AD26B6FA9400FC2F7E /* DeleteDeviceGroupParam.swift in Sources */,
 				C9ECBFC126AF15AB00E254BB /* MoreActionMemberView.swift in Sources */,

@@ -37,5 +37,6 @@ let kLessonId = "lesson_ids"
 
 let kNotificationUpdateWorkspace = "kNotificationUpdateWorkspace"
 let updateDnsStatus = "updateDnsStatus"
+let kPaymentSuccess = "kPaymentSuccess"
 
 let dnsServer = "https://dns.visafe.vn/dns-query/%@"

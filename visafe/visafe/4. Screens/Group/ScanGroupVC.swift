@@ -49,7 +49,7 @@ extension ScanGroupVC: QRScannerViewDelegate {
     }
 
     func qrScannerView(_ qrScannerView: QRScannerView, didSuccess code: String) {
-        guard let link = code.checkDeeplink() else { return }
+        guard let link = code.checkInviteDevicelink() else { return }
         let param = Common.getDeviceInfo()
         param.updateGroupInfo(link: link)
         

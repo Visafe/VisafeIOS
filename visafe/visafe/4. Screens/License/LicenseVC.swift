@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 public enum LicenseDescriptionEnum: String {
     case device = "Bảo vệ thiết bị"
@@ -43,34 +44,11 @@ public enum LicenseDescriptionEnum: String {
     }
 }
 
-public enum LicensePackageEnum: Int {
-    case month = 1
-    case year = 2
-    
-    func getTitle() -> String {
-        switch self {
-        case .month:
-            return "Gói 1 tháng"
-        case .year:
-            return "Gói 12 tháng"
-        }
-    }
-    
-    func getContent() -> String {
-        switch self {
-        case .month:
-            return "+7 NGÀY DÙNG THỬ"
-        case .year:
-            return "+90 NGÀY DÙNG THỬ"
-        }
-    }
-}
-
 class LicenseVC: BaseViewController {
     var package: PackageModel
     var type: PakageNameEnum = .family
     var sources: [LicenseDescriptionEnum] = []
-    
+    var paymentSuccess:(() -> Void)?
     var prices: [PackagePriceModel] = []
     
     @IBOutlet weak var tableView: UITableView!
@@ -91,6 +69,10 @@ class LicenseVC: BaseViewController {
         })
         if self.prices.count == 0 { self.prices.append(PackagePriceModel.getPriceBusiness()) }
         super.init(nibName: LicenseVC.className, bundle: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     required init?(coder: NSCoder) {
