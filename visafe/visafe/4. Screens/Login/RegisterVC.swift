@@ -168,11 +168,12 @@ class RegisterVC: BaseViewController {
     func getWorkspaces() {
         WorkspaceWorker.getList { [weak self] (list, error) in
             guard let weakSelf = self else { return }
-            weakSelf.hideLoading()
-            CacheManager.shared.setIsLogined(value: true)
-            CacheManager.shared.setWorkspacesResult(value: list)
-            weakSelf.setCurrentWorkspace(list: list ?? [])
-            AppDelegate.appDelegate()?.setRootVCToTabVC()
+            weakSelf.hideLoading {
+                CacheManager.shared.setIsLogined(value: true)
+                CacheManager.shared.setWorkspacesResult(value: list)
+                weakSelf.setCurrentWorkspace(list: list ?? [])
+                AppDelegate.appDelegate()?.setRootVCToTabVC()
+            }
         }
     }
     
