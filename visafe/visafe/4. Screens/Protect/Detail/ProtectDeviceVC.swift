@@ -121,6 +121,7 @@ extension ProtectDeviceVC: CLLocationManagerDelegate {
     func updateWiFi() {
         header.setContent(currentNetworkInfos?.first?.ssid ?? "")
     }
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             updateWiFi()

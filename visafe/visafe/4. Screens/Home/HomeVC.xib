@@ -55,7 +55,7 @@
                         </imageView>
                     </subviews>
                 </stackView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="connection_success" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-xU-Tfd">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_connection" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-xU-Tfd">
                     <rect key="frame" x="50" y="64" width="275" height="275"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nVe-xU-Tfd" secondAttribute="height" id="acr-vg-bGf"/>
@@ -205,10 +205,10 @@
         <image name="Logo_company" width="61" height="24"/>
         <image name="bound_button" width="375" height="320"/>
         <image name="connect_on" width="96" height="96"/>
-        <image name="connection_success" width="314.5" height="314.5"/>
         <image name="home_background" width="354" height="786"/>
         <image name="ic_loading_home" width="120" height="119.5"/>
         <image name="logo_app" width="120" height="51.5"/>
+        <image name="no_connection" width="314" height="314"/>
         <image name="power" width="20" height="20"/>
         <image name="shield" width="48" height="48"/>
         <image name="upupup" width="24" height="24"/>

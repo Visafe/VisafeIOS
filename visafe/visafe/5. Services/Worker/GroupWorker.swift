@@ -375,4 +375,18 @@ class GroupWorker {
             completion(loginResult, error)
         }
     }
+
+    static func checkBotNet(completion: @escaping (_ result: BotNetResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.checkBotNet
+        APIManager.shared.request(target: router) { (data, error) in
+            var loginResult: BotNetResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<BotNetResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
 }

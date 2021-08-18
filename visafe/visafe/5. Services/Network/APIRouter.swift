@@ -77,6 +77,9 @@ enum APIRouter {
     //payment
     case packages
     case order(id: Int)
+
+    //botnet
+    case checkBotNet
 }
 
 enum APIError: Error {
@@ -210,6 +213,8 @@ extension APIRouter: TargetType {
             return "/packages"
         case .order:
             return "/order"
+        case .checkBotNet:
+            return "/ipma"
         }
     }
     
@@ -341,7 +346,7 @@ extension APIRouter: TargetType {
         case .order(id: let id):
             pars["package_price_time_id"] = id
             pars["device_id"] = CacheManager.shared.getDeviceId()
-        case .reactivation, .getListWorkspace, .profile, .genDeviceId, .packages:
+        case .reactivation, .getListWorkspace, .profile, .genDeviceId, .checkBotNet, .packages:
             break
         }
         return pars
@@ -349,7 +354,7 @@ extension APIRouter: TargetType {
     
     var task: Task {
         switch self {
-        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .activeAccount, .deleteWorkspace, .loginFacebook, .loginGoogle, .forgotPassword, .groupUpdateWhitelist, .groupUserToManager, .groupUserToViewer, .groupDeleteUser, .deleteLog, .loginApple, .deleteDeviceFromGroup, .updateDeviceGroup, .registerDevice, .readNotification, .order:
+        case .register, .login, .resetPassword, .changePassword, .changeProfile, .reactivation, .addWorkspace, .updateWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .addDeviceGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .addDeviceToIden, .deleteDeviceToIden,.inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .activeAccount, .deleteWorkspace, .loginFacebook, .loginGoogle, .forgotPassword, .groupUpdateWhitelist, .groupUserToManager, .groupUserToViewer, .groupDeleteUser, .deleteLog, .loginApple, .deleteDeviceFromGroup, .updateDeviceGroup, .registerDevice, .readNotification, .order, .checkBotNet:
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             break

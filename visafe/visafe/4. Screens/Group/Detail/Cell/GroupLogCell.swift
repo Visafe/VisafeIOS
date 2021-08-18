@@ -33,6 +33,14 @@ class GroupLogCell: BaseTableCell {
         }
         timeLabel.text = model.time?.getTimeOnFeed()
     }
+
+    func bindingData(model: BotNetDetailModel) {
+        domainLabel.text = model.getDomain()
+        if let mw_type = model.mw_type, let url = URL(string: "https://www.google.com/s2/favicons?sz=96&domain_url=\(mw_type)") {
+            iconImageView.kf.setImage(with: url)
+        }
+        timeLabel.text = model.lastseen?.getTimeOnFeed()
+    }
     
     @IBAction func moreActionButton(_ sender: Any) {
         moreAction?()

@@ -137,8 +137,7 @@ class ProtectVC: BaseDoHVC {
 
     func prepareData() {
         let timeType: ChooseTimeEnum = .day
-        guard let wsp = CacheManager.shared.getCurrentWorkspace() else { return }
-        guard let groupId = wsp.groupIds?[safe: 0] else { return }
+        guard let groupId = CacheManager.shared.getCurrentUser()?.defaultGroup else { return }
         showLoading()
         dispatchGroup.enter()
         dispatchGroup.enter()

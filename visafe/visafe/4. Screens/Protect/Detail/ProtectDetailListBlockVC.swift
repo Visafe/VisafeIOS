@@ -18,7 +18,8 @@ class ProtectDetailListBlockVC: BaseViewController {
     var type: ProtectHomeType
     var statistic: StatisticModel
     var scrollDelegateFunc: ((UIScrollView)->Void)?
-    var sources: [QueryLogModel] = []
+    lazy var sources: [QueryLogModel] = []
+    lazy var botnetDetails: [BotNetDetailModel] = []
     var oldest: String?
     var canLoadMore: Bool = true
 
@@ -66,14 +67,51 @@ class ProtectDetailListBlockVC: BaseViewController {
     
     func refreshData() {
         if isViewLoaded {
+            if type == .device {
+                guard let groupId = group.groupid else { return }
+                self.oldest = nil
+                let param = QueryLogParam()
+                param.group_id = groupId
+                param.limit = 20
+                param.response_status = type.getTypeQueryLog()
+                GroupWorker.getLog(param: param) { [weak self] (result, error) in
+                    guard let weakSelf = self else { return }
+                    weakSelf.sources = result?.data ?? []
+                    weakSelf.canLoadMore = ((result?.data?.count ?? 0) >= 0)
+                    if weakSelf.canLoadMore {
+                        weakSelf.oldest = result?.oldest
+                        weakSelf.addLoadMore()
+                    } else {
+                        weakSelf.tableView.mj_footer = nil
+                    }
+                    weakSelf.tableView.endRefreshing()
+                    weakSelf.tableView.reloadData()
+                }
+            } else {
+                showLoading()
+                GroupWorker.checkBotNet {[weak self] (response, error) in
+                    guard let self = self else { return }
+                    self.hideLoading()
+                    self.botnetDetails = response?.result?.detail ?? []
+                    self.tableView.mj_footer = nil
+                    self.tableView.endRefreshing()
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    func prepareData() {
+        if type == .device {
             guard let groupId = group.groupid else { return }
-            self.oldest = nil
+            showLoading()
             let param = QueryLogParam()
             param.group_id = groupId
             param.limit = 20
             param.response_status = type.getTypeQueryLog()
             GroupWorker.getLog(param: param) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
+                weakSelf.hideLoading()
                 weakSelf.sources = result?.data ?? []
                 weakSelf.canLoadMore = ((result?.data?.count ?? 0) >= 0)
                 if weakSelf.canLoadMore {
@@ -82,32 +120,19 @@ class ProtectDetailListBlockVC: BaseViewController {
                 } else {
                     weakSelf.tableView.mj_footer = nil
                 }
-                weakSelf.tableView.endRefreshing()
                 weakSelf.tableView.reloadData()
             }
-        }
-    }
-    
-    func prepareData() {
-        guard let groupId = group.groupid else { return }
-        showLoading()
-        let param = QueryLogParam()
-        param.group_id = groupId
-        param.limit = 20
-        param.response_status = type.getTypeQueryLog()
-        GroupWorker.getLog(param: param) { [weak self] (result, error) in
-            guard let weakSelf = self else { return }
-            weakSelf.hideLoading()
-            weakSelf.sources = result?.data ?? []
-            weakSelf.canLoadMore = ((result?.data?.count ?? 0) >= 0)
-            if weakSelf.canLoadMore {
-                weakSelf.oldest = result?.oldest
-                weakSelf.addLoadMore()
-            } else {
-                weakSelf.tableView.mj_footer = nil
+        } else {
+            showLoading()
+            GroupWorker.checkBotNet {[weak self] (response, error) in
+                guard let self = self else { return }
+                self.hideLoading()
+                self.botnetDetails = response?.result?.detail ?? []
+                self.tableView.mj_footer = nil
+                self.tableView.reloadData()
             }
-            weakSelf.tableView.reloadData()
         }
+
     }
     
     func loadLogs() {
@@ -148,29 +173,36 @@ extension ProtectDetailListBlockVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sources.count
+        return type == .device ? sources.count: botnetDetails.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupLogCell.className) as? GroupLogCell else {
             return UITableViewCell()
         }
-        let model = sources[indexPath.row]
-        cell.moreAction = { [weak self] in
-            guard let weakSelf = self else { return }
-            guard let view = MoreActionLinkView.loadFromNib() else { return }
-            view.binding(groupName: weakSelf.group.name, time: "Đã chặn \(model.time?.getTimeOnFeed().lowercased() ?? "")")
-            view.unBlockedAction = { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.addToWhileList(domain: strongSelf.sources[indexPath.row])
+
+        if type == .device {
+            let model = sources[indexPath.row]
+            cell.moreAction = { [weak self] in
+                guard let weakSelf = self else { return }
+                guard let view = MoreActionLinkView.loadFromNib() else { return }
+                view.binding(groupName: weakSelf.group.name, time: "Đã chặn \(model.time?.getTimeOnFeed().lowercased() ?? "")")
+                view.unBlockedAction = { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.addToWhileList(domain: strongSelf.sources[indexPath.row])
+                }
+                view.deleteAction = { [weak self] in
+                    guard let strongSelf = self else { return }
+                    Timer.scheduledTimer(timeInterval: 0.3, target: strongSelf, selector:#selector(strongSelf.deleteLog(sender:)), userInfo: strongSelf.sources[indexPath.row] , repeats:false)
+                }
+                weakSelf.showPopup(view: view)
             }
-            view.deleteAction = { [weak self] in
-                guard let strongSelf = self else { return }
-                Timer.scheduledTimer(timeInterval: 0.3, target: strongSelf, selector:#selector(strongSelf.deleteLog(sender:)), userInfo: strongSelf.sources[indexPath.row] , repeats:false)
-            }
-            weakSelf.showPopup(view: view)
+            cell.bindingData(model: model)
+        } else {
+            cell.bindingData(model: botnetDetails[indexPath.row])
         }
-        cell.bindingData(model: model)
+
+
         return cell
     }
     
