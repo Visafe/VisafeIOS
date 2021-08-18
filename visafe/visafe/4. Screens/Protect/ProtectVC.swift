@@ -195,7 +195,6 @@ class ProtectVC: BaseDoHVC {
     override func hideAnimationLoading() {
         hideLoading()
     }
-
 }
 // MARK: Action in content
 extension ProtectVC {
@@ -217,6 +216,12 @@ extension ProtectVC {
 
 // MARK: Action
 extension ProtectVC {
+    @IBAction func reportWebsiteAction(_ sender: Any) {
+        let vc = ReportWebsiteVC()
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true)
+    }
+    
     @IBAction func scanAction(_ sender: Any) {
         guard checkLoginState() else { return }
         setSafeMode(isTrue: false)

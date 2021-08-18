@@ -87,6 +87,9 @@
 		C923C838268F57BC00FE34DC /* ListGroupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923C837268F57BC00FE34DC /* ListGroupResult.swift */; };
 		C924CFE526A7D5390058EEDD /* GroupStatisticVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924CFE326A7D5390058EEDD /* GroupStatisticVC.swift */; };
 		C924CFE626A7D5390058EEDD /* GroupStatisticVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C924CFE426A7D5390058EEDD /* GroupStatisticVC.xib */; };
+		C934A72426CCF177008B74EC /* ReportWebsiteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C934A72226CCF176008B74EC /* ReportWebsiteVC.xib */; };
+		C934A72526CCF177008B74EC /* ReportWebsiteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C934A72326CCF177008B74EC /* ReportWebsiteVC.swift */; };
+		C934A72826CCF41B008B74EC /* CommonWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C934A72726CCF41B008B74EC /* CommonWorker.swift */; };
 		C93C235026A96255003AC717 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C234F26A96255003AC717 /* StatisticModel.swift */; };
 		C93C235526A97FA1003AC717 /* StatisticCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C235326A97FA1003AC717 /* StatisticCategoryCell.swift */; };
 		C93C235626A97FA1003AC717 /* StatisticCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93C235426A97FA1003AC717 /* StatisticCategoryCell.xib */; };
@@ -398,6 +401,9 @@
 		C923C837268F57BC00FE34DC /* ListGroupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupResult.swift; sourceTree = "<group>"; };
 		C924CFE326A7D5390058EEDD /* GroupStatisticVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStatisticVC.swift; sourceTree = "<group>"; };
 		C924CFE426A7D5390058EEDD /* GroupStatisticVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupStatisticVC.xib; sourceTree = "<group>"; };
+		C934A72226CCF176008B74EC /* ReportWebsiteVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportWebsiteVC.xib; sourceTree = "<group>"; };
+		C934A72326CCF177008B74EC /* ReportWebsiteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportWebsiteVC.swift; sourceTree = "<group>"; };
+		C934A72726CCF41B008B74EC /* CommonWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWorker.swift; sourceTree = "<group>"; };
 		C93C234F26A96255003AC717 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		C93C235326A97FA1003AC717 /* StatisticCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticCategoryCell.swift; sourceTree = "<group>"; };
 		C93C235426A97FA1003AC717 /* StatisticCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticCategoryCell.xib; sourceTree = "<group>"; };
@@ -1038,6 +1044,8 @@
 		C99FD1C82697461300A8F731 /* Protect */ = {
 			isa = PBXGroup;
 			children = (
+				C934A72326CCF177008B74EC /* ReportWebsiteVC.swift */,
+				C934A72226CCF176008B74EC /* ReportWebsiteVC.xib */,
 				0EF083AE26C23C2800D58F12 /* WebViewVC.swift */,
 				0EF083AD26C23C2800D58F12 /* WebViewVC.xib */,
 				518EC0EC26B98EC100D88D2A /* Detail */,
@@ -1101,6 +1109,7 @@
 				C9181410269B46CA00DC0E83 /* NotificationWorker.swift */,
 				0EF5EB0C26BA534C002F5E84 /* DeviceWorker.swift */,
 				C90AD90626C52669003539FF /* PaymentWorker.swift */,
+				C934A72726CCF41B008B74EC /* CommonWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -1420,6 +1429,7 @@
 				C9C7A9E626B05E9F002C883A /* LicenseOverviewVC.xib in Resources */,
 				C924CFE626A7D5390058EEDD /* GroupStatisticVC.xib in Resources */,
 				C91EE7D526AC1ABD006ADAE9 /* ProtectHeaderView.xib in Resources */,
+				C934A72426CCF177008B74EC /* ReportWebsiteVC.xib in Resources */,
 				C969B39B269ADB210066A88A /* SecurityWorkspaceCell.xib in Resources */,
 				C9EDB55D26839E74009CBD93 /* PostGroupVC.xib in Resources */,
 				C9181417269B486300DC0E83 /* NotificationCell.xib in Resources */,
@@ -1645,6 +1655,7 @@
 				C979C96E26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.swift in Sources */,
 				C9E7A49826909E890012985B /* MoreLinkSettingView.swift in Sources */,
 				C9F0940D26C14960001CD61D /* QRScannerError.swift in Sources */,
+				C934A72526CCF177008B74EC /* ReportWebsiteVC.swift in Sources */,
 				C969B397269ADB210066A88A /* SecurityWorkspaceCell.swift in Sources */,
 				C969B399269ADB210066A88A /* ChooseTypeWorkspaceCell.swift in Sources */,
 				C9FE695C26B795740046AD79 /* AddDeviceToGroupVC.swift in Sources */,
@@ -1707,6 +1718,7 @@
 				C9181405269B0C5600DC0E83 /* ChangePasswordResult.swift in Sources */,
 				C99FD1D12697465B00A8F731 /* NotificationVC.swift in Sources */,
 				C9EDB55726839E74009CBD93 /* GroupVC.swift in Sources */,
+				C934A72826CCF41B008B74EC /* CommonWorker.swift in Sources */,
 				C9B79483268622BE00258A72 /* LoginParam.swift in Sources */,
 				C9777A35269ACABF00C40031 /* ProfileHeaderView.swift in Sources */,
 				C9223E8A26B929F800B18A76 /* Common.swift in Sources */,
