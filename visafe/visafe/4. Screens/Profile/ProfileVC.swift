@@ -97,6 +97,17 @@ class ProfileVC: BaseViewController {
         tableView.estimatedSectionFooterHeight = 25
         tableView.registerCells(cells: [ProfileCell.className])
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AuthenWorker.profile { [weak self] (user, error) in
+            guard let weakSelf = self else { return }
+            if let u = user {
+                CacheManager.shared.setCurrentUser(value: u)
+                weakSelf.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
