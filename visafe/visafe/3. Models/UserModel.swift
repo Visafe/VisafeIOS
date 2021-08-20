@@ -29,7 +29,7 @@ public enum GroupMemberRoleEnum: Int {
 }
 
 class UserModel: NSObject, Mappable {
-    var userid: String?
+    var userid: Int?
     var email: String?
     var fullname: String?
     var phonenumber: String?
@@ -44,6 +44,7 @@ class UserModel: NSObject, Mappable {
     var maxWorkspace: Int = 0
     var maxGroup: Int = 0
     var maxDevice: Int = 0
+    var userIDString: String?
     
     override init() {
         super.init()
@@ -54,7 +55,11 @@ class UserModel: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
+        userIDString <- map["UserID"]
         userid <- map["UserID"]
+        if userid == nil {
+            userid = userIDString?.int
+        }
         fullname <- map["FullName"]
         email <- map["email"]
         phonenumber <- map["PhoneNumber"]

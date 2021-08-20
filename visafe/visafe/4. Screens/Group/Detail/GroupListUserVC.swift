@@ -25,8 +25,8 @@ class GroupListUserVC: BaseViewController {
     
     func updateData() {
         for item in listUser {
-            guard let userId = item.userid?.int else { continue }
-            if item.userid?.int == group.fkUserId {
+            guard let userId = item.userid else { continue }
+            if item.userid == group.fkUserId {
                 item.role = .owner
             }
             if group.userManage.contains(where: { (id) -> Bool in
@@ -127,7 +127,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
     
     func deleteUser(user: UserModel) {
         showLoading()
-        GroupWorker.groupDeleteUser(userId: user.userid?.int, groupId: group.groupid) { [weak self] (result, error) in
+        GroupWorker.groupDeleteUser(userId: user.userid, groupId: group.groupid) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             for index in 0..<weakSelf.listUser.count {
@@ -151,7 +151,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
     
     func makeManagerRole(user: UserModel) {
         showLoading()
-        GroupWorker.groupUserManager(userId: user.userid?.int, groupId: group.groupid) { [weak self] (result, error) in
+        GroupWorker.groupUserManager(userId: user.userid, groupId: group.groupid) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             user.role = .admin
@@ -161,7 +161,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
     
     func makeViewerRole(user: UserModel) {
         showLoading()
-        GroupWorker.groupUserViewer(userId: user.userid?.int, groupId: group.groupid) { [weak self] (result, error) in
+        GroupWorker.groupUserViewer(userId: user.userid, groupId: group.groupid) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             user.role = .suppervisor

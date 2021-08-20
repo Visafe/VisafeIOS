@@ -21,6 +21,8 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
     var pageMenu: CAPSPageMenu!
     var isSet = false
     
+    var updateGroup:(() -> Void)?
+    
     init(group: GroupModel) {
         self.group = group
         super.init(nibName: GroupDetailVC.className, bundle: nil)
@@ -176,7 +178,7 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
         let vc = PostGroupVC(group: group)
         vc.onDone = { [weak self] in
             guard let weakSelf = self else { return }
-            
+            weakSelf.updateGroup?()
         }
         let nav = BaseNavigationController(rootViewController: vc)
         present(nav, animated: true, completion: nil)
@@ -192,11 +194,12 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
     
     func deleteGroupAction(group: GroupModel) {
         guard let groupId = group.groupid else { return }
-        guard let userId = CacheManager.shared.getCurrentUser()?.userid?.int else { return }
+        guard let userId = CacheManager.shared.getCurrentUser()?.userid else { return }
         showLoading()
         GroupWorker.delete(groupId: groupId, userId: userId) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
+            weakSelf.updateGroup?()
             weakSelf.dismiss(animated: true, completion: nil)
         }
     }

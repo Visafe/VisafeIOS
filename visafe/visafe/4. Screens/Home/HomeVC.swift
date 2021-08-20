@@ -100,6 +100,11 @@ class HomeVC: BaseDoHVC {
         onOffDoH()
     }
 
+    @IBAction func scanAction(_ sender: Any) {
+        let vc = ScanOverviewVC()
+        present(vc, animated: true)
+    }
+    
     override func showAnimationLoading() {
         self.homeLoadingImage.rotate()
         self.homeLoadingImage.image = UIImage(named: "ic_loading_home")

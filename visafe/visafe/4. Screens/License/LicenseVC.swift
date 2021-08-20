@@ -152,6 +152,8 @@ extension LicenseVC: UITableViewDelegate, UITableViewDataSource {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
                 }
+            } else {
+                showPhoneTell(tel: "02432091616")
             }
         }
     }
@@ -173,5 +175,11 @@ extension LicenseVC: UITableViewDelegate, UITableViewDataSource {
             return 8.001
         }
         return 0.0001
+    }
+    
+    func showPhoneTell(tel: String) {
+        if let url = URL(string: "tel:\(tel)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }

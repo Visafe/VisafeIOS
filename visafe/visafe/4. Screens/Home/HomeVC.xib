@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -145,15 +146,25 @@
                                 <constraint firstAttribute="width" constant="24" id="FaA-lV-cCG"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rar-ac-2Qh">
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                            <connections>
+                                <action selector="scanAction:" destination="-1" eventType="touchUpInside" id="yDT-Yq-ute"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.10980392156862745" green="0.1803921568627451" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstItem="pqp-Jr-aet" firstAttribute="leading" secondItem="YcS-3I-1zc" secondAttribute="trailing" constant="8" id="2dX-S7-FpB"/>
                         <constraint firstItem="SE6-XZ-c4l" firstAttribute="top" secondItem="HDp-oz-jA7" secondAttribute="top" constant="8" id="2fF-qm-NcZ"/>
+                        <constraint firstItem="rar-ac-2Qh" firstAttribute="top" secondItem="HDp-oz-jA7" secondAttribute="top" id="2wq-eG-1pL"/>
                         <constraint firstItem="SE6-XZ-c4l" firstAttribute="leading" secondItem="HDp-oz-jA7" secondAttribute="leading" constant="16" id="3Il-GG-peC"/>
                         <constraint firstAttribute="bottom" secondItem="SE6-XZ-c4l" secondAttribute="bottom" constant="8" id="BaC-HE-4Ab"/>
                         <constraint firstItem="pqp-Jr-aet" firstAttribute="centerY" secondItem="HDp-oz-jA7" secondAttribute="centerY" id="Hbh-hP-sqj"/>
                         <constraint firstAttribute="trailing" secondItem="pqp-Jr-aet" secondAttribute="trailing" constant="16" id="PZh-UA-IX5"/>
+                        <constraint firstAttribute="trailing" secondItem="rar-ac-2Qh" secondAttribute="trailing" id="Sca-sJ-sSa"/>
+                        <constraint firstAttribute="bottom" secondItem="rar-ac-2Qh" secondAttribute="bottom" id="StD-D1-dmK"/>
+                        <constraint firstItem="rar-ac-2Qh" firstAttribute="leading" secondItem="HDp-oz-jA7" secondAttribute="leading" id="WdV-ha-cKm"/>
                         <constraint firstAttribute="height" constant="50" id="ZQA-qG-LMb"/>
                         <constraint firstItem="YcS-3I-1zc" firstAttribute="centerY" secondItem="HDp-oz-jA7" secondAttribute="centerY" id="mCp-zU-FXf"/>
                         <constraint firstItem="YcS-3I-1zc" firstAttribute="leading" secondItem="SE6-XZ-c4l" secondAttribute="trailing" constant="8" id="x8j-kB-BXd"/>
@@ -198,7 +209,7 @@
                 <constraint firstItem="HDp-oz-jA7" firstAttribute="top" secondItem="6gO-wZ-gCj" secondAttribute="bottom" constant="16" id="va3-61-WWf"/>
                 <constraint firstItem="HDp-oz-jA7" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-16" id="vcA-pK-ue6"/>
             </constraints>
-            <point key="canvasLocation" x="-198.55072463768118" y="111.83035714285714"/>
+            <point key="canvasLocation" x="-199.19999999999999" y="111.0944527736132"/>
         </view>
     </objects>
     <resources>

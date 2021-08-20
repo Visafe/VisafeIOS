@@ -673,7 +673,6 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="reportFake:" destination="-1" eventType="touchUpInside" id="y3e-zS-cwg"/>
-                                                        <action selector="reportWebsiteAction:" destination="-1" eventType="touchUpInside" id="7Hk-BJ-qXY"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

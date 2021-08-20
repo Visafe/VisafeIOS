@@ -102,10 +102,8 @@ class ProfileVC: BaseViewController {
         super.viewDidAppear(animated)
         AuthenWorker.profile { [weak self] (user, error) in
             guard let weakSelf = self else { return }
-            if let u = user {
-                CacheManager.shared.setCurrentUser(value: u)
-                weakSelf.tableView.reloadData()
-            }
+            CacheManager.shared.setCurrentUser(value: user)
+            weakSelf.tableView.reloadData()
         }
     }
 }

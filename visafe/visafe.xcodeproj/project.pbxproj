@@ -90,6 +90,10 @@
 		C934A72426CCF177008B74EC /* ReportWebsiteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C934A72226CCF176008B74EC /* ReportWebsiteVC.xib */; };
 		C934A72526CCF177008B74EC /* ReportWebsiteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C934A72326CCF177008B74EC /* ReportWebsiteVC.swift */; };
 		C934A72826CCF41B008B74EC /* CommonWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C934A72726CCF41B008B74EC /* CommonWorker.swift */; };
+		C934A72F26CD06F6008B74EC /* ScanOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C934A72B26CD06F6008B74EC /* ScanOverviewVC.swift */; };
+		C934A73026CD06F6008B74EC /* ScanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C934A72C26CD06F6008B74EC /* ScanVC.xib */; };
+		C934A73126CD06F6008B74EC /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C934A72D26CD06F6008B74EC /* ScanVC.swift */; };
+		C934A73226CD06F6008B74EC /* ScanOverviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C934A72E26CD06F6008B74EC /* ScanOverviewVC.xib */; };
 		C93C235026A96255003AC717 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C234F26A96255003AC717 /* StatisticModel.swift */; };
 		C93C235526A97FA1003AC717 /* StatisticCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C235326A97FA1003AC717 /* StatisticCategoryCell.swift */; };
 		C93C235626A97FA1003AC717 /* StatisticCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93C235426A97FA1003AC717 /* StatisticCategoryCell.xib */; };
@@ -404,6 +408,10 @@
 		C934A72226CCF176008B74EC /* ReportWebsiteVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportWebsiteVC.xib; sourceTree = "<group>"; };
 		C934A72326CCF177008B74EC /* ReportWebsiteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportWebsiteVC.swift; sourceTree = "<group>"; };
 		C934A72726CCF41B008B74EC /* CommonWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWorker.swift; sourceTree = "<group>"; };
+		C934A72B26CD06F6008B74EC /* ScanOverviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanOverviewVC.swift; sourceTree = "<group>"; };
+		C934A72C26CD06F6008B74EC /* ScanVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanVC.xib; sourceTree = "<group>"; };
+		C934A72D26CD06F6008B74EC /* ScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
+		C934A72E26CD06F6008B74EC /* ScanOverviewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanOverviewVC.xib; sourceTree = "<group>"; };
 		C93C234F26A96255003AC717 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		C93C235326A97FA1003AC717 /* StatisticCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticCategoryCell.swift; sourceTree = "<group>"; };
 		C93C235426A97FA1003AC717 /* StatisticCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticCategoryCell.xib; sourceTree = "<group>"; };
@@ -902,6 +910,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C934A72A26CD0445008B74EC /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				C934A72B26CD06F6008B74EC /* ScanOverviewVC.swift */,
+				C934A72E26CD06F6008B74EC /* ScanOverviewVC.xib */,
+				C934A72D26CD06F6008B74EC /* ScanVC.swift */,
+				C934A72C26CD06F6008B74EC /* ScanVC.xib */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
 		C93ED14D2682320000B03E8A /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1044,6 +1063,7 @@
 		C99FD1C82697461300A8F731 /* Protect */ = {
 			isa = PBXGroup;
 			children = (
+				C934A72A26CD0445008B74EC /* Scan */,
 				C934A72326CCF177008B74EC /* ReportWebsiteVC.swift */,
 				C934A72226CCF176008B74EC /* ReportWebsiteVC.xib */,
 				0EF083AE26C23C2800D58F12 /* WebViewVC.swift */,
@@ -1470,6 +1490,7 @@
 				C9CF060026B995F400C7572F /* LogHeaderView.xib in Resources */,
 				C9B7949126862C2E00258A72 /* ForgotPasswordVC.xib in Resources */,
 				C9E7A49D2690B1610012985B /* MoreGroupActionView.xib in Resources */,
+				C934A73226CD06F6008B74EC /* ScanOverviewVC.xib in Resources */,
 				C999AB03268DFD1200F657A9 /* GroupSettingHeaderView.xib in Resources */,
 				C971FA002697498A00BB7118 /* PostGroupAboutVC.xib in Resources */,
 				C99FD1D22697465B00A8F731 /* NotificationVC.xib in Resources */,
@@ -1503,6 +1524,7 @@
 				C979C96D26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.xib in Resources */,
 				C969B3A8269ADFD30066A88A /* ListWorkspaceVC.xib in Resources */,
 				C9CCAB5426A5DFE300C04BC5 /* GroupDetailVC.xib in Resources */,
+				C934A73026CD06F6008B74EC /* ScanVC.xib in Resources */,
 				C9777A3E269ACDFC00C40031 /* ProfileFooterView.xib in Resources */,
 				C9E7A49926909E890012985B /* MoreLinkSettingView.xib in Resources */,
 				C9EEB8E826ADB768008F093C /* ChooseTimeView.xib in Resources */,
@@ -1653,6 +1675,7 @@
 				C9BCBC6426975DEC007F652C /* GroupSettingParentCell.swift in Sources */,
 				0EF5EB1526BA7E14002F5E84 /* DoHNative.swift in Sources */,
 				C979C96E26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.swift in Sources */,
+				C934A72F26CD06F6008B74EC /* ScanOverviewVC.swift in Sources */,
 				C9E7A49826909E890012985B /* MoreLinkSettingView.swift in Sources */,
 				C9F0940D26C14960001CD61D /* QRScannerError.swift in Sources */,
 				C934A72526CCF177008B74EC /* ReportWebsiteVC.swift in Sources */,
@@ -1721,6 +1744,7 @@
 				C934A72826CCF41B008B74EC /* CommonWorker.swift in Sources */,
 				C9B79483268622BE00258A72 /* LoginParam.swift in Sources */,
 				C9777A35269ACABF00C40031 /* ProfileHeaderView.swift in Sources */,
+				C934A73126CD06F6008B74EC /* ScanVC.swift in Sources */,
 				C9223E8A26B929F800B18A76 /* Common.swift in Sources */,
 				C9CCAB5326A5DFE300C04BC5 /* GroupDetailVC.swift in Sources */,
 				C9F2492426AAB87200EE7442 /* StatisticSumaryCell.swift in Sources */,
