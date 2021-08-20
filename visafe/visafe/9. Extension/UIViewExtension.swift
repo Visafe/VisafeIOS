@@ -20,6 +20,7 @@ extension UIView {
         }
         return bounds.height
     }
+    
 }
 
 extension UIView {
@@ -79,5 +80,14 @@ extension UIView {
         if let scale = rasterizationScale {
             self.layer.rasterizationScale = scale
         }
+    }
+}
+
+extension UIView {
+   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
     }
 }

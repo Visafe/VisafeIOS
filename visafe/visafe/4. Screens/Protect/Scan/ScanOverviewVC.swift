@@ -10,6 +10,7 @@ import ObjectMapper
 
 class ScanOverviewVC: BaseViewController {
 
+    @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var pageContentView: UIView!
     
@@ -46,6 +47,16 @@ class ScanOverviewVC: BaseViewController {
     
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func scanAction(_ sender: UIButton) {
+        let button = UIButton(frame: sender.bounds)
+        button.setBackgroundImage(UIImage(named: "scan_background"), for: .normal)
+        
+        let button2 = UIButton(frame: sender.bounds)
+        button2.setBackgroundImage(UIImage(named: "scan_background_loading"), for: .normal)
+        sender.addSubview(button)
+        sender.addSubview(button2)
     }
 }
 

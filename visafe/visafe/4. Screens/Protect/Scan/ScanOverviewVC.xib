@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="pageContentView" destination="oJa-xZ-fh7" id="IUS-Fa-akw"/>
                 <outlet property="pageControl" destination="qvA-vF-D6l" id="tgv-s0-wP7"/>
+                <outlet property="scanButton" destination="LWK-Bv-0gn" id="7xt-Xe-u43"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,6 +58,9 @@
                             <state key="normal" title="Quét" backgroundImage="ic_bg_scan">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="scanAction:" destination="-1" eventType="touchUpInside" id="Emc-RJ-L6b"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
