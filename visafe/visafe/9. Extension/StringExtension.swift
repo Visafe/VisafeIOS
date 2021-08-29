@@ -27,8 +27,8 @@ extension String {
     }
     
     var isValidUrl: Bool {
-            let urlRegEx = "((?:http|https)://)?(?:www\\.)?[\\w\\d\\-_]+\\.\\w{2,3}(\\.\\w{2})?(/(?<=/)(?:[\\w\\d\\-./_]+)?)?"
-            return NSPredicate(format: "SELF MATCHES %@", urlRegEx).evaluate(with: self)
+        let urlRegEx = "((?:http|https)://)?(?:www\\.)?[\\w\\d\\-_]+\\.\\w{2,3}(\\.\\w{2})?(/(?<=/)(?:[\\w\\d\\-./_]+)?)?"
+        return NSPredicate(format: "SELF MATCHES %@", urlRegEx).evaluate(with: self)
     }
     
     /// Returns the first element of the collection of string. If a collection
@@ -99,7 +99,9 @@ extension String {
     }
     
     func checkInviteDevicelink() -> String? {
-        if !self.contains("https://app.visafe.vn/control/invite/device") || !self.contains("groupId") || !self.contains("groupName") {
+        if !self.contains("https://visafencsc.page.link/control/invite/device") ||
+            !self.contains("groupId") ||
+            !self.contains("groupName") {
             return nil
         }
         if(self[51] != "=" || self[88] != "&") {

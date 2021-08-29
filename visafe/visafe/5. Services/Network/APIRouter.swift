@@ -101,7 +101,7 @@ extension APIError: LocalizedError {
 }
 
 enum APIConstant {
-    static let baseURL = "https://app.visafe.vn/api/v1"
+    static let baseURL = "https://staging.visafe.vn/api/v1"
 }
 
 extension APIRouter: TargetType {
