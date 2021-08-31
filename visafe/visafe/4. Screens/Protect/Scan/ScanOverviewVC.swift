@@ -13,14 +13,30 @@ class ScanOverviewVC: BaseViewController {
     @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var pageContentView: UIView!
+    @IBOutlet weak var boundView: UIView!
+    @IBOutlet weak var shadowView: UIView!
     
     var pageViewController: UIPageViewController!
     var listScanVC: [ScanVC] = []
     var paymentSuccess:(() -> Void)?
-    
+    var currentIndex = 0 {
+        didSet {
+            let text = (currentIndex == 0 || currentIndex == listScanVC.count - 1) ? "Quét": "Dừng"
+            scanButton.setTitle(text, for: .normal)
+            if currentIndex == listScanVC.count - 1 {
+                CacheManager.shared.setLastScan()
+            }
+        }
+    }
+    var isStop = false
     override func viewDidLoad() {
         super.viewDidLoad()
         configPageView()
+        let gradient = CAGradientLayer()
+        gradient.frame = boundView.bounds
+        gradient.colors = [UIColor.color_2C3163.cgColor, UIColor.color_030E37.cgColor]
+        boundView.layer.insertSublayer(gradient, at: 0)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +47,7 @@ class ScanOverviewVC: BaseViewController {
     func configPageView() {
         for item in ScanDescriptionEnum.getAll() {
             let vc = ScanVC(type: item)
+            vc.scanSuccess = scanSuccess(_:)
             listScanVC.append(vc)
         }
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
@@ -38,11 +55,18 @@ class ScanOverviewVC: BaseViewController {
         pageViewController.view.backgroundColor = .clear
         pageViewController.delegate = self
         pageViewController.dataSource = self
-        
+        pageViewController.isPagingEnabled = false
         pageViewController.setViewControllers([listScanVC.first!], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
         self.pageContentView.addSubview(pageViewController.view)
         self.addChild(pageViewController)
         self.pageViewController.didMove(toParent: self)
+    }
+
+
+    func scanSuccess(_ success: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.nextStep()
+        }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -50,13 +74,36 @@ class ScanOverviewVC: BaseViewController {
     }
     
     @IBAction func scanAction(_ sender: UIButton) {
-        let button = UIButton(frame: sender.bounds)
-        button.setBackgroundImage(UIImage(named: "scan_background"), for: .normal)
-        
-        let button2 = UIButton(frame: sender.bounds)
-        button2.setBackgroundImage(UIImage(named: "scan_background_loading"), for: .normal)
-        sender.addSubview(button)
-        sender.addSubview(button2)
+        if (currentIndex == 0 || currentIndex == listScanVC.count - 1) {
+            currentIndex = 0
+            nextStep()
+        } else {
+            stopScan()
+        }
+    }
+
+    func nextStep() {
+        if currentIndex == listScanVC.count - 1 || isStop {
+            return
+        }
+        currentIndex += 1
+        gotoStep()
+    }
+
+    func stopScan() {
+        isStop = true
+        currentIndex = 0
+        gotoStep(.reverse)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.isStop = false
+        }
+    }
+
+    func gotoStep(_ direction: UIPageViewController.NavigationDirection = .forward) {
+        guard let vc = listScanVC[safe: currentIndex] else {
+            return
+        }
+        pageViewController.setViewControllers([vc], direction: direction, animated: true, completion: nil)
     }
 }
 
@@ -108,6 +155,20 @@ extension ScanOverviewVC: UIPageViewControllerDelegate, UIPageViewControllerData
                     pageControl.currentPage = (index - 1)
                 }
             }
+        }
+    }
+}
+
+extension UIView {
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+        clipsToBounds = true
+        if #available(iOS 11.0, *) {
+            layer.cornerRadius = radius
+            layer.maskedCorners = CACornerMask(rawValue: corners.rawValue)
+        } else {
+            //not avalable in ios 11 <
+            self.layer.masksToBounds = true
+            self.layer.cornerRadius = radius
         }
     }
 }

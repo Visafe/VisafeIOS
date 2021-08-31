@@ -19,7 +19,11 @@ class ProtectDetailListBlockVC: BaseViewController {
     var statistic: StatisticModel
     var scrollDelegateFunc: ((UIScrollView)->Void)?
     lazy var sources: [QueryLogModel] = []
-    lazy var botnetDetails: [BotNetDetailModel] = []
+    lazy var botnetDetails: [BotNetDetailModel] = [] {
+        didSet {
+
+        }
+    }
     var oldest: String?
     var canLoadMore: Bool = true
 
@@ -92,7 +96,7 @@ class ProtectDetailListBlockVC: BaseViewController {
                 GroupWorker.checkBotNet {[weak self] (response, error) in
                     guard let self = self else { return }
                     self.hideLoading()
-                    self.botnetDetails = response?.result?.detail ?? []
+                    self.botnetDetails = response?.detail ?? []
                     self.tableView.mj_footer = nil
                     self.tableView.endRefreshing()
                     self.tableView.reloadData()
@@ -127,7 +131,7 @@ class ProtectDetailListBlockVC: BaseViewController {
             GroupWorker.checkBotNet {[weak self] (response, error) in
                 guard let self = self else { return }
                 self.hideLoading()
-                self.botnetDetails = response?.result?.detail ?? []
+                self.botnetDetails = response?.detail ?? []
                 self.tableView.mj_footer = nil
                 self.tableView.reloadData()
             }

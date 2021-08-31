@@ -5,14 +5,17 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanOverviewVC" customModule="visafe" customModuleProvider="target">
             <connections>
+                <outlet property="boundView" destination="SVS-HA-642" id="rLZ-yg-JFt"/>
                 <outlet property="pageContentView" destination="oJa-xZ-fh7" id="IUS-Fa-akw"/>
                 <outlet property="pageControl" destination="qvA-vF-D6l" id="tgv-s0-wP7"/>
                 <outlet property="scanButton" destination="LWK-Bv-0gn" id="7xt-Xe-u43"/>
+                <outlet property="shadowView" destination="vsK-t8-jM9" id="Qmf-X7-52C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -48,26 +51,73 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hO7-1z-dkl">
                     <rect key="frame" x="0.0" y="448" width="414" height="448"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWK-Bv-0gn">
-                            <rect key="frame" x="151" y="168" width="112" height="112"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsK-t8-jM9">
+                            <rect key="frame" x="161" y="178" width="92" height="92"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="112" id="l4u-fg-b6P"/>
-                                <constraint firstAttribute="width" constant="112" id="oqF-oe-a8T"/>
+                                <constraint firstAttribute="width" constant="92" id="fp2-Oc-Rb2"/>
+                                <constraint firstAttribute="height" constant="92" id="hbP-PK-Adz"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                            <state key="normal" title="Quét" backgroundImage="ic_bg_scan">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="scanAction:" destination="-1" eventType="touchUpInside" id="Emc-RJ-L6b"/>
-                            </connections>
-                        </button>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVS-HA-642">
+                            <rect key="frame" x="161" y="178" width="92" height="92"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Seh-YW-AT8">
+                                    <rect key="frame" x="5" y="5" width="82" height="82"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWK-Bv-0gn">
+                                            <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <state key="normal" title="Quét">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="scanAction:" destination="-1" eventType="touchUpInside" id="Emc-RJ-L6b"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="LWK-Bv-0gn" secondAttribute="trailing" id="5sN-8L-bpb"/>
+                                        <constraint firstAttribute="bottom" secondItem="LWK-Bv-0gn" secondAttribute="bottom" id="K0Q-zm-oSi"/>
+                                        <constraint firstItem="LWK-Bv-0gn" firstAttribute="leading" secondItem="Seh-YW-AT8" secondAttribute="leading" id="bZK-fM-RH8"/>
+                                        <constraint firstItem="LWK-Bv-0gn" firstAttribute="top" secondItem="Seh-YW-AT8" secondAttribute="top" id="pK0-Sf-oD1"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="36"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="92" id="3yp-PD-lPS"/>
+                                <constraint firstAttribute="height" constant="92" id="4qj-ek-5px"/>
+                                <constraint firstAttribute="trailing" secondItem="Seh-YW-AT8" secondAttribute="trailing" constant="5" id="AqZ-HT-0g8"/>
+                                <constraint firstAttribute="bottom" secondItem="Seh-YW-AT8" secondAttribute="bottom" constant="5" id="okx-tk-Z6P"/>
+                                <constraint firstItem="Seh-YW-AT8" firstAttribute="leading" secondItem="SVS-HA-642" secondAttribute="leading" constant="5" id="rvR-bT-ne2"/>
+                                <constraint firstItem="Seh-YW-AT8" firstAttribute="top" secondItem="SVS-HA-642" secondAttribute="top" constant="5" id="smr-KW-Vym"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="40"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="LWK-Bv-0gn" firstAttribute="centerY" secondItem="hO7-1z-dkl" secondAttribute="centerY" id="0fF-vo-1te"/>
-                        <constraint firstItem="LWK-Bv-0gn" firstAttribute="centerX" secondItem="hO7-1z-dkl" secondAttribute="centerX" id="0rv-vY-xuZ"/>
-                        <constraint firstItem="LWK-Bv-0gn" firstAttribute="centerX" secondItem="hO7-1z-dkl" secondAttribute="centerX" id="WmW-b1-hlZ"/>
+                        <constraint firstItem="vsK-t8-jM9" firstAttribute="centerY" secondItem="SVS-HA-642" secondAttribute="centerY" id="0vX-kw-DFx"/>
+                        <constraint firstItem="SVS-HA-642" firstAttribute="centerX" secondItem="hO7-1z-dkl" secondAttribute="centerX" id="TIf-nL-aqy"/>
+                        <constraint firstItem="vsK-t8-jM9" firstAttribute="centerX" secondItem="SVS-HA-642" secondAttribute="centerX" id="eFJ-6K-rF1"/>
+                        <constraint firstItem="SVS-HA-642" firstAttribute="centerY" secondItem="hO7-1z-dkl" secondAttribute="centerY" id="iWO-Ja-Sel"/>
                     </constraints>
                 </view>
             </subviews>
@@ -94,8 +144,10 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_bg_scan" width="124" height="124"/>
         <image name="ic_close_white" width="24" height="24"/>
         <image name="ic_license_header" width="375" height="200"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

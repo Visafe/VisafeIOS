@@ -15,6 +15,7 @@
                 <outlet property="contentView" destination="BLe-be-txT" id="Kn8-og-lM9"/>
                 <outlet property="dangerousLabel" destination="Rsc-ue-9H9" id="Fk9-lY-vTk"/>
                 <outlet property="detailView" destination="hNm-Fx-mo4" id="WyU-5c-ifg"/>
+                <outlet property="lastScanLabel" destination="lXF-B4-mUf" id="ocv-iP-M9M"/>
                 <outlet property="otherView" destination="jhe-3X-lc4" id="rQk-KY-6De"/>
                 <outlet property="overView" destination="crZ-wr-lub" id="fMD-QS-lgT"/>
                 <outlet property="pakeWebView" destination="jKg-gt-XUs" id="r8n-zM-xGE"/>
@@ -1041,6 +1042,9 @@
                                                                         </label>
                                                                         <button opaque="NO" alpha="0.05000000074505806" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyI-k0-rGn">
                                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="85"/>
+                                                                            <connections>
+                                                                                <action selector="reportFake:" destination="-1" eventType="touchUpInside" id="k88-vP-MO8"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

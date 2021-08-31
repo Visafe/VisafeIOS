@@ -14,6 +14,8 @@
                 <outlet property="contraintHeight" destination="h6Z-ER-AlG" id="WVC-6U-TYa"/>
                 <outlet property="descriptionImage" destination="UMn-1j-htF" id="RFS-CS-LP5"/>
                 <outlet property="descriptionLabel" destination="Kqu-Nf-7oG" id="jbr-1d-gPC"/>
+                <outlet property="imageViewHeight" destination="qio-ik-z9s" id="wv6-gI-ttR"/>
+                <outlet property="imageViewWidth" destination="nyi-mb-V5s" id="Yhs-13-UCq"/>
                 <outlet property="titleLabel" destination="rss-8r-F0g" id="9Ah-Yl-Sjb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

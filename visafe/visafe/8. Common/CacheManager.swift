@@ -19,6 +19,7 @@ let kShowOnboarding = "kShowOnboarding"
 let kPin = "kPin"
 let kDeviceId = "kDeviceId"
 let kProtectWifi = "kProtectWifi"
+let kLastScan = "kLastScan"
 
 class CacheManager {
     
@@ -131,5 +132,14 @@ class CacheManager {
     func setProtectWifiStatus(value: Bool) {
         userDefault.set(value, forKey: kProtectWifi)
         userDefault.synchronize()
+    }
+
+    func setLastScan() {
+        userDefault.set(Date(), forKey: kLastScan)
+        userDefault.synchronize()
+    }
+
+    func getLastScan() -> Date? {
+        return userDefault.date(forKey: kLastScan)
     }
 }
