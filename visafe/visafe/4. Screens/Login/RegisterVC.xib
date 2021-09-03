@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,64 +34,64 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zr1-jz-c9Q">
-                    <rect key="frame" x="30" y="224.5" width="354" height="492"/>
+                    <rect key="frame" x="30" y="224.5" width="354" height="476"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập tên" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wQZ-LJ-qcQ" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="48" id="eXh-hq-ReL"/>
+                                <constraint firstAttribute="height" constant="44" id="eXh-hq-ReL"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="acN-3e-Mah"/>
                             </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aca-WH-MGR">
-                            <rect key="frame" x="0.0" y="56" width="354" height="0.0"/>
+                            <rect key="frame" x="0.0" y="52" width="354" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập số điện thoại/email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="79K-i4-0sN" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="64" width="354" height="48"/>
+                            <rect key="frame" x="0.0" y="60" width="354" height="44"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="48" id="ycT-5g-oez"/>
+                                <constraint firstAttribute="height" constant="44" id="ycT-5g-oez"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="a6Z-tc-xij"/>
                             </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7M-5M-NLc">
-                            <rect key="frame" x="0.0" y="120" width="354" height="0.0"/>
+                            <rect key="frame" x="0.0" y="112" width="354" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập mật khẩu" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cWN-Wf-NZW" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="128" width="354" height="48"/>
+                            <rect key="frame" x="0.0" y="120" width="354" height="44"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="48" id="MHA-2t-jj0"/>
+                                <constraint firstAttribute="height" constant="44" id="MHA-2t-jj0"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="307-ts-TGb"/>
                             </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGB-vc-okX">
-                            <rect key="frame" x="0.0" y="184" width="354" height="0.0"/>
+                            <rect key="frame" x="0.0" y="172" width="354" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAv-QQ-N96">
-                            <rect key="frame" x="0.0" y="192" width="354" height="48"/>
+                            <rect key="frame" x="0.0" y="180" width="354" height="44"/>
                             <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="48" id="DCY-fu-4UZ"/>
+                                <constraint firstAttribute="height" constant="44" id="DCY-fu-4UZ"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <state key="normal" title="Đăng ký">
@@ -106,7 +107,7 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICi-1q-RXW">
-                            <rect key="frame" x="0.0" y="248" width="354" height="76"/>
+                            <rect key="frame" x="0.0" y="232" width="354" height="76"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53b-pa-86B">
                                     <rect key="frame" x="0.0" y="8" width="354" height="68"/>
@@ -126,7 +127,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCC-Ch-MMj">
-                            <rect key="frame" x="0.0" y="332" width="354" height="48"/>
+                            <rect key="frame" x="0.0" y="316" width="354" height="48"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykb-KY-e6g">
                                     <rect key="frame" x="67.5" y="0.0" width="219.5" height="48"/>
@@ -170,7 +171,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OiF-CU-wys">
-                            <rect key="frame" x="0.0" y="388" width="354" height="36"/>
+                            <rect key="frame" x="0.0" y="372" width="354" height="36"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZz-ug-BTQ">
                                     <rect key="frame" x="0.0" y="17.5" width="81.5" height="1"/>
@@ -207,7 +208,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBe-IB-cfE">
-                            <rect key="frame" x="0.0" y="432" width="354" height="60"/>
+                            <rect key="frame" x="0.0" y="416" width="354" height="60"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nI-Ls-CzN">
                                     <rect key="frame" x="72" y="10" width="50" height="50"/>

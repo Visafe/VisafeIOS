@@ -18,6 +18,7 @@ class NotificationVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: NSNotification.Name(rawValue: kLoginSuccess), object: nil)
         configRefreshData()
         configView()
         prepareData()
@@ -64,7 +65,7 @@ class NotificationVC: BaseViewController {
         }
     }
     
-    func refreshData() {
+    @objc func refreshData() {
         if isViewLoaded {
             pageIndex = 1
             sources = []

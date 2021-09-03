@@ -86,6 +86,7 @@ class ProtectVC: BaseDoHVC {
     lazy var dispatchGroup = DispatchGroup()
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(prepareData), name: NSNotification.Name(rawValue: kLoginSuccess), object: nil)
         setupUI()
         // Do any additional setup after loading the view.
         prepareData()
@@ -135,7 +136,8 @@ class ProtectVC: BaseDoHVC {
         titleLB.attributedText = attributedText
     }
 
-    func prepareData() {
+    @objc func prepareData() {
+        guard isViewLoaded else { return }
         let timeType: ChooseTimeEnum = .day
         guard let groupId = CacheManager.shared.getCurrentUser()?.defaultGroup else { return }
         showLoading()
@@ -210,6 +212,9 @@ extension ProtectVC {
 
     private func showFormLogin() {
         let vc = LoginVC()
+        vc.onSuccess = {
+            self.prepareData()
+        }
         present(vc, animated: true)
     }
 }

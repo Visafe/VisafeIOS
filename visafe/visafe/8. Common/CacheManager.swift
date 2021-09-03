@@ -19,6 +19,7 @@ let kShowOnboarding = "kShowOnboarding"
 let kPin = "kPin"
 let kDeviceId = "kDeviceId"
 let kProtectWifi = "kProtectWifi"
+let kLoginSuccess = "kLoginSuccess"
 
 class CacheManager {
     
@@ -81,6 +82,11 @@ class CacheManager {
     
     func setCurrentUser(value: UserModel?) {
         userDefault.set(value?.toJSONString(), forKey: kCurrentUser)
+        userDefault.synchronize()
+    }
+    
+    func removeCurrentUser() {
+        userDefault.removeObject(forKey: kCurrentUser)
         userDefault.synchronize()
     }
     

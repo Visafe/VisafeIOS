@@ -349,6 +349,9 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func login() {
         let vc = LoginVC()
+        vc.onSuccess = {
+            self.refreshData()
+        }
         present(vc, animated: true)
     }
     

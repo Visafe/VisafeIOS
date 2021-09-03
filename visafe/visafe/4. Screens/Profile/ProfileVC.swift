@@ -86,7 +86,14 @@ class ProfileVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: NSNotification.Name(rawValue: kLoginSuccess), object: nil)
         configView()
+    }
+    
+    @objc func refreshData() {
+        guard isViewLoaded else { return }
+        sources = CacheManager.shared.getIsLogined() ? [.upgradeAccount, .setting, .help, .share, .rate, .logout] : [.upgradeAccount, .setting, .help, .share, .rate]
+        tableView.reloadData()
     }
     
     func configView() {
@@ -197,6 +204,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func login() {
         let vc = LoginVC()
+        vc.onSuccess = {
+            self.tableView.reloadData()
+        }
         present(vc, animated: true)
     }
     
@@ -242,9 +252,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func logout() {
         showConfirmDelete(title: "Bạn có chắc chắn muốn đăng xuất không?") {
             CacheManager.shared.setIsLogined(value: false)
-            CacheManager.shared.setCurrentUser(value: nil)
+            CacheManager.shared.removeCurrentUser()
             CacheManager.shared.setCurrentWorkspace(value: nil)
-            AppDelegate.appDelegate()?.configRootVC()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kLoginSuccess), object: nil)
         }
     }
     

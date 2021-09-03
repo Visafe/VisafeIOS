@@ -24,7 +24,7 @@ class WorkspaceSumaryCell: BaseTableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        summaryView.dropShadow(color: .lightGray, opacity: 0.5, offSet: CGSize(width: -1, height: 1), radius: 24, scale: true)
+        summaryView.dropShadowEdge()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

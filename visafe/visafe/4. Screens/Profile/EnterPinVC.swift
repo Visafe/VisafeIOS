@@ -16,7 +16,7 @@ class EnterPinVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Cập nhật mã PIN"
+        title = "Cập nhật mã bảo vệ"
         
         pinView.style = .underline
         pinView.font = UIFont.systemFont(ofSize: 24)

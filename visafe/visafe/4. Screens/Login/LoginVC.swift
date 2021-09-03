@@ -14,6 +14,8 @@ import AuthenticationServices
 
 class LoginVC: BaseViewController {
     
+    var onSuccess:(() -> Void)?
+    
     @IBOutlet weak var passwordInfoLabel: UILabel!
     @IBOutlet weak var usernameInfoLabel: UILabel!
     @IBOutlet weak var usernameTextfield: BaseTextField!
@@ -79,7 +81,13 @@ class LoginVC: BaseViewController {
                 CacheManager.shared.setIsLogined(value: true)
                 CacheManager.shared.setWorkspacesResult(value: list)
                 weakSelf.setCurrentWorkspace(list: list ?? [])
-                AppDelegate.appDelegate()?.setRootVCToTabVC()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: kLoginSuccess), object: nil)
+                if let success = weakSelf.onSuccess {
+                    success()
+                    weakSelf.dismiss(animated: true, completion: nil)
+                } else {
+                    AppDelegate.appDelegate()?.setRootVCToTabVC()
+                }
             }
         }
     }
@@ -255,5 +263,14 @@ extension LoginVC: UITextFieldDelegate {
         if field.type != .error {
             field.setState(type: .normal)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameTextfield {
+            passwordTextfield.becomeFirstResponder()
+        } else if textField == passwordTextfield {
+            loginAction(textField)
+        }
+        return false
     }
 }

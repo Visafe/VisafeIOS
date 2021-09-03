@@ -7,6 +7,8 @@
 
 import UIKit
 import AVFoundation
+import Toast_Swift
+
 
 class ScanGroupVC: BaseViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var cancelButton: UIButton!
@@ -49,10 +51,13 @@ extension ScanGroupVC: QRScannerViewDelegate {
     }
 
     func qrScannerView(_ qrScannerView: QRScannerView, didSuccess code: String) {
-        guard let link = code.checkInviteDevicelink() else { return }
+        guard let link = code.checkInviteDevicelink() else {
+            self.view.makeToast("Link không đúng định dạng", duration: 2, position: .bottom)
+            Timer.scheduledTimer(timeInterval: 2, target: self, selector:#selector(self.reScan), userInfo: nil , repeats:false)
+            return
+        }
         let param = Common.getDeviceInfo()
         param.updateGroupInfo(link: link)
-        
         guard let view = BaseEnterValueView.loadFromNib() else { return }
         view.bindingData(type: .deviceName, name: param.deviceName)
         view.enterTextfield.text = param.deviceName
@@ -63,6 +68,10 @@ extension ScanGroupVC: QRScannerViewDelegate {
             weakSelf.addDeviceToGroup(device: param)
         }
         showPopup(view: view)
+    }
+    
+    @objc func reScan() {
+        qrScannerView.rescan()
     }
     
     func addDeviceToGroup(device: AddDeviceToGroupParam) {
@@ -77,6 +86,7 @@ extension ScanGroupVC: QRScannerViewDelegate {
                 }
             } else {
                 weakSelf.showError(title: "Thêm thiết bị thất bại", content: InviteDeviceStatus.defaultStatus.getDescription())
+                weakSelf.reScan()
             }
         }
     }

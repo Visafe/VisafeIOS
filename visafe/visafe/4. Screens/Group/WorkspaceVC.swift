@@ -16,6 +16,7 @@ class WorkspaceVC: HeaderedACTabScrollViewController, ACTabScrollViewDelegate,  
     override func viewDidLoad() {
         self.headerHeight = kScreenWidth * 180 / 375
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: NSNotification.Name(rawValue: kLoginSuccess), object: nil)
         configUI()
     }
     
@@ -51,6 +52,11 @@ class WorkspaceVC: HeaderedACTabScrollViewController, ACTabScrollViewDelegate,  
         self.navBarColor = .white
         self.navBarItemsColor = UIColor.black
         self.navBarTitleColor = UIColor.black.withAlphaComponent(0)
+    }
+    
+    @objc func refreshData() {
+        guard isViewLoaded else { return }
+        groupVC.refreshData()
     }
     
     func updateViewWithWsp(wsp: WorkspaceModel?) {

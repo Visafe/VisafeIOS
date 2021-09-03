@@ -20,6 +20,7 @@ class ScanOverviewVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scanButton.dropShadow(color: .lightGray, opacity: 0.3, offSet: CGSize(width: -1, height: 1), radius: 40, scale: true)
         configPageView()
     }
     
@@ -52,11 +53,26 @@ class ScanOverviewVC: BaseViewController {
     @IBAction func scanAction(_ sender: UIButton) {
         let button = UIButton(frame: sender.bounds)
         button.setBackgroundImage(UIImage(named: "scan_background"), for: .normal)
-        
+
         let button2 = UIButton(frame: sender.bounds)
         button2.setBackgroundImage(UIImage(named: "scan_background_loading"), for: .normal)
         sender.addSubview(button)
         sender.addSubview(button2)
+
+        let button3 = UIButton(frame: sender.bounds)
+        button3.setBackgroundImage(UIImage(named: "scan_background_loading"), for: .normal)
+        button3.transform = CGAffineTransform(rotationAngle: .pi/2)
+        sender.addSubview(button3)
+
+        let button4 = UIButton(frame: sender.bounds)
+        button4.setBackgroundImage(UIImage(named: "scan_background_loading"), for: .normal)
+        button4.transform = CGAffineTransform(rotationAngle: .pi)
+        sender.addSubview(button4)
+
+        let button5 = UIButton(frame: sender.bounds)
+        button5.setBackgroundImage(UIImage(named: "scan_background_loading"), for: .normal)
+        button5.transform = CGAffineTransform(rotationAngle: 3*(.pi)/2)
+        sender.addSubview(button5)
     }
 }
 

@@ -21,7 +21,7 @@ class ProfileHeaderView: BaseView {
     }
     
     func bindingData() {
-        if let user = CacheManager.shared.getCurrentUser() {
+        if let user = CacheManager.shared.getCurrentUser(), CacheManager.shared.getIsLogined() {
             avatarImageView.image = UIImage(named: "icon_login")
             titleLabel.text = user.fullname
             contentLabel.text = user.phonenumber ?? user.email

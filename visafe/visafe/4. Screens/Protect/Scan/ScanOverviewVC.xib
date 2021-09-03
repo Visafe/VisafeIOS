@@ -49,13 +49,13 @@
                     <rect key="frame" x="0.0" y="448" width="414" height="448"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWK-Bv-0gn">
-                            <rect key="frame" x="151" y="168" width="112" height="112"/>
+                            <rect key="frame" x="166" y="183" width="82" height="82"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="112" id="l4u-fg-b6P"/>
-                                <constraint firstAttribute="width" constant="112" id="oqF-oe-a8T"/>
+                                <constraint firstAttribute="height" constant="82" id="l4u-fg-b6P"/>
+                                <constraint firstAttribute="width" constant="82" id="oqF-oe-a8T"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                            <state key="normal" title="Quét" backgroundImage="ic_bg_scan">
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <state key="normal" title="Quét" backgroundImage="scan_background">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -94,8 +94,8 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_bg_scan" width="124" height="124"/>
         <image name="ic_close_white" width="24" height="24"/>
         <image name="ic_license_header" width="375" height="200"/>
+        <image name="scan_background" width="84" height="84"/>
     </resources>
 </document>

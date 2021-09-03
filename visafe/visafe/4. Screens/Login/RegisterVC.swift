@@ -46,7 +46,10 @@ class RegisterVC: BaseViewController {
         if fullname.isEmpty {
             success = false
             fullnameInfoLabel.text = "Tên người dùng không được để trống"
-        } else {
+        } else if fullname.length > 50 {
+            success = false
+            fullnameInfoLabel.text = "Tên người dùng không được lớn hơn 50 ký tự"
+        }  else {
             fullnameInfoLabel.text = nil
         }
         let username = usernameTextfield.text ?? ""
@@ -250,5 +253,19 @@ extension RegisterVC: UITextFieldDelegate {
         if field.type != .error {
             field.setState(type: .normal)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == fullNameTextfield {
+            usernameTextfield.becomeFirstResponder()
+        } else if textField == usernameTextfield {
+            passwordTextfield.becomeFirstResponder()
+        } else if textField == passwordTextfield {
+            if validateInfo() {
+                register()
+                return true
+            }
+        }
+        return false
     }
 }
