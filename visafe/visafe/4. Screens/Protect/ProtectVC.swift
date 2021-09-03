@@ -27,6 +27,8 @@ class ProtectVC: BaseDoHVC {
     @IBOutlet weak var protectFollowStatusButton: UIButton!
     @IBOutlet weak var protectDeviceStatusButton: UIButton!
     @IBOutlet weak var protectWifiStatusButton: UIButton!
+    @IBOutlet weak var lastScanLabel: UILabel!
+
     var statisticModel: StatisticModel? {
         didSet {
             bindingStatistic()
@@ -102,6 +104,11 @@ class ProtectVC: BaseDoHVC {
         isSetupPin = CacheManager.shared.getPin() != nil
         isProtectWifi = CacheManager.shared.getProtectWifiStatus()
         isProtectDevice = DoHNative.shared.isEnabled
+        guard let lastScan = CacheManager.shared.getLastScan() else {
+            lastScanLabel.text = ""
+            return
+        }
+        lastScanLabel.text = "Lần quét gần nhất \(DateFormatter.timeAgoSinceDate(date: lastScan, currentDate: Date()))"
     }
 
     private func setupUI() {
@@ -228,8 +235,8 @@ extension ProtectVC {
     }
     
     @IBAction func scanAction(_ sender: Any) {
-        guard checkLoginState() else { return }
-        setSafeMode(isTrue: false)
+        let vc = ScanOverviewVC()
+        present(vc, animated: true)
     }
 
     @IBAction func showProtectDevice(_ sender: Any) {
@@ -304,7 +311,9 @@ extension ProtectVC {
     }
 
     @IBAction func reportFake(_ sender: Any) {
-
+        let vc = ReportWebsiteVC()
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true)
     }
 
     @IBAction func createGroup(_ sender: Any) {

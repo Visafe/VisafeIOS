@@ -68,7 +68,7 @@ extension UIView {
                     shouldRasterize: Bool = false,
                     path: UIBezierPath? = nil,
                     rasterizationScale: CGFloat? = nil) {
-        self.layer.masksToBounds = false
+//        self.layer.masksToBounds = false
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOpacity = opacity
         self.layer.shadowOffset = offset
