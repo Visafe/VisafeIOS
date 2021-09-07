@@ -27,6 +27,7 @@ class GroupWorker {
     }
     
     static func update(group: GroupModel, completion: @escaping (_ result: GroupModel?, _ error: Error?) -> Void) {
+        group.usersGroupInfo = []
         let router = APIRouter.updateGroup(param: group)
         APIManager.shared.request(target: router) { (data, error) in
             var loginResult: GroupModel?

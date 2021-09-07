@@ -19,6 +19,7 @@ class GroupVC: BaseViewController {
     var statisticModel: StatisticModel = StatisticModel()
     var selectedWorkspace:((_ workspace: WorkspaceModel?) -> Void)?
     var timeType: ChooseTimeEnum = .day
+    var onUpdateWorkspace:(() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -208,6 +209,9 @@ class GroupVC: BaseViewController {
     
     func updateWorkspace(workspace: WorkspaceModel) {
         let vc = PostWorkspacesVC(workspace: workspace, editMode: .update)
+        vc.onUpdate = {
+            self.refreshData()
+        }
         let nav = BaseNavigationController(rootViewController: vc)
         present(nav, animated: true, completion: nil)
     }
@@ -416,14 +420,24 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func detailGroup(group: GroupModel) {
-        let vc = GroupDetailVC(group: group)
-        vc.updateGroup = { [weak self] in
-            self?.refreshData()
-        }
-        vc.timeType = timeType
-        vc.statisticModel = statisticModel
-        let nav = BaseNavigationController(rootViewController: vc)
-        present(nav, animated: true)
+//        showLoading()
+//        GroupWorker.getGroup(id: group.groupid!) { (agroup, error) in
+//            var viewGroup: GroupModel!
+//            self.hideLoading()
+//            if let g = agroup {
+//                viewGroup = g
+//            } else {
+//                viewGroup = group
+//            }
+            let vc = GroupDetailVC(group: group)
+            vc.updateGroup = { [weak self] in
+                self?.refreshData()
+            }
+            vc.timeType = self.timeType
+            vc.statisticModel = self.statisticModel
+            let nav = BaseNavigationController(rootViewController: vc)
+            self.present(nav, animated: true)
+//        }
     }
 }
 

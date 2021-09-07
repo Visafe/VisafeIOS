@@ -121,7 +121,7 @@ class PostGroupVC: BaseViewController {
     }
     
     func handleResponse(group: GroupModel?, error: Error?) {
-        if group != nil {
+        if group != nil && group?.groupid != nil {
             showMessage(title: "Tạo nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn khởi tạo.") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.dismiss(animated: true, completion: nil)

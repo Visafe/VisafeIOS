@@ -301,6 +301,10 @@ class GroupModel: NSObject, Mappable {
     var times: [String] = []
     var devicesGroupInfo: [DeviceGroupModel] = []
     var whitelist: [String] = []
+    var filtering_enabled: Bool?
+    var log_enabled: Bool?
+    var safebrowsing_enabled: Bool?
+    var disallowed_rule: String = ""
     
     override init() {
         super.init()
@@ -344,6 +348,10 @@ class GroupModel: NSObject, Mappable {
         times <- map["times"]
         devicesGroupInfo <- map["devicesGroupInfo"]
         whitelist <- map["WhiteList"]
+        filtering_enabled <- map["filtering_enabled"]
+        log_enabled <- map["log_enabled"]
+        safebrowsing_enabled <- map["safebrowsing_enabled"]
+        disallowed_rule <- map["disallowed_rule"]
     }
     
     func buildModelsAppAds(value: [String]) -> [AppAdsModel] {
@@ -548,9 +556,12 @@ class GroupModel: NSObject, Mappable {
         model.app_ads = [GroupAppAdsEnum.facebook.rawValue, GroupAppAdsEnum.youtube.rawValue]
         model.native_tracking = [NativeTrackingEnum.apple.rawValue, NativeTrackingEnum.samsung.rawValue]
         model.blocked_services = [BlockServcieEnum.facebook.rawValue, BlockServcieEnum.zalo.rawValue, BlockServcieEnum.instagram.rawValue, BlockServcieEnum.tiktok.rawValue]
-        
+        model.filtering_enabled = true
+        model.log_enabled = true
+        model.safebrowsing_enabled = true
         model.bypass_enabled = true
         model.safesearch_enabled = true
+        model.disallowed_rule = ""
         return model
     }
     

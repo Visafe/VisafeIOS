@@ -15,6 +15,7 @@ class GroupListDeviceVC: BaseViewController {
     var group: GroupModel
     var listDevice: [DeviceGroupModel] = []
     var listDeviceSearch: [DeviceGroupModel] = []
+    var onUpdate:(() -> Void)?
     
     init(group: GroupModel) {
         self.group = group
@@ -103,6 +104,7 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
             guard let weakSelf = self else { return }
             weakSelf.listDevice.append(device)
             weakSelf.reloadData()
+            weakSelf.onUpdate?()
         }
         present(vc, animated: true)
     }
@@ -142,6 +144,7 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
                 return d.deviceID == device.deviceID
             })
             weakSelf.reloadData()
+            weakSelf.onUpdate?()
         }
     }
     
@@ -170,6 +173,7 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.reloadData()
+            weakSelf.onUpdate?()
         }
     }
     

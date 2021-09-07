@@ -38,6 +38,15 @@ class GroupSettingDetailVC: BaseViewController {
         tableView.registerCells(cells: [GroupSettingDetailCell.className])
     }
     
+    func refreshData() {
+        GroupWorker.getGroup(id: group.groupid!) { (group, error) in
+            if let g = group {
+                self.group = g
+                self.bindingData()
+            }
+        }
+    }
+    
     func bindingData() {
         sources = group.getAllModel()
         tableView.reloadData()
@@ -63,6 +72,9 @@ extension GroupSettingDetailVC: UITableViewDelegate, UITableViewDataSource {
         cell.actionMore = { [weak self] in
             guard let weakSelf = self else { return }
             let vc = GroupProtectVC(group: weakSelf.group, type: model.type!)
+            vc.onUpdateGroup = {
+                self?.refreshData()
+            }
             vc.statisticModel = weakSelf.statisticModel
             weakSelf.parentVC?.navigationController?.pushViewController(vc)
         }

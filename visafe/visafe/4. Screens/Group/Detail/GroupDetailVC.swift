@@ -52,17 +52,33 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
         }
     }
     
+    func refreshData() {
+        GroupWorker.getGroup(id: group.groupid!) { [weak self] (group, error) in
+            guard let weakSelf = self else { return }
+            if let g = group {
+                weakSelf.group = g
+                weakSelf.header.bindingData(group: weakSelf.group)
+            }
+        }
+    }
+    
     func configView() {
         header = GroupDetailHeader.loadFromNib()
         header.bindingData(group: group)
         header.viewMemberAction = { [weak self] in
             guard let weakSelf = self else { return }
             let vc = GroupListUserVC(group: weakSelf.group)
+            vc.onUpdate = {
+                weakSelf.refreshData()
+            }
             weakSelf.navigationController?.pushViewController(vc)
         }
         header.viewDeviceAction = { [weak self] in
             guard let weakSelf = self else { return }
             let vc = GroupListDeviceVC(group: weakSelf.group)
+            vc.onUpdate = {
+                weakSelf.refreshData()
+            }
             weakSelf.navigationController?.pushViewController(vc)
         }
         header.addDeviceAction = { [weak self] in

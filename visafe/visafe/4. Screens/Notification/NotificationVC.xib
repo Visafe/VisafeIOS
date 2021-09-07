@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationVC" customModule="visafe" customModuleProvider="target">
             <connections>
+                <outlet property="noDataLabel" destination="k7h-Et-RpW" id="E5f-nb-euo"/>
                 <outlet property="tableView" destination="ag8-Um-2Yh" id="ftD-J3-qhJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="hfP-MX-iRN"/>
             </connections>
@@ -27,12 +29,20 @@
                         <outlet property="delegate" destination="-1" id="cL6-pR-MVN"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không có thông báo nào" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7h-Et-RpW">
+                    <rect key="frame" x="118" y="438.5" width="178" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ag8-Um-2Yh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BHd-r3-sGD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ag8-Um-2Yh" secondAttribute="trailing" id="ByY-uh-tOZ"/>
+                <constraint firstItem="k7h-Et-RpW" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EjO-0Z-P2L"/>
+                <constraint firstItem="k7h-Et-RpW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JjQ-no-c1X"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ag8-Um-2Yh" secondAttribute="bottom" id="Wc3-5v-3Td"/>
                 <constraint firstItem="ag8-Um-2Yh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="aOG-p1-FFH"/>
             </constraints>

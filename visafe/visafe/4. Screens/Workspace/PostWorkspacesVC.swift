@@ -17,7 +17,7 @@ class PostWorkspacesVC: BaseViewController {
     var workspace: WorkspaceModel
     var editMode: EditModeEnum
     
-    var onContinue:(() -> Void)?
+    var onUpdate:(() -> Void)?
     
     init(workspace: WorkspaceModel, editMode: EditModeEnum) {
         self.workspace = workspace
@@ -79,6 +79,7 @@ class PostWorkspacesVC: BaseViewController {
                     guard let weakSelf = self else { return }
                     weakSelf.hideLoading()
                     weakSelf.handleResult(result: result, error: error)
+                    weakSelf.onUpdate?()
                 }
             } else {
                 let param = WorkspaceUpdateNameParam()
@@ -88,6 +89,7 @@ class PostWorkspacesVC: BaseViewController {
                     guard let weakSelf = self else { return }
                     weakSelf.hideLoading()
                     weakSelf.handleUpdatename(result: result, error: error)
+                    weakSelf.onUpdate?()
                 }
             }
         }
@@ -95,6 +97,9 @@ class PostWorkspacesVC: BaseViewController {
     
     func handleUpdatename(result: WorkspaceModel?, error: Error?) {
         if result != nil && error == nil {
+            if let id = result?.id, id == CacheManager.shared.getCurrentWorkspace()?.id {
+                CacheManager.shared.setCurrentWorkspace(value: result!)
+            }
             showMessage(title: "Sửa workspace thành công", content: "Bây giờ, bạn đã có thể thêm các nhóm để bảo vệ các thành viên khác") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.parent?.dismiss(animated: true, completion: nil)

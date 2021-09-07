@@ -12,6 +12,7 @@ class NotificationVC: BaseViewController {
     var canLoadMore: Bool = true
     var pageIndex: Int = 1
     
+    @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var sources: [NotificationModel] = []
@@ -61,7 +62,7 @@ class NotificationVC: BaseViewController {
             } else {
                 weakSelf.tableView.mj_footer = nil
             }
-            weakSelf.tableView.reloadData()
+            weakSelf.reloadData()
         }
     }
     
@@ -80,7 +81,7 @@ class NotificationVC: BaseViewController {
                 } else {
                     weakSelf.tableView.mj_footer = nil
                 }
-                weakSelf.tableView.reloadData()
+                weakSelf.reloadData()
             }
         }
     }
@@ -98,7 +99,16 @@ class NotificationVC: BaseViewController {
             } else {
                 weakSelf.tableView.mj_footer = nil
             }
-            weakSelf.tableView.reloadData()
+            weakSelf.reloadData()
+        }
+    }
+    
+    func reloadData() {
+        tableView.reloadData()
+        if sources.count > 0 {
+            noDataLabel.isHidden = true
+        } else {
+            noDataLabel.isHidden = false
         }
     }
     
@@ -134,7 +144,7 @@ extension NotificationVC: UITableViewDelegate, UITableViewDataSource {
         if notifi.isRead == false {
             notifi.isRead = true
             NotificationWorker.readNotification(id: id) { (result, error) in }
-            tableView.reloadData()
+            reloadData()
         }
     }
 }

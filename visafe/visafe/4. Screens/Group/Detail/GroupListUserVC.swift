@@ -12,7 +12,7 @@ class GroupListUserVC: BaseViewController {
     @IBOutlet weak var searchTextField: BaseTextField!
     @IBOutlet weak var tableView: UITableView!
     var group: GroupModel
-    
+    var onUpdate:(() -> Void)?
     var listUser: [UserModel] = []
     var listUserSearch: [UserModel] = []
     
@@ -138,6 +138,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
                 }
             }
             weakSelf.reloadData()
+            weakSelf.onUpdate?()
         }
     }
     
@@ -156,6 +157,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
             weakSelf.hideLoading()
             user.role = .admin
             weakSelf.tableView.reloadData()
+            weakSelf.onUpdate?()
         }
     }
     
@@ -166,6 +168,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
             weakSelf.hideLoading()
             user.role = .suppervisor
             weakSelf.tableView.reloadData()
+            weakSelf.onUpdate?()
         }
     }
     
@@ -199,6 +202,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
     func addUserToList(user: UserModel) {
         listUser.append(user)
         reloadData()
+        onUpdate?()
     }
     
     func reloadData() {
