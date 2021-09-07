@@ -14,7 +14,7 @@ class DeviceWorker {
 
     static func genDeviceId(completion: @escaping (_ result: GenDeviceResult?, _ error: Error?) -> Void) {
         let router = APIRouter.genDeviceId
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var result: GenDeviceResult?
             if let data = data {
                 do {
@@ -28,7 +28,7 @@ class DeviceWorker {
     
     static func registerDevice(token: String?, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
         let router = APIRouter.registerDevice(token: token, deviceId: CacheManager.shared.getDeviceId())
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var result: BaseResult?
             if let data = data {
                 do {

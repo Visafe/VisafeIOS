@@ -103,7 +103,7 @@ class DeviceListLogVC: BaseViewController {
         param.group_id = groupId
         param.limit = 20
         param.response_status = type.getTypeQueryLog()
-        param.older_than = oldest
+        param.older_than = oldest ?? ""
         GroupWorker.getLog(param: param) { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.tableView.endRefreshing()

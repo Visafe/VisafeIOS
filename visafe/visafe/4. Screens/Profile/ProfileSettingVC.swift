@@ -53,7 +53,7 @@ class ProfileSettingVC: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var sources: [ProfileSettingEnum] = CacheManager.shared.getIsLogined() ? [.changepass, .enterpin, .language] :  [.enterpin, .language]
+    var sources: [ProfileSettingEnum] = (CacheManager.shared.getIsLogined() && CacheManager.shared.getCurrentUser()?.typeRegister == AccountTypeEnum.standard) ? [.changepass, .enterpin, .language] :  [.enterpin, .language]
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,7 +13,7 @@ import SwiftyJSON
 class WorkspaceWorker {
     static func getList(completion: @escaping (_ result: [WorkspaceModel]?, _ error: Error?) -> Void) {
         let router = APIRouter.getListWorkspace
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var loginResult: [WorkspaceModel]?
             if let data = data {
                 do {
@@ -27,7 +27,7 @@ class WorkspaceWorker {
     
     static func add(workspace: WorkspaceModel, completion: @escaping (_ result: WorkspaceModel?, _ error: Error?) -> Void) {
         let router = APIRouter.addWorkspace(param: workspace)
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var loginResult: WorkspaceModel?
             if let data = data {
                 do {
@@ -41,7 +41,7 @@ class WorkspaceWorker {
     
     static func update(workspace: WorkspaceModel, completion: @escaping (_ result: WorkspaceModel?, _ error: Error?) -> Void) {
         let router = APIRouter.updateWorkspace(param: workspace)
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var loginResult: WorkspaceModel?
             if let data = data {
                 do {
@@ -55,7 +55,7 @@ class WorkspaceWorker {
     
     static func delete(wspId: String?, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
         let router = APIRouter.deleteWorkspace(wspId: wspId)
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var loginResult: BaseResult?
             if let data = data {
                 do {
@@ -69,7 +69,7 @@ class WorkspaceWorker {
     
     static func updateName(param: WorkspaceUpdateNameParam, completion: @escaping (_ result: WorkspaceModel?, _ error: Error?) -> Void) {
         let router = APIRouter.updateNameWorkspace(param: param)
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var loginResult: WorkspaceModel?
             if let data = data {
                 do {
@@ -83,7 +83,7 @@ class WorkspaceWorker {
     
     static func getStatistic(wspId: String, limit: Int, completion: @escaping (_ result: StatisticModel?, _ error: Error?) -> Void) {
         let router = APIRouter.statisticWorkspace(id: wspId, limit: limit)
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var loginResult: StatisticModel?
             if let data = data {
                 do {
@@ -97,7 +97,7 @@ class WorkspaceWorker {
     
     static func getLog(param: QueryLogParam, completion: @escaping (_ result: QueryLogResult?, _ error: Error?) -> Void) {
         let router = APIRouter.logWorkspace(param: param)
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var loginResult: QueryLogResult?
             if let data = data {
                 do {

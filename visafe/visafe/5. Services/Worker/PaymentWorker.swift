@@ -14,7 +14,7 @@ class PaymentWorker {
 
     static func getPackages(completion: @escaping (_ result: [PackageModel]?, _ error: Error?) -> Void) {
         let router = APIRouter.packages
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var result: [PackageModel]?
             if let data = data {
                 do {
@@ -28,7 +28,7 @@ class PaymentWorker {
     
     static func order(id: Int, completion: @escaping (_ result: OrderResult?, _ error: Error?) -> Void) {
         let router = APIRouter.order(id: id)
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var result: OrderResult?
             if let data = data {
                 do {

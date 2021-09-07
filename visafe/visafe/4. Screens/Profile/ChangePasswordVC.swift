@@ -40,10 +40,10 @@ class ChangePasswordVC: BaseViewController {
             param.newPassword = passwordTextfield.text
             param.repeatPassword = rePasswordTextfield.text
             showLoading()
-            AuthenWorker.changePassword(param: param) { [weak self] (result, error) in
+            AuthenWorker.changePassword(param: param) { [weak self] (result, error, statusCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
-                weakSelf.handleResponse(result: result, error: error)
+                weakSelf.handleResponse(result: result, error: error, statusCode: statusCode)
             }
         }
     }
@@ -65,14 +65,15 @@ class ChangePasswordVC: BaseViewController {
             rePasswordInfoLabel.text = nil
         }
         if !password.isEmpty && !repassword.isEmpty && password != repassword {
+            success = false
             passwordInfoLabel.text = "Mật khẩu không trùng nhau"
             rePasswordInfoLabel.text = "Mật khẩu không trùng nhau"
         }
         return success
     }
     
-    func handleResponse(result: ChangePasswordResult?, error: Error?) {
-        if result == nil && error == nil {
+    func handleResponse(result: ChangePasswordResult?, error: Error?, statusCode: Int?) {
+        if result == nil && error == nil && statusCode == 200 {
             showMessage(title: "Đổi mật khẩu thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
                 guard let weakSelf = self else { return }
                 for controller in (weakSelf.navigationController!.viewControllers) {
@@ -82,8 +83,9 @@ class ChangePasswordVC: BaseViewController {
                     }
                 }
             }
-        } else if let res = result {
-            showError(title: "Đổi mật khẩu lỗi", content: res.status_code?.getDescription())
+        } else {
+            let content = result?.status_code?.getDescription() ?? "Có lỗi xảy ra. Vui lòng thử lại."
+            showError(title: "Đổi mật khẩu lỗi", content: content)
         }
     }
 }

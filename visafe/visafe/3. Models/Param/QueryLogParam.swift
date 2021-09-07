@@ -19,7 +19,7 @@ class QueryLogParam: NSObject, Mappable {
     var group_id: String?
     var workspace_id: String?
     var response_status: QueryLogTypeEnum?
-    var older_than: String?
+    var older_than: String = ""
     var limit: Int?
     var search: String = ""
     

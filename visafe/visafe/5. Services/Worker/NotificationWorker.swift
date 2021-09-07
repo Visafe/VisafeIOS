@@ -14,7 +14,7 @@ class NotificationWorker {
     
     static func list(page: Int, completion: @escaping (_ result: NotificationResult?, _ error: Error?) -> Void) {
         let router = APIRouter.listNotification(pageIndex: page)
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var result: NotificationResult?
             if let data = data {
                 do {
@@ -28,7 +28,7 @@ class NotificationWorker {
     
     static func readNotification(id: Int, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
         let router = APIRouter.readNotification(id: id)
-        APIManager.shared.request(target: router) { (data, error) in
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
             var result: BaseResult?
             if let data = data {
                 do {

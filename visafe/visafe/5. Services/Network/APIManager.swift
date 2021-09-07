@@ -18,13 +18,13 @@ class APIManager {
     let provider = MoyaProvider<APIRouter>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])
     
     @discardableResult
-    func request(target: APIRouter, completion: @escaping (_ data: Data?, _ error: Error?) -> Void) -> Cancellable {
+    func request(target: APIRouter, completion: @escaping (_ data: Data?, _ error: Error?, _ statusCode: Int?) -> Void) -> Cancellable {
         return provider.request(target, completion: { (result) in
             switch result {
             case .success(let response):
-                completion(response.data, nil)
+                completion(response.data, nil, response.response?.statusCode)
             case .failure(_):
-                completion(nil, APIError.serverLogicError(message: "Something's wrong with server."))
+                completion(nil, APIError.serverLogicError(message: "Something's wrong with server."), nil)
             }
         })
     }

@@ -124,7 +124,7 @@ extension APIRouter: TargetType {
         case .resetPassword:
             return "/reset-password"
         case .changePassword:
-            return "/change_password"
+            return "/user/change-password"
         case .changeProfile:
             return "/change_profile"
         case .getGroups:
@@ -234,7 +234,7 @@ extension APIRouter: TargetType {
         case .updateWorkspace, .updateNameWorkspace,
              .updateGroup, .updateNameGroup,
              .groupUpdateWhitelist, .groupUserToViewer,
-             .groupUserToManager, .updateDeviceGroup:
+             .groupUserToManager, .updateDeviceGroup, .changePassword:
             return .patch
         default:
             break
@@ -315,6 +315,7 @@ extension APIRouter: TargetType {
             pars["time_limit"] = time
         case .statisticGroup(id: let gId, limit: let time):
             pars["group_id"] = gId
+            
             pars["time_limit"] = time
         case .logGroup(param: let param):
             pars = param.toJSON()
@@ -375,7 +376,7 @@ extension APIRouter: TargetType {
     var headers: [String : String]? {
         var hea: [String: String] = [:]
         switch self {
-        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup, .logGroup, .logWorkspace, .groupUpdateWhitelist, .groupUserToViewer, .groupUserToManager, .groupDeleteUser, .deleteLog, .deleteDeviceFromGroup, .updateDeviceGroup, .getGroup, .readNotification, .packages, .order, .reportPhishing:
+        case .getListWorkspace, .addWorkspace, .updateWorkspace, .deleteWorkspace, .updateNameWorkspace, .addGroup, .updateGroup, .updateNameGroup, .deleteGroup, .deleteDeviceGroup, .createIdentifier, .updateIdentifier, .deleteIdentifier, .getIdentifier, .addDeviceToIden, .deleteDeviceToIden, .inviteToGroup, .deleteGroupMember, .changeManagerPermision, .changeViewerPermision, .profile, .getGroups, .listNotification, .statisticWorkspace, .statisticGroup, .logGroup, .logWorkspace, .groupUpdateWhitelist, .groupUserToViewer, .groupUserToManager, .groupDeleteUser, .deleteLog, .deleteDeviceFromGroup, .updateDeviceGroup, .getGroup, .readNotification, .packages, .order, .reportPhishing, .changePassword:
             hea["Authorization"] = (CacheManager.shared.getLoginResult()?.token ?? "")
         default:
             break

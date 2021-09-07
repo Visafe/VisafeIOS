@@ -28,6 +28,13 @@ public enum GroupMemberRoleEnum: Int {
     }
 }
 
+public enum AccountTypeEnum: String {
+    case standard = "ACCOUNT_STANDARD"
+    case facebook = "ACCOUNT_FACEBOOK"
+    case google = "ACCOUNT_GOOGLE"
+    case apple = "ACCOUNT_APPLE"
+}
+
 class UserModel: NSObject, Mappable {
     var userid: Int?
     var email: String?
@@ -45,6 +52,7 @@ class UserModel: NSObject, Mappable {
     var maxGroup: Int = 0
     var maxDevice: Int = 0
     var userIDString: String?
+    var typeRegister: AccountTypeEnum?
     
     override init() {
         super.init()
@@ -73,5 +81,6 @@ class UserModel: NSObject, Mappable {
         maxWorkspace <- map["MaxWorkspace"]
         maxGroup <- map["MaxGroup"]
         maxDevice <- map["MaxDevice"]
+        typeRegister <- map["TypeRegister"]
     }
 }

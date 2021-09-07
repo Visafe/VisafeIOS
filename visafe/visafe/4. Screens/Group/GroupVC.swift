@@ -9,7 +9,7 @@ import UIKit
 import SwiftMessages
 
 class GroupVC: BaseViewController {
-
+    
     @IBOutlet weak var typeView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -420,15 +420,9 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func detailGroup(group: GroupModel) {
-//        showLoading()
-//        GroupWorker.getGroup(id: group.groupid!) { (agroup, error) in
-//            var viewGroup: GroupModel!
-//            self.hideLoading()
-//            if let g = agroup {
-//                viewGroup = g
-//            } else {
-//                viewGroup = group
-//            }
+        showLoading()
+        GroupWorker.getGroup(id: group.groupid!) { (agroup, error) in
+            self.hideLoading()
             let vc = GroupDetailVC(group: group)
             vc.updateGroup = { [weak self] in
                 self?.refreshData()
@@ -437,7 +431,7 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
             vc.statisticModel = self.statisticModel
             let nav = BaseNavigationController(rootViewController: vc)
             self.present(nav, animated: true)
-//        }
+        }
     }
 }
 
