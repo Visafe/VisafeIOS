@@ -112,7 +112,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53b-pa-86B">
                                     <rect key="frame" x="0.0" y="8" width="354" height="68"/>
                                     <string key="text">Khi nhấn Đăng ký nghĩa là bạn đồng ý với
-điều khoản và điều kiện sử dụng của ViSafe</string>
+điều khoản và điều kiện sử dụng của Visafe</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>

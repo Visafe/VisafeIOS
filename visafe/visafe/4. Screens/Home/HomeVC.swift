@@ -135,7 +135,6 @@ class HomeVC: BaseDoHVC {
 
 extension HomeVC {
     private func loadManager(_  complete:@escaping ((NETunnelProviderManager?, Error?) -> Void)) {
-//        //////DDLogInfo("(VpnManager) loadManager ")
         providerManagerType.self.loadAllFromPreferences { [weak self] (managers, error) in
             guard let self = self else { return }
             var manager: NETunnelProviderManager?

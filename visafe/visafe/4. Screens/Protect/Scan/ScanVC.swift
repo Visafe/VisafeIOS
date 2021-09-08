@@ -20,9 +20,9 @@ public enum ScanDescriptionEnum: String {
     func getDescription() -> String {
         switch self {
         case .about:
-            return "ViSafe giúp bạn kiểm tra toàn diện về nguy hại, mã độc, quảng cáo & theo dõi."
+            return "Visafe giúp bạn kiểm tra toàn diện về nguy hại, mã độc, quảng cáo & theo dõi."
         case .protect:
-            return "Đang bật chế độ bảo vệ ViSafe"
+            return "Đang bật chế độ bảo vệ Visafe"
         case .wifi:
             return "Đang kiểm tra wifi"
         case .protocoll:
@@ -110,6 +110,7 @@ class ScanVC: BaseViewController {
         case .protect:
             scanSuccess?(DoHNative.shared.isEnabled)
         case .wifi:
+            
             checkBotNet()
         case .protocoll:
             checkBiometric()

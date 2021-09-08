@@ -70,7 +70,7 @@ lừa đảo?</string>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znj-dY-YWz">
                     <rect key="frame" x="24" y="236" width="366" height="29"/>
-                    <string key="text">Website báo cáo sẽ được ViSafe xác thực thông tin
+                    <string key="text">Website báo cáo sẽ được Visafe xác thực thông tin
 và liệt vào danh sách đen</string>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>

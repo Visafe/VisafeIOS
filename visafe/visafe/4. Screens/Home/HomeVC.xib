@@ -68,6 +68,9 @@
                 <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-RZ-lRg">
                     <rect key="frame" x="137.5" y="441" width="100" height="100"/>
                     <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_connect" translatesAutoresizingMaskIntoConstraints="NO" id="2sK-J3-x0z">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_loading_home" translatesAutoresizingMaskIntoConstraints="NO" id="KzK-wz-Swo">
                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         </imageView>
@@ -87,10 +90,14 @@
                         <constraint firstItem="KzK-wz-Swo" firstAttribute="leading" secondItem="xcf-RZ-lRg" secondAttribute="leading" id="56N-eK-n9H"/>
                         <constraint firstItem="KzK-wz-Swo" firstAttribute="top" secondItem="xcf-RZ-lRg" secondAttribute="top" id="6Ru-y2-VAD"/>
                         <constraint firstAttribute="bottom" secondItem="KzK-wz-Swo" secondAttribute="bottom" id="JnJ-To-exP"/>
+                        <constraint firstItem="2sK-J3-x0z" firstAttribute="trailing" secondItem="KzK-wz-Swo" secondAttribute="trailing" id="N2K-3K-8GS"/>
                         <constraint firstAttribute="trailing" secondItem="KzK-wz-Swo" secondAttribute="trailing" id="Ock-yL-nfS"/>
                         <constraint firstAttribute="width" constant="100" id="Q67-I0-xnq"/>
+                        <constraint firstItem="2sK-J3-x0z" firstAttribute="bottom" secondItem="KzK-wz-Swo" secondAttribute="bottom" id="SZe-yW-52q"/>
                         <constraint firstItem="RPl-dq-HEi" firstAttribute="centerY" secondItem="xcf-RZ-lRg" secondAttribute="centerY" id="Vd4-14-mgM"/>
                         <constraint firstItem="RPl-dq-HEi" firstAttribute="centerX" secondItem="xcf-RZ-lRg" secondAttribute="centerX" id="Xqg-E2-2zw"/>
+                        <constraint firstItem="2sK-J3-x0z" firstAttribute="leading" secondItem="KzK-wz-Swo" secondAttribute="leading" id="a6f-eq-7hH"/>
+                        <constraint firstItem="2sK-J3-x0z" firstAttribute="top" secondItem="KzK-wz-Swo" secondAttribute="top" id="wRf-t5-rQW"/>
                         <constraint firstAttribute="width" secondItem="xcf-RZ-lRg" secondAttribute="height" id="xWr-IP-BBh"/>
                     </constraints>
                 </view>
@@ -216,8 +223,9 @@
         <image name="Logo_company" width="61" height="24"/>
         <image name="bound_button" width="375" height="320"/>
         <image name="connect_on" width="96" height="96"/>
+        <image name="default_connect" width="128.5" height="128.5"/>
         <image name="home_background" width="354" height="786"/>
-        <image name="ic_loading_home" width="120" height="119.5"/>
+        <image name="ic_loading_home" width="128" height="128"/>
         <image name="logo_app" width="120" height="51.5"/>
         <image name="no_connection" width="314" height="314"/>
         <image name="power" width="20" height="20"/>
