@@ -49,4 +49,6 @@ extension UIColor {
     static let color_102366 = UIColor(hexString: "102366")!
     static let color_030E37 = UIColor(hexString: "030E37")!
     static let color_2C3163 = UIColor(hexString: "2C3163")!
+    static let color_FFB31F = UIColor(hexString: "FFB31F")!
+    static let color_010D41 = UIColor(hexString: "010D41")!
 }

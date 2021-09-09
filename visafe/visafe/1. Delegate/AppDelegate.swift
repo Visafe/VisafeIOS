@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
+        do {
+            try Network.reachability = Reachability(hostname: "www.google.com")
+        } catch {}
         genDeviceId()
         configApplePush(application) // đăng ký nhận push.
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)

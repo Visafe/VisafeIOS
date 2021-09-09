@@ -46,7 +46,7 @@ class ReportWebsiteVC: BaseViewController {
 
     func handleResult(result: BaseResult?, error: Error?) {
         if result == nil && error == nil {
-            showMessage(title: "Gửi báo cáo thành công", content: "Thông tin báo cáo của bạn đã được ViSafe tiếp nhận.") { [weak self] in
+            showMessage(title: "Gửi báo cáo thành công", content: "Thông tin báo cáo của bạn đã được Visafe tiếp nhận.") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.dismiss(animated: true, completion: nil)
             }

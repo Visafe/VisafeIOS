@@ -40,7 +40,7 @@ class PostWorkspacesVC: BaseViewController {
         let mutableAttributedString = NSMutableAttributedString.init(string: "Khi nhấn tạo, bạn đã đồng ý với ")
         let attribute1 = NSAttributedString(string: "Điều khoản & Chính sách", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: "15A1FA")!])
         let attribute2 = NSAttributedString(string: " dành cho khách hàng của")
-        let attribute3 = NSAttributedString(string: " ViSafe", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        let attribute3 = NSAttributedString(string: " Visafe", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         mutableAttributedString.append(attribute1)
         mutableAttributedString.append(attribute2)
         mutableAttributedString.append(attribute3)

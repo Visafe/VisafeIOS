@@ -80,6 +80,18 @@ class BaseViewController: UIViewController {
         }
         showPopup(view: info)
     }
+
+    func showWarning(title: String, content: String?, completion: (() -> Void)? = nil) {
+        guard let info = BaseMessageView.loadFromNib() else { return }
+        info.binding(title: title, content: content)
+        info.imageType.image = UIImage(named: "warning")
+        info.buttonTapHandler = { sender in
+            completion?()
+            SwiftMessages.hide()
+        }
+        showPopup(view: info)
+
+    }
     
     func showPopup(view: MessageView) {
         var infoConfig = SwiftMessages.defaultConfig
