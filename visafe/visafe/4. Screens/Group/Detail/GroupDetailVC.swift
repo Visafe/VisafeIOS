@@ -194,6 +194,7 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
         let vc = PostGroupVC(group: group)
         vc.onDone = { [weak self] in
             guard let weakSelf = self else { return }
+            weakSelf.refreshData()
             weakSelf.updateGroup?()
         }
         let nav = BaseNavigationController(rootViewController: vc)

@@ -25,6 +25,11 @@ class NotificationVC: BaseViewController {
         prepareData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshData()
+    }
+    
     init() {
         super.init(nibName: NotificationVC.className, bundle: nil)
     }

@@ -13,11 +13,10 @@ class EnterPinVC: BaseViewController {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var pinView: SVPinView!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var heightButtonDelete: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Cập nhật mã bảo vệ"
-        
         pinView.style = .underline
         pinView.font = UIFont.systemFont(ofSize: 24)
         pinView.keyboardType = .numberPad
@@ -25,6 +24,15 @@ class EnterPinVC: BaseViewController {
         pinView.secureTextDelay = 0
         pinView.didChangeCallback = didChangeEnteringPin(pin:)
         didChangeEnteringPin(pin: "")
+        if CacheManager.shared.getPin() != nil {
+            title = "Cập nhật mã bảo vệ"
+            heightButtonDelete.constant = 44
+            deleteButton.isHidden = false
+        } else {
+            title = "Tạo mã bảo vệ"
+            heightButtonDelete.constant = 0
+            deleteButton.isHidden = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

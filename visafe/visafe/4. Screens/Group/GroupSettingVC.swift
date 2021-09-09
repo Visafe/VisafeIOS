@@ -137,7 +137,7 @@ extension GroupSettingVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let model = sources[section]
-        if model.type == .website {
+        if model.type == .website && (model.isSelected == true) {
             let viewFooter = GroupSettingFooterView.loadFromNib()
             viewFooter?.onClickAddLink = { [weak self] in
                 guard let weakSelf = self else { return }

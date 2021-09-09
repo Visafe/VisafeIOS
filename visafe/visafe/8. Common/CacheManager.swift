@@ -21,6 +21,7 @@ let kDeviceId = "kDeviceId"
 let kProtectWifi = "kProtectWifi"
 let kLoginSuccess = "kLoginSuccess"
 let kLastScan = "kLastScan"
+let kPassword = "kPassword"
 
 class CacheManager {
     
@@ -147,5 +148,15 @@ class CacheManager {
 
     func getLastScan() -> Date? {
         return userDefault.date(forKey: kLastScan)
+    }
+    
+    func getPassword() -> String? {
+        let value = userDefault.string(forKey: kPassword)
+        return value
+    }
+    
+    func setPassword(value: String) {
+        userDefault.set(value, forKey: kPassword)
+        userDefault.synchronize()
     }
 }

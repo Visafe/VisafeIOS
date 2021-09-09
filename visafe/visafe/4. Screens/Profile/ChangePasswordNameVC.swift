@@ -40,7 +40,10 @@ class ChangePasswordNameVC: BaseViewController {
         let oldPassword = passTextfield.text ?? ""
         if oldPassword.isEmpty {
             success = false
-            passwordInfoLabel.text = "Mật khẩu cũ không được để trống"
+            passwordInfoLabel.text = "Mật khẩu hiện tại không được để trống"
+        } else if oldPassword != CacheManager.shared.getPassword() {
+            success = false
+            passwordInfoLabel.text = "Mật khẩu hiện tại không đúng"
         } else {
             passwordInfoLabel.text = nil
         }
@@ -62,5 +65,12 @@ extension ChangePasswordNameVC: UITextFieldDelegate {
         if field.type != .error {
             field.setState(type: .normal)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == passTextfield {
+            acceptAction(textField)
+        }
+        return true
     }
 }

@@ -127,6 +127,9 @@ class PostWorkspacesVC: BaseViewController {
         if name.isEmpty {
             nameInfoLabel.text = "Tên tài khoản không được để trống"
             success = false
+        } else if name.length > 50 {
+            nameInfoLabel.text = "Tên tài khoản không được dài hơn 50 ký tự"
+            success = false
         }
         return success
     }

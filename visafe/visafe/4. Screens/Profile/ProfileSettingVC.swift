@@ -31,7 +31,7 @@ public enum ProfileSettingEnum: Int {
         case .changepass:
             return "Đổi mật khẩu"
         case .enterpin:
-            return "Cập nhật mã bảo vệ"
+            return CacheManager.shared.getPin() != nil ? "Cập nhật mã bảo vệ" : "Tạo mã bảo vệ"
         case .settingnoti:
             return "Cấu hình thông báo"
         case .language:

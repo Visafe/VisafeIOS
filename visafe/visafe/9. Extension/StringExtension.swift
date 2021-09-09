@@ -99,7 +99,7 @@ extension String {
     }
     
     func checkInviteDevicelink() -> String? {
-        if !self.contains("https://app.visafe.vn/control/invite/device") ||
+        if !self.contains("https://app.visafe.vn/api/v1/group/invite/device") ||
             !self.contains("groupId") ||
             !self.contains("groupName") {
             return nil

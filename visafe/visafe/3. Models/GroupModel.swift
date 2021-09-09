@@ -426,12 +426,12 @@ class GroupModel: NSObject, Mappable {
             let m5 = PostGroupModel()
             m5.type = .service
             m5.children = buildModelsBlockService(value: blocked_services)
-            m5.isSelected = (m5.children.count > 0)
+            m5.isSelected = (blocked_services.count > 0)
             sources.append(m5)
             // Website
             let m6 = PostGroupModel()
             m6.type = .website
-            m6.isSelected = true
+            m6.isSelected = (block_webs.count > 0)
             m6.children = block_webs
             sources.append(m6)
             return sources
@@ -591,7 +591,7 @@ class GroupModel: NSObject, Mappable {
                 game_ads_enabled == true ||
                 app_ads.count > 0)
         } else if type == .access_blocked { // truy cập
-            return (app_ads.count > 0)
+            return (blocked_services.count > 0 || block_webs.count > 0)
         } else if type == .content_blocked {
             return (safesearch_enabled == true)
         } else if type == .native_tracking {

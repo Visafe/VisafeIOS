@@ -40,11 +40,11 @@ class WorkspaceSumaryCell: BaseTableCell {
         timeLabel.text = timeType.getTitle()
         let workspace = CacheManager.shared.getCurrentWorkspace()
         workspaceNameLabel.text = workspace?.name
-        if workspace?.type == .enterprise {
-            descriptionWorkspaceLabel.text = "Bảo vệ tổ chức của bạn trên môi trường mạng"
-        } else {
-            descriptionWorkspaceLabel.text = "Bảo vệ gia đình & người thân trên môi trường mạng"
-        }
+//        if workspace?.type == .enterprise {
+//            descriptionWorkspaceLabel.text = "Bảo vệ tổ chức của bạn trên môi trường mạng"
+//        } else {
+//            descriptionWorkspaceLabel.text = "Bảo vệ gia đình & người thân trên môi trường mạng"
+//        }
         backgroundColor = .clear
         contentView.backgroundColor = .clear
     }

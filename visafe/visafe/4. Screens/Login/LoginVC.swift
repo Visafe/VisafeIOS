@@ -61,6 +61,7 @@ class LoginVC: BaseViewController {
     
     func handleLogin(result: LoginResult?, error: Error?) {
         if let res = result, res.token != nil {
+            CacheManager.shared.setPassword(value: passwordTextfield.text!)
             CacheManager.shared.setLoginResult(value: res)
             getProfile()
         } else {

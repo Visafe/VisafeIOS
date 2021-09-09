@@ -76,6 +76,7 @@ class ChangePasswordVC: BaseViewController {
         if result == nil && error == nil && statusCode == 200 {
             showMessage(title: "Đổi mật khẩu thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
                 guard let weakSelf = self else { return }
+                CacheManager.shared.setPassword(value: weakSelf.passwordTextfield.text!)
                 for controller in (weakSelf.navigationController!.viewControllers) {
                     if controller.isKind(of: ProfileSettingVC.self) {
                         _ =  weakSelf.navigationController!.popToViewController(controller, animated: true)
@@ -104,5 +105,15 @@ extension ChangePasswordVC: UITextFieldDelegate {
         if field.type != .error {
             field.setState(type: .normal)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == passwordTextfield {
+            rePasswordTextfield.becomeFirstResponder()
+            return false
+        } else if textField == passwordTextfield {
+            acceptAction(textField)
+        }
+        return true
     }
 }

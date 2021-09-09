@@ -28,6 +28,11 @@ class GroupVC: BaseViewController {
         prepareData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshData()
+    }
+    
     func configView() {
         // tableview
         tableView.registerCells(cells: [GroupCell.className, WorkspaceSumaryCell.className, WorkspaceSumaryUnLoginCell.className])
@@ -96,7 +101,8 @@ class GroupVC: BaseViewController {
     
     func refreshData() {
         if isViewLoaded {
-            guard let wspId = CacheManager.shared.getCurrentWorkspace()?.id else { return }
+            tableView.reloadData()
+            guard let wspId = CacheManager.shared.getCurrentWorkspace()?.id else { return tableView.endRefreshing() }
             WorkspaceWorker.getStatistic(wspId: wspId, limit: timeType.rawValue) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
                 if let model = result {

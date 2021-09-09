@@ -259,11 +259,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func rateApp() {
-        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
-            if #available(iOS 14.0, *) {
-                SKStoreReviewController.requestReview(in: scene)
-            }
-        }
+        SKStoreReviewController.requestReview()
     }
     
     func shareApp() {

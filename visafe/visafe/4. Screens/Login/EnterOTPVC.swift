@@ -94,6 +94,7 @@ class EnterOTPVC: BaseViewController {
     func handleLogin(result: LoginResult?, error: Error?) {
         if let res = result {
             if res.token != nil { // login thanh cong
+                CacheManager.shared.setPassword(value: model.password!)
                 CacheManager.shared.setLoginResult(value: res)
                 actionAfterLogin()
             } else {

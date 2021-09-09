@@ -104,6 +104,10 @@ class ProfileHelpVC: BaseViewController {
         super.viewDidLoad()
         configView()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     
     func configView() {
         title = "Trung tâm hỗ trợ"
