@@ -28,11 +28,12 @@ class HomeVC: BaseDoHVC {
     var manager: NETunnelProviderManager!
     var session: NETunnelProviderSession!
     let gradient = CAGradientLayer()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        updateDNSStatus()
+//        updateDNSStatus()
+        updateUserInterface()
 //        initVpn()
         NotificationCenter.default.addObserver(self, selector: #selector(updateDNSStatus),
                                                name: UIApplication.didBecomeActiveNotification,
@@ -40,6 +41,13 @@ class HomeVC: BaseDoHVC {
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI),
                                                name: NSNotification.Name(rawValue: updateDnsStatus),
                                                object: nil)
+        NotificationCenter.default
+            .addObserver(self,
+                         selector: #selector(statusManager),
+                         name: .flagsChanged,
+                         object: nil)
+//        updateUserInterface()
+
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -50,12 +58,26 @@ class HomeVC: BaseDoHVC {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
         self.navigationController?.isNavigationBarHidden = true
+        if !DoHNative.shared.isInstalled || DoHNative.shared.isEnabled {
+            showAnimationLoading()
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         gradient.frame = view.bounds
         connectionView.layer.cornerRadius = connectionView.bounds.width/2
+    }
+
+    func updateUserInterface() {
+        if Network.reachability.isReachable {
+            updateDNSStatus()
+        } else {
+            showAnimationLoading()
+        }
+    }
+    @objc func statusManager(_ notification: Notification) {
+        updateUserInterface()
     }
 
     @objc func updateDNSStatus() {
@@ -97,6 +119,10 @@ class HomeVC: BaseDoHVC {
     }
 
     @IBAction func connectAction(_ sender: Any) {
+        guard !isConnecting else {
+            return
+        }
+        isConnecting = true
         onOffDoH()
     }
 

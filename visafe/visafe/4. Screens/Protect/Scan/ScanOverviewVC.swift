@@ -15,7 +15,7 @@ class ScanOverviewVC: BaseViewController {
     @IBOutlet weak var pageContentView: UIView!
     @IBOutlet weak var boundView: UIView!
     @IBOutlet weak var shadowView: UIView!
-    @IBOutlet weak var borderView: UIView!
+    @IBOutlet weak var borderView: CircularProgressView!
     
     var pageViewController: UIPageViewController!
     var listScanVC: [ScanVC] = []
@@ -27,6 +27,15 @@ class ScanOverviewVC: BaseViewController {
             if currentIndex == listScanVC.count - 1 {
                 CacheManager.shared.setLastScan()
             }
+            if currentIndex == 0 {
+                borderView.removeAnimation()
+            }
+            if currentIndex == listScanVC.count - 1 {
+                return
+            }
+            self.borderView.setProgressWithAnimation(duration: 0.5,
+                                                     toValue: Float(currentIndex)/4,
+                                                     fromValue: Float((currentIndex - 1))/4)
         }
     }
     var isStop = false
@@ -38,6 +47,8 @@ class ScanOverviewVC: BaseViewController {
         gradient.colors = [UIColor.color_2C3163.cgColor, UIColor.color_030E37.cgColor]
         boundView.layer.insertSublayer(gradient, at: 0)
         shadowView.dropShadow(color: .lightGray, opacity: 0.3, offSet: CGSize(width: -1, height: 1), radius: 40, scale: true)
+        borderView.trackClr = UIColor.color_010D41
+        borderView.progressClr = UIColor.color_FFB31F
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,10 +88,6 @@ class ScanOverviewVC: BaseViewController {
     
     
     @IBAction func scanAction(_ sender: UIButton) {
-//        borderView.layer.addBorder(side: .left, thickness: 2, color: UIColor.red.cgColor)
-//        borderView.layoutIfNeeded()
-
-        borderView.roundCorners123([.bottomLeft], radius: 36)
         if (currentIndex == 0 || currentIndex == listScanVC.count - 1) {
             currentIndex = 0
             nextStep()
@@ -166,99 +173,51 @@ extension ScanOverviewVC: UIPageViewControllerDelegate, UIPageViewControllerData
     }
 }
 
-extension UIView {
-    func roundCornersVunt(_ corners: UIRectCorner, radius: CGFloat) {
-        clipsToBounds = true
-        if #available(iOS 11.0, *) {
-            layer.cornerRadius = radius
-            layer.maskedCorners = CACornerMask(rawValue: corners.rawValue)
-        } else {
-            //not avalable in ios 11 <
-            self.layer.masksToBounds = true
-            self.layer.cornerRadius = radius
+class CircularProgressView: UIView {
+    var progressLyr = CAShapeLayer()
+    var trackLyr = CAShapeLayer()
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        makeCircularPath()
+    }
+    var progressClr = UIColor.white {
+        didSet {
+            progressLyr.strokeColor = progressClr.cgColor
         }
     }
-    func roundCorners123(_ corners: UIRectCorner, radius: CGFloat) {
-        let maskPath = UIBezierPath(
-            roundedRect: bounds,
-            byRoundingCorners: corners,
-            cornerRadii: CGSize(width: radius, height: radius))
-//        UIColor.red.setFill()
-//        maskPath.fill()
-//        UIColor.red.setStroke()
-//        maskPath.lineWidth = 5
-//        maskPath.stroke()
-        let shape = CAShapeLayer()
-//        maskPath.
-        shape.path = maskPath.cgPath
-        shape.lineWidth = 2
-        shape.strokeColor = UIColor.green.cgColor
-        shape.fillColor = nil
-        layer.mask = shape
-    }
-
-
-}
-
-import UIKit
-
-class RainbowCircle: UIView {
-
-    private var radius: CGFloat {
-        return frame.width>frame.height ? frame.height/2 : frame.width/2
-    }
-
-    private var stroke: CGFloat = 10
-    private var padding: CGFloat = 5
-
-    //MARK: - Drawing
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        drawRainbowCircle(outerRadius: radius - padding, innerRadius: radius - stroke - padding, resolution: 1)
-    }
-
-    init(frame: CGRect, lineHeight: CGFloat) {
-        super.init(frame: frame)
-        stroke = lineHeight
-    }
-
-    required init?(coder aDecoder: NSCoder) { super.init(coder: aDecoder) }
-
-    /*
-     Resolution should be between 0.1 and 1
-     */
-    private func drawRainbowCircle(outerRadius: CGFloat, innerRadius: CGFloat, resolution: Float) {
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-        context.saveGState()
-        context.translateBy(x: self.bounds.midX, y: self.bounds.midY) //Move context to center
-
-        let subdivisions:CGFloat = CGFloat(resolution * 512) //Max subdivisions of 512
-
-        let innerHeight = (CGFloat.pi*innerRadius)/subdivisions //height of the inner wall for each segment
-        let outterHeight = (CGFloat.pi*outerRadius)/subdivisions
-
-        let segment = UIBezierPath()
-        segment.move(to: CGPoint(x: innerRadius, y: -innerHeight/2))
-        segment.addLine(to: CGPoint(x: innerRadius, y: innerHeight/2))
-        segment.addLine(to: CGPoint(x: outerRadius, y: outterHeight/2))
-        segment.addLine(to: CGPoint(x: outerRadius, y: -outterHeight/2))
-        segment.close()
-
-        //Draw each segment and rotate around the center
-        for i in 0 ..< Int(ceil(subdivisions)) {
-            UIColor(hue: CGFloat(i)/subdivisions, saturation: 1, brightness: 1, alpha: 1).set()
-            segment.fill()
-            //let lineTailSpace = CGFloat.pi*2*outerRadius/subdivisions  //The amount of space between the tails of each segment
-            let lineTailSpace = CGFloat.pi*2*outerRadius/subdivisions
-            segment.lineWidth = lineTailSpace //allows for seemless scaling
-            segment.stroke()
-
-            //Rotate to correct location
-            let rotate = CGAffineTransform(rotationAngle: -(CGFloat.pi*2/subdivisions)) //rotates each segment
-            segment.apply(rotate)
+    var trackClr = UIColor.white {
+        didSet {
+            trackLyr.strokeColor = trackClr.cgColor
         }
+    }
+    func makeCircularPath() {
+        self.backgroundColor = UIColor.clear
+        self.layer.cornerRadius = 36
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width/2, y: frame.size.height/2), radius: (frame.size.width)/2, startAngle: CGFloat(-0.5 * .pi), endAngle: CGFloat(1.5 * .pi), clockwise: true)
+        trackLyr.path = circlePath.cgPath
+        trackLyr.fillColor = UIColor.clear.cgColor
+        trackLyr.strokeColor = trackClr.cgColor
+        trackLyr.lineWidth = 4
+        trackLyr.strokeEnd = 1.0
+        layer.addSublayer(trackLyr)
+        progressLyr.path = circlePath.cgPath
+        progressLyr.fillColor = UIColor.clear.cgColor
+        progressLyr.strokeColor = progressClr.cgColor
+        progressLyr.lineWidth = 4
+        progressLyr.strokeEnd = 0.0
+        layer.addSublayer(progressLyr)
+    }
+    func setProgressWithAnimation(duration: TimeInterval, toValue: Float, fromValue: Float) {
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.duration = duration
+        animation.fromValue = fromValue
+        animation.toValue = toValue
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        progressLyr.strokeEnd = CGFloat(toValue)
+        progressLyr.add(animation, forKey: "animateprogress")
+    }
 
-        context.translateBy(x: -self.bounds.midX, y: -self.bounds.midY) //Move context back to original position
-        context.restoreGState()
+    func removeAnimation() {
+        progressLyr.removeAnimation(forKey: "animateprogress")
     }
 }

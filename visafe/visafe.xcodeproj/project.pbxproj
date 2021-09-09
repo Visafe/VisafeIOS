@@ -11,6 +11,7 @@
 		0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */; };
 		0E229D872682D3AF00559B67 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D862682D3AF00559B67 /* Moya */; };
 		0E798387268485E60023C916 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E798386268485E60023C916 /* NetworkExtension.framework */; };
+		0EB6614E26E924F500B9EAEA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB6614D26E924F500B9EAEA /* Reachability.swift */; };
 		0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA42681F29E00572C4E /* AppDelegate.swift */; };
 		0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA82681F29E00572C4E /* ViewController.swift */; };
 		0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAA2681F29E00572C4E /* Main.storyboard */; };
@@ -326,6 +327,7 @@
 		0E04B2E826DE2BD900C31FFE /* DateFormatter+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extention.swift"; sourceTree = "<group>"; };
 		0E798385268485E60023C916 /* visafe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visafe.entitlements; sourceTree = "<group>"; };
 		0E798386268485E60023C916 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		0EB6614D26E924F500B9EAEA /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0EC217BF2691BB1B00B8B8F4 /* tunnel.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = tunnel.entitlements; sourceTree = "<group>"; };
 		0EC217C02691BB1B00B8B8F4 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		0EDEEFA12681F29E00572C4E /* visafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = visafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -966,6 +968,7 @@
 				C993D25326A46A9B00684F80 /* TabbarExtension.swift */,
 				C9CBFDA726B1C0E50097A026 /* UIImageViewExtension.swift */,
 				0E04B2E826DE2BD900C31FFE /* DateFormatter+Extention.swift */,
+				0EB6614D26E924F500B9EAEA /* Reachability.swift */,
 			);
 			path = "9. Extension";
 			sourceTree = "<group>";
@@ -1626,6 +1629,7 @@
 				C90AD90A26C55380003539FF /* OrderResult.swift in Sources */,
 				C971F9FF2697498A00BB7118 /* PostGroupAboutVC.swift in Sources */,
 				C9EEB8B726AD634B008F093C /* HeaderedACTabScrollViewController.swift in Sources */,
+				0EB6614E26E924F500B9EAEA /* Reachability.swift in Sources */,
 				C9777A3B269ACDE500C40031 /* ProfileFooterView.swift in Sources */,
 				C956057D26AE98BD00AD8475 /* DeviceGroupModel.swift in Sources */,
 				C9DC8F6A26A6ED540021A8BD /* GroupDetailHeader.swift in Sources */,
