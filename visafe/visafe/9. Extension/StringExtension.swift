@@ -67,12 +67,12 @@ extension String {
     func getQueryStringParameter(queryParam: String) -> String? {
         if queryParam == "groupId" {
             var result: String = ""
-            for i in 52...87 {
+            for i in 57...92 {
                 result = result + self[i]
             }
             return result
         } else if queryParam == "groupName" {
-            return self.substring(fromIndex: 99)
+            return self.substring(fromIndex: 114)
         }
         return nil
     }
@@ -104,11 +104,11 @@ extension String {
             !self.contains("groupName") {
             return nil
         }
-        if(self[51] != "=" || self[88] != "&") {
+        if(self[56] != "=" || self[93] != "&") {
             return nil
         }
         var count: Int = 0
-        for i in 51...88 {
+        for i in 56...93 {
             if(self[i] == "-") {
                 count = count + 1
             }
@@ -129,14 +129,14 @@ extension String {
     
     func getGroupId(text: String) -> String {
         var result: String = ""
-        for i in 52...87 {
+        for i in 57...92 {
             result = result + text[i]
         }
         return result
     }
     
     func getGroupName(text: String) -> String {
-        return text.substring(fromIndex: 99)
+        return text.substring(fromIndex: 114)
     }
 }
 

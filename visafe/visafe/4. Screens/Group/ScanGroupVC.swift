@@ -67,6 +67,10 @@ extension ScanGroupVC: QRScannerViewDelegate {
             param.deviceName = deviceName
             weakSelf.addDeviceToGroup(device: param)
         }
+        view.cancelAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            Timer.scheduledTimer(timeInterval: 2, target: weakSelf, selector:#selector(weakSelf.reScan), userInfo: nil , repeats:false)
+        }
         showPopup(view: view)
     }
     
