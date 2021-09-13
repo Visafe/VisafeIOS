@@ -15,6 +15,8 @@ class EnterPinVC: BaseViewController {
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var heightButtonDelete: NSLayoutConstraint!
     
+    var onUpdate:(() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pinView.style = .underline
@@ -33,6 +35,7 @@ class EnterPinVC: BaseViewController {
             heightButtonDelete.constant = 0
             deleteButton.isHidden = true
         }
+        pinView.becomeFirstResponder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,12 +64,14 @@ class EnterPinVC: BaseViewController {
     
     @IBAction func deleteAction(_ sender: UIButton) {
         pinView.clearPin()
-        CacheManager.shared.setPin(value: pinView.getPin())
+        CacheManager.shared.setPin(value: nil)
+        onUpdate?()
         didChangeEnteringPin(pin: pinView.getPin())
     }
     
     @IBAction func continueAction(_ sender: UIButton) {
         CacheManager.shared.setPin(value: pinView.getPin())
+        onUpdate?()
         navigationController?.popViewController()
     }
 }

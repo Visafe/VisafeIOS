@@ -254,6 +254,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             CacheManager.shared.setIsLogined(value: false)
             CacheManager.shared.removeCurrentUser()
             CacheManager.shared.setCurrentWorkspace(value: nil)
+            CacheManager.shared.setPin(value: nil)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: kLoginSuccess), object: nil)
         }
     }

@@ -33,6 +33,18 @@ class ChangePasswordVC: BaseViewController {
         if let user = CacheManager.shared.getCurrentUser() {
             descriptionLabel.text = "Hãy nhập mật khẩu cho tài khoản \n \(user.phonenumber ?? user.email ?? "")"
         }
+        
+        let barItem = UIBarButtonItem(image: UIImage(named: "navi_back"), style: .plain, target: self, action: #selector(onBack))
+        navigationItem.leftBarButtonItem = barItem
+    }
+    
+    @objc func onBack() {
+        for controller in (self.navigationController!.viewControllers) {
+            if controller.isKind(of: ProfileSettingVC.self) {
+                _ =  self.navigationController!.popToViewController(controller, animated: true)
+                break
+            }
+        }
     }
     
     @IBAction func acceptAction(_ sender: Any) {
@@ -115,5 +127,13 @@ extension ChangePasswordVC: UITextFieldDelegate {
             acceptAction(textField)
         }
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 50
+        let currentString: NSString = (textField.text ?? "") as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
     }
 }

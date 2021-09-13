@@ -122,6 +122,9 @@ extension ProfileSettingVC: UITableViewDelegate, UITableViewDataSource {
     
     func enterPin() {
         let vc = EnterPinVC()
+        vc.onUpdate = {
+            self.tableView.reloadData()
+        }
         navigationController?.pushViewController(vc)
     }
     

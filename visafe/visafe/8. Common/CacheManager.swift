@@ -107,7 +107,7 @@ class CacheManager {
         return value
     }
     
-    func setPin(value: String) {
+    func setPin(value: String?) {
         userDefault.set(value, forKey: kPin)
         userDefault.synchronize()
     }
