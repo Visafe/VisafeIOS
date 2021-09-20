@@ -49,6 +49,10 @@ class ProtectHomeHeaderView: BaseView {
     @IBAction func switchChange(_ sender: UISwitch) {
         let isOn = sender.isOn
         switchValueChange?(isOn)
-        updateState(isOn: isOn)
+        if type != .device {
+            updateState(isOn: isOn)
+        } else {
+            modelSwitch.isOn = !isOn
+        }
     }
 }

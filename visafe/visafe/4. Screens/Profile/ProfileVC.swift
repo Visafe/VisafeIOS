@@ -220,12 +220,14 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func showSetting() {
         let vc = ProfileSettingVC()
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc)
         
     }
     
     func showHelp() {
         let vc = ProfileHelpVC()
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc)
     }
     

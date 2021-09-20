@@ -11,9 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProtectVC" customModule="visafe" customModuleProvider="target">
             <connections>
-                <outlet property="blockedLabel" destination="Dcx-O8-kRW" id="9yA-3s-pnM"/>
+                <outlet property="blockedLabel" destination="Rsc-ue-9H9" id="8ue-b4-aQf"/>
                 <outlet property="contentView" destination="BLe-be-txT" id="Kn8-og-lM9"/>
-                <outlet property="dangerousLabel" destination="Rsc-ue-9H9" id="Fk9-lY-vTk"/>
+                <outlet property="dangerousLabel" destination="Dcx-O8-kRW" id="vaR-IT-9tE"/>
                 <outlet property="detailView" destination="hNm-Fx-mo4" id="WyU-5c-ifg"/>
                 <outlet property="lastScanLabel" destination="lXF-B4-mUf" id="ocv-iP-M9M"/>
                 <outlet property="otherView" destination="jhe-3X-lc4" id="rQk-KY-6De"/>
@@ -21,12 +21,14 @@
                 <outlet property="pakeWebView" destination="jKg-gt-XUs" id="r8n-zM-xGE"/>
                 <outlet property="protectAdAndFollowStackView" destination="FB6-hb-coF" id="p3C-cR-6gP"/>
                 <outlet property="protectAdStatusButton" destination="dHR-MT-JgR" id="Haf-Se-fQh"/>
+                <outlet property="protectDeviceImageView" destination="6ml-40-uM8" id="lKf-WK-Tnj"/>
                 <outlet property="protectDeviceStatusButton" destination="6qu-OP-2Yd" id="qZy-8j-ssj"/>
                 <outlet property="protectFamilyView" destination="vJd-yE-Luc" id="qsf-b5-XhH"/>
                 <outlet property="protectFollowStatusButton" destination="osn-Z8-Kpw" id="Ed7-9e-nph"/>
                 <outlet property="protectWifiStatusButton" destination="Z5J-sI-WwD" id="jha-Xi-uup"/>
                 <outlet property="registerInfoView" destination="iVh-E1-obm" id="m0R-B1-7Yz"/>
                 <outlet property="securityView" destination="gkF-WT-WLw" id="WGE-dU-WgA"/>
+                <outlet property="timeTypeLabel" destination="zdi-ND-ua3" id="b2F-w5-g2p"/>
                 <outlet property="titleLB" destination="bWg-Ec-pYk" id="Q3A-qY-9gO"/>
                 <outlet property="view" destination="x4T-qE-Kqf" id="2Q4-mH-QSB"/>
                 <outlet property="violationLabel" destination="evy-7c-OLo" id="97L-Aa-MUZ"/>
@@ -55,9 +57,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lần quét gần đây nhất 15 phút trước" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXF-B4-mUf">
-                                            <rect key="frame" x="6" y="79" width="382" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lần quét gần đây nhất 15 phút trước" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXF-B4-mUf">
+                                            <rect key="frame" x="80.5" y="64" width="233.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -88,9 +89,8 @@
                                                 <action selector="scanAction:" destination="-1" eventType="touchUpInside" id="t1h-7A-ntB"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bạn đang an toàn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWg-Ec-pYk">
-                                            <rect key="frame" x="8" y="47" width="382" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn đang an toàn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWg-Ec-pYk">
+                                            <rect key="frame" x="117.5" y="36" width="159.5" height="24"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,10 +98,14 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.058823529411764705" green="0.090196078431372548" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
+                                        <constraint firstItem="tiZ-oT-5tm" firstAttribute="top" secondItem="lXF-B4-mUf" secondAttribute="bottom" constant="26" id="03U-Fg-gLe"/>
+                                        <constraint firstItem="lXF-B4-mUf" firstAttribute="centerX" secondItem="47d-Zg-pZK" secondAttribute="centerX" id="4i9-fM-YSN"/>
+                                        <constraint firstItem="bWg-Ec-pYk" firstAttribute="centerX" secondItem="47d-Zg-pZK" secondAttribute="centerX" id="9k5-dB-kk5"/>
                                         <constraint firstItem="FeZ-jp-LiC" firstAttribute="top" secondItem="47d-Zg-pZK" secondAttribute="top" id="9mS-3n-yW6"/>
                                         <constraint firstItem="FeZ-jp-LiC" firstAttribute="leading" secondItem="47d-Zg-pZK" secondAttribute="leading" id="C2D-EW-3NG"/>
                                         <constraint firstAttribute="bottom" secondItem="tiZ-oT-5tm" secondAttribute="bottom" constant="24" id="RaS-Rn-LTs"/>
                                         <constraint firstAttribute="bottom" secondItem="FeZ-jp-LiC" secondAttribute="bottom" id="WdZ-Mq-mh9"/>
+                                        <constraint firstItem="lXF-B4-mUf" firstAttribute="top" secondItem="bWg-Ec-pYk" secondAttribute="bottom" constant="4" id="g9F-Ez-5r4"/>
                                         <constraint firstItem="tiZ-oT-5tm" firstAttribute="centerX" secondItem="47d-Zg-pZK" secondAttribute="centerX" id="ksm-Ug-n4a"/>
                                         <constraint firstAttribute="height" constant="175" id="oah-K6-Yxj"/>
                                         <constraint firstAttribute="trailing" secondItem="FeZ-jp-LiC" secondAttribute="trailing" id="opc-DU-wnr"/>
@@ -133,7 +137,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tn9-eR-dkM">
                                                             <rect key="frame" x="0.0" y="0.0" width="181" height="152"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_device" translatesAutoresizingMaskIntoConstraints="NO" id="6ml-40-uM8">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p_no_device" translatesAutoresizingMaskIntoConstraints="NO" id="6ml-40-uM8">
                                                                     <rect key="frame" x="70.5" y="24" width="40" height="38"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="DKN-gV-QZ5"/>
@@ -400,6 +404,9 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="124" id="OnR-BF-pma"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <action selector="chooseTime:" destination="-1" eventType="touchUpInside" id="HmW-rN-VHe"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1153,7 +1160,7 @@
                                                                                 <constraint firstAttribute="width" constant="48" id="JOW-sR-tG1"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiểm tra webside lừa đảo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQA-wB-kAM">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiểm tra website lừa đảo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQA-wB-kAM">
                                                                             <rect key="frame" x="0.0" y="56" width="115" height="31.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                             <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1304,12 +1311,12 @@
         <image name="p_check-data-leak" width="48" height="48"/>
         <image name="p_check-email-spoofing" width="48" height="48"/>
         <image name="p_check-phishing" width="48" height="48"/>
-        <image name="p_device" width="40" height="38"/>
         <image name="p_fake" width="64" height="64"/>
         <image name="p_family" width="64" height="64"/>
         <image name="p_folow" width="40" height="38"/>
         <image name="p_ipma" width="48" height="48"/>
         <image name="p_newspaper" width="48" height="48"/>
+        <image name="p_no_device" width="40" height="38"/>
         <image name="p_security" width="64" height="64"/>
         <image name="p_unlock" width="48" height="48"/>
         <image name="p_vpn" width="64" height="64"/>

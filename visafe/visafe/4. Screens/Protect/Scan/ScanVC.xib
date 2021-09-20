@@ -12,10 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanVC" customModule="visafe" customModuleProvider="target">
             <connections>
                 <outlet property="contraintHeight" destination="h6Z-ER-AlG" id="WVC-6U-TYa"/>
+                <outlet property="desLabelBottom" destination="nar-Fu-nOB" id="Ldy-cX-fFf"/>
                 <outlet property="descriptionImage" destination="UMn-1j-htF" id="RFS-CS-LP5"/>
                 <outlet property="descriptionLabel" destination="Kqu-Nf-7oG" id="jbr-1d-gPC"/>
+                <outlet property="errorStackView" destination="aPY-3a-yfK" id="uhN-ik-8fj"/>
                 <outlet property="imageViewHeight" destination="qio-ik-z9s" id="wv6-gI-ttR"/>
                 <outlet property="imageViewWidth" destination="nyi-mb-V5s" id="Yhs-13-UCq"/>
+                <outlet property="spacingView" destination="8ea-xz-7Ft" id="mXO-6w-D4e"/>
+                <outlet property="tableview" destination="xXc-YW-Qjb" id="azq-B1-K7X"/>
                 <outlet property="titleLabel" destination="rss-8r-F0g" id="9Ah-Yl-Sjb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -54,14 +58,47 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aPY-3a-yfK">
+                            <rect key="frame" x="16" y="302" width="382" height="0.0"/>
+                            <subviews>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-xz-7Ft">
+                                    <rect key="frame" x="0.0" y="-24" width="382" height="24"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="kOM-9g-Tqn"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Các phát hiện gần đây" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFJ-f8-b4V">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRD-Yk-HGY">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="16" id="axe-Yf-OpE"/>
+                                    </constraints>
+                                </view>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xXc-YW-Qjb">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableView>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="aPY-3a-yfK" secondAttribute="bottom" id="4lH-He-3dh"/>
                         <constraint firstItem="Kqu-Nf-7oG" firstAttribute="centerX" secondItem="Vt4-RW-6HL" secondAttribute="centerX" id="I9M-bW-8O2"/>
+                        <constraint firstItem="aPY-3a-yfK" firstAttribute="top" secondItem="Kqu-Nf-7oG" secondAttribute="bottom" id="Jcb-7u-Pg8"/>
                         <constraint firstItem="Kqu-Nf-7oG" firstAttribute="top" secondItem="rss-8r-F0g" secondAttribute="bottom" constant="12" id="K1F-dk-t1m"/>
+                        <constraint firstAttribute="trailing" secondItem="aPY-3a-yfK" secondAttribute="trailing" constant="16" id="Lb9-y5-lkM"/>
                         <constraint firstItem="rss-8r-F0g" firstAttribute="centerX" secondItem="Vt4-RW-6HL" secondAttribute="centerX" id="M5F-k2-AY0"/>
                         <constraint firstItem="rss-8r-F0g" firstAttribute="top" secondItem="UMn-1j-htF" secondAttribute="bottom" constant="32" id="PeX-jr-Zzl"/>
                         <constraint firstItem="UMn-1j-htF" firstAttribute="centerX" secondItem="Vt4-RW-6HL" secondAttribute="centerX" id="Qdc-sp-wOA"/>
+                        <constraint firstItem="aPY-3a-yfK" firstAttribute="leading" secondItem="Vt4-RW-6HL" secondAttribute="leading" constant="16" id="Rwr-R7-TpJ"/>
                         <constraint firstAttribute="height" constant="302" id="h6Z-ER-AlG"/>
                         <constraint firstAttribute="bottom" secondItem="Kqu-Nf-7oG" secondAttribute="bottom" id="nar-Fu-nOB"/>
                         <constraint firstItem="Kqu-Nf-7oG" firstAttribute="centerX" secondItem="Vt4-RW-6HL" secondAttribute="centerX" id="oRc-hf-07z"/>

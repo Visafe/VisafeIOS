@@ -11,6 +11,9 @@
 		0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */; };
 		0E229D872682D3AF00559B67 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D862682D3AF00559B67 /* Moya */; };
 		0E798387268485E60023C916 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E798386268485E60023C916 /* NetworkExtension.framework */; };
+		0E8E2F5926F5DF2400DB50AA /* VersioniOSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E2F5826F5DF2300DB50AA /* VersioniOSModel.swift */; };
+		0E8E2F5D26F5EDA800DB50AA /* ScanResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E2F5B26F5EDA800DB50AA /* ScanResultCell.swift */; };
+		0E8E2F5E26F5EDA800DB50AA /* ScanResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E2F5C26F5EDA800DB50AA /* ScanResultCell.xib */; };
 		0EB6614E26E924F500B9EAEA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB6614D26E924F500B9EAEA /* Reachability.swift */; };
 		0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA42681F29E00572C4E /* AppDelegate.swift */; };
 		0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA82681F29E00572C4E /* ViewController.swift */; };
@@ -327,6 +330,9 @@
 		0E04B2E826DE2BD900C31FFE /* DateFormatter+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extention.swift"; sourceTree = "<group>"; };
 		0E798385268485E60023C916 /* visafe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visafe.entitlements; sourceTree = "<group>"; };
 		0E798386268485E60023C916 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		0E8E2F5826F5DF2300DB50AA /* VersioniOSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersioniOSModel.swift; sourceTree = "<group>"; };
+		0E8E2F5B26F5EDA800DB50AA /* ScanResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanResultCell.swift; sourceTree = "<group>"; };
+		0E8E2F5C26F5EDA800DB50AA /* ScanResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanResultCell.xib; sourceTree = "<group>"; };
 		0EB6614D26E924F500B9EAEA /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0EC217BF2691BB1B00B8B8F4 /* tunnel.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = tunnel.entitlements; sourceTree = "<group>"; };
 		0EC217C02691BB1B00B8B8F4 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
@@ -813,6 +819,7 @@
 				C956057C26AE98BD00AD8475 /* DeviceGroupModel.swift */,
 				C90AD90326C52371003539FF /* PackageModel.swift */,
 				0EDFD35F26C527380053E82B /* BotNetModel.swift */,
+				0E8E2F5826F5DF2300DB50AA /* VersioniOSModel.swift */,
 			);
 			path = "3. Models";
 			sourceTree = "<group>";
@@ -917,6 +924,8 @@
 		C934A72A26CD0445008B74EC /* Scan */ = {
 			isa = PBXGroup;
 			children = (
+				0E8E2F5B26F5EDA800DB50AA /* ScanResultCell.swift */,
+				0E8E2F5C26F5EDA800DB50AA /* ScanResultCell.xib */,
 				C934A72B26CD06F6008B74EC /* ScanOverviewVC.swift */,
 				C934A72E26CD06F6008B74EC /* ScanOverviewVC.xib */,
 				C934A72D26CD06F6008B74EC /* ScanVC.swift */,
@@ -1521,6 +1530,7 @@
 				C9B7949626862C4800258A72 /* EnterOTPVC.xib in Resources */,
 				C9EEB8C126AD653A008F093C /* WorkspaceVC.xib in Resources */,
 				C969B396269ADB210066A88A /* WorkspaceCell.xib in Resources */,
+				0E8E2F5E26F5EDA800DB50AA /* ScanResultCell.xib in Resources */,
 				C949D72826B06BF700647FF6 /* LicenseCell.xib in Resources */,
 				0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */,
 				C9FE695D26B795740046AD79 /* AddDeviceToGroupVC.xib in Resources */,
@@ -1744,9 +1754,11 @@
 				C9B794892686262300258A72 /* ChangePassParam.swift in Sources */,
 				C9F2492A26AACB3D00EE7442 /* GroupSettingDetailVC.swift in Sources */,
 				518EC0EE26B98EDC00D88D2A /* ProtectDeviceVC.swift in Sources */,
+				0E8E2F5D26F5EDA800DB50AA /* ScanResultCell.swift in Sources */,
 				C99FD1CB2697462700A8F731 /* ProtectVC.swift in Sources */,
 				C94B39B9268A244200046958 /* AddDeviceToIdentifierParam.swift in Sources */,
 				C9181405269B0C5600DC0E83 /* ChangePasswordResult.swift in Sources */,
+				0E8E2F5926F5DF2400DB50AA /* VersioniOSModel.swift in Sources */,
 				C99FD1D12697465B00A8F731 /* NotificationVC.swift in Sources */,
 				C9EDB55726839E74009CBD93 /* GroupVC.swift in Sources */,
 				C934A72826CCF41B008B74EC /* CommonWorker.swift in Sources */,
@@ -1944,7 +1956,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1980,7 +1992,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -58,8 +58,8 @@ class HomeVC: BaseDoHVC {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
         self.navigationController?.isNavigationBarHidden = true
-        if !DoHNative.shared.isInstalled || DoHNative.shared.isEnabled {
-            showAnimationLoading()
+        if !DoHNative.shared.isInstalled || !DoHNative.shared.isEnabled {
+            showAnimationConnectLoading()
         }
     }
 
@@ -73,7 +73,7 @@ class HomeVC: BaseDoHVC {
         if Network.reachability.isReachable {
             updateDNSStatus()
         } else {
-            showAnimationLoading()
+            showAnimationConnectLoading()
         }
     }
     @objc func statusManager(_ notification: Notification) {
@@ -106,6 +106,7 @@ class HomeVC: BaseDoHVC {
             powerViewBottom.constant = 48
             earthleading.constant = 30
         }
+        homeLoadingImage.rotate()
     }
 
     @objc func updateUI() {
@@ -116,6 +117,7 @@ class HomeVC: BaseDoHVC {
         earthImageView.image = isEnabled ? UIImage(named: "connection_success"): UIImage(named: "no_connection")
         connectButton.setImage(isEnabled ? UIImage(named: "connect_on"): UIImage(named: "connect_off"), for: .normal)
         homeLoadingImage.image = isEnabled ? UIImage(named: "ic_power_on"): UIImage(named: "ic_loading_home")
+//        homeLoadingImage.rotate()
     }
 
     @IBAction func connectAction(_ sender: Any) {
@@ -131,8 +133,7 @@ class HomeVC: BaseDoHVC {
         present(vc, animated: true)
     }
     
-    override func showAnimationLoading() {
-        self.homeLoadingImage.rotate()
+    override func showAnimationConnectLoading() {
         self.homeLoadingImage.image = UIImage(named: "ic_loading_home")
         UIView.animate(withDuration: 0.75) {
             self.homeLoadingImage.alpha = 1

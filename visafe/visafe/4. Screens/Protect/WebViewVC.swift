@@ -11,6 +11,7 @@ class WebViewVC: BaseViewController {
         }
         let myRequest = URLRequest(url: myURL)
         webview.load(myRequest)
+        self.title = "Tiện ích bảo mật"
     }
 
     override func viewWillAppear(_ animated: Bool) {
