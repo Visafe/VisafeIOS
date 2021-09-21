@@ -35,7 +35,7 @@ class EnterPinVC: BaseViewController {
             heightButtonDelete.constant = 0
             deleteButton.isHidden = true
         }
-        pinView.becomeFirstResponder()
+        pinView.becomeFirstResponderAtIndex = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -52,7 +52,7 @@ class EnterOTPVC: BaseViewController {
         }
         sendOTPButton.setTitle("Gửi lại OTP (\(timeDown)s)", for: .normal)
         pinView.didChangeCallback = didChangeEnteringPin(pin:)
-        pinView.becomeFirstResponder()
+        pinView.becomeFirstResponderAtIndex = 0
         let mutableAttributedString = NSMutableAttributedString.init(string: "Visafe đã gửi mã xác thực OTP đến tài khoản\n\n")
         let attribute2 = NSAttributedString(string: model.phone_number ?? model.email ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         mutableAttributedString.append(attribute2)

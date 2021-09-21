@@ -22,11 +22,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSP-6j-JGd">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldc-Je-AfZ">
-                    <rect key="frame" x="8" y="44" width="44" height="44"/>
+                    <rect key="frame" x="8" y="64" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="IDu-nA-zbL"/>
                         <constraint firstAttribute="height" constant="44" id="cAj-qu-6rp"/>
@@ -37,7 +37,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quét mã QR tham gia nhóm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oq9-pU-hCb">
-                    <rect key="frame" x="103.5" y="56" width="207" height="20"/>
+                    <rect key="frame" x="103.5" y="76" width="207" height="20"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -51,8 +51,8 @@
                 <constraint firstAttribute="trailing" secondItem="mSP-6j-JGd" secondAttribute="trailing" id="OET-iX-gee"/>
                 <constraint firstItem="oq9-pU-hCb" firstAttribute="centerY" secondItem="Ldc-Je-AfZ" secondAttribute="centerY" id="Oma-lw-ep3"/>
                 <constraint firstItem="Ldc-Je-AfZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Pug-bs-eqi"/>
-                <constraint firstItem="mSP-6j-JGd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b14-tQ-tX2"/>
-                <constraint firstItem="Ldc-Je-AfZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sH1-og-cMN"/>
+                <constraint firstItem="mSP-6j-JGd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="b14-tQ-tX2"/>
+                <constraint firstItem="Ldc-Je-AfZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="sH1-og-cMN"/>
                 <constraint firstAttribute="bottom" secondItem="mSP-6j-JGd" secondAttribute="bottom" id="wsa-Pb-zkZ"/>
             </constraints>
             <point key="canvasLocation" x="100.00000000000001" y="81.696428571428569"/>

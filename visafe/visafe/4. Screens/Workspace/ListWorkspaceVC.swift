@@ -52,7 +52,7 @@ class ListWorkspaceVC: BaseViewController {
     
     func configView() {
         // title
-        title = "Chọn loại tài khoản"
+        title = "Chọn Workspace"
         
         // tableview
         tableView.registerCells(cells: [WorkspaceCell.className])

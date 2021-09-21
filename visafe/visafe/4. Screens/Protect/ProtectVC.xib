@@ -11,9 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProtectVC" customModule="visafe" customModuleProvider="target">
             <connections>
-                <outlet property="blockedLabel" destination="Dcx-O8-kRW" id="9yA-3s-pnM"/>
+                <outlet property="blockedLabel" destination="Rsc-ue-9H9" id="0BL-jp-7s6"/>
                 <outlet property="contentView" destination="BLe-be-txT" id="Kn8-og-lM9"/>
-                <outlet property="dangerousLabel" destination="Rsc-ue-9H9" id="Fk9-lY-vTk"/>
+                <outlet property="dangerousLabel" destination="Dcx-O8-kRW" id="vM8-Eo-wwJ"/>
                 <outlet property="detailView" destination="hNm-Fx-mo4" id="WyU-5c-ifg"/>
                 <outlet property="lastScanLabel" destination="lXF-B4-mUf" id="ocv-iP-M9M"/>
                 <outlet property="otherView" destination="jhe-3X-lc4" id="rQk-KY-6De"/>
