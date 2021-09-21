@@ -94,7 +94,7 @@ class AddDeviceToGroupVC: BaseViewController {
     }
     
     @IBAction func downloadAction(_ sender: Any) {
-        UIImageWriteToSavedPhotosAlbum(qrCodeImageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        UIImageWriteToSavedPhotosAlbum(qrCodeImageView.asImage(), self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     //MARK: - Add image to Library
@@ -110,6 +110,17 @@ class AddDeviceToGroupVC: BaseViewController {
         let link = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")"
         if let url = URL(string: link) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+}
+
+extension UIView {
+    // Using a function since `var image` might conflict with an existing variable
+    // (like on `UIImageView`)
+    func asImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { rendererContext in
+            layer.render(in: rendererContext.cgContext)
         }
     }
 }

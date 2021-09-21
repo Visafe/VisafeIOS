@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftMessages
+import AVFoundation
 
 class GroupVC: BaseViewController {
     
@@ -57,6 +58,12 @@ class GroupVC: BaseViewController {
             weakSelf.postGroup()
         }
         present(vc, animated: true, completion: nil)
+    }
+    
+    func showFormAddWorkspace() {
+        let vc = PostWorkspacesVC(workspace: WorkspaceModel(), editMode: .add)
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
     }
     
     func postGroup() {
@@ -150,7 +157,7 @@ class GroupVC: BaseViewController {
         }
         view.addWorkspace = { [weak self] in
             guard let weakSelf = self else { return }
-            weakSelf.showFormAddGroup()
+            weakSelf.showFormAddWorkspace()
         }
         showPopup(view: view)
     }
@@ -353,8 +360,43 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func joinGroup() {
-        let vc = ScanGroupVC()
-        present(vc, animated: true, completion: nil)
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .denied:
+            print("Denied, request permission from settings")
+            presentCameraSettings()
+        case .restricted:
+            print("Restricted, device owner must approve")
+        case .authorized:
+            let vc = ScanGroupVC()
+            present(vc, animated: true, completion: nil)
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { success in
+                if success {
+                    print("Permission granted, proceed")
+                } else {
+                    print("Permission denied")
+                }
+            }
+        @unknown default:
+            fatalError()
+        }
+        
+        
+    }
+    
+    func presentCameraSettings() {
+        let alertController = UIAlertController(title: "Cập quyền truy cập",
+                                      message: "Cập quyền truy cập Camera để thực hiện tính năng này?",
+                                      preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Hủy ", style: .cancel))
+        alertController.addAction(UIAlertAction(title: "Thiết lập", style: .default) { _ in
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: { _ in
+                    // Handle
+                })
+            }
+        })
+        present(alertController, animated: true)
     }
     
     func login() {

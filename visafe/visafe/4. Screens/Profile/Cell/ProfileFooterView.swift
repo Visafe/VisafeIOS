@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileFooterView: BaseView {
     
+    @IBOutlet weak var topRegisterContraint: NSLayoutConstraint!
     @IBOutlet weak var registerView: UIView!
     @IBOutlet weak var packageImage: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -25,6 +26,8 @@ class ProfileFooterView: BaseView {
         packageImage.image = type.getNextPackage().getLogo()
         descriptionLabel.text = type.getNextPackage().getDesciption()
         registerView.isHidden = CacheManager.shared.getIsLogined()
+        
+        topRegisterContraint.constant = CacheManager.shared.getIsLogined() ? -120 : -20
     }
     
     @IBAction func registerAction(_ sender: Any) {

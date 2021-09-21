@@ -232,6 +232,8 @@
 		C9BCBC6526975DEC007F652C /* GroupSettingParentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BCBC6326975DEC007F652C /* GroupSettingParentCell.xib */; };
 		C9C0B9CD26A580B600C9869A /* ExampleBasicContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9BF26A580B600C9869A /* ExampleBasicContentView.swift */; };
 		C9C0B9CE26A580B600C9869A /* ExampleBouncesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0B9C126A580B600C9869A /* ExampleBouncesContentView.swift */; };
+		C9C3AC6A26FA263700152591 /* JoinGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3AC6826FA263600152591 /* JoinGroupVC.swift */; };
+		C9C3AC6B26FA263700152591 /* JoinGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C3AC6926FA263600152591 /* JoinGroupVC.xib */; };
 		C9C7A9E526B05E9F002C883A /* LicenseOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7A9E326B05E9F002C883A /* LicenseOverviewVC.swift */; };
 		C9C7A9E626B05E9F002C883A /* LicenseOverviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C7A9E426B05E9F002C883A /* LicenseOverviewVC.xib */; };
 		C9C7A9ED26B05EEC002C883A /* LicenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7A9EB26B05EEC002C883A /* LicenseVC.swift */; };
@@ -548,6 +550,8 @@
 		C9BCBC6326975DEC007F652C /* GroupSettingParentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingParentCell.xib; sourceTree = "<group>"; };
 		C9C0B9BF26A580B600C9869A /* ExampleBasicContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBasicContentView.swift; sourceTree = "<group>"; };
 		C9C0B9C126A580B600C9869A /* ExampleBouncesContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBouncesContentView.swift; sourceTree = "<group>"; };
+		C9C3AC6826FA263600152591 /* JoinGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGroupVC.swift; sourceTree = "<group>"; };
+		C9C3AC6926FA263600152591 /* JoinGroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JoinGroupVC.xib; sourceTree = "<group>"; };
 		C9C7A9E326B05E9F002C883A /* LicenseOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseOverviewVC.swift; sourceTree = "<group>"; };
 		C9C7A9E426B05E9F002C883A /* LicenseOverviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseOverviewVC.xib; sourceTree = "<group>"; };
 		C9C7A9EB26B05EEC002C883A /* LicenseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseVC.swift; sourceTree = "<group>"; };
@@ -1197,6 +1201,15 @@
 			path = Bounces;
 			sourceTree = "<group>";
 		};
+		C9C3AC6126FA255000152591 /* JoinGroup */ = {
+			isa = PBXGroup;
+			children = (
+				C9C3AC6826FA263600152591 /* JoinGroupVC.swift */,
+				C9C3AC6926FA263600152591 /* JoinGroupVC.xib */,
+			);
+			path = JoinGroup;
+			sourceTree = "<group>";
+		};
 		C9C7A9E226B05E85002C883A /* License */ = {
 			isa = PBXGroup;
 			children = (
@@ -1268,6 +1281,7 @@
 		C9EDB54C26839E74009CBD93 /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				C9C3AC6126FA255000152591 /* JoinGroup */,
 				C9EDB54F26839E74009CBD93 /* Cell */,
 				C9CCAB5026A5DFCA00C04BC5 /* Detail */,
 				C9FA15F5268A2DBF00A1A6C6 /* GroupNameVC.swift */,
@@ -1474,6 +1488,7 @@
 				C9C7A9EE26B05EEC002C883A /* LicenseVC.xib in Resources */,
 				C97032322690750E007F45E0 /* GroupSettingFooterView.xib in Resources */,
 				C91EE7EF26AC7414006ADAE9 /* GroupListUserVC.xib in Resources */,
+				C9C3AC6B26FA263700152591 /* JoinGroupVC.xib in Resources */,
 				C969B398269ADB210066A88A /* ChooseTypeWorkspaceCell.xib in Resources */,
 				C966FE992694A9500049458C /* OnboardingChildVC.xib in Resources */,
 				0EF083AF26C23C2900D58F12 /* WebViewVC.xib in Resources */,
@@ -1785,6 +1800,7 @@
 				C9E7A4A22690C6100012985B /* ConfirmDeleteView.swift in Sources */,
 				C93ED16A2682332A00B03E8A /* TabbarVC.swift in Sources */,
 				C956058226AE9D8500AD8475 /* GroupListDeviceVC.swift in Sources */,
+				C9C3AC6A26FA263700152591 /* JoinGroupVC.swift in Sources */,
 				C993D25426A46A9B00684F80 /* TabbarExtension.swift in Sources */,
 				C95A5849268829B60077112F /* CacheManager.swift in Sources */,
 				C94B39B0268A1F2E00046958 /* RenameGroupParam.swift in Sources */,
@@ -1944,9 +1960,9 @@
 				CODE_SIGN_ENTITLEMENTS = visafe/visafeDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = 3Z59HFVS9G;
+				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1959,7 +1975,7 @@
 				MARKETING_VERSION = 1.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = visafe_develop;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = visafe_develop;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1980,9 +1996,9 @@
 				CODE_SIGN_ENTITLEMENTS = visafe/visafe.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = 3Z59HFVS9G;
+				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1996,7 +2012,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = visafe_develop;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = visafe_develop;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";

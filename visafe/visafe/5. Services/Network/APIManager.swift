@@ -23,9 +23,13 @@ class APIManager {
             switch result {
             case .success(let response):
                 completion(response.data, nil, response.response?.statusCode)
+                if response.response?.statusCode == 401 {
+                    AppDelegate.appDelegate()?.logout()
+                }
             case .failure(_):
                 completion(nil, APIError.serverLogicError(message: "Something's wrong with server."), nil)
             }
+            
         })
     }
 }

@@ -58,40 +58,16 @@ extension ScanGroupVC: QRScannerViewDelegate {
         }
         let param = Common.getDeviceInfo()
         param.updateGroupInfo(link: link)
-        guard let view = BaseEnterValueView.loadFromNib() else { return }
-        view.bindingData(type: .deviceName, name: param.deviceName)
-        view.enterTextfield.text = param.deviceName
-        view.acceptAction = { [weak self] name in
+        let vc = JoinGroupVC(param: param)
+        vc.dismissJoinGroup = { [weak self] in
             guard let weakSelf = self else { return }
-            guard let deviceName = name else { return }
-            param.deviceName = deviceName
-            weakSelf.addDeviceToGroup(device: param)
+            weakSelf.reScan()
         }
-        view.cancelAction = { [weak self] in
-            guard let weakSelf = self else { return }
-            Timer.scheduledTimer(timeInterval: 2, target: weakSelf, selector:#selector(weakSelf.reScan), userInfo: nil , repeats:false)
-        }
-        showPopup(view: view)
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true)
     }
     
     @objc func reScan() {
         qrScannerView.rescan()
-    }
-    
-    func addDeviceToGroup(device: AddDeviceToGroupParam) {
-        showLoading()
-        GroupWorker.addDevice(param: device) { [weak self] (result, error) in
-            guard let weakSelf = self else { return }
-            weakSelf.hideLoading()
-            if result?.status_code == .success {
-                weakSelf.showMessage(title: "Thêm thiết bị thành công", content: InviteDeviceStatus.success.getDescription()) { [weak self] in
-                    guard let strongSelf = self else { return }
-                    strongSelf.dismiss(animated: true, completion: nil)
-                }
-            } else {
-                weakSelf.showError(title: "Thêm thiết bị thất bại", content: InviteDeviceStatus.defaultStatus.getDescription())
-                weakSelf.reScan()
-            }
-        }
     }
 }

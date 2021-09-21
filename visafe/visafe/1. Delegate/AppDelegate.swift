@@ -238,6 +238,14 @@ extension AppDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         application.applicationIconBadgeNumber = 0
     }
+    
+    func logout() {
+        CacheManager.shared.setIsLogined(value: false)
+        CacheManager.shared.removeCurrentUser()
+        CacheManager.shared.setCurrentWorkspace(value: nil)
+        CacheManager.shared.setPin(value: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kLoginSuccess), object: nil)
+    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {

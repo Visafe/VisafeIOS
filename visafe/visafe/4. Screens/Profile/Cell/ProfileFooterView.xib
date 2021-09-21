@@ -130,7 +130,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="MPp-Gb-cZx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3xD-vE-F2Y"/>
                 <constraint firstAttribute="trailing" secondItem="rFz-ve-mNP" secondAttribute="trailing" constant="32" id="Abn-VM-4xN"/>
@@ -152,6 +152,7 @@
                 <outlet property="descriptionLabel" destination="rFz-ve-mNP" id="NPu-lh-Fdc"/>
                 <outlet property="packageImage" destination="dlI-ZO-iBC" id="Z30-2e-bTO"/>
                 <outlet property="registerView" destination="X8Y-xG-iWY" id="I6I-N4-Usd"/>
+                <outlet property="topRegisterContraint" destination="lY1-52-cSn" id="A2P-FX-PH0"/>
             </connections>
             <point key="canvasLocation" x="214.49275362318843" y="340.51339285714283"/>
         </view>
