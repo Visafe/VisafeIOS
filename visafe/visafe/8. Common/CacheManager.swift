@@ -22,6 +22,7 @@ let kProtectWifi = "kProtectWifi"
 let kLoginSuccess = "kLoginSuccess"
 let kLastScan = "kLastScan"
 let kPassword = "kPassword"
+let kNotification = "kNotification"
 
 class CacheManager {
     
@@ -157,6 +158,19 @@ class CacheManager {
     
     func setPassword(value: String) {
         userDefault.set(value, forKey: kPassword)
+        userDefault.synchronize()
+    }
+    
+    func upNotificationCount() -> Int {
+        var count = userDefault.integer(forKey: kNotification)
+        count += 1
+        userDefault.setValue(count, forKey: kNotification)
+        userDefault.synchronize()
+        return count
+    }
+    
+    func resetNotificationCount() {
+        userDefault.setValue(0, forKey: kNotification)
         userDefault.synchronize()
     }
 }

@@ -32,7 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configView()
         googleAuthen()
         configKeyboard()
+        handlePush(launchOptions: launchOptions)
         return true
+    }
+    
+    func handlePush(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        if launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "kSelectTabNoti"), object: nil)
+        }
     }
     
     func configKeyboard() {
@@ -223,6 +230,14 @@ extension AppDelegate {
         }
         return topViewController
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "kUpNotificaionCount"), object: nil)
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        application.applicationIconBadgeNumber = 0
+    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
@@ -230,7 +245,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         if #available(iOS 14.0, *) {
             completionHandler([.list, .banner, .badge])
         } else {
-            // Fallback on earlier versions
+            
         }
     }
 }

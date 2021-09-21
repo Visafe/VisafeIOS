@@ -22,6 +22,9 @@ class TabbarVC: BaseTabbarController {
         super.viewDidLoad()
         configView()
         configMainTabbarItem()
+        NotificationCenter.default.addObserver(self, selector: #selector(onChangeTabNoti), name: NSNotification.Name(rawValue: "kSelectTabNoti"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onUpdateNotiCount), name: NSNotification.Name(rawValue: "kUpNotificaionCount"), object: nil)
+        
     }
     
     func configView() {
@@ -82,6 +85,19 @@ class TabbarVC: BaseTabbarController {
         }
     }
     
+    @objc func onChangeTabNoti() {
+        selectedIndex = 3
+    }
+    
+    @objc func onUpdateNotiCount() {
+        let count = CacheManager.shared.upNotificationCount()
+        if count > 0 {
+            tabBar.items![3].badgeValue = "\(count)"
+        } else {
+            tabBar.items![3].badgeValue = nil
+        }
+    }
+    
     func updateStateMainButton(selected: Bool) {
         if selected {
             mainButton.backgroundColor = UIColor.mainColorOrange()
@@ -107,6 +123,10 @@ class TabbarVC: BaseTabbarController {
             showFormLogin(item: item)
         } else {
             super.tabBar(tabBar, didSelect: item)
+        }
+        if item.tag == 4 {
+            item.badgeValue = nil
+            CacheManager.shared.resetNotificationCount()
         }
     }
     
