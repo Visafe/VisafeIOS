@@ -23,6 +23,7 @@ let kLoginSuccess = "kLoginSuccess"
 let kLastScan = "kLastScan"
 let kPassword = "kPassword"
 let kNotification = "kNotification"
+let kScanIssueNumber = "kScanIssueNumber"
 
 class CacheManager {
     
@@ -171,6 +172,16 @@ class CacheManager {
     
     func resetNotificationCount() {
         userDefault.setValue(0, forKey: kNotification)
+        userDefault.synchronize()
+    }
+
+    func getScanIssueNumber() -> Int {
+        let value = userDefault.integer(forKey: kScanIssueNumber)
+        return value
+    }
+
+    func setScanIssueNumber(value: Int) {
+        userDefault.set(value, forKey: kScanIssueNumber)
         userDefault.synchronize()
     }
 }

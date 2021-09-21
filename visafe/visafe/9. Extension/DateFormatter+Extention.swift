@@ -88,7 +88,7 @@ extension DateFormatter {
         if second >= 3 {
             return "\(second) giây trước"
         } else {
-            return "Vừa mới"
+            return "vừa mới"
         }
     }
 

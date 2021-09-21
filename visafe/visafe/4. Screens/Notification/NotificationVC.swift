@@ -75,6 +75,7 @@ class NotificationVC: BaseViewController {
         if isViewLoaded {
             pageIndex = 1
             sources = []
+            tableView.reloadData()
             NotificationWorker.list(page: pageIndex) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
                 weakSelf.sources = result?.notis ?? []
@@ -135,7 +136,10 @@ extension NotificationVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationCell.className) as? NotificationCell else {
             return UITableViewCell()
         }
-        cell.bindingData(model: sources[indexPath.row])
+        if let source = sources[safe: indexPath.row] {
+            cell.bindingData(model: source)
+        }
+
         return cell
     }
     

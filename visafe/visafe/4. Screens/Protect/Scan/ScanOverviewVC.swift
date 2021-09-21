@@ -59,7 +59,7 @@ class ScanOverviewVC: BaseViewController {
     func configPageView() {
         for item in ScanDescriptionEnum.getAll() {
             let vc = ScanVC(type: item)
-            vc.scanSuccess = scanSuccess(_:)
+            vc.scanSuccess = scanSuccess(_:_:)
             listScanVC.append(vc)
         }
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
@@ -75,7 +75,22 @@ class ScanOverviewVC: BaseViewController {
     }
 
 
-    func scanSuccess(_ success: Bool) {
+    func scanSuccess(_ success: Bool, _ type: ScanDescriptionEnum) {
+        if !success {
+            let vc = listScanVC[safe: listScanVC.count - 1]
+            switch type {
+            case .protect:
+                vc?.scanResult.append("Chế độ chống lừa đảo, mã độc, tấn công mạng chưa được kích hoạt!")
+            case .wifi:
+                vc?.scanResult.append("Wifi đang sử dụng là wifi không an toàn, vui lòng ngắt kết nối tới wifi này!")
+            case .protocoll:
+                vc?.scanResult.append("Phương thức bảo vệ không có!")
+            case .system:
+                vc?.scanResult.append("Hệ điều hành của bạn đang ở phiên bản quá cũ, bạn cần nâng cấp hệ điều hành cho thiết bị!")
+            default:
+                break
+            }
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.nextStep()
         }
@@ -90,6 +105,7 @@ class ScanOverviewVC: BaseViewController {
     @IBAction func scanAction(_ sender: UIButton) {
         if (currentIndex == 0 || currentIndex == listScanVC.count - 1) {
             currentIndex = 0
+            listScanVC[safe: listScanVC.count - 1]?.scanResult.removeAll()
             nextStep()
         } else {
             stopScan()

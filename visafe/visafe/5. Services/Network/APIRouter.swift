@@ -80,8 +80,12 @@ enum APIRouter {
 
     //botnet
     case checkBotNet
-    
+
+    // báo cáo web
     case reportPhishing(url: String)
+    // check version iOS
+    case iosVersion(name: String)
+
 }
 
 enum APIError: Error {
@@ -219,6 +223,8 @@ extension APIRouter: TargetType {
             return "/ipma"
         case .reportPhishing:
             return "/report_phishing"
+        case .iosVersion:
+            return "/version/ios"
         }
     }
     
@@ -226,7 +232,8 @@ extension APIRouter: TargetType {
         switch self {
         case .getListWorkspace, .profile, .getGroups, .listNotification,
              .statisticWorkspace, .statisticGroup,
-             .logGroup, .logWorkspace, .genDeviceId, .getGroup, .packages:
+             .logGroup, .logWorkspace, .genDeviceId, .getGroup, .packages,
+             .iosVersion:
             return .get
         case .deleteWorkspace, .deleteGroup,
              .groupDeleteUser, .deleteDeviceFromGroup, .deleteDeviceGroup:
@@ -353,6 +360,8 @@ extension APIRouter: TargetType {
             pars["device_id"] = CacheManager.shared.getDeviceId()
         case .reportPhishing(url: let url):
             pars["url"] = url
+        case .iosVersion(name: let name):
+            pars["name"] = name
         case .reactivation, .getListWorkspace, .profile, .genDeviceId, .checkBotNet, .packages:
             break
         }

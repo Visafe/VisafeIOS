@@ -390,4 +390,22 @@ class GroupWorker {
             completion(loginResult, error)
         }
     }
+
+    static func getNewestiOSVersion(name: String,
+                                    completion: @escaping (_ result: VersioniOSModel?,
+                                                           _ error: Error?) -> Void) {
+        let router = APIRouter.iosVersion(name: name)
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
+            var loginResult: VersioniOSModel?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<VersioniOSModel>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
+
+//    api/v1/version/ios
 }

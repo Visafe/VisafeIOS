@@ -8,7 +8,7 @@
 import UIKit
 import ObjectMapper
 import LocalAuthentication
-
+import DeviceKit
 public enum ScanDescriptionEnum: String {
     case about = "KIỂM TRA BẢO MẬT"
     case protect = "CHẾ ĐỘ BẢO VỆ"
@@ -70,10 +70,18 @@ class ScanVC: BaseViewController {
     
     @IBOutlet weak var imageViewHeight: NSLayoutConstraint!
     @IBOutlet weak var imageViewWidth: NSLayoutConstraint!
-    var scanSuccess: ((Bool) -> Void)?
+    @IBOutlet weak var desLabelBottom: NSLayoutConstraint!
+    @IBOutlet weak var errorStackView: UIStackView!
+    @IBOutlet weak var spacingView: UIView!
+    @IBOutlet weak var tableview: UITableView!
+
+    var scanSuccess: ((Bool, ScanDescriptionEnum) -> Void)?
+    var scanResult = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+        tableview.registerCells(cells: [ScanResultCell.className])
+        tableview.mj_footer = nil
     }
     
     init(type: ScanDescriptionEnum) {
@@ -100,7 +108,7 @@ class ScanVC: BaseViewController {
         titleLabel.text = type.rawValue
         descriptionLabel.text = type.getDescription()
         view.backgroundColor = UIColor.clear
-        contraintHeight.constant = kScreenHeight/2
+        contraintHeight.constant = kScreenHeight * 0.7
         imageViewHeight.constant = type == .done ? 64: 178
         imageViewWidth.constant = type == .done ? 64: 160
     }
@@ -108,14 +116,25 @@ class ScanVC: BaseViewController {
     func scan() {
         switch type {
         case .protect:
-            scanSuccess?(DoHNative.shared.isEnabled)
+            scanSuccess?(DoHNative.shared.isEnabled, type)
         case .wifi:
-            
             checkBotNet()
         case .protocoll:
             checkBiometric()
         case .system:
-            scanSuccess?(true)
+            getiOSVersion()
+        case .done:
+            CacheManager.shared.setScanIssueNumber(value: scanResult.count)
+            if !scanResult.isEmpty {
+                desLabelBottom.constant = 200
+                errorStackView.isHidden = false
+                spacingView.isHidden = false
+                tableview.dataSource = self
+            } else {
+                desLabelBottom.constant = 100
+                errorStackView.isHidden = true
+            }
+
         default:
             break
         }
@@ -125,7 +144,7 @@ class ScanVC: BaseViewController {
         GroupWorker.checkBotNet {[weak self] (response, error) in
             guard let self = self else { return }
             let botnetDetails = response?.detail ?? []
-            self.scanSuccess?(botnetDetails.isEmpty)
+            self.scanSuccess?(botnetDetails.isEmpty, self.type)
         }
     }
 
@@ -136,14 +155,45 @@ class ScanVC: BaseViewController {
         // check touch id, faceid enable
         if authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             //touchid, faceId enable -> passcode enable
-            scanSuccess?(true)
+            scanSuccess?(true, type)
         } else {
             //check passcode enable
             if authenticationContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
-                scanSuccess?(true)
+                scanSuccess?(true, type)
             } else {
-                scanSuccess?(false)
+                scanSuccess?(false, type)
             }
         }
+    }
+
+    func getiOSVersion() {
+        GroupWorker.getNewestiOSVersion(name: Device.identifier) {[weak self] (model, error) in
+            guard let self = self else { return }
+            guard let version = model?.version else {
+                self.scanSuccess?(false, self.type)
+                return
+            }
+            let compare = UIDevice.current.systemVersion.versionCompare(version)
+            self.scanSuccess?(compare == .orderedSame || compare == .orderedDescending, self.type)
+        }
+    }
+}
+
+extension ScanVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return scanResult.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ScanResultCell.className) as? ScanResultCell else {
+            return UITableViewCell()
+        }
+        cell.bindingData(value: scanResult[indexPath.row])
+        return cell
+    }
+}
+
+extension String {
+    func versionCompare(_ otherVersion: String) -> ComparisonResult {
+        return self.compare(otherVersion, options: .numeric)
     }
 }

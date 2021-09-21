@@ -10,7 +10,7 @@ import PageMenu
 import SystemConfiguration.CaptiveNetwork
 import CoreLocation
 
-class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate {
+class ProtectDeviceVC: HeaderedPageMenuScrollWithDoHViewController, CAPSPageMenuDelegate {
     var subPageControllers: [UIViewController] = []
     var header: ProtectHomeHeaderView!
     var group: GroupModel
@@ -60,6 +60,11 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
                 updateWiFi()
             }
         }
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateProtectDevice),
+                                               name: NSNotification.Name(rawValue: updateDnsStatus),
+                                               object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +81,12 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
 
         header.switchValueChange = { [weak self] isOn in
             guard let self = self else { return }
-            self.listBlockVC.setProtect(isOn)
+            if self.type == .wifi {
+                CacheManager.shared.setProtectWifiStatus(value: isOn)
+                self.listBlockVC.setProtect(isOn)
+            } else if self.type == .device {
+                self.onOffDoH()
+            }
         }
 
         // 1) Set the header
@@ -115,8 +125,25 @@ class ProtectDeviceVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegat
         title = type.getTitle()
         navigationController?.title = type.getTitle()
     }
+
+    //MARK: DoH
+    override func showAnimationConnectLoading() {
+        showLoading()
+    }
+
+    override func hideAnimationLoading() {
+        hideLoading()
+        listBlockVC.setProtect(DoHNative.shared.isEnabled)
+        header.updateState(isOn: DoHNative.shared.isEnabled)
+    }
+
+    @objc private func updateProtectDevice() {
+        listBlockVC.setProtect(DoHNative.shared.isEnabled)
+        header.updateState(isOn: DoHNative.shared.isEnabled)
+    }
 }
 
+//MARK: CLLocationManagerDelegate
 extension ProtectDeviceVC: CLLocationManagerDelegate {
     func updateWiFi() {
         header.setContent(currentNetworkInfos?.first?.ssid ?? "")

@@ -160,7 +160,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.10980392156862745" green="0.1803921568627451" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="pqp-Jr-aet" firstAttribute="leading" secondItem="YcS-3I-1zc" secondAttribute="trailing" constant="8" id="2dX-S7-FpB"/>
                         <constraint firstItem="SE6-XZ-c4l" firstAttribute="top" secondItem="HDp-oz-jA7" secondAttribute="top" constant="8" id="2fF-qm-NcZ"/>

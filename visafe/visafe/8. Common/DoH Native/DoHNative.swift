@@ -46,7 +46,7 @@ class DoHNative {
                 NEDNSSettingsManager.shared().dnsSettings = dohSetting
                 NEDNSSettingsManager.shared().saveToPreferences { (saveError) in
                     if let _error = saveError {
-                        onSavedStatus(_error)
+                        onSavedStatus(nil)
                     } else {
                         onSavedStatus(nil)
                     }

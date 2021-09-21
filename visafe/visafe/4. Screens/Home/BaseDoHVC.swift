@@ -11,7 +11,7 @@ import UIKit
 class BaseDoHVC: BaseViewController {
     var isConnecting: Bool = false
 
-    func showAnimationLoading() {}
+    func showAnimationConnectLoading() {}
 
     func hideAnimationLoading() {}
 
@@ -37,12 +37,10 @@ class BaseDoHVC: BaseViewController {
                     self.isConnecting = false
                 }
             } else {
-//                showAnimationLoading()
                 self.isConnecting = false
                 handleSaveSuccess()
             }
         } else {
-//            showAnimationLoading()
             DoHNative.shared.saveDNS {[weak self] (error) in
                 if let _error = error {
                     self?.handleSaveError(_error)

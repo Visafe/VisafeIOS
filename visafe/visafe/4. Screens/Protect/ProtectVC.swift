@@ -28,6 +28,8 @@ class ProtectVC: BaseDoHVC {
     @IBOutlet weak var protectDeviceStatusButton: UIButton!
     @IBOutlet weak var protectWifiStatusButton: UIButton!
     @IBOutlet weak var lastScanLabel: UILabel!
+    @IBOutlet weak var timeTypeLabel: UILabel!
+    @IBOutlet weak var protectDeviceImageView: UIImageView!
 
     var statisticModel: StatisticModel? {
         didSet {
@@ -73,6 +75,7 @@ class ProtectVC: BaseDoHVC {
             if oldValue != isProtectDevice {
                 let image = isProtectDevice ? UIImage(named: "Switch_on"): UIImage(named: "Switch_off")
                 protectDeviceStatusButton.setImage(image, for: .normal)
+                protectDeviceImageView.image = UIImage(named: isProtectDevice ? "p_device": "p_no_device")
             }
         }
     }
@@ -86,9 +89,18 @@ class ProtectVC: BaseDoHVC {
     }
 
     lazy var dispatchGroup = DispatchGroup()
+    var timeType: ChooseTimeEnum = .day {
+        didSet {
+            timeTypeLabel.text = timeType.getTitle()
+        }
+    }
+
+    var isPreparingData = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(prepareData), name: NSNotification.Name(rawValue: kLoginSuccess), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess),
+                                               name: NSNotification.Name(rawValue: kLoginSuccess),
+                                               object: nil)
         setupUI()
         // Do any additional setup after loading the view.
         prepareData()
@@ -104,15 +116,21 @@ class ProtectVC: BaseDoHVC {
         isSetupPin = CacheManager.shared.getPin() != nil
         isProtectWifi = CacheManager.shared.getProtectWifiStatus()
         isProtectDevice = DoHNative.shared.isEnabled
+        setSafeMode()
+        if !isPreparingData {
+            prepareData(false)
+        }
         guard let lastScan = CacheManager.shared.getLastScan() else {
             lastScanLabel.text = ""
             return
         }
         lastScanLabel.text = "Lần quét gần nhất \(DateFormatter.timeAgoSinceDate(date: lastScan, currentDate: Date()))"
+
     }
 
     private func setupUI() {
-        setSafeMode()
+        timeTypeLabel.text = timeType.getTitle()
+//        setSafeMode()
         contentView.dropShadowEdge()
         overView.dropShadowEdge()
         vpnView.dropShadowEdge()
@@ -128,11 +146,13 @@ class ProtectVC: BaseDoHVC {
         registerInfoView.isHidden = !isLogin
     }
 
-    private func setSafeMode(isTrue: Bool = true) {
+    private func setSafeMode() {
         let font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        let scanNumberIssue = CacheManager.shared.getScanIssueNumber()
+        let isTrue = scanNumberIssue == 0
         let highlightColor: UIColor = isTrue ? .systemGreen : .systemRed
-        let text = isTrue ? "Bạn đang an toàn" : "Đã phát hiện 1 sự cố"
-        let highlightText = isTrue ? "an toàn" : "1 sự cố"
+        let text = isTrue ? "Bạn đang an toàn" : "Đã phát hiện \(scanNumberIssue) sự cố"
+        let highlightText = isTrue ? "an toàn" : "\(scanNumberIssue) sự cố"
 
         let attributedText = NSMutableAttributedString(string: text, attributes: [.font : font,
                                                                                   .foregroundColor: highlightColor])
@@ -143,11 +163,13 @@ class ProtectVC: BaseDoHVC {
         titleLB.attributedText = attributedText
     }
 
-    @objc func prepareData() {
+    @objc func prepareData(_ isShowLoading: Bool = true) {
         guard isViewLoaded else { return }
-        let timeType: ChooseTimeEnum = .day
         guard let groupId = CacheManager.shared.getCurrentUser()?.defaultGroup else { return }
-        showLoading()
+        isPreparingData = true
+        if isShowLoading {
+            showLoading()
+        }
         dispatchGroup.enter()
         dispatchGroup.enter()
         GroupWorker.getGroup(id: groupId) { [weak self] (group, error) in
@@ -156,16 +178,47 @@ class ProtectVC: BaseDoHVC {
             self.dispatchGroup.leave()
         }
 
+        getStatistic()
+
+        dispatchGroup.notify(queue: .main) {
+            self.isPreparingData = false
+            self.hideLoading()
+        }
+    }
+
+    func getStatistic(_ leaveDispatchGroup: Bool = true, _ isShowLoading: Bool = false) {
+        if isShowLoading {
+            showLoading()
+        }
+        guard let groupId = CacheManager.shared.getCurrentUser()?.defaultGroup else {
+            if leaveDispatchGroup {
+                dispatchGroup.leave()
+            }
+            if isShowLoading {
+                hideLoading()
+            }
+            return
+        }
         GroupWorker.getStatistic(grId: groupId,
                                  limit: timeType.rawValue) { [weak self] (statistic, error) in
             guard let self = self else { return }
             self.statisticModel = statistic
-            self.dispatchGroup.leave()
+            if leaveDispatchGroup {
+                self.dispatchGroup.leave()
+            }
+            if isShowLoading {
+                self.hideLoading()
+            }
         }
+    }
 
-        dispatchGroup.notify(queue: .main) {
-            self.hideLoading()
-        }
+    @objc func loginSuccess() {
+        prepareData()
+        let isLogin = CacheManager.shared.getIsLogined()
+        protectAdAndFollowStackView.isHidden = !isLogin
+        overView.isHidden = !isLogin
+        protectFamilyView.isHidden = !isLogin
+        registerInfoView.isHidden = !isLogin
     }
 
     private func bindingStatistic() {
@@ -183,11 +236,13 @@ class ProtectVC: BaseDoHVC {
         isProtectDevice = DoHNative.shared.isEnabled
     }
 
-    private func updateGroup() {
+    private func updateGroup(_ isShowloading: Bool = true) {
         guard let group = groupModel else {
             return
         }
-        showLoading()
+        if isShowloading {
+            showLoading()
+        }
         GroupWorker.update(group: group) { [weak self] (group, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
@@ -196,8 +251,8 @@ class ProtectVC: BaseDoHVC {
             }
         }
     }
-
-    override func showAnimationLoading() {
+    //MARK: DoH
+    override func showAnimationConnectLoading() {
         showLoading()
     }
 
@@ -219,9 +274,9 @@ extension ProtectVC {
 
     private func showFormLogin() {
         let vc = LoginVC()
-        vc.onSuccess = {
-            self.prepareData()
-        }
+//        vc.onSuccess = {
+//            self.prepareData()
+//        }
         present(vc, animated: true)
     }
 }
@@ -330,6 +385,18 @@ extension ProtectVC {
 
     }
 
+    @IBAction func chooseTime(_ sender: Any) {
+        guard let view = ChooseTimeView.loadFromNib() else { return }
+        view.chooseTimeAction = { [weak self] type in
+            guard let weakSelf = self else { return }
+            guard weakSelf.timeType != type else { return }
+            weakSelf.timeType = type
+            weakSelf.getStatistic(false, true)
+        }
+        view.binding()
+        showPopup(view: view)
+    }
+
     @IBAction func newFeeds(_ sender: Any) {
         gotoWebview("https://congcu.khonggianmang.vn/news-feed")
     }
@@ -357,9 +424,4 @@ extension ProtectVC {
         navigationController?.pushViewController(vc)
     }
 
-//    tin tức, cảnh bảo: https://congcu.khonggianmang.vn/news-feed
-//    kiểm tra mạng wifi: https://congcu.khonggianmang.vn/check-ipma
-//    kiểm tra web lừa đảo: https://congcu.khonggianmang.vn/check-phishing
-//    nhận diện mã độc: https://congcu.khonggianmang.vn/ransomware
-//    kiểm tra lọt tài khoản: https://congcu.khonggianmang.vn/check-data-leak
 }

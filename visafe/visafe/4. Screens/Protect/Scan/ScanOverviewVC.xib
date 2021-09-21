@@ -32,7 +32,7 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJa-xZ-fh7">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="627"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSR-vr-hmf">
@@ -47,13 +47,13 @@
                     </connections>
                 </button>
                 <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="qvA-vF-D6l">
-                    <rect key="frame" x="136.5" y="492" width="141" height="27.5"/>
+                    <rect key="frame" x="136.5" y="671" width="141" height="27.5"/>
                 </pageControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hO7-1z-dkl">
-                    <rect key="frame" x="0.0" y="448" width="414" height="448"/>
+                    <rect key="frame" x="0.0" y="627" width="414" height="269"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsK-t8-jM9">
-                            <rect key="frame" x="161" y="178" width="92" height="92"/>
+                            <rect key="frame" x="161" y="88.5" width="92" height="92"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="92" id="fp2-Oc-Rb2"/>
@@ -61,7 +61,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVS-HA-642">
-                            <rect key="frame" x="161" y="178" width="92" height="92"/>
+                            <rect key="frame" x="161" y="88.5" width="92" height="92"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Seh-YW-AT8" customClass="CircularProgressView" customModule="visafe" customModuleProvider="target">
                                     <rect key="frame" x="5" y="5" width="82" height="82"/>
@@ -118,7 +118,7 @@
                 <constraint firstItem="oJa-xZ-fh7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="59r-86-Gqg"/>
                 <constraint firstItem="8Me-1Y-oeB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="82A-bU-0du"/>
                 <constraint firstItem="8Me-1Y-oeB" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Cbi-RM-oMf"/>
-                <constraint firstItem="oJa-xZ-fh7" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="DGW-eb-hVW"/>
+                <constraint firstItem="oJa-xZ-fh7" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" id="DGW-eb-hVW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hO7-1z-dkl" secondAttribute="trailing" id="Ixu-r3-2Xr"/>
                 <constraint firstItem="qvA-vF-D6l" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JBD-54-PeC"/>
                 <constraint firstItem="hO7-1z-dkl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SCb-i4-0bE"/>
