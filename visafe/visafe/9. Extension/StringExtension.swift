@@ -27,8 +27,14 @@ extension String {
     }
     
     var isValidUrl: Bool {
+        var string: String
+        if self.hasPrefix("http") {
+            string = self
+        } else {
+            string = "http://\(self)"
+        }
         let regex = "http[s]?://(([^/:.[:space:]]+(.[^/:.[:space:]]+)*)|([0-9](.[0-9]{3})))(:[0-9]+)?((/[^?#[:space:]]+)([^#[:space:]]+)?(#.+)?)?"
-        return NSPredicate(format:"SELF MATCHES %@", regex).evaluate(with: self)
+        return NSPredicate(format:"SELF MATCHES %@", regex).evaluate(with: string)
     }
     
     /// Returns the first element of the collection of string. If a collection

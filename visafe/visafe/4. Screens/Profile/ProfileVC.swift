@@ -102,6 +102,7 @@ class ProfileVC: BaseViewController {
         tableView.estimatedSectionHeaderHeight = 25
         tableView.sectionFooterHeight = UITableView.automaticDimension
         tableView.estimatedSectionFooterHeight = 25
+        tableView.alwaysBounceVertical = false
         tableView.registerCells(cells: [ProfileCell.className])
     }
     
