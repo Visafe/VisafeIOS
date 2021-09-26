@@ -15,6 +15,7 @@
                 <outlet property="deleteButton" destination="0TH-yn-bdv" id="q9r-VP-yeH"/>
                 <outlet property="heightButtonDelete" destination="oce-mJ-UTd" id="KOs-5v-1PK"/>
                 <outlet property="pinView" destination="xNu-QY-0vd" id="J5b-f9-KLQ"/>
+                <outlet property="titleLabel" destination="lwR-7J-InN" id="ukl-Ac-QCv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNu-QY-0vd" customClass="SVPinView" customModule="SVPinView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNu-QY-0vd" customClass="SVPinView" customModule="visafe" customModuleProvider="target">
                     <rect key="frame" x="57" y="72" width="300" height="64"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>

@@ -1,6 +1,0 @@
-module SVPinView {
-  umbrella header "SVPinView-umbrella.h"
-
-  export *
-  module * { export * }
-}

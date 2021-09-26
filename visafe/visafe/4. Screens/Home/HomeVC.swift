@@ -61,6 +61,7 @@ class HomeVC: BaseDoHVC {
         if !DoHNative.shared.isInstalled || !DoHNative.shared.isEnabled {
             showAnimationConnectLoading()
         }
+        homeLoadingImage.rotate()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -86,6 +87,7 @@ class HomeVC: BaseDoHVC {
         } else {
             // Fallback on earlier versions
         }
+        homeLoadingImage.rotate()
     }
 
     func setupUI() {
@@ -117,7 +119,7 @@ class HomeVC: BaseDoHVC {
         earthImageView.image = isEnabled ? UIImage(named: "connection_success"): UIImage(named: "no_connection")
         connectButton.setImage(isEnabled ? UIImage(named: "connect_on"): UIImage(named: "connect_off"), for: .normal)
         homeLoadingImage.image = isEnabled ? UIImage(named: "ic_power_on"): UIImage(named: "ic_loading_home")
-//        homeLoadingImage.rotate()
+        homeLoadingImage.rotate()
     }
 
     @IBAction func connectAction(_ sender: Any) {

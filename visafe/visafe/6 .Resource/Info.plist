@@ -84,8 +84,6 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Cho phép Visafe truy cập Camera để tham gia nhóm</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Cho phép Visafe truy cập vị trí của bạn</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Cho phép Visafe lưu ảnh vào Library của bạn</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>

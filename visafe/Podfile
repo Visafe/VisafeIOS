@@ -13,7 +13,7 @@ target 'visafe' do
   pod 'GoogleSignIn'
   pod 'SwiftyUserDefaults'
   pod 'SideMenuSwift'
-  pod 'SVPinView'
+#  pod 'SVPinView'
   pod "ESTabBarController-swift"
   pod 'PageMenu'
   pod 'ACTabScrollView'
