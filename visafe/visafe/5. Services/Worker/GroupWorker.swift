@@ -362,7 +362,7 @@ class GroupWorker {
             completion(loginResult, error)
         }
     }
-
+    
     static func getGroup(id: String, completion: @escaping (_ result: GroupModel?, _ error: Error?) -> Void) {
         let router = APIRouter.getGroup(id: id)
         APIManager.shared.request(target: router) { (data, error, statusCode) in
@@ -376,7 +376,7 @@ class GroupWorker {
             completion(loginResult, error)
         }
     }
-
+    
     static func checkBotNet(completion: @escaping (_ result: BotNetModel?, _ error: Error?) -> Void) {
         let router = APIRouter.checkBotNet
         APIManager.shared.request(target: router) { (data, error, statusCode) in
@@ -390,7 +390,7 @@ class GroupWorker {
             completion(loginResult, error)
         }
     }
-
+    
     static func getNewestiOSVersion(name: String,
                                     completion: @escaping (_ result: VersioniOSModel?,
                                                            _ error: Error?) -> Void) {
@@ -406,6 +406,35 @@ class GroupWorker {
             completion(loginResult, error)
         }
     }
-
-//    api/v1/version/ios
+    
+    static func checkDevice(completion: @escaping (_ result: DeviceCheckResult?,
+                                                   _ error: Error?) -> Void) {
+        let router = APIRouter.checkDevice
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
+            var loginResult: DeviceCheckResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<DeviceCheckResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
+    
+    static func requestOutGroup(groupId: String,
+                                completion: @escaping (_ result: BaseResult?,
+                                                       _ error: Error?) -> Void) {
+        let router = APIRouter.requestOutGroup(groupId: groupId)
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
+            var loginResult: BaseResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
 }

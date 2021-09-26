@@ -372,7 +372,25 @@ extension ProtectVC {
     }
 
     @IBAction func createGroup(_ sender: Any) {
-
+        showFormAddGroup()
+    }
+    
+    func showFormAddGroup() {
+        let vc = PostGroupAboutVC()
+        vc.startAction = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.postGroup()
+        }
+        present(vc, animated: true, completion: nil)
+    }
+    func postGroup() {
+        let postVC = PostGroupVC()
+//        postVC.onDone = { [weak self] in
+//            guard let weakSelf = self else { return }
+//            weakSelf.refreshData()
+//        }
+        let nav = BaseNavigationController(rootViewController: postVC)
+        present(nav, animated: true, completion: nil)
     }
 
     @IBAction func createSecurity(_ sender: Any) {

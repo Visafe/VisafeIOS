@@ -78,7 +78,7 @@ extension String {
             }
             return result
         } else if queryParam == "groupName" {
-            return self.substring(fromIndex: 114)
+            return self.substring(fromIndex: 104)
         }
         return nil
     }

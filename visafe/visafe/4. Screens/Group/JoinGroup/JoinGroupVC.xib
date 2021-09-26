@@ -11,8 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JoinGroupVC" customModule="visafe" customModuleProvider="target">
             <connections>
+                <outlet property="deviceNameLabel" destination="IyW-3U-INq" id="zoi-dq-7Xh"/>
                 <outlet property="doneButton" destination="q35-LV-QJw" id="CQi-kI-0pZ"/>
-                <outlet property="groupNameLabel" destination="IyW-3U-INq" id="zoi-dq-7Xh"/>
+                <outlet property="groupNameLabel" destination="CqI-Yh-4Pf" id="qZe-Si-mBy"/>
                 <outlet property="nameInfoLabel" destination="Yku-XF-5Ha" id="Djo-aZ-vi0"/>
                 <outlet property="nameTextfield" destination="y9E-cV-qyf" id="xTh-SN-Ilq"/>
                 <outlet property="view" destination="qjH-o5-cs1" id="8uj-GM-ycZ"/>

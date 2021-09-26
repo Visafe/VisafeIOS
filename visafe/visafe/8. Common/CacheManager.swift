@@ -24,6 +24,7 @@ let kLastScan = "kLastScan"
 let kPassword = "kPassword"
 let kNotification = "kNotification"
 let kScanIssueNumber = "kScanIssueNumber"
+let kFCMToken = "kFCMToken"
 
 class CacheManager {
     
@@ -182,6 +183,16 @@ class CacheManager {
 
     func setScanIssueNumber(value: Int) {
         userDefault.set(value, forKey: kScanIssueNumber)
+        userDefault.synchronize()
+    }
+    
+    func getFCMToken() -> String? {
+        let value = userDefault.string(forKey: kFCMToken)
+        return value
+    }
+    
+    func setFCMToken(value: String?) {
+        userDefault.set(value, forKey: kFCMToken)
         userDefault.synchronize()
     }
 }
