@@ -230,6 +230,9 @@
 		C9B7949A26862C5F00258A72 /* SetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7949826862C5F00258A72 /* SetPasswordVC.swift */; };
 		C9B7949B26862C5F00258A72 /* SetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7949926862C5F00258A72 /* SetPasswordVC.xib */; };
 		C9B7949F26862DF000258A72 /* TweeTextField in Frameworks */ = {isa = PBXBuildFile; productRef = C9B7949E26862DF000258A72 /* TweeTextField */; };
+		C9BC687727005AF900D45490 /* DeviceCheckResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC687627005AF900D45490 /* DeviceCheckResult.swift */; };
+		C9BC687A27005C1400D45490 /* CheckDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC687927005C1400D45490 /* CheckDeviceView.swift */; };
+		C9BC687D27005C1F00D45490 /* CheckDeviceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BC687C27005C1F00D45490 /* CheckDeviceView.xib */; };
 		C9BCBC5F26975C92007F652C /* GroupSettingParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCBC5D26975C92007F652C /* GroupSettingParentVC.swift */; };
 		C9BCBC6026975C92007F652C /* GroupSettingParentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */; };
 		C9BCBC6426975DEC007F652C /* GroupSettingParentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */; };
@@ -552,6 +555,9 @@
 		C9B7949426862C4800258A72 /* EnterOTPVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterOTPVC.xib; sourceTree = "<group>"; };
 		C9B7949826862C5F00258A72 /* SetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordVC.swift; sourceTree = "<group>"; };
 		C9B7949926862C5F00258A72 /* SetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetPasswordVC.xib; sourceTree = "<group>"; };
+		C9BC687627005AF900D45490 /* DeviceCheckResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCheckResult.swift; sourceTree = "<group>"; };
+		C9BC687927005C1400D45490 /* CheckDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDeviceView.swift; sourceTree = "<group>"; };
+		C9BC687C27005C1F00D45490 /* CheckDeviceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckDeviceView.xib; sourceTree = "<group>"; };
 		C9BCBC5D26975C92007F652C /* GroupSettingParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingParentVC.swift; sourceTree = "<group>"; };
 		C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingParentVC.xib; sourceTree = "<group>"; };
 		C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingParentCell.swift; sourceTree = "<group>"; };
@@ -1207,6 +1213,7 @@
 				C90AD90926C55380003539FF /* OrderResult.swift */,
 				C90AD90F26C572AA003539FF /* PaymentResult.swift */,
 				0EDFD36226C52C2B0053E82B /* BotNetResult.swift */,
+				C9BC687627005AF900D45490 /* DeviceCheckResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -1385,6 +1392,8 @@
 				C9EEB8E626ADB768008F093C /* ChooseTimeView.xib */,
 				C9159C9926ADB99E00497D86 /* ChooseTimeCell.swift */,
 				C9159C9A26ADB99E00497D86 /* ChooseTimeCell.xib */,
+				C9BC687927005C1400D45490 /* CheckDeviceView.swift */,
+				C9BC687C27005C1F00D45490 /* CheckDeviceView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1557,6 +1566,7 @@
 				C9CF060026B995F400C7572F /* LogHeaderView.xib in Resources */,
 				C9B7949126862C2E00258A72 /* ForgotPasswordVC.xib in Resources */,
 				C9E7A49D2690B1610012985B /* MoreGroupActionView.xib in Resources */,
+				C9BC687D27005C1F00D45490 /* CheckDeviceView.xib in Resources */,
 				C934A73226CD06F6008B74EC /* ScanOverviewVC.xib in Resources */,
 				C999AB03268DFD1200F657A9 /* GroupSettingHeaderView.xib in Resources */,
 				C971FA002697498A00BB7118 /* PostGroupAboutVC.xib in Resources */,
@@ -1741,6 +1751,7 @@
 				C9B79466268613A700258A72 /* RegisterVC.swift in Sources */,
 				C9B7948C268626AA00258A72 /* UserModel.swift in Sources */,
 				0E6A021226FCD4CC0001FB4B /* SVPinView.swift in Sources */,
+				C9BC687727005AF900D45490 /* DeviceCheckResult.swift in Sources */,
 				0EF5EB0D26BA534C002F5E84 /* DeviceWorker.swift in Sources */,
 				0EDFD36026C527390053E82B /* BotNetModel.swift in Sources */,
 				C9BCBC6426975DEC007F652C /* GroupSettingParentCell.swift in Sources */,
@@ -1774,6 +1785,7 @@
 				C94B39BC268A24D700046958 /* DeleteDeviceToIdentifierParam.swift in Sources */,
 				0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */,
 				C9EEB8E726ADB768008F093C /* ChooseTimeView.swift in Sources */,
+				C9BC687A27005C1400D45490 /* CheckDeviceView.swift in Sources */,
 				518EC10526B9A36300D88D2A /* ProtectDetailListBlockVC.swift in Sources */,
 				C98786EA26ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift in Sources */,
 				C9C7A9ED26B05EEC002C883A /* LicenseVC.swift in Sources */,

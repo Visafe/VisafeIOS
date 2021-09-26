@@ -92,6 +92,13 @@ extension BaseEnterValueView: UITextFieldDelegate {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == enterTextfield {
+            acceptAction(textField)
+        }
+        return true
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let maxLength = 50
         let currentString: NSString = (textField.text ?? "") as NSString

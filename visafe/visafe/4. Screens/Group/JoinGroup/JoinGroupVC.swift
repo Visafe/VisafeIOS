@@ -10,9 +10,10 @@ import UIKit
 class JoinGroupVC: BaseViewController {
     
     @IBOutlet weak var nameTextfield: BaseTextField!
-    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var deviceNameLabel: UILabel!
     @IBOutlet weak var nameInfoLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var groupNameLabel: UILabel!
     
     var dismissJoinGroup:(() -> Void)?
     
@@ -33,6 +34,12 @@ class JoinGroupVC: BaseViewController {
         let leftBarButton = UIBarButtonItem(image: UIImage(named: "cancel_icon"), style: .done, target: self, action: #selector(onClickLeftButton))
         navigationItem.leftBarButtonItem = leftBarButton
         updateStateButtonContinue()
+        configUI()
+    }
+    
+    func configUI() {
+        groupNameLabel.text = param.groupName
+        deviceNameLabel.text = param.deviceName
     }
     
     @objc func onClickLeftButton() {

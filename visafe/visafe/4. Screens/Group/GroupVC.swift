@@ -19,6 +19,7 @@ class GroupVC: BaseViewController {
     var scrollDelegateFunc: ((UIScrollView)->Void)?
     var statisticModel: StatisticModel = StatisticModel()
     var selectedWorkspace:((_ workspace: WorkspaceModel?) -> Void)?
+    var checkDevice: DeviceCheckResult?
     var timeType: ChooseTimeEnum = .day
     var onUpdateWorkspace:(() -> Void)?
     
@@ -94,12 +95,45 @@ class GroupVC: BaseViewController {
                     return m.isOwner == false
                 }) ?? []
                 strongSelf.tableView.reloadData()
+                strongSelf.getCheckDevice()
             }
         }
     }
     
+    func getCheckDevice() {
+        GroupWorker.checkDevice { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.tableView.endRefreshing()
+            weakSelf.checkDevice = result
+            weakSelf.updateCheckDevice()
+        }
+    }
+    
+    func updateCheckDevice() {
+        if let device = checkDevice, let viewFooter = CheckDeviceView.loadFromNib() {
+            viewFooter.bindingData(group: device)
+            viewFooter.onCheckoutPress = {
+                self.showConfirmDelete(title: "Bạn có chắc chắn muốn rời khỏi nhóm?") { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.actionRequestGroup(device: device)
+                }
+            }
+            tableView.tableFooterView = viewFooter
+        } else {
+            tableView.tableFooterView = nil
+        }
+    }
+    
+    func actionRequestGroup(device: DeviceCheckResult) {
+        showLoading()
+        GroupWorker.requestOutGroup(groupId: device.groupId ?? "") { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            weakSelf.refreshData()
+        }
+    }
+    
     func configRefreshData() {
-        guard CacheManager.shared.getIsLogined() == true else { return }
         tableView.addPullToRefresh { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.refreshData()
@@ -109,23 +143,28 @@ class GroupVC: BaseViewController {
     func refreshData() {
         if isViewLoaded {
             tableView.reloadData()
-            guard let wspId = CacheManager.shared.getCurrentWorkspace()?.id else { return tableView.endRefreshing() }
-            WorkspaceWorker.getStatistic(wspId: wspId, limit: timeType.rawValue) { [weak self] (result, error) in
-                guard let weakSelf = self else { return }
-                if let model = result {
-                    weakSelf.statisticModel = model
+            if CacheManager.shared.getIsLogined() {
+                guard let wspId = CacheManager.shared.getCurrentWorkspace()?.id else { return tableView.endRefreshing() }
+                WorkspaceWorker.getStatistic(wspId: wspId, limit: timeType.rawValue) { [weak self] (result, error) in
+                    guard let weakSelf = self else { return }
+                    if let model = result {
+                        weakSelf.statisticModel = model
+                    }
+                    GroupWorker.list(wsid: wspId) { [weak self] (result, error) in
+                        guard let strongSelf = self else { return }
+                        strongSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
+                            return m.isOwner == true
+                        }) ?? []
+                        strongSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
+                            return m.isOwner == false
+                        }) ?? []
+                        strongSelf.tableView.reloadData()
+                        strongSelf.tableView.endRefreshing()
+                        strongSelf.getCheckDevice()
+                    }
                 }
-                GroupWorker.list(wsid: wspId) { [weak self] (result, error) in
-                    guard let strongSelf = self else { return }
-                    strongSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
-                        return m.isOwner == true
-                    }) ?? []
-                    strongSelf.inviteGroups = result?.clients?.filter({ (m) -> Bool in
-                        return m.isOwner == false
-                    }) ?? []
-                    strongSelf.tableView.reloadData()
-                    strongSelf.tableView.endRefreshing()
-                }
+            } else {
+                getCheckDevice()
             }
         }
     }

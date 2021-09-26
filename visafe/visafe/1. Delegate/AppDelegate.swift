@@ -261,6 +261,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        CacheManager.shared.setFCMToken(value: fcmToken)
         postSendToken(token: fcmToken)
     }
 }
