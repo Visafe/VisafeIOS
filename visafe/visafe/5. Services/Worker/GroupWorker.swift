@@ -437,4 +437,20 @@ class GroupWorker {
             completion(loginResult, error)
         }
     }
+    
+    static func activeVip(key: String,
+                                completion: @escaping (_ result: ActiveVipResult?,
+                                                       _ error: Error?) -> Void) {
+        let router = APIRouter.activeVip(key: key)
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
+            var loginResult: ActiveVipResult?
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    loginResult = Mapper<ActiveVipResult>().map(JSONObject: json)
+                } catch { }
+            }
+            completion(loginResult, error)
+        }
+    }
 }

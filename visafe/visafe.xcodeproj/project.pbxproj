@@ -229,6 +229,10 @@
 		C9BC687727005AF900D45490 /* DeviceCheckResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC687627005AF900D45490 /* DeviceCheckResult.swift */; };
 		C9BC687A27005C1400D45490 /* CheckDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC687927005C1400D45490 /* CheckDeviceView.swift */; };
 		C9BC687D27005C1F00D45490 /* CheckDeviceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BC687C27005C1F00D45490 /* CheckDeviceView.xib */; };
+		C9BC688127006EC100D45490 /* VipMemberVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BC687F27006EC000D45490 /* VipMemberVC.xib */; };
+		C9BC688227006EC100D45490 /* VipMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC688027006EC100D45490 /* VipMemberVC.swift */; };
+		C9BC68852700720600D45490 /* ActiveVipResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC68842700720600D45490 /* ActiveVipResult.swift */; };
+		C9BC68882700762300D45490 /* JoinGroupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC68872700762300D45490 /* JoinGroupResult.swift */; };
 		C9BCBC5F26975C92007F652C /* GroupSettingParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCBC5D26975C92007F652C /* GroupSettingParentVC.swift */; };
 		C9BCBC6026975C92007F652C /* GroupSettingParentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */; };
 		C9BCBC6426975DEC007F652C /* GroupSettingParentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */; };
@@ -550,6 +554,10 @@
 		C9BC687627005AF900D45490 /* DeviceCheckResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCheckResult.swift; sourceTree = "<group>"; };
 		C9BC687927005C1400D45490 /* CheckDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDeviceView.swift; sourceTree = "<group>"; };
 		C9BC687C27005C1F00D45490 /* CheckDeviceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckDeviceView.xib; sourceTree = "<group>"; };
+		C9BC687F27006EC000D45490 /* VipMemberVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VipMemberVC.xib; sourceTree = "<group>"; };
+		C9BC688027006EC100D45490 /* VipMemberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VipMemberVC.swift; sourceTree = "<group>"; };
+		C9BC68842700720600D45490 /* ActiveVipResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveVipResult.swift; sourceTree = "<group>"; };
+		C9BC68872700762300D45490 /* JoinGroupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGroupResult.swift; sourceTree = "<group>"; };
 		C9BCBC5D26975C92007F652C /* GroupSettingParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingParentVC.swift; sourceTree = "<group>"; };
 		C9BCBC5E26975C92007F652C /* GroupSettingParentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSettingParentVC.xib; sourceTree = "<group>"; };
 		C9BCBC6226975DEC007F652C /* GroupSettingParentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingParentCell.swift; sourceTree = "<group>"; };
@@ -1103,6 +1111,8 @@
 		C99FD1D52697469E00A8F731 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C9BC688027006EC100D45490 /* VipMemberVC.swift */,
+				C9BC687F27006EC000D45490 /* VipMemberVC.xib */,
 				C90F14F626BB9CD4008C19A1 /* ChangePasswordNameVC.swift */,
 				C90F14F726BB9CD4008C19A1 /* ChangePasswordNameVC.xib */,
 				C993D24D26A425AF00684F80 /* EnterPinVC.swift */,
@@ -1178,6 +1188,8 @@
 				C90AD90F26C572AA003539FF /* PaymentResult.swift */,
 				0EDFD36226C52C2B0053E82B /* BotNetResult.swift */,
 				C9BC687627005AF900D45490 /* DeviceCheckResult.swift */,
+				C9BC68842700720600D45490 /* ActiveVipResult.swift */,
+				C9BC68872700762300D45490 /* JoinGroupResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -1475,6 +1487,7 @@
 				C9BCBC6526975DEC007F652C /* GroupSettingParentCell.xib in Resources */,
 				C993D24E26A425AF00684F80 /* EnterPinVC.xib in Resources */,
 				C9159C9C26ADB99E00497D86 /* ChooseTimeCell.xib in Resources */,
+				C9BC688127006EC100D45490 /* VipMemberVC.xib in Resources */,
 				C9ECBFCE26AF228700E254BB /* MoreActionView.xib in Resources */,
 				C971FA0526974E6F00BB7118 /* PostGroupAboutCell.xib in Resources */,
 				C9F2491F26AAA80900EE7442 /* StatisticSumaryView.xib in Resources */,
@@ -1680,6 +1693,7 @@
 				C9FA1671268DFC4C00A1A6C6 /* GroupSettingHeaderView.swift in Sources */,
 				C91EE7EE26AC7414006ADAE9 /* GroupListUserVC.swift in Sources */,
 				C94B39C2268A260D00046958 /* DeleteToGroupParam.swift in Sources */,
+				C9BC68882700762300D45490 /* JoinGroupResult.swift in Sources */,
 				C99FD1D8269746C200A8F731 /* ProfileVC.swift in Sources */,
 				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
 				0EF083B026C23C2900D58F12 /* WebViewVC.swift in Sources */,
@@ -1700,6 +1714,7 @@
 				C993D24F26A425AF00684F80 /* EnterPinVC.swift in Sources */,
 				C919B97B268222F6009982C3 /* JSONModelable.swift in Sources */,
 				C9FA1601268A2DE400A1A6C6 /* GroupTimeVC.swift in Sources */,
+				C9BC688227006EC100D45490 /* VipMemberVC.swift in Sources */,
 				C99F333726838E4300859DF6 /* UIButtonExtension.swift in Sources */,
 				C969B395269ADB210066A88A /* WorkspaceFooterView.swift in Sources */,
 				C9FA15F7268A2DBF00A1A6C6 /* GroupNameVC.swift in Sources */,
@@ -1795,6 +1810,7 @@
 				C9223E8A26B929F800B18A76 /* Common.swift in Sources */,
 				C9CCAB5326A5DFE300C04BC5 /* GroupDetailVC.swift in Sources */,
 				C9F2492426AAB87200EE7442 /* StatisticSumaryCell.swift in Sources */,
+				C9BC68852700720600D45490 /* ActiveVipResult.swift in Sources */,
 				C91813FC269AFE7000DC0E83 /* ProfileHelpCell.swift in Sources */,
 				C95A58462688233F0077112F /* ResetPasswordResult.swift in Sources */,
 				C918140E269B465700DC0E83 /* NotificationResult.swift in Sources */,

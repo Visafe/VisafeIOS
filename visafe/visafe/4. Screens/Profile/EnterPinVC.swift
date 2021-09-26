@@ -63,10 +63,10 @@ class EnterPinVC: BaseViewController {
     }
     
     @IBAction func deleteAction(_ sender: UIButton) {
-        pinView.clearPin()
+        pinView.refreshView()
         CacheManager.shared.setPin(value: nil)
         onUpdate?()
-        didChangeEnteringPin(pin: pinView.getPin())
+        didChangeEnteringPin(pin: "")
     }
     
     @IBAction func continueAction(_ sender: UIButton) {

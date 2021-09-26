@@ -17,7 +17,7 @@ public enum InviteDeviceStatus: Int {
         var message = "Có lỗi xảy ra. Vui lòng thử lại"
         switch self {
         case .success:
-            message = "Thiết bị đã được thêm vào nhóm"
+            message = "Thêm thiết bị vào nhóm thành công"
         case .deviceExist:
             message = "Thiết bị đã được thêm vào nhóm"
         default:

@@ -50,6 +50,7 @@ public enum NotificationContentTypeEnum: String {
     case inviteSuccess = "INVITE_SUCCESS"
     case joinSuccess = "JOIN_SUCCESS"
     case alertTransaction = "ALERT_TRANSACTION"
+    case requestOutGroup = "REQUEST_OUT_GROUP"
 }
 
 class NotificationContentModel: NSObject, Mappable {
@@ -121,6 +122,8 @@ class NotificationModel: NSObject, Mappable {
             } else {
                 return "Giao dịch thất bại gói \(content?.package_name ?? "") trong thời gian \(content?.duration ?? "") tháng"
             }
+        case .requestOutGroup:
+            return "Thiết bị \(content?.affected?.name ?? "") yêu cầu rời khỏi nhóm \(group?.name ?? "")"
         }
     }
     

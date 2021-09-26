@@ -15,7 +15,8 @@ public enum ProfileEnum: Int {
     case help = 3
     case share = 4
     case rate = 5
-    case logout = 6
+    case vipmember = 6
+    case logout = 7
     
     func getIcon() -> UIImage? {
         switch self {
@@ -31,6 +32,8 @@ public enum ProfileEnum: Int {
             return UIImage(named: "ic_share")
         case .rate:
             return UIImage(named: "ic_rate")
+        case .vipmember:
+            return UIImage(named: "vip_member")
         case .logout:
             return UIImage(named: "ic_logout")
         }
@@ -50,6 +53,8 @@ public enum ProfileEnum: Int {
             return "Chia sẻ ứng dụng"
         case .rate:
             return "Đánh giá ứng dụng"
+        case .vipmember:
+            return "Thành viên VIP"
         case .logout:
             return "Đăng xuất"
         }
@@ -82,7 +87,7 @@ class ProfileVC: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var sources: [ProfileEnum] = CacheManager.shared.getIsLogined() ? [.upgradeAccount, .setting, .help, .share, .rate, .logout] : [.upgradeAccount, .setting, .help, .share, .rate]
+    var sources: [ProfileEnum] = CacheManager.shared.getIsLogined() ? [.upgradeAccount, .setting, .help, .share, .rate, .vipmember, .logout] : [.upgradeAccount, .setting, .help, .share, .rate, .vipmember]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,9 +169,17 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             }
         case .share:
             shareApp()
+        case .vipmember:
+            vipMemberAction()
         case .rate:
             rateApp()
         }
+    }
+    
+    func vipMemberAction() {
+        let vc = VipMemberVC()
+        let nav = BaseNavigationController(rootViewController: vc)
+        present(nav, animated: true)
     }
     
     func showLicenseInfo() {
