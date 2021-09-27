@@ -110,7 +110,7 @@ class GroupVC: BaseViewController {
     }
     
     func updateCheckDevice() {
-        if let device = checkDevice, let viewFooter = CheckDeviceView.loadFromNib() {
+        if let device = checkDevice, device.groupId != nil, let viewFooter = CheckDeviceView.loadFromNib() {
             viewFooter.bindingData(group: device)
             viewFooter.onCheckoutPress = {
                 self.showConfirmDelete(title: "Bạn có chắc chắn muốn rời khỏi nhóm?") { [weak self] in

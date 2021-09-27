@@ -61,6 +61,8 @@ class NotificationContentModel: NSObject, Mappable {
     var duration: String?
     var package_name: String?
     var status_payment: String?
+    var deviceId: String?
+    var deviceName: String?
     
     override init() {
         super.init()
@@ -77,6 +79,8 @@ class NotificationContentModel: NSObject, Mappable {
         duration <- map["duration"]
         package_name <- map["package_name"]
         status_payment <- map["status_payment"]
+        deviceId <- map["deviceId"]
+        deviceName <- map["deviceName"]
     }
 }
 
@@ -123,7 +127,7 @@ class NotificationModel: NSObject, Mappable {
                 return "Giao dịch thất bại gói \(content?.package_name ?? "") trong thời gian \(content?.duration ?? "") tháng"
             }
         case .requestOutGroup:
-            return "Thiết bị \(content?.affected?.name ?? "") yêu cầu rời khỏi nhóm \(group?.name ?? "")"
+            return "Thiết bị \(content?.deviceName ?? "") yêu cầu rời khỏi nhóm \(group?.name ?? "")"
         }
     }
     
