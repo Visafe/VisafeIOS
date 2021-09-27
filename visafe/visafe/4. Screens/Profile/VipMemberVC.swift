@@ -34,7 +34,7 @@ class VipMemberVC: BaseViewController {
             GroupWorker.activeVip(key: codeTextfield.text!) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
-                if result?.status_code == 200 {
+                if result?.status_code == 1 {
                     weakSelf.showMessage(title: "Kích hoạt thành viên VIP thành công", content: "") {
                         weakSelf.dismiss(animated: true, completion: nil)
                     }
