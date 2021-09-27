@@ -87,9 +87,12 @@ class DoHNative {
                 onErrorReceived(NativeDnsProviderError.failedToLoadManager)
                 return
             }
-            dnsManager.removeFromPreferences(completionHandler: onErrorReceived)
-            // Check manager status after delete
-            self?.getDnsManagerStatus()
+//            dnsManager.removeFromPreferences(completionHandler: onErrorReceived)
+            dnsManager.removeFromPreferences { (error) in
+                onErrorReceived(error)
+                // Check manager status after delete
+                self?.getDnsManagerStatus()
+            }
         }
     }
 }

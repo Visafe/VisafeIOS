@@ -22,19 +22,10 @@ class BaseDoHVC: BaseViewController {
     func onOffDoH() {
         if DoHNative.shared.isInstalled {
             if DoHNative.shared.isEnabled {
-                if #available(iOS 14.0, *) {
-                    DoHNative.shared.removeDnsManager {[weak self] (error) in
-                        if let _error = error {
-                            self?.isConnecting = false
-                            self?.handleSaveError(_error)
-                            return
-                        }
-                        self?.isConnecting = false
-                        DoHNative.shared.saveDNS {[weak self] (_) in}
-                    }
+                if CacheManager.shared.getPin() != nil {
+                    gotoEnterPin()
                 } else {
-                    // Fallback on earlier versions
-                    self.isConnecting = false
+                    offDoH()
                 }
             } else {
                 self.isConnecting = false
@@ -50,6 +41,38 @@ class BaseDoHVC: BaseViewController {
                 self?.isConnecting = false
             }
         }
+    }
+
+    func offDoH() {
+        if #available(iOS 14.0, *) {
+            DoHNative.shared.removeDnsManager {[weak self] (error) in
+                if let _error = error {
+                    self?.isConnecting = false
+                    self?.handleSaveError(_error)
+                    return
+                }
+                self?.isConnecting = false
+                DoHNative.shared.saveDNS {[weak self] (_) in}
+            }
+        } else {
+            // Fallback on earlier versions
+            self.isConnecting = false
+        }
+    }
+
+    func gotoEnterPin() {
+        let vc = EnterPinVC()
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .fullScreen
+        vc.screenType = .confirmToOffDoH
+        vc.confirmPin = { [weak self] isSuccess in
+            if isSuccess {
+                self?.offDoH()
+            } else {
+                self?.isConnecting = false
+            }
+        }
+        self.navigationController?.present(navi, animated: true, completion: nil)
     }
 
     func handleSaveError(_ error: Error) {

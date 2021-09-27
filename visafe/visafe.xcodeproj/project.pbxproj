@@ -10,6 +10,10 @@
 		0E04B2E926DE2BDA00C31FFE /* DateFormatter+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E04B2E826DE2BD900C31FFE /* DateFormatter+Extention.swift */; };
 		0E229D692682CC3A00559B67 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D682682CC3A00559B67 /* IQKeyboardManagerSwift */; };
 		0E229D872682D3AF00559B67 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 0E229D862682D3AF00559B67 /* Moya */; };
+		0E6A021226FCD4CC0001FB4B /* SVPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A020D26FCD4CC0001FB4B /* SVPinView.swift */; };
+		0E6A021326FCD4CC0001FB4B /* SVPinField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A020E26FCD4CC0001FB4B /* SVPinField.swift */; };
+		0E6A021426FCD4CC0001FB4B /* SVPinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6A021026FCD4CC0001FB4B /* SVPinView.xib */; };
+		0E6A021526FCD4CC0001FB4B /* SVPinCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6A021126FCD4CC0001FB4B /* SVPinCell.xib */; };
 		0E798387268485E60023C916 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E798386268485E60023C916 /* NetworkExtension.framework */; };
 		0E8E2F5926F5DF2400DB50AA /* VersioniOSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E2F5826F5DF2300DB50AA /* VersioniOSModel.swift */; };
 		0E8E2F5D26F5EDA800DB50AA /* ScanResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E2F5B26F5EDA800DB50AA /* ScanResultCell.swift */; };
@@ -337,6 +341,10 @@
 /* Begin PBXFileReference section */
 		0495B1120504033333DDDB59 /* Pods-visafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visafe.release.xcconfig"; path = "Target Support Files/Pods-visafe/Pods-visafe.release.xcconfig"; sourceTree = "<group>"; };
 		0E04B2E826DE2BD900C31FFE /* DateFormatter+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extention.swift"; sourceTree = "<group>"; };
+		0E6A020D26FCD4CC0001FB4B /* SVPinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPinView.swift; sourceTree = "<group>"; };
+		0E6A020E26FCD4CC0001FB4B /* SVPinField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPinField.swift; sourceTree = "<group>"; };
+		0E6A021026FCD4CC0001FB4B /* SVPinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVPinView.xib; sourceTree = "<group>"; };
+		0E6A021126FCD4CC0001FB4B /* SVPinCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVPinCell.xib; sourceTree = "<group>"; };
 		0E798385268485E60023C916 /* visafe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visafe.entitlements; sourceTree = "<group>"; };
 		0E798386268485E60023C916 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		0E8E2F5826F5DF2300DB50AA /* VersioniOSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersioniOSModel.swift; sourceTree = "<group>"; };
@@ -678,6 +686,33 @@
 				0EF5EB1426BA7E14002F5E84 /* DoHNative.swift */,
 			);
 			path = "DoH Native";
+			sourceTree = "<group>";
+		};
+		0E6A020B26FCD4CC0001FB4B /* SVPinView */ = {
+			isa = PBXGroup;
+			children = (
+				0E6A020C26FCD4CC0001FB4B /* Classes */,
+				0E6A020F26FCD4CC0001FB4B /* XIB's */,
+			);
+			path = SVPinView;
+			sourceTree = "<group>";
+		};
+		0E6A020C26FCD4CC0001FB4B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0E6A020D26FCD4CC0001FB4B /* SVPinView.swift */,
+				0E6A020E26FCD4CC0001FB4B /* SVPinField.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0E6A020F26FCD4CC0001FB4B /* XIB's */ = {
+			isa = PBXGroup;
+			children = (
+				0E6A021026FCD4CC0001FB4B /* SVPinView.xib */,
+				0E6A021126FCD4CC0001FB4B /* SVPinCell.xib */,
+			);
+			path = "XIB's";
 			sourceTree = "<group>";
 		};
 		0EC217B22691BB0200B8B8F4 /* tunnel */ = {
@@ -1076,6 +1111,7 @@
 		C98786E526ABC7AD007639ED /* 7 .Library */ = {
 			isa = PBXGroup;
 			children = (
+				0E6A020B26FCD4CC0001FB4B /* SVPinView */,
 				C9F0940526C1495F001CD61D /* QRScanner */,
 				C98786E626ABC7AD007639ED /* HeaderedTabScrollView */,
 			);
@@ -1498,6 +1534,7 @@
 				C956059126AEAB4500AD8475 /* GroupDeviceCell.xib in Resources */,
 				5111F0FA26BAE07200164148 /* ProtectDeviceVC.xib in Resources */,
 				C9C7A9E626B05E9F002C883A /* LicenseOverviewVC.xib in Resources */,
+				0E6A021426FCD4CC0001FB4B /* SVPinView.xib in Resources */,
 				C924CFE626A7D5390058EEDD /* GroupStatisticVC.xib in Resources */,
 				C91EE7D526AC1ABD006ADAE9 /* ProtectHeaderView.xib in Resources */,
 				C934A72426CCF177008B74EC /* ReportWebsiteVC.xib in Resources */,
@@ -1572,6 +1609,7 @@
 				C949D72826B06BF700647FF6 /* LicenseCell.xib in Resources */,
 				0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */,
 				C9FE695D26B795740046AD79 /* AddDeviceToGroupVC.xib in Resources */,
+				0E6A021526FCD4CC0001FB4B /* SVPinCell.xib in Resources */,
 				C952E21B26C61DD500406B61 /* LicenseInfoVC.xib in Resources */,
 				C999AB08268E03F200F657A9 /* GroupSettingCell.xib in Resources */,
 				C90EA7402684C298002502F5 /* LoginVC.xib in Resources */,
@@ -1727,6 +1765,7 @@
 				C9CF060726B9A89B00C7572F /* DeviceListLogVC.swift in Sources */,
 				C9B79466268613A700258A72 /* RegisterVC.swift in Sources */,
 				C9B7948C268626AA00258A72 /* UserModel.swift in Sources */,
+				0E6A021226FCD4CC0001FB4B /* SVPinView.swift in Sources */,
 				C9BC687727005AF900D45490 /* DeviceCheckResult.swift in Sources */,
 				0EF5EB0D26BA534C002F5E84 /* DeviceWorker.swift in Sources */,
 				0EDFD36026C527390053E82B /* BotNetModel.swift in Sources */,
@@ -1734,6 +1773,7 @@
 				0EF5EB1526BA7E14002F5E84 /* DoHNative.swift in Sources */,
 				C979C96E26B6B7DA00F97E4F /* WorkspaceSumaryUnLoginCell.swift in Sources */,
 				C934A72F26CD06F6008B74EC /* ScanOverviewVC.swift in Sources */,
+				0E6A021326FCD4CC0001FB4B /* SVPinField.swift in Sources */,
 				C9E7A49826909E890012985B /* MoreLinkSettingView.swift in Sources */,
 				C9F0940D26C14960001CD61D /* QRScannerError.swift in Sources */,
 				C934A72526CCF177008B74EC /* ReportWebsiteVC.swift in Sources */,
@@ -1986,10 +2026,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = visafe/visafeDebug.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
@@ -2003,7 +2043,7 @@
 				MARKETING_VERSION = 1.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = visafe_develop;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = visafe_develop;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2022,10 +2062,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = visafe/visafe.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
@@ -2040,7 +2080,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vn.visafe;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = vn.visafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = visafe_develop;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = visafe_develop;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";

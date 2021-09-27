@@ -122,6 +122,9 @@ extension ProfileSettingVC: UITableViewDelegate, UITableViewDataSource {
     
     func enterPin() {
         let vc = EnterPinVC()
+        if CacheManager.shared.getPin() != nil {
+            vc.screenType = .confirm
+        }
         vc.onUpdate = {
             self.tableView.reloadData()
         }

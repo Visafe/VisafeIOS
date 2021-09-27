@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SwifterSwift
 class ProtectVC: BaseDoHVC {
     @IBOutlet weak var titleLB: UILabel!
     @IBOutlet weak var contentView: UIView!
@@ -109,9 +109,13 @@ class ProtectVC: BaseDoHVC {
                                                name: NSNotification.Name(rawValue: updateDnsStatus),
                                                object: nil)
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
         self.navigationController?.isNavigationBarHidden = true
         isSetupPin = CacheManager.shared.getPin() != nil
         isProtectWifi = CacheManager.shared.getProtectWifiStatus()
@@ -125,12 +129,11 @@ class ProtectVC: BaseDoHVC {
             return
         }
         lastScanLabel.text = "Lần quét gần nhất \(DateFormatter.timeAgoSinceDate(date: lastScan, currentDate: Date()))"
-
+        
     }
 
     private func setupUI() {
         timeTypeLabel.text = timeType.getTitle()
-//        setSafeMode()
         contentView.dropShadowEdge()
         overView.dropShadowEdge()
         vpnView.dropShadowEdge()

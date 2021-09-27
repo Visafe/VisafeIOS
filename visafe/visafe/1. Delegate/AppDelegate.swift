@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func configKeyboard() {
         IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
     }
     
     func googleAuthen() {

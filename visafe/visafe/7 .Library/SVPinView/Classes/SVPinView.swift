@@ -159,7 +159,9 @@ public class SVPinView: UIView {
             // Not found, so dismiss keyboard
             if index == 1 && shouldDismissKeyboardOnEmptyFirstField {
                 textField.resignFirstResponder()
-            } else if index > 1 { textField.resignFirstResponder() }
+            } else if index > 1 {
+//                textField.resignFirstResponder()
+            }
         }
         
         // activate the placeholder if textField empty

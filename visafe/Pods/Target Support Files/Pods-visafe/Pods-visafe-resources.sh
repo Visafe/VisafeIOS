@@ -100,15 +100,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/ESTabBarController-swift/Sources/en.lproj"
   install_resource "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "${PODS_ROOT}/SVPinView/SVPinView/Source/XIB's/SVPinCell.xib"
-  install_resource "${PODS_ROOT}/SVPinView/SVPinView/Source/XIB's/SVPinView.xib"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/ESTabBarController-swift/Sources/en.lproj"
   install_resource "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "${PODS_ROOT}/SVPinView/SVPinView/Source/XIB's/SVPinCell.xib"
-  install_resource "${PODS_ROOT}/SVPinView/SVPinView/Source/XIB's/SVPinView.xib"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

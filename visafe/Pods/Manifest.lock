@@ -104,7 +104,6 @@ PODS:
   - PageMenu (2.0.0)
   - PromisesObjC (1.2.12)
   - SideMenuSwift (2.0.7)
-  - SVPinView (1.0.11)
   - SwiftyUserDefaults (5.3.0)
   - Toast-Swift (5.0.1)
 
@@ -120,7 +119,6 @@ DEPENDENCIES:
   - MJRefresh
   - PageMenu
   - SideMenuSwift
-  - SVPinView
   - SwiftyUserDefaults
   - Toast-Swift
 
@@ -150,7 +148,6 @@ SPEC REPOS:
     - PageMenu
     - PromisesObjC
     - SideMenuSwift
-    - SVPinView
     - SwiftyUserDefaults
     - Toast-Swift
 
@@ -179,10 +176,9 @@ SPEC CHECKSUMS:
   PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SideMenuSwift: ffbbc88d23741932177ad1320df837cedfb3bc5e
-  SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 64659a522b991f6eeef0798cccf8a4887e267ff6
+PODFILE CHECKSUM: 60cd29960eb95ae7c5999a16fa88bc800bfd7685
 
 COCOAPODS: 1.10.1

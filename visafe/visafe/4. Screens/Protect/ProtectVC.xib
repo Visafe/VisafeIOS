@@ -40,13 +40,17 @@
             <rect key="frame" x="0.0" y="0.0" width="394" height="2100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="OVi-ig-fVL">
-                    <rect key="frame" x="0.0" y="0.0" width="394" height="2066"/>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgL-gB-ffB">
+                    <rect key="frame" x="0.0" y="0.0" width="394" height="44"/>
+                    <color key="backgroundColor" red="0.041736073790000001" green="0.0013024458890000001" blue="0.22354698179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="OVi-ig-fVL">
+                    <rect key="frame" x="0.0" y="44" width="394" height="2022"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bG0-fL-wi6" userLabel="ContentView">
                             <rect key="frame" x="0.0" y="0.0" width="394" height="1685"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47d-Zg-pZK" userLabel="HeaderView">
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47d-Zg-pZK" userLabel="HeaderView">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="175"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_premium_bg" translatesAutoresizingMaskIntoConstraints="NO" id="FeZ-jp-LiC">
@@ -1280,8 +1284,8 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="bG0-fL-wi6" firstAttribute="top" secondItem="OVi-ig-fVL" secondAttribute="top" id="1UL-JO-CY4"/>
+                        <constraint firstAttribute="bottom" secondItem="bG0-fL-wi6" secondAttribute="bottom" id="80m-qV-Gm0"/>
                         <constraint firstItem="bG0-fL-wi6" firstAttribute="leading" secondItem="OVi-ig-fVL" secondAttribute="leading" id="BIg-yj-4iK"/>
-                        <constraint firstAttribute="bottom" secondItem="bG0-fL-wi6" secondAttribute="bottom" constant="20" symbolic="YES" id="oOq-e4-hn6"/>
                         <constraint firstAttribute="trailing" secondItem="bG0-fL-wi6" secondAttribute="trailing" id="qSB-xG-NtA"/>
                     </constraints>
                 </scrollView>
@@ -1289,10 +1293,14 @@
             <viewLayoutGuide key="safeArea" id="UTM-Pl-P5e"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="OVi-ig-fVL" firstAttribute="top" secondItem="x4T-qE-Kqf" secondAttribute="top" id="0L5-dh-dOr"/>
+                <constraint firstItem="OVi-ig-fVL" firstAttribute="top" secondItem="UTM-Pl-P5e" secondAttribute="top" id="0L5-dh-dOr"/>
+                <constraint firstItem="rgL-gB-ffB" firstAttribute="top" secondItem="x4T-qE-Kqf" secondAttribute="top" id="35b-bd-ADC"/>
                 <constraint firstItem="UTM-Pl-P5e" firstAttribute="bottom" secondItem="OVi-ig-fVL" secondAttribute="bottom" id="AcB-Fx-ceD"/>
                 <constraint firstItem="bG0-fL-wi6" firstAttribute="width" secondItem="x4T-qE-Kqf" secondAttribute="width" id="CXx-0i-bqn"/>
                 <constraint firstAttribute="trailing" secondItem="OVi-ig-fVL" secondAttribute="trailing" id="R6O-Oo-lJC"/>
+                <constraint firstItem="rgL-gB-ffB" firstAttribute="leading" secondItem="x4T-qE-Kqf" secondAttribute="leading" id="Sx1-Ch-9e8"/>
+                <constraint firstAttribute="trailing" secondItem="rgL-gB-ffB" secondAttribute="trailing" id="Wh3-WN-Ytp"/>
+                <constraint firstItem="OVi-ig-fVL" firstAttribute="top" secondItem="rgL-gB-ffB" secondAttribute="bottom" id="czi-zX-aDy"/>
                 <constraint firstItem="OVi-ig-fVL" firstAttribute="leading" secondItem="x4T-qE-Kqf" secondAttribute="leading" id="z8s-oS-Gka"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -1306,7 +1314,7 @@
         <image name="ic_ads" width="48" height="48"/>
         <image name="ic_allow_down" width="20" height="20"/>
         <image name="ic_premium" width="82" height="24"/>
-        <image name="ic_premium_bg" width="343" height="186"/>
+        <image name="ic_premium_bg" width="375" height="188"/>
         <image name="p_ads" width="40" height="38"/>
         <image name="p_check-data-leak" width="48" height="48"/>
         <image name="p_check-email-spoofing" width="48" height="48"/>
