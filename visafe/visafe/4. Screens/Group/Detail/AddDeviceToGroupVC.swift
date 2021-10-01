@@ -7,6 +7,7 @@
 
 import UIKit
 import Toast_Swift
+import FirebaseDynamicLinks
 
 class AddDeviceToGroupVC: BaseViewController {
 
@@ -44,13 +45,7 @@ class AddDeviceToGroupVC: BaseViewController {
     }
     
     @IBAction func shareAction(_ sender: Any) {
-        let link = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")"
-        if let link = NSURL(string: link) {
-            let objectsToShare = ["Chia sẻ",link] as [Any]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
-            self.present(activityVC, animated: true, completion: nil)
-        }
+        sharedLink()
     }
     
     @IBAction func addCurrentDeviceAction(_ sender: Any) {
@@ -86,11 +81,23 @@ class AddDeviceToGroupVC: BaseViewController {
     }
     
     @IBAction func copyLinkAction(_ sender: Any) {
-        let pasteboard = UIPasteboard.general
-        let link = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")"
-        pasteboard.string = link
-        // toast with a specific duration and position
-        self.view.makeToast("Sao chép thành công", duration: 3.0, position: .bottom)
+        let shareLink = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")&d=1"
+        guard let newSharelink = URL(string: shareLink) else { return }
+        guard let components = DynamicLinkComponents.init(link: newSharelink, domainURIPrefix: "https://visafencsc.page.link") else { return }
+        let iOSParams = DynamicLinkIOSParameters(bundleID: "vn.visafe")
+        iOSParams.appStoreID = ""
+        components.iOSParameters = iOSParams
+        let options = DynamicLinkComponentsOptions()
+        options.pathLength = .short
+        components.options = options
+        components.shorten { (shortURL, warnings, error) in
+            if let link = shortURL?.absoluteString {
+                let pasteboard = UIPasteboard.general
+                pasteboard.string = link
+                // toast with a specific duration and position
+                self.view.makeToast("Sao chép thành công", duration: 3.0, position: .bottom)
+            }
+        }
     }
     
     @IBAction func downloadAction(_ sender: Any) {
@@ -110,6 +117,27 @@ class AddDeviceToGroupVC: BaseViewController {
         let link = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")"
         if let url = URL(string: link) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    fileprivate func sharedLink() {
+        let shareLink = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")&d=1"
+        guard let newSharelink = URL(string: shareLink) else { return }
+        guard let components = DynamicLinkComponents.init(link: newSharelink, domainURIPrefix: "https://visafencsc.page.link") else { return }
+        let iOSParams = DynamicLinkIOSParameters(bundleID: "vn.visafe")
+        iOSParams.appStoreID = ""
+        components.iOSParameters = iOSParams
+        let options = DynamicLinkComponentsOptions()
+        options.pathLength = .short
+        components.options = options
+        
+        components.shorten { (shortURL, warnings, error) in
+            if let link = shortURL {
+                let objectsToShare = ["Chia sẻ",link] as [Any]
+                let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+                activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+                self.present(activityVC, animated: true, completion: nil)
+            }
         }
     }
 }

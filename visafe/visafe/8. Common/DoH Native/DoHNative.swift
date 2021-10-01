@@ -31,7 +31,6 @@ class DoHNative {
         let request = UNNotificationRequest(identifier: "localNotification", content: content, trigger: trigger)
 
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-
     }
 
     func saveDNS(_ onSavedStatus: @escaping (_ error: Error?) -> Void) {

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -61,7 +62,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phòng 1: Marketing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fW-r8-Xo0">
-                            <rect key="frame" x="112" y="194" width="142.5" height="19.5"/>
+                            <rect key="frame" x="24" y="194" width="318" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -346,9 +347,11 @@
                         <constraint firstAttribute="trailing" secondItem="1Hq-F9-dkj" secondAttribute="trailing" id="iwD-iE-epU"/>
                         <constraint firstItem="eLW-uv-kYx" firstAttribute="top" secondItem="MIv-7B-U69" secondAttribute="bottom" constant="4" id="nNW-5J-H3N"/>
                         <constraint firstAttribute="trailing" secondItem="RBY-QT-kdC" secondAttribute="trailing" constant="24" id="sWO-Od-C2b"/>
+                        <constraint firstAttribute="trailing" secondItem="1fW-r8-Xo0" secondAttribute="trailing" constant="24" id="tQx-Ks-l7K"/>
                         <constraint firstItem="y7G-dg-y9J" firstAttribute="top" secondItem="NSe-1s-hGW" secondAttribute="top" constant="20" id="u7E-tJ-lra"/>
                         <constraint firstItem="y7G-dg-y9J" firstAttribute="leading" secondItem="NSe-1s-hGW" secondAttribute="leading" constant="12" id="uFm-G1-U8N"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eLW-uv-kYx" secondAttribute="trailing" constant="24" id="uYE-Jj-MXv"/>
+                        <constraint firstItem="1fW-r8-Xo0" firstAttribute="leading" secondItem="NSe-1s-hGW" secondAttribute="leading" constant="24" id="vIc-aB-EAQ"/>
                         <constraint firstItem="eLW-uv-kYx" firstAttribute="centerX" secondItem="NSe-1s-hGW" secondAttribute="centerX" id="yDG-Gs-gC8"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>

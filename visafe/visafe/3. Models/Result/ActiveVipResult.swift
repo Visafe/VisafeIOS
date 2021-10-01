@@ -11,6 +11,7 @@ import ObjectMapper
 class ActiveVipResult: Mappable {
 
     var status_code: Int?
+    var key_info: ActiveVipKeyInfoResult?
 
     required init?(map: Map) {
 
@@ -18,5 +19,31 @@ class ActiveVipResult: Mappable {
 
     func mapping(map: Map) {
         status_code <- map["status_code"]
+        key_info <- map["key_info"]
+    }
+}
+
+class ActiveVipKeyInfoResult: Mappable {
+
+    var IsActive: Bool?
+    var DOHurl: String?
+    var Expired: String?
+    var Key: String?
+    var CreatedAt: String?
+    var ActiveNum: Int?
+    var DeviceIds: [String]?
+
+    required init?(map: Map) {
+
+    }
+
+    func mapping(map: Map) {
+        IsActive <- map["IsActive"]
+        DOHurl <- map["DOHurl"]
+        Expired <- map["Expired"]
+        Key <- map["Key"]
+        CreatedAt <- map["CreatedAt"]
+        ActiveNum <- map["ActiveNum"]
+        DeviceIds <- map["DeviceIds"]
     }
 }
