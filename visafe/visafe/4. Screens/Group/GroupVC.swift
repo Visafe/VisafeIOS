@@ -129,7 +129,11 @@ class GroupVC: BaseViewController {
         GroupWorker.requestOutGroup(groupId: device.groupId ?? "") { [weak self] (result, error) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
-            weakSelf.refreshData()
+            if result?.responseCode == 200 {
+                weakSelf.showMessage(title: "", content: "Gửi yêu cầu rời nhóm thành công!")
+            } else {
+                weakSelf.showError(title: "", content: "Có lỗi xảy ra. Vui lòng thử lại!")
+            }
         }
     }
     

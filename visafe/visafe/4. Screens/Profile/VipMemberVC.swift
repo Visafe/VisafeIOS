@@ -34,12 +34,14 @@ class VipMemberVC: BaseViewController {
             GroupWorker.activeVip(key: codeTextfield.text!) { [weak self] (result, error) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
-                if result?.status_code == 1 {
+                if result?.responseCode == 200{
                     weakSelf.showMessage(title: "Kích hoạt thành viên VIP thành công", content: "") {
                         weakSelf.dismiss(animated: true, completion: nil)
                     }
-                } else {
+                } else if result?.responseCode == 400 {
                     weakSelf.showError(title: "Mã xác nhận không hợp lệ", content: "")
+                } else {
+                    weakSelf.showError(title: "Có lỗi xảy ra. Vui lòng thử lại!", content: "")
                 }
             }
         }

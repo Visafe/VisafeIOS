@@ -207,6 +207,7 @@
 		C99FD1D9269746C200A8F731 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99FD1D7269746C200A8F731 /* ProfileVC.xib */; };
 		C9A15B4D2699BFDA0065D5C2 /* GroupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A15B4C2699BFDA0065D5C2 /* GroupHeaderView.swift */; };
 		C9A15B502699BFE50065D5C2 /* GroupHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A15B4F2699BFE50065D5C2 /* GroupHeaderView.xib */; };
+		C9A90CCF2708006600A79D52 /* LeaveGroupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A90CCE2708006600A79D52 /* LeaveGroupResult.swift */; };
 		C9B00E7726C19D01009AD4DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9B00E7626C19D01009AD4DB /* GoogleService-Info.plist */; };
 		C9B1E9A726B6EE2E00FC2F7E /* InviteMemberResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B1E9A626B6EE2E00FC2F7E /* InviteMemberResult.swift */; };
 		C9B1E9AD26B6FA9400FC2F7E /* DeleteDeviceGroupParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B1E9AC26B6FA9400FC2F7E /* DeleteDeviceGroupParam.swift */; };
@@ -540,6 +541,7 @@
 		C99FD1D7269746C200A8F731 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		C9A15B4C2699BFDA0065D5C2 /* GroupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHeaderView.swift; sourceTree = "<group>"; };
 		C9A15B4F2699BFE50065D5C2 /* GroupHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupHeaderView.xib; sourceTree = "<group>"; };
+		C9A90CCE2708006600A79D52 /* LeaveGroupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveGroupResult.swift; sourceTree = "<group>"; };
 		C9B00E7626C19D01009AD4DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9B1E9A626B6EE2E00FC2F7E /* InviteMemberResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteMemberResult.swift; sourceTree = "<group>"; };
 		C9B1E9AC26B6FA9400FC2F7E /* DeleteDeviceGroupParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDeviceGroupParam.swift; sourceTree = "<group>"; };
@@ -1226,6 +1228,7 @@
 				C9BC687627005AF900D45490 /* DeviceCheckResult.swift */,
 				C9BC68842700720600D45490 /* ActiveVipResult.swift */,
 				C9BC68872700762300D45490 /* JoinGroupResult.swift */,
+				C9A90CCE2708006600A79D52 /* LeaveGroupResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -1815,6 +1818,7 @@
 				C9E5C78926873BC600D159EF /* BaseMessageView.swift in Sources */,
 				C9181411269B46CA00DC0E83 /* NotificationWorker.swift in Sources */,
 				C9777A31269AC5E100C40031 /* ProfileCell.swift in Sources */,
+				C9A90CCF2708006600A79D52 /* LeaveGroupResult.swift in Sources */,
 				C93ED16D2682343C00B03E8A /* BaseNavigationController.swift in Sources */,
 				C971FA0426974E6F00BB7118 /* PostGroupAboutCell.swift in Sources */,
 				C91EE80126AC8D17006ADAE9 /* QueryLogModel.swift in Sources */,

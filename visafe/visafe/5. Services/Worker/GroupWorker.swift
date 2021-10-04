@@ -423,15 +423,15 @@ class GroupWorker {
     }
     
     static func requestOutGroup(groupId: String,
-                                completion: @escaping (_ result: BaseResult?,
+                                completion: @escaping (_ result: LeaveGroupResult?,
                                                        _ error: Error?) -> Void) {
         let router = APIRouter.requestOutGroup(groupId: groupId)
         APIManager.shared.request(target: router) { (data, error, statusCode) in
-            var loginResult: BaseResult?
+            var loginResult: LeaveGroupResult?
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    loginResult = Mapper<BaseResult>().map(JSONObject: json)
+                    loginResult = Mapper<LeaveGroupResult>().map(JSONObject: json)
                 } catch { }
             }
             completion(loginResult, error)
@@ -448,6 +448,7 @@ class GroupWorker {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
                     loginResult = Mapper<ActiveVipResult>().map(JSONObject: json)
+                    loginResult?.responseCode = statusCode
                 } catch { }
             }
             completion(loginResult, error)

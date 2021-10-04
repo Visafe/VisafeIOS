@@ -12,6 +12,7 @@ class ActiveVipResult: Mappable {
 
     var status_code: Int?
     var key_info: ActiveVipKeyInfoResult?
+    var responseCode: Int?
 
     required init?(map: Map) {
 
