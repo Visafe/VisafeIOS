@@ -86,7 +86,7 @@ class ChangePasswordVC: BaseViewController {
     
     func handleResponse(result: ChangePasswordResult?, error: Error?, statusCode: Int?) {
         if result == nil && error == nil && statusCode == 200 {
-            showMessage(title: "Đổi mật khẩu thành công", content: "Visafe đã sẵn sàng bảo vệ bạn") { [weak self] in
+            showMessage(title: "Đổi mật khẩu thành công", content: "") { [weak self] in
                 guard let weakSelf = self else { return }
                 CacheManager.shared.setPassword(value: weakSelf.passwordTextfield.text!)
                 for controller in (weakSelf.navigationController!.viewControllers) {

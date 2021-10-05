@@ -11,6 +11,7 @@ import SwiftMessages
 public enum EnterValueViewEnum: Int {
     case link = 1
     case deviceName = 2
+    case userName = 3
 }
 
 class BaseEnterValueView: MessageViewBase {
@@ -40,6 +41,10 @@ class BaseEnterValueView: MessageViewBase {
             titleViewLabel.text = "Thiết bị"
             nameLabel.text = name
             enterTextfield.placeholder = "Nhập tên thiết bị"
+        case .userName:
+            titleViewLabel.text = "Chỉnh sửa thông tin cá nhân"
+            nameLabel.text = name
+            enterTextfield.placeholder = "Nhập tên"
         }
     }
     
@@ -70,6 +75,11 @@ class BaseEnterValueView: MessageViewBase {
             if value.isEmpty {
                 success = false
                 descriptionLabel.text = "Tên thiết bị không được để trống"
+            }
+        } else if type == .userName {
+            if value.isEmpty {
+                success = false
+                descriptionLabel.text = "Tên không được để trống"
             }
         }
         return success

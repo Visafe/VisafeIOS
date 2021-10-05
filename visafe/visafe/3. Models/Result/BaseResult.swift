@@ -11,8 +11,13 @@ import ObjectMapper
 class BaseResult: Mappable {
     
     var msg: String?
+    var responseCode: Int?
     
     required init?(map: Map) {
+        
+    }
+    
+    init() {
         
     }
     

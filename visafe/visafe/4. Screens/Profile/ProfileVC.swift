@@ -113,6 +113,10 @@ class ProfileVC: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        getProfile()
+    }
+    
+    func getProfile() {
         AuthenWorker.profile { [weak self] (user, error) in
             guard let weakSelf = self else { return }
             CacheManager.shared.setCurrentUser(value: user)
@@ -144,6 +148,10 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         headerView?.actionLogin = {  [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.login()
+        }
+        headerView?.actionProfile = {  [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.editProfile()
         }
         headerView?.bindingData()
         return headerView
@@ -282,6 +290,38 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func shareApp() {
         let activity = UIActivityViewController(activityItems: [URL(string: "https://apps.apple.com/vn/app/visafe/id1564635388")!],applicationActivities: nil)
         present(activity, animated: true, completion: nil)
+    }
+    
+    func editProfile() {
+        guard let username = CacheManager.shared.getCurrentUser()?.fullname else { return }
+        guard let view = BaseEnterValueView.loadFromNib() else { return }
+        view.bindingData(type: .userName, name: "")
+        view.enterTextfield.text = username
+        view.acceptAction = { [weak self] name in
+            guard let weakSelf = self else { return }
+            weakSelf.updateNameUser(userName: name)
+        }
+        showPopup(view: view)
+    }
+    
+    func updateNameUser(userName: String?) {
+        guard let user = CacheManager.shared.getCurrentUser() else { return }
+        user.fullname = userName
+        showLoading()
+        let param = ChangeProfileParam()
+        param.full_name = userName
+        param.email = user.email
+        param.phone_number = user.phonenumber
+        AuthenWorker.changeUserProfile(param: param) { [weak self] (result, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.hideLoading()
+            if result?.responseCode == 200 {
+                self?.showMessage(title: "", content: "Cập nhật thành công")
+                self?.getProfile()
+            } else {
+                self?.showError(title: "", content: "Có lỗi xảy ra. Vui lòng thử lại!")
+            }
+        }
     }
 }
 

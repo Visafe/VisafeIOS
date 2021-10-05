@@ -182,4 +182,13 @@ class AuthenWorker {
             completion(loginResult, error)
         }
     }
+    
+    static func changeUserProfile(param: ChangeProfileParam, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+        let router = APIRouter.changeUseProfile(param: param)
+        APIManager.shared.request(target: router) { (data, error, statusCode) in
+            let result = BaseResult()
+            result.responseCode = statusCode
+            completion(result, error)
+        }
+    }
 }
