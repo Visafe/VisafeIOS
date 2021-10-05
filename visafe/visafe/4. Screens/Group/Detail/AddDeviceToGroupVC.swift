@@ -83,7 +83,7 @@ class AddDeviceToGroupVC: BaseViewController {
     @IBAction func copyLinkAction(_ sender: Any) {
         let shareLink = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")&d=1"
         guard let newSharelink = URL(string: shareLink) else { return }
-        guard let components = DynamicLinkComponents.init(link: newSharelink, domainURIPrefix: "https://visafencsc.page.link") else { return }
+        guard let components = DynamicLinkComponents.init(link: newSharelink, domainURIPrefix: "https://firebase.visafe.vn") else { return }
         let iOSParams = DynamicLinkIOSParameters(bundleID: "vn.visafe")
         iOSParams.appStoreID = ""
         components.iOSParameters = iOSParams
@@ -123,7 +123,7 @@ class AddDeviceToGroupVC: BaseViewController {
     fileprivate func sharedLink() {
         let shareLink = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")&d=1"
         guard let newSharelink = URL(string: shareLink) else { return }
-        guard let components = DynamicLinkComponents.init(link: newSharelink, domainURIPrefix: "https://visafencsc.page.link") else { return }
+        guard let components = DynamicLinkComponents.init(link: newSharelink, domainURIPrefix: "https://firebase.visafe.vn") else { return }
         let iOSParams = DynamicLinkIOSParameters(bundleID: "vn.visafe")
         iOSParams.appStoreID = ""
         components.iOSParameters = iOSParams
