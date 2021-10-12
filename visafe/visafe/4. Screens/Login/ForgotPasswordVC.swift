@@ -35,7 +35,7 @@ class ForgotPasswordVC: BaseViewController {
                 name = "84" + username.dropFirst()
             }
             showLoading()
-            AuthenWorker.forgotPassword(username: name) { [weak self] (result, error) in
+            AuthenWorker.forgotPassword(username: name) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
                 weakSelf.handleResponse(result: result, error: error)

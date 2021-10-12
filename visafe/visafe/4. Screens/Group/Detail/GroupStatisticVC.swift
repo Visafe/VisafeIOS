@@ -40,7 +40,7 @@ class GroupStatisticVC: BaseViewController {
     func prepareData() {
         guard let grId = group.groupid else { return }
         showLoading()
-        GroupWorker.getStatistic(grId: grId, limit: timeType.rawValue) { [weak self] (statistic, error) in
+        GroupWorker.getStatistic(grId: grId, limit: timeType.rawValue) { [weak self] (statistic, error, responseCode) in
             guard let weakSelf = self else { return }
             if let model = statistic {
                 weakSelf.statisticModel = model

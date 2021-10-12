@@ -137,7 +137,7 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
         param.groupId = group.groupid
         param.deviceId = device.deviceID
         param.deviceMonitorID = device.deviceMonitorID
-        GroupWorker.deleteDevice(param: param) { [weak self] (result, error) in
+        GroupWorker.deleteDevice(param: param) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.listDevice.removeFirst(where: { (d) -> Bool in
@@ -169,7 +169,7 @@ extension GroupListDeviceVC: UITableViewDelegate, UITableViewDataSource {
         param.deviceOwner = device.deviceOwner
         param.deviceType = device.deviceType?.rawValue
         param.deviceDetail = device.deviceDetail
-        GroupWorker.updateDevice(param: param) { [weak self] (result, error) in
+        GroupWorker.updateDevice(param: param) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.reloadData()

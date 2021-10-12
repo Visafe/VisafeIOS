@@ -39,7 +39,7 @@ class GroupSettingDetailVC: BaseViewController {
     }
     
     func refreshData() {
-        GroupWorker.getGroup(id: group.groupid!) { (group, error) in
+        GroupWorker.getGroup(id: group.groupid!) { (group, error, responseCode) in
             if let g = group {
                 self.group = g
                 self.bindingData()
@@ -92,7 +92,7 @@ extension GroupSettingDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func updateGroup() {
         showLoading()
-        GroupWorker.update(group: group) { [weak self] (group, error) in
+        GroupWorker.update(group: group) { [weak self] (group, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
         }

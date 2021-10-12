@@ -121,7 +121,7 @@ class GroupProtectVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate
     
     func updateGroup() {
         showLoading()
-        GroupWorker.update(group: group) { [weak self] (group, error) in
+        GroupWorker.update(group: group) { [weak self] (group, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             if error == nil {

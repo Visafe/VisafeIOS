@@ -85,7 +85,7 @@ class ChangePasswordVC: BaseViewController {
     }
     
     func handleResponse(result: ChangePasswordResult?, error: Error?, statusCode: Int?) {
-        if result == nil && error == nil && statusCode == 200 {
+        if statusCode == 200 {
             showMessage(title: "Đổi mật khẩu thành công", content: "") { [weak self] in
                 guard let weakSelf = self else { return }
                 CacheManager.shared.setPassword(value: weakSelf.passwordTextfield.text!)
@@ -97,8 +97,7 @@ class ChangePasswordVC: BaseViewController {
                 }
             }
         } else {
-            let content = result?.status_code?.getDescription() ?? "Có lỗi xảy ra. Vui lòng thử lại."
-            showError(title: "Đổi mật khẩu lỗi", content: content)
+            showError(title: "Đổi mật khẩu lỗi", content: result?.local_msg ?? "")
         }
     }
 }

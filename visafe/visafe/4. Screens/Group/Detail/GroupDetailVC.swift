@@ -53,7 +53,7 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
     }
     
     func refreshData() {
-        GroupWorker.getGroup(id: group.groupid!) { [weak self] (group, error) in
+        GroupWorker.getGroup(id: group.groupid!) { [weak self] (group, error, responseCode) in
             guard let weakSelf = self else { return }
             if let g = group {
                 weakSelf.group = g
@@ -213,7 +213,7 @@ class GroupDetailVC: HeaderedPageMenuScrollViewController, CAPSPageMenuDelegate 
         guard let groupId = group.groupid else { return }
         guard let userId = CacheManager.shared.getCurrentUser()?.userid else { return }
         showLoading()
-        GroupWorker.delete(groupId: groupId, userId: userId) { [weak self] (result, error) in
+        GroupWorker.delete(groupId: groupId, userId: userId) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.updateGroup?()

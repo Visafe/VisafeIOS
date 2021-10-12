@@ -141,7 +141,7 @@ class ScanVC: BaseViewController {
     }
 
     func checkBotNet() {
-        GroupWorker.checkBotNet {[weak self] (response, error) in
+        GroupWorker.checkBotNet {[weak self] (response, error, responseCode) in
             guard let self = self else { return }
             let botnetDetails = response?.detail ?? []
             self.scanSuccess?(botnetDetails.isEmpty, self.type)
@@ -167,7 +167,7 @@ class ScanVC: BaseViewController {
     }
 
     func getiOSVersion() {
-        GroupWorker.getNewestiOSVersion(name: Device.identifier) {[weak self] (model, error) in
+        GroupWorker.getNewestiOSVersion(name: Device.identifier) {[weak self] (model, error, responseCode) in
             guard let self = self else { return }
             guard let version = model?.version else {
                 self.scanSuccess?(false, self.type)

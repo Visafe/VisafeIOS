@@ -31,7 +31,7 @@ class ListWorkspaceVC: BaseViewController {
     }
     
     @objc func refreshData() {
-        WorkspaceWorker.getList { [weak self] (list, error) in
+        WorkspaceWorker.getList { [weak self] (list, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.tableView.endRefreshing()
             CacheManager.shared.setWorkspacesResult(value: list)
@@ -41,7 +41,7 @@ class ListWorkspaceVC: BaseViewController {
     
     @objc func prepareData() {
         showLoading()
-        WorkspaceWorker.getList { [weak self] (list, error) in
+        WorkspaceWorker.getList { [weak self] (list, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.tableView.endRefreshing()
@@ -181,7 +181,7 @@ extension ListWorkspaceVC: UITableViewDelegate, UITableViewDataSource {
     
     func deleteWorkspace(workspace: WorkspaceModel) {
         showLoading()
-        WorkspaceWorker.delete(wspId: workspace.id) { [weak self] (result, error) in
+        WorkspaceWorker.delete(wspId: workspace.id) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.refreshData()

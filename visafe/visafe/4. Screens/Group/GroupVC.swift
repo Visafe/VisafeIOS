@@ -80,12 +80,12 @@ class GroupVC: BaseViewController {
     func prepareData() {
         guard let wspId = CacheManager.shared.getCurrentWorkspace()?.id else { return }
         showLoading()
-        WorkspaceWorker.getStatistic(wspId: wspId, limit: timeType.rawValue) { [weak self] (result, error) in
+        WorkspaceWorker.getStatistic(wspId: wspId, limit: timeType.rawValue) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             if let model = result {
                 weakSelf.statisticModel = model
             }
-            GroupWorker.list(wsid: wspId) { [weak self] (result, error) in
+            GroupWorker.list(wsid: wspId) { [weak self] (result, error, responseCode) in
                 guard let strongSelf = self else { return }
                 strongSelf.hideLoading()
                 strongSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
@@ -101,7 +101,7 @@ class GroupVC: BaseViewController {
     }
     
     func getCheckDevice() {
-        GroupWorker.checkDevice { [weak self] (result, error) in
+        GroupWorker.checkDevice { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.tableView.endRefreshing()
             weakSelf.checkDevice = result
@@ -126,13 +126,13 @@ class GroupVC: BaseViewController {
     
     func actionRequestGroup(device: DeviceCheckResult) {
         showLoading()
-        GroupWorker.requestOutGroup(groupId: device.groupId ?? "") { [weak self] (result, error) in
+        GroupWorker.requestOutGroup(groupId: device.groupId ?? "") { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
-            if result?.responseCode == 200 {
+            if responseCode == 200 {
                 weakSelf.showMessage(title: "", content: "Gửi yêu cầu rời nhóm thành công!")
             } else {
-                weakSelf.showError(title: "", content: "Có lỗi xảy ra. Vui lòng thử lại!")
+                weakSelf.showError(title: "", content: result?.local_msg ?? "")
             }
         }
     }
@@ -149,12 +149,12 @@ class GroupVC: BaseViewController {
             tableView.reloadData()
             if CacheManager.shared.getIsLogined() {
                 guard let wspId = CacheManager.shared.getCurrentWorkspace()?.id else { return tableView.endRefreshing() }
-                WorkspaceWorker.getStatistic(wspId: wspId, limit: timeType.rawValue) { [weak self] (result, error) in
+                WorkspaceWorker.getStatistic(wspId: wspId, limit: timeType.rawValue) { [weak self] (result, error, responseCode) in
                     guard let weakSelf = self else { return }
                     if let model = result {
                         weakSelf.statisticModel = model
                     }
-                    GroupWorker.list(wsid: wspId) { [weak self] (result, error) in
+                    GroupWorker.list(wsid: wspId) { [weak self] (result, error, responseCode) in
                         guard let strongSelf = self else { return }
                         strongSelf.myGroups = result?.clients?.filter({ (m) -> Bool in
                             return m.isOwner == true
@@ -234,7 +234,7 @@ class GroupVC: BaseViewController {
     
     func deleteWorkspace(workspace: WorkspaceModel) {
         showLoading()
-        WorkspaceWorker.delete(wspId: workspace.id) { [weak self] (result, error) in
+        WorkspaceWorker.delete(wspId: workspace.id) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.updateWorkspaceWithDelete(id: workspace.id)
@@ -486,7 +486,7 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
         guard let groupId = group.groupid else { return }
         guard let userId = group.fkUserId else { return }
         showLoading()
-        GroupWorker.delete(groupId: groupId, userId: userId) { [weak self] (result, error) in
+        GroupWorker.delete(groupId: groupId, userId: userId) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.refreshData()
@@ -512,7 +512,7 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func detailGroup(group: GroupModel) {
         showLoading()
-        GroupWorker.getGroup(id: group.groupid!) { (agroup, error) in
+        GroupWorker.getGroup(id: group.groupid!) { (_group, error, responseCode) in
             self.hideLoading()
             let vc = GroupDetailVC(group: group)
             vc.updateGroup = { [weak self] in

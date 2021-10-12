@@ -55,7 +55,7 @@ class NotificationVC: BaseViewController {
     
     func prepareData() {
         showLoading()
-        NotificationWorker.list(page: pageIndex) { [weak self] (result, error) in
+        NotificationWorker.list(page: pageIndex) { [weak self] (result, error, responseCode)  in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.sources = weakSelf.sources + (result?.notis ?? [])
@@ -76,7 +76,7 @@ class NotificationVC: BaseViewController {
             pageIndex = 1
             sources = []
             tableView.reloadData()
-            NotificationWorker.list(page: pageIndex) { [weak self] (result, error) in
+            NotificationWorker.list(page: pageIndex) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.sources = result?.notis ?? []
                 weakSelf.tableView.endRefreshing()
@@ -94,7 +94,7 @@ class NotificationVC: BaseViewController {
     
     func loadNotifications() {
         if canLoadMore == false { return }
-        NotificationWorker.list(page: pageIndex) { [weak self] (result, error) in
+        NotificationWorker.list(page: pageIndex) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.sources = weakSelf.sources + (result?.notis ?? [])
             weakSelf.tableView.endRefreshing()
@@ -152,7 +152,7 @@ extension NotificationVC: UITableViewDelegate, UITableViewDataSource {
         guard let id = notifi.id else { return }
         if notifi.isRead == false {
             notifi.isRead = true
-            NotificationWorker.readNotification(id: id) { (result, error) in }
+            NotificationWorker.readNotification(id: id) { (result, error, responseCode) in }
             reloadData()
         }
     }

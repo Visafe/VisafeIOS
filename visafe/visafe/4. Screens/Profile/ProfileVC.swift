@@ -117,7 +117,7 @@ class ProfileVC: BaseViewController {
     }
     
     func getProfile() {
-        AuthenWorker.profile { [weak self] (user, error) in
+        AuthenWorker.profile { [weak self] (user, error, responseCode) in
             guard let weakSelf = self else { return }
             CacheManager.shared.setCurrentUser(value: user)
             weakSelf.tableView.reloadData()
@@ -264,7 +264,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func paymentSuccess() {
-        AuthenWorker.profile { [weak self] (user, error) in
+        AuthenWorker.profile { [weak self] (user, error, responseCode) in
             guard let weakSelf = self else { return }
             if let u = user {
                 CacheManager.shared.setCurrentUser(value: u)
@@ -312,14 +312,14 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         param.full_name = userName
         param.email = user.email
         param.phone_number = user.phonenumber
-        AuthenWorker.changeUserProfile(param: param) { [weak self] (result, error) in
+        AuthenWorker.changeUserProfile(param: param) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
-            if result?.responseCode == 200 {
+            if responseCode == 200 {
                 self?.showMessage(title: "", content: "Cập nhật thành công")
                 self?.getProfile()
             } else {
-                self?.showError(title: "", content: "Có lỗi xảy ra. Vui lòng thử lại!")
+                self?.showError(title: "", content: result?.local_msg ?? "")
             }
         }
     }

@@ -52,7 +52,7 @@ class LoginVC: BaseViewController {
                 }
             }
             loginParam.password = passwordTextfield.text
-            AuthenWorker.login(param: loginParam) { [weak self] (result, error) in
+            AuthenWorker.login(param: loginParam) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.handleLogin(result: result, error: error)
             }
@@ -76,7 +76,7 @@ class LoginVC: BaseViewController {
     }
     
     func getWorkspaces() {
-        WorkspaceWorker.getList { [weak self] (list, error) in
+        WorkspaceWorker.getList { [weak self] (list, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading {
                 CacheManager.shared.setIsLogined(value: true)
@@ -104,7 +104,7 @@ class LoginVC: BaseViewController {
     }
     
     func getProfile() {
-        AuthenWorker.profile { [weak self] (user, error) in
+        AuthenWorker.profile { [weak self] (user, error, responseCode) in
             guard let weakSelf = self else { return }
             CacheManager.shared.setCurrentUser(value: user)
             weakSelf.getWorkspaces()
@@ -174,7 +174,7 @@ class LoginVC: BaseViewController {
     
     func loginFacebook(token: String?) {
         showLoading()
-        AuthenWorker.loginFacebook(token: token) { [weak self] (result, error) in
+        AuthenWorker.loginFacebook(token: token) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.handleLogin(result: result, error: error)
         }
@@ -207,7 +207,7 @@ class LoginVC: BaseViewController {
     
     func sendOTP(model: PasswordModel) {
         let username = model.email ?? model.phone_number ?? ""
-        AuthenWorker.forgotPassword(username: username) { (result, error) in
+        AuthenWorker.forgotPassword(username: username) { (result, error, responseCode) in
         }
     }
 }
@@ -217,7 +217,7 @@ extension LoginVC: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let token = user?.authentication.idToken {
             showLoading()
-            AuthenWorker.loginGoogle(token: token) { [weak self] (result, error) in
+            AuthenWorker.loginGoogle(token: token) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.handleLogin(result: result, error: error)
             }
@@ -235,7 +235,7 @@ extension LoginVC: ASAuthorizationControllerDelegate, ASAuthorizationControllerP
     
     func loginApple(token: String?) {
         showLoading()
-        AuthenWorker.loginApple(token: token) { [weak self] (result, error) in
+        AuthenWorker.loginApple(token: token) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.handleLogin(result: result, error: error)
         }

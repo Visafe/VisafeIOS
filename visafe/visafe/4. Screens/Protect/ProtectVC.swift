@@ -175,7 +175,7 @@ class ProtectVC: BaseDoHVC {
         }
         dispatchGroup.enter()
         dispatchGroup.enter()
-        GroupWorker.getGroup(id: groupId) { [weak self] (group, error) in
+        GroupWorker.getGroup(id: groupId) { [weak self] (group, error, responseCode) in
             guard let self = self else { return }
             self.groupModel = group
             self.dispatchGroup.leave()
@@ -203,7 +203,7 @@ class ProtectVC: BaseDoHVC {
             return
         }
         GroupWorker.getStatistic(grId: groupId,
-                                 limit: timeType.rawValue) { [weak self] (statistic, error) in
+                                 limit: timeType.rawValue) { [weak self] (statistic, error, responseCode) in
             guard let self = self else { return }
             self.statisticModel = statistic
             if leaveDispatchGroup {
@@ -246,7 +246,7 @@ class ProtectVC: BaseDoHVC {
         if isShowloading {
             showLoading()
         }
-        GroupWorker.update(group: group) { [weak self] (group, error) in
+        GroupWorker.update(group: group) { [weak self] (group, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             if error == nil {

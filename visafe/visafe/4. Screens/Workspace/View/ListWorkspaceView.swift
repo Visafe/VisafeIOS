@@ -36,7 +36,7 @@ class ListWorkspaceView: MessageViewBase {
     }
     
     @objc func refreshData() {
-        WorkspaceWorker.getList { [weak self] (list, error) in
+        WorkspaceWorker.getList { [weak self] (list, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.tableView.endRefreshing()
             CacheManager.shared.setWorkspacesResult(value: list)
@@ -45,7 +45,7 @@ class ListWorkspaceView: MessageViewBase {
     }
     
     @objc func prepareData() {
-        WorkspaceWorker.getList { [weak self] (list, error) in
+        WorkspaceWorker.getList { [weak self] (list, error, responseCode) in
             guard let weakSelf = self else { return }
             CacheManager.shared.setWorkspacesResult(value: list)
             weakSelf.loadData()

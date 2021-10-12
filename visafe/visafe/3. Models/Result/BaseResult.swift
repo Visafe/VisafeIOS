@@ -12,6 +12,7 @@ class BaseResult: Mappable {
     
     var msg: String?
     var responseCode: Int?
+    var local_msg: String?
     
     required init?(map: Map) {
         
@@ -23,5 +24,6 @@ class BaseResult: Mappable {
     
     func mapping(map: Map) {
         msg <- map["msg"]
+        local_msg <- map["local_msg"]
     }
 }
