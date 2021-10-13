@@ -34,11 +34,11 @@ extension UIColor {
     }
     
     class func mainColorOrange() -> UIColor {
-        return UIColor.init(hexString: kColorMainOrange)!
+        return UIColor.init(hexString: "FFB31F")!
     }
     
     class func mainColorBlue() -> UIColor {
-        return UIColor.init(hexString: kColorMainBlue)!
+        return UIColor.init(hexString: "33B6FF")!
     }
     
     class func mainColorGray() -> UIColor {

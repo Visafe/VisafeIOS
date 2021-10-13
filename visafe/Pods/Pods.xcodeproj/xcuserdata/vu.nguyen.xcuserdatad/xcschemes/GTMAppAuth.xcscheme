@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8627999EF1D5E93E13DAFF580DA8CDCF"
-               BuildableName = "libGTMAppAuth.a"
+               BuildableName = "GTMAppAuth.framework"
                BlueprintName = "GTMAppAuth"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

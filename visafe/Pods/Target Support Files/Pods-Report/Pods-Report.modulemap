@@ -1,0 +1,6 @@
+framework module Pods_Report {
+  umbrella header "Pods-Report-umbrella.h"
+
+  export *
+  module * { export * }
+}

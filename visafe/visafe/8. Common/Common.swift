@@ -34,6 +34,9 @@ class Common {
     }
 
     class func getDnsServer() -> String {
+        if let _vip = CacheManager.shared.getVipDOH() {
+            return _vip + CacheManager.shared.getDeviceId()
+        }
         return String(format: dnsServer, CacheManager.shared.getDeviceId())
     }
 }

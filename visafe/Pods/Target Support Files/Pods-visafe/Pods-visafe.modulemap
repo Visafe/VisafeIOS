@@ -1,4 +1,4 @@
-module Pods_visafe {
+framework module Pods_visafe {
   umbrella header "Pods-visafe-umbrella.h"
 
   export *

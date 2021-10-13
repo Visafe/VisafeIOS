@@ -35,6 +35,11 @@ class VipMemberVC: BaseViewController {
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
                 if result?.responseCode == 200{
+                    CacheManager.shared.setVipStatus(value: result?.key_info?.DOHurl)
+                    if #available(iOS 14.0, *) {
+                        DoHNative.shared.resetDnsSetting()
+                    } else {
+                    }
                     weakSelf.showMessage(title: "Kích hoạt thành viên VIP thành công", content: "") {
                         weakSelf.dismiss(animated: true, completion: nil)
                     }

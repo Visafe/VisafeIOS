@@ -13,8 +13,8 @@ import SwiftyJSON
 class CommonWorker {
 
     static func reportWebsite(url: String, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
-        let router = APIRouter.reportPhishing(url: url)
-        APIManager.shared.request(target: router) { (data, error, statusCode) in
+        let router = ReportAPIRouter.reportPhishing(url: url)
+        ReportAPIManager.shared.request(target: router) { (data, error, statusCode) in
             var result: BaseResult?
             if let data = data {
                 do {

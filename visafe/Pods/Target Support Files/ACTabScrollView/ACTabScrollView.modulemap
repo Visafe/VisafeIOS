@@ -1,4 +1,4 @@
-module ACTabScrollView {
+framework module ACTabScrollView {
   umbrella header "ACTabScrollView-umbrella.h"
 
   export *

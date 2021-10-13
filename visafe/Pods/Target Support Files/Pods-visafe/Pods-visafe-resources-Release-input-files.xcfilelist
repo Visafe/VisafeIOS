@@ -1,4 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-visafe/Pods-visafe-resources.sh
-${PODS_ROOT}/ESTabBarController-swift/Sources/en.lproj
 ${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle
-${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
