@@ -113,16 +113,16 @@ class TabbarVC: BaseTabbarController {
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item is ESTabBarItem {
-            updateStateMainButton(selected: true)
-        } else {
-            updateStateMainButton(selected: false)
-        }
         let isLogin = CacheManager.shared.getIsLogined()
         if !isLogin && ([4].contains(item.tag)) {
             showFormLogin(item: item)
         } else {
             super.tabBar(tabBar, didSelect: item)
+            if item is ESTabBarItem {
+                updateStateMainButton(selected: true)
+            } else {
+                updateStateMainButton(selected: false)
+            }
         }
         if item.tag == 4 {
             item.badgeValue = nil
