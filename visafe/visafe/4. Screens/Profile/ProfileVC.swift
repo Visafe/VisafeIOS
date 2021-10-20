@@ -87,7 +87,7 @@ class ProfileVC: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var sources: [ProfileEnum] = CacheManager.shared.getIsLogined() ? [.upgradeAccount, .setting, .help, .share, .rate, .vipmember, .logout] : [.upgradeAccount, .setting, .help, .share, .rate, .vipmember]
+    var sources: [ProfileEnum] = CacheManager.shared.getIsLogined() ? [.setting, .help, .share, .rate, .vipmember, .logout] : [.setting, .help, .share, .rate, .vipmember]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +97,7 @@ class ProfileVC: BaseViewController {
     
     @objc func refreshData() {
         guard isViewLoaded else { return }
-        sources = CacheManager.shared.getIsLogined() ? [.upgradeAccount, .setting, .help, .share, .rate, .logout] : [.upgradeAccount, .setting, .help, .share, .rate]
+        sources = CacheManager.shared.getIsLogined() ? [.upgradeAccount, .setting, .help, .share, .rate, .vipmember, .logout] : [.upgradeAccount, .setting, .help, .share, .rate, .vipmember]
         tableView.reloadData()
     }
     
@@ -211,17 +211,18 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = ProfileFooterView.loadFromNib()
-        footerView?.bindingData()
-        footerView?.upgrade = { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.showLicense()
-        }
-        footerView?.register = { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.login()
-        }
-        return footerView
+//        let footerView = ProfileFooterView.loadFromNib()
+//        footerView?.bindingData()
+//        footerView?.upgrade = { [weak self] in
+//            guard let weakSelf = self else { return }
+//            weakSelf.showLicense()
+//        }
+//        footerView?.register = { [weak self] in
+//            guard let weakSelf = self else { return }
+//            weakSelf.login()
+//        }
+//        return footerView
+        return nil
     }
     
     func login() {

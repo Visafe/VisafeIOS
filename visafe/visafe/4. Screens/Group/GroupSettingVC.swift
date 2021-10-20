@@ -233,13 +233,25 @@ extension GroupSettingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = GroupSettingHeaderView.loadFromNib()
-        headerView?.binding(data: sources[section])
-        headerView?.switchChangeValue = { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.tableView.reloadData()
+        let model = sources[section]
+        if model.type == .website {
+            let headerView = GroupWebsiteSettingHeaderView.loadFromNib()
+            headerView?.binding(type: group.websiteType)
+            headerView?.onChangeTab = { type in
+                self.group.bindingData(sources: self.sources)
+                self.group.websiteType = type
+                self.prepareData()
+            }
+            return headerView
+        } else {
+            let headerView = GroupSettingHeaderView.loadFromNib()
+            headerView?.binding(data: sources[section])
+            headerView?.switchChangeValue = { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.tableView.reloadData()
+            }
+            return headerView
         }
-        return headerView
     }
 }
 

@@ -39,7 +39,7 @@ public enum OnboardingEnum: Int {
         case .step1:
             return "Phòng tránh nguy cơ, thiệt hại từ các cuộc tấn công mạng, lừa đảo trực tuyến"
         case .step2:
-            return "Bảo đảm quyền riêng tư trên mạng & chặn các quảng cáo độc hại, khó chịu"
+            return "Bảo đảm quyền riêng tư trên mạng & chặn các độc hại, khó chịu"
         case .step3:
             return "Tự quản lý, bảo đảm một không gian mạng xanh, sạch cho gia đình, tổ chức"
         }
