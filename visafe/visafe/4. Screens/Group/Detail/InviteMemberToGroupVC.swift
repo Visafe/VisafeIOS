@@ -43,9 +43,19 @@ class InviteMemberToGroupVC: BaseViewController {
     @IBAction func doneAction(_ sender: Any) {
         if validateInfo() {
             let param = InviteToGroupParam()
-            let username = nameTextfield.text ?? ""
+            let username = nameTextfield.text ?? "0"
+            var name = ""
+            if username.isValidEmail { // email
+                name = username
+            } else { // sdt
+                if username.starts(with: "84") {
+                    name = username
+                } else {
+                    name = "84" + username.dropFirst()
+                }
+            }
             param.groupID = group.groupid
-            param.usernames = [username]
+            param.usernames = [name]
             showLoading()
             GroupWorker.inviteToGroup(param: param) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
@@ -54,8 +64,7 @@ class InviteMemberToGroupVC: BaseViewController {
                     weakSelf.onDone?(user)
                     weakSelf.navigationController?.popViewController()
                 } else {
-                    let type = result?.status_code ?? .defaultStatus
-                    weakSelf.showError(title: "Thêm thành viên không thành công", content: type.getDescription())
+                    weakSelf.showError(title: "Thêm thành viên không thành công", content: result?.local_msg ?? "")
                 }
             }
         }
