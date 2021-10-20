@@ -21,14 +21,6 @@ let keyWindow = UIApplication.shared.connectedScenes
 let kNavigationHeight: CGFloat = (keyWindow?.safeAreaInsets.top ?? 0) + 44
 let kTabbarHeight: CGFloat = (keyWindow?.safeAreaInsets.bottom ?? 0) + 50
 
-
-// ListColorRandon
-let hexRandomColor: [String] = ["54C0EB", "C18EFC", "63C663", "F89B4B", "F5766B", "3FBE8D", "FF7E8C", "F89B4B", "45C66C"]
-
-// Color
-let kColorMainOrange = "FFB31F"
-let kColorMainBlue = "33B6FF"
-
 // TableName
 let kDatabaseName = "ecdata"
 let kLessonTitles = "lesson_titles"
@@ -40,3 +32,4 @@ let updateDnsStatus = "updateDnsStatus"
 let kPaymentSuccess = "kPaymentSuccess"
 
 let dnsServer = "https://dns.visafe.vn/dns-query/%@"
+//let dnsServer = "https://dns-staging.visafe.vn/dns-query/%@"

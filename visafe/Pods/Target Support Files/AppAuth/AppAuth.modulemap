@@ -1,4 +1,4 @@
-module AppAuth {
+framework module AppAuth {
   umbrella header "AppAuth-umbrella.h"
 
   export *

@@ -97,7 +97,7 @@ class HomeVC: BaseDoHVC {
         view.layer.insertSublayer(gradient, at: 0)
         let device = Device.current
         switch device {
-        case .iPhone4, .iPhone5, .iPhone6, .iPhone7, .iPhone8, .iPhoneSE, .iPhoneSE2, .simulator(.iPhone8):
+        case .iPhone4, .iPhone5, .iPhone6, .iPhone7, .iPhone8, .iPhoneSE, .iPhoneSE2, .iPhone8Plus, .iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .simulator(.iPhone8Plus), .simulator(.iPhone6s):
             boundLeading.constant = 32
             scanHeight.constant = 50
             powerViewBottom.constant = 24

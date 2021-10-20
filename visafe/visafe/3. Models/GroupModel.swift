@@ -305,6 +305,7 @@ class GroupModel: NSObject, Mappable {
     var log_enabled: Bool?
     var safebrowsing_enabled: Bool?
     var disallowed_rule: String = ""
+    var link_invite_device: String?
     var local_msg: String?
     var websiteType: GroupWebsiteSettingHeaderEnum = .block
     
@@ -354,6 +355,7 @@ class GroupModel: NSObject, Mappable {
         log_enabled <- map["log_enabled"]
         safebrowsing_enabled <- map["safebrowsing_enabled"]
         disallowed_rule <- map["disallowed_rule"]
+        link_invite_device <- map["link_invite_device"]
         local_msg <- map["local_msg"]
     }
     

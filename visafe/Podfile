@@ -3,17 +3,14 @@
 
 target 'visafe' do
   # Comment the next line if you don't want to use dynamic frameworks
-  #use_frameworks!
-  use_modular_headers!
+  use_frameworks!
+#  use_modular_headers!
 
-#  pod 'SDWebImage'
   pod 'DACircularProgress'
   pod 'MBProgressHUD'
   pod 'MJRefresh'
   pod 'GoogleSignIn'
-  pod 'SwiftyUserDefaults'
   pod 'SideMenuSwift'
-#  pod 'SVPinView'
   pod "ESTabBarController-swift"
   pod 'PageMenu'
   pod 'ACTabScrollView'
@@ -21,5 +18,16 @@ target 'visafe' do
   pod 'Firebase/DynamicLinks'
   pod 'Firebase/Messaging'
   pod 'Toast-Swift'
+  shared_pods
+end
 
+target 'Report' do
+  use_frameworks!
+  shared_pods
+end
+
+def shared_pods
+
+  pod 'Moya'
+  pod 'ObjectMapper'
 end

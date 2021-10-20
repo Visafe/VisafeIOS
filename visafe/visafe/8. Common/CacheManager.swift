@@ -25,6 +25,7 @@ let kPassword = "kPassword"
 let kNotification = "kNotification"
 let kScanIssueNumber = "kScanIssueNumber"
 let kFCMToken = "kFCMToken"
+let kVIP = "kVIP"
 
 class CacheManager {
     
@@ -193,6 +194,16 @@ class CacheManager {
     
     func setFCMToken(value: String?) {
         userDefault.set(value, forKey: kFCMToken)
+        userDefault.synchronize()
+    }
+
+    func getVipDOH() -> String? {
+        let value = userDefault.string(forKey: kVIP)
+        return value
+    }
+
+    func setVipStatus(value: String?) {
+        userDefault.set(value, forKey: kVIP)
         userDefault.synchronize()
     }
 }

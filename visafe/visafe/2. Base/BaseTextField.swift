@@ -26,7 +26,7 @@ class BaseTextField: UITextField {
             cornerRadius = 8
         case .active:
             self.type = type
-            borderColor = UIColor.mainColorOrange()
+            borderColor = UIColor(hexString: "FFB31F")
             borderWidth = 1
             cornerRadius = 8
         case .error:

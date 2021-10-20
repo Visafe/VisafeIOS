@@ -1,4 +1,4 @@
-module DACircularProgress {
+framework module DACircularProgress {
   umbrella header "DACircularProgress-umbrella.h"
 
   export *

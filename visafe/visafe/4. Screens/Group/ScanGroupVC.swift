@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 import Toast_Swift
-
+import FirebaseDynamicLinks
 
 class ScanGroupVC: BaseViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var cancelButton: UIButton!
@@ -51,6 +51,14 @@ extension ScanGroupVC: QRScannerViewDelegate {
     }
 
     func qrScannerView(_ qrScannerView: QRScannerView, didSuccess code: String) {
+        //Todo: apply dynamic link handle
+        guard let url = URL(string: code) else { return }
+        DynamicLinks.dynamicLinks().handleUniversalLink(url) {[weak self] dynamiclink, error in
+            self?.handleInvite(dynamiclink?.url?.absoluteString ?? "")
+        }
+    }
+
+    func handleInvite(_ code: String) {
         guard let link = code.checkInviteDevicelink() else {
             self.view.makeToast("Link không đúng định dạng", duration: 2, position: .bottom)
             Timer.scheduledTimer(timeInterval: 2, target: self, selector:#selector(self.reScan), userInfo: nil , repeats:false)

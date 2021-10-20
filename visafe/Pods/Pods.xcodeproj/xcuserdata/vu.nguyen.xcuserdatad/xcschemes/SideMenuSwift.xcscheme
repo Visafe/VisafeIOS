@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "873002DBC460B8090EFD7E391AA04141"
-               BuildableName = "libSideMenuSwift.a"
+               BuildableName = "SideMenuSwift.framework"
                BlueprintName = "SideMenuSwift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

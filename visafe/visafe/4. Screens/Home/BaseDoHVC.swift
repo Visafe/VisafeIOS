@@ -20,6 +20,7 @@ class BaseDoHVC: BaseViewController {
     }
 
     func onOffDoH() {
+        DoHNative.shared.canPushNoti = true
         if DoHNative.shared.isInstalled {
             if DoHNative.shared.isEnabled {
                 if CacheManager.shared.getPin() != nil {

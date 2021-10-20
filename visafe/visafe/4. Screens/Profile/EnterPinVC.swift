@@ -25,9 +25,9 @@ class EnterPinVC: BaseViewController {
     
     var onUpdate:(() -> Void)?
     var confirmPin:((Bool) -> Void)?
-
     var confirmPass: String?
     var screenType: PinScreenType = CacheManager.shared.getPin() != nil ? .change: .create
+    var isFromProtect = false
     var enableButton = true {
         didSet {
             if oldValue != enableButton {
@@ -160,11 +160,16 @@ class EnterPinVC: BaseViewController {
             let vc = EnterPinVC()
             vc.confirmPass = pinView.getPin()
             vc.onUpdate = onUpdate
+            vc.isFromProtect = isFromProtect
             navigationController?.pushViewController(vc)
         } else {
             CacheManager.shared.setPin(value: pinView.getPin())
             onUpdate?()
-            backToSetting()
+            if isFromProtect {
+                self.navigationController?.popToRootViewController(animated: true)
+            } else {
+                backToSetting()
+            }
         }
     }
 

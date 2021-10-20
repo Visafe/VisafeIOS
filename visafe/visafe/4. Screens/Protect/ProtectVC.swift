@@ -146,7 +146,7 @@ class ProtectVC: BaseDoHVC {
         protectAdAndFollowStackView.isHidden = !isLogin
         overView.isHidden = !isLogin
         protectFamilyView.isHidden = !isLogin
-        registerInfoView.isHidden = !isLogin
+        registerInfoView.isHidden = true//!isLogin
     }
 
     private func setSafeMode() {
@@ -388,10 +388,11 @@ extension ProtectVC {
     }
     func postGroup() {
         let postVC = PostGroupVC()
-//        postVC.onDone = { [weak self] in
-//            guard let weakSelf = self else { return }
+        postVC.onDone = { [weak self] in
+            guard let weakSelf = self else { return }
 //            weakSelf.refreshData()
-//        }
+            weakSelf.tabBarController?.selectedIndex = 1
+        }
         let nav = BaseNavigationController(rootViewController: postVC)
         present(nav, animated: true, completion: nil)
     }
@@ -399,6 +400,7 @@ extension ProtectVC {
     @IBAction func createSecurity(_ sender: Any) {
         let vc = EnterPinVC()
         vc.hidesBottomBarWhenPushed = true
+        vc.isFromProtect = true
         navigationController?.pushViewController(vc)
     }
     

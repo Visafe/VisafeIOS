@@ -1,4 +1,4 @@
-module PageMenu {
+framework module PageMenu {
   umbrella header "PageMenu-umbrella.h"
 
   export *

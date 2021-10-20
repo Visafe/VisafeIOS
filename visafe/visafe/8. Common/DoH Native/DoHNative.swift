@@ -15,10 +15,14 @@ class DoHNative {
         didSet {
             if oldValue != isEnabled {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: updateDnsStatus), object: nil)
-                pushNoti()
+                if canPushNoti {
+                    pushNoti()
+                }
+
             }
         }
     }
+    var canPushNoti = false
     var isInstalled = false
 
     func pushNoti() {
@@ -64,6 +68,19 @@ class DoHNative {
             }
             self.isInstalled = manager.dnsSettings != nil
             self.isEnabled = manager.isEnabled
+        }
+    }
+
+    @available(iOS 14.0, *)
+    func resetDnsSetting() {
+        loadDnsManager { dnsManager in
+            guard let manager = dnsManager else {
+                return
+            }
+            (manager.dnsSettings as? NEDNSOverHTTPSSettings)?.serverURL = URL(string: Common.getDnsServer())
+            manager.saveToPreferences { _ in
+
+            }
         }
     }
 

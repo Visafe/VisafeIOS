@@ -91,11 +91,6 @@ enum APIRouter {
     case changeUseProfile(param: ChangeProfileParam)
 }
 
-enum APIError: Error {
-    case serverLogicError(message: String)
-    case parseError
-}
-
 extension APIError: LocalizedError {
     var errorDescription: String? {
         switch self {
@@ -105,10 +100,6 @@ extension APIError: LocalizedError {
             return "There is something wrong with data."
         }
     }
-}
-
-enum APIConstant {
-    static let baseURL = "https://app.visafe.vn/api/v1"
 }
 
 extension APIRouter: TargetType {

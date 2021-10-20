@@ -33,11 +33,11 @@ class AddDeviceToGroupVC: BaseViewController {
     }
     
     func configView() {
-        let link = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")"
+        guard let link = group.link_invite_device else { return }
         guard let qrURLImage = URL(string: link)?.qrImage(using: UIColor(hexString: "021C5C")!, logo: UIImage(named: "ic_logo_qr")) else { return }
         qrCodeImageView.image = qrURLImage
         groupNameLabel.text = "Nhóm: \(group.name ?? "")"
-        linkButton.setTitle("https://app.visafe.vn/\(group.groupid ?? "")", for: .normal)
+        linkButton.setTitle(link, for: .normal)
     }
     
     @IBAction func closeAction(_ sender: Any) {
@@ -114,31 +114,18 @@ class AddDeviceToGroupVC: BaseViewController {
     }
     
     @IBAction func linkAction(_ sender: Any) {
-        let link = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")"
+        guard let link = group.link_invite_device else { return }
         if let url = URL(string: link) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
     fileprivate func sharedLink() {
-        let shareLink = "https://app.visafe.vn/control/invite/device?groupId=\(group.groupid ?? "")&groupName=\(group.name?.urlEncoded ?? "")&d=1"
-        guard let newSharelink = URL(string: shareLink) else { return }
-        guard let components = DynamicLinkComponents.init(link: newSharelink, domainURIPrefix: "https://firebase.visafe.vn") else { return }
-        let iOSParams = DynamicLinkIOSParameters(bundleID: "vn.visafe")
-        iOSParams.appStoreID = ""
-        components.iOSParameters = iOSParams
-        let options = DynamicLinkComponentsOptions()
-        options.pathLength = .short
-        components.options = options
-        
-        components.shorten { (shortURL, warnings, error) in
-            if let link = shortURL {
-                let objectsToShare = ["Chia sẻ",link] as [Any]
-                let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-                activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
-                self.present(activityVC, animated: true, completion: nil)
-            }
-        }
+        guard let link = group.link_invite_device else { return }
+        let objectsToShare = [link] as [Any]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+        self.present(activityVC, animated: true, completion: nil)
     }
 }
 
