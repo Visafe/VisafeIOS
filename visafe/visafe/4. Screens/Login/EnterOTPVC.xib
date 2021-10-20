@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EnterOTPVC" customModule="visafe" customModuleProvider="target">
             <connections>
+                <outlet property="contentButtonContraint" destination="UJo-Rg-mGd" id="h1f-dP-aCe"/>
                 <outlet property="continueButton" destination="EUs-Wk-z0c" id="msQ-YD-vPL"/>
                 <outlet property="descriptionLabel" destination="VuK-qu-AR9" id="xZ5-4c-hBd"/>
                 <outlet property="pinView" destination="xNu-QY-0vd" id="J5b-f9-KLQ"/>
@@ -124,7 +125,7 @@
                 <constraint firstItem="3Om-Rl-tTv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="IKM-G1-wVz"/>
                 <constraint firstItem="VuK-qu-AR9" firstAttribute="top" secondItem="lwR-7J-InN" secondAttribute="bottom" constant="16" id="LMO-Lk-Y6B"/>
                 <constraint firstItem="VuK-qu-AR9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="ObR-yi-AjJ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mvW-He-0yO" secondAttribute="bottom" constant="8" id="UJo-Rg-mGd"/>
+                <constraint firstAttribute="bottom" secondItem="mvW-He-0yO" secondAttribute="bottom" constant="42" id="UJo-Rg-mGd"/>
                 <constraint firstItem="3Om-Rl-tTv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="X8r-Sk-n8c"/>
                 <constraint firstItem="xNu-QY-0vd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Xe8-qg-9UH"/>
                 <constraint firstItem="mvW-He-0yO" firstAttribute="top" secondItem="EUs-Wk-z0c" secondAttribute="bottom" constant="8" id="YVt-Al-FbR"/>

@@ -19,6 +19,7 @@ class EnterOTPVC: BaseViewController {
     @IBOutlet weak var sendOTPButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pinView: SVPinView!
+    @IBOutlet weak var contentButtonContraint: NSLayoutConstraint!
     var model: PasswordModel
     var timeDown: Int = 90
     var timer = Timer()
@@ -62,6 +63,10 @@ class EnterOTPVC: BaseViewController {
         // start the timer
         timer.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -149,6 +154,32 @@ class EnterOTPVC: BaseViewController {
             timer.invalidate()
             sendOTPButton.setTitle("Gửi lại OTP", for: .normal)
             sendOTPButton.isUserInteractionEnabled = true
+        }
+    }
+    
+    @objc func keyboardWillHide(_ sender: Notification) {
+        if let userInfo = (sender as NSNotification).userInfo {
+            if let _ = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height {
+                if #available(iOS 13.0, *) {
+                    let window = UIApplication.shared.windows[0]
+                    contentButtonContraint.constant = window.safeAreaInsets.bottom
+                } else {
+                    let window = UIApplication.shared.keyWindow
+                    contentButtonContraint.constant = window?.safeAreaInsets.bottom ?? 0
+                }
+                UIView.animate(withDuration: 0.25, animations: { () -> Void in self.view.layoutIfNeeded() })
+            }
+        }
+    }
+    @objc func keyboardWillShow(_ sender: Notification) {
+        if let userInfo = (sender as NSNotification).userInfo {
+            if let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height {
+                contentButtonContraint.constant = keyboardHeight
+
+                UIView.animate(withDuration: 0.25, animations: { () -> Void in
+                    self.view.layoutIfNeeded()
+                })
+            }
         }
     }
     
