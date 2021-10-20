@@ -57,10 +57,10 @@ class JoinGroupVC: BaseViewController {
     
     func addDeviceToGroup(device: AddDeviceToGroupParam) {
         showLoading()
-        GroupWorker.addDevice(param: device) { [weak self] (result, error) in
+        GroupWorker.addDevice(param: device) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
-            if result?.status_code == .success {
+            if responseCode == 200 {
                 weakSelf.showMessage(title: "Tham gia nhóm thành công", content: "Bây giờ, thiết bị của bạn sẽ được bảo vệ bởi nhóm \(device.groupName ?? "")") { [weak self] in
                     guard let strongSelf = self else { return }
                     strongSelf.dismissJoinGroup?()
@@ -69,7 +69,7 @@ class JoinGroupVC: BaseViewController {
                     }
                 }
             } else {
-                weakSelf.showError(title: "Tham gia nhóm thất bại", content: InviteDeviceStatus.defaultStatus.getDescription())
+                weakSelf.showError(title: "Tham gia nhóm thất bại", content: result?.local_msg ?? "")
             }
         }
     }

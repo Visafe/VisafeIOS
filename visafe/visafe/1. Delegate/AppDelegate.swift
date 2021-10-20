@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func addDeviceToGroup(device: AddDeviceToGroupParam) {
-        GroupWorker.addDevice(param: device) { [weak self] (result, error) in
+        GroupWorker.addDevice(param: device) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             if result?.status_code == .success {
                 let alert = UIAlertController(title: "Thông báo", message: "Tham gia nhóm thành công" , preferredStyle: UIAlertController.Style.alert)
@@ -121,7 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func postSendToken(token: String?) {
         // regiser token
-        DeviceWorker.registerDevice(token: token) { (result, error) in }
+        DeviceWorker.registerDevice(token: token) { (result, error, responseCode) in }
     }
 
     func configApplePush(_ application: UIApplication) {
@@ -184,7 +184,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func genDeviceId() {
         if !CacheManager.shared.isDeviceIdExist() {
-            DeviceWorker.genDeviceId { (result, error) in
+            DeviceWorker.genDeviceId { (result, error, responseCode) in
                 if let deviceId = result?.deviceId {
                     CacheManager.shared.setDeviceId(value: deviceId)
                 }

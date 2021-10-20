@@ -203,6 +203,7 @@
 		C979C97326B6E39700F97E4F /* InviteMemberToGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979C97126B6E39700F97E4F /* InviteMemberToGroupVC.swift */; };
 		C979C97426B6E39700F97E4F /* InviteMemberToGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C979C97226B6E39700F97E4F /* InviteMemberToGroupVC.xib */; };
 		C97A1C22269F39D200EC98DC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A1C21269F39D100EC98DC /* DateExtension.swift */; };
+		C97D3769270CA96100C68B11 /* ChangeProfileParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D3768270CA96100C68B11 /* ChangeProfileParam.swift */; };
 		C98786EA26ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98786E826ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift */; };
 		C98786F826ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98786F726ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift */; };
 		C99034D32694C3C1009C078F /* TextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99034D22694C3C0009C078F /* TextfieldExtension.swift */; };
@@ -561,6 +562,7 @@
 		C979C97126B6E39700F97E4F /* InviteMemberToGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteMemberToGroupVC.swift; sourceTree = "<group>"; };
 		C979C97226B6E39700F97E4F /* InviteMemberToGroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteMemberToGroupVC.xib; sourceTree = "<group>"; };
 		C97A1C21269F39D100EC98DC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		C97D3768270CA96100C68B11 /* ChangeProfileParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileParam.swift; sourceTree = "<group>"; };
 		C98786E826ABC7AD007639ED /* HeaderedPageMenuScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderedPageMenuScrollViewController.swift; sourceTree = "<group>"; };
 		C98786F726ABCA0B007639ED /* AbstractHeaderedTabScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractHeaderedTabScrollViewController.swift; sourceTree = "<group>"; };
 		C99034D22694C3C0009C078F /* TextfieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldExtension.swift; sourceTree = "<group>"; };
@@ -1261,6 +1263,7 @@
 				C91EE7F826AC897A006ADAE9 /* QueryLogParam.swift */,
 				C9ECBFBB26AF0CB300E254BB /* GroupUpdateWhitelistParam.swift */,
 				C9B1E9AC26B6FA9400FC2F7E /* DeleteDeviceGroupParam.swift */,
+				C97D3768270CA96100C68B11 /* ChangeProfileParam.swift */,
 			);
 			path = Param;
 			sourceTree = "<group>";
@@ -1879,6 +1882,7 @@
 				C91EE7EE26AC7414006ADAE9 /* GroupListUserVC.swift in Sources */,
 				C94B39C2268A260D00046958 /* DeleteToGroupParam.swift in Sources */,
 				C9BC68882700762300D45490 /* JoinGroupResult.swift in Sources */,
+				C97D3769270CA96100C68B11 /* ChangeProfileParam.swift in Sources */,
 				C99FD1D8269746C200A8F731 /* ProfileVC.swift in Sources */,
 				C940AE99268377540069B830 /* NSObjectExtension.swift in Sources */,
 				0EF083B026C23C2900D58F12 /* WebViewVC.swift in Sources */,

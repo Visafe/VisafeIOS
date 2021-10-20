@@ -66,16 +66,16 @@ class AddDeviceToGroupVC: BaseViewController {
         device.groupId = group.groupid
         device.groupName = group.name
         showLoading()
-        GroupWorker.addDevice(param: device) { [weak self] (result, error) in
+        GroupWorker.addDevice(param: device) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
-            if result?.status_code == .success {
+            if responseCode == 200 {
                 weakSelf.showMessage(title: "Thêm thiết bị thành công", content: InviteDeviceStatus.success.getDescription())
                 weakSelf.addDevice?(device.toDeviceModel())
                 
             } else {
                 let error = result?.status_code ?? .defaultStatus
-                weakSelf.showError(title: "Thêm thiết bị thất bại", content: error.getDescription())
+                weakSelf.showError(title: "Thêm thiết bị thất bại", content: result?.local_msg ?? "")
             }
         }
     }

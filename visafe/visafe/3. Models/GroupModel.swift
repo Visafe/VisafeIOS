@@ -306,6 +306,7 @@ class GroupModel: NSObject, Mappable {
     var safebrowsing_enabled: Bool?
     var disallowed_rule: String = ""
     var link_invite_device: String?
+    var local_msg: String?
     
     override init() {
         super.init()
@@ -348,12 +349,13 @@ class GroupModel: NSObject, Mappable {
         days <- map["days"]
         times <- map["times"]
         devicesGroupInfo <- map["devicesGroupInfo"]
-        whitelist <- map["WhiteList"]
+        whitelist <- map["whiteList"]
         filtering_enabled <- map["filtering_enabled"]
         log_enabled <- map["log_enabled"]
         safebrowsing_enabled <- map["safebrowsing_enabled"]
         disallowed_rule <- map["disallowed_rule"]
         link_invite_device <- map["link_invite_device"]
+        local_msg <- map["local_msg"]
     }
     
     func buildModelsAppAds(value: [String]) -> [AppAdsModel] {

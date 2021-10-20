@@ -127,7 +127,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
     
     func deleteUser(user: UserModel) {
         showLoading()
-        GroupWorker.groupDeleteUser(userId: user.userid, groupId: group.groupid) { [weak self] (result, error) in
+        GroupWorker.groupDeleteUser(userId: user.userid, groupId: group.groupid) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             for index in 0..<weakSelf.listUser.count {
@@ -152,7 +152,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
     
     func makeManagerRole(user: UserModel) {
         showLoading()
-        GroupWorker.groupUserManager(userId: user.userid, groupId: group.groupid) { [weak self] (result, error) in
+        GroupWorker.groupUserManager(userId: user.userid, groupId: group.groupid) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             user.role = .admin
@@ -163,7 +163,7 @@ extension GroupListUserVC: UITableViewDelegate, UITableViewDataSource {
     
     func makeViewerRole(user: UserModel) {
         showLoading()
-        GroupWorker.groupUserViewer(userId: user.userid, groupId: group.groupid) { [weak self] (result, error) in
+        GroupWorker.groupUserViewer(userId: user.userid, groupId: group.groupid) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             user.role = .suppervisor

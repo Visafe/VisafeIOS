@@ -99,6 +99,7 @@ class WorkspaceModel: NSObject, Mappable {
     var members: [String]?
     var createdAt: String?
     var updatedAt: String?
+    var local_msg: String?
     
     override init() {
         super.init()
@@ -122,5 +123,6 @@ class WorkspaceModel: NSObject, Mappable {
         members <- map["members"]
         createdAt <- map["createdAt"]
         updatedAt <- map["updatedAt"]
+        local_msg <- map["local_msg"]
     }
 }

@@ -33,46 +33,46 @@ class GroupTimeVC: BaseViewController {
         
         if editMode == .add {
             showLoading()
-            GroupWorker.add(group: group) { [weak self] (result, error) in
+            GroupWorker.add(group: group) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
-                weakSelf.handleResponse(group: result, error: error)
+                weakSelf.handleResponse(group: result, error: error, responseCode: responseCode)
             }
         } else {
             let param = RenameGroupParam()
             param.group_id = group.groupid
             param.group_name = group.name
             showLoading()
-            GroupWorker.rename(param: param) { [weak self] (result, error) in
+            GroupWorker.rename(param: param) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
-                GroupWorker.update(group: weakSelf.group) { [weak self] (result, error) in
+                GroupWorker.update(group: weakSelf.group) { [weak self] (result, error, responseCode) in
                     guard let weakSelf = self else { return }
                     weakSelf.hideLoading()
-                    weakSelf.handleResponseUpdate(group: result, error: error)
+                    weakSelf.handleResponseUpdate(group: result, error: error, responseCode: responseCode)
                 }
             }
         }
     }
     
-    func handleResponse(group: GroupModel?, error: Error?) {
-        if group != nil {
+    func handleResponse(group: GroupModel?, error: Error?, responseCode: Int?) {
+        if responseCode == 200 {
             showMessage(title: "Tạo nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn khởi tạo.") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.parent?.dismiss(animated: true, completion: nil)
             }
         } else {
-            showError(title: "Tạo nhóm không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
+            showError(title: "Tạo nhóm không thành công", content: group?.local_msg ?? "")
         }
     }
     
-    func handleResponseUpdate(group: GroupModel?, error: Error?) {
-        if error == nil {
+    func handleResponseUpdate(group: GroupModel?, error: Error?, responseCode: Int?) {
+        if responseCode == 200 {
             showMessage(title: "Sửa nhóm thành công", content: "Nhóm của bạn đã được áp dụng các thiết lập mà bạn cập nhật.") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.parent?.dismiss(animated: true, completion: nil)
             }
         } else {
-            showError(title: "Sửa nhóm không thành công", content: "Có lỗi xảy ra. Vui lòng thử lại")
+            showError(title: "Sửa nhóm không thành công", content: group?.local_msg ?? "")
         }
     }
 }

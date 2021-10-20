@@ -36,22 +36,22 @@ class ReportWebsiteVC: BaseViewController {
     @IBAction func reportAction(_ sender: Any) {
         if validateInfo() {
             showLoading()
-            CommonWorker.reportWebsite(url: nameTextfield.text!) { [weak self] (result, error) in
+            CommonWorker.reportWebsite(url: nameTextfield.text!) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
-                weakSelf.handleResult(result: result, error: error)
+                weakSelf.handleResult(result: result, error: error, code: responseCode)
             }
         }
     }
 
-    func handleResult(result: BaseResult?, error: Error?) {
-        if result == nil && error == nil {
+    func handleResult(result: BaseResult?, error: Error?, code: Int?) {
+        if code == 200 {
             showMessage(title: "Gửi báo cáo thành công", content: "Thông tin báo cáo của bạn đã được Visafe tiếp nhận.") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.dismiss(animated: true, completion: nil)
             }
         } else {
-            showError(title: "Gửi báo cáo thất bại", content: "Có lỗi xảy ra, vui lòng thử lại")
+            showError(title: "Gửi báo cáo thất bại", content: result?.local_msg ?? "")
         }
     }
     

@@ -75,28 +75,28 @@ class PostWorkspacesVC: BaseViewController {
             workspace.logEnabled = true
             showLoading()
             if editMode == .add {
-                WorkspaceWorker.add(workspace: workspace) { [weak self] (result, error) in
+                WorkspaceWorker.add(workspace: workspace) { [weak self] (result, error, responseCode) in
                     guard let weakSelf = self else { return }
                     weakSelf.hideLoading()
-                    weakSelf.handleResult(result: result, error: error)
+                    weakSelf.handleResult(result: result, error: error, code: responseCode)
                     weakSelf.onUpdate?()
                 }
             } else {
                 let param = WorkspaceUpdateNameParam()
                 param.workspace_name = workspace.name
                 param.workspace_id = workspace.id
-                WorkspaceWorker.updateName(param: param) { [weak self] (result, error) in
+                WorkspaceWorker.updateName(param: param) { [weak self] (result, error, responseCode) in
                     guard let weakSelf = self else { return }
                     weakSelf.hideLoading()
-                    weakSelf.handleUpdatename(result: result, error: error)
+                    weakSelf.handleUpdatename(result: result, error: error, code: responseCode)
                     weakSelf.onUpdate?()
                 }
             }
         }
     }
     
-    func handleUpdatename(result: WorkspaceModel?, error: Error?) {
-        if result != nil && error == nil {
+    func handleUpdatename(result: WorkspaceModel?, error: Error?, code: Int?) {
+        if code == 200 {
             if let id = result?.id, id == CacheManager.shared.getCurrentWorkspace()?.id {
                 CacheManager.shared.setCurrentWorkspace(value: result!)
             }
@@ -105,19 +105,19 @@ class PostWorkspacesVC: BaseViewController {
                 weakSelf.parent?.dismiss(animated: true, completion: nil)
             }
         } else {
-            showError(title: "Sửa cấu hình thất bại", content: "Có lỗi xảy ra, vui lòng thử lại")
+            showError(title: "Sửa cấu hình thất bại", content: result?.local_msg ?? "")
         }
     }
 
-    func handleResult(result: WorkspaceModel?, error: Error?) {
-        if result != nil && error == nil {
+    func handleResult(result: WorkspaceModel?, error: Error?, code: Int?) {
+        if code == 200 {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotificationUpdateWorkspace), object: nil)
             showMessage(title: "Tạo workspace thành công", content: "Bây giờ, bạn đã có thể thêm các nhóm để bảo vệ các thành viên khác") { [weak self] in
                 guard let weakSelf = self else { return }
                 weakSelf.parent?.dismiss(animated: true, completion: nil)
             }
         } else {
-            showError(title: "Tạo cấu hình thất bại", content: "Có lỗi xảy ra, vui lòng thử lại")
+            showError(title: "Tạo cấu hình thất bại", content: result?.local_msg ?? "")
         }
     }
     

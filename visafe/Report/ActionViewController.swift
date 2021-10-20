@@ -50,7 +50,7 @@ class ActionViewController: UIViewController {
     @IBAction func reportAction(_ sender: Any) {
         if validateInfo() && !isReporting {
             isReporting = true
-            CommonWorker.reportWebsite(url: nameTextfield.text!) { [weak self] (result, error) in
+            CommonWorker.reportWebsite(url: nameTextfield.text!) { [weak self] (result, error, _) in
                 guard let weakSelf = self else { return }
                 weakSelf.isReporting = false
                 weakSelf.done()

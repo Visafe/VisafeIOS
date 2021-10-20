@@ -8,7 +8,7 @@
 import UIKit
 import ObjectMapper
 
-class PaymentResult: Mappable {
+class PaymentResult: BaseResult {
     var partnerCode: String?
     var accessKey: String?
     var requestId: String?
@@ -21,12 +21,9 @@ class PaymentResult: Mappable {
     var localMessage: String?
     var errorCode: String?
     var message: String?
-
-    required init?(map: Map) {
-
-    }
-
-    func mapping(map: Map) {
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
         partnerCode <- map["partnerCode"]
         accessKey <- map["accessKey"]
         requestId <- map["requestId"]

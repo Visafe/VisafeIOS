@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class PaymentWorker {
 
-    static func getPackages(completion: @escaping (_ result: [PackageModel]?, _ error: Error?) -> Void) {
+    static func getPackages(completion: @escaping (_ result: [PackageModel]?, _ error: Error?, _ statusCode: Int?) -> Void) {
         let router = APIRouter.packages
         APIManager.shared.request(target: router) { (data, error, statusCode) in
             var result: [PackageModel]?
@@ -22,11 +22,11 @@ class PaymentWorker {
                     result = Mapper<PackageModel>().mapArray(JSONObject: json)
                 } catch { }
             }
-            completion(result, error)
+            completion(result, error, statusCode)
         }
     }
     
-    static func order(id: Int, completion: @escaping (_ result: OrderResult?, _ error: Error?) -> Void) {
+    static func order(id: Int, completion: @escaping (_ result: OrderResult?, _ error: Error?, _ statusCode: Int?) -> Void) {
         let router = APIRouter.order(id: id)
         APIManager.shared.request(target: router) { (data, error, statusCode) in
             var result: OrderResult?
@@ -36,7 +36,7 @@ class PaymentWorker {
                     result = Mapper<OrderResult>().map(JSONObject: json)
                 } catch { }
             }
-            completion(result, error)
+            completion(result, error, statusCode)
         }
     }
 }

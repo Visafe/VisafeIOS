@@ -47,7 +47,7 @@ class InviteMemberToGroupVC: BaseViewController {
             param.groupID = group.groupid
             param.usernames = [username]
             showLoading()
-            GroupWorker.inviteToGroup(param: param) { [weak self] (result, error) in
+            GroupWorker.inviteToGroup(param: param) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
                 if let user = result?.invited?.first {

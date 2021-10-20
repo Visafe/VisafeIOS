@@ -48,7 +48,7 @@ class SetPasswordVC: BaseViewController {
             param.otp = model.otp
             param.repeat_password = rePasswordTextfield.text
             showLoading()
-            AuthenWorker.resetPassword(param: param) { [weak self] (result, error) in
+            AuthenWorker.resetPassword(param: param) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
                 weakSelf.handleResponse(result: result, error: error)
@@ -91,7 +91,7 @@ class SetPasswordVC: BaseViewController {
         let loginParam = LoginParam()
         loginParam.username = model.email ?? model.phone_number
         loginParam.password = passwordTextfield.text
-        AuthenWorker.login(param: loginParam) { [weak self] (result, error) in
+        AuthenWorker.login(param: loginParam) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.handleLogin(result: result, error: error)
@@ -116,7 +116,7 @@ class SetPasswordVC: BaseViewController {
     
     func actionAfterLogin() {
         showLoading()
-        WorkspaceWorker.getList { [weak self] (list, error) in
+        WorkspaceWorker.getList { [weak self] (list, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             CacheManager.shared.setIsLogined(value: true)

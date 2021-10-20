@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class NotificationWorker {
     
-    static func list(page: Int, completion: @escaping (_ result: NotificationResult?, _ error: Error?) -> Void) {
+    static func list(page: Int, completion: @escaping (_ result: NotificationResult?, _ error: Error?, _ statusCode: Int?) -> Void) {
         let router = APIRouter.listNotification(pageIndex: page)
         APIManager.shared.request(target: router) { (data, error, statusCode) in
             var result: NotificationResult?
@@ -22,11 +22,11 @@ class NotificationWorker {
                     result = Mapper<NotificationResult>().map(JSONObject: json)
                 } catch { }
             }
-            completion(result, error)
+            completion(result, error, statusCode)
         }
     }
     
-    static func readNotification(id: Int, completion: @escaping (_ result: BaseResult?, _ error: Error?) -> Void) {
+    static func readNotification(id: Int, completion: @escaping (_ result: BaseResult?, _ error: Error?, _ statusCode: Int?) -> Void) {
         let router = APIRouter.readNotification(id: id)
         APIManager.shared.request(target: router) { (data, error, statusCode) in
             var result: BaseResult?
@@ -36,7 +36,7 @@ class NotificationWorker {
                     result = Mapper<BaseResult>().map(JSONObject: json)
                 } catch { }
             }
-            completion(result, error)
+            completion(result, error, statusCode)
         }
     }
 }

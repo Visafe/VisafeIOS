@@ -8,17 +8,13 @@
 import Foundation
 import ObjectMapper
 
-class ActiveVipResult: Mappable {
+class ActiveVipResult: BaseResult {
 
     var status_code: Int?
     var key_info: ActiveVipKeyInfoResult?
-    var responseCode: Int?
 
-    required init?(map: Map) {
-
-    }
-
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
+        super.mapping(map: map)
         status_code <- map["status_code"]
         key_info <- map["key_info"]
     }

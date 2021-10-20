@@ -92,7 +92,7 @@ class EnterOTPVC: BaseViewController {
             let loginParam = LoginParam()
             loginParam.username = model.email ?? model.phone_number
             loginParam.password = model.password
-            AuthenWorker.login(param: loginParam) { [weak self] (result, error) in
+            AuthenWorker.login(param: loginParam) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.handleLogin(result: result, error: error)
             }
@@ -120,7 +120,7 @@ class EnterOTPVC: BaseViewController {
     
     func actionAfterLogin() {
         showLoading()
-        WorkspaceWorker.getList { [weak self] (list, error) in
+        WorkspaceWorker.getList { [weak self] (list, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             CacheManager.shared.setIsLogined(value: true)
@@ -156,7 +156,7 @@ class EnterOTPVC: BaseViewController {
         sender.isUserInteractionEnabled = false
         showLoading()
         let username = model.email ?? model.phone_number ?? ""
-        AuthenWorker.forgotPassword(username: username) { [weak self] (result, error) in
+        AuthenWorker.forgotPassword(username: username) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
         }
@@ -172,7 +172,7 @@ class EnterOTPVC: BaseViewController {
         if type == .activeAccount {
             showLoading()
             model.otp = pinView.getPin()
-            AuthenWorker.activeAccount(param: model) { [weak self] (result, error) in
+            AuthenWorker.activeAccount(param: model) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
                 weakSelf.handleResponse(result: result)

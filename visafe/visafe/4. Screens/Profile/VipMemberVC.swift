@@ -31,10 +31,11 @@ class VipMemberVC: BaseViewController {
     @IBAction func acceptAction(_ sender: Any) {
         if validateInfo() {
             showLoading()
-            GroupWorker.activeVip(key: codeTextfield.text!) { [weak self] (result, error) in
+            GroupWorker.activeVip(key: codeTextfield.text!) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
-                if result?.responseCode == 200{
+
+                if responseCode == 200{
                     CacheManager.shared.setVipStatus(value: result?.key_info?.DOHurl)
                     if #available(iOS 14.0, *) {
                         DoHNative.shared.resetDnsSetting()
@@ -43,10 +44,8 @@ class VipMemberVC: BaseViewController {
                     weakSelf.showMessage(title: "Kích hoạt thành viên VIP thành công", content: "") {
                         weakSelf.dismiss(animated: true, completion: nil)
                     }
-                } else if result?.responseCode == 400 {
-                    weakSelf.showError(title: "Mã xác nhận không hợp lệ", content: "")
                 } else {
-                    weakSelf.showError(title: "Có lỗi xảy ra. Vui lòng thử lại!", content: "")
+                    weakSelf.showError(title: "Có lỗi xảy ra. Vui lòng thử lại!", content: result?.local_msg ?? "")
                 }
             }
         }

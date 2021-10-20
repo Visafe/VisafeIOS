@@ -84,7 +84,7 @@ class RegisterVC: BaseViewController {
         param.password = passwordTextfield.text
         param.repeat_password = passwordTextfield.text
         showLoading()
-        AuthenWorker.register(param: param) { [weak self] (result, error) in
+        AuthenWorker.register(param: param) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.handleRegisterResult(result: result, error: error)
@@ -140,7 +140,7 @@ class RegisterVC: BaseViewController {
     
     func loginFacebook(token: String?) {
         showLoading()
-        AuthenWorker.loginFacebook(token: token) { [weak self] (result, error) in
+        AuthenWorker.loginFacebook(token: token) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.handleLogin(result: result, error: error)
@@ -169,7 +169,7 @@ class RegisterVC: BaseViewController {
     }
     
     func getWorkspaces() {
-        WorkspaceWorker.getList { [weak self] (list, error) in
+        WorkspaceWorker.getList { [weak self] (list, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading {
                 CacheManager.shared.setIsLogined(value: true)
@@ -192,7 +192,7 @@ class RegisterVC: BaseViewController {
     
     func getProfile() {
         showLoading()
-        AuthenWorker.profile { [weak self] (user, error) in
+        AuthenWorker.profile { [weak self] (user, error, responseCode) in
             guard let weakSelf = self else { return }
             CacheManager.shared.setCurrentUser(value: user)
             weakSelf.getWorkspaces()
@@ -205,7 +205,7 @@ extension RegisterVC: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let token = user?.authentication.idToken {
             showLoading()
-            AuthenWorker.loginGoogle(token: token) { [weak self] (result, error) in
+            AuthenWorker.loginGoogle(token: token) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
                 weakSelf.handleLogin(result: result, error: error)
@@ -224,7 +224,7 @@ extension RegisterVC: ASAuthorizationControllerDelegate, ASAuthorizationControll
     
     func loginApple(token: String?) {
         showLoading()
-        AuthenWorker.loginApple(token: token) { [weak self] (result, error) in
+        AuthenWorker.loginApple(token: token) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.handleLogin(result: result, error: error)

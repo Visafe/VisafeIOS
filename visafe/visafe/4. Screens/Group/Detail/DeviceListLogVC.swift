@@ -58,7 +58,7 @@ class DeviceListLogVC: BaseViewController {
             param.group_id = groupId
             param.limit = 20
             param.response_status = type.getTypeQueryLog()
-            GroupWorker.getLog(param: param) { [weak self] (result, error) in
+            GroupWorker.getLog(param: param) { [weak self] (result, error, responseCode) in
                 guard let weakSelf = self else { return }
                 weakSelf.sources = result?.data ?? []
                 weakSelf.canLoadMore = ((result?.data?.count ?? 0) >= 0)
@@ -81,7 +81,7 @@ class DeviceListLogVC: BaseViewController {
         param.group_id = groupId
         param.limit = 20
         param.response_status = type.getTypeQueryLog()
-        GroupWorker.getLog(param: param) { [weak self] (result, error) in
+        GroupWorker.getLog(param: param) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.sources = result?.data ?? []
@@ -104,7 +104,7 @@ class DeviceListLogVC: BaseViewController {
         param.limit = 20
         param.response_status = type.getTypeQueryLog()
         param.older_than = oldest ?? ""
-        GroupWorker.getLog(param: param) { [weak self] (result, error) in
+        GroupWorker.getLog(param: param) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.tableView.endRefreshing()
             weakSelf.sources += (result?.data ?? [])
@@ -168,7 +168,7 @@ extension DeviceListLogVC: UITableViewDelegate, UITableViewDataSource {
         param.white_list = whitelist
         param.group_id = group.groupid
         showLoading()
-        GroupWorker.updateWhitelist(param: param) { [weak self] (result, error) in
+        GroupWorker.updateWhitelist(param: param) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             if let _ = result {
@@ -187,7 +187,7 @@ extension DeviceListLogVC: UITableViewDelegate, UITableViewDataSource {
     
     func actionDeleteLog(domain: QueryLogModel) {
         showLoading()
-        GroupWorker.deleteLog(groupId: group.groupid, logId: domain.doc_id) { [weak self] (result, error) in
+        GroupWorker.deleteLog(groupId: group.groupid, logId: domain.doc_id) { [weak self] (result, error, responseCode) in
             guard let weakSelf = self else { return }
             weakSelf.hideLoading()
             weakSelf.refreshData()

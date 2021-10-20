@@ -31,5 +31,5 @@ let kNotificationUpdateWorkspace = "kNotificationUpdateWorkspace"
 let updateDnsStatus = "updateDnsStatus"
 let kPaymentSuccess = "kPaymentSuccess"
 
-//let dnsServer = "https://dns.visafe.vn/dns-query/%@"
-let dnsServer = "https://dns-staging.visafe.vn/dns-query/%@"
+let dnsServer = "https://dns.visafe.vn/dns-query/%@"
+//let dnsServer = "https://dns-staging.visafe.vn/dns-query/%@"
