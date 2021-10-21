@@ -60,10 +60,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else if (ApplicationDelegate.shared.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation] )) {
             return true
-        } else if url.absoluteString.checkInviteDevicelink() != nil {
-            handleUniversallink(code: url.absoluteString)
+        } else if url.absoluteString.contains("firebase.visafe.vn") {
+            DynamicLinks.dynamicLinks().handleUniversalLink(url) {[weak self] dynamiclink, error in
+                guard let _url = dynamiclink?.url else { return }
+                if _url.absoluteString.checkInviteDevicelink() != nil {
+                    self?.handleUniversallink(code: _url.absoluteString)
+                } else if _url.absoluteString.checkPaymentlink() != nil {
+                    self?.handlePaymentLink(code: _url.absoluteString)
+                }
+            }
             return true
         }
+
         return false
     }
     
@@ -170,18 +178,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-            let url = userActivity.webpageURL!
-            if url.absoluteString.checkInviteDevicelink() != nil {
-                handleUniversallink(code: url.absoluteString)
-                return true
-            } else if url.absoluteString.checkPaymentlink() != nil {
-                handlePaymentLink(code: url.absoluteString)
-                return true
+            guard let url = userActivity.webpageURL else { return true }
+            DynamicLinks.dynamicLinks().handleUniversalLink(url) {[weak self] dynamiclink, error in
+                guard let _url = dynamiclink?.url else { return }
+                if _url.absoluteString.checkInviteDevicelink() != nil {
+                    self?.handleUniversallink(code: _url.absoluteString)
+                } else if _url.absoluteString.checkPaymentlink() != nil {
+                    self?.handlePaymentLink(code: _url.absoluteString)
+                }
             }
         }
         return true
     }
-    
+
     func genDeviceId() {
         if !CacheManager.shared.isDeviceIdExist() {
             DeviceWorker.genDeviceId { (result, error, responseCode) in

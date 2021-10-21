@@ -132,6 +132,13 @@ extension String {
     func getGroupName(text: String) -> String {
         return text.substring(fromIndex: 114)
     }
+
+    func encodeUrl() -> String? {
+        return self.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+    }
+    func decodeUrl() -> String? {
+        return self.removingPercentEncoding
+    }
 }
 
 extension StringProtocol {
