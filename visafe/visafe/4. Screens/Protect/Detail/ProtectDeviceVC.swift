@@ -17,6 +17,8 @@ class ProtectDeviceVC: HeaderedPageMenuScrollWithDoHViewController, CAPSPageMenu
     var type: ProtectHomeType
     var statistic: StatisticModel
     var listBlockVC: ProtectDetailListBlockVC!
+    var pageMenu: CAPSPageMenu!
+    var isSet = false
 
     var onUpdateGroup:(() -> Void)?
 
@@ -49,6 +51,11 @@ class ProtectDeviceVC: HeaderedPageMenuScrollWithDoHViewController, CAPSPageMenu
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
+        if !isSet {
+            isSet = true
+            pageMenu.view.frame = CGRect(x: 0, y: 0, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height)
+            listBlockVC.view.frame = CGRect(x: 0, y: 56, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height - 100)
+        }
     }
 
     func configView() {
@@ -93,11 +100,14 @@ class ProtectDeviceVC: HeaderedPageMenuScrollWithDoHViewController, CAPSPageMenu
             .centerMenuItems(false),
             .scrollMenuBackgroundColor(.white)
         ]
-        self.addPageMenu(menu: CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height), pageMenuOptions: parameters))
+        pageMenu = CAPSPageMenu(viewControllers: subPageControllers, frame: CGRect(x: 0, y: 0, width: pageMenuContainer.frame.width, height: pageMenuContainer.frame.height), pageMenuOptions: parameters)
+        self.addPageMenu(menu: pageMenu)
         self.pageMenuController!.delegate = self
 
+        self.navBarColor = UIColor.white
         self.headerBackgroundColor = UIColor.white
-        self.navBarColor = UIColor.black
+        self.navBarItemsColor = UIColor.black
+        self.navBarTransparancy = 1.0
     }
 
     func configBarItem() {

@@ -81,7 +81,7 @@ class ProtectDetailListBlockVC: BaseViewController {
                 GroupWorker.getLog(param: param) { [weak self] (result, error, responseCode) in
                     guard let weakSelf = self else { return }
                     weakSelf.sources = result?.data ?? []
-                    weakSelf.canLoadMore = ((result?.data?.count ?? 0) >= 0)
+                    weakSelf.canLoadMore = ((result?.data?.count ?? 0) > 0)
                     if weakSelf.canLoadMore {
                         weakSelf.oldest = result?.oldest
                         weakSelf.addLoadMore()
@@ -117,7 +117,7 @@ class ProtectDetailListBlockVC: BaseViewController {
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
                 weakSelf.sources = result?.data ?? []
-                weakSelf.canLoadMore = ((result?.data?.count ?? 0) >= 0)
+                weakSelf.canLoadMore = ((result?.data?.count ?? 0) > 0)
                 if weakSelf.canLoadMore {
                     weakSelf.oldest = result?.oldest
                     weakSelf.addLoadMore()
@@ -151,7 +151,7 @@ class ProtectDetailListBlockVC: BaseViewController {
             guard let weakSelf = self else { return }
             weakSelf.tableView.endRefreshing()
             weakSelf.sources += (result?.data ?? [])
-            weakSelf.canLoadMore = ((result?.data?.count ?? 0) >= 0)
+            weakSelf.canLoadMore = ((result?.data?.count ?? 0) > 0)
             if weakSelf.canLoadMore {
                 weakSelf.oldest = result?.oldest
                 weakSelf.addLoadMore()
