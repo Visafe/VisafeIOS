@@ -79,48 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let link = code.checkInviteDevicelink() else { return }
         let param = Common.getDeviceInfo()
         param.updateGroupInfo(link: link)
-        // create the actual alert controller view that will be the pop-up
-        let alertController = UIAlertController(title: "Xác nhận tham gia", message: "Bạn có chắc chắn muốn tham gia nhóm <" + (param.groupName ?? "") + "> với tên là:", preferredStyle: .alert)
-        alertController.addTextField { (textField) in
-            // configure the properties of the text field
-            textField.placeholder = "Tên thiết bị"
-        }
-        alertController.textFields![0].text = param.deviceName
-        // add the buttons/actions to the view controller
-        let saveAction = UIAlertAction(title: "Đồng ý", style: .cancel) { [weak self] alert in
-            guard let weakSelf = self else { return }
-            let inputName = alertController.textFields![0].text
-            param.deviceName = inputName
-            weakSelf.addDeviceToGroup(device: param)
-        }
-        let cancelAction = UIAlertAction(title: "Hủy bỏ", style: .default, handler: nil)
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-        self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
-    }
-    
-    func addDeviceToGroup(device: AddDeviceToGroupParam) {
-        GroupWorker.addDevice(param: device) { [weak self] (result, error, responseCode) in
-            guard let weakSelf = self else { return }
-            if result?.status_code == .success {
-                let alert = UIAlertController(title: "Thông báo", message: "Tham gia nhóm thành công" , preferredStyle: UIAlertController.Style.alert)
-                let okAction = UIAlertAction(title: "Xác nhận", style: UIAlertAction.Style.default) { _ in }
-                // add an action (button)
-                alert.addAction(okAction)
-                // show the alert
-                weakSelf.window?.rootViewController?.present(alert, animated: true, completion: nil)
-            } else {
-                let type = result?.status_code ?? .defaultStatus
-                let message_alert = type.getDescription()
-                let alert = UIAlertController(title: "Thông báo", message: message_alert , preferredStyle: UIAlertController.Style.alert)
-                let okAction = UIAlertAction(title: "Xác nhận", style:
-                                                UIAlertAction.Style.default) { _ in }
-                // add an action (button)
-                alert.addAction(okAction)
-                // show the alert
-                weakSelf.window?.rootViewController?.present(alert, animated: true, completion: nil)
-            }
-        }
+        let vc = JoinGroupVC(param: param)
+        let nav = BaseNavigationController(rootViewController: vc)
+        self.window?.rootViewController?.present(nav, animated: true, completion: nil)
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
