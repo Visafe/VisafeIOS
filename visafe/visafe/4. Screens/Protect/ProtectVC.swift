@@ -143,7 +143,7 @@ class ProtectVC: BaseDoHVC {
         registerInfoView.dropShadowEdge()
         otherView.dropShadowEdge()
         let isLogin = CacheManager.shared.getIsLogined()
-        protectAdAndFollowStackView.isHidden = !isLogin
+        protectAdAndFollowStackView.isHidden = true//!isLogin
         overView.isHidden = !isLogin
         protectFamilyView.isHidden = !isLogin
         registerInfoView.isHidden = true//!isLogin
@@ -218,7 +218,7 @@ class ProtectVC: BaseDoHVC {
     @objc func loginSuccess() {
         prepareData()
         let isLogin = CacheManager.shared.getIsLogined()
-        protectAdAndFollowStackView.isHidden = !isLogin
+        protectAdAndFollowStackView.isHidden = true//!isLogin
         overView.isHidden = !isLogin
         protectFamilyView.isHidden = !isLogin
         registerInfoView.isHidden = !isLogin

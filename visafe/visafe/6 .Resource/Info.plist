@@ -53,6 +53,10 @@
 	<string>Visafe</string>
 	<key>FacebookDisplayName</key>
 	<string>Visafe-Internet an toàn</string>
+	<key>FirebaseDynamicLinksCustomDomains</key>
+	<array>
+		<string>https://firebase.visafe.vn</string>
+	</array>
 	<key>LSApplicationCategoryType</key>
 	<string>Visafe-Internet an toàn</string>
 	<key>LSApplicationQueriesSchemes</key>

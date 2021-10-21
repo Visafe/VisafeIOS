@@ -2219,7 +2219,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
@@ -2255,7 +2255,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
@@ -2287,7 +2287,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				INFOPLIST_FILE = Report/ExtionsionInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -2313,7 +2313,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				INFOPLIST_FILE = Report/ExtionsionInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

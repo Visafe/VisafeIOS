@@ -110,18 +110,6 @@ extension String {
             !self.contains("groupName") {
             return nil
         }
-        if(self[56] != "=" || self[93] != "&") {
-            return nil
-        }
-        var count: Int = 0
-        for i in 56...93 {
-            if(self[i] == "-") {
-                count = count + 1
-            }
-        }
-        if(count != 4) {
-            return nil
-        }
         return self
         
     }

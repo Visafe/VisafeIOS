@@ -8,6 +8,8 @@
 import UIKit
 import NetworkExtension
 import DeviceKit
+import FirebaseDynamicLinks
+
 class HomeVC: BaseDoHVC {
 
     @IBOutlet weak var homeLoadingImage: UIImageView!

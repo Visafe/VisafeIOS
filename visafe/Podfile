@@ -18,16 +18,12 @@ target 'visafe' do
   pod 'Firebase/DynamicLinks'
   pod 'Firebase/Messaging'
   pod 'Toast-Swift'
-  shared_pods
+  pod 'Moya'
+  pod 'ObjectMapper'
 end
 
 target 'Report' do
   use_frameworks!
-  shared_pods
-end
-
-def shared_pods
-
   pod 'Moya'
   pod 'ObjectMapper'
 end
