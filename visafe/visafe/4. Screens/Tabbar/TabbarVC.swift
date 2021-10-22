@@ -43,8 +43,10 @@ class TabbarVC: BaseTabbarController {
         let workspaceNav = BaseNavigationController(rootViewController: workspace)
         
        
-        homeVC.tabBarItem = ESTabBarItem.init(ExampleBouncesContentView(), title: nil, image: UIImage(named: "ic_scan_select"), selectedImage: UIImage(named: "ic_scan_select"))
+        let tab3 = ESTabBarItem.init(ExampleBouncesContentView(), title: nil, image: UIImage(named: "ic_scan_select"), selectedImage: UIImage(named: "ic_scan_select"))
+        tab3.tag = 3
         let homeNav = BaseNavigationController(rootViewController: homeVC)
+        homeNav.tabBarItem = tab3
         
         notiVC.title = "Thông báo"
         let tab4 = UITabBarItem(title: "Thông báo", image: UIImage(named: "notification_tabbar"), selectedImage: UIImage(named: "notification_tabbar"))
@@ -118,7 +120,7 @@ class TabbarVC: BaseTabbarController {
             showFormLogin(item: item)
         } else {
             super.tabBar(tabBar, didSelect: item)
-            if item is ESTabBarItem {
+            if item is ESTabBarItem || [3].contains(item.tag) {
                 updateStateMainButton(selected: true)
             } else {
                 updateStateMainButton(selected: false)
