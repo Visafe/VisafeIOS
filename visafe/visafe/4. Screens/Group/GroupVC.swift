@@ -415,7 +415,10 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video) { success in
                 if success {
-                    print("Permission granted, proceed")
+                    DispatchQueue.main.async {
+                        let vc = ScanGroupVC()
+                        self.present(vc, animated: true, completion: nil)
+                    }
                 } else {
                     print("Permission denied")
                 }
