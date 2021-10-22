@@ -53,7 +53,7 @@ class ProfileSettingVC: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var sources: [ProfileSettingEnum] = (CacheManager.shared.getIsLogined() && CacheManager.shared.getCurrentUser()?.typeRegister == AccountTypeEnum.standard) ? [.changepass, .enterpin, .language] :  [.enterpin, .language]
+    var sources: [ProfileSettingEnum] = (CacheManager.shared.getIsLogined() && CacheManager.shared.getCurrentUser()?.typeRegister == AccountTypeEnum.standard) ? [.changepass, .enterpin, .settingnoti, .language] :  [.enterpin, .settingnoti,.language]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +92,8 @@ extension ProfileSettingVC: UITableViewDelegate, UITableViewDataSource {
             changePass()
         case .enterpin:
             enterPin()
+        case .settingnoti:
+            notiSetting()
         default:
             break
         }
@@ -128,6 +130,11 @@ extension ProfileSettingVC: UITableViewDelegate, UITableViewDataSource {
         vc.onUpdate = {
             self.tableView.reloadData()
         }
+        navigationController?.pushViewController(vc)
+    }
+
+    func notiSetting() {
+        let vc = NotiSettingVC()
         navigationController?.pushViewController(vc)
     }
     

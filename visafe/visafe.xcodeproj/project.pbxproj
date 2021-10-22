@@ -18,6 +18,10 @@
 		0E8E2F5D26F5EDA800DB50AA /* ScanResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E2F5B26F5EDA800DB50AA /* ScanResultCell.swift */; };
 		0E8E2F5E26F5EDA800DB50AA /* ScanResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E2F5C26F5EDA800DB50AA /* ScanResultCell.xib */; };
 		0EB6614E26E924F500B9EAEA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB6614D26E924F500B9EAEA /* Reachability.swift */; };
+		0EC63E3D2722BB7700A0F1B3 /* NotiSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC63E3B2722BB7600A0F1B3 /* NotiSettingVC.swift */; };
+		0EC63E3E2722BB7700A0F1B3 /* NotiSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EC63E3C2722BB7600A0F1B3 /* NotiSettingVC.xib */; };
+		0EC63E402722C73300A0F1B3 /* RoutingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC63E3F2722C73300A0F1B3 /* RoutingWorker.swift */; };
+		0EC63E422722E0A800A0F1B3 /* RoutingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC63E412722E0A800A0F1B3 /* RoutingModel.swift */; };
 		0EDEEFA52681F29E00572C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA42681F29E00572C4E /* AppDelegate.swift */; };
 		0EDEEFA92681F29E00572C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEEFA82681F29E00572C4E /* ViewController.swift */; };
 		0EDEEFAC2681F29E00572C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEEFAA2681F29E00572C4E /* Main.storyboard */; };
@@ -382,6 +386,10 @@
 		0EB6614D26E924F500B9EAEA /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0EC217BF2691BB1B00B8B8F4 /* tunnel.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = tunnel.entitlements; sourceTree = "<group>"; };
 		0EC217C02691BB1B00B8B8F4 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		0EC63E3B2722BB7600A0F1B3 /* NotiSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotiSettingVC.swift; sourceTree = "<group>"; };
+		0EC63E3C2722BB7600A0F1B3 /* NotiSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotiSettingVC.xib; sourceTree = "<group>"; };
+		0EC63E3F2722C73300A0F1B3 /* RoutingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingWorker.swift; sourceTree = "<group>"; };
+		0EC63E412722E0A800A0F1B3 /* RoutingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingModel.swift; sourceTree = "<group>"; };
 		0EDEEFA12681F29E00572C4E /* visafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = visafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDEEFA42681F29E00572C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EDEEFA82681F29E00572C4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -953,6 +961,7 @@
 				C90AD90326C52371003539FF /* PackageModel.swift */,
 				0EDFD35F26C527380053E82B /* BotNetModel.swift */,
 				0E8E2F5826F5DF2300DB50AA /* VersioniOSModel.swift */,
+				0EC63E412722E0A800A0F1B3 /* RoutingModel.swift */,
 			);
 			path = "3. Models";
 			sourceTree = "<group>";
@@ -1227,6 +1236,8 @@
 		C99FD1D52697469E00A8F731 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				0EC63E3B2722BB7600A0F1B3 /* NotiSettingVC.swift */,
+				0EC63E3C2722BB7600A0F1B3 /* NotiSettingVC.xib */,
 				C9BC688027006EC100D45490 /* VipMemberVC.swift */,
 				C9BC687F27006EC000D45490 /* VipMemberVC.xib */,
 				C90F14F626BB9CD4008C19A1 /* ChangePasswordNameVC.swift */,
@@ -1282,6 +1293,7 @@
 				0EF5EB0C26BA534C002F5E84 /* DeviceWorker.swift */,
 				C90AD90626C52669003539FF /* PaymentWorker.swift */,
 				C934A72726CCF41B008B74EC /* CommonWorker.swift */,
+				0EC63E3F2722C73300A0F1B3 /* RoutingWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -1646,6 +1658,7 @@
 				C924CFE626A7D5390058EEDD /* GroupStatisticVC.xib in Resources */,
 				C91EE7D526AC1ABD006ADAE9 /* ProtectHeaderView.xib in Resources */,
 				C934A72426CCF177008B74EC /* ReportWebsiteVC.xib in Resources */,
+				0EC63E3E2722BB7700A0F1B3 /* NotiSettingVC.xib in Resources */,
 				C969B39B269ADB210066A88A /* SecurityWorkspaceCell.xib in Resources */,
 				C9EDB55D26839E74009CBD93 /* PostGroupVC.xib in Resources */,
 				C9181417269B486300DC0E83 /* NotificationCell.xib in Resources */,
@@ -1884,6 +1897,7 @@
 				C9F2491B26AAA7AF00EE7442 /* StatisticSumaryView.swift in Sources */,
 				C918140B269B416800DC0E83 /* NotificationModel.swift in Sources */,
 				C93FFDE7269AF48800D7B02A /* ProfileSettingVC.swift in Sources */,
+				0EC63E402722C73300A0F1B3 /* RoutingWorker.swift in Sources */,
 				C9FA160B268B611200A1A6C6 /* StringExtension.swift in Sources */,
 				C9A15B4D2699BFDA0065D5C2 /* GroupHeaderView.swift in Sources */,
 				C9FA1671268DFC4C00A1A6C6 /* GroupSettingHeaderView.swift in Sources */,
@@ -2003,6 +2017,7 @@
 				C9181405269B0C5600DC0E83 /* ChangePasswordResult.swift in Sources */,
 				0E8E2F5926F5DF2400DB50AA /* VersioniOSModel.swift in Sources */,
 				C99FD1D12697465B00A8F731 /* NotificationVC.swift in Sources */,
+				0EC63E422722E0A800A0F1B3 /* RoutingModel.swift in Sources */,
 				C9EDB55726839E74009CBD93 /* GroupVC.swift in Sources */,
 				C934A72826CCF41B008B74EC /* CommonWorker.swift in Sources */,
 				C9B79483268622BE00258A72 /* LoginParam.swift in Sources */,
@@ -2014,6 +2029,7 @@
 				C9BC68852700720600D45490 /* ActiveVipResult.swift in Sources */,
 				C91813FC269AFE7000DC0E83 /* ProfileHelpCell.swift in Sources */,
 				C95A58462688233F0077112F /* ResetPasswordResult.swift in Sources */,
+				0EC63E3D2722BB7700A0F1B3 /* NotiSettingVC.swift in Sources */,
 				C918140E269B465700DC0E83 /* NotificationResult.swift in Sources */,
 				C9F0940B26C14960001CD61D /* QRScannerView.swift in Sources */,
 				C95A584F26885EBD0077112F /* WorkspageParam.swift in Sources */,
@@ -2219,7 +2235,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
@@ -2255,7 +2271,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				ENABLE_BITCODE = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
@@ -2287,7 +2303,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				INFOPLIST_FILE = Report/ExtionsionInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -2313,7 +2329,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vu Nguyen Tuan (7GNUB5YFDR)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = PPZ8Y7NW8F;
 				INFOPLIST_FILE = Report/ExtionsionInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

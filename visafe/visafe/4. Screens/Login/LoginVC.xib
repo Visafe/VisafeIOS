@@ -202,8 +202,15 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKw-8U-50s">
                                             <rect key="frame" x="0.0" y="340" width="354" height="60"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sk-QH-9WJ">
+                                                    <rect key="frame" x="72" y="10" width="50" height="50"/>
+                                                    <state key="normal" image="facebook_icon"/>
+                                                    <connections>
+                                                        <action selector="facebookAuthen:" destination="-1" eventType="touchUpInside" id="WwG-0H-fkv"/>
+                                                    </connections>
+                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOC-md-dmc">
-                                                    <rect key="frame" x="112" y="10" width="50" height="50"/>
+                                                    <rect key="frame" x="152" y="10" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="4oX-4s-cxs"/>
                                                         <constraint firstAttribute="width" constant="50" id="ge6-81-ML6"/>
@@ -213,14 +220,8 @@
                                                         <action selector="googleAuthen:" destination="-1" eventType="touchUpInside" id="xLp-kC-itX"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oib-KU-3Ej">
-                                                    <rect key="frame" x="177" y="30" width="0.0" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSr-j3-DoQ">
-                                                    <rect key="frame" x="192" y="10" width="50" height="50"/>
+                                                    <rect key="frame" x="232" y="10" width="50" height="50"/>
                                                     <state key="normal" image="apple_icon"/>
                                                     <connections>
                                                         <action selector="appleAuthen:" destination="-1" eventType="touchUpInside" id="ji7-Uv-2uA"/>
@@ -230,13 +231,15 @@
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="aSr-j3-DoQ" secondAttribute="bottom" id="00S-LB-y6y"/>
-                                                <constraint firstItem="oib-KU-3Ej" firstAttribute="leading" secondItem="qOC-md-dmc" secondAttribute="trailing" constant="15" id="0Hx-cc-u5e"/>
                                                 <constraint firstAttribute="height" constant="60" id="0KP-w0-ucp"/>
                                                 <constraint firstItem="aSr-j3-DoQ" firstAttribute="width" secondItem="qOC-md-dmc" secondAttribute="width" id="AEx-7k-6Jk"/>
                                                 <constraint firstAttribute="bottom" secondItem="qOC-md-dmc" secondAttribute="bottom" id="Bpd-CX-EK6"/>
-                                                <constraint firstItem="oib-KU-3Ej" firstAttribute="centerY" secondItem="HKw-8U-50s" secondAttribute="centerY" id="MEJ-Rw-Tcc"/>
-                                                <constraint firstItem="aSr-j3-DoQ" firstAttribute="leading" secondItem="oib-KU-3Ej" secondAttribute="trailing" constant="15" id="Nbw-u5-tDq"/>
-                                                <constraint firstItem="oib-KU-3Ej" firstAttribute="centerX" secondItem="HKw-8U-50s" secondAttribute="centerX" id="i0a-Zf-JUl"/>
+                                                <constraint firstItem="qOC-md-dmc" firstAttribute="leading" secondItem="2Sk-QH-9WJ" secondAttribute="trailing" constant="30" id="HKv-0Z-wYg"/>
+                                                <constraint firstItem="2Sk-QH-9WJ" firstAttribute="height" secondItem="qOC-md-dmc" secondAttribute="height" id="IX8-Oz-OqA"/>
+                                                <constraint firstItem="aSr-j3-DoQ" firstAttribute="leading" secondItem="qOC-md-dmc" secondAttribute="trailing" constant="30" id="Nbw-u5-tDq"/>
+                                                <constraint firstItem="qOC-md-dmc" firstAttribute="centerX" secondItem="HKw-8U-50s" secondAttribute="centerX" id="c45-ma-475"/>
+                                                <constraint firstItem="2Sk-QH-9WJ" firstAttribute="width" secondItem="qOC-md-dmc" secondAttribute="width" id="pU2-iW-KJ2"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Sk-QH-9WJ" secondAttribute="bottom" id="vdK-OC-9st"/>
                                                 <constraint firstItem="aSr-j3-DoQ" firstAttribute="height" secondItem="qOC-md-dmc" secondAttribute="height" id="wZp-5U-js7"/>
                                             </constraints>
                                         </view>
@@ -309,6 +312,7 @@
     <resources>
         <image name="apple_icon" width="48.333332061767578" height="48"/>
         <image name="cancel_icon" width="24" height="24"/>
+        <image name="facebook_icon" width="40.333332061767578" height="40"/>
         <image name="google_icon" width="48.333332061767578" height="48"/>
         <image name="login_logo" width="122.33333587646484" height="42"/>
         <systemColor name="systemBackgroundColor">

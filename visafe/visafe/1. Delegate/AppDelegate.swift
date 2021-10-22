@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try Network.reachability = Reachability(hostname: "www.google.com")
         } catch {}
         genDeviceId()
+        appInit()
         configApplePush(application) // đăng ký nhận push.
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         configRootVC()
@@ -33,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         googleAuthen()
         configKeyboard()
         handlePush(launchOptions: launchOptions)
+
         return true
     }
     
@@ -40,6 +42,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "kSelectTabNoti"), object: nil)
         }
+    }
+
+    func appInit() {
+        RoutingWorker.getDnsServer { data, _, _ in
+            guard let hostname = data?.hostname else {
+                CacheManager.shared.setDnsServer(value: dnsServer)
+                if #available(iOS 14.0, *) {
+                    DoHNative.shared.resetDnsSetting()
+                } else {
+                    // Fallback on earlier versions
+                }
+                return
+            }
+            var dns = hostname
+            if dns.last == "/" {
+                dns.removeLast()
+            }
+            if !dns.contains("https://") && !dns.contains("http://") {
+                dns = "https://" + dns + "/dns-query/%@"
+            }
+            CacheManager.shared.setDnsServer(value: dns)
+            if #available(iOS 14.0, *) {
+                DoHNative.shared.resetDnsSetting()
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+
+//        if CacheManager.shared.getDailyReport() == nil {
+//            CacheManager.shared.setDailyReport(value: true)
+//        }
     }
     
     func configKeyboard() {
@@ -86,6 +119,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
+
+//        Messaging.messaging().subscribe(toTopic: "topicName")
+
+//        Messaging.messaging().unsubscribe(fromTopic: "topicName")
     }
     
     func postSendToken(token: String?) {

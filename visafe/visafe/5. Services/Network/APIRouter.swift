@@ -89,6 +89,8 @@ enum APIRouter {
     case requestOutGroup(groupId: String)
     case activeVip(key: String)
     case changeUseProfile(param: ChangeProfileParam)
+
+    case routing
 }
 
 extension APIError: LocalizedError {
@@ -227,6 +229,8 @@ extension APIRouter: TargetType {
             return "/device/active-vip"
         case .changeUseProfile:
             return "/user/change-profile"
+        case .routing:
+            return "/routing"
         }
     }
     
@@ -235,7 +239,7 @@ extension APIRouter: TargetType {
         case .getListWorkspace, .profile, .getGroups, .listNotification,
              .statisticWorkspace, .statisticGroup,
              .logGroup, .logWorkspace, .genDeviceId, .getGroup, .packages,
-             .iosVersion:
+             .iosVersion, .routing:
             return .get
         case .deleteWorkspace, .deleteGroup,
              .groupDeleteUser, .deleteDeviceFromGroup, .deleteDeviceGroup:
@@ -375,7 +379,9 @@ extension APIRouter: TargetType {
             pars["key"] = key
         case .changeUseProfile(param: let param):
             pars = param.toJSON()
-        case .reactivation, .getListWorkspace, .profile, .genDeviceId, .checkBotNet, .packages:
+        case .reactivation, .getListWorkspace,
+             .profile, .genDeviceId, .checkBotNet,
+             .packages, .routing:
             break
         }
         return pars

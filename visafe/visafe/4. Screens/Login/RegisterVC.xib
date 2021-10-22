@@ -63,7 +63,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bRt-VQ-kX8">
-                                    <rect key="frame" x="30" y="180.33333333333334" width="354" height="447.33333333333326"/>
+                                    <rect key="frame" x="30" y="180.33333333333334" width="354" height="457.33333333333326"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập tên" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NXW-qs-eG5" customClass="BaseTextField" customModule="visafe" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="354" height="44"/>
@@ -236,45 +236,48 @@
                                                 <constraint firstItem="KIA-2d-uY2" firstAttribute="leading" secondItem="Wba-l1-N9w" secondAttribute="trailing" constant="20" id="x9r-VW-roT"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVU-1x-rJQ">
-                                            <rect key="frame" x="0.0" y="397.33333333333326" width="354" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6e-xr-hg5">
+                                            <rect key="frame" x="0.0" y="397.33333333333326" width="354" height="60"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTZ-k7-Rdb">
-                                                    <rect key="frame" x="112" y="0.0" width="50" height="50"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJ8-Yy-jAG">
+                                                    <rect key="frame" x="72" y="10" width="50" height="50"/>
+                                                    <state key="normal" image="facebook_icon"/>
+                                                    <connections>
+                                                        <action selector="facebookAuthen:" destination="-1" eventType="touchUpInside" id="g8L-dG-Lrn"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8z-ue-Edv">
+                                                    <rect key="frame" x="152" y="10" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="WHm-n1-ps5"/>
-                                                        <constraint firstAttribute="height" constant="50" id="vIq-B4-ZfX"/>
+                                                        <constraint firstAttribute="width" constant="50" id="JhO-ac-IG6"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Ncb-c2-G0X"/>
                                                     </constraints>
                                                     <state key="normal" image="google_icon"/>
                                                     <connections>
-                                                        <action selector="googleAuthen:" destination="-1" eventType="touchUpInside" id="fJr-c1-h6N"/>
+                                                        <action selector="googleAuthen:" destination="-1" eventType="touchUpInside" id="yMG-DS-37x"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuR-ef-fCK">
-                                                    <rect key="frame" x="177" y="25" width="0.0" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESd-wK-bJh">
-                                                    <rect key="frame" x="192" y="0.0" width="50" height="50"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULp-bf-XzH">
+                                                    <rect key="frame" x="232" y="10" width="50" height="50"/>
                                                     <state key="normal" image="apple_icon"/>
                                                     <connections>
-                                                        <action selector="appleAuthen:" destination="-1" eventType="touchUpInside" id="QV5-EQ-CzA"/>
+                                                        <action selector="appleAuthen:" destination="-1" eventType="touchUpInside" id="btP-JK-OEX"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstItem="NuR-ef-fCK" firstAttribute="leading" secondItem="zTZ-k7-Rdb" secondAttribute="trailing" constant="15" id="2cR-mv-ij2"/>
-                                                <constraint firstItem="ESd-wK-bJh" firstAttribute="height" secondItem="zTZ-k7-Rdb" secondAttribute="height" id="7Bn-5z-Ma0"/>
-                                                <constraint firstItem="NuR-ef-fCK" firstAttribute="centerX" secondItem="NVU-1x-rJQ" secondAttribute="centerX" id="7DH-Ro-wNS"/>
-                                                <constraint firstAttribute="bottom" secondItem="zTZ-k7-Rdb" secondAttribute="bottom" id="KS2-PX-O8m"/>
-                                                <constraint firstAttribute="height" constant="50" id="NLL-Pd-CK5"/>
-                                                <constraint firstAttribute="bottom" secondItem="ESd-wK-bJh" secondAttribute="bottom" id="Rl7-G9-w13"/>
-                                                <constraint firstItem="ESd-wK-bJh" firstAttribute="leading" secondItem="NuR-ef-fCK" secondAttribute="trailing" constant="15" id="r2S-ry-YA4"/>
-                                                <constraint firstItem="NuR-ef-fCK" firstAttribute="centerY" secondItem="NVU-1x-rJQ" secondAttribute="centerY" id="tZx-xJ-wOE"/>
-                                                <constraint firstItem="ESd-wK-bJh" firstAttribute="width" secondItem="zTZ-k7-Rdb" secondAttribute="width" id="uGR-mq-fLe"/>
+                                                <constraint firstItem="S8z-ue-Edv" firstAttribute="centerX" secondItem="u6e-xr-hg5" secondAttribute="centerX" id="8VF-tS-DVj"/>
+                                                <constraint firstItem="ULp-bf-XzH" firstAttribute="leading" secondItem="S8z-ue-Edv" secondAttribute="trailing" constant="30" id="OMb-OJ-z1w"/>
+                                                <constraint firstAttribute="bottom" secondItem="S8z-ue-Edv" secondAttribute="bottom" id="Pv9-Cv-uHw"/>
+                                                <constraint firstItem="ULp-bf-XzH" firstAttribute="width" secondItem="S8z-ue-Edv" secondAttribute="width" id="S8Y-ws-5La"/>
+                                                <constraint firstItem="S8z-ue-Edv" firstAttribute="leading" secondItem="IJ8-Yy-jAG" secondAttribute="trailing" constant="30" id="bY4-O2-8vG"/>
+                                                <constraint firstAttribute="bottom" secondItem="IJ8-Yy-jAG" secondAttribute="bottom" id="c6z-Zr-bbB"/>
+                                                <constraint firstItem="IJ8-Yy-jAG" firstAttribute="width" secondItem="S8z-ue-Edv" secondAttribute="width" id="hIp-qO-oBd"/>
+                                                <constraint firstItem="IJ8-Yy-jAG" firstAttribute="height" secondItem="S8z-ue-Edv" secondAttribute="height" id="iJY-kY-I4S"/>
+                                                <constraint firstAttribute="height" constant="60" id="jKp-HD-DpE"/>
+                                                <constraint firstAttribute="bottom" secondItem="ULp-bf-XzH" secondAttribute="bottom" id="wls-wl-aef"/>
+                                                <constraint firstItem="ULp-bf-XzH" firstAttribute="height" secondItem="S8z-ue-Edv" secondAttribute="height" id="zHh-hs-FkR"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -323,6 +326,7 @@
     <resources>
         <image name="apple_icon" width="48.333332061767578" height="48"/>
         <image name="cancel_icon" width="24" height="24"/>
+        <image name="facebook_icon" width="40.333332061767578" height="40"/>
         <image name="google_icon" width="48.333332061767578" height="48"/>
         <image name="login_logo" width="122.33333587646484" height="42"/>
         <systemColor name="systemBackgroundColor">
