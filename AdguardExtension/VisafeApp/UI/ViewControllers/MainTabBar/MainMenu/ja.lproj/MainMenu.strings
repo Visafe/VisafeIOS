@@ -16,8 +16,8 @@
 /* Class = "UILabel"; text = "License"; ObjectID = "Ebc-Lf-9R1"; */
 "Ebc-Lf-9R1.text" = "ライセンス";
 
-/* Class = "UILabel"; text = "Help us make AdGuard better"; ObjectID = "Em7-2h-SKs"; */
-"Em7-2h-SKs.text" = "問題、ご提案等を送信することでAdGuardの改善にご協力ください。";
+/* Class = "UILabel"; text = "Help us make Visafe better"; ObjectID = "Em7-2h-SKs"; */
+"Em7-2h-SKs.text" = "問題、ご提案等を送信することでVisafeの改善にご協力ください。";
 
 /* Class = "UILabel"; text = "Report a bug"; ObjectID = "GA6-E3-BcJ"; Note = "(Main Menu) Advanced Settings caption"; */
 "GA6-E3-BcJ.text" = "バグ・不具合を報告する";
@@ -31,8 +31,8 @@
 /* Class = "UILabel"; text = "Send detailed system information about running processes and application log"; ObjectID = "LHx-0a-FxM"; */
 "LHx-0a-FxM.text" = "実行中プロセスのシステム詳細情報と本アプリのログを送信します（開発者が問題をより速く解決するのに役立ちます）。";
 
-/* Class = "UILabel"; text = "What is AdGuard?"; ObjectID = "NQS-fl-oOe"; */
-"NQS-fl-oOe.text" = "AdGuardとは？";
+/* Class = "UILabel"; text = "What is Visafe?"; ObjectID = "NQS-fl-oOe"; */
+"NQS-fl-oOe.text" = "Visafeとは？";
 
 /* Class = "UILabel"; text = "FAQ"; ObjectID = "Pb4-Gm-t4i"; Note = "(Main Menu) Advanced Settings caption"; */
 "Pb4-Gm-t4i.text" = "FAQ（よくあるご質問）";
@@ -44,7 +44,7 @@
 "V7E-QE-uIA.text" = "詳細なシステム情報を送信する";
 
 /* Class = "UILabel"; text = "Discuss on our forum, in social networks, or on GitHub"; ObjectID = "W6h-Gt-MMt"; */
-"W6h-Gt-MMt.text" = "AdGuardのフォーラム、SNS、GitHub";
+"W6h-Gt-MMt.text" = "Visafeのフォーラム、SNS、GitHub";
 
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "bEE-nS-r3u"; */
 "bEE-nS-r3u.title" = "設定";
@@ -67,8 +67,8 @@
 /* Class = "UITextField"; placeholder = "Email Address"; ObjectID = "gap-Uy-5ka"; */
 "gap-Uy-5ka.placeholder" = "メールアドレス";
 
-/* Class = "UILabel"; text = "How to block ads with AdGuard"; ObjectID = "iwI-Gm-rAp"; */
-"iwI-Gm-rAp.text" = "AdGuardで広告をブロックする方法：設定と手動ブロックツール";
+/* Class = "UILabel"; text = "How to block ads with Visafe"; ObjectID = "iwI-Gm-rAp"; */
+"iwI-Gm-rAp.text" = "Visafeで広告をブロックする方法：設定と手動ブロックツール";
 
 /* Class = "UILabel"; text = "Help us improve the app"; ObjectID = "ow5-MW-Ued"; */
 "ow5-MW-Ued.text" = "アプリの改善にご協力ください。";
@@ -77,7 +77,7 @@
 "q9f-Zw-7sc.text" = "不適切なブロックを報告する";
 
 /* Class = "UILabel"; text = "You can export logs and send them to us in a convenient way for you"; ObjectID = "qDy-4e-MsZ"; */
-"qDy-4e-MsZ.text" = "送信方法を選んで、AdGuardログをエクスポートできます。";
+"qDy-4e-MsZ.text" = "送信方法を選んで、Visafeログをエクスポートできます。";
 
 /* Class = "UILabel"; text = "DNS protection"; ObjectID = "r4M-ec-gKY"; */
 "r4M-ec-gKY.text" = "DNS通信を保護";
@@ -86,7 +86,7 @@
 "rHj-Ne-4zA.text" = "ユーザー様のメールアドレス (任意)";
 
 /* Class = "UILabel"; text = "Discuss"; ObjectID = "rlh-5H-fPk"; Note = "(Main Menu) Advanced Settings caption"; */
-"rlh-5H-fPk.text" = "AdGuardについて話し合う";
+"rlh-5H-fPk.text" = "Visafeについて話し合う";
 
 /* Class = "UILabel"; text = "Subscriptions and account"; ObjectID = "se6-jk-4Az"; */
 "se6-jk-4Az.text" = "サブスクリプションとアカウント";
@@ -95,7 +95,7 @@
 "srJ-sd-sZF.text" = "メッセージ・問題概要等";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "x8F-Jr-rGi"; */
-"x8F-Jr-rGi.text" = "AdGuardについて";
+"x8F-Jr-rGi.text" = "Visafeについて";
 
 /* Class = "UILabel"; text = "Leave feedback"; ObjectID = "xJd-fJ-cmx"; Note = "(Main Menu) Advanced Settings caption"; */
 "xJd-fJ-cmx.text" = "フィードバックを送信する";

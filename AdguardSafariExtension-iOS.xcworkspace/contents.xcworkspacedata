@@ -18,6 +18,6 @@
       location = "container:Builder/Builder.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:AdguardExtension/Adguard.xcodeproj">
+      location = "container:VisafeExtension/Visafe.xcodeproj">
    </FileRef>
 </Workspace>

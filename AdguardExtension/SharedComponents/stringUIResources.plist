@@ -59,7 +59,7 @@
 	<array>
 		<dict>
 			<key>description</key>
-			<string>An ad filter that you create on your own. You can add rules to it manually or using AdGuard Asisstant.</string>
+			<string>An ad filter that you create on your own. You can add rules to it manually or using Visafe Asisstant.</string>
 			<key>name</key>
 			<string>User rules</string>
 		</dict>

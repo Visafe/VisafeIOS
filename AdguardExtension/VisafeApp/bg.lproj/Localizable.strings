@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "Не мога да инициализирам конвертора за JSON формата";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "Откажи";
 
 /* (AEService) Service errors descriptions */
@@ -31,11 +31,11 @@
 /* (MainController) Message on main screen during update */
 "filters_noUpdates" = "Не са намерени актиализации";
 
-/* Adguard DNS server description */
-"adguard_dns_description" = "блокира реклами, тракери и фишинг уебсайтове";
+/* Visafe DNS server description */
+"Visafe_dns_description" = "блокира реклами, тракери и фишинг уебсайтове";
 
-/* Adguard Family DNS server description */
-"adguard_family_dns_description" = "блокира всичко по-горе и уеб сайтове за възрастни";
+/* Visafe Family DNS server description */
+"Visafe_family_dns_description" = "блокира всичко по-горе и уеб сайтове за възрастни";
 
 /* (APVPNManager)  PRO version. Error, which may occur in DNS Filtering module. When user turns on DNS Filtering functionality. */
 "support_vpn_configuration_problem" = "Имаше проблем с конфигурацията на ВЧМ, моля свържете се с нашия екип за поддръжка.";

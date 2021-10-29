@@ -1,19 +1,19 @@
 /**
-      This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-      Copyright © Adguard Software Limited. All rights reserved.
+      This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+      Copyright © Visafe Software Limited. All rights reserved.
 
-      Adguard for iOS is free software: you can redistribute it and/or modify
+      Visafe for iOS is free software: you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation, either version 3 of the License, or
       (at your option) any later version.
 
-      Adguard for iOS is distributed in the hope that it will be useful,
+      Visafe for iOS is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details.
 
       You should have received a copy of the GNU General Public License
-      along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+      along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import Foundation
@@ -91,7 +91,7 @@ class UserFilterModel: ListOfRulesModelProtocol {
     var descriptionTitle: String {
         get {
             let format = ACLocalizedString("blacklist_text_format", nil)
-            let url = UIApplication.shared.adguardUrl(action: filterRulesAction, from: openUrlFrom, buildVersion: productInfo.buildVersion())
+            let url = UIApplication.shared.VisafeUrl(action: filterRulesAction, from: openUrlFrom, buildVersion: productInfo.buildVersion())
             return String(format: format, url)
         }
     }
@@ -130,7 +130,7 @@ class UserFilterModel: ListOfRulesModelProtocol {
     // MARK: - Main functions
 
     func exportList(parentController: UIViewController, sourceView: UIView, sourceRect: CGRect) {
-        let fileName = "adguard_user_filter.txt"
+        let fileName = "Visafe_user_filter.txt"
         
         fileShare.exportFile(parentController: parentController, sourceView: sourceView, sourceRect: sourceRect, filename: fileName, text: plainText()) { (message) in
         }
@@ -300,7 +300,7 @@ class UserFilterModel: ListOfRulesModelProtocol {
 //                    if error != nil {
 //                        DDLogError("(UserFilterModel) Error occured during content blocker reloading - \(error!.localizedDescription)")
 //                        // do not rollback changes and do not show any alert to user in this case
-//                        // https://github.com/AdguardTeam/AdguardForiOS/issues/1174
+//                        // https://github.com/VisafeTeam/VisafeForiOS/issues/1174
 //                    }
 //                    UIApplication.shared.endBackgroundTask(backgroundTaskId)
 //                }

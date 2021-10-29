@@ -16,8 +16,8 @@
 /* Class = "UILabel"; text = "License"; ObjectID = "Ebc-Lf-9R1"; */
 "Ebc-Lf-9R1.text" = "Лицензия";
 
-/* Class = "UILabel"; text = "Help us make AdGuard better"; ObjectID = "Em7-2h-SKs"; */
-"Em7-2h-SKs.text" = "Помогите нам сделать AdGuard лучше";
+/* Class = "UILabel"; text = "Help us make Visafe better"; ObjectID = "Em7-2h-SKs"; */
+"Em7-2h-SKs.text" = "Помогите нам сделать Visafe лучше";
 
 /* Class = "UILabel"; text = "Report a bug"; ObjectID = "GA6-E3-BcJ"; Note = "(Main Menu) Advanced Settings caption"; */
 "GA6-E3-BcJ.text" = "Сообщить об ошибке";
@@ -31,8 +31,8 @@
 /* Class = "UILabel"; text = "Send detailed system information about running processes and application log"; ObjectID = "LHx-0a-FxM"; */
 "LHx-0a-FxM.text" = "Отправить подробную информацию о запущенных процессах и журнал работы приложения";
 
-/* Class = "UILabel"; text = "What is AdGuard?"; ObjectID = "NQS-fl-oOe"; */
-"NQS-fl-oOe.text" = "Что такое AdGuard?";
+/* Class = "UILabel"; text = "What is Visafe?"; ObjectID = "NQS-fl-oOe"; */
+"NQS-fl-oOe.text" = "Что такое Visafe?";
 
 /* Class = "UILabel"; text = "FAQ"; ObjectID = "Pb4-Gm-t4i"; Note = "(Main Menu) Advanced Settings caption"; */
 "Pb4-Gm-t4i.text" = "FAQ";
@@ -67,8 +67,8 @@
 /* Class = "UITextField"; placeholder = "Email Address"; ObjectID = "gap-Uy-5ka"; */
 "gap-Uy-5ka.placeholder" = "Email-адрес";
 
-/* Class = "UILabel"; text = "How to block ads with AdGuard"; ObjectID = "iwI-Gm-rAp"; */
-"iwI-Gm-rAp.text" = "Как блокировать рекламу с AdGuard";
+/* Class = "UILabel"; text = "How to block ads with Visafe"; ObjectID = "iwI-Gm-rAp"; */
+"iwI-Gm-rAp.text" = "Как блокировать рекламу с Visafe";
 
 /* Class = "UILabel"; text = "Help us improve the app"; ObjectID = "ow5-MW-Ued"; */
 "ow5-MW-Ued.text" = "Помогите нам улучшить наше приложение";

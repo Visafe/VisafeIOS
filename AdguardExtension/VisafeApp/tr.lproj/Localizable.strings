@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "Dönüştürücü JSON biçiminde başlatılamıyor.";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "İptal";
 
 /* (AEService) Service errors descriptions */
@@ -76,8 +76,8 @@
 /* (SignInController) user not found message */
 "user_not_found_message" = "Bu e-posta adresine sahip kullanıcı bulunamadı. Lütfen önce %@ adresinden kaydolun.";
 
-/* (SignInController) SignIn via AdGuard account title */
-"sign_in_via_adguard_title" = "AdGuard hesabını kullan";
+/* (SignInController) SignIn via Visafe account title */
+"sign_in_via_Visafe_title" = "Visafe hesabını kullan";
 
 /* (SignInController) SignIn via Apple account title */
 "sign_in_via_apple_title" = "Apple ile devam edin";
@@ -95,13 +95,13 @@
 "premium_expired_title" = "Dikkat";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "AdGuard hesabınıza başarıyla giriş yaptınız, ancak premium sürümü aktifleştirmenize izin veren lisans anahtarı yok.";
+"not_premium_message" = "Visafe hesabınıza başarıyla giriş yaptınız, ancak premium sürümü aktifleştirmenize izin veren lisans anahtarı yok.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "AdGuard hesabınıza başarıyla giriş yaptınız! iOS için AdGuard Premium sürümü etkinleştirildi.";
+"login_success_message" = "Visafe hesabınıza başarıyla giriş yaptınız! iOS için Visafe Premium sürümü etkinleştirildi.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "AdGuard hesabınıza başarıyla giriş yaptınız, ancak premium sürümü aktifleştirmenize izin veren lisans anahtarlarının süresi doldu.";
+"login_premium_expired_message" = "Visafe hesabınıza başarıyla giriş yaptınız, ancak premium sürümü aktifleştirmenize izin veren lisans anahtarlarının süresi doldu.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "Satın alma işlemini geri yüklemeye çalışırken bir hata oluştu.";
@@ -125,13 +125,13 @@
 "blacklist_text_format" = "Kendi kurallarınızı buraya ekleyebilirsiniz <a href=\"%@\">Kural söz dizimi hakkında </a> bu notu okuyun.";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "Alan adlarını buraya girin. AdGuard yalnızca bu web siteleri için Safari’de filtrelemeyi etkinleştirir.";
+"inverted_whitelist_text" = "Alan adlarını buraya girin. Visafe yalnızca bu web siteleri için Safari’de filtrelemeyi etkinleştirir.";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "Buraya satır sonları ile ayrılmış alan adlarını girin. AdGuard, bu alan adlarına tüm bağlantılara izin verecektir.";
+"dns_whitelist_text" = "Buraya satır sonları ile ayrılmış alan adlarını girin. Visafe, bu alan adlarına tüm bağlantılara izin verecektir.";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "Bu Engelleme Listesi <a href=\"%@\">AdGuard'ın DNS sözdizimini</a> destekler. Buraya satır sonları ile ayrılmış kuralları girin. AdGuard, bu kurallara uyan alan adlarına yapılan tüm bağlantıları engeller.";
+"dns_blacklist_text_format" = "Bu Engelleme Listesi <a href=\"%@\">Visafe'ın DNS sözdizimini</a> destekler. Buraya satır sonları ile ayrılmış kuralları girin. Visafe, bu kurallara uyan alan adlarına yapılan tüm bağlantıları engeller.";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "Güncelleniyor...";
@@ -184,8 +184,8 @@
 /* (DnsSettingController) Full (without VPN icon) mode description */
 "tunnel_mode_full_without_icon_description" = "Tam Tünel (VPN simgesi olmadan), diğer VPN uygulamalarıyla uyumsuz, daha az kararlı";
 
-/* (DnsSettingController) AdGuard DNS implementation title */
-"adguard_dns_implementation_title" = "AdGuard";
+/* (DnsSettingController) Visafe DNS implementation title */
+"Visafe_dns_implementation_title" = "Visafe";
 
 /* (DnsSettingController) Native DNS implementation title */
 "native_dns_implementation_title" = "Yerel";
@@ -221,7 +221,7 @@
 "login_error_message" = "Giriş yaparken bir hata oluştu";
 
 /* purchase secription format */
-"purchase_description_format" = "AdGuard Aboneliği Hakkında:<br><br>• Ödeme, satın alma onayı ile iTunes Hesabınızdan tahsil edilecektir.<br><br>• Otomatik yenileme cari dönemin bitiminden en az 24 saat önce  kapatılmadığı sürece aboneliğiniz otomatik olarak yenilenir.<br><br>• Abonelik yenileme ücreti, cari dönemin bitiminden 24 saat önce tahsil edilecektir.<br><br>Abonelikleriniz yönetilebilir ve bir abonelik satın aldıktan sonra otomatik yenilemeniz iTunes Hesap Ayarları'ndan kapatılabilir.<br><br><a href=%2$@>Şartlar ve koşullar</a> ve <a href=%1$@>Gizlilik politikası</a>";
+"purchase_description_format" = "Visafe Aboneliği Hakkında:<br><br>• Ödeme, satın alma onayı ile iTunes Hesabınızdan tahsil edilecektir.<br><br>• Otomatik yenileme cari dönemin bitiminden en az 24 saat önce  kapatılmadığı sürece aboneliğiniz otomatik olarak yenilenir.<br><br>• Abonelik yenileme ücreti, cari dönemin bitiminden 24 saat önce tahsil edilecektir.<br><br>Abonelikleriniz yönetilebilir ve bir abonelik satın aldıktan sonra otomatik yenilemeniz iTunes Hesap Ayarları'ndan kapatılabilir.<br><br><a href=%2$@>Şartlar ve koşullar</a> ve <a href=%1$@>Gizlilik politikası</a>";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%2$@>Şartlar ve koşullar</a> ve <a href=%1$@>Gizlilik politikası</a>";
@@ -293,24 +293,24 @@
 "failed_updating_current_state_label" = "Filtreler güncellenmedi";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "Bu lisans, çok fazla cihazda etkinleştirildi.\nLisansın kullanılmayan cihazlarla olan bağlantısını sitedeki kişisel hesabınızda kaldırabilirsiniz: adguard.com";
+"login_max_computers_exceeded" = "Bu lisans, çok fazla cihazda etkinleştirildi.\nLisansın kullanılmayan cihazlarla olan bağlantısını sitedeki kişisel hesabınızda kaldırabilirsiniz: Visafe.com";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "Bu işlem uzantısını kullanabilmeniz için önce, %1$@ ilk yapılandırmayı gerçekleştirmek zorundadır. Bunu yapmak için ana %2$@ uygulamasını başlatın.";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "İçerik engelleyicinin devre dışı bırakıldığını unutmayın. Bu, reklamların AdGuard ayarlarına bakılmaksızın filtrelenmeyeceği anlamına gelir. Filtrelemeye başlamak için lütfen Safari ayarlarından AdGuard İçerik Engelleyiciyi etkinleştirin.";
+"content_blocker_disabled_format" = "İçerik engelleyicinin devre dışı bırakıldığını unutmayın. Bu, reklamların Visafe ayarlarına bakılmaksızın filtrelenmeyeceği anlamına gelir. Filtrelemeye başlamak için lütfen Safari ayarlarından Visafe İçerik Engelleyiciyi etkinleştirin.";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "Ana bilgisayar adı temin edilemedi. Sayfa henüz yüklenmemiş olabilir.";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "Bu sitenin güvenlik politikası AdGuard Asistanı başlatmanıza izin vermiyor.";
+"assistant_launching_unable" = "Bu sitenin güvenlik politikası Visafe Asistanı başlatmanıza izin vermiyor.";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "Safari eylem eklentisi başlatılırken beklenmeyen bir hata oluştu. Bu tekrar olursa lütfen AdGuard Destek ile iletişime geçin.";
+"support_error_safari_extension" = "Safari eylem eklentisi başlatılırken beklenmeyen bir hata oluştu. Bu tekrar olursa lütfen Visafe Destek ile iletişime geçin.";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "Uyarı";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -337,8 +337,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "Sürüm %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009 — %@ AdGuard Software Ltd.\nTüm hakları saklıdır. AdGuard.com";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009 — %@ Visafe Software Ltd.\nTüm hakları saklıdır. Visafe.com";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "Çıkış";
@@ -885,7 +885,7 @@
 "low_level_description" = "<b style=color:#c23814ff>UYARI!</b> Bu özelliklerin etkinleştirilmesi İnternet bağlantısını kesebilir veya güvenliğinizi ve gizliliğinizi tehlikeye atabilir.";
 
 /* (LowLevelSettingsController) Low level settings beta channel link */
-"low_level_beta_link" = "Harika yeni AdGuard özellikleriyle ilgileniyor musunuz? <a href=\"%@\">Beta kanalımızı</a> deneyin.";
+"low_level_beta_link" = "Harika yeni Visafe özellikleriyle ilgileniyor musunuz? <a href=\"%@\">Beta kanalımızı</a> deneyin.";
 
 /* (LowLevelSettingsController) Low level bootstraps placeholder */
 "low_level_bootstraps_placeholder" = "DOH/DOT ana bilgisayar adlarını (varsa) çözmek için kullanılacak düz DNS sunucularının listesi";

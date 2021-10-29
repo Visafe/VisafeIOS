@@ -25,8 +25,8 @@
 /* Class = "UILabel"; text = "Split-Tunnel"; ObjectID = "GGp-kp-YJI"; */
 "GGp-kp-YJI.text" = "Split-Tunnel";
 
-/* Class = "UILabel"; text = "Enable this option if you experience issues with the Internet connection while AdGuard is running"; ObjectID = "H3Q-H6-YV0"; */
-"H3Q-H6-YV0.text" = "Уключыце гэту опцыю, калі падчас працы AdGuard паўстануць праблемы з падлучэннем";
+/* Class = "UILabel"; text = "Enable this option if you experience issues with the Internet connection while Visafe is running"; ObjectID = "H3Q-H6-YV0"; */
+"H3Q-H6-YV0.text" = "Уключыце гэту опцыю, калі падчас працы Visafe паўстануць праблемы з падлучэннем";
 
 /* Class = "UILabel"; text = "Advanced settings"; ObjectID = "Lig-ju-iTI"; */
 "Lig-ju-iTI.text" = "Пашыраныя налады";
@@ -67,8 +67,8 @@
 /* Class = "UILabel"; text = "Compatible with “Personal VPN” apps"; ObjectID = "gxl-pG-zh1"; */
 "gxl-pG-zh1.text" = "Стасуем з персанальнымі VPN-дадаткамі";
 
-/* Class = "UILabel"; text = "In the Split-Tunnel mode AdGuard is compatible with so-called “Personal VPN” apps. As a trade-off, in this mode it may be bypassed by system in case of bad connectivity."; ObjectID = "jmQ-ze-hFG"; */
-"jmQ-ze-hFG.text" = "У рэжыме Split-Tunnel AdGuard сумяшчальны з так званымі \"персанальнымі VPN-дадаткамі\". У якасці кампрамісу, у гэтым рэжыме ён можа быць абмінуты сістэмай у выпадку дрэннай сувязі.";
+/* Class = "UILabel"; text = "In the Split-Tunnel mode Visafe is compatible with so-called “Personal VPN” apps. As a trade-off, in this mode it may be bypassed by system in case of bad connectivity."; ObjectID = "jmQ-ze-hFG"; */
+"jmQ-ze-hFG.text" = "У рэжыме Split-Tunnel Visafe сумяшчальны з так званымі \"персанальнымі VPN-дадаткамі\". У якасці кампрамісу, у гэтым рэжыме ён можа быць абмінуты сістэмай у выпадку дрэннай сувязі.";
 
 /* Class = "UITableViewSection"; headerTitle = "Other"; ObjectID = "nL4-Vl-Gcz"; */
 "nL4-Vl-Gcz.headerTitle" = "Іншыя";
@@ -88,8 +88,8 @@
 /* Class = "UILabel"; text = "Settings"; ObjectID = "sc6-Tw-xnL"; */
 "sc6-Tw-xnL.text" = "Налады";
 
-/* Class = "UILabel"; text = "If this setting is enabled, AdGuard will use only Wi-Fi for background filter updates"; ObjectID = "tTY-BW-QcN"; */
-"tTY-BW-QcN.text" = "Калі гэта опцыя ўлучана, AdGuard будзе выкарыстоўваць толькі Wi-Fi для фонавага абнаўлення фільтраў";
+/* Class = "UILabel"; text = "If this setting is enabled, Visafe will use only Wi-Fi for background filter updates"; ObjectID = "tTY-BW-QcN"; */
+"tTY-BW-QcN.text" = "Калі гэта опцыя ўлучана, Visafe будзе выкарыстоўваць толькі Wi-Fi для фонавага абнаўлення фільтраў";
 
 /* Class = "UILabel"; text = "This option will clear all statistical data, such as number of requests, etc."; ObjectID = "wYq-g0-5k6"; */
 "wYq-g0-5k6.text" = "Гэта опцыя ачысціць усе дадзеныя статыстыкі, такія як колькасць запытаў і іншыя.";

@@ -13,7 +13,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.adguard.AdguardExtension</string>
+		<string>group.com.Visafe.VisafeExtension</string>
 	</array>
 </dict>
 </plist>

@@ -16,8 +16,8 @@
 /* Class = "UILabel"; text = "License"; ObjectID = "Ebc-Lf-9R1"; */
 "Ebc-Lf-9R1.text" = "라이선스";
 
-/* Class = "UILabel"; text = "Help us make AdGuard better"; ObjectID = "Em7-2h-SKs"; */
-"Em7-2h-SKs.text" = "더 나은 AdGuard를 위해 도와주세요";
+/* Class = "UILabel"; text = "Help us make Visafe better"; ObjectID = "Em7-2h-SKs"; */
+"Em7-2h-SKs.text" = "더 나은 Visafe를 위해 도와주세요";
 
 /* Class = "UILabel"; text = "Report a bug"; ObjectID = "GA6-E3-BcJ"; Note = "(Main Menu) Advanced Settings caption"; */
 "GA6-E3-BcJ.text" = "버그 제보";
@@ -31,8 +31,8 @@
 /* Class = "UILabel"; text = "Send detailed system information about running processes and application log"; ObjectID = "LHx-0a-FxM"; */
 "LHx-0a-FxM.text" = "실행 중인 프로세스 및 애플리케이션 로그에 대한 자세한 시스템 정보 전송";
 
-/* Class = "UILabel"; text = "What is AdGuard?"; ObjectID = "NQS-fl-oOe"; */
-"NQS-fl-oOe.text" = "AdGuard란 무엇인가요?";
+/* Class = "UILabel"; text = "What is Visafe?"; ObjectID = "NQS-fl-oOe"; */
+"NQS-fl-oOe.text" = "Visafe란 무엇인가요?";
 
 /* Class = "UILabel"; text = "FAQ"; ObjectID = "Pb4-Gm-t4i"; Note = "(Main Menu) Advanced Settings caption"; */
 "Pb4-Gm-t4i.text" = "FAQ";
@@ -67,8 +67,8 @@
 /* Class = "UITextField"; placeholder = "Email Address"; ObjectID = "gap-Uy-5ka"; */
 "gap-Uy-5ka.placeholder" = "이메일 주소";
 
-/* Class = "UILabel"; text = "How to block ads with AdGuard"; ObjectID = "iwI-Gm-rAp"; */
-"iwI-Gm-rAp.text" = "AdGuard를 사용하여 광고를 차단하는 방법";
+/* Class = "UILabel"; text = "How to block ads with Visafe"; ObjectID = "iwI-Gm-rAp"; */
+"iwI-Gm-rAp.text" = "Visafe를 사용하여 광고를 차단하는 방법";
 
 /* Class = "UILabel"; text = "Help us improve the app"; ObjectID = "ow5-MW-Ued"; */
 "ow5-MW-Ued.text" = "앱을 개선할 수 있도록 도와주세요";

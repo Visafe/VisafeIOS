@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "Tidak dapat menginisialisasi konverter ke format JSON!";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "Batal";
 
 /* (AEService) Service errors descriptions */
@@ -80,13 +80,13 @@
 "premium_expired_title" = "Perhatian";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "Anda telah berhasil masuk ke akun AdGuard Anda, tetapi tidak ada lisensi untuk mengaktivasi versi premium.";
+"not_premium_message" = "Anda telah berhasil masuk ke akun Visafe Anda, tetapi tidak ada lisensi untuk mengaktivasi versi premium.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "Anda telah berhasil masuk ke akun AdGuard Anda, AdGuard for iOS premium sudah berhasil diaktifkan.";
+"login_success_message" = "Anda telah berhasil masuk ke akun Visafe Anda, Visafe for iOS premium sudah berhasil diaktifkan.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "Anda telah berhasil masuk ke akun AdGuard Anda, tetapi lisensi yang memungkinkan Anda untuk mengaktifkan versi premium telah kedaluwarsa.";
+"login_premium_expired_message" = "Anda telah berhasil masuk ke akun Visafe Anda, tetapi lisensi yang memungkinkan Anda untuk mengaktifkan versi premium telah kedaluwarsa.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "Terjadi kesalahan saat mencoba memulihkan pembelian.";
@@ -110,13 +110,13 @@
 "blacklist_text_format" = "Masukkan aturan kustom Anda di sini<br>Baca <a href=\"%@\">catatan mengenai aturan syntax</a>.";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "Masukkan nama domain di sini. AdGuard akan mengaktifkan pemfilteran di Safari untuk situs-situs web ini.";
+"inverted_whitelist_text" = "Masukkan nama domain di sini. Visafe akan mengaktifkan pemfilteran di Safari untuk situs-situs web ini.";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "Masukkan nama domain di sini pisahkan pakai jeda baris. AdGuard akan membolehkan semua koneksi ke domain-domain yang tertulis di sini.";
+"dns_whitelist_text" = "Masukkan nama domain di sini pisahkan pakai jeda baris. Visafe akan membolehkan semua koneksi ke domain-domain yang tertulis di sini.";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "Daftar Blokir ini mendukung <a href=\"%@\"> sintaks DNS AdGuard</a>. Masukkan di sini, pisahkan aturan dengan pemisah kalimat. AdGuard akan memblokir seluruh koneksi kepada domain yang sama dengan peraturan ini.";
+"dns_blacklist_text_format" = "Daftar Blokir ini mendukung <a href=\"%@\"> sintaks DNS Visafe</a>. Masukkan di sini, pisahkan aturan dengan pemisah kalimat. Visafe akan memblokir seluruh koneksi kepada domain yang sama dengan peraturan ini.";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "Memperbarui...";
@@ -185,7 +185,7 @@
 "login_error_message" = "Terjadi kesalahan saat masuk";
 
 /* purchase secription format */
-"purchase_description_format" = "Tentang Berlangganan AdGuard:<br><br>• Pembayaran akan dibebankan ke Akun iTunes Anda saat konfirmasi pembelian.<br>• Langganan akan secara otomatis diperpanjang kecuali perpanjangan otomatis dimatikan setidaknya 24 jam sebelum akhir periode berjalan.<br>• Biaya perpanjang langganan akan dibebankan dalam 24 jam sebelum akhir periode berjalan. Langganan Anda dapat dikelola dan perpanjangan otomatis Anda dapat dimatikan di Pengaturan Akun iTunes Anda setelah membeli langganan.<br><br><a href=%1$@>Kebijakan privasi</a><br><br><a href=%2$@>Ketentuan Penggunaan</a>";
+"purchase_description_format" = "Tentang Berlangganan Visafe:<br><br>• Pembayaran akan dibebankan ke Akun iTunes Anda saat konfirmasi pembelian.<br>• Langganan akan secara otomatis diperpanjang kecuali perpanjangan otomatis dimatikan setidaknya 24 jam sebelum akhir periode berjalan.<br>• Biaya perpanjang langganan akan dibebankan dalam 24 jam sebelum akhir periode berjalan. Langganan Anda dapat dikelola dan perpanjangan otomatis Anda dapat dimatikan di Pengaturan Akun iTunes Anda setelah membeli langganan.<br><br><a href=%1$@>Kebijakan privasi</a><br><br><a href=%2$@>Ketentuan Penggunaan</a>";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%1$@>Kebijakan Privasi</a> <br><br><a href=%2$@>Ketentuan Penggunaan</a>";
@@ -251,24 +251,24 @@
 "failed_updating_current_state_label" = "Filter belum diperbarui";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "Lisensi ini telah diaktifkan pada jumlah maksimum perangkat.\nAnda dapat melepas lisensi dari perangkat yang tidak digunakan di akun pribadi Anda di situs web: adguard.com";
+"login_max_computers_exceeded" = "Lisensi ini telah diaktifkan pada jumlah maksimum perangkat.\nAnda dapat melepas lisensi dari perangkat yang tidak digunakan di akun pribadi Anda di situs web: Visafe.com";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "Sebelum Anda dapat menggunakan ekstensi tindakan ini, %1$@ harus melakukan konfigurasi awal. Luncurkan aplikasi %2$@ utama untuk membiarkannya.";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "Perhatikan bahwa pemblokir konten dinonaktifkan. Itu berarti iklan tidak akan difilter terlepas dari pengaturan AdGuard. Harap aktifkan pemblokir Konten AdGuard dalam pengaturan Safari untuk mulai memfilter.";
+"content_blocker_disabled_format" = "Perhatikan bahwa pemblokir konten dinonaktifkan. Itu berarti iklan tidak akan difilter terlepas dari pengaturan Visafe. Harap aktifkan pemblokir Konten Visafe dalam pengaturan Safari untuk mulai memfilter.";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "Nama host tidak diperoleh. Mungkin halaman belum dimuat.";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "Kebijakan keamanan situs web ini tidak mengizinkan peluncuran Asisten AdGuard.";
+"assistant_launching_unable" = "Kebijakan keamanan situs web ini tidak mengizinkan peluncuran Asisten Visafe.";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "Terjadi kesalahan tak terduga saat menginisialisasi ekstensi tindakan Safari. Silakan hubungi Dukungan AdGuard jika ini terjadi lagi.";
+"support_error_safari_extension" = "Terjadi kesalahan tak terduga saat menginisialisasi ekstensi tindakan Safari. Silakan hubungi Dukungan Visafe jika ini terjadi lagi.";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "Peringatan";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -295,8 +295,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "Versi %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009 – %@. Adguard Software Ltd.\nSemua hak dilindungi. AdGuard.com";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009 – %@. Visafe Software Ltd.\nSemua hak dilindungi. Visafe.com";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "Keluar";

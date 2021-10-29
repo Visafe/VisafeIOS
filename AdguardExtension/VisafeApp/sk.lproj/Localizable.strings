@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "Konvertor na formát JSON sa nedá inicializovať!";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "Zrušiť";
 
 /* (AEService) Service errors descriptions */
@@ -76,8 +76,8 @@
 /* (SignInController) user not found message */
 "user_not_found_message" = "Nebol nájdený žiadny používateľ s touto e-mail adresou. Najskôr sa zaregistrujte na %@.";
 
-/* (SignInController) SignIn via AdGuard account title */
-"sign_in_via_adguard_title" = "Použiť účet AdGuard";
+/* (SignInController) SignIn via Visafe account title */
+"sign_in_via_Visafe_title" = "Použiť účet Visafe";
 
 /* (SignInController) SignIn via Apple account title */
 "sign_in_via_apple_title" = "Prihlásiť sa pomocou Apple";
@@ -95,13 +95,13 @@
 "premium_expired_title" = "Upozornenie";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "Úspešne ste sa prihlásili do Vášho účtu AdGuard, ale nie sú k dispozícii žiadne licenčné kľúče, ktoré by Vám umožnili aktiváciu prémiovej verzie.";
+"not_premium_message" = "Úspešne ste sa prihlásili do Vášho účtu Visafe, ale nie sú k dispozícii žiadne licenčné kľúče, ktoré by Vám umožnili aktiváciu prémiovej verzie.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "Úspešne ste sa prihlásili do Vášho účtu AdGuard! Prémiová verzia programu AdGuard pre iOS bola aktivovaná.";
+"login_success_message" = "Úspešne ste sa prihlásili do Vášho účtu Visafe! Prémiová verzia programu Visafe pre iOS bola aktivovaná.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "Úspešne ste sa prihlásili do Vášho účtu AdGuard, ale všetky licenčné kľúče, ktoré by Vám umožnili aktiváciu prémiovej verzie, už vypršali.";
+"login_premium_expired_message" = "Úspešne ste sa prihlásili do Vášho účtu Visafe, ale všetky licenčné kľúče, ktoré by Vám umožnili aktiváciu prémiovej verzie, už vypršali.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "Pri pokuse o obnovu nákupu nastala chyba.";
@@ -125,13 +125,13 @@
 "blacklist_text_format" = "Sem zadajte svoje vlastné pravidlá<br>Prečítajte si túto  <a href=\"%@\">poznámku o syntaxe pravidiel</a>.";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "Sem zadajte názvy domén. AdGuard zapne filtráciu len na týchto webových stránkach v Safari";
+"inverted_whitelist_text" = "Sem zadajte názvy domén. Visafe zapne filtráciu len na týchto webových stránkach v Safari";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "Sem zadajte mená domén oddelené zalomením riadkov. AdGuard povolí všetky pripojenia k týmto doménam.";
+"dns_whitelist_text" = "Sem zadajte mená domén oddelené zalomením riadkov. Visafe povolí všetky pripojenia k týmto doménam.";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "Tento zoznam blokovaní podporuje <a href=\"%@\">DNS AdGuard syntax</a>. Sem zadajte pravidlá oddelené zalomením riadkov. AdGuard zablokuje všetky pripojenia k doménam, ktoré zodpovedajú týmto pravidlám.";
+"dns_blacklist_text_format" = "Tento zoznam blokovaní podporuje <a href=\"%@\">DNS Visafe syntax</a>. Sem zadajte pravidlá oddelené zalomením riadkov. Visafe zablokuje všetky pripojenia k doménam, ktoré zodpovedajú týmto pravidlám.";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "Aktualizácia...";
@@ -184,8 +184,8 @@
 /* (DnsSettingController) Full (without VPN icon) mode description */
 "tunnel_mode_full_without_icon_description" = "Plný tunel (bez ikony VPN), nekompatibilný s inými VPN aplikáciami, menej stabilný";
 
-/* (DnsSettingController) AdGuard DNS implementation title */
-"adguard_dns_implementation_title" = "AdGuard";
+/* (DnsSettingController) Visafe DNS implementation title */
+"Visafe_dns_implementation_title" = "Visafe";
 
 /* (DnsSettingController) Native DNS implementation title */
 "native_dns_implementation_title" = "Natívna";
@@ -221,7 +221,7 @@
 "login_error_message" = "Počas prihlasovania sa vyskytla chyba";
 
 /* purchase secription format */
-"purchase_description_format" = "AdGuard Premium je platená ročná služba s predplateným 2,99 USD za rok (cena sa môže líšiť podľa regiónu). Platba bude účtovaná na účet iTunes pri potvrdení nákupu. Predplatné sa automaticky obnoví, pokiaľ nie je automatické obnovenie vypnuté aspoň 24 hodín pred koncom aktuálneho obdobia. Obnovenie predplatného bude účtované do 24 hodín pred koncom aktuálneho obdobia. Vaše odbery môžu byť spravované a Vaše automatické obnovenie môže byť vypnuté tak, že prejdete na nastavenia účtu iTunes po zakúpení predplatného.<br><br><a href=%1$@>Zásady ochrany osobných údajov</a> <br><br><a href=%2$@>Zmluvné podmienky</a>";
+"purchase_description_format" = "Visafe Premium je platená ročná služba s predplateným 2,99 USD za rok (cena sa môže líšiť podľa regiónu). Platba bude účtovaná na účet iTunes pri potvrdení nákupu. Predplatné sa automaticky obnoví, pokiaľ nie je automatické obnovenie vypnuté aspoň 24 hodín pred koncom aktuálneho obdobia. Obnovenie predplatného bude účtované do 24 hodín pred koncom aktuálneho obdobia. Vaše odbery môžu byť spravované a Vaše automatické obnovenie môže byť vypnuté tak, že prejdete na nastavenia účtu iTunes po zakúpení predplatného.<br><br><a href=%1$@>Zásady ochrany osobných údajov</a> <br><br><a href=%2$@>Zmluvné podmienky</a>";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%1$@>Pravidlá ochrany súkromia</a> <br><br><a href=%2$@>Podmienky používania</a>";
@@ -293,24 +293,24 @@
 "failed_updating_current_state_label" = "Filtre neboli aktualizované";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "Táto licencia bola aktivovaná na maximálnom počte zariadení.\nLicenciu môžete odhlásiť z nepoužívaných zariadení vo svojom osobnom účte na webovej stránke: adguard.com";
+"login_max_computers_exceeded" = "Táto licencia bola aktivovaná na maximálnom počte zariadení.\nLicenciu môžete odhlásiť z nepoužívaných zariadení vo svojom osobnom účte na webovej stránke: Visafe.com";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "Predtým, ako budete môcť použiť toto rozšírenie akcie, musí %1$@ vykonať počiatočnú konfiguráciu. Spustite hlavnú aplikáciu %2$@, aby ste to mohli urobiť.";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "Blokovač obsahu je vypnutý. To znamená, že reklamy nebudú filtrované bez ohľadu na nastavenia AdGuard. Ak chcete spustiť filtráciu, zapnite blokovanie obsahu AdGuard v nastaveniach Safari.";
+"content_blocker_disabled_format" = "Blokovač obsahu je vypnutý. To znamená, že reklamy nebudú filtrované bez ohľadu na nastavenia Visafe. Ak chcete spustiť filtráciu, zapnite blokovanie obsahu Visafe v nastaveniach Safari.";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "Meno hostiteľa sa nezískalo. Pravdepodobne stránka zatiaľ nebola načítaná.";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "Bezpečnostná politika tejto webovej stránky neumožňuje spustenie nástroja AdGuard Assistant.";
+"assistant_launching_unable" = "Bezpečnostná politika tejto webovej stránky neumožňuje spustenie nástroja Visafe Assistant.";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "Počas inicializácie rozšírenia Safari sa vyskytla neočakávaná chyba. Ak sa to stane znova, obráťte sa na podporu služby AdGuard.";
+"support_error_safari_extension" = "Počas inicializácie rozšírenia Safari sa vyskytla neočakávaná chyba. Ak sa to stane znova, obráťte sa na podporu služby Visafe.";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "Varovanie";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -337,8 +337,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "Verzia %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009 — %@ AdGuard Software Ltd.\nVšetky práva vyhradené. AdGuard.com";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009 — %@ Visafe Software Ltd.\nVšetky práva vyhradené. Visafe.com";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "Odhlásenie";
@@ -885,7 +885,7 @@
 "low_level_description" = "<b style=color:#c23814ff>UPOZORNENIE!</b> Povolenie týchto funkcií môže prerušiť internetové pripojenie alebo narušiť Vašu bezpečnosť a ochranu súkromia.";
 
 /* (LowLevelSettingsController) Low level settings beta channel link */
-"low_level_beta_link" = "Máte záujem o nové super funkcie AdGuard? Vyskúšajte náš <a href=\"%@\">beta kanál.</a>";
+"low_level_beta_link" = "Máte záujem o nové super funkcie Visafe? Vyskúšajte náš <a href=\"%@\">beta kanál.</a>";
 
 /* (LowLevelSettingsController) Low level bootstraps placeholder */
 "low_level_bootstraps_placeholder" = "Zoznam štandardných DNS serverov, ktoré sa majú použiť na rozlíšenie názvov DOH/DOT hostiteľov (ak existujú)";
@@ -926,10 +926,10 @@
 "setapp_device_limit_reached" = "K Vášmu Setapp účtu ste pripojili maximálny počet zariadení.";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_done_text_safari" = "Hotovo! Teraz môžete sledovať YouTube bez reklám.\n\nAk je rozšírenie zapnuté, vedľa loga YouTube sa zobrazuje titulok „s AdGuard“.<br><br><b>Ak stránku načítate znova, budete musieť znova vykonať kroky 3 a 4.</b>";
+"block_youtube_ads_instructions_done_text_safari" = "Hotovo! Teraz môžete sledovať YouTube bez reklám.\n\nAk je rozšírenie zapnuté, vedľa loga YouTube sa zobrazuje titulok „s Visafe“.<br><br><b>Ak stránku načítate znova, budete musieť znova vykonať kroky 3 a 4.</b>";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text  */
-"block_youtube_ads_instructions_done_text" = "Hotovo! Teraz môžete sledovať YouTube bez reklám.\n\nAk je rozšírenie zapnuté, vedľa loga YouTube sa zobrazuje titulok „s AdGuard“.<br><br><b>Ak stránku načítate znova, budete musieť znova vykonať kroky 2 a 3.</b>";
+"block_youtube_ads_instructions_done_text" = "Hotovo! Teraz môžete sledovať YouTube bez reklám.\n\nAk je rozšírenie zapnuté, vedľa loga YouTube sa zobrazuje titulok „s Visafe“.<br><br><b>Ak stránku načítate znova, budete musieť znova vykonať kroky 2 a 3.</b>";
 
 // MARK: - YouTubeAdsRequestHandler
 /* (YouTubeAdsRequestHandler) - Title for notification when YouTube ads script was successfully executed */

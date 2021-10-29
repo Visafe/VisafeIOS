@@ -1,6 +1,6 @@
 //
 //  AASFilterSubscriptionParser.h
-//  Adguard
+//  Visafe
 //
 //  Created by Roman Sokolov on 09.10.17.
 //  Copyright © 2017 Performix. All rights reserved.

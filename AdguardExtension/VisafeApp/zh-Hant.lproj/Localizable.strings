@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "無法初始化轉換器為 JSON 格式。";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "取消";
 
 /* (AEService) Service errors descriptions */
@@ -88,8 +88,8 @@
 /* (SignInController) user not found message */
 "user_not_found_message" = "未找到符合此電子郵件地址的用戶。請先在 %@ 註冊。";
 
-/* (SignInController) SignIn via AdGuard account title */
-"sign_in_via_adguard_title" = "使用 AdGuard 帳戶";
+/* (SignInController) SignIn via Visafe account title */
+"sign_in_via_Visafe_title" = "使用 Visafe 帳戶";
 
 /* (SignInController) SignIn via Apple account title */
 "sign_in_via_apple_title" = "用 Apple 繼續";
@@ -107,25 +107,25 @@
 "premium_expired_title" = "注意";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "您已成功地登入您的 AdGuard 帳戶，但沒有允許您啟動該高級版之授權金鑰。";
+"not_premium_message" = "您已成功地登入您的 Visafe 帳戶，但沒有允許您啟動該高級版之授權金鑰。";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "您已成功地登入您的 AdGuard 帳戶！AdGuard for iOS 的高級版已被啟動。";
+"login_success_message" = "您已成功地登入您的 Visafe 帳戶！Visafe for iOS 的高級版已被啟動。";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "您已成功地登入您的 AdGuard 帳戶，但允許您啟動該高級版之授權金鑰已到期。";
+"login_premium_expired_message" = "您已成功地登入您的 Visafe 帳戶，但允許您啟動該高級版之授權金鑰已到期。";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "當試圖回復該購買時，錯誤已發生。";
 
 /* (AEUIGetProViewController) message that appears when purchase successfully restored */
-"restore_success_message" = "該購買已被回復！AdGuard for iOS 的高級版已被啟動。";
+"restore_success_message" = "該購買已被回復！Visafe for iOS 的高級版已被啟動。";
 
 /* (AEUIGetProControllerViewController) this message showes when user try ro restore purchases but there is nothing to restore. */
 "nothing_to_restore_message" = "無要回復的購買";
 
 /* (AEUIGetProViewController) message that appears when the purchase is successful */
-"purchase_success_message" = "該購買已被成功地完成！AdGuard for iOS 的高級版已被啟動。";
+"purchase_success_message" = "該購買已被成功地完成！Visafe for iOS 的高級版已被啟動。";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase */
 "purchase_failure_message" = "當處理您的購買時，錯誤已發生。";
@@ -146,13 +146,13 @@
 "whitelist_text" = "輸入被排除在過濾之外的網域。此清單優先於其它的設定。";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "於此輸入該域名。AdGuard 將在 Safari 中僅對於這些網站啟用過濾。";
+"inverted_whitelist_text" = "於此輸入該域名。Visafe 將在 Safari 中僅對於這些網站啟用過濾。";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "於此輸入被換行分隔的域名。AdGuard 將允許所有至這些網域的連線。";
+"dns_whitelist_text" = "於此輸入被換行分隔的域名。Visafe 將允許所有至這些網域的連線。";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "此封鎖清單支援 <a href=\"%@\">AdGuard 的 DNS 語法</a>。於此輸入被換行分隔的規則。AdGuard 將封鎖所有與這些規則相符的網域之連線。";
+"dns_blacklist_text_format" = "此封鎖清單支援 <a href=\"%@\">Visafe 的 DNS 語法</a>。於此輸入被換行分隔的規則。Visafe 將封鎖所有與這些規則相符的網域之連線。";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "正在更新…";
@@ -205,8 +205,8 @@
 /* (DnsSettingController) Full (without VPN icon) mode description */
 "tunnel_mode_full_without_icon_description" = "完全的隧道（無 VPN 圖像），與其它的 VPN 應用程式不相容，較不穩定的";
 
-/* (DnsSettingController) AdGuard DNS implementation title */
-"adguard_dns_implementation_title" = "AdGuard";
+/* (DnsSettingController) Visafe DNS implementation title */
+"Visafe_dns_implementation_title" = "Visafe";
 
 /* (DnsSettingController) Native DNS implementation title */
 "native_dns_implementation_title" = "原生的";
@@ -242,7 +242,7 @@
 "login_error_message" = "當登入時，錯誤已發生。";
 
 /* purchase secription format */
-"purchase_description_format" = "關於 AdGuard 訂閱：<br><br>• 付款將在購買確認時被記在您的 iTunes 帳戶上。<br><br>• 除非在現行的週期結束前至少 24 小時自動續訂被關掉，否則該訂閱被自動地續訂。<br><br>• 該訂閱續訂費用將在現行的週期結束前 24 小時內被收費。<br><br>您的訂閱可被管理，且在購買訂閱後，您的自動續訂可在您的 iTunes 帳戶設定裡被關掉。<br><br><a href=%2$@>條款和條件</a>及<a href=%1$@>隱私政策</a>";
+"purchase_description_format" = "關於 Visafe 訂閱：<br><br>• 付款將在購買確認時被記在您的 iTunes 帳戶上。<br><br>• 除非在現行的週期結束前至少 24 小時自動續訂被關掉，否則該訂閱被自動地續訂。<br><br>• 該訂閱續訂費用將在現行的週期結束前 24 小時內被收費。<br><br>您的訂閱可被管理，且在購買訂閱後，您的自動續訂可在您的 iTunes 帳戶設定裡被關掉。<br><br><a href=%2$@>條款和條件</a>及<a href=%1$@>隱私政策</a>";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%2$@>條款和條件</a>及<a href=%1$@>隱私政策</a>";
@@ -314,24 +314,24 @@
 "failed_updating_current_state_label" = "過濾器尚未被更新";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "此授權已被啟動處於裝置之最大數量的狀態。\n您可於網站：adguard.com 上在您個人的帳戶中由未使用的裝置解除綁定此授權";
+"login_max_computers_exceeded" = "此授權已被啟動處於裝置之最大數量的狀態。\n您可於網站：Visafe.com 上在您個人的帳戶中由未使用的裝置解除綁定此授權";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "在您可使用該動作延伸功能之前，%1$@ 必須執行一個初始的配置。啟動主要的 %2$@ 應用程式，讓它這樣做。";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "注意，內容阻擋器被禁用。那表示不管 AdGuard 設定如何，廣告將不被過濾。請在 Safari 設定中啟用 AdGuard 內容阻擋器以開始過濾。";
+"content_blocker_disabled_format" = "注意，內容阻擋器被禁用。那表示不管 Visafe 設定如何，廣告將不被過濾。請在 Safari 設定中啟用 Visafe 內容阻擋器以開始過濾。";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "該主機名稱未被獲得。也許該頁面尚未被載入。";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "此網站的安全性政策不允許發動 AdGuard 助理。";
+"assistant_launching_unable" = "此網站的安全性政策不允許發動 Visafe 助理。";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "當初始 Safari 動作延伸功能時，非預期性的錯誤已發生。如果這個再次發生，請與 AdGuard 支援聯繫。";
+"support_error_safari_extension" = "當初始 Safari 動作延伸功能時，非預期性的錯誤已發生。如果這個再次發生，請與 Visafe 支援聯繫。";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "警告";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -358,8 +358,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "版本 %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009–%@。AdGuard 軟體有限公司\n保留所有的權利。AdGuard.com";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009–%@。Visafe 軟體有限公司\n保留所有的權利。Visafe.com";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "登出";
@@ -918,7 +918,7 @@
 "low_level_description" = "<b style=color:#c23814ff>警告！</b>啟用這些功能可能破壞網際網路連線或危害您的安全性及隱私。";
 
 /* (LowLevelSettingsController) Low level settings beta channel link */
-"low_level_beta_link" = "對 AdGuard 酷炫的新功能感到興趣嗎？嘗試我們的<a href=\"%@\">測試版管道</a>。";
+"low_level_beta_link" = "對 Visafe 酷炫的新功能感到興趣嗎？嘗試我們的<a href=\"%@\">測試版管道</a>。";
 
 /* (LowLevelSettingsController) Low level bootstraps placeholder */
 "low_level_bootstraps_placeholder" = "（若有的話）要被用於解析 DoH/DoT 主機名稱之完全的 DNS 伺服器清單";
@@ -959,16 +959,16 @@
 "setapp_device_limit_reached" = "您已連結最大數量的裝置到您的 Setapp 帳戶。";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_safari" = "您知道 YouTube 已更改它的演算法以向您顯示更多的廣告嗎？<br><br>現在，為了封鎖它們，您需要：<br><br>1. 打開 <a href=\"%@\">Safari</a>。<br><br>2. 開啟 youtube.com。<br><br>3. 輕觸 %@ 分享。<br><br>4. 輕觸\"封鎖 YouTube 廣告（由 AdGuard 製作）\"。";
+"block_youtube_ads_instructions_safari" = "您知道 YouTube 已更改它的演算法以向您顯示更多的廣告嗎？<br><br>現在，為了封鎖它們，您需要：<br><br>1. 打開 <a href=\"%@\">Safari</a>。<br><br>2. 開啟 youtube.com。<br><br>3. 輕觸 %@ 分享。<br><br>4. 輕觸\"封鎖 YouTube 廣告（由 Visafe 製作）\"。";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text  */
-"block_youtube_ads_instructions" = "您知道 YouTube 已更改它的演算法以向您顯示更多的廣告嗎？<br><br>現在，為了封鎖它們，您需要：<br><br>1. 在 Safari 中打開 <a href=\"%@\">youtube.com</a>。<br><br>2. 輕觸 %@ 分享。<br><br>3. 輕觸\"封鎖 YouTube 廣告（由 AdGuard 製作）\"。";
+"block_youtube_ads_instructions" = "您知道 YouTube 已更改它的演算法以向您顯示更多的廣告嗎？<br><br>現在，為了封鎖它們，您需要：<br><br>1. 在 Safari 中打開 <a href=\"%@\">youtube.com</a>。<br><br>2. 輕觸 %@ 分享。<br><br>3. 輕觸\"封鎖 YouTube 廣告（由 Visafe 製作）\"。";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_done_text_safari" = "完成！現在，您可觀看無廣告的 YouTube。\n\n當該延伸功能被啟用時，標題 “偕同 AdGuard” 緊鄰著 YouTube 商標被顯示。<br><br><b>若您重新載入該頁面，您將需要再次執行步驟 3 和 4。</b>";
+"block_youtube_ads_instructions_done_text_safari" = "完成！現在，您可觀看無廣告的 YouTube。\n\n當該延伸功能被啟用時，標題 “偕同 Visafe” 緊鄰著 YouTube 商標被顯示。<br><br><b>若您重新載入該頁面，您將需要再次執行步驟 3 和 4。</b>";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text  */
-"block_youtube_ads_instructions_done_text" = "完成！現在，您可觀看無廣告的 YouTube。\n\n當該延伸功能被啟用時，標題 “偕同 AdGuard” 緊鄰著 YouTube 商標被顯示。<br><br><b>若您重新載入該頁面，您將需要再次執行步驟 2 和 3。</b>";
+"block_youtube_ads_instructions_done_text" = "完成！現在，您可觀看無廣告的 YouTube。\n\n當該延伸功能被啟用時，標題 “偕同 Visafe” 緊鄰著 YouTube 商標被顯示。<br><br><b>若您重新載入該頁面，您將需要再次執行步驟 2 和 3。</b>";
 
 // MARK: - YouTubeAdsRequestHandler
 /* (YouTubeAdsRequestHandler) - Title for notification when YouTube ads script was successfully executed */

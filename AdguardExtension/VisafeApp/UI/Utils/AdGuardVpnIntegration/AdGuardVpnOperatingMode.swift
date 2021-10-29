@@ -1,6 +1,6 @@
 import Foundation
 
-enum AdGuardVpnOperatingMode: CaseIterable {
+enum VisafeVpnOperatingMode: CaseIterable {
     case general
     case ipSec
     
@@ -12,6 +12,6 @@ enum AdGuardVpnOperatingMode: CaseIterable {
         }
     }
     
-    /* All available AdGuard VPN network interfaces */
-    static var allAvailableInterfaces: [ACNCidrRange] { AdGuardVpnOperatingMode.allCases.flatMap { $0.networkInterfaces } }
+    /* All available Visafe VPN network interfaces */
+    static var allAvailableInterfaces: [ACNCidrRange] { VisafeVpnOperatingMode.allCases.flatMap { $0.networkInterfaces } }
 }

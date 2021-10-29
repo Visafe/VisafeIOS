@@ -1,19 +1,19 @@
 /**
-    This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-    Copyright © Adguard Software Limited. All rights reserved.
+    This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+    Copyright © Visafe Software Limited. All rights reserved.
 
-    Adguard for iOS is free software: you can redistribute it and/or modify
+    Visafe for iOS is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    Adguard for iOS is distributed in the hope that it will be useful,
+    Visafe for iOS is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+    along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 protocol IStatusBarWindow: AnyObject {
@@ -58,7 +58,7 @@ final class StatusBarWindow: IStatusBarWindow {
         let frame = CGRect(x: 0.0, y: keyWindow.frame.maxY, width: keyWindow.frame.width, height: 16.0 + bottomSafeAreaInset)
         
         let bannerWindow = UIWindow(frame: frame)
-        bannerWindow.backgroundColor = UIColor.AdGuardColor.lightGray5
+        bannerWindow.backgroundColor = UIColor.VisafeColor.lightGray5
         bannerWindow.windowLevel = UIWindow.Level.statusBar
         bannerWindow.addSubview(statusView)
         bannerWindow.isHidden = false

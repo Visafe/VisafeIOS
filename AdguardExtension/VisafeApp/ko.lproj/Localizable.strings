@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "변환기를 JSON 형식으로 초기화할 수 없습니다!";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "취소";
 
 /* (AEService) Service errors descriptions */
@@ -88,8 +88,8 @@
 /* (SignInController) user not found message */
 "user_not_found_message" = "이 이메일 주소로 사용자를 찾을 수 없습니다. %@에서 계정을 만드십시오.";
 
-/* (SignInController) SignIn via AdGuard account title */
-"sign_in_via_adguard_title" = "AdGuard 계정 사용";
+/* (SignInController) SignIn via Visafe account title */
+"sign_in_via_Visafe_title" = "Visafe 계정 사용";
 
 /* (SignInController) SignIn via Apple account title */
 "sign_in_via_apple_title" = "Apple 계정으로 진행";
@@ -107,25 +107,25 @@
 "premium_expired_title" = "주의";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "AdGuard 계정에 성공적으로 로그인 하였으나 프리미엄 버전을 활성화 시킬 수 있는 라이선스 키가 없습니다.";
+"not_premium_message" = "Visafe 계정에 성공적으로 로그인 하였으나 프리미엄 버전을 활성화 시킬 수 있는 라이선스 키가 없습니다.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "AdGuard 계정에 성공적으로 로그인하였습니다! iOS용 AdGuard의 프리미엄 버전이 활성화 되었습니다.";
+"login_success_message" = "Visafe 계정에 성공적으로 로그인하였습니다! iOS용 Visafe의 프리미엄 버전이 활성화 되었습니다.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "AdGuard 계정에 성공적으로 로그인 하였으나, 프리미엄 버전을 활성화 할 수 있는 라이선스 키가 만료되었습니다.";
+"login_premium_expired_message" = "Visafe 계정에 성공적으로 로그인 하였으나, 프리미엄 버전을 활성화 할 수 있는 라이선스 키가 만료되었습니다.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "구매 내역을 복구하던 중 오류가 발생하였습니다.";
 
 /* (AEUIGetProViewController) message that appears when purchase successfully restored */
-"restore_success_message" = "구매 내역이 복구되었습니다! iOS용 AdGuard의 프리미엄 버전이 활성화되었습니다.";
+"restore_success_message" = "구매 내역이 복구되었습니다! iOS용 Visafe의 프리미엄 버전이 활성화되었습니다.";
 
 /* (AEUIGetProControllerViewController) this message showes when user try ro restore purchases but there is nothing to restore. */
 "nothing_to_restore_message" = "복구할 구매 내역이 없습니다";
 
 /* (AEUIGetProViewController) message that appears when the purchase is successful */
-"purchase_success_message" = "구매가 완료되었습니다! iOS용 AdGuard의 프리미엄 버전이 활성화되었습니다.";
+"purchase_success_message" = "구매가 완료되었습니다! iOS용 Visafe의 프리미엄 버전이 활성화되었습니다.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase */
 "purchase_failure_message" = "구매 도중 오류가 발생하였습니다.";
@@ -143,16 +143,16 @@
 "blacklist_text_format" = "이곳에 당신의 사용자 정의 규칙을 추가하세요<br>규칙 문법에 대한<a href=\"%@\">내용을 읽어보세요</a>.";
 
 /* (UserFilterController) whitelist description */
-"whitelist_text" = "AdGuard가 필터링하지 않을 도메인을 입력하십시오. 이 목록은 다른 설정보다 우선합니다.";
+"whitelist_text" = "Visafe가 필터링하지 않을 도메인을 입력하십시오. 이 목록은 다른 설정보다 우선합니다.";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "도메인 명을 여기에 입력하세요. AdGuard는 Safari에서 이 웹사이트에서만 필터링을 활성화할 것입니다.";
+"inverted_whitelist_text" = "도메인 명을 여기에 입력하세요. Visafe는 Safari에서 이 웹사이트에서만 필터링을 활성화할 것입니다.";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "여기에 도메인 명을 줄 바꿈으로 구분하여 입력하세요. AdGuard는 이 도메인에 대한 모든 연결을 허용합니다.";
+"dns_whitelist_text" = "여기에 도메인 명을 줄 바꿈으로 구분하여 입력하세요. Visafe는 이 도메인에 대한 모든 연결을 허용합니다.";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "이 차단 목록은 <a href=\"%@\">AdGuard의 DNS 문법</a>을 지원합니다. 여기에 규칙을 줄 바꿈으로 나눠 입력하세요. AdGuard는 이 규칙과 일치하는 도메인에 대한 모든 연결을 차단합니다.";
+"dns_blacklist_text_format" = "이 차단 목록은 <a href=\"%@\">Visafe의 DNS 문법</a>을 지원합니다. 여기에 규칙을 줄 바꿈으로 나눠 입력하세요. Visafe는 이 규칙과 일치하는 도메인에 대한 모든 연결을 차단합니다.";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "업데이트 중...";
@@ -205,8 +205,8 @@
 /* (DnsSettingController) Full (without VPN icon) mode description */
 "tunnel_mode_full_without_icon_description" = "전체 터널 (VPN 아이콘 없음), 다른 VPN 애플리케이션과 호환되지 않음, 불안정함";
 
-/* (DnsSettingController) AdGuard DNS implementation title */
-"adguard_dns_implementation_title" = "AdGuard";
+/* (DnsSettingController) Visafe DNS implementation title */
+"Visafe_dns_implementation_title" = "Visafe";
 
 /* (DnsSettingController) Native DNS implementation title */
 "native_dns_implementation_title" = "기본";
@@ -242,7 +242,7 @@
 "login_error_message" = "로그인 중 오류가 발생했습니다.";
 
 /* purchase secription format */
-"purchase_description_format" = "AdGuard 구독 서비스에 대하여:<br><br>• 결제는 구입 확인 시 iTunes 계정을 통해 이루어집니다.<br>• 구독 서비스는 자동 갱신이 종료되기 24시간 전에 비활성화하지 않는 한 자동으로 갱신됩니다.<br>• 구독 갱신 수수료는 갱신되기 24시간 전에 청구됩니다. 고객님은 구독을 직접 관리할 수 있으며, 자동 갱신은 구독 후 iTunes 계정 설정에서 비활성화할 수 있습니다.<br><br><a href=%1$@>개인정보취급방침</a> <br><br><a href=%2$@>이용 약관</a>";
+"purchase_description_format" = "Visafe 구독 서비스에 대하여:<br><br>• 결제는 구입 확인 시 iTunes 계정을 통해 이루어집니다.<br>• 구독 서비스는 자동 갱신이 종료되기 24시간 전에 비활성화하지 않는 한 자동으로 갱신됩니다.<br>• 구독 갱신 수수료는 갱신되기 24시간 전에 청구됩니다. 고객님은 구독을 직접 관리할 수 있으며, 자동 갱신은 구독 후 iTunes 계정 설정에서 비활성화할 수 있습니다.<br><br><a href=%1$@>개인정보취급방침</a> <br><br><a href=%2$@>이용 약관</a>";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%2$@>이용 약관</a> 및<a href=%1$@>개인정보취급방침</a>";
@@ -314,24 +314,24 @@
 "failed_updating_current_state_label" = "필터가 업데이트 되지 않았습니다.";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "이 사용권은 최대 활성화 가능 횟수를 초과했습니다.\n당신은 adguard.com 웹사이트의 개인 계정에 로그인한 후 사용하지 않는 디바이스에서 사용권을 회수할 수 있습니다.";
+"login_max_computers_exceeded" = "이 사용권은 최대 활성화 가능 횟수를 초과했습니다.\n당신은 Visafe.com 웹사이트의 개인 계정에 로그인한 후 사용하지 않는 디바이스에서 사용권을 회수할 수 있습니다.";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "이 확장 프로그램을 사용하기 위해서는 %1$@가 초기 환경설정을 수행해야 합니다. %2$@ 앱을 실행하여 초기 환경설정을 수행할 수 있도록 하십시오.";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "콘텐츠 차단기가 비활성화 되었습니다. 이는 AdGuard 설정에 상관 없이 광고가 필터링 되지 않을 것을 의미합니다. Safari 설정에서 AdGuard Content Blocker을 활성화 하여 필터링을 활성화 하십시오.";
+"content_blocker_disabled_format" = "콘텐츠 차단기가 비활성화 되었습니다. 이는 Visafe 설정에 상관 없이 광고가 필터링 되지 않을 것을 의미합니다. Safari 설정에서 Visafe Content Blocker을 활성화 하여 필터링을 활성화 하십시오.";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "호스트 이름을 알 수 없습니다. 페이지가 아직 로딩되지 않았을 수도 있습니다.";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "웹사이트의 보안 정책으로 인해 AdGuard Assistant를 실행할 수 없습니다.";
+"assistant_launching_unable" = "웹사이트의 보안 정책으로 인해 Visafe Assistant를 실행할 수 없습니다.";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "사파리 확장 프로그램을 초기화 하는 중에 예기치 않은 오류가 발생했습니다. 이 문제가 지속될 경우 AdGuard 기술 지원 부서에 연락해 주세요.";
+"support_error_safari_extension" = "사파리 확장 프로그램을 초기화 하는 중에 예기치 않은 오류가 발생했습니다. 이 문제가 지속될 경우 Visafe 기술 지원 부서에 연락해 주세요.";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "경고";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -358,8 +358,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "버전 %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009 — %@ AdGuard Software Ltd.\nAll rights reserved. AdGuard.com";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009 — %@ Visafe Software Ltd.\nAll rights reserved. Visafe.com";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "로그아웃";
@@ -918,7 +918,7 @@
 "low_level_description" = "<b style=color:#c23814ff>경고!</b> 이러한 기능을 활성화하면 인터넷 연결이 끊어지거나 보안 및 개인 정보 보호에 문제가 생길 수 있습니다.";
 
 /* (LowLevelSettingsController) Low level settings beta channel link */
-"low_level_beta_link" = "새 AdGuard 기능에 관심이 있으신가요? <a href=\"%@\">베타 채널을</a> 사용해보십시오.";
+"low_level_beta_link" = "새 Visafe 기능에 관심이 있으신가요? <a href=\"%@\">베타 채널을</a> 사용해보십시오.";
 
 /* (LowLevelSettingsController) Low level bootstraps placeholder */
 "low_level_bootstraps_placeholder" = "DOH/DOT 호스트 이름 확인에 사용할 일반 DNS 서버 목록입니다 (존재하는 경우 표시됨)";
@@ -959,16 +959,16 @@
 "setapp_device_limit_reached" = "Setapp 계정에 연결할 수 있는 기기의 최대 개수를 초과했습니다.";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_safari" = "YouTube가 더 많은 광고를 보여 주기 위해 알고리즘을 바꾼 사실을 알고 계십니까? <br><br>이제 광고를 차단하려면 아래와 같이 해야 합니다.<br><br>1. <a href=\"%@\">Safari</a>를 실행합니다.<br><br>2. youtube.com을 엽니다.<br><br>3. 공유 버튼을 %@ 누릅니다.<br><br>4. '(AdGuard를 통해) YouTube 광고 차단'을 누릅니다.";
+"block_youtube_ads_instructions_safari" = "YouTube가 더 많은 광고를 보여 주기 위해 알고리즘을 바꾼 사실을 알고 계십니까? <br><br>이제 광고를 차단하려면 아래와 같이 해야 합니다.<br><br>1. <a href=\"%@\">Safari</a>를 실행합니다.<br><br>2. youtube.com을 엽니다.<br><br>3. 공유 버튼을 %@ 누릅니다.<br><br>4. '(Visafe를 통해) YouTube 광고 차단'을 누릅니다.";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text  */
-"block_youtube_ads_instructions" = "YouTube가 더 많은 광고를 보여 주기 위해 알고리즘을 바꾼 사실을 알고 계십니까? <br><br>이제 광고를 차단하려면 아래와 같이 해야 합니다.<br><br>1. Safari에서 <a href=\"%@\">youtube.com</a> 실행<br><br>2. 공유 버튼을 %@ 누릅니다.<br><br>3. '(AdGuard를 통해) YouTube 광고 차단'을 누릅니다.";
+"block_youtube_ads_instructions" = "YouTube가 더 많은 광고를 보여 주기 위해 알고리즘을 바꾼 사실을 알고 계십니까? <br><br>이제 광고를 차단하려면 아래와 같이 해야 합니다.<br><br>1. Safari에서 <a href=\"%@\">youtube.com</a> 실행<br><br>2. 공유 버튼을 %@ 누릅니다.<br><br>3. '(Visafe를 통해) YouTube 광고 차단'을 누릅니다.";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_done_text_safari" = "끝! 이제 광고없이 YouTube를 시청할 수 있습니다.\n\n확장 프로그램이 활성화되면, YouTube 로고 옆에 'AdGuard 사용'이 붙을 것입니다.<br><br><b>페이지를 새로 고치면 두 번째, 세 번째 단계를 다시 따라야 합니다.</b>";
+"block_youtube_ads_instructions_done_text_safari" = "끝! 이제 광고없이 YouTube를 시청할 수 있습니다.\n\n확장 프로그램이 활성화되면, YouTube 로고 옆에 'Visafe 사용'이 붙을 것입니다.<br><br><b>페이지를 새로 고치면 두 번째, 세 번째 단계를 다시 따라야 합니다.</b>";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text  */
-"block_youtube_ads_instructions_done_text" = "끝! 이제 광고없이 YouTube를 시청할 수 있습니다.\n\n확장 프로그램이 활성화되면, YouTube 로고 옆에 'AdGuard 사용'이 붙을 것입니다.<br><br><b>페이지를 새로 고치면 두 번째, 세 번째 단계를 다시 따라야 합니다.</b>";
+"block_youtube_ads_instructions_done_text" = "끝! 이제 광고없이 YouTube를 시청할 수 있습니다.\n\n확장 프로그램이 활성화되면, YouTube 로고 옆에 'Visafe 사용'이 붙을 것입니다.<br><br><b>페이지를 새로 고치면 두 번째, 세 번째 단계를 다시 따라야 합니다.</b>";
 
 // MARK: - YouTubeAdsRequestHandler
 /* (YouTubeAdsRequestHandler) - Title for notification when YouTube ads script was successfully executed */

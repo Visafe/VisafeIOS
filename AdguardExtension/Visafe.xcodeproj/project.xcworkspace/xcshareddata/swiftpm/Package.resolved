@@ -21,7 +21,7 @@
       },
       {
         "package": "AGDnsProxy",
-        "repositoryURL": "https://github.com/AdguardTeam/DnsLibs",
+        "repositoryURL": "https://github.com/VisafeTeam/DnsLibs",
         "state": {
           "branch": null,
           "revision": "82cc82cdc40c52d51999a066a83a730f60b34816",
@@ -120,7 +120,7 @@
       },
       {
         "package": "ContentBlockerConverter",
-        "repositoryURL": "https://github.com/AdguardTeam/SafariConverterLib",
+        "repositoryURL": "https://github.com/VisafeTeam/SafariConverterLib",
         "state": {
           "branch": null,
           "revision": "2f9769ccde79d84198f5dd163f37f0ee08cb0432",

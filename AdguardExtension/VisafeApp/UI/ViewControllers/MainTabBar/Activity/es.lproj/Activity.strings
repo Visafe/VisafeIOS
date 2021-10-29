@@ -46,8 +46,8 @@
 /* Class = "UIButton"; normalTitle = "companies"; ObjectID = "Xj3-X8-fnq"; */
 "Xj3-X8-fnq.normalTitle" = "empresas";
 
-/* Class = "UILabel"; text = "AdGuard can’t see DNS queries in this mode. If you want to see DNS activity of your device, use AdGuard implementation."; ObjectID = "a0E-KM-oA3"; */
-"a0E-KM-oA3.text" = "AdGuard no puede ver las consultas DNS en este modo. Si deseas ver la actividad DNS de tu dispositivo, usa la implementación de AdGuard.";
+/* Class = "UILabel"; text = "Visafe can’t see DNS queries in this mode. If you want to see DNS activity of your device, use Visafe implementation."; ObjectID = "a0E-KM-oA3"; */
+"a0E-KM-oA3.text" = "Visafe no puede ver las consultas DNS en este modo. Si deseas ver la actividad DNS de tu dispositivo, usa la implementación de Visafe.";
 
 /* Class = "UILabel"; text = "Security filters, DNS privacy, custom filters, etc."; ObjectID = "ae4-WL-0pQ"; */
 "ae4-WL-0pQ.text" = "Filtros de seguridad, DNS cifrado, filtros personalizados, etc.";

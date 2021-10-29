@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "652F58781E106DF10012353C"
-               BuildableName = "AdguardLogSender.app"
-               BlueprintName = "AdguardLogSender"
+               BuildableName = "VisafeLogSender.app"
+               BlueprintName = "VisafeLogSender"
                ReferencedContainer = "container:Visafe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -31,8 +31,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "652F58781E106DF10012353C"
-            BuildableName = "AdguardLogSender.app"
-            BlueprintName = "AdguardLogSender"
+            BuildableName = "VisafeLogSender.app"
+            BlueprintName = "VisafeLogSender"
             ReferencedContainer = "container:Visafe.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -54,8 +54,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "652F58781E106DF10012353C"
-            BuildableName = "AdguardLogSender.app"
-            BlueprintName = "AdguardLogSender"
+            BuildableName = "VisafeLogSender.app"
+            BlueprintName = "VisafeLogSender"
             ReferencedContainer = "container:Visafe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -71,8 +71,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "652F58781E106DF10012353C"
-            BuildableName = "AdguardLogSender.app"
-            BlueprintName = "AdguardLogSender"
+            BuildableName = "VisafeLogSender.app"
+            BlueprintName = "VisafeLogSender"
             ReferencedContainer = "container:Visafe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

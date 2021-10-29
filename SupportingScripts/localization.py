@@ -28,7 +28,7 @@ API_DOWNLOAD_URL = "https://twosky.adtidy.org/api/v1/download"
 BASE_PATH = "../"
 
 # Strings hidden in Crowdin
-# Can be found here: https://crowdin.com/project/adguard-applications/settings#strings
+# Can be found here: https://crowdin.com/project/Visafe-applications/settings#strings
 # Click on the "Filter" icon there and choose "Hidden"
 HIDDEN_STRINGS = [
     "user_rules_format",

@@ -49,14 +49,14 @@
 /* Class = "UILabel"; text = "Don't change them unless you know what you're doing"; ObjectID = "GBd-dx-t46"; */
 "GBd-dx-t46.text" = "Ne változtassa meg ezeket a beállításokat, ha nem tudja, mire valók";
 
-/* Class = "UILabel"; text = "AdGuard will write more details to the logfile. Don't enable unless you need to track down a bug"; ObjectID = "GFO-xu-Bir"; */
-"GFO-xu-Bir.text" = "Az AdGuard további részleteket ír a naplófájlba. Csak akkor engedélyezze, ha valamilyen hiba okát keresi";
+/* Class = "UILabel"; text = "Visafe will write more details to the logfile. Don't enable unless you need to track down a bug"; ObjectID = "GFO-xu-Bir"; */
+"GFO-xu-Bir.text" = "Az Visafe további részleteket ír a naplófájlba. Csak akkor engedélyezze, ha valamilyen hiba okát keresi";
 
 /* Class = "UILabel"; text = "Split-Tunnel"; ObjectID = "GGp-kp-YJI"; */
 "GGp-kp-YJI.text" = "Osztott";
 
-/* Class = "UILabel"; text = "Enable this option if you experience issues with the Internet connection while AdGuard is running"; ObjectID = "H3Q-H6-YV0"; */
-"H3Q-H6-YV0.text" = "Engedélyezze ezt a beállítást, ha az internetkapcsolattal problémák merülnek fel az AdGuard futtatása közben";
+/* Class = "UILabel"; text = "Enable this option if you experience issues with the Internet connection while Visafe is running"; ObjectID = "H3Q-H6-YV0"; */
+"H3Q-H6-YV0.text" = "Engedélyezze ezt a beállítást, ha az internetkapcsolattal problémák merülnek fel az Visafe futtatása közben";
 
 /* Class = "UILabel"; text = "Low-level settings"; ObjectID = "IvJ-Oi-vGF"; */
 "IvJ-Oi-vGF.text" = "Alacsonyszintű beállítások";
@@ -133,8 +133,8 @@
 /* Class = "UILabel"; text = "Compatible with “Personal VPN” apps"; ObjectID = "gxl-pG-zh1"; */
 "gxl-pG-zh1.text" = "Kompatibilis a \"Személyes VPN\" appokkal";
 
-/* Class = "UILabel"; text = "In the Split-Tunnel mode AdGuard is compatible with so-called “Personal VPN” apps. As a trade-off, in this mode it may be bypassed by system in case of bad connectivity."; ObjectID = "jmQ-ze-hFG"; */
-"jmQ-ze-hFG.text" = "Az osztott módban az AdGuard kompatibilis a többi \"személyes VPN\" appal. Ebben az a kompromisszum, hogy hibás csatlakozás esetén a rendszer ezt megkerülheti.";
+/* Class = "UILabel"; text = "In the Split-Tunnel mode Visafe is compatible with so-called “Personal VPN” apps. As a trade-off, in this mode it may be bypassed by system in case of bad connectivity."; ObjectID = "jmQ-ze-hFG"; */
+"jmQ-ze-hFG.text" = "Az osztott módban az Visafe kompatibilis a többi \"személyes VPN\" appal. Ebben az a kompromisszum, hogy hibás csatlakozás esetén a rendszer ezt megkerülheti.";
 
 /* Class = "UILabel"; text = "Fallback servers"; ObjectID = "k0U-fn-m9X"; */
 "k0U-fn-m9X.text" = "Fallback servers";
@@ -166,8 +166,8 @@
 /* Class = "UILabel"; text = "Settings"; ObjectID = "sc6-Tw-xnL"; */
 "sc6-Tw-xnL.text" = "Beállítások";
 
-/* Class = "UILabel"; text = "If this setting is enabled, AdGuard will use only Wi-Fi for background filter updates"; ObjectID = "tTY-BW-QcN"; */
-"tTY-BW-QcN.text" = "Ha ez a beállítás engedélyezve van, az AdGuard Wi-Fi-n keresztül frissíteni fogja a szűrőket a háttérben";
+/* Class = "UILabel"; text = "If this setting is enabled, Visafe will use only Wi-Fi for background filter updates"; ObjectID = "tTY-BW-QcN"; */
+"tTY-BW-QcN.text" = "Ha ez a beállítás engedélyezve van, az Visafe Wi-Fi-n keresztül frissíteni fogja a szűrőket a háttérben";
 
 /* Class = "UILabel"; text = "Blocked Response TTL"; ObjectID = "uRk-qq-TJH"; */
 "uRk-qq-TJH.text" = "Tiltott válasz TTL-je";

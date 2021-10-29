@@ -1,19 +1,19 @@
 /**
-      This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-      Copyright © Adguard Software Limited. All rights reserved.
+      This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+      Copyright © Visafe Software Limited. All rights reserved.
 
-      Adguard for iOS is free software: you can redistribute it and/or modify
+      Visafe for iOS is free software: you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation, either version 3 of the License, or
       (at your option) any later version.
 
-      Adguard for iOS is distributed in the hope that it will be useful,
+      Visafe for iOS is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details.
 
       You should have received a copy of the GNU General Public License
-      along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+      along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import UIKit
@@ -36,7 +36,7 @@ class MainPageController: UIViewController, DateTypeChangedProtocol, NumberOfReq
             updateButton.accessibilityLabel = String.localizedString("update_filters_voiceover")
             let icon = UIImage(named: "refresh-icon")
             let iconSize = CGRect(origin: .zero, size: CGSize(width: 24.0, height: 24.0))
-            let tintColor = UIColor.AdGuardColor.lightGreen1
+            let tintColor = UIColor.VisafeColor.lightGreen1
             iconButton = UIButton(frame: iconSize)
             iconButton?.setBackgroundImage(icon, for: .normal)
             iconButton?.tintColor = tintColor
@@ -83,7 +83,7 @@ class MainPageController: UIViewController, DateTypeChangedProtocol, NumberOfReq
     // MARK: Get Pro elements
     
     @IBOutlet weak var getProView: UIView!
-    @IBOutlet weak var adguardManImageView: UIImageView!
+    @IBOutlet weak var VisafeManImageView: UIImageView!
     @IBOutlet weak var manDialogView: UIView!
     @IBOutlet weak var manDialogText: ThemableLabel!
     @IBOutlet weak var getProButton: UIButton!

@@ -1,19 +1,19 @@
 /**
-    This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-    Copyright © Adguard Software Limited. All rights reserved.
+    This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+    Copyright © Visafe Software Limited. All rights reserved.
 
-    Adguard for iOS is free software: you can redistribute it and/or modify
+    Visafe for iOS is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    Adguard for iOS is distributed in the hope that it will be useful,
+    Visafe for iOS is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+    along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
 */
 #import <UIKit/UIApplication.h>
 #import "ACommons/ACLang.h"
@@ -24,7 +24,7 @@
 #import "ASDModels/ASDFilterObjects.h"
 #import "AESharedResources.h"
 #import "AASFilterSubscriptionParser.h"
-#import "Adguard-Swift.h"
+#import "Visafe-Swift.h"
 #import "ASConstants.h"
 
 #define MAX_SQL_IN_STATEMENT_COUNT        100
@@ -174,8 +174,8 @@ NSString *ASAntibannerFilterEnabledNotification = @"ASAntibannerFilterEnabledNot
             NSNumber *filterId = result[0];
             
             // Make sure that user filter rules are loaded after other filters
-            // https://github.com/AdguardTeam/AdguardForMac/issues/41
-            // https://github.com/AdguardTeam/AdguardForiOS/issues/64
+            // https://github.com/VisafeTeam/VisafeForMac/issues/41
+            // https://github.com/VisafeTeam/VisafeForiOS/issues/64
             
             if ([filterId integerValue] == ASDF_USER_FILTER_ID) {
                 userFilterEnabled = YES;
@@ -1402,7 +1402,7 @@ NSString *ASAntibannerFilterEnabledNotification = @"ASAntibannerFilterEnabledNot
                     // updated only enabled filters
                     if (([filterMeta.enabled boolValue]
                          //Special case for Simplified domain names filter. We allow update of this filter in any case.
-                         //https://github.com/AdguardTeam/AdguardForiOS/issues/302
+                         //https://github.com/VisafeTeam/VisafeForiOS/issues/302
                          || [filterMeta.filterId isEqual:@(ASDF_SIMPL_DOMAINNAMES_FILTER_ID)])
                         
                         && ( forced || interval >= [filterMeta.expires integerValue] )) {
@@ -1865,7 +1865,7 @@ NSString *ASAntibannerFilterEnabledNotification = @"ASAntibannerFilterEnabledNot
 
 - (NSString*) nameForFilter:(NSNumber*)filterId {
     // TODO: return localized name
-    return @"Adguard CB Filter";
+    return @"Visafe CB Filter";
 }
 
 - (BOOL)checkInstalledFiltersInDB{

@@ -1,19 +1,19 @@
 /**
-    This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-    Copyright © Adguard Software Limited. All rights reserved.
+    This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+    Copyright © Visafe Software Limited. All rights reserved.
  
-    Adguard for iOS is free software: you can redistribute it and/or modify
+    Visafe for iOS is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
  
-    Adguard for iOS is distributed in the hope that it will be useful,
+    Visafe for iOS is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
  
     You should have received a copy of the GNU General Public License
-    along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+    along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #import "PacketTunnelProvider.h"
@@ -32,7 +32,7 @@
 #import "ACDnsUtils.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
 
-#import "Adguard-Swift.h"
+#import "Visafe-Swift.h"
 
 #include <arpa/inet.h>
 #include <ifaddrs.h>
@@ -364,7 +364,7 @@
             DDLogInfo(@"(PacketTunnelProvider) updateTunnelSettings - empty settings is set");
         }
         
-        // https://github.com/AdguardTeam/AdguardForiOS/issues/1499
+        // https://github.com/VisafeTeam/VisafeForiOS/issues/1499
         // sometimes we get empty list of system dns servers.
         // Here we add a pause after setting the empty settings.
         // Perhaps this will eliminate the situation with an empty dns list
@@ -488,9 +488,9 @@
  withoutVPNIcon - it is a hack. If we add range 0.0.0.0 with mask 31 or lower to exclude routes, then vpn icon appears.
  It is important to understand that it's not just about the icon itself.
  The appearance and disappearance of the icon causes different strangeness in the behavior of the system.
- In mode "with the icon" does not work facetime(https://github.com/AdguardTeam/AdguardForiOS/issues/501).
+ In mode "with the icon" does not work facetime(https://github.com/VisafeTeam/VisafeForiOS/issues/501).
  Perhaps some other apple services use the address 0.0.0.0 and does not work.
- In the "no icon" mode, you can not disable wi-fi(https://github.com/AdguardTeam/AdguardForiOS/issues/674).
+ In the "no icon" mode, you can not disable wi-fi(https://github.com/VisafeTeam/VisafeForiOS/issues/674).
  This behavior leads to crashes in ios 11.3 beta.
  
  NOTE. To show VPN icon it's enough to add either 0.0.0.0/(0-31) to ipv4 excludes or ::/(0-127) to ipv6 exclude routes.

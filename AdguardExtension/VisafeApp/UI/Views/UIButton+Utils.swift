@@ -1,19 +1,19 @@
 /**
-   This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-   Copyright © Adguard Software Limited. All rights reserved.
+   This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+   Copyright © Visafe Software Limited. All rights reserved.
 
-   Adguard for iOS is free software: you can redistribute it and/or modify
+   Visafe for iOS is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
    (at your option) any later version.
 
-   Adguard for iOS is distributed in the hope that it will be useful,
+   Visafe for iOS is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+   along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import Foundation
@@ -29,11 +29,11 @@ extension UIButton {
     }
     
     /*
-     Makes button look like standard AdGuard green button
+     Makes button look like standard Visafe green button
      with green background, no border and white text
      */
     func applyStandardGreenStyle() {
-        let greenColor = UIColor.AdGuardColor.lightGreen1
+        let greenColor = UIColor.VisafeColor.lightGreen1
         self.layer.cornerRadius = 8.0
         self.backgroundColor = greenColor
         self.setTitleColor(.white, for: .normal)
@@ -42,11 +42,11 @@ extension UIButton {
     }
     
     /*
-     Makes button look like standard AdGuard VPN green button
+     Makes button look like standard Visafe VPN green button
      with green background, no border and white text
      */
-    func applyStandardAdGuardVPNGreenStyle() {
-        let greenColor = UIColor.AdGuardColor.vpnLightGreen
+    func applyStandardVisafeVPNGreenStyle() {
+        let greenColor = UIColor.VisafeColor.vpnLightGreen
         self.layer.cornerRadius = 8.0
         self.backgroundColor = greenColor
         self.setTitleColor(.white, for: .normal)
@@ -55,10 +55,10 @@ extension UIButton {
     }
     
     /*
-     Makes button look like standard AdGuard button
+     Makes button look like standard Visafe button
      with opaque background, selected color for borders and text
      */
-    func applyStandardOpaqueStyle(color: UIColor = UIColor.AdGuardColor.lightGray4) {
+    func applyStandardOpaqueStyle(color: UIColor = UIColor.VisafeColor.lightGray4) {
         self.layer.cornerRadius = 8.0
         self.backgroundColor = .clear
         self.setTitleColor(color, for: .normal)
@@ -67,7 +67,7 @@ extension UIButton {
     }
     
     /*
-     Makes button look like standard AdGuard Sign in button
+     Makes button look like standard Visafe Sign in button
      */
     func applyRoundRectStyle(color: CGColor) {
         self.layer.cornerRadius = self.frame.height / 4

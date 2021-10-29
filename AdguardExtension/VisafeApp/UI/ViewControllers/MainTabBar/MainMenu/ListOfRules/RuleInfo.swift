@@ -1,19 +1,19 @@
 /**
-      This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-      Copyright © Adguard Software Limited. All rights reserved.
+      This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+      Copyright © Visafe Software Limited. All rights reserved.
 
-      Adguard for iOS is free software: you can redistribute it and/or modify
+      Visafe for iOS is free software: you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation, either version 3 of the License, or
       (at your option) any later version.
 
-      Adguard for iOS is distributed in the hope that it will be useful,
+      Visafe for iOS is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details.
 
       You should have received a copy of the GNU General Public License
-      along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+      along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import Foundation
@@ -35,16 +35,16 @@ class RuleInfo: NSObject {
     var enabled: Bool
     
     // we define the type of rule by special makers that we look for in the text of rule
-    // https://kb.adguard.com/en/general/how-to-create-your-own-ad-filters#basic-rules-syntax
+    // https://kb.Visafe.com/en/general/how-to-create-your-own-ad-filters#basic-rules-syntax
     private let whitelistPrefix = "@@"
     
-    // https://kb.adguard.com/en/general/how-to-create-your-own-ad-filters#comments
+    // https://kb.Visafe.com/en/general/how-to-create-your-own-ad-filters#comments
     private let commentPrefix = "!"
     
-    // https://kb.adguard.com/en/general/how-to-create-your-own-ad-filters#cosmetic-elemhide-rules
+    // https://kb.Visafe.com/en/general/how-to-create-your-own-ad-filters#cosmetic-elemhide-rules
     private let elemhideMarkers = ["##", "#@#", "#?#", "#@?#"]
     
-    // https://kb.adguard.com/en/general/how-to-create-your-own-ad-filters#cosmetic-css-rules
+    // https://kb.Visafe.com/en/general/how-to-create-your-own-ad-filters#cosmetic-css-rules
     private let cssMarkers = ["#$#", "#@$#", "#$?#", "#@$?#"]
     
     private let whitelistColor = UIColor(hexString: "35605F")

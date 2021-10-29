@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "コンバータをJSON形式に初期化できません！";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "キャンセル";
 
 /* (AEService) Service errors descriptions */
@@ -71,10 +71,10 @@
 "protection_enabled_caption" = "保護は有効です。";
 
 /* (MainController) login status caption on main screen */
-"protection_partly_enabled_caption" = "端末の設定→Safari→コンテンツ\nブロッカーでAdGuardが一部オフ\nになっています。";
+"protection_partly_enabled_caption" = "端末の設定→Safari→コンテンツ\nブロッカーでVisafeが一部オフ\nになっています。";
 
 /* (MainController) login status caption on main screen */
-"protection_disabled_caption" = "端末の設定→Safari→コンテンツ\nブロッカーでAdGuardがオフに\nなっています。";
+"protection_disabled_caption" = "端末の設定→Safari→コンテンツ\nブロッカーでVisafeがオフに\nなっています。";
 
 /* (GetProTableController) upgrade button title */
 "upgrade_button_title" = "無料お試しスタート";
@@ -88,8 +88,8 @@
 /* (SignInController) user not found message */
 "user_not_found_message" = "このメールアドレスを持つユーザーは見つかりませんでした。%@でアカウントを登録してください。";
 
-/* (SignInController) SignIn via AdGuard account title */
-"sign_in_via_adguard_title" = "AdGuardアカウントを使う";
+/* (SignInController) SignIn via Visafe account title */
+"sign_in_via_Visafe_title" = "Visafeアカウントを使う";
 
 /* (SignInController) SignIn via Apple account title */
 "sign_in_via_apple_title" = "Appleで続ける";
@@ -107,19 +107,19 @@
 "premium_expired_title" = "注意";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "AdGuardアカウントのログインできましたが、プレミアム版のライセンスキーがありません。";
+"not_premium_message" = "Visafeアカウントのログインできましたが、プレミアム版のライセンスキーがありません。";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "AdGuardアカウントでログインでき、プレミアム版が有効になりました。";
+"login_success_message" = "Visafeアカウントでログインでき、プレミアム版が有効になりました。";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "AdGuardアカウントのログインできましたが、プレミアム版用のライセンスキーが有効期限切れです。";
+"login_premium_expired_message" = "Visafeアカウントのログインできましたが、プレミアム版用のライセンスキーが有効期限切れです。";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "購入を復元中にエラーが発生しました。";
 
 /* (AEUIGetProViewController) message that appears when purchase successfully restored */
-"restore_success_message" = "ご購入が復元され、AdGuard for iOSのプレミアム版が有効になりました。";
+"restore_success_message" = "ご購入が復元され、Visafe for iOSのプレミアム版が有効になりました。";
 
 /* (AEUIGetProControllerViewController) this message showes when user try ro restore purchases but there is nothing to restore. */
 "nothing_to_restore_message" = "購入を復元できせん。";
@@ -149,10 +149,10 @@
 "inverted_whitelist_text" = "ドメイン名を入力して、それだけで広告をブロック。";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "ここにドメイン名を入力できます。AdGuardはこちらに入力されたドメイン名をブロックしません。";
+"dns_whitelist_text" = "ここにドメイン名を入力できます。Visafeはこちらに入力されたドメイン名をブロックしません。";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "このブラックリストは<a href=\"%@\">AdGuard DNS構文</a>をサポートします。こちらに改行で区切って入力したルールに従って、AdGuardはドメインへのコネクションをブロックします。";
+"dns_blacklist_text_format" = "このブラックリストは<a href=\"%@\">Visafe DNS構文</a>をサポートします。こちらに改行で区切って入力したルールに従って、Visafeはドメインへのコネクションをブロックします。";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "アップデート中…";
@@ -205,8 +205,8 @@
 /* (DnsSettingController) Full (without VPN icon) mode description */
 "tunnel_mode_full_without_icon_description" = "Full-Tunnel (VPNアイコンなし)、他のVPNアプリと互換性なし、安定度:低い";
 
-/* (DnsSettingController) AdGuard DNS implementation title */
-"adguard_dns_implementation_title" = "AdGuard";
+/* (DnsSettingController) Visafe DNS implementation title */
+"Visafe_dns_implementation_title" = "Visafe";
 
 /* (DnsSettingController) Native DNS implementation title */
 "native_dns_implementation_title" = "ネイティブ";
@@ -242,7 +242,7 @@
 "login_error_message" = "ログイン中にエラーが発生しました";
 
 /* purchase secription format */
-"purchase_description_format" = "【AdGuardサブスクリプションについて】<br><br>・支払いは購入の確認時にiTunesアカウントに請求されます。<br>・サブスクリプションは、現在のサブスクリプション期間が終了する少なくとも24時間前に自動更新がオフにされない限り、自動的に更新されます。<br>・サブスクリプション更新料金は、現在の期間の終了前の24時間以内に請求されます。サブスクリプション購入後、iTunesアカウント設定においてサブスクリプション管理が可能になり、自動更新もそちらで無効にすることができます。<br><br><a href=%1$@>プライバシーポリシー</a><br><br><a href=%2$@>利用規約</a>";
+"purchase_description_format" = "【Visafeサブスクリプションについて】<br><br>・支払いは購入の確認時にiTunesアカウントに請求されます。<br>・サブスクリプションは、現在のサブスクリプション期間が終了する少なくとも24時間前に自動更新がオフにされない限り、自動的に更新されます。<br>・サブスクリプション更新料金は、現在の期間の終了前の24時間以内に請求されます。サブスクリプション購入後、iTunesアカウント設定においてサブスクリプション管理が可能になり、自動更新もそちらで無効にすることができます。<br><br><a href=%1$@>プライバシーポリシー</a><br><br><a href=%2$@>利用規約</a>";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%1$@>プライバシーポリシー</a>と<br><br><a href=%2$@>利用規約</a>";
@@ -314,24 +314,24 @@
 "failed_updating_current_state_label" = "フィルタ更新できませんでした。";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "本ライセンスは、アクティブなデバイス数の上限に達しています。\nウェブサイトadguard.comのマイ・アカウントで、未使用のデバイスからライセンスのバインドを解除し、新デバイスにバインドし直すことができます。";
+"login_max_computers_exceeded" = "本ライセンスは、アクティブなデバイス数の上限に達しています。\nウェブサイトVisafe.comのマイ・アカウントで、未使用のデバイスからライセンスのバインドを解除し、新デバイスにバインドし直すことができます。";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "このアクション拡張機能を使用できる前に、%1$@は初期設定を実行する必要があります。それを許可するには、メイン%2$@アプリを起動してください。";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "コンテンツブロッカーは無効になっています。広告はAdGuardの設定に関わらず、フィルタリングされません。 フィルタリングを開始するには、Safariの設定でAdGuardコンテンツブロッカーを有効にしてください。";
+"content_blocker_disabled_format" = "コンテンツブロッカーは無効になっています。広告はVisafeの設定に関わらず、フィルタリングされません。 フィルタリングを開始するには、Safariの設定でVisafeコンテンツブロッカーを有効にしてください。";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "ホスト名が取得されていません。ページがまだ読み込まれていない可能性があります。";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "本ウェブサイトのセキュリティポリシーにより、AdGuardアシスタントの起動は許可されていません。";
+"assistant_launching_unable" = "本ウェブサイトのセキュリティポリシーにより、Visafeアシスタントの起動は許可されていません。";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "Safari拡張機能を設定中に予期しないエラーが発生しました。 再度この問題が発生した場合は、AdGuardサポートにお問い合わせください。";
+"support_error_safari_extension" = "Safari拡張機能を設定中に予期しないエラーが発生しました。 再度この問題が発生した場合は、Visafeサポートにお問い合わせください。";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "警告";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -358,8 +358,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "バージョン %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009 — %@ AdGuard Software Ltd.\nAll rights reserved. AdGuard.com";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009 — %@ Visafe Software Ltd.\nAll rights reserved. Visafe.com";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "ログアウト";
@@ -818,7 +818,7 @@
 "native_dns_setup_description" = "ネイティブDNSを有効には、 <b>設定</b>アプリ → <b>一般</b> → <b>VPN & ネットワーク</b> → <b>DNS</b> へ移動して「<b>%@</b>」を選択してください。";
 
 /* (RateAppController) Rate app description text (\n) stands for new line */
-"rate_app_description" = "これまでのAdGuardによる広告ブロックに満足しているかどうかを教えてください。";
+"rate_app_description" = "これまでのVisafeによる広告ブロックに満足しているかどうかを教えてください。";
 
 /* (RateAppProblemController) Rate app problem description text (\n) stands for new line */
 "rate_app_problem_description" = "1. ブラウザは<b>Safari</b>を使用していることを確認してください。他のブラウザでコンテンツブロックすることは現在技術的に難しいです。<br>\n2. 「Safariでブロック」設定で必要なフィルターを有効にしてください。<br>\n3. Safariの再起動が必要な場合もあります。アプリを終了して再び開いてください。";
@@ -918,7 +918,7 @@
 "low_level_description" = "<b style=color:#c23814ff>【警告】</b> これらの機能を有効にすると、インターネット接続が切断されたり、セキュリティー、プライバシーが危険に晒される可能性があります。";
 
 /* (LowLevelSettingsController) Low level settings beta channel link */
-"low_level_beta_link" = "新しくてクールなAdGuard機能に興味ありますか？ぜひ <a href=\"%@\">ベータチャンネル</a>をお試しください。";
+"low_level_beta_link" = "新しくてクールなVisafe機能に興味ありますか？ぜひ <a href=\"%@\">ベータチャンネル</a>をお試しください。";
 
 /* (LowLevelSettingsController) Low level bootstraps placeholder */
 "low_level_bootstraps_placeholder" = "DOH/DOTホストネーム（あれば）を解決するのに使うべき簡潔なDNSサーバーのリスト";
@@ -959,16 +959,16 @@
 "setapp_device_limit_reached" = "Setappアカウントに最大数のデバイスを接続しています。";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_safari" = "より多くの広告を表示するためにYouTubeがアルゴリズムを変えたことをご存知ですか？<br><br>その影響で、完全に広告をブロックするには以下を行なってください:<br><br>1. <a href=\"%@\">Safari</a>を開く<br><br>2. youtube.comを開く <br><br>3. 共有ボタン %@ をタップ<br><br>4. 「YouTube広告をブロック (AdGuard)」をタップ";
+"block_youtube_ads_instructions_safari" = "より多くの広告を表示するためにYouTubeがアルゴリズムを変えたことをご存知ですか？<br><br>その影響で、完全に広告をブロックするには以下を行なってください:<br><br>1. <a href=\"%@\">Safari</a>を開く<br><br>2. youtube.comを開く <br><br>3. 共有ボタン %@ をタップ<br><br>4. 「YouTube広告をブロック (Visafe)」をタップ";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text  */
-"block_youtube_ads_instructions" = "より多くの広告を表示するためにYouTubeがアルゴリズムを変えたことをご存知ですか？<br><br>その影響で、完全に広告をブロックするには以下を行なってください:<br><br>1. Safariで<a href=\"%@\">youtube.com</a>を開く<br><br>2. 共有ボタン %@ をタップ<br><br>3. 「YouTube広告をブロック (AdGuard)」をタップ";
+"block_youtube_ads_instructions" = "より多くの広告を表示するためにYouTubeがアルゴリズムを変えたことをご存知ですか？<br><br>その影響で、完全に広告をブロックするには以下を行なってください:<br><br>1. Safariで<a href=\"%@\">youtube.com</a>を開く<br><br>2. 共有ボタン %@ をタップ<br><br>3. 「YouTube広告をブロック (Visafe)」をタップ";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_done_text_safari" = "完了！広告なしでYouTubeを閲覧いただけます。\n\nこの拡張機能が有効の時は、サイトのYouTubeロゴの横に「AdGuard作動中」と表示されます。<br><br><b>※YouTubeページを再読み込みした場合、ステップ3と4をもう一度行ってください。</b>";
+"block_youtube_ads_instructions_done_text_safari" = "完了！広告なしでYouTubeを閲覧いただけます。\n\nこの拡張機能が有効の時は、サイトのYouTubeロゴの横に「Visafe作動中」と表示されます。<br><br><b>※YouTubeページを再読み込みした場合、ステップ3と4をもう一度行ってください。</b>";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text  */
-"block_youtube_ads_instructions_done_text" = "完了！広告なしでYouTubeを閲覧いただけます。\n\nこの拡張機能が有効の時は、サイトのYouTubeロゴの横に「AdGuard作動中」と表示されます。<br><br><b>※YouTubeページを再読み込みした場合、ステップ2と3をもう一度行ってください。</b>";
+"block_youtube_ads_instructions_done_text" = "完了！広告なしでYouTubeを閲覧いただけます。\n\nこの拡張機能が有効の時は、サイトのYouTubeロゴの横に「Visafe作動中」と表示されます。<br><br><b>※YouTubeページを再読み込みした場合、ステップ2と3をもう一度行ってください。</b>";
 
 // MARK: - YouTubeAdsRequestHandler
 /* (YouTubeAdsRequestHandler) - Title for notification when YouTube ads script was successfully executed */

@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "Convertorul nu poate fi inițializat în format JSON.";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "Anulare";
 
 /* (AEService) Service errors descriptions */
@@ -76,8 +76,8 @@
 /* (SignInController) user not found message */
 "user_not_found_message" = "Niciun utilizator găsit cu această adresă de e-mail. Vă rugăm să vă înscrieți mai întâi la %@.";
 
-/* (SignInController) SignIn via AdGuard account title */
-"sign_in_via_adguard_title" = "Utilizați contul AdGuard";
+/* (SignInController) SignIn via Visafe account title */
+"sign_in_via_Visafe_title" = "Utilizați contul Visafe";
 
 /* (SignInController) SignIn via Apple account title */
 "sign_in_via_apple_title" = "Continuați cu Apple";
@@ -95,13 +95,13 @@
 "premium_expired_title" = "Atenție";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "V-ați conectat cu succes la contul dvs AdGuard, dar nu există chei de licență care să vă permită să activați versiunea Premium.";
+"not_premium_message" = "V-ați conectat cu succes la contul dvs Visafe, dar nu există chei de licență care să vă permită să activați versiunea Premium.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "V-ați conectat cu succes la contul dvs AdGuard! Versiunea Premium de AdGuard pentru iOS a fost activată.";
+"login_success_message" = "V-ați conectat cu succes la contul dvs Visafe! Versiunea Premium de Visafe pentru iOS a fost activată.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "V-ați conectat cu succes la contul dvs AdGuard, dar cheile de licență care vă permit să activați versiunea Premium au expirat.";
+"login_premium_expired_message" = "V-ați conectat cu succes la contul dvs Visafe, dar cheile de licență care vă permit să activați versiunea Premium au expirat.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "Eroare la încercarea de restaurare a achiziției.";
@@ -125,13 +125,13 @@
 "blacklist_text_format" = "Puteți adăuga propriile reguli aici.<br>Citiți<a href=\"%@\">nota despre sintaxa regulii</a>.";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "Introduceți aici numele de domenii. AdGuard va filtra în Safari doar pe aceste site-uri web.";
+"inverted_whitelist_text" = "Introduceți aici numele de domenii. Visafe va filtra în Safari doar pe aceste site-uri web.";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "Introduceți aici numele de domenii separate cu pauze de linie. AdGuard va permite toate conexiunile la ele.";
+"dns_whitelist_text" = "Introduceți aici numele de domenii separate cu pauze de linie. Visafe va permite toate conexiunile la ele.";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "Această Listă de blocări acceptă<a href=\"%@\">sintaxa DNS AdGuard</a>. Introduceți aici reguli separate cu pauze de linie. AdGuard va bloca orice conexiune la domeniile ce le corespund.";
+"dns_blacklist_text_format" = "Această Listă de blocări acceptă<a href=\"%@\">sintaxa DNS Visafe</a>. Introduceți aici reguli separate cu pauze de linie. Visafe va bloca orice conexiune la domeniile ce le corespund.";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "Actualizăm...";
@@ -178,8 +178,8 @@
 /* (DnsSettingController) Full (without VPN icon) mode description */
 "tunnel_mode_full_without_icon_description" = "Full-Tunnel (fără pictogramă VPN), incompatibil cu alte aplicații VPN, instabil";
 
-/* (DnsSettingController) AdGuard DNS implementation title */
-"adguard_dns_implementation_title" = "AdGuard";
+/* (DnsSettingController) Visafe DNS implementation title */
+"Visafe_dns_implementation_title" = "Visafe";
 
 /* (DnsSettingController) Native DNS implementation title */
 "native_dns_implementation_title" = "Nativ";
@@ -215,7 +215,7 @@
 "login_error_message" = "A apărut o eroare la logare";
 
 /* purchase secription format */
-"purchase_description_format" = "Despre Abonamentul AdGuard:<br><br>• Plata se va face în contul dvs. iTunes la confirmarea achiziției.<br><br>• Dacă reînnoirea automată a abonamentului nu s-a dezactivat cu cel puțin 24 de ore înainte de sfârșitul perioadei curente, acesta se reînnoiește automat.<br><br>• Taxa de reînnoire a abonamentului se va percepe în 24 de ore înainte de sfârșitul perioadei curente.\n<br><br>Vă puteți gestiona abonamentele iar reînnoirea automată se poate dezactiva în Setările contului dvs. iTunes după achiziția unui abonament.<br><br><a href=%2$@>Termeni și condiții</a> și <a href=%1$@>Politica de confidențialitate</a>";
+"purchase_description_format" = "Despre Abonamentul Visafe:<br><br>• Plata se va face în contul dvs. iTunes la confirmarea achiziției.<br><br>• Dacă reînnoirea automată a abonamentului nu s-a dezactivat cu cel puțin 24 de ore înainte de sfârșitul perioadei curente, acesta se reînnoiește automat.<br><br>• Taxa de reînnoire a abonamentului se va percepe în 24 de ore înainte de sfârșitul perioadei curente.\n<br><br>Vă puteți gestiona abonamentele iar reînnoirea automată se poate dezactiva în Setările contului dvs. iTunes după achiziția unui abonament.<br><br><a href=%2$@>Termeni și condiții</a> și <a href=%1$@>Politica de confidențialitate</a>";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%2$@>Termeni și condiții</a> și <a href=%1$@>Politica de confidențialitate</a>";
@@ -281,24 +281,24 @@
 "failed_updating_current_state_label" = "Filtrele nu au fost actualizate";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "Această licență a fost activată pe numărul maxim de dispozitive.\nPuteți dezlega licența de pe dispozitivele neutilizate din contul personal pe site-ul web: adguard.com";
+"login_max_computers_exceeded" = "Această licență a fost activată pe numărul maxim de dispozitive.\nPuteți dezlega licența de pe dispozitivele neutilizate din contul personal pe site-ul web: Visafe.com";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "Înaintea folosirii acțiunii extensiei, %1$@ trebuie s-o configureze inițial. Lansați aplicația %2$@ principală ca să facă aceasta.";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "Blocantul de conținut este dezactivat. Deci reclamele nu vor fi filtrate indiferent de setările AdGuard. Activați Blocantul de conținut AdGuard în setări Safari ca să porniți filtrarea.";
+"content_blocker_disabled_format" = "Blocantul de conținut este dezactivat. Deci reclamele nu vor fi filtrate indiferent de setările Visafe. Activați Blocantul de conținut Visafe în setări Safari ca să porniți filtrarea.";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "Nu s-a obținut numele de host. Poate că pagina nu a fost încărcată încă.";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "Politica de securitate a site-lui web nu permite lansarea Assistant AdGuard.";
+"assistant_launching_unable" = "Politica de securitate a site-lui web nu permite lansarea Assistant Visafe.";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "Eroare neașteptată la inițializarea extensiei Safari. Vă rugăm contactați asistența AdGuard dacă se întâmplă din nou.";
+"support_error_safari_extension" = "Eroare neașteptată la inițializarea extensiei Safari. Vă rugăm contactați asistența Visafe dacă se întâmplă din nou.";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "Atenție";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -325,8 +325,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "Versiune %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009 – %@. AdGuard Software Ltd.\nToate drepturile rezervate. AdGuard.com";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009 – %@. Visafe Software Ltd.\nToate drepturile rezervate. Visafe.com";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "Deconectare";
@@ -855,7 +855,7 @@
 "low_level_description" = "<b style=color:#c23814ff>AVERTISMENT!</b> Activarea acestor funcții poate întrerupe conexiunea la Internet sau vă poate compromite securitatea și confidențialitatea.";
 
 /* (LowLevelSettingsController) Low level settings beta channel link */
-"low_level_beta_link" = "Interesat de noi funcții cool ale AdGuard? Încercați <a href=\"%@\">canalul beta</a>.";
+"low_level_beta_link" = "Interesat de noi funcții cool ale Visafe? Încercați <a href=\"%@\">canalul beta</a>.";
 
 /* (LowLevelSettingsController) Low level bootstraps placeholder */
 "low_level_bootstraps_placeholder" = "Lista de servere DNS simple, de utilizat pentru a rezolva numele de gazdă DOH/DOT (dacă există)";

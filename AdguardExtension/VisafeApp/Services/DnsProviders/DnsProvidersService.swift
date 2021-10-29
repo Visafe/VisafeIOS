@@ -1,19 +1,19 @@
 /**
-       This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-       Copyright © Adguard Software Limited. All rights reserved.
+       This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+       Copyright © Visafe Software Limited. All rights reserved.
  
-       Adguard for iOS is free software: you can redistribute it and/or modify
+       Visafe for iOS is free software: you can redistribute it and/or modify
        it under the terms of the GNU General Public License as published by
        the Free Software Foundation, either version 3 of the License, or
        (at your option) any later version.
  
-       Adguard for iOS is distributed in the hope that it will be useful,
+       Visafe for iOS is distributed in the hope that it will be useful,
        but WITHOUT ANY WARRANTY; without even the implied warranty of
        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
        GNU General Public License for more details.
  
        You should have received a copy of the GNU General Public License
-       along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+       along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 import Foundation
@@ -31,8 +31,8 @@ import Foundation
     var allProviders: [DnsProviderInfo] { get }
     var predefinedProviders: [DnsProviderInfo] { get }
     var customProviders: [DnsProviderInfo] { get set }
-    var adguardDohServer: DnsServerInfo? { get }
-    var adguardFamilyDohServer: DnsServerInfo? { get }
+    var VisafeDohServer: DnsServerInfo? { get }
+    var VisafeFamilyDohServer: DnsServerInfo? { get }
     
     var activeDnsServer: DnsServerInfo? { get set }
     var activeDnsProvider: DnsProviderInfo? { get }
@@ -86,9 +86,9 @@ import Foundation
         self.resources = resources
         
         // migration:
-        // in app version 3.1.4 and below we mistakenly used the name Adguard.DnsProviderInfo with namespace
+        // in app version 3.1.4 and below we mistakenly used the name Visafe.DnsProviderInfo with namespace
         // now we use DnsProviderInfo
-        NSKeyedUnarchiver.setClass(DnsProviderInfo.self, forClassName: "Adguard.DnsProviderInfo")
+        NSKeyedUnarchiver.setClass(DnsProviderInfo.self, forClassName: "Visafe.DnsProviderInfo")
         
         self.currentLocaleCode = locale
         
@@ -134,10 +134,10 @@ import Foundation
     
     @objc var activeDnsServer: DnsServerInfo? {
         get {
-            return resources.currentAdGuardImplementationDnsServer
+            return resources.currentVisafeImplementationDnsServer
         }
         set {
-            resources.currentAdGuardImplementationDnsServer = newValue
+            resources.currentVisafeImplementationDnsServer = newValue
         }
     }
     
@@ -260,12 +260,12 @@ import Foundation
         predefinedProvidersInternal = nil
     }
     
-    var adguardDohServer: DnsServerInfo? {
-        return serverWithId("adguard-doh")
+    var VisafeDohServer: DnsServerInfo? {
+        return serverWithId("Visafe-doh")
     }
     
-    var adguardFamilyDohServer: DnsServerInfo? {
-        return serverWithId("adguard-family-doh")
+    var VisafeFamilyDohServer: DnsServerInfo? {
+        return serverWithId("Visafe-family-doh")
     }
     
     // MARK: - private methods
@@ -495,7 +495,7 @@ import Foundation
 // MARK: - AESharedResourcesProtocol extension
 
 extension AESharedResourcesProtocol {
-    dynamic var currentAdGuardImplementationDnsServer: DnsServerInfo? {
+    dynamic var currentVisafeImplementationDnsServer: DnsServerInfo? {
         get {
             if let serverData = sharedDefaults().data(forKey: ActiveDnsServer) {
                 let decoder = JSONDecoder()

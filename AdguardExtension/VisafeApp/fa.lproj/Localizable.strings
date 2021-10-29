@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "تبدیلگر به جی فرمت اِس اُ اِن را نمیتوان مقدار دهی اولیه کرد!";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "لغو";
 
 /* (AEService) Service errors descriptions */
@@ -53,13 +53,13 @@
 "premium_expired_title" = "توجه";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "شما با موفقیت وارد اکانت AdGuard شده اید اما کلید مجوزی که اجازه فعالسازی نسخه پریمیوم را بدهد وجود ندارد";
+"not_premium_message" = "شما با موفقیت وارد اکانت Visafe شده اید اما کلید مجوزی که اجازه فعالسازی نسخه پریمیوم را بدهد وجود ندارد";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "شما با موفقیت وارد اکانت AdGuard شده اید! نسخه پریمیوم AdGuard for iOS فعال شد.";
+"login_success_message" = "شما با موفقیت وارد اکانت Visafe شده اید! نسخه پریمیوم Visafe for iOS فعال شد.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "شما با موفقیت وارد اکانت AdGuard شده اید اما کلیدهای مجوز نسخه پریمیوم منقضی شده اند.";
+"login_premium_expired_message" = "شما با موفقیت وارد اکانت Visafe شده اید اما کلیدهای مجوز نسخه پریمیوم منقضی شده اند.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "یک خطا حین بازگرداندن خرید رخ داده است.";
@@ -83,7 +83,7 @@
 "blacklist_text_format" = "دستورات دستی خود را اینجا وارد کنید<br>این نکته <a href=\"%@\">درباره نحو دستور را بخوانید</a>.";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "نام دامنه را اینجا وارد کنید.AdGuard فیلترینگ را در سافاری فقط برای این وبسایت ها فعال می کند.";
+"inverted_whitelist_text" = "نام دامنه را اینجا وارد کنید.Visafe فیلترینگ را در سافاری فقط برای این وبسایت ها فعال می کند.";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "بروز رسانی...";
@@ -149,7 +149,7 @@
 "login_error_message" = "یک خطا حین ورود رخ داده است";
 
 /* purchase secription format */
-"purchase_description_format" = "AdGuard Premium یک سرویس پولی سالانه با هزینه اشتراک $2.99/سال (قیمت در هر منطقه میتواند متفاوت باشد) هست. هزینه در حساب iTunes در حین تایید خرید کسر میشود. اشتراک خودکار تمدید میشود مگر اینکه تمدید خودکار حداقل 24 ساعت قبل از پایان دوره فعلی خاموش شده باشد. حساب خودکار به مدت 24 ساعت قبل از پایان دوره فعلی کسر می شود. اشتراک های شما میتواند مدیریت شود و تمدید خودکار میتواند با رفتن به تنظیمات iTunes بعد از خرید اشتراک غیرفعال شود.<br><br><a href=%1$@>سیاست حریم خصوصی</a> <br><br><a href=%2$@>شرایط استفاده</a>";
+"purchase_description_format" = "Visafe Premium یک سرویس پولی سالانه با هزینه اشتراک $2.99/سال (قیمت در هر منطقه میتواند متفاوت باشد) هست. هزینه در حساب iTunes در حین تایید خرید کسر میشود. اشتراک خودکار تمدید میشود مگر اینکه تمدید خودکار حداقل 24 ساعت قبل از پایان دوره فعلی خاموش شده باشد. حساب خودکار به مدت 24 ساعت قبل از پایان دوره فعلی کسر می شود. اشتراک های شما میتواند مدیریت شود و تمدید خودکار میتواند با رفتن به تنظیمات iTunes بعد از خرید اشتراک غیرفعال شود.<br><br><a href=%1$@>سیاست حریم خصوصی</a> <br><br><a href=%2$@>شرایط استفاده</a>";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%1$@>سیاست حریم خصوصی</a> <br><br><a href=%2$@>شرایط استفاده</a>";
@@ -197,24 +197,24 @@
 "failed_updating_current_state_label" = "فیلترها بروز رسانی نشده است";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "این مجوز در حداکثر تعداد دستگاه مجاز فعال شده است. شما میتوانید مجوز را از دستگاه های استفاده نشده در حساب شخصی در وبسایت adguard.com جدا کنید";
+"login_max_computers_exceeded" = "این مجوز در حداکثر تعداد دستگاه مجاز فعال شده است. شما میتوانید مجوز را از دستگاه های استفاده نشده در حساب شخصی در وبسایت Visafe.com جدا کنید";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "قبل از استفاده شما از این اقدام افزونه، %1$@ پیکربندی اولیه را اِجرا می کند. برای انجام آن برنامه اصلی %2$@ را اجرا کنید.";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "توجه کنید که مسدودساز محتوا غیرفعال شده است. این یعنی صرف نظر از تنظیمات AdGuard چیزی فیلتر نخواهد شد. لطفا AdGuard Content blocker را در تنظیمات سافاری برای شروع فیلترینگ فعال کنید.";
+"content_blocker_disabled_format" = "توجه کنید که مسدودساز محتوا غیرفعال شده است. این یعنی صرف نظر از تنظیمات Visafe چیزی فیلتر نخواهد شد. لطفا Visafe Content blocker را در تنظیمات سافاری برای شروع فیلترینگ فعال کنید.";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "نام میزبان گرفته نشد. شاید صفحه هنوز بارگیری نشده است.";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "سیاست امنیتی این وبسایت اجازه اِجرای AdGuard Assistant را نمی دهد.";
+"assistant_launching_unable" = "سیاست امنیتی این وبسایت اجازه اِجرای Visafe Assistant را نمی دهد.";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "خطای غیر منتظره حین مقدار دهی اولیه اقدام افزونه سافاری رخ داد. لطفا اگر دوباره رخ داد با تیم پشتیبانی AdGuard تماس بگیرید.";
+"support_error_safari_extension" = "خطای غیر منتظره حین مقدار دهی اولیه اقدام افزونه سافاری رخ داد. لطفا اگر دوباره رخ داد با تیم پشتیبانی Visafe تماس بگیرید.";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "هشدار";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */

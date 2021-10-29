@@ -1,34 +1,34 @@
 /**
-    This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-    Copyright © Adguard Software Limited. All rights reserved.
+    This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+    Copyright © Visafe Software Limited. All rights reserved.
 
-    Adguard for iOS is free software: you can redistribute it and/or modify
+    Visafe for iOS is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    Adguard for iOS is distributed in the hope that it will be useful,
+    Visafe for iOS is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+    along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 
 /* URL's that might be processed
- <adguardScheme> = adguard or adguard-pro
+ <VisafeScheme> = Visafe or Visafe-pro
  
- 1. <adguardScheme>:license=<LICENSE>                               <--- Activate license by URL
- 2. <adguardScheme>://add/<RULE>                                    <--- Adding new user rule from safari
- 3. <adguardScheme>://systemProtection/<VALUE ("on" or "off")>      <--- Turning on/off DNS protection from widget
- 4. <adguardScheme>://complexProtection/<VALUE ("on" or "off")>     <--- Turning on/off complex protection from widget
+ 1. <VisafeScheme>:license=<LICENSE>                               <--- Activate license by URL
+ 2. <VisafeScheme>://add/<RULE>                                    <--- Adding new user rule from safari
+ 3. <VisafeScheme>://systemProtection/<VALUE ("on" or "off")>      <--- Turning on/off DNS protection from widget
+ 4. <VisafeScheme>://complexProtection/<VALUE ("on" or "off")>     <--- Turning on/off complex protection from widget
  5. sdns://<DNSCrypt>                                               <--- Adding custom DNS server
- 6. <adguardScheme>://apply_settings?json=<JSON>                    <--- Import settings
+ 6. <VisafeScheme>://apply_settings?json=<JSON>                    <--- Import settings
  7. abp://subscribe?location=<LOCATION URL>&title=<TITLE>           <--- Subscribe to custom safari filter
- 8. <adguardScheme>://openTunnelModeSettings                        <--- Open Tunnel Mode settings
- 9. adguard://auth#access_token=<TOKEN>&token_type=<TOKEN TYPE>&state=<STATE>&expires_in=<EXPIRES IN>   <--- Log in by social networks
+ 8. <VisafeScheme>://openTunnelModeSettings                        <--- Open Tunnel Mode settings
+ 9. Visafe://auth#access_token=<TOKEN>&token_type=<TOKEN TYPE>&state=<STATE>&expires_in=<EXPIRES IN>   <--- Log in by social networks
  
  */
 
@@ -45,13 +45,13 @@ fileprivate enum StringConstants: String {
     case applySettings = "apply_settings"
     case authScheme = "auth"
     case sdnsScheme = "sdns"
-    case urlScheme = "adguardScheme"
+    case urlScheme = "VisafeScheme"
     case urlSchemeCommandAdd = "add"
     
     static func getStringConstant(string: String?) -> StringConstants? {
         guard let string = string else { return nil }
         
-        if string == "adguard" || string == "adguard-pro" {
+        if string == "Visafe" || string == "Visafe-pro" {
             return .urlScheme
         }
         

@@ -30,6 +30,6 @@
 
 
 Phát triển dựa trên
-https://github.com/AdguardTeam/AdguardForiOS
+https://github.com/VisafeTeam/VisafeForiOS
 
 Xem thêm tại: https://visafe.vn 

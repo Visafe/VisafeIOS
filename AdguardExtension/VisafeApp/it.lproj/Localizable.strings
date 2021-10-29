@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "Impossibile inizializzare il convertitore al formato JSON!";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "Annulla";
 
 /* (AEService) Service errors descriptions */
@@ -88,8 +88,8 @@
 /* (SignInController) user not found message */
 "user_not_found_message" = "Nessun utente é stato trovato con questa email. Si prega di iscriversi prima su %@.";
 
-/* (SignInController) SignIn via AdGuard account title */
-"sign_in_via_adguard_title" = "Utilizza profilo AdGuard";
+/* (SignInController) SignIn via Visafe account title */
+"sign_in_via_Visafe_title" = "Utilizza profilo Visafe";
 
 /* (SignInController) SignIn via Apple account title */
 "sign_in_via_apple_title" = "Continua con Apple";
@@ -107,25 +107,25 @@
 "premium_expired_title" = "Attenzione";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "Hai effettuato correttamente l\'accesso al tuo profilo AdGuard, ma non esistono chiavi di licenza che ti consentano di attivare la versione premium.";
+"not_premium_message" = "Hai effettuato correttamente l\'accesso al tuo profilo Visafe, ma non esistono chiavi di licenza che ti consentano di attivare la versione premium.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "Hai effettuato correttamente l'accesso al tuo profilo AdGuard! La versione premium di AdGuard per iOS è stata attivata.";
+"login_success_message" = "Hai effettuato correttamente l'accesso al tuo profilo Visafe! La versione premium di Visafe per iOS è stata attivata.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "Hai effettuato correttamente l'accesso al tuo profilo AdGuard, ma le chiavi di licenza che ti consentono di attivare la versione premium sono scadute.";
+"login_premium_expired_message" = "Hai effettuato correttamente l'accesso al tuo profilo Visafe, ma le chiavi di licenza che ti consentono di attivare la versione premium sono scadute.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "Si è verificato un errore durante il tentativo di ripristinare l'acquisto.";
 
 /* (AEUIGetProViewController) message that appears when purchase successfully restored */
-"restore_success_message" = "L\'acquisto è stato ripristinato! La versione Premium di AdGuard per iOS è stata attivata.";
+"restore_success_message" = "L\'acquisto è stato ripristinato! La versione Premium di Visafe per iOS è stata attivata.";
 
 /* (AEUIGetProControllerViewController) this message showes when user try ro restore purchases but there is nothing to restore. */
 "nothing_to_restore_message" = "Nessun acquisto da ripristinare";
 
 /* (AEUIGetProViewController) message that appears when the purchase is successful */
-"purchase_success_message" = "L\'acquisto è stato completato correttamente! La versione Premium di AdGuard per iOS è stata attivata.";
+"purchase_success_message" = "L\'acquisto è stato completato correttamente! La versione Premium di Visafe per iOS è stata attivata.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase */
 "purchase_failure_message" = "Si è verificato un errore durante l'elaborazione dell'acquisto.";
@@ -143,16 +143,16 @@
 "blacklist_text_format" = "Puoi insere le tue regole personalizzate qui<br>Leggi questa <a href=\"%@\">nota sulla sintassi delle regole</a>.";
 
 /* (UserFilterController) whitelist description */
-"whitelist_text" = "Inserisci qui i domini che non vuoi che AdGuard filtri. Questo elenco ha la precedenza sulle altre impostazioni.";
+"whitelist_text" = "Inserisci qui i domini che non vuoi che Visafe filtri. Questo elenco ha la precedenza sulle altre impostazioni.";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "Inserisci qui i nomi di dominio. AdGuard abiliterà il filtraggio in Safari solo per questi siti web.";
+"inverted_whitelist_text" = "Inserisci qui i nomi di dominio. Visafe abiliterà il filtraggio in Safari solo per questi siti web.";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "Inserisci qui i nomi di dominio separati da interruzioni di riga. AdGuard consentirà tutte le connessioni a questi domini.";
+"dns_whitelist_text" = "Inserisci qui i nomi di dominio separati da interruzioni di riga. Visafe consentirà tutte le connessioni a questi domini.";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "Questa Lista nera supporta la <a href=\"%@\">Sintassi DNS di AdGuard</a>. Inserisci qui le regole separate da interruzioni di riga. AdGuard bloccherà tutte le connessioni ai domini che corrispondono a queste regole.";
+"dns_blacklist_text_format" = "Questa Lista nera supporta la <a href=\"%@\">Sintassi DNS di Visafe</a>. Inserisci qui le regole separate da interruzioni di riga. Visafe bloccherà tutte le connessioni ai domini che corrispondono a queste regole.";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "Aggiornamento...";
@@ -205,8 +205,8 @@
 /* (DnsSettingController) Full (without VPN icon) mode description */
 "tunnel_mode_full_without_icon_description" = "Full-Tunnel (senza icona VPN), incompatibile con altre app VPN, meno stabile";
 
-/* (DnsSettingController) AdGuard DNS implementation title */
-"adguard_dns_implementation_title" = "AdGuard";
+/* (DnsSettingController) Visafe DNS implementation title */
+"Visafe_dns_implementation_title" = "Visafe";
 
 /* (DnsSettingController) Native DNS implementation title */
 "native_dns_implementation_title" = "Nativo";
@@ -242,7 +242,7 @@
 "login_error_message" = "Si è verificato un errore durante l'accesso";
 
 /* purchase secription format */
-"purchase_description_format" = "Informazioni sull'abbonamento AdGuard:<br><br>• Il pagamento verrà addebitato sul tuo profilo iTunes alla conferma dell'acquisto.<br><br>• L'abbonamento viene rinnovato automaticamente a meno che il rinnovo automatico non venga disattivato almeno 24 ore prima della fine del periodo corrente.<br><br>• Il canone di rinnovo dell'abbonamento verrà addebitato entro 24 ore prima della fine del periodo corrente.<br><br> Gli abbonamenti possono essere gestiti e il rinnovo automatico può essere disattivato dalle impostazioni del profilo iTunes dopo l'acquisto di un abbonamento.<br><br><a href=%2$@>Termini di utilizzo</a> e <a href=%1$@>Politica sulla riservatezza</a>";
+"purchase_description_format" = "Informazioni sull'abbonamento Visafe:<br><br>• Il pagamento verrà addebitato sul tuo profilo iTunes alla conferma dell'acquisto.<br><br>• L'abbonamento viene rinnovato automaticamente a meno che il rinnovo automatico non venga disattivato almeno 24 ore prima della fine del periodo corrente.<br><br>• Il canone di rinnovo dell'abbonamento verrà addebitato entro 24 ore prima della fine del periodo corrente.<br><br> Gli abbonamenti possono essere gestiti e il rinnovo automatico può essere disattivato dalle impostazioni del profilo iTunes dopo l'acquisto di un abbonamento.<br><br><a href=%2$@>Termini di utilizzo</a> e <a href=%1$@>Politica sulla riservatezza</a>";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%2$@>Termini di utilizzo</a> e <a href=%1$@>Politica sulla riservatezza</a>";
@@ -314,24 +314,24 @@
 "failed_updating_current_state_label" = "I filtri non sono stati aggiornati";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "Questa licenza è stata attivata sul numero massimo di dispositivi.\nÈ possibile scollegare la licenza dai dispositivi non utilizzati dal proprio profilo sul sito web: adguard.com";
+"login_max_computers_exceeded" = "Questa licenza è stata attivata sul numero massimo di dispositivi.\nÈ possibile scollegare la licenza dai dispositivi non utilizzati dal proprio profilo sul sito web: Visafe.com";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "Prima di poter utilizzare questa estensione dell'azione, %1$@ deve eseguire una configurazione iniziale. Avvia l'applicazione principale %2$@ per consentirle di farlo.";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "Si osservi che il Blocco contenuti è disattivato. Ciò significa che gli annunci non saranno filtrati indipendentemente dalle impostazioni di AdGuard. Attiva il Blocco contenuti AdGuard dalle impostazioni Safari per avviare il filtraggio.";
+"content_blocker_disabled_format" = "Si osservi che il Blocco contenuti è disattivato. Ciò significa che gli annunci non saranno filtrati indipendentemente dalle impostazioni di Visafe. Attiva il Blocco contenuti Visafe dalle impostazioni Safari per avviare il filtraggio.";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "L'hostname non è ottenuto. Forse la pagina non è stata ancora caricata.";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "La politica di sicurezza di questo sito web non consente l'avvio del Assistente AdGuard.";
+"assistant_launching_unable" = "La politica di sicurezza di questo sito web non consente l'avvio del Assistente Visafe.";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "Si è verificato un errore imprevisto durante l'inizializzazione dell'estensione dell'azione Safari. Contatta il supporto AdGuard se questo se succede di nuovo.";
+"support_error_safari_extension" = "Si è verificato un errore imprevisto durante l'inizializzazione dell'estensione dell'azione Safari. Contatta il supporto Visafe se questo se succede di nuovo.";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "Attenzione";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -358,8 +358,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "Versione %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009 –%@ Adguard Software Ltd.\nTutti i diritti riservati";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009 –%@ Visafe Software Ltd.\nTutti i diritti riservati";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "Disconnetti";
@@ -918,7 +918,7 @@
 "low_level_description" = "<b style=color:#c23814ff>AVVISO!</b> L\'attivazione di queste funzionalità potrebbe interrompere la connessione a Internet o compromettere la sicurezza e la privacy.";
 
 /* (LowLevelSettingsController) Low level settings beta channel link */
-"low_level_beta_link" = "Sei interessato alle nuove fantastiche funzionalità di AdGuard? Prova il nostro <a href=\"%@\">canale beta.</a>.";
+"low_level_beta_link" = "Sei interessato alle nuove fantastiche funzionalità di Visafe? Prova il nostro <a href=\"%@\">canale beta.</a>.";
 
 /* (LowLevelSettingsController) Low level bootstraps placeholder */
 "low_level_bootstraps_placeholder" = "Elenco server DNS semplici, da utilizzare per risolvere i nomi host DOH/DOT (se presenti)";
@@ -959,16 +959,16 @@
 "setapp_device_limit_reached" = "Hai collegato il numero massimo di dispositivi al tuo profilo Setapp.";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_safari" = "Sapevi che YouTube ha cambiato i suoi algoritmi per mostrarti più annunci?<br><br>Ora, per bloccarli devi:<br><br>1. Aprire <a href=\"%@\">Safari</a>.<br><br> 2. Accedere youtube.com.<br><br> 3. Cliccare sul pulsante %@ Condividi.<br><br> 4. Fare clic su \"Blocca annunci YouTube (da AdGuard)\".";
+"block_youtube_ads_instructions_safari" = "Sapevi che YouTube ha cambiato i suoi algoritmi per mostrarti più annunci?<br><br>Ora, per bloccarli devi:<br><br>1. Aprire <a href=\"%@\">Safari</a>.<br><br> 2. Accedere youtube.com.<br><br> 3. Cliccare sul pulsante %@ Condividi.<br><br> 4. Fare clic su \"Blocca annunci YouTube (da Visafe)\".";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text  */
-"block_youtube_ads_instructions" = "Sapevi che YouTube ha cambiato i suoi algoritmi per mostrarti più annunci<br><br>Ora, per bloccarli devi:<br><br>1. Accedi a <a href=\"%@\">youtube.com</a> in Safari.<br><br> 2. Clicca %@ sul pulsante Condividi.<br><br> 3. Fare clic su \"Blocca annunci YouTube (da AdGuard)\".";
+"block_youtube_ads_instructions" = "Sapevi che YouTube ha cambiato i suoi algoritmi per mostrarti più annunci<br><br>Ora, per bloccarli devi:<br><br>1. Accedi a <a href=\"%@\">youtube.com</a> in Safari.<br><br> 2. Clicca %@ sul pulsante Condividi.<br><br> 3. Fare clic su \"Blocca annunci YouTube (da Visafe)\".";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_done_text_safari" = "Ecco fatto! Ora puoi guardare YouTube senza pubblicità.\n\nQuando l'estensione è abilitata, la legenda \"con AdGuard\" viene visualizzata accanto al logo di YouTube.<br><br><b>Se ricarichi la pagina, dovrai eseguire nuovamente i passi 3 e 4.</b>";
+"block_youtube_ads_instructions_done_text_safari" = "Ecco fatto! Ora puoi guardare YouTube senza pubblicità.\n\nQuando l'estensione è abilitata, la legenda \"con Visafe\" viene visualizzata accanto al logo di YouTube.<br><br><b>Se ricarichi la pagina, dovrai eseguire nuovamente i passi 3 e 4.</b>";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text  */
-"block_youtube_ads_instructions_done_text" = "Ecco fatto! Ora puoi guardare YouTube senza pubblicità.\n\nQuando l'estensione è abilitata, la legenda \"con AdGuard\" viene visualizzata accanto al logo di YouTube.<br><br><b>Se ricarichi la pagina, dovrai eseguire nuovamente i passi 2 e 3.</b>";
+"block_youtube_ads_instructions_done_text" = "Ecco fatto! Ora puoi guardare YouTube senza pubblicità.\n\nQuando l'estensione è abilitata, la legenda \"con Visafe\" viene visualizzata accanto al logo di YouTube.<br><br><b>Se ricarichi la pagina, dovrai eseguire nuovamente i passi 2 e 3.</b>";
 
 // MARK: - YouTubeAdsRequestHandler
 /* (YouTubeAdsRequestHandler) - Title for notification when YouTube ads script was successfully executed */

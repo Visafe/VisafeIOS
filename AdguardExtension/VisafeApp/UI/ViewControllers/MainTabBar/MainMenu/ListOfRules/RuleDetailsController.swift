@@ -57,7 +57,7 @@ class RuleDetailsController : BottomAlertController, UITextViewDelegate {
         deleteButton.makeTitleTextUppercased()
         changeKeyboardReturnKeyTypeIfNeeded()
         saveButton.applyStandardGreenStyle()
-        deleteButton.applyStandardOpaqueStyle(color: UIColor.AdGuardColor.red)
+        deleteButton.applyStandardOpaqueStyle(color: UIColor.VisafeColor.red)
         
         ruleTextView.becomeFirstResponder()
 

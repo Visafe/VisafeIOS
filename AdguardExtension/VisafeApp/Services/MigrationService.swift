@@ -1,19 +1,19 @@
 /**
-    This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-    Copyright © Adguard Software Limited. All rights reserved.
+    This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+    Copyright © Visafe Software Limited. All rights reserved.
 
-    Adguard for iOS is free software: you can redistribute it and/or modify
+    Visafe for iOS is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    Adguard for iOS is distributed in the hope that it will be useful,
+    Visafe for iOS is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+    along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import Foundation
@@ -175,7 +175,7 @@ class MigrationService: MigrationServiceProtocol {
         Migration:
          In app version 4.1 (561) we've removed 'optimize' feature for filters, because it was confusing;
          Now this feature is set to false by default and we need to reload JSON for content blockers.
-         Migration for AdGuard and AdGuard Pro
+         Migration for Visafe and Visafe Pro
         */
         if lastBuildVersion < 561 {
             DDLogInfo("(MigrationService) -  removeOptimizeFeature started. Current build version is: \(String(describing: currentBuildVersion)). Saved build version is: \(lastBuildVersion)")
@@ -195,7 +195,7 @@ class MigrationService: MigrationServiceProtocol {
         
         /**
         Migration:
-         In app version 4.0.4 (585) we changed PacketTunnelProvider ip adresses for identifying tunnel mode in AdGuard VPN
+         In app version 4.0.4 (585) we changed PacketTunnelProvider ip adresses for identifying tunnel mode in Visafe VPN
          Restart tunnel to update ip addresses
         */
         if lastBuildVersion < 585 {
@@ -214,7 +214,7 @@ class MigrationService: MigrationServiceProtocol {
         
         /**
         Migration:
-         In app version 4.1 (593) we've added AdGuard Dns repository support and begun to use
+         In app version 4.1 (593) we've added Visafe Dns repository support and begun to use
          all information from providers.json
          Server id and provider id were added and now we need to set them for current DNS server otherwise it will be nil
          isCustomProvider  property was added
@@ -404,8 +404,8 @@ class MigrationService: MigrationServiceProtocol {
             configurationService.advancedMode = true
         }
         
-        // turn off adguard safari filter
-        DDLogInfo("(MigrationService) disable safari adguard filter.")
+        // turn off Visafe safari filter
+        DDLogInfo("(MigrationService) disable safari Visafe filter.")
         antibanner.setFilter(12, enabled: false, fromUI: false)
         
         // turn on groups

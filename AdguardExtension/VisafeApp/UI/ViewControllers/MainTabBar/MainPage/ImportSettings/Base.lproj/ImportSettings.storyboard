@@ -12,7 +12,7 @@
         <!--Import Settings Controller-->
         <scene sceneID="Nq9-Fb-X9Q">
             <objects>
-                <viewController storyboardIdentifier="ImportSettingsController" modalPresentationStyle="fullScreen" id="jTK-rf-JcU" customClass="ImportSettingsController" customModule="Adguard_Pro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImportSettingsController" modalPresentationStyle="fullScreen" id="jTK-rf-JcU" customClass="ImportSettingsController" customModule="Visafe_Pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6tQ-WQ-rtZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                                             </constraint>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fry-VW-ub3" customClass="ThemableLabel" customModule="Adguard_Pro" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fry-VW-ub3" customClass="ThemableLabel" customModule="Visafe_Pro" customModuleProvider="target">
                                         <rect key="frame" x="16" y="34" width="382" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="ZZI-VN-4Fu"/>
@@ -51,7 +51,7 @@
                                             <constraint firstAttribute="height" constant="200" id="c3h-ka-TcE"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImportSettingsCell" id="teT-Mw-7wt" customClass="ImportSettingsCell" customModule="Adguard_Pro" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImportSettingsCell" id="teT-Mw-7wt" customClass="ImportSettingsCell" customModule="Visafe_Pro" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="24.5" width="414" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="teT-Mw-7wt" id="qrm-wB-RaM">
@@ -78,7 +78,7 @@
                                                                 <action selector="checkAction:" destination="teT-Mw-7wt" eventType="touchUpInside" id="Gdb-Ps-Pe2"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhL-XO-OBH" customClass="ThemableLabel" customModule="Adguard_Pro" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhL-XO-OBH" customClass="ThemableLabel" customModule="Visafe_Pro" customModuleProvider="target">
                                                             <rect key="frame" x="56" y="19" width="314" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
@@ -133,7 +133,7 @@
                                             <outlet property="delegate" destination="jTK-rf-JcU" id="bL5-Nm-Pzo"/>
                                         </connections>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFE-OP-v8S" customClass="RoundRectButton" customModule="Adguard_Pro" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFE-OP-v8S" customClass="RoundRectButton" customModule="Visafe_Pro" customModuleProvider="target">
                                         <rect key="frame" x="16" y="295" width="382" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="lCC-Pq-03n"/>
@@ -145,7 +145,7 @@
                                             <action selector="importAction:" destination="jTK-rf-JcU" eventType="touchUpInside" id="ONY-iG-U6P"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktl-xf-pyK" customClass="RoundRectButton" customModule="Adguard_Pro" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktl-xf-pyK" customClass="RoundRectButton" customModule="Visafe_Pro" customModuleProvider="target">
                                         <rect key="frame" x="16" y="295" width="382" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="f05-cM-WpB"/>

@@ -9,7 +9,7 @@ The first type of strings we manually add to .strings file ('Localizable.strings
 
 We use 'en' language as base language
 
-We also use 'localization.py' to import and export strings to [remote localization service](https://crowdin.com/project/adguard-applications)
+We also use 'localization.py' to import and export strings to [remote localization service](https://crowdin.com/project/Visafe-applications)
 
 ### Prerequisites
 

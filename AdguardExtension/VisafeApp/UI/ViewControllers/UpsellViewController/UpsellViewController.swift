@@ -11,7 +11,7 @@ class UpsellViewController: UIViewController {
         applyGradient()
         
         installButton.makeTitleTextUppercased()
-        installButton.applyStandardAdGuardVPNGreenStyle()
+        installButton.applyStandardVisafeVPNGreenStyle()
     }
     
     override func viewDidLayoutSubviews() {
@@ -24,7 +24,7 @@ class UpsellViewController: UIViewController {
     }
     
     @IBAction func installButtonTapped(_ sender: UIButton) {
-        UIApplication.openAdGuardVpnAppStorePage()
+        UIApplication.openVisafeVpnAppStorePage()
         dismiss(animated: true)
     }
     

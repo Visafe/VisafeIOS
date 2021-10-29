@@ -831,139 +831,139 @@
     "providers": {
         "10005": {
             "en": {
-                "name": "AdGuard DNS Family Protection",
-                "description": "AdGuard DNS + SafeSearch and adult content blocking"
+                "name": "Visafe DNS Family Protection",
+                "description": "Visafe DNS + SafeSearch and adult content blocking"
             },
             "vi": {
-                "description": "AdGuard DNS + tìm kiếm an toàn và chặn nội dung người lớn",
-                "name": "AdGuard DNS Family Protection"
+                "description": "Visafe DNS + tìm kiếm an toàn và chặn nội dung người lớn",
+                "name": "Visafe DNS Family Protection"
             },
             "it": {
-                "name": "Protezione Famiglia AdGuard",
-                "description": "AdGuard DNS + sicurezza di ricerca e blocco dei contenuti per adulti"
+                "name": "Protezione Famiglia Visafe",
+                "description": "Visafe DNS + sicurezza di ricerca e blocco dei contenuti per adulti"
             },
             "ar": {
-                "name": "AdGuard DNS خدمة حماية الاسرة",
-                "description": "البحث الآمن وحظر محتوى البالغين + AdGuard DNS"
+                "name": "Visafe DNS خدمة حماية الاسرة",
+                "description": "البحث الآمن وحظر محتوى البالغين + Visafe DNS"
             },
             "cs": {
-                "name": "AdGuard DNS Ochrana rodiny",
-                "description": "AdGuard DNS + bezpečné vyhledávání a blokování obsahu pro dospělé"
+                "name": "Visafe DNS Ochrana rodiny",
+                "description": "Visafe DNS + bezpečné vyhledávání a blokování obsahu pro dospělé"
             },
             "sv-SE": {
-                "name": "AdGuard DNS Family Protection",
-                "description": "AdGuard DNS + Säker surf och blockering av vuxeninnehåll"
+                "name": "Visafe DNS Family Protection",
+                "description": "Visafe DNS + Säker surf och blockering av vuxeninnehåll"
             },
             "es-ES": {
-                "name": "AdGuard DNS Protección familiar",
-                "description": "AdGuard DNS + Búsqueda segura y bloqueo de contenido para adultos"
+                "name": "Visafe DNS Protección familiar",
+                "description": "Visafe DNS + Búsqueda segura y bloqueo de contenido para adultos"
             },
             "id": {
-                "name": "AdGuard DNS Perlindungan Keluarga",
-                "description": "AdGuard DNS + pencarian aman dan pemblokir konten dewasa"
+                "name": "Visafe DNS Perlindungan Keluarga",
+                "description": "Visafe DNS + pencarian aman dan pemblokir konten dewasa"
             },
             "ru": {
-                "name": "AdGuard DNS Семейный режим",
-                "description": "AdGuard DNS + Безопасный поиск и блокировка контента для взрослых"
+                "name": "Visafe DNS Семейный режим",
+                "description": "Visafe DNS + Безопасный поиск и блокировка контента для взрослых"
             },
             "nl": {
-                "name": "AdGuard DNS Familie Bescherming",
-                "description": "AdGuard DNS met veilig-zoeken en blokkering van volwassen inhoud"
+                "name": "Visafe DNS Familie Bescherming",
+                "description": "Visafe DNS met veilig-zoeken en blokkering van volwassen inhoud"
             },
             "no": {
-                "name": "AdGuard DNS med familiebeskyttelse",
-                "description": "AdGuard DNS + «Safe Search» og blokkering av voksent innhold"
+                "name": "Visafe DNS med familiebeskyttelse",
+                "description": "Visafe DNS + «Safe Search» og blokkering av voksent innhold"
             },
             "tr": {
-                "name": "AdGuard DNS Aile Koruması",
-                "description": "AdGuard DNS + Güvenli Arama ve yetişkin içerik engelleme"
+                "name": "Visafe DNS Aile Koruması",
+                "description": "Visafe DNS + Güvenli Arama ve yetişkin içerik engelleme"
             },
             "lt": {
-                "name": "AdGuard DNS Šeimos apsauga",
-                "description": "AdGuard DNS + saugi paieška ir suaugusiųjų turinio blokavimas"
+                "name": "Visafe DNS Šeimos apsauga",
+                "description": "Visafe DNS + saugi paieška ir suaugusiųjų turinio blokavimas"
             },
             "ro": {
-                "name": "AdGuard DNS Protecție Familială",
-                "description": "AdGuard + Căutare în siguranță și blocare conținut adult"
+                "name": "Visafe DNS Protecție Familială",
+                "description": "Visafe + Căutare în siguranță și blocare conținut adult"
             },
             "pl": {
-                "name": "Ochrona rodzinna Adguard DNS",
-                "description": "AdGuard DNS + bezpieczne wyszukiwanie i blokowanie treści dla dorosłych"
+                "name": "Ochrona rodzinna Visafe DNS",
+                "description": "Visafe DNS + bezpieczne wyszukiwanie i blokowanie treści dla dorosłych"
             },
             "be": {
-                "name": "AdGuard DNS з сямейнай абаронай",
-                "description": "AdGuard DNS + бяспечны пошук і блакаванне кантэнту для дарослых"
+                "name": "Visafe DNS з сямейнай абаронай",
+                "description": "Visafe DNS + бяспечны пошук і блакаванне кантэнту для дарослых"
             },
             "fr": {
-                "name": "AdGuard DNS Protection familiale",
-                "description": "DNS d'AdGuard + Recherche sécurisée et blocage du contenu pour adultes"
+                "name": "Visafe DNS Protection familiale",
+                "description": "DNS d'Visafe + Recherche sécurisée et blocage du contenu pour adultes"
             },
             "sr-CS": {
-                "name": "AdGuard porodična zaštita",
-                "description": "AdGuard DNS + sigurno pretraživanje i blokiranje sadržaja za odrasle"
+                "name": "Visafe porodična zaštita",
+                "description": "Visafe DNS + sigurno pretraživanje i blokiranje sadržaja za odrasle"
             },
             "hr": {
-                "name": "AdGuard DNS zaštita obitelji",
-                "description": "AdGuard DNS + Sigurno surfanje uz blokiranje sadržaja za odrasle"
+                "name": "Visafe DNS zaštita obitelji",
+                "description": "Visafe DNS + Sigurno surfanje uz blokiranje sadržaja za odrasle"
             },
             "de": {
-                "name": "AdGuard DNS Familienschutz",
-                "description": "AdGuard DNS, SafeSearch und Blockierung von Inhalten für Erwachsene"
+                "name": "Visafe DNS Familienschutz",
+                "description": "Visafe DNS, SafeSearch und Blockierung von Inhalten für Erwachsene"
             },
             "da": {
-                "name": "AdGuard DNS Familiebeskyttelse",
-                "description": "AdGuard DNS + Sikker søgning og blokering af voksenindhold"
+                "name": "Visafe DNS Familiebeskyttelse",
+                "description": "Visafe DNS + Sikker søgning og blokering af voksenindhold"
             },
             "fa": {
-                "description": "AdGuard DNS + جستجوی اَمن و محدودسازی محتوای بزرگسال",
-                "name": "حفاظت خانواده AdGuard DNS"
+                "description": "Visafe DNS + جستجوی اَمن و محدودسازی محتوای بزرگسال",
+                "name": "حفاظت خانواده Visafe DNS"
             },
             "pt-BR": {
-                "name": "AdGuard DNS Proteção Familiar",
-                "description": "AdGuard DNS + pesquisa segura com bloqueio de conteúdo adulto"
+                "name": "Visafe DNS Proteção Familiar",
+                "description": "Visafe DNS + pesquisa segura com bloqueio de conteúdo adulto"
             },
             "fi": {
-                "name": "AdGuard DNS Family Protection",
-                "description": "AdGuard DNS + Turvallinen haku ja aikuisviihteen suodatus"
+                "name": "Visafe DNS Family Protection",
+                "description": "Visafe DNS + Turvallinen haku ja aikuisviihteen suodatus"
             },
             "hu": {
-                "name": "AdGuard DNS Családi védelem",
-                "description": "AdGuard DNS + SafeSearch és a felnőtteknek szóló tartalom blokkolása"
+                "name": "Visafe DNS Családi védelem",
+                "description": "Visafe DNS + SafeSearch és a felnőtteknek szóló tartalom blokkolása"
             },
             "ja": {
-                "name": "AdGuard DNS ファミリープロテクション",
-                "description": "AdGuard DNS + セーフサーチ + アダルトコンテンツブロック"
+                "name": "Visafe DNS ファミリープロテクション",
+                "description": "Visafe DNS + セーフサーチ + アダルトコンテンツブロック"
             },
             "he": {
-                "description": "AdGuard DNS + SafeSearch וחסימת תוכן למבוגרים"
+                "description": "Visafe DNS + SafeSearch וחסימת תוכן למבוגרים"
             },
             "pt-PT": {
-                "name": "AdGuard DNS Proteção Familiar",
-                "description": "DNS AdGuard + Pesquisa de Segurança e bloqueio de conteúdo adulto"
+                "name": "Visafe DNS Proteção Familiar",
+                "description": "DNS Visafe + Pesquisa de Segurança e bloqueio de conteúdo adulto"
             },
             "zh-TW": {
-                "name": "AdGuard DNS 家庭保護",
-                "description": "AdGuard DNS + 安全搜尋和成人內容封鎖"
+                "name": "Visafe DNS 家庭保護",
+                "description": "Visafe DNS + 安全搜尋和成人內容封鎖"
             },
             "ko": {
-                "name": "AdGuard DNS 가족 보호",
-                "description": "AdGuard DNS + SafeSearch 및 성인 콘텐츠 차단"
+                "name": "Visafe DNS 가족 보호",
+                "description": "Visafe DNS + SafeSearch 및 성인 콘텐츠 차단"
             },
             "sk": {
-                "name": "AdGuard DNS s rodinnou ochranou",
-                "description": "AdGuard DNS + bezpečné vyhľadávanie a blokovanie obsahu pre dospelých"
+                "name": "Visafe DNS s rodinnou ochranou",
+                "description": "Visafe DNS + bezpečné vyhľadávanie a blokovanie obsahu pre dospelých"
             },
             "zh-CN": {
-                "name": "AdGuard DNS家庭保护",
-                "description": "AdGuard DNS + 安全搜索和成人内容屏蔽"
+                "name": "Visafe DNS家庭保护",
+                "description": "Visafe DNS + 安全搜索和成人内容屏蔽"
             },
             "uk": {
-                "name": "AdGuard DNS з сімейним захистом",
-                "description": "AdGuard DNS + безпечний пошук і блокування вмісту для дорослих"
+                "name": "Visafe DNS з сімейним захистом",
+                "description": "Visafe DNS + безпечний пошук і блокування вмісту для дорослих"
             },
             "sl": {
-                "name": "AdGuard DNS Zaščita družine",
-                "description": "AdGuard DNS + Varno iskanje in zaviranje vsebin za odrasle"
+                "name": "Visafe DNS Zaščita družine",
+                "description": "Visafe DNS + Varno iskanje in zaviranje vsebin za odrasle"
             }
         },
         "10000": {
@@ -1115,136 +1115,136 @@
         "10001": {
             "en": {
                 "description": "Removes ads and protects your device from tracking",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "vi": {
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "it": {
                 "description": "Rimuove gli annunci e protegge il tuo dispositivo dal tracciamento",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "ar": {
                 "description": "يزيل الإعلانات ويحمي جهازك من البرامج الضارة",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "cs": {
                 "description": "Odstraňuje reklamy a chrání vaše zařízení před sledováním",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "sv-SE": {
                 "description": "Tar bort annonser och skyddar din dator mot spårning",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "es-ES": {
                 "description": "Elimina anuncios y protege tu dispositivo del rastreo",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "id": {
                 "description": "Buang iklan dan Lindungi Perangkat Anda dari pelacakan",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "ru": {
                 "description": "Убирает рекламу и защищает устройство от отслеживания",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "nl": {
                 "description": "Verwijdert advertenties en beschermt je apparaat tegen volgen",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "no": {
                 "description": "Fjerner reklamer og beskytter enheten din mot sporing",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "tr": {
                 "description": "Reklamları engeller ve cihazınızı izlenmekten korur",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "lt": {
                 "description": "Pašalina reklamas ir apsaugo jūsų įrenginį nuo stebėjimo",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "ro": {
                 "description": "Elimină reclame și protejează aparatul de urmărire",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "pl": {
                 "description": "Usuwa reklamy i chroni Twoje urządzenie przed śledzeniem",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "be": {
                 "description": "Прыбірае рэкламу і бароніць прыладу ад асочвання",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "fr": {
                 "description": "Enlève les pubs et protège votre appareil du suivi",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "sr-CS": {
                 "description": "Uklanja reklame i štiti vaš računar od štetnog softvera",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "hr": {
                 "description": "Uklanja oglase i štiti vaš uređaj od pratitelja",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "de": {
                 "description": "Entfernt Werbung und schützt Ihr Gerät vor Malware",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "da": {
                 "description": "Fjerner annoncer og beskytter din enhed mod sporing",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "fa": {
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "pt-BR": {
                 "description": "Remove anúncios e protege seu dispositivo contra rastreamento",
-                "name": "DNS do AdGuard"
+                "name": "DNS do Visafe"
             },
             "fi": {
                 "description": "Poistaa mainokset ja suojaa laitettasi seurannalta",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "hu": {
                 "description": "Eltávolítja a hirdetéseket és megvédi készülékét a nyomkövetéstől",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "ja": {
                 "description": "広告を削除し、追跡からデバイスを保護",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "he": {
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "pt-PT": {
                 "description": "Remove anúncios e protege o seu dispositivo de monitoramento",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "zh-TW": {
                 "description": "移除廣告並保護您的裝置免於追蹤",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "ko": {
                 "description": "광고를 제거하고 추적으로부터 기기를 보호합니다",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "sk": {
                 "description": "Odstraňuje reklamy a chráni Vaše zariadenie pred sledovaním",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "zh-CN": {
                 "description": "移除广告并保护您的设备免受跟踪器的侵扰",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "uk": {
                 "description": "Блокує рекламу і захищає пристрій від зловмисного програмного забезпечення",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             },
             "sl": {
                 "description": "Odstrani oglase in obvaruje vašo napravo pred sledenjem",
-                "name": "AdGuard DNS"
+                "name": "Visafe DNS"
             }
         },
         "10009": {
@@ -1526,130 +1526,130 @@
         "10028": {
             "en": {
                 "description": "Provides a secure and reliable connection, but doesn't filter anything",
-                "name": "AdGuard DNS Non-filtering"
+                "name": "Visafe DNS Non-filtering"
             },
             "vi": {
-                "name": "AdGuard DNS Không lọc"
+                "name": "Visafe DNS Không lọc"
             },
             "it": {
                 "description": "Fornisce una connessione sicura e affidabile, ma non filtra nulla",
-                "name": "DNS AdGuard non filtrato"
+                "name": "DNS Visafe non filtrato"
             },
             "ar": {
                 "description": "يوفر اتصالا آمنا وموثوقا به ، ولكنه لا يقوم بتصفية أي شيء",
-                "name": "AdGuard DNS غير تصفية"
+                "name": "Visafe DNS غير تصفية"
             },
             "cs": {
                 "description": "Poskytuje bezpečné a spolehlivé připojení, ale nic nefiltruje",
-                "name": "AdGuard DNS \"Bez filtrování\""
+                "name": "Visafe DNS \"Bez filtrování\""
             },
             "sv-SE": {
                 "description": "Ger en säker och pålitlig anslutning, men filtrerar inte någonting",
-                "name": "Adguard DNS icke-filtrering"
+                "name": "Visafe DNS icke-filtrering"
             },
             "es-ES": {
                 "description": "Proporciona una conexión segura y confiable, pero no filtra nada",
-                "name": "AdGuard DNS Sin filtrado"
+                "name": "Visafe DNS Sin filtrado"
             },
             "id": {
                 "description": "Menyediakan koneksi yang aman dan andal, tetapi tidak memfilter apa pun",
-                "name": "Adguard DNS Tanpa penyaring"
+                "name": "Visafe DNS Tanpa penyaring"
             },
             "ru": {
                 "description": "\"Нефильтрующие\" DNS-серверы обеспечивают надёжное и безопасное соединение, но не фильтруют элементы",
-                "name": "Нефильтрующий AdGuard DNS "
+                "name": "Нефильтрующий Visafe DNS "
             },
             "nl": {
                 "description": "Biedt een veilige en betrouwbare verbinding, maar filtert niets",
-                "name": "AdGuard DNS niet gefilterd"
+                "name": "Visafe DNS niet gefilterd"
             },
             "no": {
                 "description": "Gir en sikker og pålitelig tilkobling, men filtrerer ikke noe",
-                "name": "AdGuard DNS uten filtrering"
+                "name": "Visafe DNS uten filtrering"
             },
             "tr": {
                 "description": "Şüphesiz ve güvenilir bir bağlantı sağlar, ancak hiçbir şeyi filtrelemez",
-                "name": "AdGuard DNS Filtrelemeyen"
+                "name": "Visafe DNS Filtrelemeyen"
             },
             "lt": {
                 "description": "Užtikrina saugų ir patikimą ryšį, bet nieko nefiltruoja",
-                "name": "AdGuard DNS nefiltruojantis"
+                "name": "Visafe DNS nefiltruojantis"
             },
             "ro": {
                 "description": "Oferă o conexiune sigură și fiabilă, dar nu filtrează nimic",
-                "name": "AdGuard DNS Nefiltrat"
+                "name": "Visafe DNS Nefiltrat"
             },
             "pl": {
                 "description": "Zapewnia bezpieczne i niezawodne połączenie, ale niczego nie filtruje",
-                "name": "AdGuard DNS bez filtrowania"
+                "name": "Visafe DNS bez filtrowania"
             },
             "be": {
                 "description": "Забяспечвае бяспечнае і надзейнае злучэнне, але нічога не фільтруе",
-                "name": "AdGuard DNS Без фільтрацыі"
+                "name": "Visafe DNS Без фільтрацыі"
             },
             "fr": {
                 "description": "Établit une connexion sûre et fiable, mais ne filtre rien",
-                "name": "AdGuard DNS sans filtrage"
+                "name": "Visafe DNS sans filtrage"
             },
             "sr-CS": {
                 "description": "Nudi sigurnu i stabilnu vezu, ali ništa ne filtrira",
-                "name": "AdGuard DNS bez filtriranja"
+                "name": "Visafe DNS bez filtriranja"
             },
             "hr": {
                 "description": "Pruža sigurnu i pouzdanu vezu, ali ne filtrira ništa",
-                "name": "AdGuard DNS Ne filtrirajući"
+                "name": "Visafe DNS Ne filtrirajući"
             },
             "de": {
                 "description": "Stellt nur eine sichere und zuverlässige Verbindung zur Verfügung. Werbefilter werden nicht eingesetzt.",
-                "name": "AdGuard DNS „Nicht filternd”"
+                "name": "Visafe DNS „Nicht filternd”"
             },
             "hu": {
                 "description": "Biztonságos és megbízható kapcsolatot biztosít, de nem szűr semmit",
-                "name": "AdGuard DNS Szűrés nélkül"
+                "name": "Visafe DNS Szűrés nélkül"
             },
             "pt-BR": {
                 "description": "Fornece uma conexão segura e confiável, mas não filtra nada",
-                "name": "AdGuard DNS não filtrado"
+                "name": "Visafe DNS não filtrado"
             },
             "fi": {
                 "description": "Tarjoaa turvallisen ja luotettavan yhteyden, muttei suodata mitään",
-                "name": "AdGuard DNS Non-filtering"
+                "name": "Visafe DNS Non-filtering"
             },
             "da": {
                 "description": "Giver en sikker og pålidelig forbindelse, men filtrerer ikke noget",
-                "name": "AdGuard DNS Ufiltreret"
+                "name": "Visafe DNS Ufiltreret"
             },
             "ja": {
                 "description": "セキュアで安定した接続を提供しますが、フィルタリングは行いません。",
-                "name": "AdGuard DNS (フィルタリングなし)"
+                "name": "Visafe DNS (フィルタリングなし)"
             },
             "pt-PT": {
                 "description": "Fornece uma conexão segura e confiável, mas não filtra nada",
-                "name": "AdGuard DNS não filtrado"
+                "name": "Visafe DNS não filtrado"
             },
             "zh-TW": {
                 "description": "提供安全的和可靠的連線，但不過濾任何內容",
-                "name": "不過濾的 AdGuard DNS"
+                "name": "不過濾的 Visafe DNS"
             },
             "ko": {
                 "description": "안전하고 안정적인 연결을 제공하지만 필터링하지 않습니다",
-                "name": "AdGuard DNS (필터링 없음)"
+                "name": "Visafe DNS (필터링 없음)"
             },
             "sk": {
                 "description": "Poskytuje bezpečné a spoľahlivé pripojenie, ale nič nefiltruje",
-                "name": "AdGuard DNS bez filtrácie"
+                "name": "Visafe DNS bez filtrácie"
             },
             "zh-CN": {
                 "description": "提供安全可靠的连接，但不能过滤",
-                "name": "AdGuard DNS 无过滤"
+                "name": "Visafe DNS 无过滤"
             },
             "uk": {
                 "description": "Забезпечує надійне та безпечне з'єднання, але нічого не фільтрує",
-                "name": "AdGuard DNS без фільтрування"
+                "name": "Visafe DNS без фільтрування"
             },
             "sl": {
                 "description": "Zagotavlja varno in stvarno povezavo toda ničesar ne filtrira",
-                "name": "Nefiltriran Adguard DNS"
+                "name": "Nefiltriran Visafe DNS"
             }
         },
         "10026": {

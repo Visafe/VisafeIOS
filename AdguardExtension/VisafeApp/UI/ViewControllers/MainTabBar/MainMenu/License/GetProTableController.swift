@@ -1,19 +1,19 @@
 /**
-       This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-       Copyright © Adguard Software Limited. All rights reserved.
+       This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+       Copyright © Visafe Software Limited. All rights reserved.
  
-       Adguard for iOS is free software: you can redistribute it and/or modify
+       Visafe for iOS is free software: you can redistribute it and/or modify
        it under the terms of the GNU General Public License as published by
        the Free Software Foundation, either version 3 of the License, or
        (at your option) any later version.
  
-       Adguard for iOS is distributed in the hope that it will be useful,
+       Visafe for iOS is distributed in the hope that it will be useful,
        but WITHOUT ANY WARRANTY; without even the implied warranty of
        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
        GNU General Public License for more details.
  
        You should have received a copy of the GNU General Public License
-       along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+       along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 import Foundation
@@ -92,7 +92,7 @@ class GetProTableController: UITableViewController {
         
         periodButton.accessibilityLabel = String.localizedString("choose_sub_voiceover")
         
-        trackingProtectionImageView.image = UIImage(named: "ic_adguard")
+        trackingProtectionImageView.image = UIImage(named: "ic_Visafe")
         securityFiltersImageView.image = UIImage(named: "ic_encryption")
         customFiltersImageView.image = UIImage(named: "custom")
         premiumImageView.image = UIImage(named: "subscribed-icon")
@@ -207,8 +207,8 @@ class GetProTableController: UITableViewController {
         
         let stringKey = selectedProduct?.type == .some(.lifetime) ? "lifetime_purchase_description_format" : "purchase_description_format"
         let format = ACLocalizedString(stringKey, nil)
-        let privacy = UIApplication.shared.adguardUrl(action: "privacy", from: "license", buildVersion: productInfo.buildVersion())
-        let eula = UIApplication.shared.adguardUrl(action: "eula", from: "license", buildVersion: productInfo.buildVersion())
+        let privacy = UIApplication.shared.VisafeUrl(action: "privacy", from: "license", buildVersion: productInfo.buildVersion())
+        let eula = UIApplication.shared.VisafeUrl(action: "eula", from: "license", buildVersion: productInfo.buildVersion())
         
         let htmlString = String(format: format, privacy, eula)
         guard let data = htmlString.data(using: .utf8) else { return }

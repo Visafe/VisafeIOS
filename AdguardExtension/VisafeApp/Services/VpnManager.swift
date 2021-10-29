@@ -1,19 +1,19 @@
 /**
-   This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-   Copyright © Adguard Software Limited. All rights reserved.
+   This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+   Copyright © Visafe Software Limited. All rights reserved.
 
-   Adguard for iOS is free software: you can redistribute it and/or modify
+   Visafe for iOS is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
    (at your option) any later version.
 
-   Adguard for iOS is distributed in the hope that it will be useful,
+   Visafe for iOS is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+   along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import Foundation
@@ -156,7 +156,7 @@ class VpnManager: VpnManagerProtocol {
         DDLogInfo("(VpnManager) updateSettings called waiting for 1 second before restart")
         
         /* There was a problem when user could produce lots of VPN restarts in a row. To avoid multiple restarts for every user action we wait for 1 second for next restart, if there weren't any than we restart it.
-         Issue link: https://github.com/AdguardTeam/AdguardForiOS/issues/1719
+         Issue link: https://github.com/VisafeTeam/VisafeForiOS/issues/1719
          Use processInfo for handling that application entered in background
          */
         
@@ -469,12 +469,12 @@ class VpnManager: VpnManagerProtocol {
 @objc
 class VpnManagerMigration: NSObject {
     
-    private static let oldAdguardUUID = "AGDEF01"
-    private static let oldAdguardFamilyUUID = "AGDEF02"
-    private static let oldAdguardDnsCryptIdIpv4 = "adguard-dns"
-    private static let oldAdguardDnsCryptIdIpv6 = "adguard-dns-ipv6"
-    private static let oldAdguardFamilyDnsCryptIdIpv4 = "adguard-dns-family"
-    private static let oldAdguardFamilyDnsCryptIdIpv6 = "adguard-dns-family-ipv6"
+    private static let oldVisafeUUID = "AGDEF01"
+    private static let oldVisafeFamilyUUID = "AGDEF02"
+    private static let oldVisafeDnsCryptIdIpv4 = "Visafe-dns"
+    private static let oldVisafeDnsCryptIdIpv6 = "Visafe-dns-ipv6"
+    private static let oldVisafeFamilyDnsCryptIdIpv4 = "Visafe-dns-family"
+    private static let oldVisafeFamilyDnsCryptIdIpv6 = "Visafe-dns-family-ipv6"
 
     @objc
     class func migrateSettingsIfNeeded(resources: AESharedResourcesProtocol, dnsProviders: DnsProvidersServiceProtocol, providerConfiguration: [String : Any]) {
@@ -509,17 +509,17 @@ class VpnManagerMigration: NSObject {
                     // we used APDnsServerObject in old pro app v <= 2.1.2
                     DDLogInfo("(VpnManagerMigration) map old dns server from pro to new format")
                     
-                    let adguardServer = activeDnsServerOld.uuid == VpnManagerMigration.oldAdguardUUID || activeDnsServerOld.dnsCryptId == VpnManagerMigration.oldAdguardDnsCryptIdIpv4 || activeDnsServerOld.dnsCryptId == VpnManagerMigration.oldAdguardDnsCryptIdIpv6
+                    let VisafeServer = activeDnsServerOld.uuid == VpnManagerMigration.oldVisafeUUID || activeDnsServerOld.dnsCryptId == VpnManagerMigration.oldVisafeDnsCryptIdIpv4 || activeDnsServerOld.dnsCryptId == VpnManagerMigration.oldVisafeDnsCryptIdIpv6
                     
-                    let adguardFamily = activeDnsServerOld.uuid == VpnManagerMigration.oldAdguardFamilyUUID || activeDnsServerOld.dnsCryptId == VpnManagerMigration.oldAdguardFamilyDnsCryptIdIpv4 || activeDnsServerOld.dnsCryptId == VpnManagerMigration.oldAdguardFamilyDnsCryptIdIpv6
+                    let VisafeFamily = activeDnsServerOld.uuid == VpnManagerMigration.oldVisafeFamilyUUID || activeDnsServerOld.dnsCryptId == VpnManagerMigration.oldVisafeFamilyDnsCryptIdIpv4 || activeDnsServerOld.dnsCryptId == VpnManagerMigration.oldVisafeFamilyDnsCryptIdIpv6
                     
                     let activeServer: DnsServerInfo?
                     
-                    if adguardServer {
-                        activeServer = dnsProviders.adguardDohServer
+                    if VisafeServer {
+                        activeServer = dnsProviders.VisafeDohServer
                     }
-                    else if adguardFamily {
-                        activeServer = dnsProviders.adguardFamilyDohServer
+                    else if VisafeFamily {
+                        activeServer = dnsProviders.VisafeFamilyDohServer
                     }
                     else {
                         activeServer = nil

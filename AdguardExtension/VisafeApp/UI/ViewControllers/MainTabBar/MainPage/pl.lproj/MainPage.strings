@@ -31,8 +31,8 @@
 /* Class = "UIButton"; normalTitle = "7 days"; ObjectID = "VRw-EP-ZlF"; */
 "VRw-EP-ZlF.normalTitle" = "7 dni";
 
-/* Class = "UINavigationItem"; title = "AdGuard"; ObjectID = "YaQ-RE-YZT"; Note = "Main Menu header"; */
-"YaQ-RE-YZT.title" = "AdGuard";
+/* Class = "UINavigationItem"; title = "Visafe"; ObjectID = "YaQ-RE-YZT"; Note = "Main Menu header"; */
+"YaQ-RE-YZT.title" = "Visafe";
 
 /* Class = "UILabel"; text = "encrypted"; ObjectID = "a5U-A8-S8G"; */
 "a5U-A8-S8G.text" = "zaszyfrowane";

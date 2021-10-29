@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "Немагчыма ініцыялізаваць канвертар у фармат JSON.";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "Адмяніць";
 
 /* (AEService) Service errors descriptions */
@@ -77,13 +77,13 @@
 "premium_expired_title" = "Увага!";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "Вы паспяхова ўвайшлі ў свой AdGuard-акаўнт. На жаль, у ім няма ліцэнзійных ключоў, што дазваляюць вам актываваць Прэміум-версію.";
+"not_premium_message" = "Вы паспяхова ўвайшлі ў свой Visafe-акаўнт. На жаль, у ім няма ліцэнзійных ключоў, што дазваляюць вам актываваць Прэміум-версію.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "Вы паспяхова ўвайшлі ў свой AdGuard-акаўнт! Актывавана Прэміум-версія AdGuard для iOS.";
+"login_success_message" = "Вы паспяхова ўвайшлі ў свой Visafe-акаўнт! Актывавана Прэміум-версія Visafe для iOS.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "Вы паспяхова ўвайшлі ў AdGuard-акаўнт! На жаль, тэрмін дзеяння ліцэнзійных ключоў, што дазваляюць актываваць Прэміум-версію, мінуў.";
+"login_premium_expired_message" = "Вы паспяхова ўвайшлі ў Visafe-акаўнт! На жаль, тэрмін дзеяння ліцэнзійных ключоў, што дазваляюць актываваць Прэміум-версію, мінуў.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "Адбылася памылка пры спробе аднавіць куплю.";
@@ -107,13 +107,13 @@
 "blacklist_text_format" = "Увядзіце вашы ўласныя правілы тут<br>Прачытайце гэту <a href=\"%@\">нататку пра сінтаксіс правіл</a>.";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "Увядзіце даменавыя імёны тут. AdGuard уключыць фільтрацыю ў Safari толькі для гэтых сайтаў.";
+"inverted_whitelist_text" = "Увядзіце даменавыя імёны тут. Visafe уключыць фільтрацыю ў Safari толькі для гэтых сайтаў.";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "Увядзіце даменавыя імёны, падзеленыя разрывам радка. AdGuard адкрые доступ да гэтых даменаў.";
+"dns_whitelist_text" = "Увядзіце даменавыя імёны, падзеленыя разрывам радка. Visafe адкрые доступ да гэтых даменаў.";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "Чорны спіс падтрымвае <a href=\"%@\">DNS-сінтаксіс AdGuard</a>. Увядзіце правілы, падзеленыя разрывам радка. AdGuard заблакуе ўсе падлучэнні да даменаў, якія падыходзяць пад гэтыя правілы.";
+"dns_blacklist_text_format" = "Чорны спіс падтрымвае <a href=\"%@\">DNS-сінтаксіс Visafe</a>. Увядзіце правілы, падзеленыя разрывам радка. Visafe заблакуе ўсе падлучэнні да даменаў, якія падыходзяць пад гэтыя правілы.";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "Абнаўленне...";
@@ -188,7 +188,7 @@
 "login_error_message" = "Пры ўваходзе ў сістэму адбылася памылка";
 
 /* purchase secription format */
-"purchase_description_format" = "AdGuard Прэміум — гэта платны сэрвіс са штогадовай падпіскай. Сродкі спішуцца з вашага акаўнта iTunes пасля пацверджання куплі. <br>• Падпіска абнаўляецца аўтаматычна (і адбываецца спісванне сродкаў), калі не будзе скасавана прынамсі за 24 гадзіны до сканчэння бягучага перыяду. <br>• Кіраваць падпіскамі і скасаваць аўтаматычнае падаўжэнне можна, пяройдучы ў ваш акаўнт iTunes пасля набыцця падпіскі.<br><br><a href=%2$@>Умовы выкарыстання</a> і <br><br><a href=%1$@>Палітыка прыватнасці</a> ";
+"purchase_description_format" = "Visafe Прэміум — гэта платны сэрвіс са штогадовай падпіскай. Сродкі спішуцца з вашага акаўнта iTunes пасля пацверджання куплі. <br>• Падпіска абнаўляецца аўтаматычна (і адбываецца спісванне сродкаў), калі не будзе скасавана прынамсі за 24 гадзіны до сканчэння бягучага перыяду. <br>• Кіраваць падпіскамі і скасаваць аўтаматычнае падаўжэнне можна, пяройдучы ў ваш акаўнт iTunes пасля набыцця падпіскі.<br><br><a href=%2$@>Умовы выкарыстання</a> і <br><br><a href=%1$@>Палітыка прыватнасці</a> ";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%2$@>Умовы выкарыстання</a> і <a href=%1$@>Палітыка прыватнасці</a>";
@@ -254,24 +254,24 @@
 "failed_updating_current_state_label" = "Фільтры не абнавіліся";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "Дадзеная ліцэнзія актывавана на максімальнай колькасці прылад.\nВы можаце адвязаць ліцэнзію ад некарыстанай прылады ў вашым персанальным акаўнце на нашым сайце: adguard.com";
+"login_max_computers_exceeded" = "Дадзеная ліцэнзія актывавана на максімальнай колькасці прылад.\nВы можаце адвязаць ліцэнзію ад некарыстанай прылады ў вашым персанальным акаўнце на нашым сайце: Visafe.com";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "Перад выкарыстаннем гэтага пашырэння, %1$@ павінен выканаць першую наладу. Запусціце асноўны дадатак %2$@.";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "Звярніце ўвагу: Блакавальнік кантэнту адключаны. Гэта азначае, што рэклама не будзе фільтравацца не залежна ад налад AdGuard. Калі ласка, уключыце Блакавальнік кантэнту AdGuard у наладах Safari, каб пачаць фільтрацыю.";
+"content_blocker_disabled_format" = "Звярніце ўвагу: Блакавальнік кантэнту адключаны. Гэта азначае, што рэклама не будзе фільтравацца не залежна ад налад Visafe. Калі ласка, уключыце Блакавальнік кантэнту Visafe у наладах Safari, каб пачаць фільтрацыю.";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "Імя хаста не атрымана. Магчыма, старонка яшчэ не загружана.";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "Палітыка бяспекі гэтага сайта не дазваляе запусціць Памагатага AdGuard.";
+"assistant_launching_unable" = "Палітыка бяспекі гэтага сайта не дазваляе запусціць Памагатага Visafe.";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "Адбылася нечаканая памылка пры ініцыялізацыі пашырэння Safari. Калі ласка, звяжыцеся са службай падтрымкі AdGuard, калі сітуацыя паўторыцца.";
+"support_error_safari_extension" = "Адбылася нечаканая памылка пры ініцыялізацыі пашырэння Safari. Калі ласка, звяжыцеся са службай падтрымкі Visafe, калі сітуацыя паўторыцца.";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "Увага";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -298,8 +298,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "Версія %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009 — %@ AdGuard Software Ltd.\nУсе правы абаронены. AdGuard.com";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009 — %@ Visafe Software Ltd.\nУсе правы абаронены. Visafe.com";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "Выхад";

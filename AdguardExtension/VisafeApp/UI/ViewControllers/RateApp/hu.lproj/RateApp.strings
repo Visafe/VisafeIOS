@@ -4,8 +4,8 @@
 /* Class = "UIButton"; normalTitle = "Problem remains"; ObjectID = "3v5-h9-5E9"; */
 "3v5-h9-5E9.normalTitle" = "A probléma továbbra is fennáll";
 
-/* Class = "UILabel"; text = "Are you happy with AdGuard?"; ObjectID = "9GR-EN-yP2"; */
-"9GR-EN-yP2.text" = "Elégedett az AdGuarddal?";
+/* Class = "UILabel"; text = "Are you happy with Visafe?"; ObjectID = "9GR-EN-yP2"; */
+"9GR-EN-yP2.text" = "Elégedett az Visafedal?";
 
 /* Class = "UIButton"; normalTitle = "No, I have a problem"; ObjectID = "OhP-9I-o1V"; */
 "OhP-9I-o1V.normalTitle" = "Nem, van egy problémám";

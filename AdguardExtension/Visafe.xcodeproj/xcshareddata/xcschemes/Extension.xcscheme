@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65F3985D1B7B6A5300ABCD39"
-               BuildableName = "AdguardBlockingExtensionGeneral.appex"
-               BlueprintName = "AdguardBlockingExtensionGeneral"
+               BuildableName = "VisafeBlockingExtensionGeneral.appex"
+               BlueprintName = "VisafeBlockingExtensionGeneral"
                ReferencedContainer = "container:Visafe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,8 +30,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65F398101B7B684700ABCD39"
-               BuildableName = "Adguard.app"
-               BlueprintName = "Adguard"
+               BuildableName = "Visafe.app"
+               BlueprintName = "Visafe"
                ReferencedContainer = "container:Visafe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65F398101B7B684700ABCD39"
-            BuildableName = "Adguard.app"
-            BlueprintName = "Adguard"
+            BuildableName = "Visafe.app"
+            BlueprintName = "Visafe"
             ReferencedContainer = "container:Visafe.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -57,8 +57,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D0F911832136D2DC006DF0D3"
-               BuildableName = "AdguardSwiftTests.xctest"
-               BlueprintName = "AdguardSwiftTests"
+               BuildableName = "VisafeSwiftTests.xctest"
+               BlueprintName = "VisafeSwiftTests"
                ReferencedContainer = "container:Visafe.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65F398101B7B684700ABCD39"
-            BuildableName = "Adguard.app"
-            BlueprintName = "Adguard"
+            BuildableName = "Visafe.app"
+            BlueprintName = "Visafe"
             ReferencedContainer = "container:Visafe.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -104,8 +104,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65F398101B7B684700ABCD39"
-            BuildableName = "Adguard.app"
-            BlueprintName = "Adguard"
+            BuildableName = "Visafe.app"
+            BlueprintName = "Visafe"
             ReferencedContainer = "container:Visafe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

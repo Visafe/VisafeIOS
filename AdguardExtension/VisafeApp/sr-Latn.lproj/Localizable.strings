@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "Ne mogu da pokrenem u konvertor JSON format.";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "Otkaži";
 
 /* (AEService) Service errors descriptions */
@@ -80,13 +80,13 @@
 "premium_expired_title" = "Pažnja";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "Uspešno ste se prijavili na svoj AdGuard nalog, ali u njemu nema licenci koje vam dozvoljavaju da aktivirate premium verziju.";
+"not_premium_message" = "Uspešno ste se prijavili na svoj Visafe nalog, ali u njemu nema licenci koje vam dozvoljavaju da aktivirate premium verziju.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "Uspešno ste se prijavili u vaš AdGuard nalog! Vaša premium licenca je uspešno aktivirana.";
+"login_success_message" = "Uspešno ste se prijavili u vaš Visafe nalog! Vaša premium licenca je uspešno aktivirana.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "Uspešno ste se prijavili u svoj AdGuard nalog, ali licenčni ključevi za aktivaciju premium naloga su istekli.";
+"login_premium_expired_message" = "Uspešno ste se prijavili u svoj Visafe nalog, ali licenčni ključevi za aktivaciju premium naloga su istekli.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "Dogodila se greška prilikom pokušaja oporavka kupovine.";
@@ -110,13 +110,13 @@
 "blacklist_text_format" = "Ovde možete dodati vaša pravila<br>Pročitajte ovu <a href=\"%@\">napomenu o sintaksi pravila</a>.";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "Ovde unesite domen. AdGuard će uključiti filtriranje u Safariju samo za te sajtove.";
+"inverted_whitelist_text" = "Ovde unesite domen. Visafe će uključiti filtriranje u Safariju samo za te sajtove.";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "Ovde unesite domene. AdGuard neće blokirati te domene";
+"dns_whitelist_text" = "Ovde unesite domene. Visafe neće blokirati te domene";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "Ovde unesite domene. AdGuard će sprečiti sve aplikacije i preglednike da učitaju te domene. Ova crna lista podržava <a href=\"%@\">AdGuard's DNS sintaksu</a>";
+"dns_blacklist_text_format" = "Ovde unesite domene. Visafe će sprečiti sve aplikacije i preglednike da učitaju te domene. Ova crna lista podržava <a href=\"%@\">Visafe's DNS sintaksu</a>";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "Ažuriram...";
@@ -194,7 +194,7 @@
 "login_error_message" = "Došlo je do greške prilikom prijavljivanja";
 
 /* purchase secription format */
-"purchase_description_format" = "O AdGuard pretplati:<br><br>• Naplata će biti izvršena preko vašeg iTunes naloga nnakon potvrde kupovine.<br>• Pretplata će se automatski obnavljati, ali ukoliko je automatska obnova isključena najmanje 24 časa pre isteka trenutnog perioda onda se neće obnoviti.<br>• Obnova pretplate će biti izvršena 24-časa pre isteka trenutnog perioda. Vašom pretplatom kao i automatskom obnovom možete upravljati na vašem iTunes nalogu nakon kupovine pretplate.<br><br><a href=%1$@>Politika privatnosti</a> <br><br><a href=%2$@>Uslovi korišćenja</a>";
+"purchase_description_format" = "O Visafe pretplati:<br><br>• Naplata će biti izvršena preko vašeg iTunes naloga nnakon potvrde kupovine.<br>• Pretplata će se automatski obnavljati, ali ukoliko je automatska obnova isključena najmanje 24 časa pre isteka trenutnog perioda onda se neće obnoviti.<br>• Obnova pretplate će biti izvršena 24-časa pre isteka trenutnog perioda. Vašom pretplatom kao i automatskom obnovom možete upravljati na vašem iTunes nalogu nakon kupovine pretplate.<br><br><a href=%1$@>Politika privatnosti</a> <br><br><a href=%2$@>Uslovi korišćenja</a>";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%1$@>Politika privatnosti</a> <br><br><a href=%2$@>Uslovi korišćenja</a>";
@@ -262,22 +262,22 @@
 /* (GetProController) login error message text */
 "login_max_computers_exceeded" = "Ova licenca je aktivirana na maksimalnom broju uređaja";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "Pre nego što budete mogli da koristite ovu radnju proširenja, %1$@ treba da izvrši početno postavljanje. Pokrenite glavnu %2$@ aplikaciju i dopustite joj da uradi to.";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "Imajte na umu da je blokator sadržaja isključen. To znači da reklame neće biti filtrirane bez obzira na AdGuard postavke. Molimo vas da uključite AdGuard blokator sadržaja u postavkama Safarija kako bi filtriranje započelo.";
+"content_blocker_disabled_format" = "Imajte na umu da je blokator sadržaja isključen. To znači da reklame neće biti filtrirane bez obzira na Visafe postavke. Molimo vas da uključite Visafe blokator sadržaja u postavkama Safarija kako bi filtriranje započelo.";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "Ime hosta nije dobijeno. Verovatno stranica još uvek nije učitana.";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "Bezbednosna politika ovog sajta ne dozvoljava pokretanje AdGuard pomoćnika.";
+"assistant_launching_unable" = "Bezbednosna politika ovog sajta ne dozvoljava pokretanje Visafe pomoćnika.";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "Dogodila se neočekivana greška prilikom pokretanja proširenja za Safari.. Molimo vas da kontaktirate AdGuard podršku ako se ovo ponovi.";
+"support_error_safari_extension" = "Dogodila se neočekivana greška prilikom pokretanja proširenja za Safari.. Molimo vas da kontaktirate Visafe podršku ako se ovo ponovi.";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "Upozorenje";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -304,8 +304,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "Verzija %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009–%@. Adguard Software Ltd.\nSva prava zadržana";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009–%@. Visafe Software Ltd.\nSva prava zadržana";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "Odjavi se";

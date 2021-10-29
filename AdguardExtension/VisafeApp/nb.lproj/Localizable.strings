@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "Kan ikke initialisere konverter til JSON-format!";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "Avbryt";
 
 /* (AEService) Service errors descriptions */
@@ -73,8 +73,8 @@
 /* (LoginController) lost password button title */
 "lost_password" = "Har du glemt passordet?";
 
-/* (SignInController) SignIn via AdGuard account title */
-"sign_in_via_adguard_title" = "Bruk AdGuard-konto";
+/* (SignInController) SignIn via Visafe account title */
+"sign_in_via_Visafe_title" = "Bruk Visafe-konto";
 
 /* (SignInController) SignIn via Apple account title */
 "sign_in_via_apple_title" = "Fortsett med Apple";
@@ -151,8 +151,8 @@
 /* (DnsSettingController) Full (without VPN icon) mode description */
 "tunnel_mode_full_without_icon_description" = "Full-tunnel (uten VPN-ikon), inkompatibel med andre VPN-apper, mindre stabil";
 
-/* (DnsSettingController) AdGuard DNS implementation title */
-"adguard_dns_implementation_title" = "AdGuard";
+/* (DnsSettingController) Visafe DNS implementation title */
+"Visafe_dns_implementation_title" = "Visafe";
 
 /* (DnsSettingController) Native DNS implementation title */
 "native_dns_implementation_title" = "Morsmål";
@@ -247,7 +247,7 @@
 /* (ContentBlockerStateCell) text is shown in currentFilterStateLabel when failed updating */
 "failed_updating_current_state_label" = "Filtrene har ikke blitt oppdatert";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "Advarsel";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -274,8 +274,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "Versjon %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009 — %@ AdGuard Software Ltd.\nAlle rettigheter forbeholdt. AdGuard.com";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009 — %@ Visafe Software Ltd.\nAlle rettigheter forbeholdt. Visafe.com";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "Avlogging";

@@ -1,19 +1,19 @@
 /**
-      This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-      Copyright © Adguard Software Limited. All rights reserved.
+      This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+      Copyright © Visafe Software Limited. All rights reserved.
 
-      Adguard for iOS is free software: you can redistribute it and/or modify
+      Visafe for iOS is free software: you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation, either version 3 of the License, or
       (at your option) any later version.
 
-      Adguard for iOS is distributed in the hope that it will be useful,
+      Visafe for iOS is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details.
 
       You should have received a copy of the GNU General Public License
-      along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+      along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import Foundation
@@ -42,21 +42,21 @@ struct Tracker: Codable {
     let categoryId: Int
     let name: String?
     let url: String?
-    let isAdguardJson: Bool
+    let isVisafeJson: Bool
     
-    init(categoryKey: String?, categoryId: Int, name: String?, url: String?, isAdguardJson: Bool) {
+    init(categoryKey: String?, categoryId: Int, name: String?, url: String?, isVisafeJson: Bool) {
         self.categoryKey = categoryKey
         self.categoryId = categoryId
         self.name = name
         self.url = url
-        self.isAdguardJson = isAdguardJson
+        self.isVisafeJson = isVisafeJson
     }
 }
 
 @objc class DnsTrackerService: NSObject, DnsTrackerServiceProtocol {
     
     private var whotracksmeTrackers: DnsTrackers?
-    private var adguardTrackers: DnsTrackers?
+    private var VisafeTrackers: DnsTrackers?
     
     override init() {
         super.init()
@@ -65,11 +65,11 @@ struct Tracker: Codable {
     
     func getTrackerInfo(by domain: String) -> DnsTrackerInfo? {
         
-        if let trackers = adguardTrackers, let info = getTrackerInfo(by: domain, dnsTrackers: trackers, isAdguardJson: true) {
+        if let trackers = VisafeTrackers, let info = getTrackerInfo(by: domain, dnsTrackers: trackers, isVisafeJson: true) {
             return info
         }
         
-        if let trackers = whotracksmeTrackers, let info = getTrackerInfo(by: domain, dnsTrackers: trackers, isAdguardJson: false) {
+        if let trackers = whotracksmeTrackers, let info = getTrackerInfo(by: domain, dnsTrackers: trackers, isVisafeJson: false) {
             return info
         }
         
@@ -78,7 +78,7 @@ struct Tracker: Codable {
     
     // MARK: - Initialization of dns trackers object
     
-    private func getTrackerInfo(by domain: String, dnsTrackers: DnsTrackers, isAdguardJson: Bool) -> DnsTrackerInfo? {
+    private func getTrackerInfo(by domain: String, dnsTrackers: DnsTrackers, isVisafeJson: Bool) -> DnsTrackerInfo? {
         let trackerDomains = dnsTrackers.trackerDomains
         
         var cuttedDomain = domain
@@ -103,22 +103,22 @@ struct Tracker: Codable {
         let categoryId = info.categoryId
         guard let categoryKey = categories[String(categoryId)] else { return nil }
         
-        return DnsTrackerInfo(categoryKey: categoryKey, categoryId: categoryId, name: info.name, url: info.url, isAdguardJson: isAdguardJson)
+        return DnsTrackerInfo(categoryKey: categoryKey, categoryId: categoryId, name: info.name, url: info.url, isVisafeJson: isVisafeJson)
     }
     
     private func initializeDnsTrackers(){
         /**
-         This file is downloaded from https://github.com/AdguardTeam/AdGuardHome/tree/master/client/src/helpers/trackers
+         This file is downloaded from https://github.com/VisafeTeam/VisafeHome/tree/master/client/src/helpers/trackers
          */
         guard let whotracksmePath = Bundle.main.path(forResource: "whotracksme", ofType: "json"),
-                let adguardPath = Bundle.main.path(forResource: "adguard", ofType: "json")
+                let VisafePath = Bundle.main.path(forResource: "Visafe", ofType: "json")
             else { return }
         do {
             let whotracksmeData = try Data(contentsOf: URL(fileURLWithPath: whotracksmePath), options: .mappedIfSafe)
             try decodeWhotraksmeTrackers(data: whotracksmeData)
             
-            let adguardData = try Data(contentsOf: URL(fileURLWithPath: adguardPath), options: .mappedIfSafe)
-            try decodeAdguardTrackers(data: adguardData)
+            let VisafeData = try Data(contentsOf: URL(fileURLWithPath: VisafePath), options: .mappedIfSafe)
+            try decodeVisafeTrackers(data: VisafeData)
         } catch {
             assertionFailure("Failed to decode whotracksme.json \(error)")
             DDLogError("Failed to decode whotracksme.json \(error)")
@@ -129,7 +129,7 @@ struct Tracker: Codable {
         whotracksmeTrackers = try JSONDecoder().decode(DnsTrackers.self, from: data)
     }
     
-    func decodeAdguardTrackers(data: Data) throws {
-        adguardTrackers = try JSONDecoder().decode(DnsTrackers.self, from: data)
+    func decodeVisafeTrackers(data: Data) throws {
+        VisafeTrackers = try JSONDecoder().decode(DnsTrackers.self, from: data)
     }
 }

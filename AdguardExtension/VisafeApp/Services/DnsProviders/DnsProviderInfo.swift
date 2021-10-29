@@ -1,19 +1,19 @@
 /**
-      This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-      Copyright © Adguard Software Limited. All rights reserved.
+      This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+      Copyright © Visafe Software Limited. All rights reserved.
 
-      Adguard for iOS is free software: you can redistribute it and/or modify
+      Visafe for iOS is free software: you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation, either version 3 of the License, or
       (at your option) any later version.
 
-      Adguard for iOS is distributed in the hope that it will be useful,
+      Visafe for iOS is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details.
 
       You should have received a copy of the GNU General Public License
-      along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+      along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import Foundation
@@ -110,8 +110,8 @@ class DnsServerInfo : ACObject, Codable {
     var upstreams: [String]
     var anycast: Bool?
     
-    @objc static let adguardDnsIds: Set<String> = ["adguard-dns", "adguard-doh", "adguard-dot", "adguard-dnscrypt"]
-    @objc static let adguardFamilyDnsIds: Set<String> = ["adguard-dns-family", "adguard-family-doh", "adguard-family-dot", "adguard-family-dnscrypt"]
+    @objc static let VisafeDnsIds: Set<String> = ["Visafe-dns", "Visafe-doh", "Visafe-dot", "Visafe-dnscrypt"]
+    @objc static let VisafeFamilyDnsIds: Set<String> = ["Visafe-dns-family", "Visafe-family-doh", "Visafe-family-dot", "Visafe-family-dnscrypt"]
     
     // MARK: - initializers and NSCoding methods
     

@@ -4,7 +4,7 @@
 /* (AESFilterConverter) Error occured when checking of the result from JSON converter. */
 "support_rule_converting_error" = "Pravil ni mogoče pretvoriti. Prišlo je do nepričakovane napake. Obrnite se na skupino za podporo.";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "Prekliči";
 
 /* (AEService) Service errors descriptions */
@@ -85,8 +85,8 @@
 /* (SignInController) user not found message */
 "user_not_found_message" = "S tem e-poštnim naslovom ni bilo mogoče najti uporabnika. Najprej se prijavite na %@.";
 
-/* (SignInController) SignIn via AdGuard account title */
-"sign_in_via_adguard_title" = "Uporabi račun AdGuarda";
+/* (SignInController) SignIn via Visafe account title */
+"sign_in_via_Visafe_title" = "Uporabi račun Visafea";
 
 /* (SignInController) SignIn via Apple account title */
 "sign_in_via_apple_title" = "Nadaljuj z Apple";
@@ -104,25 +104,25 @@
 "premium_expired_title" = "Pozor";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "Uspešno ste se prijavili v svoj račun AdGuard, vendar ni licenčnih ključev, ki bi vam dovolili aktiviranje premijske različice.";
+"not_premium_message" = "Uspešno ste se prijavili v svoj račun Visafe, vendar ni licenčnih ključev, ki bi vam dovolili aktiviranje premijske različice.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "Uspešno ste se prijavili v svoj račun AdGuard! Aktivirana je Premium različica AdGuard za iOS.";
+"login_success_message" = "Uspešno ste se prijavili v svoj račun Visafe! Aktivirana je Premium različica Visafe za iOS.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "Uspešno ste se prijavili v svoj račun AdGuard, vendar so licenčni ključi, ki omogočajo aktiviranje Premium različice, potekli.";
+"login_premium_expired_message" = "Uspešno ste se prijavili v svoj račun Visafe, vendar so licenčni ključi, ki omogočajo aktiviranje Premium različice, potekli.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "Prišlo je do napake pri poskusu obnovitve nakupa.";
 
 /* (AEUIGetProViewController) message that appears when purchase successfully restored */
-"restore_success_message" = "Nakup je obnovljen! Aktivirana je Premium različica AdGuard za iOS.";
+"restore_success_message" = "Nakup je obnovljen! Aktivirana je Premium različica Visafe za iOS.";
 
 /* (AEUIGetProControllerViewController) this message showes when user try ro restore purchases but there is nothing to restore. */
 "nothing_to_restore_message" = "Ni nakupov za obnovitev";
 
 /* (AEUIGetProViewController) message that appears when the purchase is successful */
-"purchase_success_message" = "Nakup je bil uspešno zaključen! Aktivirana je Premium različica AdGuard za iOS.";
+"purchase_success_message" = "Nakup je bil uspešno zaključen! Aktivirana je Premium različica Visafe za iOS.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase */
 "purchase_failure_message" = "Pri obdelavi vašega nakupa je prišlo do napake.";
@@ -140,16 +140,16 @@
 "blacklist_text_format" = "Tukaj lahko dodate lastna pravila po meri. <br>Preberite to<a href=\"%@\">opombo o sintaksi pravil </a>.";
 
 /* (UserFilterController) whitelist description */
-"whitelist_text" = "Sem vnesite domene, za katere ne želite, da jih AdGuard filtrira. Ta seznam ima prednost pred drugimi nastavitvami.";
+"whitelist_text" = "Sem vnesite domene, za katere ne želite, da jih Visafe filtrira. Ta seznam ima prednost pred drugimi nastavitvami.";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "Tukaj vnesite imena domen. AdGuard bo omogočil filtriranje v Safariju samo za te spletne strani.";
+"inverted_whitelist_text" = "Tukaj vnesite imena domen. Visafe bo omogočil filtriranje v Safariju samo za te spletne strani.";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "Tu vnesite imena domen, ločena s prelomi vrstic. AdGuard bo dovolil vse povezave do teh domen.";
+"dns_whitelist_text" = "Tu vnesite imena domen, ločena s prelomi vrstic. Visafe bo dovolil vse povezave do teh domen.";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "Ta Seznam nedovoljenih podpira <a href=\"%@\">AdGuardovo sintakso DNS</a>. Tu vnesite pravila, ločena s prelomi vrstic. AdGuard bo onemogočil vse povezave z domenami, ki se ujemajo s temi pravili.";
+"dns_blacklist_text_format" = "Ta Seznam nedovoljenih podpira <a href=\"%@\">Visafeovo sintakso DNS</a>. Tu vnesite pravila, ločena s prelomi vrstic. Visafe bo onemogočil vse povezave z domenami, ki se ujemajo s temi pravili.";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "Posodabljanje...";
@@ -202,8 +202,8 @@
 /* (DnsSettingController) Full (without VPN icon) mode description */
 "tunnel_mode_full_without_icon_description" = "Poln-Tunel (brez ikone VPN), ki ni združljiv z drugimi aplikacijami VPN, manj stabilen";
 
-/* (DnsSettingController) AdGuard DNS implementation title */
-"adguard_dns_implementation_title" = "AdGuard";
+/* (DnsSettingController) Visafe DNS implementation title */
+"Visafe_dns_implementation_title" = "Visafe";
 
 /* (DnsSettingController) Native DNS implementation title */
 "native_dns_implementation_title" = "Izvorni";
@@ -239,7 +239,7 @@
 "login_error_message" = "Prišlo do napake pri prijavi v";
 
 /* purchase secription format */
-"purchase_description_format" = "O naročnini AdGuarda:<br><br>• Plačilo bo nakazano na vaš račun iTunes ob potrditvi nakupa.<br><br>• Naročnina se samodejno obnovi, razen če je samodejno podaljšanje izklopljeno vsaj 24 ur pred koncem trenutnega obdobja.<br><br>• Nadomestilo naročnine se bo zaračunalo v 24 urah pred koncem tekočega obdobja.<br><br>Po naročilu lahko upravljate svoje naročnine in po nakupu naročnine v nastavitvah računa iTunes izklopite samodejno obnovo.<br><br><a href=%2$@>Pogoji in določila</a> in <a href=%1$@>Politika zasebnosti</a>";
+"purchase_description_format" = "O naročnini Visafea:<br><br>• Plačilo bo nakazano na vaš račun iTunes ob potrditvi nakupa.<br><br>• Naročnina se samodejno obnovi, razen če je samodejno podaljšanje izklopljeno vsaj 24 ur pred koncem trenutnega obdobja.<br><br>• Nadomestilo naročnine se bo zaračunalo v 24 urah pred koncem tekočega obdobja.<br><br>Po naročilu lahko upravljate svoje naročnine in po nakupu naročnine v nastavitvah računa iTunes izklopite samodejno obnovo.<br><br><a href=%2$@>Pogoji in določila</a> in <a href=%1$@>Politika zasebnosti</a>";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<a href=%2$@>Pogoji in določila</a> in <a href=%1$@>Politika zasebnosti</a>";
@@ -311,24 +311,24 @@
 "failed_updating_current_state_label" = "Filtri niso posodobljeni";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "Ta licenca je aktivirana na največjem številu naprav.\nLicenco lahko odvežete iz neuporabljenih naprav v osebnem računu na spletnem mestu: adguard.com";
+"login_max_computers_exceeded" = "Ta licenca je aktivirana na največjem številu naprav.\nLicenco lahko odvežete iz neuporabljenih naprav v osebnem računu na spletnem mestu: Visafe.com";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "Preden lahko uporabite to akcijo razširitve, %1$@ mora opraviti začetno konfiguracijo. Zaženite glavno aplikacijo %2$@ naj to stori.";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "Upoštevajte, da je Zaviralec vsebine onemogočen. To pomeni, da oglasi ne bodo filtrirani ne glede na nastavitve AdGuarda. Za začetek filtriranja omogočite Zaviralca vsebine AdGuard v nastavitvah Safarija.";
+"content_blocker_disabled_format" = "Upoštevajte, da je Zaviralec vsebine onemogočen. To pomeni, da oglasi ne bodo filtrirani ne glede na nastavitve Visafea. Za začetek filtriranja omogočite Zaviralca vsebine Visafe v nastavitvah Safarija.";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "Ime gostitelja ni pridobljeno. Morda stran še ni bila naložena.";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "Varnostna politika te spletne strani ne dovoljuje zagon programa AdGuard Pomočnik.";
+"assistant_launching_unable" = "Varnostna politika te spletne strani ne dovoljuje zagon programa Visafe Pomočnik.";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "Prišlo je do nepričakovane napake med inicializiranjem akcije Safari razširitve. Če se to znova zgodi, se obrnite na AdGuardovo Podporo.";
+"support_error_safari_extension" = "Prišlo je do nepričakovane napake med inicializiranjem akcije Safari razširitve. Če se to znova zgodi, se obrnite na Visafeovo Podporo.";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "Opozorilo";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -355,8 +355,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "Različica %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009–%@. Adguard Software Ltd.\nVse pravice so pridržane. AdGuard.com";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009–%@. Visafe Software Ltd.\nVse pravice so pridržane. Visafe.com";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "Odjava";
@@ -915,7 +915,7 @@
 "low_level_description" = "<b style=color:#c23814ff>OPOZORILO!</b> Omogočanje teh funkcij lahko prekine internetno povezavo ali ogrozi vašo varnost in zasebnost.";
 
 /* (LowLevelSettingsController) Low level settings beta channel link */
-"low_level_beta_link" = "Vas zanimajo nove nove funkcije AdGuarda? Preizkusite naš <a href=\"%@\">kanal Beta</a>.";
+"low_level_beta_link" = "Vas zanimajo nove nove funkcije Visafea? Preizkusite naš <a href=\"%@\">kanal Beta</a>.";
 
 /* (LowLevelSettingsController) Low level bootstraps placeholder */
 "low_level_bootstraps_placeholder" = "Seznam navadnih strežnikov DNS, ki se uporabljajo za razreševanje imen gostiteljev DOH/DOT (če obstajajo)";
@@ -956,16 +956,16 @@
 "setapp_device_limit_reached" = "V svoj račun Setapp ste povezali največje dovojeno število naprav.";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_safari" = "Ali ste vedeli, da je YouTube spremenil svoje algoritme, da vam prikazuje več oglasov?<br><br>Zdaj, da jih onemogočite, morate:<br><br>1. Odprite <a href=\"%@\">Safari</a>.<br><br>2. Odprite youtube.com<br><br>Tapnite %@ Deli.<br><br>4. Tapnite \"Onemogoči oglase YouTube (z AdGuard)\".";
+"block_youtube_ads_instructions_safari" = "Ali ste vedeli, da je YouTube spremenil svoje algoritme, da vam prikazuje več oglasov?<br><br>Zdaj, da jih onemogočite, morate:<br><br>1. Odprite <a href=\"%@\">Safari</a>.<br><br>2. Odprite youtube.com<br><br>Tapnite %@ Deli.<br><br>4. Tapnite \"Onemogoči oglase YouTube (z Visafe)\".";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text  */
-"block_youtube_ads_instructions" = "Ali ste vedeli, da je YouTube spremenil svoje algoritme, da vam prikazuje več oglasov?<br><br>Zdaj, da jih onemogočitee, morate::<br><br>1. Odprite <a href=\"%@\">youtube.com</a> v Safariju.<br><br>2. Tapnite %@ Deli.<br><br>3. Tapnite \"Onemogoči oglase YouTube (z AdGuard)\".";
+"block_youtube_ads_instructions" = "Ali ste vedeli, da je YouTube spremenil svoje algoritme, da vam prikazuje več oglasov?<br><br>Zdaj, da jih onemogočitee, morate::<br><br>1. Odprite <a href=\"%@\">youtube.com</a> v Safariju.<br><br>2. Tapnite %@ Deli.<br><br>3. Tapnite \"Onemogoči oglase YouTube (z Visafe)\".";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_done_text_safari" = "Končano! Zdaj lahko YouTube gledate brez oglasov.\n\nKo je razširitev omogočena, se poleg logotipa YouTube prikaže napis \"z AdGuard\".<br><br><b> Če znova naložite stran, boste morali znova izvesti 3. in 4. korak.</b>";
+"block_youtube_ads_instructions_done_text_safari" = "Končano! Zdaj lahko YouTube gledate brez oglasov.\n\nKo je razširitev omogočena, se poleg logotipa YouTube prikaže napis \"z Visafe\".<br><br><b> Če znova naložite stran, boste morali znova izvesti 3. in 4. korak.</b>";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text  */
-"block_youtube_ads_instructions_done_text" = "Končano! Zdaj lahko YouTube gledate brez oglasov.\n\nKo je razširitev omogočena, se poleg logotipa YouTube prikaže napis \"z AdGuard\".<br><br><b> Če znova naložite stran, boste morali znova izvesti 2. in 3. korak.</b>";
+"block_youtube_ads_instructions_done_text" = "Končano! Zdaj lahko YouTube gledate brez oglasov.\n\nKo je razširitev omogočena, se poleg logotipa YouTube prikaže napis \"z Visafe\".<br><br><b> Če znova naložite stran, boste morali znova izvesti 2. in 3. korak.</b>";
 
 // MARK: - YouTubeAdsRequestHandler
 /* (YouTubeAdsRequestHandler) - Title for notification when YouTube ads script was successfully executed */

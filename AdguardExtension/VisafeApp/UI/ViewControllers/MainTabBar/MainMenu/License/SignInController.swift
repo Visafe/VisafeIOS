@@ -1,19 +1,19 @@
 /**
-       This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-       Copyright © Adguard Software Limited. All rights reserved.
+       This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+       Copyright © Visafe Software Limited. All rights reserved.
  
-       Adguard for iOS is free software: you can redistribute it and/or modify
+       Visafe for iOS is free software: you can redistribute it and/or modify
        it under the terms of the GNU General Public License as published by
        the Free Software Foundation, either version 3 of the License, or
        (at your option) any later version.
  
-       Adguard for iOS is distributed in the hope that it will be useful,
+       Visafe for iOS is distributed in the hope that it will be useful,
        but WITHOUT ANY WARRANTY; without even the implied warranty of
        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
        GNU General Public License for more details.
  
        You should have received a copy of the GNU General Public License
-       along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+       along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 import UIKit
@@ -134,7 +134,7 @@ class SignInController: UIViewController {
     }
     
     private func userNotFound() {
-        let message = String(format: String.localizedString("user_not_found_message"), UIApplication.adguardSigninURL)
+        let message = String(format: String.localizedString("user_not_found_message"), UIApplication.VisafeSigninURL)
         dismiss(animated: true) { [weak self] in
             self?.notificationService.postNotificationInForeground(body: message, title: "")
         }
@@ -159,7 +159,7 @@ class SignInController: UIViewController {
             let text: String
             switch $0.tag {
             case 0:
-                text = String.localizedString("sign_in_via_adguard_title")
+                text = String.localizedString("sign_in_via_Visafe_title")
             case 1:
                 text = String.localizedString("sign_in_via_apple_title")
             case 2:

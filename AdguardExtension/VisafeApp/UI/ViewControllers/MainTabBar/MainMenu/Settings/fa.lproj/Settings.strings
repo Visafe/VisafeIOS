@@ -29,5 +29,5 @@
 /* Class = "UILabel"; text = "Light"; ObjectID = "ocH-QT-NRZ"; */
 "ocH-QT-NRZ.text" = "روشن";
 
-/* Class = "UILabel"; text = "If this setting is enabled, AdGuard will use only Wi-Fi for background filter updates"; ObjectID = "tTY-BW-QcN"; */
-"tTY-BW-QcN.text" = "اگر این گزینه فعال شده باشد،AdGuard فقط از وای فای برای بروزرسانی فیلتر در پس زمینه استفاده می کند";
+/* Class = "UILabel"; text = "If this setting is enabled, Visafe will use only Wi-Fi for background filter updates"; ObjectID = "tTY-BW-QcN"; */
+"tTY-BW-QcN.text" = "اگر این گزینه فعال شده باشد،Visafe فقط از وای فای برای بروزرسانی فیلتر در پس زمینه استفاده می کند";

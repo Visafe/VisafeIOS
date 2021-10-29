@@ -7,7 +7,7 @@
 /* (AEService) Service errors descriptions */
 "json_converting_error" = "Невозможно инициализировать конвертер в формат JSON.";
 
-/* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
+/* (Action Extension - Visafe Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "Отмена";
 
 /* (AEService) Service errors descriptions */
@@ -88,8 +88,8 @@
 /* (SignInController) user not found message */
 "user_not_found_message" = "Пользователь с таким email не найден. Пожалуйста, вначале зарегистрируйтесь на %@.";
 
-/* (SignInController) SignIn via AdGuard account title */
-"sign_in_via_adguard_title" = "Использовать учетную запись AdGuard";
+/* (SignInController) SignIn via Visafe account title */
+"sign_in_via_Visafe_title" = "Использовать учетную запись Visafe";
 
 /* (SignInController) SignIn via Apple account title */
 "sign_in_via_apple_title" = "Продолжить с Apple";
@@ -107,25 +107,25 @@
 "premium_expired_title" = "Внимание";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "Вы успешно вошли в свой AdGuard-аккаунт. К сожалению, в нем нет лицензионных ключей, позволяющих вам активировать Премиум-версию.";
+"not_premium_message" = "Вы успешно вошли в свой Visafe-аккаунт. К сожалению, в нем нет лицензионных ключей, позволяющих вам активировать Премиум-версию.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
-"login_success_message" = "Вы успешно вошли в свой AdGuard-аккаунт! Активирована Премиум-версия AdGuard для iOS.";
+"login_success_message" = "Вы успешно вошли в свой Visafe-аккаунт! Активирована Премиум-версия Visafe для iOS.";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "Вы успешно вошли в AdGuard-аккаунт! К сожалению, срок действия лицензионных ключей, позволяющих активировать Премиум-версию, истек.";
+"login_premium_expired_message" = "Вы успешно вошли в Visafe-аккаунт! К сожалению, срок действия лицензионных ключей, позволяющих активировать Премиум-версию, истек.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "Произошла ошибка при попытке восстановить покупку.";
 
 /* (AEUIGetProViewController) message that appears when purchase successfully restored */
-"restore_success_message" = "Покупка восстановлена! Активирована Премиум-версия AdGuard для iOS.";
+"restore_success_message" = "Покупка восстановлена! Активирована Премиум-версия Visafe для iOS.";
 
 /* (AEUIGetProControllerViewController) this message showes when user try ro restore purchases but there is nothing to restore. */
 "nothing_to_restore_message" = "Нет покупок для восстановления";
 
 /* (AEUIGetProViewController) message that appears when the purchase is successful */
-"purchase_success_message" = "Покупка успешно завершена! Активирована Премиум-версия AdGuard для iOS.";
+"purchase_success_message" = "Покупка успешно завершена! Активирована Премиум-версия Visafe для iOS.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase */
 "purchase_failure_message" = "Произошла ошибка во время обработки покупки.";
@@ -143,16 +143,16 @@
 "blacklist_text_format" = "Введите ваши собственные правила здесь<br>Прочтите эту <a href=\"%@\">заметку о синтаксисе правил</a>.";
 
 /* (UserFilterController) whitelist description */
-"whitelist_text" = "Введите здесь домены, которые вы не хотите, чтобы AdGuard фильтровал. Этот список приоритетнее других настроек.";
+"whitelist_text" = "Введите здесь домены, которые вы не хотите, чтобы Visafe фильтровал. Этот список приоритетнее других настроек.";
 
 /* (UserFilterController) inverted whitelist description */
-"inverted_whitelist_text" = "Введите доменные имена здесь. AdGuard включит фильтрацию в Safari только для этих сайтов.";
+"inverted_whitelist_text" = "Введите доменные имена здесь. Visafe включит фильтрацию в Safari только для этих сайтов.";
 
 /* (UserFilterController) dns whitelist description */
-"dns_whitelist_text" = "Введите доменные имена, разделенные разрывом строки. AdGuard откроет доступ к этим доменам.";
+"dns_whitelist_text" = "Введите доменные имена, разделенные разрывом строки. Visafe откроет доступ к этим доменам.";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "Черный список поддерживает <a href=\"%@\">DNS-синтаксис AdGuard</a>. Введите правила, разделенные разрывом строки. AdGuard заблокирует все подключения к доменам, которые подходят под эти правила.";
+"dns_blacklist_text_format" = "Черный список поддерживает <a href=\"%@\">DNS-синтаксис Visafe</a>. Введите правила, разделенные разрывом строки. Visafe заблокирует все подключения к доменам, которые подходят под эти правила.";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "Обновление...";
@@ -205,8 +205,8 @@
 /* (DnsSettingController) Full (without VPN icon) mode description */
 "tunnel_mode_full_without_icon_description" = "Full-Tunnel (без значка VPN), не совместим с другими VPN-приложениями, менее стабильный";
 
-/* (DnsSettingController) AdGuard DNS implementation title */
-"adguard_dns_implementation_title" = "AdGuard";
+/* (DnsSettingController) Visafe DNS implementation title */
+"Visafe_dns_implementation_title" = "Visafe";
 
 /* (DnsSettingController) Native DNS implementation title */
 "native_dns_implementation_title" = "Нативная";
@@ -242,7 +242,7 @@
 "login_error_message" = "При входе в систему произошла ошибка";
 
 /* purchase secription format */
-"purchase_description_format" = "AdGuard Премиум — это платный сервис с ежегодной подпиской. Средства спишутся с вашего аккаунта iTunes после подтверждения покупки. <br>• Подписка обновляется автоматически (и происходит списывание средств), если не будет отменена по крайней мере за 24 часа до окончания текущего периода. <br>• Управлять подписками и отменить автоматическое продление можно, перейдя в ваш аккаунт iTunes после приобретения подписки.<br><br><a href=%2$@>Условия использования</a> и <br><br><a href=%1$@>Политика конфиденциальности</a> ";
+"purchase_description_format" = "Visafe Премиум — это платный сервис с ежегодной подпиской. Средства спишутся с вашего аккаунта iTunes после подтверждения покупки. <br>• Подписка обновляется автоматически (и происходит списывание средств), если не будет отменена по крайней мере за 24 часа до окончания текущего периода. <br>• Управлять подписками и отменить автоматическое продление можно, перейдя в ваш аккаунт iTunes после приобретения подписки.<br><br><a href=%2$@>Условия использования</a> и <br><br><a href=%1$@>Политика конфиденциальности</a> ";
 
 /* lifetime purchase secription format */
 "lifetime_purchase_description_format" = "<br><br><a href=%2$@>Условия использования</a> и <a href=%1$@>Политика конфиденциальности</a> ";
@@ -314,24 +314,24 @@
 "failed_updating_current_state_label" = "Фильтры не обновились";
 
 /* (GetProController) login error message text */
-"login_max_computers_exceeded" = "Данная лицензия активирована на максимальном количестве устройств.\nВы можете отвязать лицензию от неиспользуемого устройства в вашем персональном аккаунте на нашем сайте: adguard.com";
+"login_max_computers_exceeded" = "Данная лицензия активирована на максимальном количестве устройств.\nВы можете отвязать лицензию от неиспользуемого устройства в вашем персональном аккаунте на нашем сайте: Visafe.com";
 
-/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Visafe app. */
 "action_extension_no_configuration_message_format" = "Перед использованием этого расширения, %1$@ должен выполнить первичную настройку. Запустите основное приложение %2$@.";
 
 /* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
-"content_blocker_disabled_format" = "Обратите внимание: Блокировщик контента отключен. Это означает, что реклама не будет фильтроваться вне зависимости от настроек AdGuard. Пожалуйста, включите Блокировщик контента AdGuard в настройках Safari, чтобы начать фильтрацию.";
+"content_blocker_disabled_format" = "Обратите внимание: Блокировщик контента отключен. Это означает, что реклама не будет фильтроваться вне зависимости от настроек Visafe. Пожалуйста, включите Блокировщик контента Visafe в настройках Safari, чтобы начать фильтрацию.";
 
 /* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
 "hostname_obtaining_error" = "Имя хоста не получено. Возможно, страница еще не загружена.";
 
 /* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
-"assistant_launching_unable" = "Политика безопасности этого сайта не позволяет запустить Помощник AdGuard.";
+"assistant_launching_unable" = "Политика безопасности этого сайта не позволяет запустить Помощник Visafe.";
 
 /* (Action Extension - ActionViewController) Some errors when starting. */
-"support_error_safari_extension" = "Произошла неожиданная ошибка при инициализации расширения Safari. Пожалуйста, свяжитесь со службой поддержки AdGuard, если ситуация повторится.";
+"support_error_safari_extension" = "Произошла неожиданная ошибка при инициализации расширения Safari. Пожалуйста, свяжитесь со службой поддержки Visafe, если ситуация повторится.";
 
-/* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
+/* (APUIVisafeDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "Предупреждение";
 
 /* (Action Extension - AEAUIMainController) error occurs when try turn off filtration on site. */
@@ -358,8 +358,8 @@
 /* (AboutViewController) current app version format */
 "about_version_format" = "Версия %@";
 
-/* (AboutViewController) AdGuard copyright string */
-"copyright_format" = "© 2009–%@. AdGuard Software Ltd.\nВсе права защищены. AdGuard.com";
+/* (AboutViewController) Visafe copyright string */
+"copyright_format" = "© 2009–%@. Visafe Software Ltd.\nВсе права защищены. Visafe.com";
 
 /* (AboutViewController) Logout title */
 "common_logout" = "Выход";
@@ -918,7 +918,7 @@
 "low_level_description" = "<b style=color:#c23814ff>Внимание!</b> Включение этих функций может нарушить интернет-соединение и подвергнуть риску вашу безопасность и конфиденциальность. ";
 
 /* (LowLevelSettingsController) Low level settings beta channel link */
-"low_level_beta_link" = "Вам интересны новые функции AdGuard? Попробуйте наш <a href=\"%@\">бета-канал</a>.";
+"low_level_beta_link" = "Вам интересны новые функции Visafe? Попробуйте наш <a href=\"%@\">бета-канал</a>.";
 
 /* (LowLevelSettingsController) Low level bootstraps placeholder */
 "low_level_bootstraps_placeholder" = "Список DNS-серверов, используемых для преобразования имен хоста DOH/DOT";
@@ -959,16 +959,16 @@
 "setapp_device_limit_reached" = "Вы подключили максимальное количество устройств в аккаунте Setapp.";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_safari" = "Вы знали, что YouTube изменил алгоритмы, чтобы показывать вам больше рекламы?<br><br>Чтобы заблокировать её:<br><br>1. Откройте <a href=\"%@\">Safari</a>.<br><br>2. Откройте youtube.com.<br><br>3. Нажмите на %@ кнопку \"Поделиться\".<br><br> 4. Нажмите \"Блокировать рекламу на YouTube (от AdGuard)\".";
+"block_youtube_ads_instructions_safari" = "Вы знали, что YouTube изменил алгоритмы, чтобы показывать вам больше рекламы?<br><br>Чтобы заблокировать её:<br><br>1. Откройте <a href=\"%@\">Safari</a>.<br><br>2. Откройте youtube.com.<br><br>3. Нажмите на %@ кнопку \"Поделиться\".<br><br> 4. Нажмите \"Блокировать рекламу на YouTube (от Visafe)\".";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text  */
-"block_youtube_ads_instructions" = "Вы знали, что YouTube изменил алгоритмы, чтобы показывать вам больше рекламы? Чтобы заблокировать её:<br><br>1. Откройте <a href=\"%@\">youtube.com</a> в Safari.<br><br>2. Нажмите на %@ кнопку \"Поделиться\".<br><br>3. Нажмите \"Блокировать рекламу на YouTube (от AdGuard)\".";
+"block_youtube_ads_instructions" = "Вы знали, что YouTube изменил алгоритмы, чтобы показывать вам больше рекламы? Чтобы заблокировать её:<br><br>1. Откройте <a href=\"%@\">youtube.com</a> в Safari.<br><br>2. Нажмите на %@ кнопку \"Поделиться\".<br><br>3. Нажмите \"Блокировать рекламу на YouTube (от Visafe)\".";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text that is shown if youtube app is installed */
-"block_youtube_ads_instructions_done_text_safari" = "Готово! Теперь вы можете смотреть YouTube без рекламы.\n\nКогда расширение включено, рядом с логотипом YouTube отображается надпись “with AdGuard”.<br><br><b>Если вы перезагрузите страницу, вам нужно будет повторить шаги 3 и 4.</b>";
+"block_youtube_ads_instructions_done_text_safari" = "Готово! Теперь вы можете смотреть YouTube без рекламы.\n\nКогда расширение включено, рядом с логотипом YouTube отображается надпись “with Visafe”.<br><br><b>Если вы перезагрузите страницу, вам нужно будет повторить шаги 3 и 4.</b>";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text  */
-"block_youtube_ads_instructions_done_text" = "Готово! Теперь вы можете смотреть YouTube без рекламы.\n\nКогда расширение включено, рядом с логотипом YouTube отображается надпись “with AdGuard”.<br><br><b>Если вы перезагрузите страницу, вам нужно будет повторить шаги 2 и 3.</b>";
+"block_youtube_ads_instructions_done_text" = "Готово! Теперь вы можете смотреть YouTube без рекламы.\n\nКогда расширение включено, рядом с логотипом YouTube отображается надпись “with Visafe”.<br><br><b>Если вы перезагрузите страницу, вам нужно будет повторить шаги 2 и 3.</b>";
 
 // MARK: - YouTubeAdsRequestHandler
 /* (YouTubeAdsRequestHandler) - Title for notification when YouTube ads script was successfully executed */

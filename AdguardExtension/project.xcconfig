@@ -1,19 +1,19 @@
 //
-//   This file is part of Adguard for iOS (https://github.com/AdguardTeam/AdguardForiOS).
-//   Copyright © Adguard Software Limited. All rights reserved.
+//   This file is part of Visafe for iOS (https://github.com/VisafeTeam/VisafeForiOS).
+//   Copyright © Visafe Software Limited. All rights reserved.
 //
-//   Adguard for iOS is free software: you can redistribute it and/or modify
+//   Visafe for iOS is free software: you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
 //   the Free Software Foundation, either version 3 of the License, or
 //   (at your option) any later version.
 //
-//   Adguard for iOS is distributed in the hope that it will be useful,
+//   Visafe for iOS is distributed in the hope that it will be useful,
 //   but WITHOUT ANY WARRANTY; without even the implied warranty of
 //   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //   GNU General Public License for more details.
 //
 //   You should have received a copy of the GNU General Public License
-//   along with Adguard for iOS.  If not, see <http://www.gnu.org/licenses/>.
+//   along with Visafe for iOS.  If not, see <http://www.gnu.org/licenses/>.
 //
 
 SLASH = /
@@ -23,22 +23,22 @@ BUILDER_DIR = $(SYMROOT)/Build/Products/$(CONFIGURATION)
 BUILDER_RESOURCES_DIR = $(BUILDER_DIR)/BuilderResources
 
 // Action Extension VARs
-ACTION_JAVASCRIPT_ASSISTANT = $(SRCROOT)/ActionExtension/js/adguard-assistant.js
+ACTION_JAVASCRIPT_ASSISTANT = $(SRCROOT)/ActionExtension/js/Visafe-assistant.js
 ACTION_JAVASCRIPT_PROCESSING_TEMPLATE = $(SRCROOT)/ActionExtension/js/ProcessingTemplate.js
 ACTION_EXTENSION_PREPROCESSING_FILENAME = ExtensionPreprocessing
 ACTION_SELECTOR_CSS_FILE = $(SRCROOT)/ActionExtension/js/selector.css
 
 ACTION_RESOURCES_DIR = $(BUILDER_DIR)/ActionResources
 
-ACTION_JAVASCRIPT_ASSISTANT_REMOTE = https:${SLASH}/adguardteam.github.io/AdguardAssistant/mobile/script.js
+ACTION_JAVASCRIPT_ASSISTANT_REMOTE = https:${SLASH}/Visafeteam.github.io/VisafeAssistant/mobile/script.js
 
 DNS_CRYPT_RESOLVERS_REMOTE = https:${SLASH}/download.dnscrypt.info/dnscrypt-resolvers/v1/dnscrypt-resolvers.csv
 
 // Main App bundle identifier
-ADGUARD_BUNDLE_ID = com.adguard.AdguardExtension
+Visafe_BUNDLE_ID = com.Visafe.VisafeExtension
 // Blocking extension bundle identifier
-ADGUARD_EXTENSION_BUNDLE_ID = $(ADGUARD_BUNDLE_ID).extension
+Visafe_EXTENSION_BUNDLE_ID = $(Visafe_BUNDLE_ID).extension
 // Downloads session for filter updates identifier
-ADGUARD_FILTER_UPDATES_ID = $(ADGUARD_BUNDLE_ID).filterUpdatesSession
+Visafe_FILTER_UPDATES_ID = $(Visafe_BUNDLE_ID).filterUpdatesSession
 // Group for shared resources
-ADGUARD_SHARED_RESOURCES_GROUP = group.com.adguard.AdguardExtension
+Visafe_SHARED_RESOURCES_GROUP = group.com.Visafe.VisafeExtension

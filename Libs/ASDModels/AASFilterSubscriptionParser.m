@@ -1,6 +1,6 @@
 //
 //  AASFilterSubscriptionParser.m
-//  Adguard
+//  Visafe
 //
 //  Created by Roman Sokolov on 09.10.17.
 //  Copyright © 2017 Performix. All rights reserved.
@@ -12,7 +12,7 @@
 #import "ASDFilterObjects.h"
 #import "ACNNetworking.h"
 #import "ACIOUtils.h"
-#import "Adguard-Swift.h"
+#import "Visafe-Swift.h"
 
 #define AAS_EXECUTION_PERIOD_TIME                           3600 // 1 hours
 #define AAS_EXECUTION_LEEWAY                                5 // 5 seconds
