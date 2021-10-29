@@ -151,7 +151,10 @@ class ProtectVC: BaseDoHVC {
 
     private func setSafeMode() {
         let font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        let scanNumberIssue = CacheManager.shared.getScanIssueNumber()
+        guard let scanNumberIssue = CacheManager.shared.getScanIssueNumber() else {
+            titleLB.text = "Thiết bị của bạn có an toàn?"
+            return
+        }
         let isTrue = scanNumberIssue == 0
         let highlightColor: UIColor = isTrue ? .systemGreen : .systemRed
         let text = isTrue ? "Bạn đang an toàn" : "Đã phát hiện \(scanNumberIssue) sự cố"

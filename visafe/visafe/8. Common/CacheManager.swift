@@ -180,9 +180,13 @@ class CacheManager {
         userDefault.synchronize()
     }
 
-    func getScanIssueNumber() -> Int {
-        let value = userDefault.integer(forKey: kScanIssueNumber)
-        return value
+    func getScanIssueNumber() -> Int? {
+        if let a = userDefault.object(forKey: kScanIssueNumber) as? Int {
+            return a
+        }
+        return nil
+//        let value = userDefault.integer(forKey: kScanIssueNumber)
+//        return value
     }
 
     func setScanIssueNumber(value: Int) {
