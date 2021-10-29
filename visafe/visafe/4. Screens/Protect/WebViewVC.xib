@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebViewVC" customModule="visafe" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="x4T-qE-Kqf" id="2Q4-mH-QSB"/>
+                <outlet property="webview" destination="M5S-z8-3f9" id="gYQ-ba-NlX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x4T-qE-Kqf">
+            <rect key="frame" x="0.0" y="0.0" width="394" height="2100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5S-z8-3f9">
+                    <rect key="frame" x="0.0" y="44" width="394" height="2022"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="UTM-Pl-P5e"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UTM-Pl-P5e" firstAttribute="bottom" secondItem="M5S-z8-3f9" secondAttribute="bottom" id="2ef-Q1-ZzZ"/>
+                <constraint firstItem="M5S-z8-3f9" firstAttribute="leading" secondItem="UTM-Pl-P5e" secondAttribute="leading" id="Nar-3x-QaJ"/>
+                <constraint firstItem="M5S-z8-3f9" firstAttribute="top" secondItem="UTM-Pl-P5e" secondAttribute="top" id="Pzz-LV-0aT"/>
+                <constraint firstItem="UTM-Pl-P5e" firstAttribute="trailing" secondItem="M5S-z8-3f9" secondAttribute="trailing" id="YIA-HN-e35"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="1147.8260869565217" y="127.23214285714285"/>
+        </view>
+    </objects>
+</document>

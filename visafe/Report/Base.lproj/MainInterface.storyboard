@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController title="Image" id="ObA-dk-sSI" customClass="ActionViewController" customModule="Report" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="NOA-Dm-cuz">
+                                <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                <items>
+                                    <navigationItem id="3HJ-uW-3hn">
+                                        <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="WYi-yp-eM6">
+                                            <connections>
+                                                <action selector="done" destination="ObA-dk-sSI" id="Qdu-qn-U6V"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAa-RM-X6n">
+                                <rect key="frame" x="24" y="248" width="272" height="48"/>
+                                <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="d4v-BG-wwb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="Gửi báo cáo">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="reportAction:" destination="ObA-dk-sSI" eventType="touchUpInside" id="zmQ-fQ-62E"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập link website" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dUL-5L-gf5">
+                                <rect key="frame" x="24" y="176" width="272" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Aep-df-H8o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="valueChanged:" destination="ObA-dk-sSI" eventType="valueChanged" id="Waz-D1-bYK"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwM-AY-qzu">
+                                <rect key="frame" x="24" y="236" width="272" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuZ-nx-5wx">
+                                <rect key="frame" x="24" y="104" width="272" height="48"/>
+                                <string key="text">Bạn muốn báo cáo website
+lừa đảo?</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNm-xu-aaE">
+                                <rect key="frame" x="24" y="316" width="272" height="43"/>
+                                <string key="text">Website báo cáo sẽ được Visafe xác thực thông tin
+và liệt vào danh sách đen</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VVe-Uw-JpX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dwM-AY-qzu" firstAttribute="leading" secondItem="dUL-5L-gf5" secondAttribute="leading" id="15Q-cq-PQi"/>
+                            <constraint firstItem="qAa-RM-X6n" firstAttribute="top" secondItem="dwM-AY-qzu" secondAttribute="bottom" constant="12" id="1A5-tl-IJj"/>
+                            <constraint firstItem="sNm-xu-aaE" firstAttribute="top" secondItem="qAa-RM-X6n" secondAttribute="bottom" constant="20" id="4i8-if-JTP"/>
+                            <constraint firstItem="dUL-5L-gf5" firstAttribute="leading" secondItem="RuZ-nx-5wx" secondAttribute="leading" id="4p0-YQ-lOe"/>
+                            <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="RuZ-nx-5wx" secondAttribute="trailing" constant="24" id="5FM-Cx-21G"/>
+                            <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="NOA-Dm-cuz" secondAttribute="trailing" id="A05-Pj-hrr"/>
+                            <constraint firstItem="dUL-5L-gf5" firstAttribute="top" secondItem="RuZ-nx-5wx" secondAttribute="bottom" constant="24" id="HmJ-Fs-1UG"/>
+                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" id="HxO-8t-aoh"/>
+                            <constraint firstItem="RuZ-nx-5wx" firstAttribute="top" secondItem="NOA-Dm-cuz" secondAttribute="bottom" constant="16" id="KU5-s4-uJv"/>
+                            <constraint firstItem="dwM-AY-qzu" firstAttribute="trailing" secondItem="dUL-5L-gf5" secondAttribute="trailing" id="MiR-k0-YNt"/>
+                            <constraint firstItem="qAa-RM-X6n" firstAttribute="trailing" secondItem="dUL-5L-gf5" secondAttribute="trailing" id="V9h-mC-uwH"/>
+                            <constraint firstItem="RuZ-nx-5wx" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="24" id="cuJ-38-QPf"/>
+                            <constraint firstItem="sNm-xu-aaE" firstAttribute="leading" secondItem="qAa-RM-X6n" secondAttribute="leading" id="ddW-os-GcG"/>
+                            <constraint firstItem="dwM-AY-qzu" firstAttribute="top" secondItem="dUL-5L-gf5" secondAttribute="bottom" constant="12" id="lLe-ya-2oX"/>
+                            <constraint firstItem="dUL-5L-gf5" firstAttribute="trailing" secondItem="RuZ-nx-5wx" secondAttribute="trailing" id="qwO-Wy-0td"/>
+                            <constraint firstItem="qAa-RM-X6n" firstAttribute="leading" secondItem="dUL-5L-gf5" secondAttribute="leading" id="uHi-WU-7VI"/>
+                            <constraint firstItem="sNm-xu-aaE" firstAttribute="trailing" secondItem="qAa-RM-X6n" secondAttribute="trailing" id="ute-Ag-MkB"/>
+                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="top" secondItem="VVe-Uw-JpX" secondAttribute="top" id="we0-1t-bgp"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="nameInfoLabel" destination="dwM-AY-qzu" id="G1a-da-WDC"/>
+                        <outlet property="nameTextfield" destination="dUL-5L-gf5" id="dq6-zw-3Jc"/>
+                        <outlet property="reportButton" destination="qAa-RM-X6n" id="CtK-NW-uor"/>
+                        <outlet property="view" destination="zMn-AG-sqS" id="Qma-de-2ek"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117" y="126"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
