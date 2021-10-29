@@ -97,7 +97,7 @@ class ProfileVC: BaseViewController {
     
     @objc func refreshData() {
         guard isViewLoaded else { return }
-        sources = CacheManager.shared.getIsLogined() ? [.upgradeAccount, .setting, .help, .share, .rate, .vipmember, .logout] : [.upgradeAccount, .setting, .help, .share, .rate, .vipmember]
+        sources = CacheManager.shared.getIsLogined() ? [.setting, .help, .share, .rate, .vipmember, .logout] : [.setting, .help, .share, .rate, .vipmember]
         tableView.reloadData()
     }
     
