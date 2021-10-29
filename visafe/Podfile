@@ -1,0 +1,29 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'visafe' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+#  use_modular_headers!
+
+  pod 'DACircularProgress'
+  pod 'MBProgressHUD'
+  pod 'MJRefresh'
+  pod 'GoogleSignIn'
+  pod 'SideMenuSwift'
+  pod "ESTabBarController-swift"
+  pod 'PageMenu'
+  pod 'ACTabScrollView'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/DynamicLinks'
+  pod 'Firebase/Messaging'
+  pod 'Toast-Swift'
+  pod 'Moya'
+  pod 'ObjectMapper'
+end
+
+target 'Report' do
+  use_frameworks!
+  pod 'Moya'
+  pod 'ObjectMapper'
+end
